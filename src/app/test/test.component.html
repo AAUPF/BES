@@ -13,12 +13,12 @@
       </div>
     </div>
   </div>
-  
   <div class="container">
-
-    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-
-
+      <select class='select-option' required [(ngModel)]='optionSelected' (ngModelChange)="toNumber()">
+          <option class='option' *ngFor='let option of options' [ngValue]="option">{{option}}</option>
+      </select>
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <button (click)="appendToContainer()">I am button</button>
+    <object data="assets/img/bihar.svg" id="biharsvg" type="image/svg+xml"></object>
   </div>
-
   </section>

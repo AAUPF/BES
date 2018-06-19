@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-maincontent',
   templateUrl: './maincontent.component.html',
@@ -10,6 +9,7 @@ export class MaincontentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
