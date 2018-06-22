@@ -12,6 +12,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { AgricultureComponent } from './agriculture/agriculture.component';
 import { ModalComponent } from './modal/modal.component';
+import { SvgcomponentComponent } from './svgcomponent/svgcomponent.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +22,7 @@ import { ModalComponent } from './modal/modal.component';
     TestComponent,
     AgricultureComponent,
     ModalComponent,
+    SvgcomponentComponent,
   
     ],
   imports: [

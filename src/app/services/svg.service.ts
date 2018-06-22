@@ -10,16 +10,17 @@ export class SvgService {
   constructor(private http: HttpClient) { }
   private apiRoot: string = "http://localhost:3000/static_pages/help";
   private apiRoot1: string = "http://localhost:3000/rainfalls";
-  test(a,views) {
-    let url = `${this.apiRoot1}/test?views=` + views ;    
-  
+  test(a,views,rain_fall_type,year) {
+    let url = `${this.apiRoot1}/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;    
+  console.log(url);
+    // title;
+    var title = rain_fall_type;
     this.http.get(url).
     subscribe(res => {
       this.j = res;
        this.map_districts(this.j) 
        }
        );
-  
     // District.classList.add("mystyle");
     // console.log(url);
   }
@@ -29,16 +30,18 @@ export class SvgService {
     let svgDoc = map.contentDocument; // should be fine
     // let District = svgDoc.getElementById(a);
     var dis = ""
-    var dis_y = "#siwan,#wchamparan,#vaishali,#madhepura,#sitamarhi,#bhojpur,#arwal,#patna,#kishanganj,#sheohar"
-    console.log(dis);
+    var dis_y = ""
+    var dis_w = ""
+    var dis_z = ""
+    // console.log(dis);
     for (var k in l){
       if (l.hasOwnProperty(k)) {
            if (l[k].below_min) {
             for (let index = 0; index < l[k].below_min.length; index++) {
               const element = l[k].below_min[index];
-              // console.log(element.label+ "Min");
+              //  console.log(element.label+ "Min");
              var string =  element.label.toLowerCase();
-                if (index == l[k].below_min.length- 1) {
+                if (index == l[k].below_min.length - 1) {
                   dis += "#"+string+"";
                 } else {
                   dis += "#"+string+",";
@@ -50,10 +53,10 @@ export class SvgService {
             for (let index = 0; index < l[k].min.length; index++) {
               const element = l[k].min[index];
               
-              console.log(element.label+ "blow_max");
 
-              if (element.label == "w. champaran") {
-                var string:any = "wchamparn";
+              if (element.label == "W. Champaran") {
+                var string:any = "wchamparan";
+
               } else {
                 var string:any =  element.label.toLowerCase();
               }
@@ -70,14 +73,32 @@ export class SvgService {
           else if (l[k].blow_max) {
             for (let index = 0; index < l[k].blow_max.length; index++) {
               const element = l[k].blow_max[index];
-              // console.log(element.label+ "blow_max");
+
+              if (element.label == "E. Champaran") {
+                var string:any = "echamparan";
+
+              } else {
+                var string:any =  element.label.toLowerCase();
+              }
+
+              if (index == l[k].blow_max.length- 1) {
+                dis_w += "#"+string+"";
+              } else {
+                dis_w += "#"+string+",";
+              }
             }
           }
 
           else if (l[k].max) {
             for (let index = 0; index < l[k].max.length; index++) {
               const element = l[k].max[index];
-              // console.log(element.label+ "max");
+
+              var string:any =  element.label.toLowerCase();
+              if (index == l[k].max.length- 1) {
+                dis_z += "#"+string+"";
+              } else {
+                dis_z += "#"+string+",";
+              }
             }
           }
            
@@ -86,20 +107,52 @@ export class SvgService {
            }
       }
   }
-  
+  let de = svgDoc.querySelectorAll(".fil0");
   let x = svgDoc.querySelectorAll(dis);
-  // let y = svgDoc.querySelectorAll(dis_y);
+  let y = svgDoc.querySelectorAll(dis_y);
+  let w = svgDoc.querySelectorAll(dis_w);
+  let z = svgDoc.querySelectorAll(dis_z);
+
+
 
   // var i;
   // for (i = 0; i < x.length; i++) {
   //     x[i].classList.add("mystyle");
   // }
+  // console.log(dis);
 
-  console.log(dis_y);
+  // console.log(dis_y + "Second");
+  // console.log(dis_w) + "Third";
+  // console.log(dis_z) + "Forth";
+
+  var yellow:any
+  var orange:any
+  var green:any
+  var red:any
+
+  yellow = "Yellow"
+  orange = "Orange"
+  green = "Green"
+  red = "Red"
+
+
+  var i;
+  // // for (i = 0; i < de.length; i++) {
+  // //     x[i].classList.remove(yellow);
+  // // }
+
+  for (i = 0; i < de.length; i++) {
+     console.log(de[i].classList.item(0)); 
+    // console.log(i);
   
-  var color:any
-  color = "mystyle"
-  this.color_map(x,color)
+     de[i].classList.remove("Red","Yellow","Orange","Green");
+  }
+
+  this.color_map(x,yellow)
+  this.color_map(y,orange)
+  this.color_map(w,green)
+  this.color_map(z,red)
+
   // this.color_map(y,color)
 
 
@@ -110,6 +163,8 @@ color_map(x,color) {
 
   // let x = svgDoc.querySelectorAll(dis);
   var i;
+
+
   for (i = 0; i < x.length; i++) {
       x[i].classList.add(color);
   }
@@ -153,8 +208,8 @@ svg1() {
       var svgDoc = a.contentDocument;
       var wchamparan = svgDoc.getElementById("wchamparan");
       wchamparan.onclick = function() {
-      alert("hello");
-    }
+        alert("hello");
+      }
 }
   bar(){
     console.log("Bar");

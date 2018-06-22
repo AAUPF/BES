@@ -32,6 +32,60 @@ export class AgricultureService {
      ); 
   }
 
+
+  trend_line_bihar_vs_district(year,district,rain_fall_type,compare) {
+    let url = `${this.apiRoot1}/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    // let url = `${this.apiRoot}`;
+      console.log(url);
+    this.http.get(url).
+      subscribe(res => {
+        this.j = res;
+         console.log(res);
+        let chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          exportEnabled: true,
+          title: {
+            text: rain_fall_type+" "+year
+          },
+          data: [{
+            type: "line",
+            dataPoints: 
+            this.j
+          }]
+        });
+        chart.render();
+        }
+     ); 
+  }
+
+
+  barchart_bihar_vs_district(year,district,rain_fall_type,compare){
+    // let url = `${this.apiRoot}`;
+    let url = `${this.apiRoot1}/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    console.log(url);
+
+    this.http.get(url).
+      subscribe(res => {
+        this.j = res;
+        console.log(this.j);
+        let chart = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          exportEnabled: true,
+          title: {
+            text: rain_fall_type+" " +year
+          },
+          data: [{
+            type: "column",
+            dataPoints: 
+            this.j
+          }]
+        });
+        chart.render();
+        }
+     ); 
+  }
+
+
   trend_line_all(data,year,rain_fall_type,views) {
     let url = `${this.apiRoot1}/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views;
     // let url = `${this.apiRoot}`;

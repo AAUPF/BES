@@ -17,7 +17,7 @@
               <div class="contactSelect">
                 <form #f="ngForm" (ngSubmit)="onSubmit(data)">
                 <div class="col-sm-2">
-                    <select class='select-option' required [(ngModel)]='data.districts' name="districts">
+                    <select  class='select-option' required [(ngModel)]='data.districts' name="districts">
                         <option [ngValue]="undefined" disabled  selected> District  </option>
                         <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                     </select>
@@ -57,6 +57,7 @@
                 </form>
                     <div style="clear: both;"> </div>			
                     <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="height: 300px; width: 100%; margin-top: 30px;"></div>
+                   <!-- <h2>{{title}}</h2>
                     <object *ngIf="visbile" data="assets/img/biharmap.svg" id="biharsvg" type="image/svg+xml"></object>
                     
                     <div style="position: relative;"> 
@@ -68,7 +69,12 @@
                         <div><span class="dot mid-green"></span>6.0% to 5.9%</div>
                         <div><span class="dot dark-green"></span>3.9% or lower</div>
                         </div>
+                    </div> -->
+                    <div *ngIf="visbile">
+                            <h2>{{title}}</h2>
+                        <app-svgcomponent ></app-svgcomponent>
                     </div>
+                   
                     <app-modal></app-modal>
                     <!-- <object data="assets/img/bihar.svg" id="biharsvg" type="image/svg+xml"></object> -->
                   

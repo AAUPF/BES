@@ -13,7 +13,7 @@ export class TestComponent implements OnInit {
   appendToContainer() {
     let a:any
     a = "echamparan"
-    this.SvgService.test(a)
+    // this.SvgService.test(a)
   }
   options = [1, 2, 3];
   optionSelected: any;
