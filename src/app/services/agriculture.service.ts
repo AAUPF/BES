@@ -7,7 +7,9 @@ declare var CanvasJS:any;
 export class AgricultureService {
   constructor(private http: HttpClient) { }
   private apiRoot: string = "http://localhost:3000/static_pages/help";
-  private apiRoot1: string = "http://localhost:3000/rainfalls";
+  // private apiRoot1: string = "http://localhost:3000/rainfalls";
+  private apiRoot1: string = "http://bihar.aaupf.org//rainfalls";
+
   j:any;
   barchart(){
     let url = `${this.apiRoot}`;

@@ -9,7 +9,9 @@ declare var CanvasJS:any;
 export class SvgService {
   constructor(private http: HttpClient) { }
   private apiRoot: string = "http://localhost:3000/static_pages/help";
-  private apiRoot1: string = "http://localhost:3000/rainfalls";
+  // private apiRoot1: string = "http://localhost:3000/rainfalls";
+  private apiRoot1: string = "http://bihar.aaupf.org//rainfalls";
+
   test(a,views,rain_fall_type,year) {
     let url = `${this.apiRoot1}/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;    
   console.log(url);
