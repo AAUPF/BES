@@ -260,26 +260,28 @@ trend_line(data,year,rain_fall_type) {
       }
    ); 
 }
-  table(){
-    var chart = new CanvasJS.Chart("chartContainer", {
-      data: [
-      {
-        type: "column",
-        dataPoints: [
-          { x: 10, y: 71 },
-          { x: 20, y: 55 },
-          { x: 30, y: 50 },
-          { x: 40, y: 65 },
-          { x: 50, y: 95 },
-          { x: 60, y: 68 },
-          { x: 70, y: 28 },
-          { x: 80, y: 34 },
-          { x: 90, y: 14 }
+  table(year,district,rain_fall_type,compare){
+
+    let url = `${this.apiRoot1}/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+console.log(url);
+
+    this.http.get(url).
+    subscribe(res => {
+      this.j = res;
+       console.log(res);
+       var chart = new CanvasJS.Chart("chartContainer", {
+        data: [
+        {
+          type: "column",
+          dataPoints: this.j
+        }					
         ]
-      }					
-      ]
-    });
-    this.createTable(chart);
+      });
+      this.createTable(chart,rain_fall_type,year);
+      }
+   ); 
+
+
   }
   barmodal(abc){
      if (abc == "wchamparan") {
@@ -377,30 +379,34 @@ trend_line(data,year,rain_fall_type) {
           }
       ); 
     }
-    createTable(chart){
+    createTable(chart,rain_fall_type,year){
       var table = document.createElement("TABLE")  as HTMLTableElement;    
       var row,header,cell1, cell2;
       var data = chart.options.data;
       table.style.border = "1px solid #000"; 
       header = table.createTHead();
-      row = header.insertRow(0);    
+      row = header.insertRow(0);
+      table.setAttribute("id", "myId");    
       cell1 = row.insertCell(0);
       cell2 = row.insertCell(1);
       cell1.style.border = "1px solid #000"; 
       cell2.style.border = "1px solid #000"; 
-      cell1.innerHTML = "<b>X-Value</b>"; 
-      cell2.innerHTML = "<b>Y-Value</b>"; 
+      cell1.innerHTML = "<b>Value</b>"; 
+      cell2.innerHTML = "<b>Districts</b>"; 
       for(var i = 0; i < data.length; i++){
         for(var j = 0; j< data[i].dataPoints.length; j++){
+          console.log(data[i].dataPoints[j].y);
+          
           row = table.insertRow(1);
           cell1 = row.insertCell(0);
           cell2 = row.insertCell(1);
           cell1.style.border = "1px solid #000"; 
           cell2.style.border = "1px solid #000"; 
-          cell1.innerHTML = data[i].dataPoints[j].x;
-          cell2.innerHTML = data[i].dataPoints[j].y; 
+          cell1.innerHTML = data[i].dataPoints[j].y;
+          cell2.innerHTML = data[i].dataPoints[j].label; 
         }
       }    
+      document.getElementById("chartContainer").innerHTML = "<h1>"+rain_fall_type+" "+year+"</h2>";
       document.getElementById("chartContainer").appendChild(table);
   }
 }

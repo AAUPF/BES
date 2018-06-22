@@ -61,7 +61,7 @@ export class AgricultureComponent implements OnInit {
     else if(user.view == "Table") {
       this.visbile_chart= true;
       this.visbile= false;
-      this.SvgService.table();
+      this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison);
     }
     else if(user.view == "Map View") {
      const that = this;
