@@ -4,7 +4,9 @@ import { AgricultureService } from '../services/agriculture.service';
 import { Districts } from '../data/districts';
 import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
-
+interface years<> {
+  id: number;  any
+}
 declare var CanvasJS:any;
 @Component({
   selector: 'app-agriculture',
@@ -19,6 +21,8 @@ export class AgricultureComponent implements OnInit {
 
   // title:string;
   title = ""
+ 
+   
   htmlContent:string;
   Districts = Districts;
   visbile= false;
@@ -27,7 +31,7 @@ export class AgricultureComponent implements OnInit {
   views = ["Graph", "Trend Line","Map View","Table"];
   rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
   Comparison = ["None","Bihar vs District"]
-  data: Object = {};
+  data = {};
   onSubmit(user) {
     if (user.view == "Graph") {
       this.visbile_chart= true;
