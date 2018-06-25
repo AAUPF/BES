@@ -216,7 +216,7 @@ section {
 }
 @media (min-width: 768px) {
 section {
-	padding: 50px 0;
+	padding: 15px 0;
 }
 }
 .thumbnail {
@@ -262,16 +262,20 @@ section {
 	padding: 0!important;
 }
 .btn {
-	font-family: 'Poppins', sans-serif;
-	line-height: 14px;
-	padding: 15px 0;
-	color: #ffffff;
-	font-weight: 500;
-	border: none;
-	text-transform: uppercase;
-	background-color: transparent;
-	border-radius: 4px;
-	letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 14px;
+    padding: 15px 0;
+    color: #ffffff;
+    font-weight: 500;
+    border: none;
+    text-transform: uppercase;
+    background-color: #2c98f0;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    height: 36px;
+    margin-top: 5px;
+    font-size: 12px !important;
+    padding: 5px 15px !important;
 }
 @media (min-width: 768px) {
 .btn {
@@ -6890,3 +6894,9 @@ select {
 
 
 table { width: 100%; border-collapse: collapse; line-height: 18px !important; } /* Zebra striping */ tr:nth-of-type(odd) { background: #eee; } th { background: #333; color: white; font-weight: bold; } td, th { padding: 6px !important; list-style: 10px !important; border: 1px solid #ccc; text-align: left; } td strong { color: #000; } 
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn { background: #2c98f0;
+    height: 38px;
+    margin-top: 5px;
+    font-size: 12px;
+    padding: 6px 15px; opacity: 100 ; cursor: pointer; }

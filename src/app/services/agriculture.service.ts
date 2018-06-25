@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 declare var CanvasJS:any;
 @Injectable({
   providedIn: 'root'
 })
 export class AgricultureService {
   constructor(private http: HttpClient) { }
-  private apiRoot: string = "http://localhost:3000/static_pages/help";
+   private apiRoot: string = "http://localhost:3000/static_pages/help";
   // private apiRoot1: string = "http://localhost:3000/rainfalls";
-  private apiRoot1: string = "http://bihar.aaupf.org//rainfalls";
+  // private apiRoot1: string = "http://bihar.aaupf.org//rainfalls";
+  apiRoot1: string = environment.apiUrl;
+
 
   j:any;
   barchart(){
@@ -36,7 +40,7 @@ export class AgricultureService {
 
 
   trend_line_bihar_vs_district(year,district,rain_fall_type,compare) {
-    let url = `${this.apiRoot1}/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
     // let url = `${this.apiRoot}`;
       console.log(url);
     this.http.get(url).
@@ -63,7 +67,7 @@ export class AgricultureService {
 
   barchart_bihar_vs_district(year,district,rain_fall_type,compare){
     // let url = `${this.apiRoot}`;
-    let url = `${this.apiRoot1}/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
     console.log(url);
 
     this.http.get(url).
@@ -89,7 +93,7 @@ export class AgricultureService {
 
 
   trend_line_all(data,year,rain_fall_type,views) {
-    let url = `${this.apiRoot1}/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views;
+    let url = `${this.apiRoot1}/rainfalls/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views;
     // let url = `${this.apiRoot}`;
       console.log(url);
     this.http.get(url).
@@ -127,7 +131,7 @@ export class AgricultureService {
   }
 bar_chart_all(data,year,rain_fall_type){
   // let url = `${this.apiRoot}`;
-  let url = `${this.apiRoot1}/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
+  let url = `${this.apiRoot1}/rainfalls/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
    console.log(url);
   this.http.get(url).
   subscribe(res => {

@@ -2,18 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Districts } from '../data/districts';
 import { iif } from 'rxjs';
+import { environment } from '../../environments/environment';
 declare var CanvasJS:any;
 @Injectable({
   providedIn: 'root'
 })
 export class SvgService {
   constructor(private http: HttpClient) { }
-  private apiRoot: string = "http://localhost:3000/static_pages/help";
+  // private apiRoot: string = "http://localhost:3000/static_pages/help";
   // private apiRoot1: string = "http://localhost:3000/rainfalls";
   private apiRoot1: string = "http://bihar.aaupf.org//rainfalls";
+  apiRoot: string = environment.apiUrl;
 
   test(a,views,rain_fall_type,year) {
-    let url = `${this.apiRoot1}/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;    
+    let url = `${this.apiRoot}/rainfalls/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;    
   console.log(url);
     // title;
     var title = rain_fall_type;
@@ -239,7 +241,7 @@ svg1() {
     chart.render();
   }
 trend_line(data,year,rain_fall_type) {
-  let url = `${this.apiRoot1}/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
+  let url = `${this.apiRoot}/rainfalls/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
   // let url = `${this.apiRoot}`;
     console.log(url);
   this.http.get(url).
@@ -264,7 +266,7 @@ trend_line(data,year,rain_fall_type) {
 }
   table(year,district,rain_fall_type,compare){
 
-    let url = `${this.apiRoot1}/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    let url = `${this.apiRoot}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
 console.log(url);
 
     this.http.get(url).
@@ -337,7 +339,7 @@ console.log(url);
      ); 
   }
   barchart1(data,year,rain_fall_type){
-    let url = `${this.apiRoot1}/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
+    let url = `${this.apiRoot}/rainfalls/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
     // let url = `${this.apiRoot}`;
       console.log(url);
     this.http.get(url).
@@ -385,30 +387,32 @@ console.log(url);
       var table = document.createElement("TABLE")  as HTMLTableElement;    
       var row,header,cell1, cell2;
       var data = chart.options.data;
-      table.style.border = "1px solid #000"; 
+      // table.style.border = "1px solid #000"; 
       header = table.createTHead();
       row = header.insertRow(0);
       table.setAttribute("id", "myId");    
       cell1 = row.insertCell(0);
       cell2 = row.insertCell(1);
-      cell1.style.border = "1px solid #000"; 
-      cell2.style.border = "1px solid #000"; 
-      cell1.innerHTML = "<b>Value</b>"; 
-      cell2.innerHTML = "<b>Districts</b>"; 
+      // cell1.style.border = "1px solid #000"; 
+      // cell2.style.border = "1px solid #000"; 
+      cell1.innerHTML = "<b>Districts</b>"; 
+      cell2.innerHTML = "<b>Value</b>"; 
       for(var i = 0; i < data.length; i++){
         for(var j = 0; j< data[i].dataPoints.length; j++){
-          console.log(data[i].dataPoints[j].y);
+          console.log(data[i].dataPoints[j]);
+          // console.log(data[i].dataPoints[j].label);
+
           
           row = table.insertRow(1);
           cell1 = row.insertCell(0);
           cell2 = row.insertCell(1);
-          cell1.style.border = "1px solid #000"; 
-          cell2.style.border = "1px solid #000"; 
-          cell1.innerHTML = data[i].dataPoints[j].y;
-          cell2.innerHTML = data[i].dataPoints[j].label; 
+          // cell1.style.border = "1px solid #000"; 
+          // cell2.style.border = "1px solid #000"; 
+          cell1.innerHTML = data[i].dataPoints[j].label;
+          cell2.innerHTML = data[i].dataPoints[j].y; 
         }
       }    
-      document.getElementById("chartContainer").innerHTML = "<h1>"+rain_fall_type+" "+year+"</h2>";
+      // document.getElementById("chartContainer").innerHTML = "<h1>"+rain_fall_type+" "+year+"</h2>";
       document.getElementById("chartContainer").appendChild(table);
   }
 }

@@ -18,10 +18,10 @@ export class AgricultureComponent implements OnInit {
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
-
   // title:string;
   title = ""
- 
+  butDisabled: boolean = false;
+
    
   htmlContent:string;
   Districts = Districts;
@@ -30,8 +30,19 @@ export class AgricultureComponent implements OnInit {
   years = [2016, 2017];
   views = ["Graph", "Trend Line","Map View","Table"];
   rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-  Comparison = ["None","Bihar vs District"]
-  data = {};
+    Comparison = ["None","Bihar vs District"]
+    data: any = {};    
+    toNumber(d) {
+    if (d == "All") {
+      this.data == {years: null, views: "",Comparison: ""};
+      this.data.Comparison  = undefined
+      this.butDisabled = true;
+
+    } else {
+      this.butDisabled = false;
+    }
+    
+    }
   onSubmit(user) {
     if (user.view == "Graph") {
       this.visbile_chart= true;
@@ -92,6 +103,7 @@ export class AgricultureComponent implements OnInit {
   //   console.log(echamparan); 
   // }
   ngOnInit() {
+    
     // this.SvgService.barchart("wchamparan");
     // this.SvgService.svg();
   }

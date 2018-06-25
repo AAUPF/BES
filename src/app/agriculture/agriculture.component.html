@@ -17,7 +17,7 @@
               <div class="contactSelect">
                 <form #f="ngForm" (ngSubmit)="onSubmit(data)">
                 <div class="col-sm-2">
-                    <select  class='select-option' required [(ngModel)]='data.districts' name="districts">
+                    <select  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toNumber(data.districts)">
                         <option [ngValue]="undefined" disabled  selected> District  </option>
                         <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                     </select>
@@ -45,14 +45,14 @@
                     </div>
 
                     <div class="col-sm-2">
-                            <select class='select-option' required [(ngModel)]='data.Comparison' name="Comparison">
+                            <select class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
                                 <option [ngValue]="undefined" disabled  selected> Comparison  </option>
                                 <option class='option' *ngFor='let option of Comparison' [ngValue]="option">{{option}}</option>
                             </select>
                         </div>
                 <div class="col-sm-2">
                         <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
-                        <button type="submit" [disabled]="!f.valid" class="btn btn-primary">Submit</button>
+                        <button type="submit" [disabled]="!f.valid" class="btn">Submit</button>
                     </div>
                 </form>
                     <div style="clear: both;"> </div>			
@@ -71,7 +71,7 @@
                         </div>
                     </div> -->
                     <div *ngIf="visbile">
-                            <h2>{{title}}</h2>
+                          
                         <app-svgcomponent ></app-svgcomponent>
                     </div>
                    
