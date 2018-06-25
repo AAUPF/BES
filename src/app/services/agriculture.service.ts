@@ -46,7 +46,7 @@ export class AgricultureService {
     this.http.get(url).
       subscribe(res => {
         this.j = res;
-         console.log(res);
+         console.log(this.j[0]);
         let chart = new CanvasJS.Chart("chartContainer", {
           animationEnabled: true,
           exportEnabled: true,
@@ -56,8 +56,18 @@ export class AgricultureService {
           data: [{
             type: "line",
             dataPoints: 
-            this.j
-          }]
+           [{y:this.j[0].y, label: this.j[0].label, x:0}]
+          },
+          {
+            type: "line",
+            dataPoints: 
+            [{y:this.j[1].y, label: this.j[1].label, x:1}]
+
+
+            // [{label:this.j[1].label , y:this.j[1].y }]
+          }
+        
+        ]
         });
         chart.render();
         }

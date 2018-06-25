@@ -13,10 +13,13 @@
     .fil1 {fill:transparent;}
     .fil0 {fill:white; cursor: pointer; }
 	.fil0:hover {fill:#ac2b5f; cursor: pointer; color: #fff; transition: 0.4s; }
-   .Yellow {fill: #ffd900}
-   .Orange {fill: #ff8400}
-   .Green {fill: #619900}
-   .Red {fill: #ff2600}
+     .Red {fill: #ff2600;}
+     .Orange {fill: #ff8400;}
+     .Yellow {fill: #ffd900;}
+     .Dark_Green {fill: #006100}
+     .Green {fill: #619900}
+     .light_green {fill: #c5db00}
+     .Lighter_green {fill: #dcf500}
 
    
 
