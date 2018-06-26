@@ -273,7 +273,6 @@ section {
     border-radius: 4px;
     letter-spacing: 1px;
     height: 36px;
-    margin-top: 5px;
     font-size: 12px !important;
     padding: 5px 15px !important;
 }
@@ -1581,6 +1580,32 @@ a.link:hover {
 	overflow-y: visible;
 	display: block;
 }
+
+object { height: 300px;; }
+
+.btn-primary1 {
+	background-color: #2196f3 !important; 
+    transition: all 0.3s ease-in-out !important; 
+    height: 25px !important; 
+    padding: 0px 7px !important; 
+    font-size: 10px  !important; 
+    margin-top: 5px !important; 
+    float: right !important; 
+    margin-right: 5px !important; 
+}
+	 
+select {
+    margin: 0px auto !important; 
+    width: 19% !important;
+    border: 1px solid #2c98f0 !important; 
+    height: 25px !important;
+	background: #fff !important;
+    color: #000 !important;
+    display: inline-block !important;
+    font-size: 8px !important;
+	padding: 0px !important;
+	margin-right: 3px !important;
+}	
 }
  @media (min-width: 768px) {
 .navbar-nav {
@@ -6799,14 +6824,14 @@ body.rtl .checkbox .pull-right.link {
 
 
 select {
-    margin: 0px auto;
-    width: 100%;
+    margin: 5px auto 0;
+    width: 15%;
     border: 1px solid #2c98f0;
     height: 36px;
-    background: #2c98f0;
-    color: #fff;
-    display: block;
-    margin-top: 5px;
+	background: #fff;
+    color: #000;
+    display: inline-block;
+	margin-right: 15px;
 }
 
 /* The Modal (background) */
@@ -6895,8 +6920,8 @@ select {
 
 table { width: 100%; border-collapse: collapse; line-height: 18px !important; } /* Zebra striping */ tr:nth-of-type(odd) { background: #eee; } th { background: #333; color: white; font-weight: bold; } td, th { padding: 6px !important; list-style: 10px !important; border: 1px solid #ccc; text-align: left; } td strong { color: #000; } 
 
-.btn.disabled, .btn[disabled], fieldset[disabled] .btn { background: #2c98f0;
+/* .btn.disabled, .btn[disabled], fieldset[disabled] .btn { background: #2c98f0;
     height: 38px;
     margin-top: 5px;
     font-size: 12px;
-    padding: 6px 15px; opacity: 100 ; cursor: pointer; }
+    padding: 6px 15px; opacity: 100 ; cursor: pointer; } */
