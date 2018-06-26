@@ -51,6 +51,17 @@ export class SvgService {
     let de = svgDoc.querySelectorAll(".fil0");
     let red:any
     red = "Red"
+
+    var i;
+    // // for (i = 0; i < de.length; i++) {
+    // //     x[i].classList.remove(yellow);
+    // // }
+  
+    for (i = 0; i < de.length; i++) {
+       console.log(de[i].classList.item(0)); 
+      // console.log(i);
+       de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","light_green","Lighter_green");
+    }
     this.color_map(de,red)
 
 

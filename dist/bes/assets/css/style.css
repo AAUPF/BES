@@ -1605,7 +1605,32 @@ select {
     font-size: 8px !important;
 	padding: 0px !important;
 	margin-right: 2px !important;
-}	
+}
+
+.fil-box {
+    width: 90% !important;
+    color: #000 !important;
+    font-size: 10px !important;
+    position: absolute  !important;
+    background: #fff  !important;
+    right: 17px  !important;
+    top: -61px  !important;
+} 
+
+
+.fil-box div {
+    line-height: 10px  !important;
+    display: inline-flex  !important;
+    margin-right: 10px  !important;
+}
+
+.dot {
+    height: 10px  !important;
+    width: 10px  !important;
+    border-radius: 50% !important;
+    display: inline-block  !important;
+    margin-right: 5px  !important;
+}
 }
  @media (min-width: 768px) {
 .navbar-nav {
@@ -6894,7 +6919,7 @@ select {
 	   position: absolute;
 	   background: #fff;
 	   right: 17px;
-	   top: -166px;
+	   top: -215px;
 	}
 	
 	.fil-box div { line-height: 20px; display: inline-flex; }
