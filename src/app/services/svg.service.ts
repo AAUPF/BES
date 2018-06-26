@@ -46,7 +46,13 @@ export class SvgService {
 
   map_bihar_vs_districts(l) {
 
-    alert(l)
+    let map = document.getElementById("biharsvg") as HTMLObjectElement;
+    let svgDoc = map.contentDocument; // should be fine
+    let de = svgDoc.querySelectorAll(".fil0");
+    let red:any
+    red = "Red"
+    this.color_map(de,red)
+
 
   }
 
