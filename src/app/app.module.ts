@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgricultureComponent } from './agriculture/agriculture.component';
 import { ModalComponent } from './modal/modal.component';
 import { SvgcomponentComponent } from './svgcomponent/svgcomponent.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,8 @@ import { SvgcomponentComponent } from './svgcomponent/svgcomponent.component';
     FormsModule,    
     RouterModule.forRoot(appRoutes),
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import { AgricultureService } from '../services/agriculture.service';
 import { Districts } from '../data/districts';
 import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
+import { NgxSpinnerService } from 'ngx-spinner';
 interface years<> {
   id: number;  any
 }
@@ -14,7 +15,7 @@ declare var CanvasJS:any;
   styleUrls: ['./agriculture.component.css']
 })
 export class AgricultureComponent implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService) { 
+  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
@@ -22,7 +23,8 @@ export class AgricultureComponent implements OnInit {
   title = ""
   butDisabled: boolean = false;
 
-   
+  public loading = false;
+
   htmlContent:string;
   Districts = Districts;
   visbile= false;
@@ -76,6 +78,8 @@ export class AgricultureComponent implements OnInit {
     else if(user.view == "Table") {
       this.visbile_chart= true;
       this.visbile= false;
+      this.spinner.show();
+
       this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison);
     }
     else if(user.view == "Map View") {
@@ -85,15 +89,16 @@ export class AgricultureComponent implements OnInit {
       this.visbile= true;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
+      this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
             that.SvgService.svg();
             var u = "wchamparan";
-            that.SvgService.test(u,user.view,user.rain_fall_type,user.years,user.districts);
+            that.SvgService.test(u,user.view,user.rain_fall_type,user.years,user.districts); 
       }, 500);
       // this.SvgService.svg();
+      
     }
-    console.log(user);
   }     
   // test(a) {
   //   let map = document.getElementById("biharsvg") as HTMLObjectElement;
@@ -102,10 +107,10 @@ export class AgricultureComponent implements OnInit {
   //   echamparan.classList.add("mystyle");
   //   console.log(echamparan); 
   // }
+
   ngOnInit() {
     
-    // this.SvgService.barchart("wchamparan");
-    // this.SvgService.svg();
+
   }
 
 }

@@ -3,29 +3,33 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Districts } from '../data/districts';
 import { iif } from 'rxjs';
 import { environment } from '../../environments/environment';
+import { LoadingModule } from 'ngx-loading';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 declare var CanvasJS:any;
 @Injectable({
   providedIn: 'root'
 })
 export class SvgService {
-  constructor(private http: HttpClient) { }
+  public loading = false;
+
+  constructor(private http: HttpClient,private spinner: NgxSpinnerService) { }
   // private apiRoot: string = "http://localhost:3000/static_pages/help";
   // private apiRoot1: string = "http://localhost:3000/rainfalls";
   private apiRoot1: string = "http://bihar.aaupf.org//rainfalls";
   apiRoot: string = environment.apiUrl;
 
-  test(a,views,rain_fall_type,year,districts) {
-    let url = `${this.apiRoot}/rainfalls/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;    
-  console.log(url);
-    // title;
 
-    console.log(a);
-    
+ 
+  test(a,views,rain_fall_type,year,districts) {
+    let url = `${this.apiRoot}/rainfalls/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;   
+    // title;
+    console.log(this.loading);
     var title = rain_fall_type;
     this.http.get(url).
     subscribe(res => {
       this.j = res;
-
+      this.spinner.hide();
       if (districts == "All") {
         this.map_districts(this.j) 
         
@@ -343,6 +347,8 @@ console.log(url);
         ]
       });
       this.createTable(chart,rain_fall_type,year);
+      this.spinner.hide();
+
       }
    ); 
 

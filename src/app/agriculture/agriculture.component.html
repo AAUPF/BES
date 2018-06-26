@@ -37,7 +37,7 @@
                             <option class='option' *ngFor='let option of views' [ngValue]="option">{{option}}</option>
                         </select>
                     </div>
-                <div class="col-sm-2">
+                  <div class="col-sm-2">
                         <select class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
                             <option [ngValue]="undefined" disabled  selected> Rain Fall Type  </option>
                             <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option">{{option}}</option>
@@ -70,6 +70,7 @@
                         <div><span class="dot dark-green"></span>3.9% or lower</div>
                         </div>
                     </div> -->
+                    <ngx-spinner></ngx-spinner>
                     <div *ngIf="visbile">
                           
                         <app-svgcomponent ></app-svgcomponent>
