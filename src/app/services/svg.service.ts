@@ -260,13 +260,23 @@ export class SvgService {
      de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","light_green","Lighter_yellow");
   }
 
-  this.color_map(x,red)
-  this.color_map(y,orange)
-  this.color_map(w,yellow)
-  this.color_map(z,light_green)
-  this.color_map(e,Lighter_yellow)
-  this.color_map(f,green) 
-  this.color_map(g,dark_green) 
+  // this.color_map(x,red)
+  // this.color_map(y,orange)
+  // this.color_map(w,yellow)
+  // this.color_map(z,light_green)
+  // this.color_map(e,Lighter_yellow)
+  // this.color_map(f,green) 
+  // this.color_map(g,dark_green) 
+
+
+
+  this.color_map(x,dark_green)
+  this.color_map(y,green)
+  this.color_map(w,light_green)
+  this.color_map(z,Lighter_yellow)
+  this.color_map(e,yellow)
+  this.color_map(f,orange) 
+  this.color_map(g,red) 
 
 
 
@@ -283,26 +293,45 @@ color_map(x,color) {
 
 }
 
- svg() {
+ svg(z,views,rain_fall_type,year,districts) {
   const that = this;
   console.log("Test");
   let a = document.getElementById("biharsvg")  as HTMLObjectElement;
       var svgDoc = a.contentDocument;
       var wchamparan = svgDoc.getElementById("wchamparan");
-      let de = document.getElementsByClassName("fil0");
+      let de = svgDoc.getElementsByClassName("fil0");
 
       console.log(de);
 
       var modal = document.getElementById('myModal');
-      var wchamparan1 = svgDoc.getElementById("wchamparan").getAttribute("id");;
+      var wchamparan1 = svgDoc.getElementById("wchamparan").getAttribute("id");
       var span = document.getElementById("close");
+      
       span.onclick = function() {
         modal.style.display = "none";
        }
-      wchamparan.onclick = function() {
-      modal.style.display = "block";  
-      that.barmodal(wchamparan1);
+   
+
+
+    // de.onclick = function(){
+    //   alert("ok");
+    //   var id = de.getElementById(this);
+    //    console.log(id);
+    //  };
+
+    var i;
+    for (i = 0; i < de.length; i++) {
+      var j = de[i].getAttribute("id");
+       console.log(j);
+      svgDoc.getElementById(j).onclick = function() {
+          modal.style.display = "block";  
+           var e = this.getAttribute("id")
+          //  document.getElementById("demo").innerHTML = e;
+
+            that.barmodal(e,year,rain_fall_type,views);
+        }
     }
+    
     window.onclick = function(event) {
       if (event.target == modal) {
           modal.style.display = "none";
@@ -401,17 +430,64 @@ console.log(url);
 
 
   }
-  barmodal(abc){
-     if (abc == "wchamparan") {
-      this.barchart(abc)
-     } else {
-       alert("ahhh");
+  barmodal(abc,year,rain_fall_type,views){
+
+    if (abc == "echamparan") {
+      var u = "E. Champaran"
+    } else if(abc == "wchamparan") {
+      var u = "W. Champaran"
+    } else {
+      u = abc
     }
+    var url = `${this.apiRoot}/rainfalls/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
+    this.http.get(url).
+    subscribe(res => {
+      this.j = res;
+      let chart = new CanvasJS.Chart("chartContainer1", {
+        animationEnabled: true,
+        exportEnabled: true,
+        title: {
+          text: abc + " " + rain_fall_type + " " + year
+        },
+        data: [{
+          type: "column",
+          dataPoints: 
+          this.j
+        }]
+      });
+      chart.render();
+      }
+   ); 
+
+
+  //  let url = `${this.apiRoot1}/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+views;
+  //  console.log(url);
+
+  //  this.http.get(url).
+  //    subscribe(res => {
+  //      this.j = res;
+  //      console.log(this.j);
+  //      let chart = new CanvasJS.Chart("chartContainer1", {
+  //        animationEnabled: true,
+  //        exportEnabled: true,
+  //        title: {
+  //          text: rain_fall_type+" " +year
+  //        },
+  //        data: [{
+  //          type: "column",
+  //          dataPoints: 
+  //          this.j
+  //        }]
+  //      });
+  //      chart.render();
+  //      }
+  //   ); 
+
     // let chart = new CanvasJS.Chart("chartContainer1", {
     //   animationEnabled: true,
     //   exportEnabled: true,
     //   title: {
-    //     text: "Basic Column Chart in Angular"
+    //     text: abc
     //   },
     //   data: [{
     //     type: "column",

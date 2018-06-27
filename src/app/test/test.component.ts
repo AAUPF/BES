@@ -37,6 +37,6 @@ export class TestComponent implements OnInit {
   }
   ngOnInit() {
     // this.SvgService.barchart();
-     this.SvgService.svg();
+    //  this.SvgService.svg();
 }
 }

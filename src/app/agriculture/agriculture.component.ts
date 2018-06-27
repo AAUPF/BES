@@ -92,7 +92,7 @@ export class AgricultureComponent implements OnInit {
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
-            that.SvgService.svg();
+            that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts);
             var u = "wchamparan";
             that.SvgService.test(u,user.view,user.rain_fall_type,user.years,user.districts); 
       }, 500);
