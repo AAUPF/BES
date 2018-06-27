@@ -12,7 +12,7 @@
     .fil9 {fill:none}
     .fil1 {fill:transparent;}
     .fil0 {fill:white; cursor: pointer; }
-	.fil0:hover {fill:#ac2b5f; cursor: pointer; color: #fff; transition: 0.4s; }
+	  .fil0:hover {fill:#ffffff; cursor: pointer; color: #fff; transition: 0.4s; }
      .Red {fill: #ff2600;}
      .Orange {fill: #ff8400;}
      .Yellow {fill: #ffd900;}
