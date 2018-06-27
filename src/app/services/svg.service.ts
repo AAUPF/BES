@@ -68,7 +68,7 @@ export class SvgService {
     for (i = 0; i < de.length; i++) {
        console.log(de[i].classList.item(0)); 
       // console.log(i);
-       de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","light_green","Lighter_green");
+       de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","light_green","Lighter_yellow");
     }
     this.color_map(de,red)
 
