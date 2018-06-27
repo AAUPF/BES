@@ -29,6 +29,10 @@ export class SvgService {
     this.http.get(url).
     subscribe(res => {
       this.j = res;
+      console.log(url);
+      
+      console.log(res);
+      
       this.spinner.hide();
       if (districts == "All") {
         this.map_districts(this.j) 
@@ -37,6 +41,10 @@ export class SvgService {
         this.map_bihar_vs_districts(districts)
       }
        
+       },
+       err => {
+         console.log("Error occured.")
+         this.spinner.hide();
        }
        );
     // District.classList.add("mystyle");
@@ -65,6 +73,20 @@ export class SvgService {
     this.color_map(de,red)
 
 
+    var i;
+    for (i = 0; i < de.length; i++) {
+
+      // console.log(de[i].getAttribute("id") + "Jila");
+      // console.log(l + "Jilas");
+
+      var m =  l.toLowerCase();
+
+        if (de[i].getAttribute("id") == m) {
+          de[i].classList.add("Orange");
+        } else {
+          de[i].classList.add("Red"); 
+        }
+    }
   }
 
   map_districts(l) {
@@ -77,6 +99,7 @@ export class SvgService {
     var dis_z = ""
     var dis_e = ""
     var dis_ex = ""
+    var dis_abov_ext = ""
 
     console.log(l);
     for (var k in l){
@@ -173,6 +196,19 @@ export class SvgService {
               }
             }
           }
+
+          else if (l[k].above_extreme) {
+            for (let index = 0; index < l[k].above_extreme.length; index++) {
+              const element = l[k].above_extreme[index];
+
+              var string:any =  element.label.toLowerCase();
+              if (index == l[k].above_extreme.length- 1) {
+                dis_abov_ext += "#"+string+"";
+              } else {
+                dis_abov_ext += "#"+string+",";
+              }
+            }
+          }
            
            else {
              
@@ -186,6 +222,7 @@ export class SvgService {
   let z = svgDoc.querySelectorAll(dis_z);
   let e = svgDoc.querySelectorAll(dis_e);
   let f = svgDoc.querySelectorAll(dis_ex);
+  let g  = svgDoc.querySelectorAll(dis_abov_ext);
 
 
 
@@ -205,52 +242,41 @@ export class SvgService {
   var dark_green:any
   var green:any
   var light_green:any
-  var Lighter_green:any;
-
-
+  var Lighter_yellow:any;
   red = "Red"
   orange = "Orange"
   yellow = "Yellow"
   dark_green = "Dark_Green"
   green = "Green"
   light_green = "light_green"
-  Lighter_green = "Lighter_green"
-
-
-
-
+  Lighter_yellow = "Lighter_yellow"
   var i;
   // // for (i = 0; i < de.length; i++) {
   // //     x[i].classList.remove(yellow);
   // // }
-
   for (i = 0; i < de.length; i++) {
      console.log(de[i].classList.item(0)); 
     // console.log(i);
-  
-     de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","light_green","Lighter_green");
+     de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","light_green","Lighter_yellow");
   }
 
   this.color_map(x,red)
   this.color_map(y,orange)
   this.color_map(w,yellow)
-  this.color_map(z,dark_green)
-  this.color_map(e,green)
-  this.color_map(f,light_green)
+  this.color_map(z,light_green)
+  this.color_map(e,Lighter_yellow)
+  this.color_map(f,green) 
+  this.color_map(g,dark_green) 
+
 
 
   // this.color_map(y,color)
 
 
 }
-
-
 color_map(x,color) {
-
   // let x = svgDoc.querySelectorAll(dis);
   var i;
-
-
   for (i = 0; i < x.length; i++) {
       x[i].classList.add(color);
   }
@@ -263,6 +289,10 @@ color_map(x,color) {
   let a = document.getElementById("biharsvg")  as HTMLObjectElement;
       var svgDoc = a.contentDocument;
       var wchamparan = svgDoc.getElementById("wchamparan");
+      let de = document.getElementsByClassName("fil0");
+
+      console.log(de);
+
       var modal = document.getElementById('myModal');
       var wchamparan1 = svgDoc.getElementById("wchamparan").getAttribute("id");;
       var span = document.getElementById("close");
