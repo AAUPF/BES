@@ -24,12 +24,12 @@ export class SvgService {
   test(a,views,rain_fall_type,year,districts) {
     let url = `${this.apiRoot}/rainfalls/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;   
     // title;
-    console.log(this.loading);
+    console.log(url);
     var title = rain_fall_type;
     this.http.get(url).
     subscribe(res => {
       this.j = res;
-      f.testy(this,districts,rain_fall_type)      
+      f.testy(this,districts,rain_fall_type,views,year)      
        },
        err => {
          console.log("Error occured.")
@@ -41,14 +41,28 @@ export class SvgService {
   }
 
 
-  map_bihar_vs_districts(l,rain_fall_type) {
+  map_bihar_vs_districts(l,rain_fall_type,views,year) {
+    let url = `${this.apiRoot}/rainfalls/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;  
+    
+    
+    this.http.get(url).
+    subscribe(res => {
+      this.j = res;   
+      f.map_b_vs_d(this,l,rain_fall_type,res)
 
-    f.map_b_vs_d(this,l,rain_fall_type)
+       },
+       err => {
+         console.log("Error occured.")
+         this.spinner.hide();
+       }
+       );
 
   }
+
   map_districts(l) {
     f.map_all(this,l)
-}
+ }
+
 color_map(x,color) {
   // let x = svgDoc.querySelectorAll(dis);
   var i;
@@ -60,7 +74,6 @@ color_map(x,color) {
 
  svg(z,views,rain_fall_type,year,districts) {
   const that = this;
-  console.log("Test");
   let a = document.getElementById("biharsvg")  as HTMLObjectElement;
       var svgDoc = a.contentDocument;
       var wchamparan = svgDoc.getElementById("wchamparan");
@@ -80,7 +93,6 @@ color_map(x,color) {
     var i;
     for (i = 0; i < de.length; i++) {
       var j = de[i].getAttribute("id");
-       console.log(j);
       svgDoc.getElementById(j).onclick = function() {
           modal.style.display = "block";  
            var e = this.getAttribute("id")
