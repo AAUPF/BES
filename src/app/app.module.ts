@@ -14,6 +14,7 @@ import { AgricultureComponent } from './agriculture/agriculture.component';
 import { ModalComponent } from './modal/modal.component';
 import { SvgcomponentComponent } from './svgcomponent/svgcomponent.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { FuncComponent } from './func/func.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AgricultureComponent,
     ModalComponent,
     SvgcomponentComponent,
+    FuncComponent,
   
     ],
   imports: [
