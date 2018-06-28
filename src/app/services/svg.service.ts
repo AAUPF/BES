@@ -73,6 +73,7 @@ color_map(x,color) {
 
 }
 
+
  svg(z,views,rain_fall_type,year,districts) {
   const that = this;
   let a = document.getElementById("biharsvg")  as HTMLObjectElement;

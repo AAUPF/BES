@@ -21,8 +21,6 @@
      .Light_Green {fill: #c5db00}
      .Yellow {fill: #fffa6a}
 
-   
-
 
 	<!-- #wchamparan { fill: #aac2ad; }   -->
 	#wchamparan:hover ~ .wchamparan {/*fill:#ffffff !important; display: block;*/ pointer-events: none; }
