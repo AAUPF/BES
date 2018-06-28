@@ -27,7 +27,7 @@ export const Districts:any = [
     "Nawada",
     "Patna",
     "Purnia",
-    "Rohats",
+    "Rohtas",
     "Saharsa",
     "Samastipur",
     "Saran",
