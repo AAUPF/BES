@@ -5,7 +5,7 @@ import { iif } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { LoadingModule } from 'ngx-loading';
 import { NgxSpinnerService } from 'ngx-spinner';
-import{Functions} from '../data/f'
+import{Functions} from '../data/func'
 // var myValidator = new Functions();
 // declare var CanvasJS:any;
  let f = new Functions()
@@ -39,6 +39,7 @@ export class SvgService {
     // District.classList.add("mystyle");
     // console.log(url);
   }
+
 
 
   map_bihar_vs_districts(l,rain_fall_type,views,year) {
