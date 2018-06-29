@@ -17,12 +17,21 @@ export class Functions {
         red = "Red"
     
         var i;
-       console.log(l);
+    //    console.log(l);
        
+            var bihar_color = ""
+            var dis_color = ""
+           
+                if (l == "W. Champaran") {
+                    var m  = "WChamparan"
 
-var bihar_color = ""
 
-var dis_color = ""
+                } else {
+                    var m:string = l
+                }
+
+        
+
         for (let index = 0; index < res.length; index++) {
             const element = res[index];
             
@@ -34,11 +43,15 @@ var dis_color = ""
                         bihar_color += h.color
                         
                     }
-                    if (h.label == l) {
+
+                     
+
+                    if (h.label == m) {
 
                         dis_color += h.color
                         
                     }
+                   
                
 
 
@@ -49,14 +62,14 @@ var dis_color = ""
             if(element.min){
                 for (let minIndex = 0; minIndex < element.min.length; minIndex++) {
                     const h = element.min[minIndex];
-                    console.log(h);
+                  
                     if (h.label == "Bihar") {
 
                         bihar_color += h.color
                         
                     }
 
-                    if (h.label == l) {
+                    if (h.label == m) {
 
                         dis_color += h.color
                         
@@ -67,14 +80,14 @@ var dis_color = ""
             if(element.blow_max){
                 for (let minIndex = 0; minIndex < element.blow_max.length; minIndex++) {
                     const h = element.blow_max[minIndex];
-                    console.log(h);
+                  
                     if (h.label == "Bihar") {
 
                         bihar_color += h.color
                         
                     }
 
-                    if (h.label == l) {
+                    if (h.label == m) {
 
                         dis_color += h.color
                         
@@ -85,14 +98,14 @@ var dis_color = ""
             if(element.max){
                 for (let minIndex = 0; minIndex < element.max.length; minIndex++) {
                     const h = element.max[minIndex];
-                    console.log(h);
+                  
                     if (h.label == "Bihar") {
 
                         bihar_color += h.color
                         
                     }
 
-                    if (h.label == l) {
+                    if (h.label == m) {
 
                         dis_color += h.color
                         
@@ -105,14 +118,14 @@ var dis_color = ""
             if(element.above_max){
                 for (let minIndex = 0; minIndex < element.above_max.length; minIndex++) {
                     const h = element.above_max[minIndex];
-                    console.log(h);
+                   
                     if (h.label == "Bihar") {
 
                         bihar_color += h.color
                         
                     }
 
-                    if (h.label == l) {
+                    if (h.label == m) {
 
                         dis_color += h.color
                         
@@ -123,13 +136,13 @@ var dis_color = ""
             if(element.extreme){
                 for (let minIndex = 0; minIndex < element.extreme.length; minIndex++) {
                     const h = element.extreme[minIndex];
-                    console.log(h);
+                   
                     if (h.label == "Bihar") {
 
                         bihar_color += h.color
                         
                     } 
-                    if (h.label == l) {
+                    if (h.label == m) {
 
                         dis_color += h.color
                         
@@ -148,7 +161,7 @@ var dis_color = ""
                         
                     }
 
-                    if (h.label == l) {
+                    if (h.label == m) {
 
                         dis_color += h.color
                         
@@ -158,15 +171,15 @@ var dis_color = ""
 
             
         }
-      console.log(bihar_color+ "Bihar color");
+      console.log(dis_color+ "Dis color");
       
         for (i = 0; i < de.length; i++) {
-           console.log(de[i].classList.item(0)); 
+        //    console.log(de[i].classList.item(0)); 
           // console.log(i);
 
            de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","Light_Green","Dark_Yellow");
         }
-        that.color_map(de,red)
+        // that.color_map(de,red)
     
         this.map_change_color_condition(rain_fall_type,de,l,bihar_color,dis_color)
     
@@ -180,9 +193,20 @@ var dis_color = ""
         var i;
         for (i = 0; i < de.length; i++) {
         // console.log(de[i].getAttribute("id") + "Jila");
-        var m =  l.toLowerCase();
+        // var m =  l.toLowerCase();
 
-        console.log(dis_color + bihar_color);
+        console.log(dis_color + "COlor of Wchamparan");
+
+        if (l == "W. Champaran") {
+            var m:string = "wchamparan";
+          } else {
+            var m:string =  l.toLowerCase();
+          }
+
+
+          
+        //   console.log(dis_color);
+          
 
         if (de[i].getAttribute("id") == m) {
             de[i].classList.add(dis_color);
@@ -190,31 +214,12 @@ var dis_color = ""
             de[i].classList.add(bihar_color); 
             }  
         
-        // if (l == m) {
-        //     if (de[i].getAttribute("id") == m) {
-        //     de[i].classList.add("Yellow");
-        //     } else {
 
-        //     de[i].classList.add("light_green"); 
-        //     }
-            
-        // } else {
-
-        //     if (de[i].getAttribute("id") == m) {
-        //     de[i].classList.add(dis_color);
-        //     } else {
-        //     de[i].classList.add(bihar_color); 
-        //     }  
-        // }
         }
-
 
   }
 
-
-
     map_all(that,l){
-
 
         let map = document.getElementById("biharsvg") as HTMLObjectElement;
         let svgDoc = map.contentDocument; // should be fine
