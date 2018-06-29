@@ -163,7 +163,8 @@ var dis_color = ""
         for (i = 0; i < de.length; i++) {
            console.log(de[i].classList.item(0)); 
           // console.log(i);
-           de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","light_green","Dark_Yellow");
+
+           de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","Light_Green","Dark_Yellow");
         }
         that.color_map(de,red)
     
@@ -180,21 +181,31 @@ var dis_color = ""
         for (i = 0; i < de.length; i++) {
         // console.log(de[i].getAttribute("id") + "Jila");
         var m =  l.toLowerCase();
-        if (l == m) {
-            if (de[i].getAttribute("id") == m) {
-            de[i].classList.add("Yellow");
-            } else {
-            de[i].classList.add("light_green"); 
-            }
-            
-        } else {
 
-            if (de[i].getAttribute("id") == m) {
+        console.log(dis_color + bihar_color);
+
+        if (de[i].getAttribute("id") == m) {
             de[i].classList.add(dis_color);
             } else {
             de[i].classList.add(bihar_color); 
             }  
-        }
+        
+        // if (l == m) {
+        //     if (de[i].getAttribute("id") == m) {
+        //     de[i].classList.add("Yellow");
+        //     } else {
+
+        //     de[i].classList.add("light_green"); 
+        //     }
+            
+        // } else {
+
+        //     if (de[i].getAttribute("id") == m) {
+        //     de[i].classList.add(dis_color);
+        //     } else {
+        //     de[i].classList.add(bihar_color); 
+        //     }  
+        // }
         }
 
 
@@ -386,7 +397,7 @@ var dis_color = ""
       for (i = 0; i < de.length; i++) {
          console.log(de[i].classList.item(0)); 
         // console.log(i);
-         de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","light_green","Dark_Yellow");
+         de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","Light_Green","Dark_Yellow");
       }
     
 
