@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="90%" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 297 210" transform="rotate(-8 -300 -150)">
  <defs>
   <style type="text/css">
-   
     .clr {fill:#87CEFA}
     .neg {fill:#d32b2a}
     .pos {fill:#b4d051}
@@ -20,7 +19,6 @@
      .Green {fill: #619900}
      .Light_Green {fill: #c5db00}
      .Yellow {fill: #fffa6a}
-
 
 	<!-- #wchamparan { fill: #aac2ad; }   -->
 	#wchamparan:hover ~ .wchamparan {/*fill:#ffffff !important; display: block;*/ pointer-events: none; }

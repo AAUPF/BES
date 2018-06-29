@@ -1,21 +1,189 @@
 export class Functions {
-    testy(the,districts,rain_fall_type,views,year) {
+    testy(the,districts,rain_fall_type,views,year,Comparison,res) {
         the.spinner.hide();
         if (districts == "All") {
           the.map_districts(the.j) 
-          
         } else {
-          the.map_bihar_vs_districts(districts,rain_fall_type,views,year)
+
+            if (Comparison == "None") {
+              this.map_none (districts,rain_fall_type,res)
+            } else {
+                the.map_bihar_vs_districts(districts,rain_fall_type,views,year)
+            }
         }
-    
     }
+
+ 
+            map_none (l,rain_fall_type,res) {
+                let map = document.getElementById("biharsvg") as HTMLObjectElement;
+                let svgDoc = map.contentDocument; // should be fine
+                let de = svgDoc.querySelectorAll(".fil0");
+                let red:any
+                red = "Red"
+                var i;
+               console.log(l);
+               
+                    var bihar_color = ""
+                    var dis_color = ""
+                   
+                        if (l == "W. Champaran") {
+                            var m  = "WChamparan"
+        
+                        } else if(l == "E. Champaran") {
+        
+                            var m  = "EChamparan"
+        
+                        } else {
+                            var m:string = l
+                        }
+                for (let index = 0; index < res.length; index++) {
+                    const element = res[index];
+                    if(element.below_min){
+                        for (let minIndex = 0; minIndex < element.below_min.length; minIndex++) {
+                            const h = element.below_min[minIndex];
+                            if (h.label == "Bihar") {
+                                bihar_color += h.color   
+                            }
+                            if (h.label == m) {
+                                dis_color += h.color     
+                            }
+                        }
+                    }
+                    if(element.min){
+                        for (let minIndex = 0; minIndex < element.min.length; minIndex++) {
+                            const h = element.min[minIndex];
+                          
+                            if (h.label == "Bihar") {
+        
+                                bihar_color += h.color
+                                
+                            }
+        
+                            if (h.label == m) {
+        
+                                dis_color += h.color
+                                
+                            }
+                        }
+                    }
+        
+                    if(element.blow_max){
+                        for (let minIndex = 0; minIndex < element.blow_max.length; minIndex++) {
+                            const h = element.blow_max[minIndex];
+                          
+                            if (h.label == "Bihar") {
+        
+                                bihar_color += h.color
+                                
+                            }
+        
+                            if (h.label == m) {
+        
+                                dis_color += h.color
+                                
+                            }
+                        }
+                    }
+        
+                    if(element.max){
+                        for (let minIndex = 0; minIndex < element.max.length; minIndex++) {
+                            const h = element.max[minIndex];
+                          
+                            if (h.label == "Bihar") {
+        
+                                bihar_color += h.color
+                                
+                            }
+        
+                            if (h.label == m) {
+        
+                                dis_color += h.color
+                                
+                            }
+                        }
+                    }
+        
+        
+        
+                    if(element.above_max){
+                        for (let minIndex = 0; minIndex < element.above_max.length; minIndex++) {
+                            const h = element.above_max[minIndex];
+                           
+                            if (h.label == "Bihar") {
+        
+                                bihar_color += h.color
+                                
+                            }
+        
+                            if (h.label == m) {
+        
+                                dis_color += h.color
+                                
+                            }
+                        }
+                    }
+        
+                    if(element.extreme){
+                        for (let minIndex = 0; minIndex < element.extreme.length; minIndex++) {
+                            const h = element.extreme[minIndex];
+                           
+                            if (h.label == "Bihar") {
+        
+                                bihar_color += h.color
+                                
+                            } 
+                            if (h.label == m) {
+        
+                                dis_color += h.color
+                                
+                            }
+                        }
+                    }
+        
+        
+                    if(element.above_extreme){
+                        for (let minIndex = 0; minIndex < element.above_extreme.length; minIndex++) {
+                            const h = element.above_extreme[minIndex];
+                            console.log(h);
+                            if (h.label == "Bihar") {
+        
+                                bihar_color += h.color
+                                
+                            }
+        
+                            if (h.label == m) {
+        
+                                dis_color += h.color
+                                
+                            }
+                        }
+                    }
+        
+                    
+                }
+              console.log(dis_color+ "Dis color");
+              
+                for (i = 0; i < de.length; i++) {
+                //    console.log(de[i].classList.item(0)); 
+                  // console.log(i);
+        
+                   de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","Light_Green","Dark_Yellow");
+                }
+                // that.color_map(de,red)
+
+                var bihar_color1 = "fil0"
+            
+                this.map_change_color_condition(rain_fall_type,de,l,bihar_color1,dis_color)
+               
+            }
+
+
     map_b_vs_d(that,l,rain_fall_type,res){
         let map = document.getElementById("biharsvg") as HTMLObjectElement;
         let svgDoc = map.contentDocument; // should be fine
         let de = svgDoc.querySelectorAll(".fil0");
         let red:any
         red = "Red"
-    
         var i;
     //    console.log(l);
        
@@ -25,40 +193,26 @@ export class Functions {
                 if (l == "W. Champaran") {
                     var m  = "WChamparan"
 
+                } else if(l == "E. Champaran") {
+
+                    var m  = "EChamparan"
 
                 } else {
                     var m:string = l
                 }
-
-        
-
         for (let index = 0; index < res.length; index++) {
             const element = res[index];
-            
             if(element.below_min){
                 for (let minIndex = 0; minIndex < element.below_min.length; minIndex++) {
                     const h = element.below_min[minIndex];
                     if (h.label == "Bihar") {
-
-                        bihar_color += h.color
-                        
+                        bihar_color += h.color   
                     }
-
-                     
-
                     if (h.label == m) {
-
-                        dis_color += h.color
-                        
+                        dis_color += h.color     
                     }
-                   
-               
-
-
                 }
             }
-
-
             if(element.min){
                 for (let minIndex = 0; minIndex < element.min.length; minIndex++) {
                     const h = element.min[minIndex];
@@ -185,26 +339,24 @@ export class Functions {
     
     }
 
-
-
-
-
   map_change_color_condition(rain_fall_type,de,l,bihar_color,dis_color) {
         var i;
         for (i = 0; i < de.length; i++) {
         // console.log(de[i].getAttribute("id") + "Jila");
         // var m =  l.toLowerCase();
 
-        console.log(dis_color + "COlor of Wchamparan");
+        console.log(bihar_color + "COlor of Wchamparan");
 
         if (l == "W. Champaran") {
             var m:string = "wchamparan";
-          } else {
+          } 
+          else if ( l == "E. Champaran"){
+            var m:string = "echamparan";
+          }
+          
+          else {
             var m:string =  l.toLowerCase();
           }
-
-
-          
         //   console.log(dis_color);
           
 
@@ -213,12 +365,8 @@ export class Functions {
             } else {
             de[i].classList.add(bihar_color); 
             }  
-        
-
         }
-
   }
-
     map_all(that,l){
 
         let map = document.getElementById("biharsvg") as HTMLObjectElement;

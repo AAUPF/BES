@@ -21,7 +21,7 @@ export class SvgService {
   private apiRoot1: string = "http://bihar.aaupf.org/rainfalls";
   apiRoot: string = environment.apiUrl;
 
-  test(a,views,rain_fall_type,year,districts) {
+  test(a,views,rain_fall_type,year,districts,Comparison) {
     let url = `${this.apiRoot}/rainfalls/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;   
     // title;
     console.log(url);
@@ -29,7 +29,7 @@ export class SvgService {
     this.http.get(url).
     subscribe(res => {
       this.j = res;
-      f.testy(this,districts,rain_fall_type,views,year)      
+      f.testy(this,districts,rain_fall_type,views,year,Comparison,res)      
        },
        err => {
          console.log("Error occured.")
@@ -44,8 +44,6 @@ export class SvgService {
 
   map_bihar_vs_districts(l,rain_fall_type,views,year) {
     let url = `${this.apiRoot}/rainfalls/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;  
-    
-    
     this.http.get(url).
     subscribe(res => {
       this.j = res;   
