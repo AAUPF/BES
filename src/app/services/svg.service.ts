@@ -152,38 +152,82 @@ svg1() {
     chart.render();
   }
 trend_line(data,year,rain_fall_type) {
-  let url = `${this.apiRoot}/rainfalls/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
+  // let url = `${this.apiRoot}/rainfalls/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
+  // // let url = `${this.apiRoot}`;
+  //   console.log(url);
+  // this.http.get(url).
+  //   subscribe(res => {
+  //     this.j = res;
+  //      console.log(res);
+  //     let chart = new CanvasJS.Chart("chartContainer", {
+  //       animationEnabled: true,
+  //       exportEnabled: true,
+  //       title: {
+  //         text: rain_fall_type+" "+year
+  //       },
+  //       data: [{
+  //         type: "line",
+  //         dataPoints: 
+  //         this.j
+  //       }]
+  //     });
+  //     chart.render();
+  //     }
+  //  ); 
+
+
+  let url = `${this.apiRoot}/rainfalls/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+'&views=Trend Line';
   // let url = `${this.apiRoot}`;
     console.log(url);
   this.http.get(url).
     subscribe(res => {
-      this.j = res;
-       console.log(res);
-      let chart = new CanvasJS.Chart("chartContainer", {
-        animationEnabled: true,
-        exportEnabled: true,
-        title: {
-          text: rain_fall_type+" "+year
-        },
-        data: [{
-          type: "line",
-          dataPoints: 
-          this.j
-        }]
-      });
-      chart.render();
+
+      if (rain_fall_type == "All") {
+        this.j = res;
+        let chart1 = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          exportEnabled: true,
+          title: {
+            text: rain_fall_type+" "+year
+          },
+          data: this.j
+        });
+
+        
+        chart1.render();
+        // alert("error")
+
+      } else {
+
+        this.j = res;
+        console.log(res);
+       let chart = new CanvasJS.Chart("chartContainer", {
+         animationEnabled: true,
+         exportEnabled: true,
+         title: {
+           text: rain_fall_type+" "+year
+         },
+         data: [{
+           type: "line",
+           dataPoints: 
+           this.j
+         }]
+       });
+        chart.render();
+
       }
-   ); 
+      }
+   );
 }
   table(year,district,rain_fall_type,compare){
 
     let url = `${this.apiRoot}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
-console.log(url);
+    console.log(rain_fall_type);
 
     this.http.get(url).
     subscribe(res => {
       this.j = res;
-       console.log(res);
+      //  console.log(res);
        var chart = new CanvasJS.Chart("chartContainer", {
         data: [
         {
@@ -192,8 +236,18 @@ console.log(url);
         }					
         ]
       });
-      this.createTable(chart,rain_fall_type,year);
-      this.spinner.hide();
+
+      if (rain_fall_type == "All") {
+        alert("error")        
+
+        this.createTableall(this.j,rain_fall_type,year);
+
+        this.spinner.hide();
+      } else {
+        this.createTable(chart,rain_fall_type,year);
+        this.spinner.hide();
+      }
+      
 
       }
    ); 
@@ -226,6 +280,7 @@ console.log(url);
         }]
       });
       chart.render();
+      
       }
    ); 
 
@@ -304,21 +359,41 @@ console.log(url);
       console.log(url);
     this.http.get(url).
       subscribe(res => {
-        this.j = res;
-         console.log(res);
-        let chart = new CanvasJS.Chart("chartContainer", {
-          animationEnabled: true,
-          exportEnabled: true,
-          title: {
-            text: rain_fall_type+" "+year
-          },
-          data: [{
-            type: "column",
-            dataPoints: 
-            this.j
-          }]
-        });
-        chart.render();
+
+        if (rain_fall_type == "All") {
+          this.j = res;
+          let chart1 = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            exportEnabled: true,
+            title: {
+              text: rain_fall_type+" "+year
+            },
+            data: this.j
+          });
+
+          
+          chart1.render();
+          // alert("error")
+
+        } else {
+
+          this.j = res;
+          console.log(res);
+         let chart = new CanvasJS.Chart("chartContainer", {
+           animationEnabled: true,
+           exportEnabled: true,
+           title: {
+             text: rain_fall_type+" "+year
+           },
+           data: [{
+             type: "column",
+             dataPoints: 
+             this.j
+           }]
+         });
+          chart.render();
+
+        }
         }
      ); 
   }
@@ -359,7 +434,7 @@ console.log(url);
       cell2.innerHTML = "<b>Value</b>"; 
       for(var i = 0; i < data.length; i++){
         for(var j = 0; j< data[i].dataPoints.length; j++){
-          console.log(data[i].dataPoints[j]);
+          // console.log(data[i].dataPoints[j]);
           // console.log(data[i].dataPoints[j].label);
 
           
@@ -375,4 +450,61 @@ console.log(url);
       // document.getElementById("chartContainer").innerHTML = "<h1>"+rain_fall_type+" "+year+"</h2>";
       document.getElementById("chartContainer").appendChild(table);
   }
+
+
+  createTableall(chart,rain_fall_type,year){
+    var table = document.createElement("TABLE")  as HTMLTableElement;    
+    var row,header,cell1, cell2;
+    var data = chart;
+    console.log(data);
+    
+    // table.style.border = "1px solid #000"; 
+    header = table.createTHead();
+    row = header.insertRow(0);
+    table.setAttribute("id", "myId");    
+    cell1 = row.insertCell(0);
+    cell2 = row.insertCell(1);
+    // cell1.style.border = "1px solid #000"; 
+    // cell2.style.border = "1px solid #000"; 
+    cell1.innerHTML = "<b>Districts</b>"; 
+    cell2.innerHTML = "<b>Value</b>"; 
+
+
+    for (let index = 0; index < data.length; index++) {
+      var element = data[index];
+      console.log(element);
+
+
+      for (let index = 0; index < element.dataPoints.length; index++) {
+        var g = element.dataPoints[index];
+
+        console.log(g);
+        
+        
+      }
+      
+    }
+    // for(var i = 0; i < data.length; i++){
+    //   for(var j = 0; j< data[i].dataPoints.length; j++){
+    //     // console.log(data[i].dataPoints[j]);
+    //     // console.log(data[i].dataPoints[j].label);
+
+    //     for (let index = 0; index < data[i].dataPoints[j].dataPoints.length; index++) {
+    //       const element = data[i].dataPoints[j].dataPoints[index];
+    //       console.log(element);
+
+    //       row = table.insertRow(1);
+    //       cell1 = row.insertCell(0);
+    //       cell2 = row.insertCell(1);
+    //       // cell1.style.border = "1px solid #000"; 
+    //       // cell2.style.border = "1px solid #000"; 
+    //       cell1.innerHTML = element.label;
+    //       cell2.innerHTML = element.y; 
+    //     }
+    
+    //   }
+    // }    
+    // document.getElementById("chartContainer").innerHTML = "<h1>"+rain_fall_type+" "+year+"</h2>";
+    document.getElementById("chartContainer").appendChild(table);
+}
 }

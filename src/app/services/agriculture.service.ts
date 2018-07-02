@@ -40,63 +40,151 @@ export class AgricultureService {
 
 
   trend_line_bihar_vs_district(year,district,rain_fall_type,compare) {
-    let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+
+    let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&compare=`+compare +`&rain_fall_type=`+rain_fall_type+'&views=Trend Line';
     // let url = `${this.apiRoot}`;
       console.log(url);
     this.http.get(url).
       subscribe(res => {
-        this.j = res;
-         console.log(this.j[0]);
-        let chart = new CanvasJS.Chart("chartContainer", {
-          animationEnabled: true,
-          exportEnabled: true,
-          title: {
-            text: rain_fall_type+" "+year
-          },
-          data: [{
-            type: "line",
-            dataPoints: 
-           [{y:this.j[0].y, label: this.j[0].label, x:0}]
-          },
-          {
-            type: "line",
-            dataPoints: 
-            [{y:this.j[1].y, label: this.j[1].label, x:1}]
-
-
-            // [{label:this.j[1].label , y:this.j[1].y }]
-          }
-        
-        ]
-        });
-        chart.render();
+  
+        if (rain_fall_type == "All") {
+          this.j = res;
+          let chart1 = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            exportEnabled: true,
+            title: {
+              text: rain_fall_type+" "+year
+            },
+            data: this.j
+          });
+  
+          
+          chart1.render();
+          // alert("error")
+  
+        } else {
+  
+          this.j = res;
+          console.log(res);
+         let chart = new CanvasJS.Chart("chartContainer", {
+           animationEnabled: true,
+           exportEnabled: true,
+           title: {
+             text: rain_fall_type+" "+year
+           },
+           data: [{
+             type: "line",
+             dataPoints: 
+             this.j
+           }]
+         });
+          chart.render();
+  
         }
-     ); 
+        }
+     );
+    // let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    // // let url = `${this.apiRoot}`;
+    //   console.log(url);
+    // this.http.get(url).
+    //   subscribe(res => {
+    //     this.j = res;
+    //      console.log(this.j[0]);
+    //     let chart = new CanvasJS.Chart("chartContainer", {
+    //       animationEnabled: true,
+    //       exportEnabled: true,
+    //       title: {
+    //         text: rain_fall_type+" "+year
+    //       },
+    //       data: [{
+    //         type: "line",
+    //         dataPoints: 
+    //        [{y:this.j[0].y, label: this.j[0].label, x:0}]
+    //       },
+    //       {
+    //         type: "line",
+    //         dataPoints: 
+    //         [{y:this.j[1].y, label: this.j[1].label, x:1}]
+
+
+    //         // [{label:this.j[1].label , y:this.j[1].y }]
+    //       }
+        
+    //     ]
+    //     });
+    //     chart.render();
+    //     }
+    //  ); 
   }
 
 
   barchart_bihar_vs_district(year,district,rain_fall_type,compare){
     // let url = `${this.apiRoot}`;
-    let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
-    console.log(url);
+    // let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    // console.log(url);
 
+    // this.http.get(url).
+    //   subscribe(res => {
+    //     this.j = res;
+    //     console.log(this.j);
+    //     let chart = new CanvasJS.Chart("chartContainer", {
+    //       animationEnabled: true,
+    //       exportEnabled: true,
+    //       title: {
+    //         text: rain_fall_type+" " +year
+    //       },
+    //       data: [{
+    //         type: "column",
+    //         dataPoints: 
+    //         this.j
+    //       }]
+    //     });
+    //     chart.render();
+    //     }
+    //  ); 
+
+
+
+    let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    // let url = `${this.apiRoot}`;
+      console.log(url);
     this.http.get(url).
       subscribe(res => {
-        this.j = res;
-        console.log(this.j);
-        let chart = new CanvasJS.Chart("chartContainer", {
-          animationEnabled: true,
-          exportEnabled: true,
-          title: {
-            text: rain_fall_type+" " +year
-          },
-          data: [{
-            type: "column",
-            dataPoints: 
-            this.j
-          }]
-        });
-        chart.render();
+
+        if (rain_fall_type == "All") {
+          this.j = res;
+          let chart1 = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            exportEnabled: true,
+            title: {
+              text: rain_fall_type+" "+year
+            },
+            data: this.j
+          });
+
+          
+          chart1.render();
+          // alert("error")
+
+        } else {
+
+          this.j = res;
+          console.log(res);
+         let chart = new CanvasJS.Chart("chartContainer", {
+           animationEnabled: true,
+           exportEnabled: true,
+           title: {
+             text: rain_fall_type+" "+year
+           },
+           data: [{
+             type: "column",
+             dataPoints: 
+             this.j
+           }]
+         });
+          chart.render();
+
+        }
         }
      ); 
   }
