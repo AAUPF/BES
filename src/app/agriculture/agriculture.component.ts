@@ -109,8 +109,11 @@ export class AgricultureComponent implements OnInit {
   // }
 
   ngOnInit() {
-    
+  
+// this.AgricultureService.testgoogle()
 
+
+  
   }
 
 }

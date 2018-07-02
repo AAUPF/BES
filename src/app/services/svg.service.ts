@@ -222,7 +222,7 @@ trend_line(data,year,rain_fall_type) {
   table(year,district,rain_fall_type,compare){
 
     let url = `${this.apiRoot}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
-    console.log(rain_fall_type);
+    console.log(url);
 
     this.http.get(url).
     subscribe(res => {
@@ -238,8 +238,6 @@ trend_line(data,year,rain_fall_type) {
       });
 
       if (rain_fall_type == "All") {
-        alert("error")        
-
         this.createTableall(this.j,rain_fall_type,year);
 
         this.spinner.hide();
@@ -431,7 +429,7 @@ trend_line(data,year,rain_fall_type) {
       // cell1.style.border = "1px solid #000"; 
       // cell2.style.border = "1px solid #000"; 
       cell1.innerHTML = "<b>Districts</b>"; 
-      cell2.innerHTML = "<b>Value</b>"; 
+      cell2.innerHTML = "<b>"+rain_fall_type+"_Value</b>"; 
       for(var i = 0; i < data.length; i++){
         for(var j = 0; j< data[i].dataPoints.length; j++){
           // console.log(data[i].dataPoints[j]);
@@ -467,7 +465,7 @@ trend_line(data,year,rain_fall_type) {
     // cell1.style.border = "1px solid #000"; 
     // cell2.style.border = "1px solid #000"; 
     cell1.innerHTML = "<b>Districts</b>"; 
-    cell2.innerHTML = "<b>Value</b>"; 
+    cell2.innerHTML = "<b>"+rain_fall_type+"_Value</b>"; 
 
 
     for (let index = 0; index < data.length; index++) {
@@ -479,6 +477,14 @@ trend_line(data,year,rain_fall_type) {
         var g = element.dataPoints[index];
 
         console.log(g);
+
+          row = table.insertRow(1);
+          cell1 = row.insertCell(0);
+          cell2 = row.insertCell(1);
+          // cell1.style.border = "1px solid #000"; 
+          // cell2.style.border = "1px solid #000"; 
+          cell1.innerHTML = g.label;
+          cell2.innerHTML = g.y; 
         
         
       }

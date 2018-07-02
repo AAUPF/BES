@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+declare var google:any;
 
 declare var CanvasJS:any;
 @Injectable({
@@ -116,7 +117,42 @@ export class AgricultureService {
     //     }
     //  ); 
   }
+testgoogle() {
 
+let url = "http://localhost:3000//rainfalls/test?search=Bhagalpur&year=2016&rain_fall_type=Winter%20Rain&views=Table&compare=Bihar%20vs%20District"
+this.http.get(url).
+subscribe(res => { 
+
+  google.charts.load('current', {'packages':['corechart','table']});
+  google.charts.setOnLoadCallback(drawStuff1);
+
+  function drawStuff1() {
+    var data = new google.visualization.DataTable(
+      res
+     )
+    var options = {
+    width: "100%",
+    legend: { position: 'none' },
+    chart: {
+      title: 'Chess opening moves',
+      subtitle: 'popularity by percentage' },
+    axes: {
+      x: {
+        0: { side: 'top', label: 'White to move'} // Top x-axis.
+      }
+    },
+    bar: { groupWidth: "90%" }
+    };
+
+    var chart = new google.visualization.Table(document.getElementById('chart_div'));
+    // Convert the Classic options to Material options.
+    chart.draw(data,options);
+    };
+
+    }
+    );
+
+}
 
   barchart_bihar_vs_district(year,district,rain_fall_type,compare){
     // let url = `${this.apiRoot}`;
@@ -142,7 +178,6 @@ export class AgricultureService {
     //     chart.render();
     //     }
     //  ); 
-
 
 
     let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
@@ -254,6 +289,11 @@ bar_chart_all(data,year,rain_fall_type){
     }
     var chart = new CanvasJS.Chart("chartContainer",
   {
+    axisX:{
+      interval:1,
+      labelMaxWidth: 180,           
+      labelAngle: -45
+    },
     title:{
       text: rain_fall_type + " " +year
     },
