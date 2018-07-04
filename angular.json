@@ -27,7 +27,7 @@
             ],
             "scripts": [
               "src/assets/js/canvas.js",
-              "src/assets/js/googlechart.js"   
+              "src/assets/js/googlechart.js"
    
             ]
           },

@@ -6,8 +6,10 @@ import { environment } from '../../environments/environment';
 import { LoadingModule } from 'ngx-loading';
 import { NgxSpinnerService } from 'ngx-spinner';
 import{Functions} from '../data/func'
+import { TableExport } from '../../../node_modules/tableexport';
+
 // var myValidator = new Functions();
-// declare var CanvasJS:any;
+declare var $:any;
  let f = new Functions()
 declare var CanvasJS:any;
 @Injectable({
@@ -15,7 +17,12 @@ declare var CanvasJS:any;
 })
 export class SvgService {
   public loading = false;
-  constructor(private http: HttpClient,private spinner: NgxSpinnerService) { }
+  constructor(private http: HttpClient,private spinner: NgxSpinnerService) { 
+
+
+    
+
+  }
   // private apiRoot: string = "http://localhost:3000/static_pages/help";
   // private apiRoot1: string = "http://localhost:3000/rainfalls";
   private apiRoot1: string = "http://bihar.aaupf.org/rainfalls";
@@ -417,40 +424,47 @@ trend_line(data,year,rain_fall_type) {
       ); 
     }
     createTable(chart,rain_fall_type,year){
-      var table = document.createElement("TABLE")  as HTMLTableElement;    
-      var row,header,cell1, cell2;
-      var data = chart.options.data;
-      // table.style.border = "1px solid #000"; 
-      header = table.createTHead();
-      row = header.insertRow(0);
-      table.setAttribute("id", "myId");    
-      cell1 = row.insertCell(0);
-      cell2 = row.insertCell(1);
-      // cell1.style.border = "1px solid #000"; 
-      // cell2.style.border = "1px solid #000"; 
-      cell1.innerHTML = "<b>Districts</b>"; 
-      cell2.innerHTML = "<b>"+rain_fall_type+"_Value</b>"; 
-      for(var i = 0; i < data.length; i++){
-        for(var j = 0; j< data[i].dataPoints.length; j++){
-          // console.log(data[i].dataPoints[j]);
-          // console.log(data[i].dataPoints[j].label);
+       $('#myId').remove();
+        var table = document.createElement("TABLE")  as HTMLTableElement;    
+        var row,header,cell1, cell2;
+        var data = chart.options.data;
+        // table.style.border = "1px solid #000"; 
+        header = table.createTHead();
+        row = header.insertRow(0);
+        table.setAttribute("id", "myId");    
+        cell1 = row.insertCell(0);
+        cell2 = row.insertCell(1);
+        // cell1.style.border = "1px solid #000"; 
+        // cell2.style.border = "1px solid #000"; 
+        cell1.innerHTML = "<strong>Districts</strong>"; 
+        cell2.innerHTML = "<b>"+rain_fall_type+"_Value</b>"; 
+        for(var i = 0; i < data.length; i++){
+          for(var j = 0; j< data[i].dataPoints.length; j++){
+            // console.log(data[i].dataPoints[j]);
+            // console.log(data[i].dataPoints[j].label);
 
-          
-          row = table.insertRow(1);
-          cell1 = row.insertCell(0);
-          cell2 = row.insertCell(1);
-          // cell1.style.border = "1px solid #000"; 
-          // cell2.style.border = "1px solid #000"; 
-          cell1.innerHTML = data[i].dataPoints[j].label;
-          cell2.innerHTML = data[i].dataPoints[j].y; 
-        }
-      }    
-      // document.getElementById("chartContainer").innerHTML = "<h1>"+rain_fall_type+" "+year+"</h2>";
-      document.getElementById("chartContainer").appendChild(table);
+            
+            row = table.insertRow(1);
+            cell1 = row.insertCell(0);
+            cell2 = row.insertCell(1);
+            // cell1.style.border = "1px solid #000"; 
+            // cell2.style.border = "1px solid #000"; 
+            cell1.innerHTML = "<strong>"+data[i].dataPoints[j].label+"</strong>";
+            cell2.innerHTML = data[i].dataPoints[j].y; 
+          }
+        }    
+        // document.getElementById("chartContainer").innerHTML = "<h1>"+rain_fall_type+" "+year+"</h2>";
+
+        document.getElementById("chartContainer1").appendChild(table);
+
+
+    this.export()
+      
   }
 
 
   createTableall(chart,rain_fall_type,year){
+    $('#myId').remove();
     var table = document.createElement("TABLE")  as HTMLTableElement;    
     var row,header,cell1, cell2;
     var data = chart;
@@ -464,29 +478,21 @@ trend_line(data,year,rain_fall_type) {
     cell2 = row.insertCell(1);
     // cell1.style.border = "1px solid #000"; 
     // cell2.style.border = "1px solid #000"; 
-    cell1.innerHTML = "<b>Districts</b>"; 
-    cell2.innerHTML = "<b>"+rain_fall_type+"_Value</b>"; 
-
-
+    cell1.innerHTML = "<strong>Districts</strong>"; 
+    cell2.innerHTML = "<strong>"+rain_fall_type+"_Value"; 
     for (let index = 0; index < data.length; index++) {
       var element = data[index];
       console.log(element);
-
-
       for (let index = 0; index < element.dataPoints.length; index++) {
         var g = element.dataPoints[index];
-
         console.log(g);
-
           row = table.insertRow(1);
           cell1 = row.insertCell(0);
           cell2 = row.insertCell(1);
           // cell1.style.border = "1px solid #000"; 
           // cell2.style.border = "1px solid #000"; 
-          cell1.innerHTML = g.label;
+          cell1.innerHTML = "<strong>"+g.label+"</strong>";
           cell2.innerHTML = g.y; 
-        
-        
       }
       
     }
@@ -511,6 +517,39 @@ trend_line(data,year,rain_fall_type) {
     //   }
     // }    
     // document.getElementById("chartContainer").innerHTML = "<h1>"+rain_fall_type+" "+year+"</h2>";
-    document.getElementById("chartContainer").appendChild(table);
+    document.getElementById("chartContainer1").appendChild(table);
+    this.export()
+
+}
+
+table1(){
+
+  var table = document.getElementById("myId")  as HTMLTableElement;
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = "NEW CELL1";
+  cell2.innerHTML = "NEW CELL2";
+
+}
+
+export(){
+
+  var tableId = 'myId';
+  var ExportButtons = document.getElementById(tableId);
+  var instance = new TableExport(ExportButtons, {
+      formats: ['xls', 'csv'],
+      exportButtons: false
+  });
+  var exportDataXLS = instance.getExportData()[tableId]['xls'];
+  var exportDataCSV = instance.getExportData()[tableId]['csv'];
+
+  var XLSbutton = document.getElementById('click');
+  XLSbutton.addEventListener('click', function (e) {
+      
+      instance.export2file(exportDataXLS.data, exportDataXLS.mimeType, exportDataXLS.filename, exportDataXLS.fileExtension);
+  });
 }
 }
+
+

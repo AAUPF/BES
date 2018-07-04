@@ -5,6 +5,8 @@ import { Districts } from '../data/districts';
 import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { TableExport } from '../../../node_modules/tableexport';
+declare var $:any
 interface years<> {
   id: number;  any
 }
@@ -19,6 +21,8 @@ export class AgricultureComponent implements OnInit {
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
+
+  
   // title:string;
   title = ""
   butDisabled: boolean = false;
@@ -29,6 +33,8 @@ export class AgricultureComponent implements OnInit {
   Districts = Districts;
   visbile= false;
   visbile_chart= true;
+  visbile_table= false;
+
   years = [2016, 2017];
   views = ["Graph", "Trend Line","Map View","Table"];
   rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
@@ -49,6 +55,8 @@ export class AgricultureComponent implements OnInit {
     if (user.view == "Graph") {
       this.visbile_chart= true;
       this.visbile= false;
+      this.visbile_table= false;
+
       // this.AgricultureService.pie();
       if (user.districts == "All") {
         this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type);
@@ -63,6 +71,8 @@ export class AgricultureComponent implements OnInit {
     else if(user.view == "Trend Line") {
       this.visbile_chart= true;
       this.visbile= false;
+      this.visbile_table= false;
+
       if (user.districts == "All") {
         this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view);
         
@@ -76,7 +86,8 @@ export class AgricultureComponent implements OnInit {
       
     } 
     else if(user.view == "Table") {
-      this.visbile_chart= true;
+      this.visbile_chart= false;
+      this.visbile_table= true;
       this.visbile= false;
       this.spinner.show();
 
@@ -87,6 +98,7 @@ export class AgricultureComponent implements OnInit {
       // this.AgricultureService.barchart();
       this.visbile_chart= false;
       this.visbile= true;
+      this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
       this.spinner.show();
@@ -108,8 +120,15 @@ export class AgricultureComponent implements OnInit {
   //   console.log(echamparan); 
   // }
 
+  myEvent(event) {
+    var n =  new TableExport(document.getElementsByTagName("table"));
+  }
+
   ngOnInit() {
+
   
+   
+    // var n =  new TableExport(document.getElementsByTagName("table"));
 // this.AgricultureService.testgoogle()
 
 

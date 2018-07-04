@@ -6944,7 +6944,7 @@ select {
 
 
 
-table { width: 100%; border-collapse: collapse; line-height: 18px !important; } /* Zebra striping */ tr:nth-of-type(odd) { background: #eee; } th { background: #333; color: white; font-weight: bold; } td, th { padding: 6px !important; list-style: 10px !important; border: 1px solid #ccc; text-align: left; } td strong { color: #000; } 
+table { width: 100%; border-collapse: collapse; line-height: 18px !important; } /* Zebra striping */ th { background: #eee; color: white; font-weight: bold; } td, th { padding: 6px !important; list-style: 10px !important; border: 1px solid #ccc; text-align: left; } td strong { color: #000; } 
 
 /* .btn.disabled, .btn[disabled], fieldset[disabled] .btn { background: #2c98f0;
     height: 38px;
