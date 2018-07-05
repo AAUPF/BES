@@ -1,5 +1,6 @@
 export const Districts:any = [
     "All",
+    "Araria",
     "Arwal",
     "Aurangabad",
     "Banka",

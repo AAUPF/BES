@@ -27,26 +27,18 @@
                         <option [ngValue]="undefined" disabled  selected> Year  </option>
                         <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
                     </select>
- 
-
                         <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
                             <option [ngValue]="undefined" disabled  selected> Views  </option>
                             <option class='option' *ngFor='let option of views' [ngValue]="option">{{option}}</option>
                         </select>
-    
-    
                         <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
                             <option [ngValue]="undefined" disabled  selected> Rain Fall Type  </option>
                             <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option">{{option}}</option>
                         </select>
-
-
-        
                             <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
                                 <option [ngValue]="undefined" disabled  selected> Comparison  </option>
                                 <option class='option' *ngFor='let option of Comparison' [ngValue]="option">{{option}}</option>
                             </select>
-     
                         <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
                         <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                     </div>
@@ -55,14 +47,10 @@
                     <!-- <table id="myId"></table> -->
                     <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
                     <div *ngIf="visbile_table" id="chartContainer1" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;">
-
                         <button type="submit" id= "click" class="btn btn-primary1" >Export Excel</button>
-
                     </div>
-                  
                     <!-- <h2>{{title}}</h2>
                     <object *ngIf="visbile" data="assets/img/biharmap.svg" id="biharsvg" type="image/svg+xml"></object>
-                    
                     <div style="position: relative;"> 
                     <div class="fil-box">
                         <div><span class="dot yellow"></span>14.0% and Over</div>
@@ -75,13 +63,10 @@
                     </div> -->
                     <ngx-spinner></ngx-spinner>
                     <div *ngIf="visbile">
-                         
                         <app-svgcomponent ></app-svgcomponent>
                     </div>
-                   
                     <app-modal></app-modal>
                     <!-- <object data="assets/img/bihar.svg" id="biharsvg" type="image/svg+xml"></object> -->
-                  
                 </div>
              </div>
          </div>

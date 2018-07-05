@@ -17,19 +17,13 @@ declare var CanvasJS:any;
 })
 export class SvgService {
   public loading = false;
-  constructor(private http: HttpClient,private spinner: NgxSpinnerService) { 
-
-
-    
-
-  }
+  constructor(private http: HttpClient,private spinner: NgxSpinnerService) { }
   // private apiRoot: string = "http://localhost:3000/static_pages/help";
   // private apiRoot1: string = "http://localhost:3000/rainfalls";
   private apiRoot1: string = "http://bihar.aaupf.org/rainfalls";
   apiRoot: string = environment.apiUrl;
-
   test(a,views,rain_fall_type,year,districts,Comparison) {
-    let url = `${this.apiRoot}/rainfalls/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;   
+    let url = `${this.apiRoot}/rainfalls/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;
     // title;
     console.log(url);
     var title = rain_fall_type;
@@ -46,9 +40,6 @@ export class SvgService {
     // District.classList.add("mystyle");
     // console.log(url);
   }
-
-
-
   map_bihar_vs_districts(l,rain_fall_type,views,year) {
     let url = `${this.apiRoot}/rainfalls/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;  
     this.http.get(url).
@@ -77,8 +68,6 @@ color_map(x,color) {
   }
 
 }
-
-
  svg(z,views,rain_fall_type,year,districts) {
   const that = this;
   let a = document.getElementById("biharsvg")  as HTMLObjectElement;
@@ -181,8 +170,6 @@ trend_line(data,year,rain_fall_type) {
   //     chart.render();
   //     }
   //  ); 
-
-
   let url = `${this.apiRoot}/rainfalls/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+'&views=Trend Line';
   // let url = `${this.apiRoot}`;
     console.log(url);
@@ -199,8 +186,6 @@ trend_line(data,year,rain_fall_type) {
           },
           data: this.j
         });
-
-        
         chart1.render();
         // alert("error")
 
@@ -256,8 +241,6 @@ trend_line(data,year,rain_fall_type) {
 
       }
    ); 
-
-
   }
   barmodal(abc,year,rain_fall_type,views){
 
@@ -288,8 +271,6 @@ trend_line(data,year,rain_fall_type) {
       
       }
    ); 
-
-
   //  let url = `${this.apiRoot1}/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+views;
   //  console.log(url);
 
@@ -442,8 +423,6 @@ trend_line(data,year,rain_fall_type) {
           for(var j = 0; j< data[i].dataPoints.length; j++){
             // console.log(data[i].dataPoints[j]);
             // console.log(data[i].dataPoints[j].label);
-
-            
             row = table.insertRow(1);
             cell1 = row.insertCell(0);
             cell2 = row.insertCell(1);
@@ -456,8 +435,6 @@ trend_line(data,year,rain_fall_type) {
         // document.getElementById("chartContainer").innerHTML = "<h1>"+rain_fall_type+" "+year+"</h2>";
 
         document.getElementById("chartContainer1").appendChild(table);
-
-
     this.export()
       
   }
