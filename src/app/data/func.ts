@@ -1,14 +1,14 @@
 export class Functions {
-    testy(the,districts,rain_fall_type,views,year,Comparison,res) {
+    testy(the,districts,rain_fall_type,views,year,Comparison,res,controller) {
         the.spinner.hide();
         if (districts == "All") {
           the.map_districts(the.j) 
         } else {
 
             if (Comparison == "None") {
-              this.map_none (districts,rain_fall_type,res)
+              this.map_none (districts,rain_fall_type,res,)
             } else {
-                the.map_bihar_vs_districts(districts,rain_fall_type,views,year)
+                the.map_bihar_vs_districts(districts,rain_fall_type,views,year,controller)
             }
         }
     }
@@ -33,7 +33,21 @@ export class Functions {
         
                             var m  = "EChamparan"
         
-                        } else {
+                        }
+                        else if(l == "E.Champaran") {
+
+                            var m  = "EChamparan"
+        
+                        }
+        
+                        else if(l == "W.Champaran") {
+                            var m  = "WChamparan"
+        
+                            console.log(m);
+                            
+        
+                        } 
+                        else {
                             var m:string = l
                         }
                 for (let index = 0; index < res.length; index++) {
@@ -197,7 +211,21 @@ export class Functions {
 
                     var m  = "EChamparan"
 
-                } else {
+                } 
+                else if(l == "E.Champaran") {
+
+                    var m  = "EChamparan"
+
+                }
+
+                else if(l == "W.Champaran") {
+                    var m  = "WChamparan"
+
+                    console.log(m);
+                    
+
+                } 
+                else {
                     var m:string = l
                 }
         for (let index = 0; index < res.length; index++) {
@@ -353,6 +381,15 @@ export class Functions {
           else if ( l == "E. Champaran"){
             var m:string = "echamparan";
           }
+          else if(l == "E.Champaran") {
+
+            var m  = "EChamparan"
+
+        }
+
+        else if(l == "W.Champaran") {
+            var m  = "WChamparan"            
+        } 
           
           else {
             var m:string =  l.toLowerCase();
@@ -372,6 +409,9 @@ export class Functions {
         let map = document.getElementById("biharsvg") as HTMLObjectElement;
         let svgDoc = map.contentDocument; // should be fine
         // let District = svgDoc.getElementById(a);
+
+        console.log("mapall");
+        
         var dis_below_min = ""
         var dis_below_min_color = ""
         var dis_min = ""
@@ -386,13 +426,27 @@ export class Functions {
         var dis_ex_color = ""
         var dis_abov_ext = ""
         var dis_abov_ext_color = ""
+
+        var string:any
         for (var k in l){
           if (l.hasOwnProperty(k)) {
                if (l[k].below_min) {
                 for (let index = 0; index < l[k].below_min.length; index++) {
                   const element = l[k].below_min[index];
-                  //  console.log(element.label+ "Min");
-                 var string =  element.label.toLowerCase();
+                  if (element.label == "E. Champaran") {
+                    var string:any = "echamparan";
+        
+                  } 
+                  else if(element.label == "E.Champaran") {
+        
+                    var string:any = "echamparan"
+        
+                }
+        
+                  else {
+                    var string:any =  element.label.toLowerCase();
+                  }
+
                     if (index == l[k].below_min.length - 1) {
                         dis_below_min += "#"+string+"";
                         dis_below_min_color+=element.color
@@ -405,12 +459,19 @@ export class Functions {
                else if (l[k].min) {
                 for (let index = 0; index < l[k].min.length; index++) {
                   const element = l[k].min[index];
-                  
+
     
                   if (element.label == "W. Champaran") {
                     var string:any = "wchamparan";
     
-                  } else {
+                  }
+                  else if(l == "W.Champaran") {
+
+                    var m  = "wchamparan"
+
+                }
+
+                  else {
                     var string:any =  element.label.toLowerCase();
                   }
     
@@ -431,11 +492,21 @@ export class Functions {
     
                   if (element.label == "E. Champaran") {
                     var string:any = "echamparan";
-    
-                  } else {
+        
+                  } 
+                  else if(element.label == "E.Champaran") {
+        
+                    var string:any = "echamparan"
+        
+                }
+        
+                  else {
                     var string:any =  element.label.toLowerCase();
                   }
-    
+
+                   console.log(m);
+           
+     
                   if (index == l[k].blow_max.length- 1) {
                     dis_blow_max += "#"+string+"";
                     dis_blow_max_color+=element.color
@@ -448,8 +519,20 @@ export class Functions {
               else if (l[k].max) {
                 for (let index = 0; index < l[k].max.length; index++) {
                   const element = l[k].max[index];
-    
-                  var string:any =  element.label.toLowerCase();
+                  if (element.label == "E. Champaran") {
+                    var string:any = "echamparan";
+        
+                  } 
+                  else if(element.label == "E.Champaran") {
+        
+                    var string:any = "echamparan"
+        
+                }
+        
+                  else {
+                    var string:any =  element.label.toLowerCase();
+                  }
+
                   if (index == l[k].max.length- 1) {
                     dis_max += "#"+string+"";
                     dis_max_color +=element.color
@@ -463,7 +546,20 @@ export class Functions {
                 for (let index = 0; index < l[k].above_max.length; index++) {
                   const element = l[k].above_max[index];
     
-                  var string:any =  element.label.toLowerCase();
+                  if (element.label == "E. Champaran") {
+                    var string:any = "echamparan";
+        
+                  } 
+                  else if(element.label == "E.Champaran") {
+        
+                    var string:any = "echamparan"
+        
+                }
+        
+                  else {
+                    var string:any =  element.label.toLowerCase();
+                  }
+
                   if (index == l[k].above_max.length- 1) {
                     dis_above_max += "#"+string+"";
                     dis_above_max_color +=element.color
@@ -478,7 +574,20 @@ export class Functions {
                 for (let index = 0; index < l[k].extreme.length; index++) {
                   const element = l[k].extreme[index];
     
-                  var string:any =  element.label.toLowerCase();
+                  if (element.label == "E. Champaran") {
+                    var string:any = "echamparan";
+        
+                  } 
+                  else if(element.label == "E.Champaran") {
+        
+                    var string:any = "echamparan"
+        
+                }
+        
+                  else {
+                    var string:any =  element.label.toLowerCase();
+                  }
+
                   if (index == l[k].extreme.length- 1) {
                     dis_ex += "#"+string+"";
                     dis_ex_color += element.color
@@ -491,8 +600,20 @@ export class Functions {
               else if (l[k].above_extreme) {
                 for (let index = 0; index < l[k].above_extreme.length; index++) {
                   const element = l[k].above_extreme[index];
-    
-                  var string:any =  element.label.toLowerCase();
+                  if (element.label == "E. Champaran") {
+                    var string:any = "echamparan";
+        
+                  } 
+                  else if(element.label == "E.Champaran") {
+        
+                    var string:any = "echamparan"
+        
+                }
+        
+                  else {
+                    var string:any =  element.label.toLowerCase();
+                  }
+
                   if (index == l[k].above_extreme.length- 1) {
                     dis_abov_ext += "#"+string+"";
                     dis_abov_ext_color += element.color
@@ -564,6 +685,29 @@ export class Functions {
       that.color_map(g,dis_abov_ext_color) 
 
     
+
+    }
+
+    statecolornamechange(element,l){
+
+        if (element.label == "E. Champaran") {
+            var string:any = "echamparan";
+
+          } 
+          else if(l == "E.Champaran") {
+
+            var m  = "echamparan"
+
+        }
+
+          else {
+            var string:any =  element.label.toLowerCase();
+          }
+
+        //   return string
+
+        //   console.log(string);
+          
 
     }
 }

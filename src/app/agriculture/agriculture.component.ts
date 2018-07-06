@@ -52,6 +52,7 @@ export class AgricultureComponent implements OnInit {
     
     }
   onSubmit(user) {
+    var controller = "rainfalls"
     if (user.view == "Graph") {
       this.visbile_chart= true;
       this.visbile= false;
@@ -59,13 +60,13 @@ export class AgricultureComponent implements OnInit {
 
       // this.AgricultureService.pie();
       if (user.districts == "All") {
-        this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type);
+        this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
       } 
      else if(user.Comparison == "Bihar vs District") { 
-      this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison);
+      this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
       }
       else {
-        this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type);
+        this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
       }
     } 
     else if(user.view == "Trend Line") {
@@ -74,14 +75,14 @@ export class AgricultureComponent implements OnInit {
       this.visbile_table= false;
 
       if (user.districts == "All") {
-        this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view);
+        this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
         
       } 
       else if(user.Comparison == "Bihar vs District") { 
-        this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison);
+        this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
         }
       else {
-        this.SvgService.trend_line(user.districts,user.years,user.rain_fall_type);
+        this.SvgService.trend_line(user.districts,user.years,user.rain_fall_type,controller);
       }
       
     } 
@@ -91,7 +92,7 @@ export class AgricultureComponent implements OnInit {
       this.visbile= false;
       this.spinner.show();
 
-      this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison);
+      this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
     }
     else if(user.view == "Map View") {
      const that = this;
@@ -101,12 +102,13 @@ export class AgricultureComponent implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
+      var controller = "rainfalls"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
-            that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts);
+            that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
             var u = "wchamparan";
-            that.SvgService.test(u,user.view,user.rain_fall_type,user.years,user.districts,user.Comparison); 
+            that.SvgService.test(u,user.view,user.rain_fall_type,user.years,user.districts,user.Comparison,controller); 
       }, 500);
       // this.SvgService.svg();
       

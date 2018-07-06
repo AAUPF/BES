@@ -40,9 +40,9 @@ export class AgricultureService {
   }
 
 
-  trend_line_bihar_vs_district(year,district,rain_fall_type,compare) {
+  trend_line_bihar_vs_district(year,district,rain_fall_type,compare,controller) {
 
-    let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&compare=`+compare +`&rain_fall_type=`+rain_fall_type+'&views=Trend Line';
+    let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&compare=`+compare +`&rain_fall_type=`+rain_fall_type+'&views=Trend Line';
     // let url = `${this.apiRoot}`;
       console.log(url);
     this.http.get(url).
@@ -84,7 +84,7 @@ export class AgricultureService {
         }
         }
      );
-    // let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    // let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
     // // let url = `${this.apiRoot}`;
     //   console.log(url);
     // this.http.get(url).
@@ -154,9 +154,9 @@ subscribe(res => {
 
 }
 
-  barchart_bihar_vs_district(year,district,rain_fall_type,compare){
+  barchart_bihar_vs_district(year,district,rain_fall_type,compare,controller){
     // let url = `${this.apiRoot}`;
-    // let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    // let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
     // console.log(url);
 
     // this.http.get(url).
@@ -180,7 +180,7 @@ subscribe(res => {
     //  ); 
 
 
-    let url = `${this.apiRoot1}/rainfalls/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
     // let url = `${this.apiRoot}`;
       console.log(url);
     this.http.get(url).
@@ -225,8 +225,8 @@ subscribe(res => {
   }
 
 
-  trend_line_all(data,year,rain_fall_type,views) {
-    let url = `${this.apiRoot1}/rainfalls/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views;
+  trend_line_all(data,year,rain_fall_type,views,controller) {
+    let url = `${this.apiRoot1}/`+controller+`/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views;
     // let url = `${this.apiRoot}`;
       console.log(url);
     this.http.get(url).
@@ -262,9 +262,9 @@ subscribe(res => {
       }
    ); 
   }
-bar_chart_all(data,year,rain_fall_type){
+bar_chart_all(data,year,rain_fall_type,controller){
   // let url = `${this.apiRoot}`;
-  let url = `${this.apiRoot1}/rainfalls/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
+  let url = `${this.apiRoot1}/`+controller+`/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
    console.log(url);
   this.http.get(url).
   subscribe(res => {
