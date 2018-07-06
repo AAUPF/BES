@@ -17,6 +17,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { FuncComponent } from './func/func.component';
 import { AgriculturAlliedComponent } from './agricultur-allied/agricultur-allied.component';
 import { LandComponent } from './land/land.component';
+import { Rainfall2Component } from './rainfall2/rainfall2.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { LandComponent } from './land/land.component';
     FuncComponent,
     AgriculturAlliedComponent,
     LandComponent,
+    Rainfall2Component,
   
     ],
   imports: [
