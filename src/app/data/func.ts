@@ -12,8 +12,6 @@ export class Functions {
             }
         }
     }
-
- 
             map_none (l,rain_fall_type,res) {
                 let map = document.getElementById("biharsvg") as HTMLObjectElement;
                 let svgDoc = map.contentDocument; // should be fine
@@ -235,6 +233,9 @@ export class Functions {
                     const h = element.below_min[minIndex];
                     if (h.label == "Bihar") {
                         bihar_color += h.color   
+
+                        console.log(h.label+"Bihar");
+                        
                     }
                     if (h.label == m) {
                         dis_color += h.color     
@@ -353,7 +354,7 @@ export class Functions {
 
             
         }
-      console.log(dis_color+ "Dis color");
+    //   console.log(dis_color+ "Dis color");
       
         for (i = 0; i < de.length; i++) {
         //    console.log(de[i].classList.item(0)); 
@@ -362,6 +363,7 @@ export class Functions {
            de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","Light_Green","Dark_Yellow");
         }
         // that.color_map(de,red)
+        var bihar_color1 = "fil0"
     
         this.map_change_color_condition(rain_fall_type,de,l,bihar_color,dis_color)
     

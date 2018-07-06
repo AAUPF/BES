@@ -54,7 +54,7 @@ export class AgricultureService {
             animationEnabled: true,
             exportEnabled: true,
             title: {
-              text: rain_fall_type+" "+year
+              text: rain_fall_type
             },
             data: this.j
           });
@@ -71,7 +71,7 @@ export class AgricultureService {
            animationEnabled: true,
            exportEnabled: true,
            title: {
-             text: rain_fall_type+" "+year
+             text: rain_fall_type
            },
            data: [{
              type: "line",
@@ -192,7 +192,7 @@ subscribe(res => {
             animationEnabled: true,
             exportEnabled: true,
             title: {
-              text: rain_fall_type+" "+year
+              text: rain_fall_type
             },
             data: this.j
           });
@@ -209,7 +209,7 @@ subscribe(res => {
            animationEnabled: true,
            exportEnabled: true,
            title: {
-             text: rain_fall_type+" "+year
+             text: rain_fall_type
            },
            data: [{
              type: "column",
@@ -253,7 +253,7 @@ subscribe(res => {
       var chart = new CanvasJS.Chart("chartContainer",
     {
       title:{
-        text: rain_fall_type + " " +year
+        text: rain_fall_type 
       },
       data: bar_data
     });

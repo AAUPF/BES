@@ -72,10 +72,10 @@ color_map(x,color) {
   const that = this;
   let a = document.getElementById("biharsvg")  as HTMLObjectElement;
       var svgDoc = a.contentDocument;
-      var wchamparan = svgDoc.getElementById("wchamparan");
+      // var wchamparan = svgDoc.getElementById("wchamparan");
       let de = svgDoc.getElementsByClassName("fil0");
       var modal = document.getElementById('myModal');
-      var wchamparan1 = svgDoc.getElementById("wchamparan").getAttribute("id");
+      // var wchamparan1 = svgDoc.getElementById("wchamparan").getAttribute("id");
       var span = document.getElementById("close");
       span.onclick = function() {
         modal.style.display = "none";
@@ -352,7 +352,7 @@ trend_line(data,year,rain_fall_type,controller) {
             animationEnabled: true,
             exportEnabled: true,
             title: {
-              text: rain_fall_type+" "+year
+              text: rain_fall_type
             },
             data: this.j
           });

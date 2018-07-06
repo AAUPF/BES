@@ -12,11 +12,11 @@ interface years<> {
 }
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-production-productivity6',
-  templateUrl: './production-productivity6.component.html',
-  styleUrls: ['./production-productivity6.component.css']
+  selector: 'app-production-and-productivity6',
+  templateUrl: './production-and-productivity6.component.html',
+  styleUrls: ['./production-and-productivity6.component.css']
 })
-export class ProductionProductivity6Component implements OnInit {
+export class ProductionAndProductivity6Component implements OnInit {
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
