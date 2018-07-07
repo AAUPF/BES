@@ -10,7 +10,7 @@ export const Districts:any = [
     "Bihar",
     "Buxar",
     "Darbhanga",
-    "E. Champaran",
+    "EeastChamparan",
     "Gaya",
     "Gopalganj",
     "Jamui",
@@ -38,5 +38,5 @@ export const Districts:any = [
     "Siwan",
     "Supaul",
     "Vaishali",
-    "W. Champaran"
+    "WestChamparan"
 ];

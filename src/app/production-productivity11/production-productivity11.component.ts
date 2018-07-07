@@ -37,7 +37,7 @@ export class ProductionProductivity11Component implements OnInit {
 
   years = [2016, 2017];
   views = ["Graph", "Trend Line","Map View","Table"];
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
+  rain_fall_type = ["All","Potato_Area_2015",	"Potato_Production_2015",	"Potato_Area_2016",	"Potato_Production_2016",	"Onion_Area_2015",	"Onion_Production_2015",	"Onion_Area_2016",	"Onion_Production_2016",	"Cauliflower_Area_2015",	"Cauliflower_Production_2015",	"Cauliflower_Area_2016",	"Cauliflower_Production_2016",	"Brinjal_Area_2015",	"Brinjal_Production_2015",	"Brinjal_Area_2016",	"Brinjal_Production_2016"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
@@ -52,7 +52,7 @@ export class ProductionProductivity11Component implements OnInit {
     
     }
   onSubmit(user) {
-    var controller = "rainfalls"
+    var controller = "production_productivity11s"
     if (user.view == "Graph") {
       this.visbile_chart= true;
       this.visbile= false;
@@ -102,7 +102,7 @@ export class ProductionProductivity11Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "rainfalls"
+      var controller = "production_productivity11s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
