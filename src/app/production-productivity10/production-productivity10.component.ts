@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { SvgService } from '../services/svg.service';
 import { AgricultureService } from '../services/agriculture.service';
 import { Districts } from '../data/districts';
+import { Views } from '../data/views';
 import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
+
+import  '../data/data'
 declare var $:any
 interface years<> {
   id: number;  any
@@ -36,7 +39,7 @@ export class ProductionProductivity10Component implements OnInit {
   visbile_table= false;
 
   years = [2016, 2017];
-  views = ["Graph", "Trend Line","Map View","Table"];
+  views = Views;
   rain_fall_type = ["All","Mango_Area_2015",	"Mango_Production_2015",	"Mango_Area_2016",	"Mango_Production_2016",	"Guava_Area_2015",	"Guava_Production_2015",	"Guava_Area_2016",	"Guava_Production_2016",	"Litchi_Area_2015",	"Litchi_Production_2015",	"Litchi_Area_2016",	"Litchi_Production_2016",	"Banana_Area_2015",	"Banana_Production_2015",	"Banana_Area_2016",	"Banana_Production_2016",]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    

@@ -369,10 +369,57 @@ trend_line(data,year,rain_fall_type,controller) {
            animationEnabled: true,
            exportEnabled: true,
            title: {
-             text: rain_fall_type+" "+year
+             text: rain_fall_type
            },
            data: [{
              type: "column",
+             dataPoints: 
+             this.j
+           }]
+         });
+          chart.render();
+
+        }
+        }
+     ); 
+  }
+
+
+  bubble(data,year,rain_fall_type,controller,views){
+    let url = `${this.apiRoot}/`+controller+`/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views;
+
+    // let url = `${this.apiRoot}`;
+      console.log(url);
+    this.http.get(url).
+      subscribe(res => {
+
+        if (rain_fall_type == "All") {
+          this.j = res;
+          let chart1 = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            exportEnabled: true,
+            title: {
+              text: rain_fall_type
+            },
+            data: this.j
+          });
+
+          
+          chart1.render();
+          // alert("error")
+
+        } else {
+
+          this.j = res;
+          console.log(res);
+         let chart = new CanvasJS.Chart("chartContainer", {
+           animationEnabled: true,
+           exportEnabled: true,
+           title: {
+             text: rain_fall_type+" "+year
+           },
+           data: [{
+             type: "scatter",
              dataPoints: 
              this.j
            }]

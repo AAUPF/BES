@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SvgService } from '../services/svg.service';
 import { AgricultureService } from '../services/agriculture.service';
 import { Districts } from '../data/districts';
+import { Views } from '../data/views';
+
 import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -36,7 +38,7 @@ export class ProductionProductivity11Component implements OnInit {
   visbile_table= false;
 
   years = [2016, 2017];
-  views = ["Graph", "Trend Line","Map View","Table"];
+  views = Views;
   rain_fall_type = ["All","Potato_Area_2015",	"Potato_Production_2015",	"Potato_Area_2016",	"Potato_Production_2016",	"Onion_Area_2015",	"Onion_Production_2015",	"Onion_Area_2016",	"Onion_Production_2016",	"Cauliflower_Area_2015",	"Cauliflower_Production_2015",	"Cauliflower_Area_2016",	"Cauliflower_Production_2016",	"Brinjal_Area_2015",	"Brinjal_Production_2015",	"Brinjal_Area_2016",	"Brinjal_Production_2016"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    

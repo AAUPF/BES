@@ -225,6 +225,54 @@ subscribe(res => {
   }
 
 
+
+  bubble_bihar_vs_district(year,district,rain_fall_type,compare,controller){
+  
+    let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
+    // let url = `${this.apiRoot}`;
+      console.log(url);
+    this.http.get(url).
+      subscribe(res => {
+
+        if (rain_fall_type == "All") {
+          this.j = res;
+          let chart1 = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            exportEnabled: true,
+            title: {
+              text: rain_fall_type
+            },
+            data: this.j
+          });
+
+          
+          chart1.render();
+          // alert("error")
+
+        } else {
+
+          this.j = res;
+          console.log(res);
+         let chart = new CanvasJS.Chart("chartContainer", {
+           animationEnabled: true,
+           exportEnabled: true,
+           title: {
+             text: rain_fall_type
+           },
+           data: [{
+             type: "scatter",
+             dataPoints: 
+             this.j
+           }]
+         });
+          chart.render();
+
+        }
+        }
+     ); 
+  }
+
+
   trend_line_all(data,year,rain_fall_type,views,controller) {
     let url = `${this.apiRoot1}/`+controller+`/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views;
     // let url = `${this.apiRoot}`;
@@ -295,7 +343,7 @@ bar_chart_all(data,year,rain_fall_type,controller){
       labelAngle: -45
     },
     title:{
-      text: rain_fall_type + " " +year
+      text: rain_fall_type 
     },
     data: bar_data
   });
@@ -304,6 +352,51 @@ bar_chart_all(data,year,rain_fall_type,controller){
     }
  ); 
 }
+
+
+Bubble_all(data,year,rain_fall_type,controller,views){
+  // let url = `${this.apiRoot}`;
+  let url = `${this.apiRoot1}/`+controller+`/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views;
+  console.log(url);
+  this.http.get(url).
+  subscribe(res => {
+    this.j = res;
+    var y = this.j
+    function compareDataPointX(dataPoint1, dataPoint2) {
+      return dataPoint1.y - dataPoint2.y;
+     }
+      var z = [
+        {y: 1, label: "Khagaria"},
+        {y: 2 ,label: "Khagaria"}
+      ];
+     if (rain_fall_type == "All") {
+      var bar_data:any = y
+    } else {
+      var bar_data:any = [
+        {        
+        type: "scatter",
+        dataPoints: y
+        }     
+      ]
+    }
+    var chart = new CanvasJS.Chart("chartContainer",
+  {
+    axisX:{
+      interval:1,
+      labelMaxWidth: 180,           
+      labelAngle: -45
+    },
+    title:{
+      text: rain_fall_type 
+    },
+    data: bar_data
+  });
+  chart.options.data[0].dataPoints.sort(compareDataPointX);
+  chart.render();
+    }
+ ); 
+}
+
   pie(){
     let url = `${this.apiRoot}`;
     this.http.get(url).

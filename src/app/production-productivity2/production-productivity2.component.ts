@@ -6,6 +6,8 @@ import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
+import { Views } from '../data/views';
+
 declare var $:any
 interface years<> {
   id: number;  any
@@ -36,7 +38,7 @@ export class ProductionProductivity2Component implements OnInit {
   visbile_table= false;
 
   years = [2016, 2017];
-  views = ["Graph", "Trend Line","Map View","Table"];
+  views = Views;
   rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
@@ -113,6 +115,24 @@ export class ProductionProductivity2Component implements OnInit {
       // this.SvgService.svg();
       
     }
+
+    else if(user.view == "Bubble") {
+      this.visbile_chart= true;
+      this.visbile= false;
+      this.visbile_table= false;
+
+      // this.AgricultureService.pie();
+      if (user.districts == "All") {
+        this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      } 
+     else if(user.Comparison == "Bihar vs District") { 
+      this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      }
+      else {
+        this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      }
+      
+    } 
   }     
   // test(a) {
   //   let map = document.getElementById("biharsvg") as HTMLObjectElement;

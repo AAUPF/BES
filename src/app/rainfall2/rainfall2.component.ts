@@ -6,6 +6,8 @@ import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
+import { Views } from '../data/views';
+
 declare var $:any
 interface years<> {
   id: number;  any
@@ -36,7 +38,7 @@ export class Rainfall2Component implements OnInit {
   visbile_table= false;
 
   years = [2016, 2017];
-  views = ["Graph", "Trend Line","Map View","Table"];
+  views = Views;
   rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    

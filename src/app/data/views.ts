@@ -1,0 +1,1 @@
+export const Views:any = ["Graph", "Trend Line","Bubble","Map View","Table"]

@@ -53,6 +53,9 @@ import { AnimalHusbandry3Component } from './animal-husbandry3/animal-husbandry3
 import { AnimalHusbandry4Component } from './animal-husbandry4/animal-husbandry4.component';
 import { AnimalHusbandry5Component } from './animal-husbandry5/animal-husbandry5.component';
 import { AnimalHusbandry6Component } from './animal-husbandry6/animal-husbandry6.component';
+import { DistrictWiseComponent } from './district-wise/district-wise.component';
+import { AgriculturalInputs8Component } from './agricultural-inputs8/agricultural-inputs8.component';
+
 
 
 @NgModule({
@@ -104,6 +107,8 @@ import { AnimalHusbandry6Component } from './animal-husbandry6/animal-husbandry6
     AnimalHusbandry4Component,
     AnimalHusbandry5Component,
     AnimalHusbandry6Component,
+    DistrictWiseComponent,
+    AgriculturalInputs8Component,
   
     ],
   imports: [

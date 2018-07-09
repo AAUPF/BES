@@ -41,6 +41,7 @@ import {AnimalHusbandry3Component} from './animal-husbandry3/animal-husbandry3.c
 import {AnimalHusbandry4Component} from './animal-husbandry4/animal-husbandry4.component';
 import {AnimalHusbandry5Component} from './animal-husbandry5/animal-husbandry5.component';
 import {AnimalHusbandry6Component} from './animal-husbandry6/animal-husbandry6.component';
+import { AgriculturalInputs8Component } from './agricultural-inputs8/agricultural-inputs8.component';
 
 
 
@@ -186,6 +187,10 @@ export const appRoutes: Routes = [
      {
         path: 'agricultural-inputs7',
         component: AgriculturalInputs7Component
+     },
+     {
+        path: 'agricultural-inputs8',
+        component: AgriculturalInputs8Component
      },
      {
         path: 'animal-husbandry1',

@@ -13,11 +13,11 @@ interface years<> {
 }
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-animal-husbandry4',
-  templateUrl: './animal-husbandry4.component.html',
-  styleUrls: ['./animal-husbandry4.component.css']
+  selector: 'app-agricultural-inputs8',
+  templateUrl: './agricultural-inputs8.component.html',
+  styleUrls: ['./agricultural-inputs8.component.css']
 })
-export class AnimalHusbandry4Component implements OnInit {
+export class AgriculturalInputs8Component implements OnInit {
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
@@ -38,7 +38,7 @@ export class AnimalHusbandry4Component implements OnInit {
 
   years = [2016, 2017];
   views = Views;
-  rain_fall_type = ["All","Cow",	"Buffalo",	"Pig",	"Sheep",	"Goat",	"Poultry"]
+  rain_fall_type = ["All","Tractor",	"Combine_Harvestor",	"Zero_Tillage",	"Pumpset",	"Power_Tiller",	"Manually_Operated_Tools",	"Thresher"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
@@ -53,7 +53,7 @@ export class AnimalHusbandry4Component implements OnInit {
     
     }
   onSubmit(user) {
-    var controller = "animal_husbandry4s"
+    var controller = "agricultural_inputs8s"
     if (user.view == "Graph") {
       this.visbile_chart= true;
       this.visbile= false;
@@ -103,7 +103,7 @@ export class AnimalHusbandry4Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "animal_husbandry4s"
+      var controller = "agricultural_inputs8s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");

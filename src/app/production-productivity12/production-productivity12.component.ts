@@ -6,6 +6,8 @@ import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
+import { Views } from '../data/views';
+
 declare var $:any
 interface years<> {
   id: number;  any
@@ -36,8 +38,8 @@ export class ProductionProductivity12Component implements OnInit {
   visbile_table= false;
 
   years = [2016, 2017];
-  views = ["Graph", "Trend Line","Map View","Table"];
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
+  views = Views;
+  rain_fall_type = ["All","Area_2015",	"Production_2015",	"Yield_2015",	"Area_2016",	"Production_2016",	"Yield_2016"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
@@ -52,7 +54,7 @@ export class ProductionProductivity12Component implements OnInit {
     
     }
   onSubmit(user) {
-    var controller = "rainfalls"
+    var controller = "production_productivity12s"
     if (user.view == "Graph") {
       this.visbile_chart= true;
       this.visbile= false;
@@ -102,7 +104,7 @@ export class ProductionProductivity12Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "rainfalls"
+      var controller = "production_productivity12s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
