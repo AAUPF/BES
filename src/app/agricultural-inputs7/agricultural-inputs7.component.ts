@@ -36,7 +36,7 @@ export class AgriculturalInputs7Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2015, 2016];
   views = Views;
   rain_fall_type = ["All","Tractor",	"Combine_Harvestor",	"Zero_Tillage",	"Pumpset",	"Power_Tiller",	"Manually_Operated_Tools",	"Thresher"]
     Comparison = ["None","Bihar vs District"]

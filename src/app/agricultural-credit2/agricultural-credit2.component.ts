@@ -36,9 +36,9 @@ export class AgriculturalCredit2Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2014, 2015,2016];
   views = Views;
-  rain_fall_type = ["All","Target_2014",	"Target_2015",	"Target_2016",	"Achievement_2014",	"Achievement_2015",	"Achievement_2016"]
+  rain_fall_type = ["All","Target",	"Achievement"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
