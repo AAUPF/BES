@@ -36,7 +36,7 @@ export class AgriculturalInputs4Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2015, 2016];
   views = Views;
   rain_fall_type = ["All","Urea",	"DAP",	"SSP",	"MOP",	"Ammonium_Sulphate",	"Complex",	"Total",	"N",	"P",	"K",	"Total_NPK",	"Grand_Total"]
     Comparison = ["None","Bihar vs District"]
@@ -114,6 +114,23 @@ export class AgriculturalInputs4Component implements OnInit {
       // this.SvgService.svg();
       
     }
+    else if(user.view == "Bubble") {
+      this.visbile_chart= true;
+      this.visbile= false;
+      this.visbile_table= false;
+
+      // this.AgricultureService.pie();
+      if (user.districts == "All") {
+        this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      } 
+     else if(user.Comparison == "Bihar vs District") { 
+      this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      }
+      else {
+        this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      }
+      
+    } 
     else if(user.view == "Bubble") {
       this.visbile_chart= true;
       this.visbile= false;
