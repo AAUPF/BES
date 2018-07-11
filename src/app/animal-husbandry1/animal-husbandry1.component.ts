@@ -108,7 +108,7 @@ export class AnimalHusbandry1Component implements OnInit {
         //  that.SvgService.test("echamparan");
             that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
             var u = "wchamparan";
-            that.SvgService.test(u,user.view,user.rain_fall_type,user.years,user.districts,user.Comparison,controller); 
+            that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
       }, 500);
       // this.SvgService.svg();
       

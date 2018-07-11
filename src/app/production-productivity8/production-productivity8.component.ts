@@ -37,9 +37,9 @@ export class ProductionProductivity8Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2015, 2016];
   views = Views;
-  rain_fall_type = ["All","Area_2015","Production_2015","Productivity_2015","Area_2016","Production_2016","Productivity_2016"]
+  rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"}]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
@@ -129,7 +129,7 @@ export class ProductionProductivity8Component implements OnInit {
         //  that.SvgService.test("echamparan");
             that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
             var u = "wchamparan";
-            that.SvgService.test(u,user.view,user.rain_fall_type,user.years,user.districts,user.Comparison,controller); 
+            that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
       }, 500);
       // this.SvgService.svg();
       

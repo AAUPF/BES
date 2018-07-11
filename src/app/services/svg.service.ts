@@ -22,8 +22,9 @@ export class SvgService {
   // private apiRoot1: string = "http://localhost:3000/rainfalls";
   private apiRoot1: string = "http://bihar.aaupf.org/rainfalls";
   apiRoot: string = environment.apiUrl;
-  test(a,views,rain_fall_type,year,districts,Comparison,controller) {
-    let url = `${this.apiRoot}/`+controller+`/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;
+  test(views,year,districts,rain_fall_type,Comparison,controller) {
+    // let url = `${this.apiRoot}/`+controller+`/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;
+    let url = `${this.apiRoot}/`+controller+`/test?search=` + districts + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views;
     // title;
     console.log(url);
     var title = rain_fall_type;

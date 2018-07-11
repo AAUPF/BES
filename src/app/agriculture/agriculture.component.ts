@@ -38,7 +38,8 @@ export class AgricultureComponent implements OnInit {
 
   years = [2016, 2017];
   views = Views;
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
+  // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
+  rain_fall_type1 = [{key: "All", value: "All"}, {key: "Winter Rain", value: "WinterRain"}, {key: "Hot Weather Rain", value: "HotWeatherRain"},{key: "South West Monsoon Rain", value: "SouthWestMonsoonRain"},{key: "North West Monsoon Rain", value: "NorthWestMonsoonRain"}]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
@@ -109,7 +110,7 @@ export class AgricultureComponent implements OnInit {
         //  that.SvgService.test("echamparan");
             that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
             var u = "wchamparan";
-            that.SvgService.test(u,user.view,user.rain_fall_type,user.years,user.districts,user.Comparison,controller); 
+            that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
       }, 500);
       // this.SvgService.svg();
       
