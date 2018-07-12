@@ -6,6 +6,8 @@ import { Views } from '../data/views';
 import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { AgricultureService } from '../services/agriculture.service';
+
 import { TableExport } from '../../../node_modules/tableexport';
 
 import  '../data/data'
@@ -20,12 +22,13 @@ declare var CanvasJS:any;
   styleUrls: ['./production-productivity10.component.css']
 })
 export class ProductionProductivity10Component implements OnInit {
-  constructor(private FruitsService: FruitsService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
+  constructor(private AgricultureService: AgricultureService,private FruitsService: FruitsService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
     // this.FruitsService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
 
   
+    
   // title:string;
   title = ""
   butDisabled: boolean = false;
@@ -40,8 +43,7 @@ export class ProductionProductivity10Component implements OnInit {
 
   years = [2015, 2016];
   views = Views;
-  rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"}]
-  fruits = ["Mango","Guava","Litchi","Banana"]
+  rain_fall_type = [{key: "All", value: "All"}, {key:"Mango Area", value:"Mango_Area"},	{key:"Mango Production", value:"Mango_Production"},	{key:"Guava Area", value:"Guava_Area"},	{key:"Guava Production", value:"Guava_Production"},	{key:"Litchi Area", value:"Litchi_Area"},	{key:"Litchi Production", value:"Litchi_Production"},	{key:"Banana Area", value:"Banana_Area"},	{key:"Banana Production", value:"Banana_Production"},]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
@@ -62,14 +64,12 @@ export class ProductionProductivity10Component implements OnInit {
       this.visbile= false;
       this.visbile_table= false;
 
-      // this.FruitsService.pie();
+      // this.AgricultureService.pie();
       if (user.districts == "All") {
-        this.FruitsService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller,user.fruits);
+        this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
       } 
      else if(user.Comparison == "Bihar vs District") { 
-      this.FruitsService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.fruits);
-      console.log(user.fruits);
-      
+      this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
       }
       else {
         this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
@@ -81,17 +81,36 @@ export class ProductionProductivity10Component implements OnInit {
       this.visbile_table= false;
 
       if (user.districts == "All") {
-        this.FruitsService.trend_line_all(user.districts,user.years,user.rain_fall_type,controller,user.fruits,user.view);
+        this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
         
       } 
       else if(user.Comparison == "Bihar vs District") { 
-        this.FruitsService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.fruits);
+        this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
         }
       else {
         this.SvgService.trend_line(user.districts,user.years,user.rain_fall_type,controller);
       }
       
     } 
+
+    else if(user.view == "Bubble") {
+      this.visbile_chart= true;
+      this.visbile= false;
+      this.visbile_table= false;
+
+      // this.AgricultureService.pie();
+      if (user.districts == "All") {
+        this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      } 
+     else if(user.Comparison == "Bihar vs District") { 
+      this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      }
+      else {
+        this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      }
+      
+    } 
+
     else if(user.view == "Table") {
       this.visbile_chart= false;
       this.visbile_table= true;
@@ -102,7 +121,7 @@ export class ProductionProductivity10Component implements OnInit {
     }
     else if(user.view == "Map View") {
      const that = this;
-      // this.FruitsService.barchart();
+      // this.AgricultureService.barchart();
       this.visbile_chart= false;
       this.visbile= true;
       this.visbile_table= false;
@@ -119,23 +138,6 @@ export class ProductionProductivity10Component implements OnInit {
       // this.SvgService.svg();
       
     }
-    else if(user.view == "Bubble") {
-      this.visbile_chart= true;
-      this.visbile= false;
-      this.visbile_table= false;
-
-      // this.AgricultureService.pie();
-      if (user.districts == "All") {
-        this.FruitsService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.fruits,user.view);
-      } 
-     else if(user.Comparison == "Bihar vs District") { 
-      this.FruitsService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
-      }
-      else {
-        this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
-      }
-      
-    } 
   }     
   // test(a) {
   //   let map = document.getElementById("biharsvg") as HTMLObjectElement;
@@ -154,7 +156,7 @@ export class ProductionProductivity10Component implements OnInit {
   
    
     // var n =  new TableExport(document.getElementsByTagName("table"));
-// this.FruitsService.testgoogle()
+// this.AgricultureService.testgoogle()
 
 
   

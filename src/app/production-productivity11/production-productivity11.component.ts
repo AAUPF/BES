@@ -37,9 +37,11 @@ export class ProductionProductivity11Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2015, 2016];
   views = Views;
-  rain_fall_type = ["All","Potato_Area_2015",	"Potato_Production_2015",	"Potato_Area_2016",	"Potato_Production_2016",	"Onion_Area_2015",	"Onion_Production_2015",	"Onion_Area_2016",	"Onion_Production_2016",	"Cauliflower_Area_2015",	"Cauliflower_Production_2015",	"Cauliflower_Area_2016",	"Cauliflower_Production_2016",	"Brinjal_Area_2015",	"Brinjal_Production_2015",	"Brinjal_Area_2016",	"Brinjal_Production_2016"]
+
+  rain_fall_type =[{key: "All", value: "All"},{key:"Potato Area" ,value:"Potato_Area"},	{key:"Potato Production" ,value:"Potato_Production"},	{key:"Onion Area" ,value:"Onion_Area"},	{key:"Onion Production" ,value:"Onion_Production"},	{key:"Cauliflower Area" ,value:"Cauliflower_Area"},	{key:"Cauliflower Production" ,value:"Cauliflower_Production"},	{key:"Brinjal Area" ,value:"Brinjal_Area"},	{key:"Brinjal Production" ,value:"Brinjal_Production"},]
+  fruits = ["Mango","Guava","Litchi","Banana"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
