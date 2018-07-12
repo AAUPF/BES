@@ -39,7 +39,7 @@ export class Rainfall2Component implements OnInit {
 
   years = [2016, 2017];
   views = Views;
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
+  rain_fall_type = [{key: "All", value: "All"},{key:"Winter Rain", value:"Winter_Rain"},	{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
@@ -54,7 +54,7 @@ export class Rainfall2Component implements OnInit {
     
     }
   onSubmit(user) {
-    var controller = "rainfalls"
+    var controller = "rainfall2s"
     if (user.view == "Graph") {
       this.visbile_chart= true;
       this.visbile= false;
@@ -104,7 +104,7 @@ export class Rainfall2Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "rainfalls"
+      var controller = "rainfall2s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
@@ -115,6 +115,23 @@ export class Rainfall2Component implements OnInit {
       // this.SvgService.svg();
       
     }
+    else if(user.view == "Bubble") {
+      this.visbile_chart= true;
+      this.visbile= false;
+      this.visbile_table= false;
+
+      // this.AgricultureService.pie();
+      if (user.districts == "All") {
+        this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      } 
+     else if(user.Comparison == "Bihar vs District") { 
+      this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      }
+      else {
+        this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      }
+      
+    } 
   }     
   // test(a) {
   //   let map = document.getElementById("biharsvg") as HTMLObjectElement;

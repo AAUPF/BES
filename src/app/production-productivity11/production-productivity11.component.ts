@@ -117,6 +117,24 @@ export class ProductionProductivity11Component implements OnInit {
       // this.SvgService.svg();
       
     }
+
+    else if(user.view == "Bubble") {
+      this.visbile_chart= true;
+      this.visbile= false;
+      this.visbile_table= false;
+
+      // this.AgricultureService.pie();
+      if (user.districts == "All") {
+        this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      } 
+     else if(user.Comparison == "Bihar vs District") { 
+      this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      }
+      else {
+        this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      }
+      
+    } 
   }     
   // test(a) {
   //   let map = document.getElementById("biharsvg") as HTMLObjectElement;
