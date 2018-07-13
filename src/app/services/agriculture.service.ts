@@ -70,6 +70,7 @@ export class AgricultureService {
          let chart = new CanvasJS.Chart("chartContainer", {
            animationEnabled: true,
            exportEnabled: true,
+           
            title: {
              text: rain_fall_type
            },
@@ -154,35 +155,79 @@ subscribe(res => {
 
 }
 
+
+barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,controller,views){
+  let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare+ `&views=`+views;
+  // let url = `${this.apiRoot}`;
+    console.log(url);
+    console.log(year);
+    
+  this.http.get(url).
+    subscribe(res => {
+
+      if (rain_fall_type == "All") {
+        this.j = res;
+        let chart1 = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          exportEnabled: true,
+          title: {
+            text: rain_fall_type
+          },
+          data: this.j
+        });
+
+        
+        chart1.render();
+        // alert("error")
+
+      }
+      
+      else if (year == "All") {
+        console.log("trigger");
+
+        this.j = res;
+        let chart1 = new CanvasJS.Chart("chartContainer", {
+          animationEnabled: true,
+          exportEnabled: true,
+          title: {
+            text: rain_fall_type
+          },
+          data: this.j
+        });
+
+        
+        chart1.render();
+        // alert("error")
+
+      }
+      else {
+
+        this.j = res;
+        console.log(res);
+       let chart = new CanvasJS.Chart("chartContainer", {
+         animationEnabled: true,
+         exportEnabled: true,
+    
+         data: [{
+           type: views,
+           dataPoints: 
+           this.j
+         }]
+       });
+        chart.render();
+
+      }
+      }
+   ); 
+}
+
+
   barchart_bihar_vs_district(year,district,rain_fall_type,compare,controller){
-    // let url = `${this.apiRoot}`;
-    // let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
-    // console.log(url);
-
-    // this.http.get(url).
-    //   subscribe(res => {
-    //     this.j = res;
-    //     console.log(this.j);
-    //     let chart = new CanvasJS.Chart("chartContainer", {
-    //       animationEnabled: true,
-    //       exportEnabled: true,
-    //       title: {
-    //         text: rain_fall_type+" " +year
-    //       },
-    //       data: [{
-    //         type: "column",
-    //         dataPoints: 
-    //         this.j
-    //       }]
-    //     });
-    //     chart.render();
-    //     }
-    //  ); 
-
-
     let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
     // let url = `${this.apiRoot}`;
       console.log(url);
+      console.log(year);
+      
     this.http.get(url).
       subscribe(res => {
 
@@ -201,16 +246,34 @@ subscribe(res => {
           chart1.render();
           // alert("error")
 
-        } else {
+        }
+        
+        else if (year == "All") {
+          console.log("trigger");
+
+          this.j = res;
+          let chart1 = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            exportEnabled: true,
+            title: {
+              text: rain_fall_type
+            },
+            data: this.j
+          });
+
+          
+          chart1.render();
+          // alert("error")
+
+        }
+        else {
 
           this.j = res;
           console.log(res);
          let chart = new CanvasJS.Chart("chartContainer", {
            animationEnabled: true,
            exportEnabled: true,
-           title: {
-             text: rain_fall_type
-           },
+      
            data: [{
              type: "column",
              dataPoints: 

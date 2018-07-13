@@ -36,26 +36,36 @@ export class AgricultureComponent implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
-  views = Views;
+  years = [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016, 2017,"All"];
+  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Pie Chart", value: "pie"},{key: "Table", value: "Table"}];
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-  rain_fall_type1 = [{key: "All", value: "All"}, {key: "Winter Rain", value: "WinterRain"}, {key: "Hot Weather Rain", value: "HotWeatherRain"},{key: "South West Monsoon Rain", value: "SouthWestMonsoonRain"},{key: "North West Monsoon Rain", value: "NorthWestMonsoonRain"}]
-    Comparison = ["None","Bihar vs District"]
+  rain_fall_type1 = [{key: "All", value: "All"}, {key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]
+    Comparison = [{key: "none", value: "None"}, {key: "Total", value: "Total"},{key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
       this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
+      // this.data.Comparison  = undefined
+      // this.butDisabled = true;
+
+      this.Comparison = [{key: "none", value: "None"}, {key: "Total", value: "Total"}]
 
     } else {
-      this.butDisabled = false;
+      // this.butDisabled = false;
+      this.Comparison = [{key: "none", value: "None"}, {key: "Total", value: "Total"},{key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]
+     
     }
+
+
+    
     
     }
+
+
+    
   onSubmit(user) {
-    var controller = "rainfalls"
-    if (user.view == "Graph") {
+    var controller = "rainfall1s"
+    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie") {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
@@ -64,8 +74,8 @@ export class AgricultureComponent implements OnInit {
       if (user.districts == "All") {
         this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
       } 
-     else if(user.Comparison == "Bihar vs District") { 
-      this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+     else if(user.Comparison) { 
+      this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
       }
       else {
         this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
@@ -80,7 +90,7 @@ export class AgricultureComponent implements OnInit {
         this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
         
       } 
-      else if(user.Comparison == "Bihar vs District") { 
+      else if(user.Comparison) { 
         this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
         }
       else {
@@ -104,7 +114,7 @@ export class AgricultureComponent implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "rainfalls"
+      var controller = "rainfall1s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
@@ -124,7 +134,7 @@ export class AgricultureComponent implements OnInit {
       if (user.districts == "All") {
         this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
       } 
-     else if(user.Comparison == "Bihar vs District") { 
+     else if(user.Comparison) { 
       this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
       }
       else {

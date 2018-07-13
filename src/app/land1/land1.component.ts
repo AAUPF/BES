@@ -27,10 +27,13 @@ export class Land1Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  years = [2016, 2017];
-  views = ["Graph", "Trend Line","Map View","Table"];
-  rain_fall_type = ["All","Geographical_Area","Forest","Barren_and_Unculturable_land","Non_Agriculture_Land_Area", "Non_Agriculture_Perennial"]
-    Comparison = ["None","Bihar vs District"]
+  years = [2010, 2011,2012,2013,2014,"All"];
+  views = ["Graph", "Trend Line","bubble","Table"];
+  rain_fall_type = [{key:"Geographical Area", value:"Geographical_Area"},	{key:"Forests", value:"Forests"},	{key:"Barren Unculturable Land", value:"Barren_Unculturable_Land"},	{key:"Land put to Non agricultural use", value:"Land_put_to_Non_agricultural_use"},	{key:"Land Area", value:"Land_Area"},	{key:"Water Area", value:"Water_Area"},	{key:"Culturable Waste", value:"Culturable_Waste"},	{key:"Permanent Pastures", value:"Permanent_Pastures"},	{key:"Land under Tree Crops", value:"Land_under_Tree_Crops"},	{key:"Fallow Land excl Current Fallow", value:"Fallow_Land_excl_Current_Fallow"},	{key:"Current Fallow", value:"Current_Fallow"},	{key:"Total Unculturable Land", value:"Total_Unculturable_Land"},	{key:"Net Sown Area", value:"Net_Sown_Area"},	{key:"Gross Sown Area", value:"Gross_Sown_Area"},	{key:"Cropping Intensity", value:"Cropping_Intensity"},]
+
+
+
+    Comparison = [	{key:"Geographical Area", value:"Geographical_Area"},	{key:"Forests", value:"Forests"},	{key:"Barren Unculturable Land", value:"Barren_Unculturable_Land"},	{key:"Land put to Non agricultural use", value:"Land_put_to_Non_agricultural_use"},	{key:"Land Area", value:"Land_Area"},	{key:"Water Area", value:"Water_Area"},	{key:"Culturable Waste", value:"Culturable_Waste"},	{key:"Permanent Pastures", value:"Permanent_Pastures"},	{key:"Land under Tree Crops", value:"Land_under_Tree_Crops"},	{key:"Fallow Land excl Current Fallow", value:"Fallow_Land_excl_Current_Fallow"},	{key:"Current Fallow", value:"Current_Fallow"},	{key:"Total Unculturable Land", value:"Total_Unculturable_Land"},	{key:"Net Sown Area", value:"Net_Sown_Area"},	{key:"Gross Sown Area", value:"Gross_Sown_Area"},	{key:"Cropping Intensity", value:"Cropping_Intensity"},]
     data: any = {}; 
     toNumber(d) {
       if (d == "All") {
@@ -108,7 +111,7 @@ export class Land1Component implements OnInit {
 
     
     onSubmit(user) {
-      var controller = "lands"
+      var controller = "land1s"
       if (user.view == "Graph") {
         this.visbile_chart= true;
         this.visbile= false;
@@ -118,11 +121,11 @@ export class Land1Component implements OnInit {
         if (user.districts == "All") {
           this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
         } 
-       else if(user.Comparison == "Bihar vs District") { 
+       else if(user.Comparison) { 
         this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
         }
         else {
-          this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
+          this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller,);
         }
       } 
       else if(user.view == "Trend Line") {
@@ -134,7 +137,7 @@ export class Land1Component implements OnInit {
           this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
           
         } 
-        else if(user.Comparison == "Bihar vs District") { 
+        else if(user.Comparison) { 
           this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
           }
         else {
@@ -150,6 +153,26 @@ export class Land1Component implements OnInit {
   
         this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
       }
+      else if(user.view == "bubble") {
+        this.visbile_chart= true;
+        this.visbile= false;
+        this.visbile_table= false;
+
+        console.log("bubbe");
+        
+  
+        // this.AgricultureService.pie();
+        if (user.districts == "All") {
+          this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
+        } 
+       else if(user.Comparison) { 
+        this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+        }
+        else {
+          this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
+        }
+        
+      } 
       else if(user.view == "Map View") {
        const that = this;
         // this.AgricultureService.barchart();
@@ -158,7 +181,7 @@ export class Land1Component implements OnInit {
         this.visbile_table= false;
         // this.title =user.rain_fall_type;
         // this.SvgService.test("echamparan");
-        var controller = "rainfalls"
+        var controller = "land1s"
         this.spinner.show();
         setTimeout(function() {
           var controller = "lands"
@@ -170,6 +193,9 @@ export class Land1Component implements OnInit {
         // this.SvgService.svg();
         
       }
+
+
+   
     }   
 
   ngOnInit() {
