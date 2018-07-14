@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 declare var google:any;
+declare var $:any
+declare var $:any
 
 declare var CanvasJS:any;
 @Injectable({
   providedIn: 'root'
 })
 export class AgricultureService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private spinner: NgxSpinnerService) { }
    private apiRoot: string = "http://localhost:3000/static_pages/help";
   // private apiRoot1: string = "http://localhost:3000/rainfalls";
   // private apiRoot1: string = "http://bihar.aaupf.org//rainfalls";
@@ -160,61 +164,187 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
   let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare+ `&views=`+views;
   // let url = `${this.apiRoot}`;
     console.log(url);
-    console.log(year);
+    
     
   this.http.get(url).
     subscribe(res => {
-
+      var newdata = res;
+      this.spinner.hide();
       if (rain_fall_type == "All") {
-        this.j = res;
-        let chart1 = new CanvasJS.Chart("chartContainer", {
-          animationEnabled: true,
-          exportEnabled: true,
-          title: {
-            text: rain_fall_type
-          },
-          data: this.j
+
+        if (views == "Table") {
+          var j = $( "#example-table" ).hasClass( "tabulator" )
+          console.log(res["data"]);
+           
+          if (j) {
+            $("#example-table").tabulator("destroy");
+           
+            
+          }
+          $("#example-table").tabulator({
+            layout:"fitColumns"});
+         
+          //set new columns
+          $("#example-table").tabulator("setColumns", res["column"]);
+          
+          //set new data
+          $("#example-table").tabulator("setData", res["data"]);
+
+
+          $("#download-xlsx").click(function(){
+            $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+          });
+      
+          $("#download-csv").click(function(){
+            $("#example-table").tabulator("download", "csv", "data.csv");
+        });
+        
+        //trigger download of data.json file
+        $("#download-json").click(function(){
+            $("#example-table").tabulator("download", "json", "data.json");
         });
 
-        
-        chart1.render();
-        // alert("error")
+          }  else {
+
+
+
+            console.log("rain_fall_type");
+            this.j = res;
+    
+            
+            let chart1 = new CanvasJS.Chart("chartContainer", {
+              animationEnabled: true,
+              exportEnabled: true,
+              title: {
+                text: rain_fall_type
+              },
+              data: this.j
+            });
+    
+            
+            chart1.render();
+            // alert("error")
+
+
+
+          }
+
+
+
+
+
+
+
 
       }
       
       else if (year == "All") {
-        console.log("trigger");
+          if (views == "Table") {
 
-        this.j = res;
-        let chart1 = new CanvasJS.Chart("chartContainer", {
-          animationEnabled: true,
-          exportEnabled: true,
-          title: {
-            text: rain_fall_type
-          },
-          data: this.j
+            console.log("error");
+            
+          var j = $( "#example-table" ).hasClass( "tabulator" )
+          console.log(res["data"]);
+           
+          if (j) {
+            $("#example-table").tabulator("destroy");
+           
+            
+          }
+          $("#example-table").tabulator({
+            layout:"fitColumns"});
+         
+          //set new columns
+          $("#example-table").tabulator("setColumns", res["column"]);
+          
+          //set new data
+          $("#example-table").tabulator("setData", res["data"]);
+
+
+          $("#download-xlsx").click(function(){
+            $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+          });
+      
+          $("#download-csv").click(function(){
+            $("#example-table").tabulator("download", "csv", "data.csv");
+        });
+        
+        //trigger download of data.json file
+        $("#download-json").click(function(){
+            $("#example-table").tabulator("download", "json", "data.json");
         });
 
-        
-        chart1.render();
-        // alert("error")
+          } else {
+            
+            this.j = res;
+            let chart1 = new CanvasJS.Chart("chartContainer", {
+              animationEnabled: true,
+              exportEnabled: true,
+              title: {
+                text: rain_fall_type
+              },
+              data: this.j
+            });
+
+            
+            chart1.render();
+            // alert("error")
+          }
 
       }
       else {
 
-        this.j = res;
-        console.log(res);
-       let chart = new CanvasJS.Chart("chartContainer", {
-         animationEnabled: true,
-         exportEnabled: true,
-    
-         data: [{
-           type: views,
-           dataPoints: 
-           this.j
-         }]
-       });
-        chart.render();
+
+        if (views == "Table") {
+          var j = $( "#example-table" ).hasClass( "tabulator" )
+          console.log(res["data"]);
+           
+          if (j) {
+            $("#example-table").tabulator("destroy");
+           
+            
+          }
+          $("#example-table").tabulator({
+            layout:"fitColumns"});
+         
+          //set new columns
+          $("#example-table").tabulator("setColumns", res["column"]);
+          
+          //set new data
+          $("#example-table").tabulator("setData", res["data"]);
+
+
+          $("#download-xlsx").click(function(){
+            $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+          });
+      
+          $("#download-csv").click(function(){
+            $("#example-table").tabulator("download", "csv", "data.csv");
+        });
+        
+        //trigger download of data.json file
+        $("#download-json").click(function(){
+            $("#example-table").tabulator("download", "json", "data.json");
+        });
+
+          } else {
+
+
+            this.j = res;
+            console.log(res);
+           let chart = new CanvasJS.Chart("chartContainer", {
+             animationEnabled: true,
+             exportEnabled: true,
+        
+             data: [{
+               type: views,
+               dataPoints: 
+               this.j
+             }]
+           });
+            chart.render();
+
+          }
 
       }
       }
@@ -230,6 +360,8 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
       
     this.http.get(url).
       subscribe(res => {
+
+        this.spinner.hide();
 
         if (rain_fall_type == "All") {
           this.j = res;

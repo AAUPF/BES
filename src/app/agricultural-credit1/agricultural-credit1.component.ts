@@ -35,25 +35,26 @@ export class AgriculturalCredit1Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
-  views = ["Graph", "Trend Line","Map View","Table"];
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-    Comparison = ["None","Bihar vs District"]
+  years = [2012,2013,2014,2015,2016, "All"];
+  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Pie Chart", value: "pie"},{key: "Table", value: "Table"}];
+  // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
+  rain_fall_type1 = [{key: "All", value: "All"},{key: "Commercial Bank Target", value: "Commercial_Bank_Target"},	{key: "Commercial Bank Achievement", value: "Commercial_Bank_Achievement"},	{key: "RRBs Target", value: "RRBs_Target"},	{key: "RRBs Achievement", value: "RRBs_Achievement"},	{key: "CCBs Target", value: "CCBs_Target"},	{key: "CCBs Achievement", value: "CCBs_Achievement"},	{key: "Total Target", value: "Total_Target"},	{key: "Total Achievement", value: "Total_Achievement"},]
+    Comparison = [{key: "none", value: "None"},{key: "Commercial Bank Target", value: "Commercial_Bank_Target"},	{key: "Commercial Bank Achievement", value: "Commercial_Bank_Achievement"},	{key: "RRBs Target", value: "RRBs_Target"},	{key: "RRBs Achievement", value: "RRBs_Achievement"},	{key: "CCBs Target", value: "CCBs_Target"},	{key: "CCBs Achievement", value: "CCBs_Achievement"},	{key: "Total Target", value: "Total_Target"},	{key: "Total Achievement", value: "Total_Achievement"},]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
       this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
+      // this.data.Comparison  = undefined
+      // this.butDisabled = true;
+      this.Comparison = [{key: "none", value: "None"}]
     } else {
-      this.butDisabled = false;
+      // this.butDisabled = false;
+      this.Comparison = [{key: "none", value: "None"},{key: "Commercial Bank Target", value: "Commercial_Bank_Target"},	{key: "Commercial Bank Achievement", value: "Commercial_Bank_Achievement"},	{key: "RRBs Target", value: "RRBs_Target"},	{key: "RRBs Achievement", value: "RRBs_Achievement"},	{key: "CCBs Target", value: "CCBs_Target"},	{key: "CCBs Achievement", value: "CCBs_Achievement"},	{key: "Total Target", value: "Total_Target"},	{key: "Total Achievement", value: "Total_Achievement"},]
     }
-    
     }
   onSubmit(user) {
-    var controller = "rainfalls"
-    if (user.view == "Graph") {
+    var controller = "agricultural_credit1s"
+    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie") {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
@@ -62,8 +63,8 @@ export class AgriculturalCredit1Component implements OnInit {
       if (user.districts == "All") {
         this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
       } 
-     else if(user.Comparison == "Bihar vs District") { 
-      this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+     else if(user.Comparison) { 
+      this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
       }
       else {
         this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
@@ -78,7 +79,7 @@ export class AgriculturalCredit1Component implements OnInit {
         this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
         
       } 
-      else if(user.Comparison == "Bihar vs District") { 
+      else if(user.Comparison) { 
         this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
         }
       else {
@@ -102,7 +103,7 @@ export class AgriculturalCredit1Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "rainfalls"
+      var controller = "agricultural_credit1s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
@@ -113,6 +114,23 @@ export class AgriculturalCredit1Component implements OnInit {
       // this.SvgService.svg();
       
     }
+    else if(user.view == "Bubble") {
+      this.visbile_chart= true;
+      this.visbile= false;
+      this.visbile_table= false;
+
+      // this.AgricultureService.pie();
+      if (user.districts == "All") {
+        this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      } 
+     else if(user.Comparison) { 
+      this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      }
+      else {
+        this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
+      }
+      
+    } 
   }     
   // test(a) {
   //   let map = document.getElementById("biharsvg") as HTMLObjectElement;
