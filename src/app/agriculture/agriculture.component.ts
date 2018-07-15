@@ -7,6 +7,8 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
+import { Location } from '@angular/common';
+
 declare var $:any
 interface years<> {
   id: number;  any
@@ -18,11 +20,13 @@ declare var CanvasJS:any;
   styleUrls: ['./agriculture.component.css']
 })
 export class AgricultureComponent implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
+  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
-
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
   
   // title:string;
   title = ""
@@ -36,7 +40,7 @@ export class AgricultureComponent implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016, 2017,"All"];
+  years = ["All",2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016, 2017];
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Pie Chart", value: "pie"},{key: "Table", value: "Table"}];
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
   rain_fall_type1 = [{key: "All", value: "All"}, {key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]

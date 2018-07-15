@@ -54,7 +54,7 @@ export class AgriculturalCredit1Component implements OnInit {
     }
   onSubmit(user) {
     var controller = "agricultural_credit1s"
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie") {
+    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie" || user.view == "Table") {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
@@ -64,6 +64,17 @@ export class AgriculturalCredit1Component implements OnInit {
         this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
       } 
      else if(user.Comparison) { 
+
+      if (user.view == "Table") {
+        this.visbile_chart= false;
+        this.visbile_table= true;
+        this.spinner.show();
+      } else {
+        this.visbile_chart= true;
+        this.visbile_table= false;
+        this.spinner.show();
+        
+      }
       this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
       }
       else {

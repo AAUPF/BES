@@ -221,6 +221,8 @@ trend_line(data,year,rain_fall_type,controller) {
     subscribe(res => {
       this.j = res;
       //  console.log(res);
+      this.spinner.hide();
+
        var chart = new CanvasJS.Chart("chartContainer", {
         data: [
         {
@@ -560,7 +562,7 @@ table1(){
 
 export(){
 
-  var tableId = 'myId';
+  var tableId = 'example-table';
   var ExportButtons = document.getElementById(tableId);
   var instance = new TableExport(ExportButtons, {
       formats: ['xls', 'csv'],
@@ -574,6 +576,62 @@ export(){
       
       instance.export2file(exportDataXLS.data, exportDataXLS.mimeType, exportDataXLS.filename, exportDataXLS.fileExtension);
   });
+}
+
+
+
+newtable(year,district,rain_fall_type,compare,controller,views) {
+
+  let url = `${this.apiRoot}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare+ `&views=`+views;
+
+  console.log(url);
+  
+  this.http.get(url).
+  subscribe(res => {
+    this.j = res;
+    this.spinner.hide();
+
+    if (views == "Table") {
+      var j = $( "#example-table" ).hasClass( "tabulator" )
+      console.log(res["data"]);
+       
+      if (j) {
+        $("#example-table").tabulator("destroy");
+       
+        
+      }
+      $("#example-table").tabulator({
+        layout:"fitColumns"});
+     
+      //set new columns
+      $("#example-table").tabulator("setColumns", res["column"]);
+      
+      //set new data
+      $("#example-table").tabulator("setData", res["data"]);
+  
+  
+      $("#download-xlsx").click(function(){
+        $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+      });
+  
+      $("#download-csv").click(function(){
+        $("#example-table").tabulator("download", "csv", "data.csv");
+    });
+    
+    //trigger download of data.json file
+    $("#download-json").click(function(){
+        $("#example-table").tabulator("download", "json", "data.json");
+    });
+    // this.export()
+      }
+
+
+    }
+ ); 
+
+
+
+
 }
 }
 
