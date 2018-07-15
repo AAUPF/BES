@@ -221,20 +221,9 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
               data: this.j
             });
     
-            
             chart1.render();
             // alert("error")
-
-
-
           }
-
-
-
-
-
-
-
 
       }
       
@@ -335,12 +324,10 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
            let chart = new CanvasJS.Chart("chartContainer", {
              animationEnabled: true,
              exportEnabled: true,
-        
-             data: [{
-               type: views,
-               dataPoints: 
-               this.j
-             }]
+             title: {
+              text: rain_fall_type
+            },
+             data: this.j
            });
             chart.render();
 

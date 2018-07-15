@@ -57,16 +57,8 @@ export class AgricultureComponent implements OnInit {
     } else {
       // this.butDisabled = false;
       this.Comparison = [{key: "none", value: "None"}, {key: "Total", value: "Total"},{key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]
-     
     }
-
-
-    
-    
     }
-
-
-    
   onSubmit(user) {
     var controller = "rainfall1s"
     if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {

@@ -10,7 +10,7 @@ export const Districts:any = [
     "Bihar",
     "Buxar",
     "Darbhanga",
-    "EeastChamparan",
+    "EastChamparan",
     "Gaya",
     "Gopalganj",
     "Jamui",
