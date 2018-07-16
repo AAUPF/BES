@@ -179,7 +179,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           if (j) {
             $("#example-table").tabulator("destroy");
            
-            
+   
           }
           $("#example-table").tabulator({
             layout:"fitColumns"});
@@ -203,6 +203,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
         $("#download-json").click(function(){
             $("#example-table").tabulator("download", "json", "data.json");
         });
+            
 
           }  else {
 
