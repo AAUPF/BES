@@ -10,6 +10,7 @@ import {appRoutes} from './route-definitions';
 import { TestComponent } from './test/test.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AgricultureComponent } from './agriculture/agriculture.component';
 import { ModalComponent } from './modal/modal.component';
 import { SvgcomponentComponent } from './svgcomponent/svgcomponent.component';
@@ -117,7 +118,8 @@ import { AgriculturalInputs8Component } from './agricultural-inputs8/agricultura
     RouterModule.forRoot(appRoutes),
     HttpModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

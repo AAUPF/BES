@@ -592,47 +592,42 @@ newtable(year,district,rain_fall_type,compare,controller,views) {
     this.spinner.hide();
 
     if (views == "Table") {
-      var j = $( "#example-table" ).hasClass( "tabulator" )
+      var k = $( "#example-table" ).hasClass( "tabulator" )
       console.log(res["data"]);
        
-      if (j) {
-        $("#example-table").tabulator("destroy");
+      if (k) {
+        // $("#example-table").tabulator("destroy");
        
-        
+        $("#example-table").tabulator('clearData');
       }
       $("#example-table").tabulator({
         layout:"fitColumns"});
-     
+        
       //set new columns
       $("#example-table").tabulator("setColumns", res["column"]);
       
       //set new data
       $("#example-table").tabulator("setData", res["data"]);
+  }
   
+
+  }); 
+  $("#download-xlsx").click(function(){
+    $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+  });
   
-      $("#download-xlsx").click(function(){
-        $("#example-table").tabulator("download", "xlsx", "data.xlsx");
-      });
+  $("#download-csv").click(function(){
+    $("#example-table").tabulator("download", "csv", "data.csv");
+  });
   
-      $("#download-csv").click(function(){
-        $("#example-table").tabulator("download", "csv", "data.csv");
-    });
-    
-    //trigger download of data.json file
-    $("#download-json").click(function(){
-        $("#example-table").tabulator("download", "json", "data.json");
-    });
-    // this.export()
-      }
-
-
-    }
- ); 
-
-
-
-
+  //trigger download of data.json file
+  $("#download-json").click(function(){
+    $("#example-table").tabulator("download", "json", "data.json");
+  });
+ 
 }
+
+
 }
 
 
