@@ -24,7 +24,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/jquery.tabulator/dist/css/tabulator.min.css"            
+              "./node_modules/jquery.tabulator/dist/css/tabulator_simple.min.css"          
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",

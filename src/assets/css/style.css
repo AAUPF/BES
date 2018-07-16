@@ -305,7 +305,7 @@ section {
 }
 }
 .btn-primary {
-	background-color: #2196f3;
+	background-color: #2196f3 !important;
 	transition: all 0.3s ease-in-out;
 }
 .btn-primary>i {
@@ -1493,14 +1493,28 @@ a.link:hover {
 	width: 115px;
 	padding: 17px 0;
 }
+
+.pageTitle .btnArea .btn-primary { padding: 10px 15px !important; font-size: 16px !important;  }
+
 .pageTitle h2 {
 	margin-bottom: 0;
 	font-weight: 400;
-	text-transform: capitalize;
+	text-transform: initial;
 	text-align: center;
 	font-size: 25px;
 	line-height: 30px;
+	margin:  0 150px;
 }
+
+
+.pageTitle {
+	position: relative;
+}
+
+
+.pageTitle .btnArea  { margin-top: -43px; position: absolute; }
+
+
 @media (min-width: 768px) {
 .pageTitle h2 {
 	font-size: 40px;
@@ -1749,6 +1763,26 @@ select {
 
 
 @media screen and (max-width: 600px) {
+
+	.pageTitle { position: inherit; }
+	
+	.pageTitle h2 { margin: 0px !important; }	
+		
+	.pageTitle .btnArea {
+		margin-top: 0px;
+		position: inherit;
+		margin: 0px auto;
+		display: table;
+	}	
+		
+	.pageTitle .btnArea .btn-primary {
+		padding: 8px 10px 23px !important;
+		font-size: 12px !important;
+		margin: 10px auto;
+		height: 25px !important;
+		
+	}	
+	
 .bihar-logo {
     position: absolute;
     top: 0px !important;
