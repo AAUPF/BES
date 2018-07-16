@@ -305,14 +305,14 @@ section {
 }
 }
 .btn-primary {
-	background-color: #2196f3;
+	background-color: #2196f3 !important;
 	transition: all 0.3s ease-in-out;
 }
 .btn-primary>i {
 	margin-right: 10px;
 }
 .btn-primary:hover {
-	background-color: #000 !important;
+	background-color: #2196f3 !important;
 }
 .btn-primary:focus, .btn-primary.active, .btn-primary:active {
 	background-color: #2196f3;
@@ -1493,14 +1493,30 @@ a.link:hover {
 	width: 115px;
 	padding: 17px 0;
 }
+
+.cen_sel { margin: 0px auto; text-align: center; }
+
+.pageTitle .btnArea .btn-primary { padding: 10px 15px !important; font-size: 16px !important;  }
+
 .pageTitle h2 {
 	margin-bottom: 0;
 	font-weight: 400;
-	text-transform: capitalize;
+	text-transform: initial;
 	text-align: center;
 	font-size: 25px;
 	line-height: 30px;
+	margin:  0 150px;
 }
+
+
+.pageTitle {
+	position: relative;
+}
+
+
+.pageTitle .btnArea  { margin-top: -43px; position: absolute; }
+
+
 @media (min-width: 768px) {
 .pageTitle h2 {
 	font-size: 40px;
@@ -1749,6 +1765,26 @@ select {
 
 
 @media screen and (max-width: 600px) {
+
+	.pageTitle { position: inherit; }
+	
+	.pageTitle h2 { margin: 0px !important; }	
+		
+	.pageTitle .btnArea {
+		margin-top: 0px;
+		position: inherit;
+		margin: 0px auto;
+		display: table;
+	}	
+		
+	.pageTitle .btnArea .btn-primary {
+		padding: 8px 10px 23px !important;
+		font-size: 12px !important;
+		margin: 10px auto;
+		height: 25px !important;
+		
+	}	
+	
 .bihar-logo {
     position: absolute;
     top: 0px !important;
@@ -6950,4 +6986,6 @@ table { width: 100%; border-collapse: collapse; line-height: 18px !important; } 
     height: 38px;
     margin-top: 5px;
     font-size: 12px;
-    padding: 6px 15px; opacity: 100 ; cursor: pointer; } */
+	padding: 6px 15px; opacity: 100 ; cursor: pointer; } */
+	
+

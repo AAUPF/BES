@@ -7,6 +7,7 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
+import { Location } from '@angular/common';
 
 declare var $:any
 interface years<> {
@@ -19,12 +20,14 @@ declare var CanvasJS:any;
   styleUrls: ['./production-productivity6.component.css']
 })
 export class ProductionProductivity6Component implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
+  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
 
-  
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
   // title:string;
   title = ""
   butDisabled: boolean = false;

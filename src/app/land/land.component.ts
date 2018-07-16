@@ -7,6 +7,7 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { AgricultureService } from '../services/agriculture.service';
+import { Location } from '@angular/common';
 
 declare var $:any
 interface years<> {
@@ -19,7 +20,7 @@ declare var CanvasJS:any;
   styleUrls: ['./land.component.css']
 })
 export class LandComponent implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private Land: Land) { }
+  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private Land: Land,private location: Location) { }
   butDisabled: boolean = false;
   public loading = false;
   htmlContent:string;
@@ -29,9 +30,13 @@ export class LandComponent implements OnInit {
   visbile_table= false;
   years = [2016, 2017];
   views = ["Graph", "Trend Line","Map View","Table"];
-  rain_fall_type = ["All","Geographical_Area","Forest","Barren_and_Unculturable_land","Non_Agriculture_Land_Area", "Non_Agriculture_Perennial"]
+  rain_fall_type = [{key: "All", value: "All"},{key:"Geographical area",value:"Geographical_area"},	{key:"Forest",value:"Forest"},	{key:"Barren unculturable land",value:"Barren_unculturable_land"},	{key:"Non Agriculture Land area",value:"Non_Agriculture_Land_area"},	{key:"Non Agriculture Perennial Water Area",value:"Non_Agriculture_Perennial_Water_Area"},	{key:"Non Agriculture Temporary Water Area",value:"Non_Agriculture_Temporary_Water_Area"},	{key:"Culturable Waste Land",value:"Culturable_Waste_Land"},	{key:"Permanent Pastures",value:"Permanent_Pastures"},	{key:"Tree Crops",value:"Tree_Crops"},	{key:"Fallow land",value:"Fallow_land"},	{key:"Current Fallow",value:"Current_Fallow"},	{key:"Total Uncultivable Land",value:"Total_Uncultivable_Land"},	{key:"Net Area Sown",value:"Net_Area_Sown"},	{key:"Gross Crop Area",value:"Gross_Crop_Area"},	{key:"Cropping Intensity",value:"Cropping_Intensity"}]
     Comparison = ["None","Bihar vs District"]
     data: any = {}; 
+
+    cancel() {
+      this.location.back(); // <-- go back to previous location on cancel
+    }
     toNumber(d) {
       if (d == "All") {
         this.data == {years: null, views: "",Comparison: ""};
@@ -148,7 +153,7 @@ export class LandComponent implements OnInit {
         this.visbile= false;
         this.spinner.show();
   
-        this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+        this.SvgService.newtable(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
       }
       else if(user.view == "Map View") {
        const that = this;

@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="pageTitle">
-          <h2>District-wise Land Utilization Pattern (2014-15)</h2>
+          <h2>District-wise Land Utilization Pattern</h2>
+          <div class="btnArea"><a (click)="cancel()" class="btn btn-primary"><i class="fa fa-angle-left" aria-hidden="true"></i> Back </a></div>
         </div>
       </div>
     </div>
@@ -17,7 +18,7 @@
           <div class="categoryBox">
             <div class="contactSelect">
               <form #f="ngForm" (ngSubmit)="onSubmit(data)">
-                <div>
+                <div class="cen_sel">
                   <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toNumber(data.districts)">
                       <option [ngValue]="undefined" disabled  selected> District  </option>
                       <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
@@ -37,7 +38,7 @@
   
                       <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
                           <option [ngValue]="undefined" disabled  selected> Land Type  </option>
-                          <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option">{{option}}</option>
+                          <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option.value">{{option.key}}</option>
                       </select>
 
 
@@ -54,11 +55,10 @@
                   <div style="clear: both;"> </div>	
                   <!-- <table id="myId"></table> -->
                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
-                  <div *ngIf="visbile_table" id="chartContainer1" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;">
-
-                      <button type="submit" id= "click" class="btn btn-primary1" >Export Excel</button>
-
-                  </div>
+                  <div *ngIf="visbile_table" >
+                        
+                        <div id="example-table" style="margin-bottom: 100px; margin-top: 30px;" ></div>
+                 </div>
                 
                   <!-- <h2>{{title}}</h2>
                   <object *ngIf="visbile" data="assets/img/biharmap.svg" id="biharsvg" type="image/svg+xml"></object>
