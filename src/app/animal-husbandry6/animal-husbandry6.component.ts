@@ -39,9 +39,9 @@ export class AnimalHusbandry6Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2015];
   views = ["Graph", "Trend Line","Map View","Table"];
-  rain_fall_type = [{key: "All", value: "All"}, {key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"},]
+  rain_fall_type = [{key: "All", value: "All"},{key:"Crossbred Cow",value:"Crossbred_Cow"},	{key:"Local Cow",value:"Local_Cow"},	{key:"Total Cow",value:"Total_Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Total Cow Buffalo",value:"Total_Cow_Buffalo"},	{key:"Goat",value:"Goat"},	{key:"Total Production",value:"Total_Production"},]
 
 
     Comparison = ["None","Bihar vs District"]
@@ -58,7 +58,7 @@ export class AnimalHusbandry6Component implements OnInit {
     
     }
   onSubmit(user) {
-    var controller = "rainfalls"
+    var controller = "animal_husbandry6s"
     if (user.view == "Graph") {
       this.visbile_chart= true;
       this.visbile= false;
@@ -98,7 +98,7 @@ export class AnimalHusbandry6Component implements OnInit {
       this.visbile= false;
       this.spinner.show();
 
-      this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      this.SvgService.newtable(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
     }
     else if(user.view == "Map View") {
      const that = this;
@@ -108,7 +108,7 @@ export class AnimalHusbandry6Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "rainfalls"
+      var controller = "animal_husbandry6s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
