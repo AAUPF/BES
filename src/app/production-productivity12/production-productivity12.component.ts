@@ -40,7 +40,7 @@ export class ProductionProductivity12Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2015, 2016];
   views = Views;
   rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Yield", value: "Yield"}]
     Comparison = ["None","Bihar vs District"]
@@ -97,7 +97,7 @@ export class ProductionProductivity12Component implements OnInit {
       this.visbile= false;
       this.spinner.show();
 
-      this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      this.SvgService.newtable(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
     }
     else if(user.view == "Map View") {
      const that = this;
