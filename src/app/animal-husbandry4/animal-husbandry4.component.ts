@@ -7,6 +7,8 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
+import { Location } from '@angular/common';
+
 declare var $:any
 interface years<> {
   id: number;  any
@@ -18,12 +20,14 @@ declare var CanvasJS:any;
   styleUrls: ['./animal-husbandry4.component.css']
 })
 export class AnimalHusbandry4Component implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
+  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
 
-  
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
   // title:string;
   title = ""
   butDisabled: boolean = false;
@@ -93,7 +97,7 @@ export class AnimalHusbandry4Component implements OnInit {
       this.visbile= false;
       this.spinner.show();
 
-      this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      this.SvgService.newtable(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
     }
     else if(user.view == "Map View") {
      const that = this;

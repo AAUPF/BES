@@ -596,9 +596,9 @@ newtable(year,district,rain_fall_type,compare,controller,views) {
       console.log(res["data"]);
        
       if (k) {
-        // $("#example-table").tabulator("destroy");
+        $("#example-table").tabulator("destroy");
        
-        $("#example-table").tabulator('clearData');
+        // $("#example-table").tabulator('clearData');
       }
       $("#example-table").tabulator({
         layout:"fitColumns"});

@@ -6,6 +6,8 @@ import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
+import { Location } from '@angular/common';
+
 declare var $:any
 interface years<> {
   id: number;  any
@@ -17,12 +19,14 @@ declare var CanvasJS:any;
   styleUrls: ['./animal-husbandry6.component.css']
 })
 export class AnimalHusbandry6Component implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
+  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
 
-  
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
   // title:string;
   title = ""
   butDisabled: boolean = false;
@@ -37,7 +41,9 @@ export class AnimalHusbandry6Component implements OnInit {
 
   years = [2016, 2017];
   views = ["Graph", "Trend Line","Map View","Table"];
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
+  rain_fall_type = [{key: "All", value: "All"}, {key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"},]
+
+
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {

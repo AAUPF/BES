@@ -7,6 +7,8 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
+import { Location } from '@angular/common';
+
 declare var $:any
 interface years<> {
   id: number;  any
@@ -18,11 +20,13 @@ declare var CanvasJS:any;
   styleUrls: ['./animal-husbandry5.component.css']
 })
 export class AnimalHusbandry5Component implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
+  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
-
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
   
   // title:string;
   title = ""
@@ -36,10 +40,14 @@ export class AnimalHusbandry5Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2014, 2015];
   views = Views;
-  rain_fall_type = ["All","Fish_Production_2014",	"Fish_Seeds_2014",	"Fish_Production_2015",	"Fish_Seeds_2015",	"Fish_Production_2016",	"Fish_Seeds_2016"]
-    Comparison = ["None","Bihar vs District"]
+  rain_fall_type = [{key: "All", value: "All"}, {key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"},]
+
+
+  
+  Comparison = ["None","Bihar vs District"]
+
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
@@ -93,7 +101,7 @@ export class AnimalHusbandry5Component implements OnInit {
       this.visbile= false;
       this.spinner.show();
 
-      this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      this.SvgService.newtable(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
     }
     else if(user.view == "Map View") {
      const that = this;
