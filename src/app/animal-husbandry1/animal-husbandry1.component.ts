@@ -24,7 +24,9 @@ export class AnimalHusbandry1Component implements OnInit {
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
 
-  
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
   // title:string;
   title = ""
   butDisabled: boolean = false;
@@ -36,26 +38,30 @@ export class AnimalHusbandry1Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
+  years = ["All",2003,2007,2012];
+  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Pie Chart", value: "pie"},{key: "Table", value: "Table"}];
+  // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
+  rain_fall_type = [{key: "All", value: "All"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"},	]
 
-  years = [2016, 2017];
-  views = ["Graph", "Trend Line","Map View","Table"];
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-    Comparison = ["None","Bihar vs District"]
+
+    Comparison = [{key: "none", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
     data: any = {};    
     toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
-    } else {
-      this.butDisabled = false;
-    }
-    
-    }
+      if (d == "All") {
+        this.data == {years: null, views: "",Comparison: ""};
+        // this.data.Comparison  = undefined
+        // this.butDisabled = true;
+  
+        this.Comparison = [{key: "none", value: "None"}]
+  
+      } else {
+        // this.butDisabled = false;
+        this.Comparison = [{key: "none", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
+      }
+      }
   onSubmit(user) {
-    var controller = "rainfalls"
-    if (user.view == "Graph") {
+    var controller = "animal_husbandry1s"
+    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
@@ -64,8 +70,18 @@ export class AnimalHusbandry1Component implements OnInit {
       if (user.districts == "All") {
         this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
       } 
-     else if(user.Comparison == "Bihar vs District") { 
-      this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+     else if(user.Comparison) { 
+      if (user.view == "Table") {
+        this.visbile_chart= false;
+        this.visbile_table= true;
+        this.spinner.show();
+      } else {
+        this.visbile_chart= true;
+        this.visbile_table= false;
+        this.spinner.show();
+        
+      }
+      this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
       }
       else {
         this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);

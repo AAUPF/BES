@@ -191,19 +191,6 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           $("#example-table").tabulator("setData", res["data"]);
 
 
-          $("#download-xlsx").click(function(){
-            $("#example-table").tabulator("download", "xlsx", "data.xlsx");
-          });
-      
-          $("#download-csv").click(function(){
-            $("#example-table").tabulator("download", "csv", "data.csv");
-        });
-        
-        //trigger download of data.json file
-        $("#download-json").click(function(){
-            $("#example-table").tabulator("download", "json", "data.json");
-        });
-            
 
           }  else {
 
