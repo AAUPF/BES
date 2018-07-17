@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="pageTitle">
-          <h2>District-wise Consumption of Fertilizers in Bihar (2016-17)</h2>
+          <h2>District-wise Utilisation of Bio-fertilizers in Bihar</h2>
+          <div class="btnArea"><a  (click)="cancel()"  class="btn btn-primary"><i class="fa fa-angle-left" aria-hidden="true"></i> Back </a></div>
         </div>
       </div>
     </div>
@@ -23,16 +24,16 @@
                       <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                   </select>
 
-                  <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
+                  <!-- <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
                       <option [ngValue]="undefined" disabled  selected> Year  </option>
                       <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
-                  </select>
+                  </select> -->
                       <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
                           <option [ngValue]="undefined" disabled  selected> Views  </option>
                           <option class='option' *ngFor='let option of views' [ngValue]="option">{{option}}</option>
                       </select>
                       <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
-                          <option [ngValue]="undefined" disabled  selected> Rain Fall Type  </option>
+                          <option [ngValue]="undefined" disabled  selected> Bio-Fertilizers In Bihar  </option>
                           <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option">{{option}}</option>
                       </select>
                           <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
@@ -43,7 +44,7 @@
                       <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                   </div>
               </form>
-              <div>Unit - ('000 Tonnes)</div>
+              <div>Unit - (Physical in Hectare,Financial in Rs. Lakh)</div>
                   <div style="clear: both;"> </div>	
                   <!-- <table id="myId"></table> -->
                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>

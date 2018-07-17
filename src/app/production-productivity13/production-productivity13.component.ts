@@ -7,6 +7,7 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
+import { Location } from '@angular/common';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -19,9 +20,11 @@ declare var CanvasJS:any;
 })
 export class ProductionProductivity13Component implements OnInit {
 
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { }
+  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { }
 
-
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
 
 
 

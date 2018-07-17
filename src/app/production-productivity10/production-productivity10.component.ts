@@ -7,7 +7,7 @@ import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AgricultureService } from '../services/agriculture.service';
-
+import { Location } from '@angular/common';
 import { TableExport } from '../../../node_modules/tableexport';
 
 import  '../data/data'
@@ -22,9 +22,12 @@ declare var CanvasJS:any;
   styleUrls: ['./production-productivity10.component.css']
 })
 export class ProductionProductivity10Component implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private FruitsService: FruitsService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
+  constructor(private AgricultureService: AgricultureService,private FruitsService: FruitsService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     // this.FruitsService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
+  }
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
   }
 
   

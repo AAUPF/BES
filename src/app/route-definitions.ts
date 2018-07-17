@@ -34,14 +34,15 @@ import {AgriculturalInputs3Component} from './agricultural-inputs3/agricultural-
 import {AgriculturalInputs4Component} from './agricultural-inputs4/agricultural-inputs4.component';
 import {AgriculturalInputs5Component} from './agricultural-inputs5/agricultural-inputs5.component';
 import {AgriculturalInputs6Component} from './agricultural-inputs6/agricultural-inputs6.component';
-import {AgriculturalInputs7Component} from './agricultural-inputs7/agricultural-inputs7.component';
+//import {AgriculturalInputs7Component} from './agricultural-inputs7/agricultural-inputs7.component';
+//import { AgriculturalInputs8Component } from './agricultural-inputs8/agricultural-inputs8.component';
 import {AnimalHusbandry1Component} from './animal-husbandry1/animal-husbandry1.component';
 import {AnimalHusbandry2Component} from './animal-husbandry2/animal-husbandry2.component';
 import {AnimalHusbandry3Component} from './animal-husbandry3/animal-husbandry3.component';
 import {AnimalHusbandry4Component} from './animal-husbandry4/animal-husbandry4.component';
 import {AnimalHusbandry5Component} from './animal-husbandry5/animal-husbandry5.component';
 import {AnimalHusbandry6Component} from './animal-husbandry6/animal-husbandry6.component';
-import { AgriculturalInputs8Component } from './agricultural-inputs8/agricultural-inputs8.component';
+
 
 
 
@@ -184,14 +185,14 @@ export const appRoutes: Routes = [
         path: 'agricultural-inputs6',
         component: AgriculturalInputs6Component
      },
-     {
-        path: 'agricultural-inputs7',
-        component: AgriculturalInputs7Component
-     },
-     {
-        path: 'agricultural-inputs8',
-        component: AgriculturalInputs8Component
-     },
+    //  {
+    //     path: 'agricultural-inputs7',
+    //     component: AgriculturalInputs7Component
+    //  },
+    //  {
+    //     path: 'agricultural-inputs8',
+    //     component: AgriculturalInputs8Component
+    //  },
      {
         path: 'animal-husbandry1',
         component: AnimalHusbandry1Component

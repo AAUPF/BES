@@ -6,6 +6,7 @@ import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
+import { Location } from '@angular/common';
 import { Views } from '../data/views';
 declare var $:any
 interface years<> {
@@ -18,9 +19,12 @@ declare var CanvasJS:any;
   styleUrls: ['./agricultural-inputs6.component.css']
 })
 export class AgriculturalInputs6Component implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
+  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
+  }
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
   }
 
   
@@ -36,9 +40,9 @@ export class AgriculturalInputs6Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2015, 2016];
   views = Views;
-  rain_fall_type = ["All","Target_Physical",	"Target_Financial",	"Achievement_Physical",	"Achievement_Financial"]
+  rain_fall_type = ["All","Tractor",	"Combine_Harvestor",	"Zero_Tillage",	"Pumpset",	"Power_Tiller",	"Manually_Operated_Tools",	"Thresher"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
@@ -53,7 +57,7 @@ export class AgriculturalInputs6Component implements OnInit {
     
     }
   onSubmit(user) {
-    var controller = "agricultural_inputs6s"
+    var controller = "agricultural_inputs7s"
     if (user.view == "Graph") {
       this.visbile_chart= true;
       this.visbile= false;
@@ -103,7 +107,7 @@ export class AgriculturalInputs6Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "agricultural_inputs6s"
+      var controller = "agricultural_inputs7s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
@@ -156,7 +160,6 @@ export class AgriculturalInputs6Component implements OnInit {
   }
 
 }
-
 
 
 
