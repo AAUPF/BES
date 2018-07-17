@@ -56,6 +56,7 @@ import { AnimalHusbandry5Component } from './animal-husbandry5/animal-husbandry5
 import { AnimalHusbandry6Component } from './animal-husbandry6/animal-husbandry6.component';
 import { DistrictWiseComponent } from './district-wise/district-wise.component';
 import { AgriculturalInputs8Component } from './agricultural-inputs8/agricultural-inputs8.component';
+import { ProductionProductivity13Component } from './production-productivity13/production-productivity13.component';
 
 
 
@@ -110,6 +111,7 @@ import { AgriculturalInputs8Component } from './agricultural-inputs8/agricultura
     AnimalHusbandry6Component,
     DistrictWiseComponent,
     AgriculturalInputs8Component,
+    ProductionProductivity13Component,
   
     ],
   imports: [

@@ -6,6 +6,8 @@ import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
+import { Location } from '@angular/common';
+
 declare var $:any
 interface years<> {
   id: number;  any
@@ -17,11 +19,13 @@ declare var CanvasJS:any;
   styleUrls: ['./agricultural-inputs2.component.css']
 })
 export class AgriculturalInputs2Component implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService) { 
+  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
-
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
   
   // title:string;
   title = ""
@@ -35,25 +39,28 @@ export class AgriculturalInputs2Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
-  views = ["Graph", "Trend Line","Map View","Table"];
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-    Comparison = ["None","Bihar vs District"]
+  years = ["All",2014,2015,2016];
+  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Pie Chart", value: "pie"},{key: "Table", value: "Table"}];
+  rain_fall_type = [{key: "All", value: "All"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Sub Total",value:"Sub_Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"},	{key:"Consumption of Fertilizer",value:"Consumption_of_Fertilizer"},]
+
+  Comparison = [{key: "none", value: "None"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Sub Total",value:"Sub_Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"},	{key:"Consumption of Fertilizer",value:"Consumption_of_Fertilizer"},]
     data: any = {};    
     toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
-    } else {
-      this.butDisabled = false;
-    }
-    
-    }
+      if (d == "All") {
+        this.data == {years: null, views: "",Comparison: ""};
+        // this.data.Comparison  = undefined
+        // this.butDisabled = true;
+  
+        this.Comparison = [{key: "none", value: "None"}]
+  
+      } else {
+        // this.butDisabled = false;
+        this.Comparison = [{key: "none", value: "None"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Sub Total",value:"Sub_Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"},	{key:"Consumption of Fertilizer",value:"Consumption_of_Fertilizer"}]
+      }
+      }
   onSubmit(user) {
-    var controller = "rainfalls"
-    if (user.view == "Graph") {
+    var controller = "agricultural_inputs2s"
+    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
@@ -62,9 +69,20 @@ export class AgriculturalInputs2Component implements OnInit {
       if (user.districts == "All") {
         this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
       } 
-     else if(user.Comparison == "Bihar vs District") { 
-      this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+     else if(user.Comparison) { 
+      if (user.view == "Table") {
+        this.visbile_chart= false;
+        this.visbile_table= true;
+        this.spinner.show();
+      } else {
+        this.visbile_chart= true;
+        this.visbile_table= false;
+        this.spinner.show();
+        
       }
+      this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
+      }
+      
       else {
         this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
       }
