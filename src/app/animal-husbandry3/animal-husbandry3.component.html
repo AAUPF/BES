@@ -1,77 +1,78 @@
 <section class="clearfix pageTitleSection">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="pageTitle">
-          <h2>Livestock Services in Bihar</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="clearfix bg-light pr">
-<div class="container">
-  <div class="row">
-      <div class="col-sm-12 col-xs-12">
-
-          <div class="categoryBox">
-            <div class="contactSelect">
-              <form #f="ngForm" (ngSubmit)="onSubmit(data)">
-<div>
-                  <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toNumber(data.districts)">
-                      <option [ngValue]="undefined" disabled  selected> District  </option>
-                      <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
-                  </select>
-
-                  <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
-                      <option [ngValue]="undefined" disabled  selected> Year  </option>
-                      <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
-                  </select>
-                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
-                          <option [ngValue]="undefined" disabled  selected> Views  </option>
-                          <option class='option' *ngFor='let option of views' [ngValue]="option">{{option}}</option>
-                      </select>
-                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
-                          <option [ngValue]="undefined" disabled  selected> Rain Fall Type  </option>
-                          <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option">{{option}}</option>
-                      </select>
-                          <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
-                              <option [ngValue]="undefined" disabled  selected> Comparison  </option>
-                              <option class='option' *ngFor='let option of Comparison' [ngValue]="option">{{option}}</option>
-                          </select>
-                      <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
-                      <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
-                  </div>
-              </form>
-              <div>Unit - (Animals Treated in Lakh,Immunization in Lakh,Artificial Insemination in Lakh)</div>
-                  <div style="clear: both;"> </div>	
-                  <!-- <table id="myId"></table> -->
-                  <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
-                  <div *ngIf="visbile_table" id="chartContainer1" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;">
-                      <button type="submit" id= "click" class="btn btn-primary1" >Export Excel</button>
-                  </div>
-                  <!-- <h2>{{title}}</h2>
-                  <object *ngIf="visbile" data="assets/img/biharmap.svg" id="biharsvg" type="image/svg+xml"></object>
-                  <div style="position: relative;"> 
-                  <div class="fil-box">
-                      <div><span class="dot yellow"></span>14.0% and Over</div>
-                      <div><span class="dot orange"></span>12.0% to 13.9%</div>
-                      <div><span class="dot red"></span>10.0% to 11.9%</div>
-                      <div><span class="dot light-green"></span>8.0% to 9.9%</div>
-                      <div><span class="dot mid-green"></span>6.0% to 5.9%</div>
-                      <div><span class="dot dark-green"></span>3.9% or lower</div>
-                      </div>
-                  </div> -->
-                  <ngx-spinner></ngx-spinner>
-                  <div *ngIf="visbile">
-                      <app-svgcomponent ></app-svgcomponent>
-                  </div>
-                  <app-modal></app-modal>
-                  <!-- <object data="assets/img/bihar.svg" id="biharsvg" type="image/svg+xml"></object> -->
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="pageTitle">
+                <h2>Livestock Services in Bihar</h2>
+                <div class="btnArea"><a  (click)="cancel()"  class="btn btn-primary"><i class="fa fa-angle-left" aria-hidden="true"></i> Back </a></div>
               </div>
-           </div>
-       </div>
-   </div>
-</div>
-
-</section>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="clearfix bg-light pr">
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-xs-12">
+      
+                <div class="categoryBox">
+                  <div class="contactSelect">
+                          <form #f="ngForm" (ngSubmit)="onSubmit(data)">
+                                  <div class="cen_sel">                    <!-- <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toNumber(data.districts)">
+                                  <option [ngValue]="undefined" disabled  selected> District  </option>
+                                  <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
+                              </select> -->
+          
+                              <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
+                                  <option [ngValue]="undefined" disabled  selected> Year  </option>
+                                  <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
+                              </select>
+                                  <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
+                                      <option [ngValue]="undefined" disabled  selected> Views  </option>
+                                      <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
+                                  </select>
+                                  <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
+                                      <option [ngValue]="undefined" disabled  selected> Livestock Wealth  </option>
+                                      <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option.value">{{option.key}}</option>
+                                  </select>
+                                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
+                                          <option [ngValue]="undefined" disabled  selected> Comparison  </option>
+                                          <option class='option' *ngFor='let option of Comparison' [ngValue]="option.value">{{option.key}}</option>
+                                      </select>
+                                  <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
+                                  <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
+                              </div>
+                          </form>
+                    <div>Unit - (Milk in Lakh Tonnes,Egg in Crore,Wool in Lakh Kgs,Meat in Lakh tonnes,Fish in Lakh tonnes)</div>
+                        <div style="clear: both;"> </div>	
+                        <!-- <table id="myId"></table> -->
+                        <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
+                        <div *ngIf="visbile_table" style=" width: 100%; margin-top: 30px;">
+                              <div id="example-table" style="margin-bottom: 100px;" ></div>
+                       </div>
+                        <!-- <h2>{{title}}</h2>
+                        <object *ngIf="visbile" data="assets/img/biharmap.svg" id="biharsvg" type="image/svg+xml"></object>
+                        <div style="position: relative;"> 
+                        <div class="fil-box">
+                            <div><span class="dot yellow"></span>14.0% and Over</div>
+                            <div><span class="dot orange"></span>12.0% to 13.9%</div>
+                            <div><span class="dot red"></span>10.0% to 11.9%</div>
+                            <div><span class="dot light-green"></span>8.0% to 9.9%</div>
+                            <div><span class="dot mid-green"></span>6.0% to 5.9%</div>
+                            <div><span class="dot dark-green"></span>3.9% or lower</div>
+                            </div>
+                        </div> -->
+                        <ngx-spinner></ngx-spinner>
+                        <div *ngIf="visbile">
+                            <app-svgcomponent ></app-svgcomponent>
+                        </div>
+                        <app-modal></app-modal>
+                        <!-- <object data="assets/img/bihar.svg" id="biharsvg" type="image/svg+xml"></object> -->
+                    </div>
+                 </div>
+             </div>
+         </div>
+      </div>
+      
+      </section>
+      
