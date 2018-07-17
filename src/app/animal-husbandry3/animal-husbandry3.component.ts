@@ -80,7 +80,6 @@ export class AnimalHusbandry3Component implements OnInit {
         this.visbile_chart= true;
         this.visbile_table= false;
         this.spinner.show();
-        
       }
       this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
 
