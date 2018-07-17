@@ -20,8 +20,8 @@
               <form #f="ngForm" (ngSubmit)="onSubmit(data)">
 <div>
                   <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toNumber(data.districts)">
-                      <option [ngValue]="undefined" disabled  selected> District  </option>
-                      <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
+                      <option [ngValue]="undefined" disabled  selected> Fruits  </option>
+                      <option *ngFor='let option of Fruits' [ngValue]="option">{{option}}</option>
                   </select>
 
                   <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
@@ -48,9 +48,10 @@
                   <div style="clear: both;"> </div>	
                   <!-- <table id="myId"></table> -->
                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
-                  <div *ngIf="visbile_table" id="chartContainer1" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;">
-                      <button type="submit" id= "click" class="btn btn-primary1" >Export Excel</button>
-                  </div>
+                  <div *ngIf="visbile_table" >
+                        
+                    <div id="example-table" style="margin-bottom: 100px; margin-top: 30px;" ></div>
+             </div>
                   <!-- <h2>{{title}}</h2>
                   <object *ngIf="visbile" data="assets/img/biharmap.svg" id="biharsvg" type="image/svg+xml"></object>
                   <div style="position: relative;"> 

@@ -8,6 +8,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { Views } from '../data/views';
+import { Fruits } from '../data/fruits';
+
 
 declare var $:any
 interface years<> {
@@ -36,15 +38,15 @@ export class ProductionProductivity4Component implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  Districts = Districts;
+  Fruits = Fruits;
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2012, 2013,2014,2015,2016];
   views = Views;
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-    Comparison = ["None","Bihar vs District"]
+  rain_fall_type = ["All","Area","Production"]
+    Comparison = ["none"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
@@ -58,7 +60,7 @@ export class ProductionProductivity4Component implements OnInit {
     
     }
   onSubmit(user) {
-    var controller = "rainfalls"
+    var controller = "production_productivity4s"
     if (user.view == "Graph") {
       this.visbile_chart= true;
       this.visbile= false;
@@ -100,7 +102,7 @@ export class ProductionProductivity4Component implements OnInit {
       this.visbile= false;
       this.spinner.show();
 
-      this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      this.SvgService.newtable(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
     }
     else if(user.view == "Map View") {
      const that = this;
