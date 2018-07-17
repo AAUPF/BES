@@ -23,13 +23,6 @@
                               <option [ngValue]="undefined" disabled  selected> Year  </option>
                               <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
                           </select>
-<<<<<<< Updated upstream
-                      <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
-                      <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
-                  </div>
-              </form>
-              <div>Unit - (All Figure in '000)</div>
-=======
                               <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
                                   <option [ngValue]="undefined" disabled  selected> Views  </option>
                                   <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
@@ -46,7 +39,7 @@
                               <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                           </div>
                       </form>
->>>>>>> Stashed changes
+                      <div>Unit - (All Figure in '000)</div>
                   <div style="clear: both;"> </div>	
                   <!-- <table id="myId"></table> -->
                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
