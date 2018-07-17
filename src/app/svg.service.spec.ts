@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { SvgService } from './svg.service';
+import { SvgService } from './services/svg.service';
 
 describe('SvgService', () => {
   beforeEach(() => {
