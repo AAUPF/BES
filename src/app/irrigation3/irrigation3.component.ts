@@ -39,25 +39,28 @@ export class Irrigation3Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
-  views = ["Graph", "Trend Line","Map View","Table"];
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-    Comparison = ["None","Bihar vs District"]
+  years = ["All",2012,2013,2014,2015,2016];
+  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Pie Chart", value: "pie"},{key: "Table", value: "Table"}];
+  rain_fall_type = [{key: "All", value: "All"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"}]
+
+    Comparison = [{key: "none", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
     data: any = {};    
     toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
-    } else {
-      this.butDisabled = false;
-    }
-    
-    }
+      if (d == "All") {
+        this.data == {years: null, views: "",Comparison: ""};
+        // this.data.Comparison  = undefined
+        // this.butDisabled = true;
+  
+        this.Comparison = [{key: "none", value: "None"}]
+  
+      } else {
+        // this.butDisabled = false;
+        this.Comparison = [{key: "none", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
+      }
+      }
   onSubmit(user) {
-    var controller = "rainfalls"
-    if (user.view == "Graph") {
+    var controller = "irrigation3s"
+    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
@@ -66,9 +69,20 @@ export class Irrigation3Component implements OnInit {
       if (user.districts == "All") {
         this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
       } 
-     else if(user.Comparison == "Bihar vs District") { 
-      this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+     else if(user.Comparison) { 
+      if (user.view == "Table") {
+        this.visbile_chart= false;
+        this.visbile_table= true;
+        this.spinner.show();
+      } else {
+        this.visbile_chart= true;
+        this.visbile_table= false;
+        this.spinner.show();
+        
       }
+      this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
+      }
+      
       else {
         this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
       }
@@ -106,7 +120,7 @@ export class Irrigation3Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "rainfalls"
+      var controller = "irrigation3s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");

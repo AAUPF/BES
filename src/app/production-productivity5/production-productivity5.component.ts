@@ -8,7 +8,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { Views } from '../data/views';
-
+import {Vegetables } from '../data/vegetable'
+ 
 declare var $:any
 interface years<> {
   id: number;  any
@@ -36,15 +37,15 @@ export class ProductionProductivity5Component implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  Districts = Districts;
+  Vegetables = Vegetables;
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2016, 2017];
+  years = [2014,2015,2016];
   views = Views;
-  rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-    Comparison = ["None","Bihar vs District"]
+  rain_fall_type = ["All","Area","Production"]
+    Comparison = ["none"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
@@ -58,7 +59,7 @@ export class ProductionProductivity5Component implements OnInit {
     
     }
   onSubmit(user) {
-    var controller = "rainfalls"
+    var controller = "production_productivity5s"
     if (user.view == "Graph") {
       this.visbile_chart= true;
       this.visbile= false;
@@ -84,7 +85,6 @@ export class ProductionProductivity5Component implements OnInit {
         this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
         
       } 
-      
       else if(user.Comparison == "Bihar vs District") { 
         this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
         }
@@ -93,13 +93,15 @@ export class ProductionProductivity5Component implements OnInit {
       }
       
     } 
+
+    
     else if(user.view == "Table") {
       this.visbile_chart= false;
       this.visbile_table= true;
       this.visbile= false;
       this.spinner.show();
 
-      this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+      this.SvgService.newtable(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
     }
     else if(user.view == "Map View") {
      const that = this;
@@ -161,7 +163,6 @@ export class ProductionProductivity5Component implements OnInit {
 
   
   }
-
 }
 
 
