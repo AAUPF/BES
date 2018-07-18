@@ -40,7 +40,7 @@ export class AgriculturalInputs3Component implements OnInit {
   visbile_table= false;
 
   years = ["All",2015,2016];
-  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Pie Chart", value: "pie"},{key: "Table", value: "Table"}];
+  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestors",value:"Combine_Harvestors"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpsets",value:"Pumpsets"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually operated tools implements",value:"Manually_operated_tools_implements"},	{key:"Threshers",value:"Threshers"},	{key:"Total",value:"Total"},]
     Comparison = [{key: "none", value: "None"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestors",value:"Combine_Harvestors"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpsets",value:"Pumpsets"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually operated tools implements",value:"Manually_operated_tools_implements"},	{key:"Threshers",value:"Threshers"},	{key:"Total",value:"Total"},]
     data: any = {};    

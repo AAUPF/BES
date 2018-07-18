@@ -40,7 +40,7 @@ export class AnimalHusbandry2Component implements OnInit {
   visbile_table= false;
 
   years = ["All",2012,2013,2014,2015,2016];
-  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Pie Chart", value: "pie"},{key: "Table", value: "Table"}];
+  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
   rain_fall_type = [{key: "All", value: "All"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},	]
 
