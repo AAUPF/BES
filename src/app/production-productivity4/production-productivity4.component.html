@@ -18,7 +18,7 @@
           <div class="categoryBox">
             <div class="contactSelect">
               <form #f="ngForm" (ngSubmit)="onSubmit(data)">
-<div>
+<div class="cen_sel">
                   <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toNumber(data.districts)">
                       <option [ngValue]="undefined" disabled  selected> Fruits  </option>
                       <option *ngFor='let option of Fruits' [ngValue]="option">{{option}}</option>
@@ -44,7 +44,7 @@
                       <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                   </div>
               </form>
-              <div>Unit - (Area in '000 Hectares,Production in '000 tonnes)</div>
+              <div class="unt-txt">Unit - (Area in '000 Hectares,Production in '000 tonnes)</div>
                   <div style="clear: both;"> </div>	
                   <!-- <table id="myId"></table> -->
                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>

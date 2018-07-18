@@ -255,6 +255,8 @@ trend_line(data,year,rain_fall_type,controller) {
       u = abc
     }
     var url = `${this.apiRoot}/`+controller+`/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
+    console.log(url);
+    
     this.http.get(url).
     subscribe(res => {
       this.j = res;
