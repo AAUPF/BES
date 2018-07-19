@@ -2,7 +2,7 @@ export class Functions {
     testy(the,districts,rain_fall_type,views,year,Comparison,res,controller) {
         the.spinner.hide();
         if (districts == "All") {
-          the.map_districts(the.j) 
+          the.map_districts(the.j,rain_fall_type,year) 
         } else {
 
             if (Comparison == "None") {
@@ -406,7 +406,7 @@ export class Functions {
             }  
         }
   }
-    map_all(that,l){
+    map_all(that,l,rain_fall_type,year){
 
         let map = document.getElementById("biharsvg") as HTMLObjectElement;
         let svgDoc = map.contentDocument; // should be fine
@@ -631,14 +631,7 @@ export class Functions {
           }
       }
       let de = svgDoc.querySelectorAll(".fil0");
-      let x = svgDoc.querySelectorAll(dis_below_min);
-      let y = svgDoc.querySelectorAll(dis_min);
-      let w = svgDoc.querySelectorAll(dis_blow_max);
-      let z = svgDoc.querySelectorAll(dis_max);
-      let e = svgDoc.querySelectorAll(dis_above_max);
-      let f = svgDoc.querySelectorAll(dis_ex);
-      let g  = svgDoc.querySelectorAll(dis_abov_ext);
-    
+     
         console.log(dis_below_min_color+""+dis_min_color+""+dis_blow_max_color);
     
     
@@ -675,16 +668,127 @@ export class Functions {
         // console.log(i);
          de[i].classList.remove("Red","Yellow","Orange","Green","Dark_Green","Light_Green","Dark_Yellow");
       }
+console.log(dis_below_min);
+console.log(dis_min);
+console.log(dis_blow_max);
+console.log(dis_max);
+console.log(dis_above_max);
+console.log(typeof(dis_ex));
+console.log(dis_abov_ext);
+
+if( rain_fall_type == "All" && year == "2017" ) {
+
+    let x = svgDoc.querySelectorAll(dis_below_min);
+    let y = svgDoc.querySelectorAll(dis_min);
+    let w = svgDoc.querySelectorAll(dis_blow_max);
+    let z = svgDoc.querySelectorAll(dis_max);
+    let e = svgDoc.querySelectorAll(dis_above_max);
+    // let f = svgDoc.querySelectorAll(dis_ex);
+    let g  = svgDoc.querySelectorAll(dis_abov_ext);
+  
+  
+
+  
+    that.color_map(x,dis_below_min_color)
+    that.color_map(y,dis_min_color)
+    that.color_map(w,dis_blow_max_color)
+    that.color_map(z,dis_max_color)
+    that.color_map(e,dis_above_max_color)
+    // that.color_map(f,dis_ex_color) 
+    that.color_map(g,dis_abov_ext_color) 
     
+} else if(rain_fall_type == "Winter_Rain" && year == "2017") {
+        
+    let x = svgDoc.querySelectorAll(dis_below_min);
+    let y = svgDoc.querySelectorAll(dis_min);
+    // let w = svgDoc.querySelectorAll(dis_blow_max);
+    // let z = svgDoc.querySelectorAll(dis_max);
+    let e = svgDoc.querySelectorAll(dis_above_max);
+     let f = svgDoc.querySelectorAll(dis_ex);
+    // let g  = svgDoc.querySelectorAll(dis_abov_ext);
+  
+  
+
+  
+    that.color_map(x,dis_below_min_color)
+    that.color_map(y,dis_min_color)
+    // that.color_map(w,dis_blow_max_color)
+    // that.color_map(z,dis_max_color)
+    that.color_map(e,dis_above_max_color)
+     that.color_map(f,dis_ex_color) 
+    // that.color_map(g,dis_abov_ext_color) 
+}  else if(rain_fall_type == "South_West_Monsoon" && year == "2017") {
+        
+    let x = svgDoc.querySelectorAll(dis_below_min);
+    let y = svgDoc.querySelectorAll(dis_min);
+    let w = svgDoc.querySelectorAll(dis_blow_max);
+    let z = svgDoc.querySelectorAll(dis_max);
+    let e = svgDoc.querySelectorAll(dis_above_max);
+    //  let f = svgDoc.querySelectorAll(dis_ex);
+    let g  = svgDoc.querySelectorAll(dis_abov_ext);
+  
+  
+
+  
+    that.color_map(x,dis_below_min_color)
+    that.color_map(y,dis_min_color)
+    that.color_map(w,dis_blow_max_color)
+    that.color_map(z,dis_max_color)
+    that.color_map(e,dis_above_max_color)
+    //  that.color_map(f,dis_ex_color) 
+    that.color_map(g,dis_abov_ext_color) 
+}
+
+else if(rain_fall_type == "North_West_Monsoon" && year == "2017") {
+        
+    let x = svgDoc.querySelectorAll(dis_below_min);
+    // let y = svgDoc.querySelectorAll(dis_min);
+    // let w = svgDoc.querySelectorAll(dis_blow_max);
+    // let z = svgDoc.querySelectorAll(dis_max);
+    // let e = svgDoc.querySelectorAll(dis_above_max);
+    //   let f = svgDoc.querySelectorAll(dis_ex);
+    // let g  = svgDoc.querySelectorAll(dis_abov_ext);
+  
+  
+
+  
+    that.color_map(x,dis_below_min_color)
+    // that.color_map(y,dis_min_color)
+    // that.color_map(w,dis_blow_max_color)
+    // that.color_map(z,dis_max_color)
+    // that.color_map(e,dis_above_max_color)
+    //  that.color_map(f,dis_ex_color) 
+    // that.color_map(g,dis_abov_ext_color) 
+}
+
+else {
+
+
+    let x = svgDoc.querySelectorAll(dis_below_min);
+    let y = svgDoc.querySelectorAll(dis_min);
+    let w = svgDoc.querySelectorAll(dis_blow_max);
+    let z = svgDoc.querySelectorAll(dis_max);
+    let e = svgDoc.querySelectorAll(dis_above_max);
+     let f = svgDoc.querySelectorAll(dis_ex);
+    let g  = svgDoc.querySelectorAll(dis_abov_ext);
+  
+  
+
+  
+    that.color_map(x,dis_below_min_color)
+    that.color_map(y,dis_min_color)
+    that.color_map(w,dis_blow_max_color)
+    that.color_map(z,dis_max_color)
+    that.color_map(e,dis_above_max_color)
+     that.color_map(f,dis_ex_color) 
+    that.color_map(g,dis_abov_ext_color) 
+
 
     
-      that.color_map(x,dis_below_min_color)
-      that.color_map(y,dis_min_color)
-      that.color_map(w,dis_blow_max_color)
-      that.color_map(z,dis_max_color)
-      that.color_map(e,dis_above_max_color)
-      that.color_map(f,dis_ex_color) 
-      that.color_map(g,dis_abov_ext_color) 
+}
+
+
+
 
     
 
