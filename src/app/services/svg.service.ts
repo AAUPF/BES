@@ -254,7 +254,7 @@ trend_line(data,year,rain_fall_type,controller) {
     } else {
       u = abc
     }
-    var url = `${this.apiRoot}/`+controller+`/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type;
+    var url = `${this.apiRoot}/`+controller+`/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=column`;
     console.log(url);
     
     this.http.get(url).
@@ -263,14 +263,7 @@ trend_line(data,year,rain_fall_type,controller) {
       let chart = new CanvasJS.Chart("chartContainer1", {
         animationEnabled: true,
         exportEnabled: true,
-        title: {
-          text: abc + " " + rain_fall_type + " " + year
-        },
-        data: [{
-          type: "column",
-          dataPoints: 
-          this.j
-        }]
+        data: this.j
       });
       chart.render();
       

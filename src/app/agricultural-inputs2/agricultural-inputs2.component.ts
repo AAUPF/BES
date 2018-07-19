@@ -43,7 +43,7 @@ export class AgriculturalInputs2Component implements OnInit {
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Sub Total",value:"Sub_Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"},	{key:"Consumption of Fertilizer",value:"Consumption_of_Fertilizer"},]
 
-  Comparison = [{key: "none", value: "None"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Sub Total",value:"Sub_Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"},	{key:"Consumption of Fertilizer",value:"Consumption_of_Fertilizer"},]
+  Comparison = [{key: "None", value: "None"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Sub Total",value:"Sub_Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"},	{key:"Consumption of Fertilizer",value:"Consumption_of_Fertilizer"},]
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -51,11 +51,11 @@ export class AgriculturalInputs2Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "none", value: "None"}]
+        this.Comparison = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "none", value: "None"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Sub Total",value:"Sub_Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"},	{key:"Consumption of Fertilizer",value:"Consumption_of_Fertilizer"}]
+        this.Comparison = [{key: "None", value: "None"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Sub Total",value:"Sub_Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"},	{key:"Consumption of Fertilizer",value:"Consumption_of_Fertilizer"}]
       }
       }
   onSubmit(user) {
