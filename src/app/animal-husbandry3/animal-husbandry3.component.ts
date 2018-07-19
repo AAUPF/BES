@@ -45,7 +45,7 @@ export class AnimalHusbandry3Component implements OnInit {
   rain_fall_type = [{key: "All", value: "All"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},	]
 
 
-    Comparison = [{key: "none", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},]
+    Comparison = [{key: "None", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},]
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -53,11 +53,11 @@ export class AnimalHusbandry3Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "none", value: "None"}]
+        this.Comparison = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "none", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},]
+        this.Comparison = [{key: "None", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},]
       }
       }
 

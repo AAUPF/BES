@@ -43,7 +43,7 @@ export class Irrigation3Component implements OnInit {
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"}]
 
-    Comparison = [{key: "none", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
+    Comparison = [{key: "None", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -51,11 +51,11 @@ export class Irrigation3Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "none", value: "None"}]
+        this.Comparison = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "none", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
+        this.Comparison = [{key: "None", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
       }
       }
   onSubmit(user) {
