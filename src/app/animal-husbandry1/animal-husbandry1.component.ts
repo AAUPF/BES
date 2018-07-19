@@ -120,7 +120,7 @@ export class AnimalHusbandry1Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "rainfalls"
+      var controller = "animal_husbandry1s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
