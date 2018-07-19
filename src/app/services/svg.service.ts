@@ -603,6 +603,8 @@ newtable(year,district,rain_fall_type,compare,controller,views) {
       
       //set new data
       $("#example-table").tabulator("setData", res["data"]);
+      $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
+      
   }
   
 

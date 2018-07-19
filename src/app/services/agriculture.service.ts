@@ -190,7 +190,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           //set new data
           $("#example-table").tabulator("setData", res["data"]);
 
-
+          $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
 
           }  else {
 
@@ -236,7 +236,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           
           //set new data
           $("#example-table").tabulator("setData", res["data"]);
-
+          $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
 
           $("#download-xlsx").click(function(){
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
@@ -290,7 +290,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           //set new data
           $("#example-table").tabulator("setData", res["data"]);
 
-
+          $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
           $("#download-xlsx").click(function(){
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });

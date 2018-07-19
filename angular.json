@@ -32,7 +32,8 @@
               "./node_modules/jquery-ui-dist/jquery-ui.min.js",
               "./node_modules/jquery.tabulator/dist/js/tabulator.min.js",
               "src/assets/js/canvas.js",
-              "src/assets/js/googlechart.js"
+              "src/assets/js/googlechart.js",
+              "src/assets/js/custom.js"
            
    
             ]
