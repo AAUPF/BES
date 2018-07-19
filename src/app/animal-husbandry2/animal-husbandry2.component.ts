@@ -45,7 +45,7 @@ export class AnimalHusbandry2Component implements OnInit {
   rain_fall_type = [{key: "All", value: "All"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},	]
 
 
-    Comparison = [{key: "none", value: "None"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},]
+    Comparison = [{key: "None", value: "None"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},]
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -53,11 +53,11 @@ export class AnimalHusbandry2Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "none", value: "None"}]
+        this.Comparison = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "none", value: "None"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},]
+        this.Comparison = [{key: "None", value: "None"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},]
       }
       }
   onSubmit(user) {

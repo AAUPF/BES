@@ -43,7 +43,7 @@ export class Irrigation6Component implements OnInit {
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
 
-    Comparison = [{key: "none", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
+    Comparison = [{key: "None", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -51,11 +51,11 @@ export class Irrigation6Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "none", value: "None"}]
+        this.Comparison = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "none", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
+        this.Comparison = [{key: "None", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
       }
       }
   onSubmit(user) {

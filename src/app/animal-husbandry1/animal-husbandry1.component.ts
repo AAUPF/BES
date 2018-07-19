@@ -44,7 +44,7 @@ export class AnimalHusbandry1Component implements OnInit {
   rain_fall_type = [{key: "All", value: "All"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"},	]
 
 
-    Comparison = [{key: "none", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
+    Comparison = [{key: "None", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -52,11 +52,11 @@ export class AnimalHusbandry1Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "none", value: "None"}]
+        this.Comparison = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "none", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
+        this.Comparison = [{key: "None", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
       }
       }
   onSubmit(user) {

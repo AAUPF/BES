@@ -42,7 +42,7 @@ export class CroppingPatternComponent implements OnInit {
   years = ["All",2012,2013,2014,2015,2016];
   views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"},]
-    Comparison = [{key: "none", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
+    Comparison = [{key: "None", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
     data: any = {};    
 
     toNumber(d) {
@@ -51,11 +51,11 @@ export class CroppingPatternComponent implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "none", value: "None"}]
+        this.Comparison = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "none", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
+        this.Comparison = [{key: "None", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
       }
       }
 

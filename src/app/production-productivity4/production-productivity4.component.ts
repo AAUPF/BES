@@ -46,7 +46,7 @@ export class ProductionProductivity4Component implements OnInit {
   years = [2012, 2013,2014,2015,2016];
   views = ["Graph", "Trend Line","Bubble","Table"];
   rain_fall_type = ["All","Area","Production"]
-    Comparison = ["none"]
+    Comparison = ["None"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
