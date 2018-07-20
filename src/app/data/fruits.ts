@@ -11,6 +11,4 @@ export const Fruits:any = [
     "Pineapple",
     "Total",
     "Watermelon",
-   
-
 ];
