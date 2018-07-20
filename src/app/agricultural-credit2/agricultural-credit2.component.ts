@@ -41,7 +41,7 @@ export class AgriculturalCredit2Component implements OnInit {
   visbile_table= false;
 
   years = [2014, 2015,2016];
-  views = Views;
+  views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   rain_fall_type = ["All","Target",	"Achievement"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
@@ -58,47 +58,30 @@ export class AgriculturalCredit2Component implements OnInit {
     }
   onSubmit(user) {
     var controller = "agricultural_credit2s"
-    if (user.view == "Graph") {
-      this.visbile_chart= true;
-      this.visbile= false;
-      this.visbile_table= false;
 
-      // this.AgricultureService.pie();
-      if (user.districts == "All") {
-        this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
-      } 
-     else if(user.Comparison == "Bihar vs District") { 
-      this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
-      }
-      else {
-        this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
-      }
-    } 
-    else if(user.view == "Trend Line") {
-      this.visbile_chart= true;
-      this.visbile= false;
-      this.visbile_table= false;
+    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
 
-      if (user.districts == "All") {
-        this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
-        
-      } 
-      else if(user.Comparison == "Bihar vs District") { 
-        this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
-        }
-      else {
-        this.SvgService.trend_line(user.districts,user.years,user.rain_fall_type,controller);
-      }
+      console.log("errror");
       
-    } 
-    else if(user.view == "Table") {
-      this.visbile_chart= false;
-      this.visbile_table= true;
+      this.visbile_chart= true;
       this.visbile= false;
-      this.spinner.show();
+      this.visbile_table= false;
+      // this.AgricultureService.pie();
+      if(user.view) { 
 
-      this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
-    }
+        if (user.view == "Table") {
+          this.visbile_chart= false;
+          this.visbile_table= true;
+          this.spinner.show();
+        } else {
+          this.visbile_chart= true;
+          this.visbile_table= false;
+          this.spinner.show();
+          
+        }
+        this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
+        }
+    } 
     else if(user.view == "Map View") {
      const that = this;
       // this.AgricultureService.barchart();
@@ -118,23 +101,85 @@ export class AgriculturalCredit2Component implements OnInit {
       // this.SvgService.svg();
       
     }
-    else if(user.view == "Bubble") {
-      this.visbile_chart= true;
-      this.visbile= false;
-      this.visbile_table= false;
 
-      // this.AgricultureService.pie();
-      if (user.districts == "All") {
-        this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
-      } 
-     else if(user.Comparison == "Bihar vs District") { 
-      this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
-      }
-      else {
-        this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
-      }
+
+    // if (user.view == "Graph") {
+    //   this.visbile_chart= true;
+    //   this.visbile= false;
+    //   this.visbile_table= false;
+
+    //   // this.AgricultureService.pie();
+    //   if (user.districts == "All") {
+    //     this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
+    //   } 
+    //  else if(user.Comparison == "Bihar vs District") { 
+    //   this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+    //   }
+    //   else {
+    //     this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
+    //   }
+    // } 
+    // else if(user.view == "Trend Line") {
+    //   this.visbile_chart= true;
+    //   this.visbile= false;
+    //   this.visbile_table= false;
+
+    //   if (user.districts == "All") {
+    //     this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
+        
+    //   } 
+    //   else if(user.Comparison == "Bihar vs District") { 
+    //     this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+    //     }
+    //   else {
+    //     this.SvgService.trend_line(user.districts,user.years,user.rain_fall_type,controller);
+    //   }
       
-    } 
+    // } 
+    // else if(user.view == "Table") {
+    //   this.visbile_chart= false;
+    //   this.visbile_table= true;
+    //   this.visbile= false;
+    //   this.spinner.show();
+
+    //   this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+    // }
+    // else if(user.view == "Map View") {
+    //  const that = this;
+    //   // this.AgricultureService.barchart();
+    //   this.visbile_chart= false;
+    //   this.visbile= true;
+    //   this.visbile_table= false;
+    //   this.title =user.rain_fall_type;
+    //   // this.SvgService.test("echamparan");
+    //   var controller = "agricultural_credit2s"
+    //   this.spinner.show();
+    //   setTimeout(function() {
+    //     //  that.SvgService.test("echamparan");
+    //         that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
+    //         var u = "wchamparan";
+    //         that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
+    //   }, 500);
+    //   // this.SvgService.svg();
+      
+    // }
+    // else if(user.view == "Bubble") {
+    //   this.visbile_chart= true;
+    //   this.visbile= false;
+    //   this.visbile_table= false;
+
+    //   // this.AgricultureService.pie();
+    //   if (user.districts == "All") {
+    //     this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
+    //   } 
+    //  else if(user.Comparison == "Bihar vs District") { 
+    //   this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+    //   }
+    //   else {
+    //     this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
+    //   }
+      
+    // } 
 
   }     
   // test(a) {
