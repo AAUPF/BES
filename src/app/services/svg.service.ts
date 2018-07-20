@@ -49,13 +49,24 @@ if (res[7]) {
     $( ".orange1" ).empty();
     $( ".red1" ).empty();
 
-      $( ".dark-green1" ).append(`<span class=\"dot dark-green\"></span>${res[7]["data"]["below_min"]["min"]} to ${res[7]["data"]["below_min"]["max"]}`  );
-      $( ".mid-green1" ).append(`<span class=\"dot mid-green\"></span>${res[7]["data"]["min"]["min"]} to ${res[7]["data"]["min"]["max"]}`  );
-      $( ".light-green1" ).append(`<span class=\"dot light-green\"></span>${res[7]["data"]["blow_max"]["min"]} to ${res[7]["data"]["blow_max"]["max"]}`  );
+      // $( ".dark-green1" ).append(`<span class=\"dot dark-green\"></span>${res[7]["data"]["below_min"]["min"]} to ${res[7]["data"]["below_min"]["max"]}`  );
+      // $( ".mid-green1" ).append(`<span class=\"dot mid-green\"></span>${res[7]["data"]["min"]["min"]} to ${res[7]["data"]["min"]["max"]}`  );
+      // $( ".light-green1" ).append(`<span class=\"dot light-green\"></span>${res[7]["data"]["blow_max"]["min"]} to ${res[7]["data"]["blow_max"]["max"]}`  );
+      // $( ".lighter-yellow1" ).append(`<span class=\"dot lighter-yellow\"></span>${res[7]["data"]["max"]["min"]} to ${res[7]["data"]["max"]["max"]}`  );
+      // $( ".yellow1" ).append(`<span class=\"dot yellow\"></span>${res[7]["data"]["above_max"]["min"]} to ${res[7]["data"]["above_max"]["max"]}`  );
+      // $( ".orange1" ).append(`<span class=\"dot orange\"></span>${res[7]["data"]["extreme"]["min"]} to ${res[7]["data"]["extreme"]["max"]}`  );
+      // $( ".red1" ).append(`<span class=\"dot red\"></span>upto ${res[7]["data"]["above_extreme"]["max"]}`  );
+
+
+
+
+      $( ".dark-green1" ).append(`<span class=\"dot dark-green\"></span>Upto ${res[7]["data"]["above_extreme"]["max"]}`  );
+      $( ".mid-green1" ).append(`<span class=\"dot mid-green\"></span>${res[7]["data"]["extreme"]["min"]} to ${res[7]["data"]["extreme"]["max"]}`  );
+      $( ".light-green1" ).append(`<span class=\"dot light-green\"></span>${res[7]["data"]["above_max"]["min"]} to ${res[7]["data"]["above_max"]["max"]}`  );
       $( ".lighter-yellow1" ).append(`<span class=\"dot lighter-yellow\"></span>${res[7]["data"]["max"]["min"]} to ${res[7]["data"]["max"]["max"]}`  );
-      $( ".yellow1" ).append(`<span class=\"dot yellow\"></span>${res[7]["data"]["above_max"]["min"]} to ${res[7]["data"]["above_max"]["max"]}`  );
-      $( ".orange1" ).append(`<span class=\"dot orange\"></span>${res[7]["data"]["extreme"]["min"]} to ${res[7]["data"]["extreme"]["max"]}`  );
-      $( ".red1" ).append(`<span class=\"dot red\"></span>upto ${res[7]["data"]["above_extreme"]["max"]}`  );
+      $( ".yellow1" ).append(`<span class=\"dot yellow\"></span>${res[7]["data"]["blow_max"]["min"]} to ${res[7]["data"]["blow_max"]["max"]}`  );
+      $( ".orange1" ).append(`<span class=\"dot orange\"></span>${res[7]["data"]["min"]["min"]} to ${res[7]["data"]["min"]["max"]}`  );
+      $( ".red1" ).append(`<span class=\"dot red\"></span> ${res[7]["data"]["below_min"]["min"]} to ${res[7]["data"]["below_min"]["max"]}`  );
 } 
       f.testy(this,districts,rain_fall_type,views,year,Comparison,res,controller)      
        },

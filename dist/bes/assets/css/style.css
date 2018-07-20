@@ -1642,7 +1642,7 @@ select {
 
 .dot {
     height: 10px  !important;
-    width: 10px  !important;
+    width: 31px  !important;
     border-radius: 50% !important;
     display: inline-block  !important;
     margin-right: 5px  !important;
@@ -6993,4 +6993,8 @@ table { width: 100%; border-collapse: collapse; line-height: 18px !important; } 
 		text-align: center;
 		padding: 15px 0 0 0;
 		font-size: 12px;
+	}
+
+	.width-svg {
+		width: 100%;
 	}
