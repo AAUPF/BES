@@ -1637,7 +1637,8 @@ select {
 .fil-box div {
     line-height: 10px  !important;
     display: inline-flex  !important;
-    margin-right: 10px  !important;
+	margin-right: 10px  !important;
+	
 }
 
 .dot {
@@ -1765,6 +1766,12 @@ select {
 
 
 @media screen and (max-width: 600px) {
+
+	.fil-box div {
+		line-height: 20px;
+		display: inline-flex;
+		width: auto !important;
+	}
 
 	.pageTitle { position: inherit; }
 	
@@ -6995,6 +7002,3 @@ table { width: 100%; border-collapse: collapse; line-height: 18px !important; } 
 		font-size: 12px;
 	}
 
-	.width-svg {
-		width: 100%;
-	}
