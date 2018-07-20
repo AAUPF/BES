@@ -1642,8 +1642,8 @@ select {
 }
 
 .dot {
-    height: 10px  !important;
-    width: 31px  !important;
+    height: 12px  !important;
+    width: 12px  !important;
     border-radius: 50% !important;
     display: inline-block  !important;
     margin-right: 5px  !important;
@@ -1766,6 +1766,9 @@ select {
 
 
 @media screen and (max-width: 600px) {
+ 
+.width-svg { width: auto !important; }
+
 
 	.fil-box div {
 		line-height: 20px;
@@ -7002,3 +7005,8 @@ table { width: 100%; border-collapse: collapse; line-height: 18px !important; } 
 		font-size: 12px;
 	}
 
+
+	.width-svg {
+
+		width: 100%;
+	}
