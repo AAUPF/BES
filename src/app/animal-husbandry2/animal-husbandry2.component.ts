@@ -43,10 +43,10 @@ export class AnimalHusbandry2Component implements OnInit {
   years = ["All",2012,2013,2014,2015,2016];
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-  rain_fall_type = [{key: "All", value: "All"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},	]
+  rain_fall_type = [{key: "All", value: "All"}, {key:"Milk",value:"Milk_lakh_tonnes"},	{key:"Egg",value:"Egg_crore"},	{key:"Wool",value:"Wool_lakh_kgs"},	{key:"Meat",value:"Meat_lakh_tonnes"},	{key:"Fish",value:"Fish_lakh_tonnes"},	]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
 
-    Comparison = [{key: "None", value: "None"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},]
+    Comparison = [{key: "None", value: "None"}, {key:"Milk",value:"Milk_lakh_tonnes"},	{key:"Egg",value:"Egg_crore"},	{key:"Wool",value:"Wool_lakh_kgs"},	{key:"Meat",value:"Meat_lakh_tonnes"},	{key:"Fish",value:"Fish_lakh_tonnes"},]
     Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
