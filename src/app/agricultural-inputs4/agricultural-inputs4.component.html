@@ -34,7 +34,7 @@
                     </select>
                     <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
                         <option [ngValue]="undefined" disabled  selected> Consumption Of Fertilizers  </option>
-                        <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option">{{option}}</option>
+                        <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option.value">{{option.key}}</option>
                     </select>
                         <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
                             <option [ngValue]="undefined" disabled  selected> Comparison  </option>

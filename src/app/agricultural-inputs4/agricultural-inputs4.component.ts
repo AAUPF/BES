@@ -8,10 +8,12 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { Views } from '../data/views';
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-agricultural-inputs4',
@@ -42,7 +44,10 @@ export class AgriculturalInputs4Component implements OnInit {
 
   years = [2015, 2016];
   views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
-  rain_fall_type = ["All","Urea",	"DAP",	"SSP",	"MOP",	"Ammonium_Sulphate",	"Complex",	"Total",	"N",	"P",	"K",	"Total_NPK",	"Grand_Total"]
+  //rain_fall_type = ["All","Urea",	"DAP",	"SSP",	"MOP",	"Ammonium_Sulphate",	"Complex",	"Total",	"N",	"P",	"K",	"Total_NPK",	"Grand_Total"]
+  rain_fall_type = [{key: "All", value: "All"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Total",value:"Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"}]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
