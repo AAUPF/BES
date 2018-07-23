@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { rendererTypeName } from '@angular/compiler';
 
 declare var google:any;
 declare var $:any
@@ -164,7 +165,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
   let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare+ `&views=`+views;
   // let url = `${this.apiRoot}`;
     console.log(url);
-    
+    let str = rain_fall_type.replace( /_/g, " " );
     
   this.http.get(url).
     subscribe(res => {
@@ -193,20 +194,13 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
 
           }  else {
-
-
-
-           
             this.j = res;
-           let str = rain_fall_type.replace( /_/g, " " );
-
-           console.log(str);
             
             let chart1 = new CanvasJS.Chart("chartContainer", {
               animationEnabled: true,
               exportEnabled: true,
               title: {
-                text: rain_fall_type
+                text: str
               },
               data: this.j
             });
@@ -260,7 +254,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
               animationEnabled: true,
               exportEnabled: true,
               title: {
-                text: rain_fall_type
+                text: str
               },
               data: this.j
             });
@@ -315,7 +309,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
              animationEnabled: true,
              exportEnabled: true,
              title: {
-              text: rain_fall_type
+              text: str
             },
              data: this.j
            });
