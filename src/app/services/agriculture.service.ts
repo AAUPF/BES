@@ -196,9 +196,11 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
 
 
 
-            console.log("rain_fall_type");
+           
             this.j = res;
-    
+           let str = rain_fall_type.replace( /_/g, " " );
+
+           console.log(str);
             
             let chart1 = new CanvasJS.Chart("chartContainer", {
               animationEnabled: true,

@@ -40,80 +40,21 @@ export class Land1Component implements OnInit {
     cancel() {
       this.location.back(); // <-- go back to previous location on cancel
     }
-    toNumber(d) {
-      if (d == "All") {
-        this.data == {years: null, views: "",Comparison: ""};
-        this.data.Comparison  = undefined
-        this.butDisabled = true;
-  
-      } else {
-        this.butDisabled = false;
-      }
-      
-      }
-    // onSubmit(user) {
-    //   if (user.view == "Graph") {
-    //     this.visbile_chart= true;
-    //     this.visbile= false;
-    //     this.visbile_table= false;
-    //     // this.Land.pie();
-    //     if (user.districts == "All") {
-    //       // this.Land.bar_chart_all(user.districts,user.years,user.rain_fall_type);
-    //       this.Land.bar_chart_all(user.districts,user.years,user.rain_fall_type);
-    //     } 
-    //    else if(user.Comparison == "Bihar vs District") { 
-    //     this.Land.barchart1(user.districts,user.years,user.rain_fall_type,user.Comparison);
-    //     console.log(user.Comparison);
-    //   }
-    //     else {
-    //       this.Land.barchart1(user.districts,user.years,user.rain_fall_type,user.Comparison);
-    //       // this.Land.barchart();
-    //     }
-    //   } 
-    //   else if(user.view == "Trend Line") {
-    //     this.visbile_chart= true;
-    //     this.visbile= false;
-    //     this.visbile_table= false;
-    //     if (user.districts == "All") {
-    //       this.Land.trend_line(user.districts,user.years,user.rain_fall_type,user.Comparison);
-    //     } 
-    //     else if(user.Comparison == "Bihar vs District") { 
-    //       this.Land.trend_line(user.districts,user.years,user.rain_fall_type,user.Comparison);
-    //       }
-    //     else {
-    //       this.Land.trend_line(user.districts,user.years,user.rain_fall_type,user.Comparison);
-    //     }
-        
-    //   } 
-    //   else if(user.view == "Table") {
-    //     this.visbile_chart= false;
-    //     this.visbile_table= true;
-    //     this.visbile= false;
-    //     this.spinner.show();
-    //     this.Land.table(user.years,user.districts,user.rain_fall_type,user.Comparison);
-    //   }
-    //   else if(user.view == "Map View") {
-    //    const that = this;
-    //     // this.Land.barchart();
-    //     this.visbile_chart= false;
-    //     this.visbile= true;
-    //     this.visbile_table= false;
-    //     var controller = 'lands'
-    //     // this.title =user.rain_fall_type;
-    //     // this.SvgService.test("echamparan");
-    //     this.spinner.show();
-    //     setTimeout(function() {
-    //       //  that.SvgService.test("echamparan");
-    //           that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
-    //           var u = "wchamparan";
-    //           that.SvgService.test(u,user.view,user.rain_fall_type,user.years,user.districts,user.Comparison,controller); 
-    //     }, 500);
-    //     // this.SvgService.svg();
-    //   }
-    // } 
+ 
 
-
-
+      toNumber(d) {
+        if (d == "All") {
+          this.data == {years: null, views: "",Comparison: ""};
+          // this.data.Comparison  = undefined
+          // this.butDisabled = true;
+    
+          this.Comparison = [{key: "None", value: "None"}]
+    
+        } else {
+          // this.butDisabled = false;
+          this.Comparison = [{key: "None", value: "None"},	{key:"Geographical Area", value:"Geographical_Area"},	{key:"Forests", value:"Forests"},	{key:"Barren Unculturable Land", value:"Barren_Unculturable_Land"},	{key:"Land put to Non agricultural use", value:"Land_put_to_Non_agricultural_use"},	{key:"Land Area", value:"Land_Area"},	{key:"Water Area", value:"Water_Area"},	{key:"Culturable Waste", value:"Culturable_Waste"},	{key:"Permanent Pastures", value:"Permanent_Pastures"},	{key:"Land under Tree Crops", value:"Land_under_Tree_Crops"},	{key:"Fallow Land excl Current Fallow", value:"Fallow_Land_excl_Current_Fallow"},	{key:"Current Fallow", value:"Current_Fallow"},	{key:"Total Unculturable Land", value:"Total_Unculturable_Land"},	{key:"Net Sown Area", value:"Net_Sown_Area"},	{key:"Gross Sown Area", value:"Gross_Sown_Area"},	{key:"Cropping Intensity", value:"Cropping_Intensity"},]
+        }
+        }
     
     onSubmit(user) {
       var controller = "land1s"

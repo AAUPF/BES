@@ -32,11 +32,11 @@
                           <option [ngValue]="undefined" disabled  selected> Views  </option>
                           <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                       </select>
-                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
+                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
                           <option [ngValue]="undefined" disabled  selected> Land Type  </option>
                           <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option.value">{{option.key}}</option>
                       </select>
-                          <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
+                          <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled"  >
                               <option [ngValue]="undefined" disabled  selected> Comparison  </option>
                               <option class='option' *ngFor='let option of Comparison' [ngValue]="option.value">{{option.key}}</option>
                           </select>

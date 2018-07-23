@@ -57,7 +57,6 @@ export class Rainfall2Component implements OnInit {
     } else {
       this.butDisabled = false;
     }
-    
     }
   onSubmit(user) {
     var controller = "rainfall2s"
