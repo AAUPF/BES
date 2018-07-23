@@ -8,11 +8,12 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
 import { Location } from '@angular/common';
-
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-agriculture',
@@ -44,7 +45,9 @@ export class AgricultureComponent implements OnInit {
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
   rain_fall_type1 = [{key: "All", value: "All"}, {key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]
-    Comparison = [{key: "none", value: "None"}, {key: "Total", value: "Total"},{key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]
+  rain_fall_type_sort = this.rain_fall_type1.sort(f.compare);
+  Comparison = [{key: "None", value: "None"}, {key: "Total", value: "Total"},{key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]
+  Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
@@ -52,11 +55,12 @@ export class AgricultureComponent implements OnInit {
       // this.data.Comparison  = undefined
       // this.butDisabled = true;
 
-      this.Comparison = [{key: "none", value: "None"}, {key: "Total", value: "Total"}]
+      this.Comparison_sort = [{key: "None", value: "None"}, {key: "Total", value: "Total"}]
 
     } else {
       // this.butDisabled = false;
-      this.Comparison = [{key: "none", value: "None"}, {key: "Total", value: "Total"},{key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]
+      //this.Comparison = [{key: "none", value: "None"}, {key: "Total", value: "Total"},{key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]
+      this.Comparison_sort = this.Comparison.sort(f.compare);
     }
     }
   onSubmit(user) {

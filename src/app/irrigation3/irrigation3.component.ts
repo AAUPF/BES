@@ -7,10 +7,12 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-irrigation3',
@@ -42,8 +44,9 @@ export class Irrigation3Component implements OnInit {
   years = ["All",2012,2013,2014,2015,2016];
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"}]
-
-    Comparison = [{key: "None", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  Comparison = [{key: "None", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
+  Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -51,11 +54,12 @@ export class Irrigation3Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "None", value: "None"}]
+        this.Comparison_sort = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "None", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
+        //this.Comparison = [{key: "None", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
+        this.Comparison_sort = this.Comparison.sort(f.compare);
       }
       }
   onSubmit(user) {

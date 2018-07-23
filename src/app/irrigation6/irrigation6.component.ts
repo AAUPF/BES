@@ -7,10 +7,13 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
+import{Functions} from '../data/func';
+
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-irrigation6',
@@ -42,8 +45,9 @@ export class Irrigation6Component implements OnInit {
   years = ["All",2012,2013,2014,2015,2016];
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
-
-    Comparison = [{key: "None", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  Comparison = [{key: "None", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
+  Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -51,11 +55,12 @@ export class Irrigation6Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "None", value: "None"}]
+        this.Comparison_sort = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "None", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
+        //this.Comparison = [{key: "None", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
+        this.Comparison_sort = this.Comparison.sort(f.compare);
       }
       }
   onSubmit(user) {
