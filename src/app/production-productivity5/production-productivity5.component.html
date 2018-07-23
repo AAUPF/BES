@@ -21,7 +21,7 @@
 <div class="cen_sel">
                   <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toNumber(data.districts)">
                       <option [ngValue]="undefined" disabled  selected> Vegetables  </option>
-                      <option *ngFor='let option of Vegetables' [ngValue]="option">{{option}}</option>
+                      <option *ngFor='let option of Vegetables' [ngValue]="option.value">{{option.key}}</option>
                   </select>
 
                   <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
