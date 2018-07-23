@@ -7,11 +7,13 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
+import{Functions} from '../data/func';
 
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-agricultural-inputs3',
@@ -42,7 +44,9 @@ export class AgriculturalInputs3Component implements OnInit {
   years = ["All",2015,2016];
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestors",value:"Combine_Harvestors"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpsets",value:"Pumpsets"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually operated tools implements",value:"Manually_operated_tools_implements"},	{key:"Threshers",value:"Threshers"},	{key:"Total",value:"Total"},]
-    Comparison = [{key: "None", value: "None"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestors",value:"Combine_Harvestors"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpsets",value:"Pumpsets"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually operated tools implements",value:"Manually_operated_tools_implements"},	{key:"Threshers",value:"Threshers"},	{key:"Total",value:"Total"},]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  Comparison = [{key: "None", value: "None"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestors",value:"Combine_Harvestors"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpsets",value:"Pumpsets"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually operated tools implements",value:"Manually_operated_tools_implements"},	{key:"Threshers",value:"Threshers"},	{key:"Total",value:"Total"},]
+  Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -50,11 +54,11 @@ export class AgriculturalInputs3Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "None", value: "None"}]
+        this.Comparison_sort = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "None", value: "None"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestors",value:"Combine_Harvestors"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpsets",value:"Pumpsets"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually operated tools implements",value:"Manually_operated_tools_implements"},	{key:"Threshers",value:"Threshers"},	{key:"Total",value:"Total"},]
+        this.Comparison_sort = this.Comparison.sort(f.compare);
       }
       }
   onSubmit(user) {
