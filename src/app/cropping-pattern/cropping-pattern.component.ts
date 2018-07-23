@@ -7,11 +7,12 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
-
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-cropping-pattern',
@@ -42,7 +43,9 @@ export class CroppingPatternComponent implements OnInit {
   years = ["All",2012,2013,2014,2015,2016];
   views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"},]
-    Comparison = [{key: "None", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  Comparison = [{key: "None", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
+  Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
 
     toNumber(d) {
@@ -51,11 +54,12 @@ export class CroppingPatternComponent implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "None", value: "None"}]
+        this.Comparison_sort = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "None", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
+        //this.Comparison = [{key: "None", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
+        this.Comparison_sort = this.Comparison.sort(f.compare);
       }
       }
 

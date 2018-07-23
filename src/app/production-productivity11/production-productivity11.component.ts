@@ -3,16 +3,17 @@ import { SvgService } from '../services/svg.service';
 import { AgricultureService } from '../services/agriculture.service';
 import { Districts } from '../data/districts';
 import { Views } from '../data/views';
-
 import { ModalComponent } from '../modal/modal.component';
 import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-production-productivity11',
@@ -45,6 +46,7 @@ export class ProductionProductivity11Component implements OnInit {
   views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
 
   rain_fall_type =[{key: "All", value: "All"},{key:"Potato Area" ,value:"Potato_Area"},	{key:"Potato Production" ,value:"Potato_Production"},	{key:"Onion Area" ,value:"Onion_Area"},	{key:"Onion Production" ,value:"Onion_Production"},	{key:"Cauliflower Area" ,value:"Cauliflower_Area"},	{key:"Cauliflower Production" ,value:"Cauliflower_Production"},	{key:"Brinjal Area" ,value:"Brinjal_Area"},	{key:"Brinjal Production" ,value:"Brinjal_Production"},]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   fruits = ["Mango","Guava","Litchi","Banana"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    

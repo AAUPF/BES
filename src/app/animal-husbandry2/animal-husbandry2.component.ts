@@ -7,11 +7,12 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
-
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-animal-husbandry2',
@@ -43,9 +44,10 @@ export class AnimalHusbandry2Component implements OnInit {
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
   rain_fall_type = [{key: "All", value: "All"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},	]
-
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
 
     Comparison = [{key: "None", value: "None"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},]
+    Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -53,11 +55,12 @@ export class AnimalHusbandry2Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "None", value: "None"}]
+        this.Comparison_sort = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "None", value: "None"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},]
+        //this.Comparison = [{key: "None", value: "None"}, {key:"Milk lakh tonnes",value:"Milk_lakh_tonnes"},	{key:"Egg crore",value:"Egg_crore"},	{key:"Wool lakh kgs",value:"Wool_lakh_kgs"},	{key:"Meat lakh tonnes",value:"Meat_lakh_tonnes"},	{key:"Fish lakh tonnes",value:"Fish_lakh_tonnes"},]
+        this.Comparison_sort = this.Comparison.sort(f.compare);
       }
       }
   onSubmit(user) {

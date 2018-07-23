@@ -8,11 +8,12 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { AgricultureService } from '../services/agriculture.service';
 import { Location } from '@angular/common';
-
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-land1',
@@ -31,10 +32,9 @@ export class Land1Component implements OnInit {
   years = ["All",2010, 2011,2012,2013,2014];
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Geographical Area", value:"Geographical_Area"},	{key:"Forests", value:"Forests"},	{key:"Barren Unculturable Land", value:"Barren_Unculturable_Land"},	{key:"Land put to Non agricultural use", value:"Land_put_to_Non_agricultural_use"},	{key:"Land Area", value:"Land_Area"},	{key:"Water Area", value:"Water_Area"},	{key:"Culturable Waste", value:"Culturable_Waste"},	{key:"Permanent Pastures", value:"Permanent_Pastures"},	{key:"Land under Tree Crops", value:"Land_under_Tree_Crops"},	{key:"Fallow Land excl Current Fallow", value:"Fallow_Land_excl_Current_Fallow"},	{key:"Current Fallow", value:"Current_Fallow"},	{key:"Total Unculturable Land", value:"Total_Unculturable_Land"},	{key:"Net Sown Area", value:"Net_Sown_Area"},	{key:"Gross Sown Area", value:"Gross_Sown_Area"},	{key:"Cropping Intensity", value:"Cropping_Intensity"},]
-
-
-
-    Comparison = [{key: "None", value: "None"},	{key:"Geographical Area", value:"Geographical_Area"},	{key:"Forests", value:"Forests"},	{key:"Barren Unculturable Land", value:"Barren_Unculturable_Land"},	{key:"Land put to Non agricultural use", value:"Land_put_to_Non_agricultural_use"},	{key:"Land Area", value:"Land_Area"},	{key:"Water Area", value:"Water_Area"},	{key:"Culturable Waste", value:"Culturable_Waste"},	{key:"Permanent Pastures", value:"Permanent_Pastures"},	{key:"Land under Tree Crops", value:"Land_under_Tree_Crops"},	{key:"Fallow Land excl Current Fallow", value:"Fallow_Land_excl_Current_Fallow"},	{key:"Current Fallow", value:"Current_Fallow"},	{key:"Total Unculturable Land", value:"Total_Unculturable_Land"},	{key:"Net Sown Area", value:"Net_Sown_Area"},	{key:"Gross Sown Area", value:"Gross_Sown_Area"},	{key:"Cropping Intensity", value:"Cropping_Intensity"},]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  Comparison = [{key: "None", value: "None"},	{key:"Geographical Area", value:"Geographical_Area"},	{key:"Forests", value:"Forests"},	{key:"Barren Unculturable Land", value:"Barren_Unculturable_Land"},	{key:"Land put to Non agricultural use", value:"Land_put_to_Non_agricultural_use"},	{key:"Land Area", value:"Land_Area"},	{key:"Water Area", value:"Water_Area"},	{key:"Culturable Waste", value:"Culturable_Waste"},	{key:"Permanent Pastures", value:"Permanent_Pastures"},	{key:"Land under Tree Crops", value:"Land_under_Tree_Crops"},	{key:"Fallow Land excl Current Fallow", value:"Fallow_Land_excl_Current_Fallow"},	{key:"Current Fallow", value:"Current_Fallow"},	{key:"Total Unculturable Land", value:"Total_Unculturable_Land"},	{key:"Net Sown Area", value:"Net_Sown_Area"},	{key:"Gross Sown Area", value:"Gross_Sown_Area"},	{key:"Cropping Intensity", value:"Cropping_Intensity"},]
+  Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {}; 
 
     cancel() {
@@ -48,11 +48,12 @@ export class Land1Component implements OnInit {
           // this.data.Comparison  = undefined
           // this.butDisabled = true;
     
-          this.Comparison = [{key: "None", value: "None"}]
+          this.Comparison_sort = [{key: "None", value: "None"}]
     
         } else {
           // this.butDisabled = false;
-          this.Comparison = [{key: "None", value: "None"},	{key:"Geographical Area", value:"Geographical_Area"},	{key:"Forests", value:"Forests"},	{key:"Barren Unculturable Land", value:"Barren_Unculturable_Land"},	{key:"Land put to Non agricultural use", value:"Land_put_to_Non_agricultural_use"},	{key:"Land Area", value:"Land_Area"},	{key:"Water Area", value:"Water_Area"},	{key:"Culturable Waste", value:"Culturable_Waste"},	{key:"Permanent Pastures", value:"Permanent_Pastures"},	{key:"Land under Tree Crops", value:"Land_under_Tree_Crops"},	{key:"Fallow Land excl Current Fallow", value:"Fallow_Land_excl_Current_Fallow"},	{key:"Current Fallow", value:"Current_Fallow"},	{key:"Total Unculturable Land", value:"Total_Unculturable_Land"},	{key:"Net Sown Area", value:"Net_Sown_Area"},	{key:"Gross Sown Area", value:"Gross_Sown_Area"},	{key:"Cropping Intensity", value:"Cropping_Intensity"},]
+          //this.Comparison = [{key: "None", value: "None"},	{key:"Geographical Area", value:"Geographical_Area"},	{key:"Forests", value:"Forests"},	{key:"Barren Unculturable Land", value:"Barren_Unculturable_Land"},	{key:"Land put to Non agricultural use", value:"Land_put_to_Non_agricultural_use"},	{key:"Land Area", value:"Land_Area"},	{key:"Water Area", value:"Water_Area"},	{key:"Culturable Waste", value:"Culturable_Waste"},	{key:"Permanent Pastures", value:"Permanent_Pastures"},	{key:"Land under Tree Crops", value:"Land_under_Tree_Crops"},	{key:"Fallow Land excl Current Fallow", value:"Fallow_Land_excl_Current_Fallow"},	{key:"Current Fallow", value:"Current_Fallow"},	{key:"Total Unculturable Land", value:"Total_Unculturable_Land"},	{key:"Net Sown Area", value:"Net_Sown_Area"},	{key:"Gross Sown Area", value:"Gross_Sown_Area"},	{key:"Cropping Intensity", value:"Cropping_Intensity"},]
+          this.Comparison_sort = this.Comparison.sort(f.compare);
         }
         }
     

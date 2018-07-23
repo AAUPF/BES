@@ -8,11 +8,12 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
 import { Location } from '@angular/common';
-
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-animal-husbandry4',
@@ -42,7 +43,9 @@ export class AnimalHusbandry4Component implements OnInit {
 
   years = [2016, 2017];
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
-  rain_fall_type = ["All","Cow",	"Buffalo",	"Pig",	"Sheep",	"Goat",	"Poultry"]
+  //rain_fall_type = ["All","Cow",	"Buffalo",	"Pig",	"Sheep",	"Goat",	"Poultry"]
+  rain_fall_type =[{key: "All", value: "All"},{key: "Cow", value: "Cow"},{key: "Buffalo", value: "Buffalo"},{key: "Pig", value: "Pig"},{key: "Sheep", value: "Sheep"},{key: "Goat", value: "Goat"},{key: "Poultry", value: "Poultry"}];
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {

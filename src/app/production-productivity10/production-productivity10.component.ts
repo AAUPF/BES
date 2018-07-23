@@ -9,12 +9,13 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { AgricultureService } from '../services/agriculture.service';
 import { Location } from '@angular/common';
 import { TableExport } from '../../../node_modules/tableexport';
-
+import{Functions} from '../data/func';
 import  '../data/data'
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-production-productivity10',
@@ -47,7 +48,8 @@ export class ProductionProductivity10Component implements OnInit {
   years = [2015, 2016];
   views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   rain_fall_type = [{key: "All", value: "All"}, {key:"Mango Area", value:"Mango_Area"},	{key:"Mango Production", value:"Mango_Production"},	{key:"Guava Area", value:"Guava_Area"},	{key:"Guava Production", value:"Guava_Production"},	{key:"Litchi Area", value:"Litchi_Area"},	{key:"Litchi Production", value:"Litchi_Production"},	{key:"Banana Area", value:"Banana_Area"},	{key:"Banana Production", value:"Banana_Production"},]
-    Comparison = ["None","Bihar vs District"]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {

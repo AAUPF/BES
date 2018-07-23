@@ -7,11 +7,12 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
-
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-animal-husbandry3',
@@ -43,9 +44,9 @@ export class AnimalHusbandry3Component implements OnInit {
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
   rain_fall_type = [{key: "All", value: "All"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},	]
-
-
-    Comparison = [{key: "None", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  Comparison = [{key: "None", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},]
+  Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -53,11 +54,12 @@ export class AnimalHusbandry3Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "None", value: "None"}]
+        this.Comparison_sort = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "None", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},]
+        //this.Comparison = [{key: "None", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},]
+        this.Comparison_sort = this.Comparison.sort(f.compare);
       }
       }
 

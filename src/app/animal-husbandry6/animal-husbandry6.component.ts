@@ -7,11 +7,12 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
-
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-animal-husbandry6',
@@ -42,7 +43,7 @@ export class AnimalHusbandry6Component implements OnInit {
   years = [2015];
   views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Crossbred Cow",value:"Crossbred_Cow"},	{key:"Local Cow",value:"Local_Cow"},	{key:"Total Cow",value:"Total_Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Total Cow Buffalo",value:"Total_Cow_Buffalo"},	{key:"Goat",value:"Goat"},	{key:"Total Production",value:"Total_Production"},]
-
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
 
     Comparison = ["None","Bihar vs District"]
     data: any = {};    

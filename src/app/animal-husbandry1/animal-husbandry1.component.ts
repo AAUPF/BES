@@ -7,11 +7,12 @@ import { SvgcomponentComponent } from '../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
-
+import{Functions} from '../data/func';
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-animal-husbandry1',
@@ -42,9 +43,9 @@ export class AnimalHusbandry1Component implements OnInit {
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
   rain_fall_type = [{key: "All", value: "All"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"},	]
-
-
-    Comparison = [{key: "None", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  Comparison = [{key: "None", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
+  Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
@@ -52,11 +53,12 @@ export class AnimalHusbandry1Component implements OnInit {
         // this.data.Comparison  = undefined
         // this.butDisabled = true;
   
-        this.Comparison = [{key: "None", value: "None"}]
+        this.Comparison_sort = [{key: "None", value: "None"}]
   
       } else {
         // this.butDisabled = false;
-        this.Comparison = [{key: "None", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
+        //this.Comparison = [{key: "None", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
+        this.Comparison_sort = this.Comparison.sort(f.compare);
       }
       }
   onSubmit(user) {
