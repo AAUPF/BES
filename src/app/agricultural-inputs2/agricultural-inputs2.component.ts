@@ -43,7 +43,11 @@ export class AgriculturalInputs2Component implements OnInit {
 
   years = ["All",2014,2015,2016];
   views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
+
+  Fertilizers = ["Total","Kharif","Rabi"];
+
   rain_fall_type = [{key: "All", value: "All"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Sub Total",value:"Sub_Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"},	{key:"Consumption of Fertilizer",value:"Consumption_of_Fertilizer"},]
+
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = [{key: "None", value: "None"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Sub Total",value:"Sub_Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"},	{key:"Consumption of Fertilizer",value:"Consumption_of_Fertilizer"},]
   Comparison_sort = this.Comparison.sort(f.compare);
@@ -83,7 +87,7 @@ export class AgriculturalInputs2Component implements OnInit {
         this.spinner.show();
         
       }
-      this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
+      this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.Fertilizers,user.rain_fall_type,user.Comparison,controller,user.view);
       }
       
       else {

@@ -59,7 +59,7 @@ export class ProductionProductivity6Component implements OnInit {
     
     }
   onSubmit(user) {
-    var controller = "production_and_productivity_of_rices"
+    var controller = "newrices"
 
 
 
@@ -94,7 +94,7 @@ export class ProductionProductivity6Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "production_and_productivity_of_rices"
+      var controller = "newrices"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
