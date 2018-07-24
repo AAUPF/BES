@@ -196,14 +196,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           }  else {
             this.j = res;
             
-            let chart1 = new CanvasJS.Chart("chartContainer", {
-              animationEnabled: true,
-              exportEnabled: true,
-              title: {
-                text: str
-              },
-              data: this.j
-            });
+            let chart1 = new CanvasJS.Chart("chartContainer", this.j);
     
             chart1.render();
             // alert("error")
@@ -250,14 +243,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           } else {
             
             this.j = res;
-            let chart1 = new CanvasJS.Chart("chartContainer", {
-              animationEnabled: true,
-              exportEnabled: true,
-              title: {
-                text: str
-              },
-              data: this.j
-            });
+            let chart1 = new CanvasJS.Chart("chartContainer", this.j);
 
             
             chart1.render();
@@ -305,14 +291,7 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
 
             this.j = res;
             console.log(res);
-           let chart = new CanvasJS.Chart("chartContainer", {
-             animationEnabled: true,
-             exportEnabled: true,
-             title: {
-              text: str
-            },
-             data: this.j
-           });
+           let chart = new CanvasJS.Chart("chartContainer", this.j);
             chart.render();
 
           }
