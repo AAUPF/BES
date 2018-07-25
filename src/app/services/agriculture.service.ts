@@ -297,6 +297,10 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           }
 
       }
+      } ,
+      err => {
+        console.log("Error occured.")
+        this.spinner.hide();
       }
    ); 
 }
