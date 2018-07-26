@@ -9,18 +9,18 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
 import { Location } from '@angular/common';
 
-declare var $:any
+declare var $: any
 interface years<> {
-  id: number;  any
+  id: number; any
 }
-declare var CanvasJS:any;
+declare var CanvasJS: any;
 @Component({
   selector: 'app-production-productivity7',
   templateUrl: './production-productivity7.component.html',
   styleUrls: ['./production-productivity7.component.css']
 })
 export class ProductionProductivity7Component implements OnInit {
-  constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
+  constructor(private AgricultureService: AgricultureService, private SvgService: SvgService, private spinner: NgxSpinnerService, private location: Location) {
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
   }
@@ -34,75 +34,75 @@ export class ProductionProductivity7Component implements OnInit {
 
   public loading = false;
 
-  htmlContent:string;
+  htmlContent: string;
   Districts = Districts;
-  visbile= false;
-  visbile_chart= true;
-  visbile_table= false;
+  visbile = false;
+  visbile_chart = true;
+  visbile_table = false;
 
   years = [2015, 2016];
-  views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
-  rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"}]
-    Comparison = ["None","Bihar vs District"]
-    data: any = {};    
-    toNumber(d) {
+  views = [{ key: "Graph", value: "column" }, { key: "Trend Line", value: "line" }, { key: "Bubble", value: "scatter" }, { key: "Table", value: "Table" }, { key: "Map View", value: "Map View" }];
+  rain_fall_type = [{ key: "All", value: "All" }, { key: "Area", value: "Area" }, { key: "Production", value: "Production" }, { key: "Productivity", value: "Productivity" }]
+  Comparison = ["None", "Bihar vs District"]
+  data: any = {};
+  toNumber(d) {
     if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
+      this.data == { years: null, views: "", Comparison: "" };
+      this.data.Comparison = undefined
       this.butDisabled = true;
 
     } else {
       this.butDisabled = false;
     }
-    
-    }
+
+  }
   onSubmit(user) {
     var controller = "production_productivity7s"
 
 
 
 
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+    if (user.view == "column" || user.view == "line" || user.view == "scatter" || user.view == "pie" || user.view == "Table") {
 
       console.log("errror");
-      
-      this.visbile_chart= true;
-      this.visbile= false;
-      this.visbile_table= false;
+
+      this.visbile_chart = true;
+      this.visbile = false;
+      this.visbile_table = false;
       // this.AgricultureService.pie();
-      if(user.view) { 
+      if (user.view) {
 
         if (user.view == "Table") {
-          this.visbile_chart= false;
-          this.visbile_table= true;
+          this.visbile_chart = false;
+          this.visbile_table = true;
           this.spinner.show();
         } else {
-          this.visbile_chart= true;
-          this.visbile_table= false;
+          this.visbile_chart = true;
+          this.visbile_table = false;
           this.spinner.show();
-          
+
         }
-        this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
-        }
-    } 
-    else if(user.view == "Map View") {
-     const that = this;
+        this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years, user.districts, user.rain_fall_type, user.Comparison, controller, user.view);
+      }
+    }
+    else if (user.view == "Map View") {
+      const that = this;
       // this.AgricultureService.barchart();
-      this.visbile_chart= false;
-      this.visbile= true;
-      this.visbile_table= false;
-      this.title =user.rain_fall_type;
+      this.visbile_chart = false;
+      this.visbile = true;
+      this.visbile_table = false;
+      this.title = user.rain_fall_type;
       // this.SvgService.test("echamparan");
       var controller = "production_productivity7s"
       this.spinner.show();
-      setTimeout(function() {
+      setTimeout(function () {
         //  that.SvgService.test("echamparan");
-            that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
-            var u = "wchamparan";
-            that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
+        that.SvgService.svg(u, user.Comparison, user.rain_fall_type, user.years, user.districts, controller);
+        var u = "wchamparan";
+        that.SvgService.test(user.view, user.years, user.districts, user.rain_fall_type, user.Comparison, controller);
       }, 500);
       // this.SvgService.svg();
-      
+
     }
     // if (user.view == "Graph") {
     //   this.visbile_chart= true;
@@ -127,7 +127,7 @@ export class ProductionProductivity7Component implements OnInit {
 
     //   if (user.districts == "All") {
     //     this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
-        
+
     //   } 
     //   else if(user.Comparison == "Bihar vs District") { 
     //     this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
@@ -135,7 +135,7 @@ export class ProductionProductivity7Component implements OnInit {
     //   else {
     //     this.SvgService.trend_line(user.districts,user.years,user.rain_fall_type,controller);
     //   }
-      
+
     // } 
     // else if(user.view == "Table") {
     //   this.visbile_chart= false;
@@ -145,7 +145,7 @@ export class ProductionProductivity7Component implements OnInit {
 
     //   this.SvgService.newtable(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
     // }
-    
+
     // else if(user.view == "Map View") {
     //  const that = this;
     //   // this.AgricultureService.barchart();
@@ -163,7 +163,7 @@ export class ProductionProductivity7Component implements OnInit {
     //         that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
     //   }, 500);
     //   // this.SvgService.svg();
-      
+
     // }
     // else if(user.view == "Bubble") {
     //   this.visbile_chart= true;
@@ -180,24 +180,24 @@ export class ProductionProductivity7Component implements OnInit {
     //   else {
     //     this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
     //   }
-      
+
     // } 
-  }     
-  
+  }
+
 
   myEvent(event) {
-    var n =  new TableExport(document.getElementsByTagName("table"));
+    var n = new TableExport(document.getElementsByTagName("table"));
   }
 
   ngOnInit() {
 
-  
-   
+
+
     // var n =  new TableExport(document.getElementsByTagName("table"));
-// this.AgricultureService.testgoogle()
+    // this.AgricultureService.testgoogle()
 
 
-  
+
   }
 
 }

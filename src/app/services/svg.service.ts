@@ -284,11 +284,7 @@ trend_line(data,year,rain_fall_type,controller) {
     this.http.get(url).
     subscribe(res => {
       this.j = res;
-      let chart = new CanvasJS.Chart("chartContainer1", {
-        animationEnabled: true,
-        exportEnabled: true,
-        data: this.j
-      });
+      let chart = new CanvasJS.Chart("chartContainer1", this.j);
       chart.render();
       
       }
