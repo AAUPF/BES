@@ -8,6 +8,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
+import { ViewsNotMap } from '../data/viewsnotmap';
 
 declare var $:any
 interface years<> {
@@ -43,7 +44,8 @@ export class Irrigation6Component implements OnInit {
   visbile_table= false;
 
   years = ["All",2012,2013,2014,2015,2016];
-  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
+  //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
+  views = ViewsNotMap;
   rain_fall_type = [{key: "All", value: "All"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = [{key: "None", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
@@ -65,7 +67,7 @@ export class Irrigation6Component implements OnInit {
       }
   onSubmit(user) {
     var controller = "irrigation6s"
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+    if (user.view !== "Map View") {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;

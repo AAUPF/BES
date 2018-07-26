@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { Views } from '../data/views';
 import{Functions} from '../data/func';
+import { NewViews } from '../data/newviews';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -43,7 +44,8 @@ export class AgriculturalInputs4Component implements OnInit {
   visbile_table= false;
 
   years = [2015, 2016];
-  views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
+  views = NewViews;
+  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   //rain_fall_type = ["All","Urea",	"DAP",	"SSP",	"MOP",	"Ammonium_Sulphate",	"Complex",	"Total",	"N",	"P",	"K",	"Total_NPK",	"Grand_Total"]
   rain_fall_type = [{key: "All", value: "All"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Total",value:"Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
@@ -64,7 +66,7 @@ export class AgriculturalInputs4Component implements OnInit {
   onSubmit(user) {
     var controller = "agricultural_inputs4s"
 
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+    if (user.view !== "Map View") {
 
       console.log("errror");
       

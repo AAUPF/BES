@@ -8,6 +8,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
+import { ViewsNotMap } from '../data/viewsnotmap';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -42,7 +43,8 @@ export class AgriculturalCredit1Component implements OnInit {
   visbile_table= false;
 
   years = ["All",2012,2013,2014,2015,2016];
-  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
+  //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
+  views = ViewsNotMap;
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
   rain_fall_type1 = [{key: "All", value: "All"},{key: "Commercial Bank Target", value: "Commercial_Bank_Target"},	{key: "Commercial Bank Achievement", value: "Commercial_Bank_Achievement"},	{key: "RRBs Target", value: "RRBs_Target"},	{key: "RRBs Achievement", value: "RRBs_Achievement"},	{key: "CCBs Target", value: "CCBs_Target"},	{key: "CCBs Achievement", value: "CCBs_Achievement"},	{key: "Total Target", value: "Total_Target"},	{key: "Total Achievement", value: "Total_Achievement"},]
   rain_fall_type_sort = this.rain_fall_type1.sort(f.compare);
@@ -63,7 +65,7 @@ export class AgriculturalCredit1Component implements OnInit {
     }
   onSubmit(user) {
     var controller = "agricultural_credit1s"
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie" || user.view == "Table") {
+    if (user.view !== "Map View") {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;

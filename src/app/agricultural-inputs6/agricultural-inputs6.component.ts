@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { Views } from '../data/views';
 import{Functions} from '../data/func';
+import { NewViews } from '../data/newviews';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -43,7 +44,8 @@ export class AgriculturalInputs6Component implements OnInit {
   visbile_table= false;
 
   years = [2015, 2016];
-  views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
+  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
+  views = NewViews;
   //rain_fall_type = ["All","Tractor",	"Combine_Harvestor",	"Zero_Tillage",	"Pumpset",	"Power_Tiller",	"Manually_Operated_Tools",	"Thresher"]
   rain_fall_type = [{key: "All", value: "All"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
@@ -63,7 +65,7 @@ export class AgriculturalInputs6Component implements OnInit {
   onSubmit(user) {
     var controller = "agricultural_inputs7s"
 
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+    if (user.view !== "Map View") {
 
       console.log("errror");
       

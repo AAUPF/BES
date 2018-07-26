@@ -67,7 +67,7 @@ export class AgricultureComponent implements OnInit {
     }
   onSubmit(user) {
     var controller = "rainfall1s"
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table"|| user.view == "stackedColumn100"|| user.view == "stackedColumn"|| user.view == "stackedBar"|| user.view == "stackedBar100") {
+    if (user.view !== "Map View") {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;

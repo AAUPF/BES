@@ -67,7 +67,7 @@ export class Rainfall2Component implements OnInit {
     }
   onSubmit(user) {
     var controller = "rainfall2s"
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table"|| user.view == "stackedColumn100"|| user.view == "stackedColumn"|| user.view == "stackedBar"|| user.view == "stackedBar100") {
+    if (user.view !== "Map View") {
 
       console.log("errror");
       

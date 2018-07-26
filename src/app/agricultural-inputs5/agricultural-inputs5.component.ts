@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { Views } from '../data/views';
 import{Functions} from '../data/func';
+import { NewViews } from '../data/newviews';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -43,7 +44,8 @@ export class AgriculturalInputs5Component implements OnInit {
   visbile_table= false;
 
   years = [2016, 2017];
-  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
+  //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
+  views = NewViews;
   //rain_fall_type = ["All","Target_Physical",	"Target_Financial",	"Achievement_Physical",	"Achievement_Financial"]
   rain_fall_type = [{key: "All", value: "All"},{key:"Target Physical",value:"Target_Physical"},	{key:"Target Financial",value:"Target_Financial"},	{key:"Achievement Physical",value:"Achievement_Physical"},	{key:"Achievement Financial",value:"Achievement_Financial"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
@@ -63,7 +65,7 @@ export class AgriculturalInputs5Component implements OnInit {
   onSubmit(user) {
     var controller = "agricultural_inputs6s"
 
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+    if (user.view !== "Map View") {
 
       console.log("errror");
       
