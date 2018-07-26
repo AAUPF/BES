@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
+import { ViewsNotMap } from '../data/viewsnotmap';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -42,7 +43,8 @@ export class AgricultureComponent implements OnInit {
   visbile_table= false;
 
   years = ["All",2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016, 2017];
-  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
+  views = ViewsNotMap;
+  //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
   rain_fall_type1 = [{key: "All", value: "All"}, {key: "Winter Rain", value: "Winter_Rain"}, {key: "Hot Weather Rain", value: "Hot_Weather_Rain"},{key: "South West Monsoon", value: "Southwest_Monsoon"},{key: "North West Monsoon Rain", value: "Northwest_Monsoon"}]
   rain_fall_type_sort = this.rain_fall_type1.sort(f.compare);
@@ -65,7 +67,7 @@ export class AgricultureComponent implements OnInit {
     }
   onSubmit(user) {
     var controller = "rainfall1s"
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table"|| user.view == "stackedColumn100"|| user.view == "stackedColumn"|| user.view == "stackedBar"|| user.view == "stackedBar100") {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;

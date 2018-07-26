@@ -9,6 +9,8 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
+import { NewViews } from '../data/newviews';
+// import { NewViews } from '../data/newviews';
 
 
 declare var $:any
@@ -45,8 +47,8 @@ export class Rainfall2Component implements OnInit {
 
   years = [2016, 2017];
   // views = Views;
-
-  views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
+   views = NewViews;
+  //views = [{key: "Graph", value: "column"},{key: "Stack Column", value: "stackedColumn100"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Winter Rain", value:"Winter_Rain"},	{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
 
@@ -65,7 +67,7 @@ export class Rainfall2Component implements OnInit {
     }
   onSubmit(user) {
     var controller = "rainfall2s"
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table"|| user.view == "stackedColumn100"|| user.view == "stackedColumn"|| user.view == "stackedBar"|| user.view == "stackedBar100") {
 
       console.log("errror");
       

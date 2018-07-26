@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { AgricultureService } from '../services/agriculture.service';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
+import { NewViews } from '../data/newviews';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -31,8 +32,8 @@ export class LandComponent implements OnInit {
   visbile_table= false;
   years = [2016, 2017];
   // views = ["Graph", "Trend Line","Map View","Table"];
-
-  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
+  views = NewViews
+  //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Geographical area",value:"Geographical_area"},	{key:"Forest",value:"Forest"},	{key:"Barren unculturable land",value:"Barren_unculturable_land"},	{key:"Non Agriculture Land area",value:"Non_Agriculture_Land_area"},	{key:"Non Agriculture Perennial Water Area",value:"Non_Agriculture_Perennial_Water_Area"},	{key:"Non Agriculture Temporary Water Area",value:"Non_Agriculture_Temporary_Water_Area"},	{key:"Culturable Waste Land",value:"Culturable_Waste_Land"},	{key:"Permanent Pastures",value:"Permanent_Pastures"},	{key:"Tree Crops",value:"Tree_Crops"},	{key:"Fallow land",value:"Fallow_land"},	{key:"Current Fallow",value:"Current_Fallow"},	{key:"Total Uncultivable Land",value:"Total_Uncultivable_Land"},	{key:"Net Area Sown",value:"Net_Area_Sown"},	{key:"Gross Crop Area",value:"Gross_Crop_Area"},	{key:"Cropping Intensity",value:"Cropping_Intensity"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs District"]
@@ -122,7 +123,7 @@ export class LandComponent implements OnInit {
       console.log(user.view);
       
 
-      if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+      if (user.view !== "Map View") {
 
         console.log("errror");
         

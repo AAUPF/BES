@@ -45,7 +45,7 @@ export class AgriculturalInputs6Component implements OnInit {
   years = [2015, 2016];
   views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   //rain_fall_type = ["All","Tractor",	"Combine_Harvestor",	"Zero_Tillage",	"Pumpset",	"Power_Tiller",	"Manually_Operated_Tools",	"Thresher"]
-  rain_fall_type = [{key: "All", value: "All"},{key:"Tractor",value:"Tractor"},	{key:"Combine_Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
+  rain_fall_type = [{key: "All", value: "All"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
