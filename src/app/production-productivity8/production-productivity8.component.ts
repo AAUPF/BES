@@ -8,6 +8,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { Views } from '../data/views';
+import { NewViews } from '../data/newviews';
 
 declare var $:any
 interface years<> {
@@ -40,9 +41,9 @@ export class ProductionProductivity8Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-
   years = [2015, 2016];
-  views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
+  views = NewViews;
+  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"}]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
@@ -60,7 +61,7 @@ export class ProductionProductivity8Component implements OnInit {
   onSubmit(user) {
     var controller = "production_productivity8s"
 
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+    if (user.view !== "Map View") {
 
       console.log("errror");
       

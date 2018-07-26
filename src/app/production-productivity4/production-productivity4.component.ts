@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { Views } from '../data/views';
 import { Fruits } from '../data/fruits';
+import { ViewsNotMap } from '../data/viewsnotmap';
 
 
 declare var $:any
@@ -44,7 +45,8 @@ export class ProductionProductivity4Component implements OnInit {
   visbile_table= false;
 
   years = [2012, 2013,2014,2015,2016];
-  views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
+  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
+  views = ViewsNotMap;
   rain_fall_type = ["All","Area","Production"]
     Comparison = ["None"]
     data: any = {};    
@@ -62,10 +64,8 @@ export class ProductionProductivity4Component implements OnInit {
   onSubmit(user) {
     var controller = "production_productivity4s"
 
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+    if (user.view !== "Map View") {
 
-      console.log("errror");
-      
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
