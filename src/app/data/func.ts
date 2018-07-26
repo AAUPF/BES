@@ -805,13 +805,7 @@ export class Functions {
                 that.color_map(g, dis_abov_ext_color)
 
             }
-           
-           
-
-
-
-
-
+        
 
         }
 
