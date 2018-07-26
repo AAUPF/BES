@@ -8,6 +8,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
+import { ViewsNotMap } from '../data/viewsnotmap';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -41,7 +42,8 @@ export class AnimalHusbandry3Component implements OnInit {
   visbile_table= false;
 
   years = ["All",2012,2013,2014,2015,2016];
-  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
+  //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
+  views = ViewsNotMap;
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
   rain_fall_type = [{key: "All", value: "All"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},	]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
@@ -66,7 +68,7 @@ export class AnimalHusbandry3Component implements OnInit {
 
       onSubmit(user) {
         var controller = "animal_husbandry3s"
-        if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+        if (user.view !== "Map View") {
           this.visbile_chart= true;
           this.visbile= false;
           this.visbile_table= false;

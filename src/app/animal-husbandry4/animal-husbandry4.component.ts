@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
+import { NewViews } from '../data/newviews';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -42,7 +43,8 @@ export class AnimalHusbandry4Component implements OnInit {
   visbile_table= false;
 
   years = [2016, 2017];
-  views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
+  //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
+  views = NewViews;
   //rain_fall_type = ["All","Cow",	"Buffalo",	"Pig",	"Sheep",	"Goat",	"Poultry"]
   rain_fall_type =[{key: "All", value: "All"},{key: "Cow", value: "Cow"},{key: "Buffalo", value: "Buffalo"},{key: "Pig", value: "Pig"},{key: "Sheep", value: "Sheep"},{key: "Goat", value: "Goat"},{key: "Poultry", value: "Poultry"}];
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
@@ -62,7 +64,7 @@ export class AnimalHusbandry4Component implements OnInit {
   onSubmit(user) {
     var controller = "animal_husbandry4s"
 
-    if (user.view == "column" || user.view == "line"|| user.view == "scatter"|| user.view == "pie"|| user.view == "Table") {
+    if (user.view !== "Map View") {
 
       console.log("errror");
       
