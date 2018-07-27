@@ -43,16 +43,24 @@ export class LandComponent implements OnInit {
       this.location.back(); // <-- go back to previous location on cancel
     }
     toNumber(d) {
-      if (d == "All") {
-        this.data == {years: null, views: "",Comparison: ""};
-        this.data.Comparison  = undefined
-        this.butDisabled = true;
-  
-      } else {
-        this.butDisabled = false;
+        if (d == "All") {
+          this.data == {years: null, views: "",Comparison: ""};
+          this.data.Comparison  = undefined
+          this.butDisabled = true;
+    
+        } else {
+          this.butDisabled = false;
+        }
+    }
+    toHide(view){
+      if(view == "Map View"){
+        this.rain_fall_type = [{key:"Geographical area",value:"Geographical_area"},	{key:"Forest",value:"Forest"},	{key:"Barren unculturable land",value:"Barren_unculturable_land"},	{key:"Non Agriculture Land area",value:"Non_Agriculture_Land_area"},	{key:"Non Agriculture Perennial Water Area",value:"Non_Agriculture_Perennial_Water_Area"},	{key:"Non Agriculture Temporary Water Area",value:"Non_Agriculture_Temporary_Water_Area"},	{key:"Culturable Waste Land",value:"Culturable_Waste_Land"},	{key:"Permanent Pastures",value:"Permanent_Pastures"},	{key:"Tree Crops",value:"Tree_Crops"},	{key:"Fallow land",value:"Fallow_land"},	{key:"Current Fallow",value:"Current_Fallow"},	{key:"Total Uncultivable Land",value:"Total_Uncultivable_Land"},	{key:"Net Area Sown",value:"Net_Area_Sown"},	{key:"Gross Crop Area",value:"Gross_Crop_Area"},	{key:"Cropping Intensity",value:"Cropping_Intensity"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Geographical area",value:"Geographical_area"},	{key:"Forest",value:"Forest"},	{key:"Barren unculturable land",value:"Barren_unculturable_land"},	{key:"Non Agriculture Land area",value:"Non_Agriculture_Land_area"},	{key:"Non Agriculture Perennial Water Area",value:"Non_Agriculture_Perennial_Water_Area"},	{key:"Non Agriculture Temporary Water Area",value:"Non_Agriculture_Temporary_Water_Area"},	{key:"Culturable Waste Land",value:"Culturable_Waste_Land"},	{key:"Permanent Pastures",value:"Permanent_Pastures"},	{key:"Tree Crops",value:"Tree_Crops"},	{key:"Fallow land",value:"Fallow_land"},	{key:"Current Fallow",value:"Current_Fallow"},	{key:"Total Uncultivable Land",value:"Total_Uncultivable_Land"},	{key:"Net Area Sown",value:"Net_Area_Sown"},	{key:"Gross Crop Area",value:"Gross_Crop_Area"},	{key:"Cropping Intensity",value:"Cropping_Intensity"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
-      
-      }
+    }
     // onSubmit(user) {
     //   if (user.view == "Graph") {
     //     this.visbile_chart= true;
