@@ -806,13 +806,7 @@ export class Functions {
 
             }
         
-
         }
-
-
-
-
-
 
     }
 

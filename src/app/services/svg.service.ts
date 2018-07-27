@@ -50,7 +50,11 @@ if (res[7]) {
       $( ".lighter-yellow1" ).append(`<span class=\"dot lighter-yellow\"></span>${res[7]["data"]["max"]["min"]} to ${res[7]["data"]["max"]["max"]} `  );
       $( ".yellow1" ).append(`<span class=\"dot yellow\"></span>${res[7]["data"]["blow_max"]["min"]} to ${res[7]["data"]["blow_max"]["max"]} `  );
       $( ".orange1" ).append(`<span class=\"dot orange\"></span>${res[7]["data"]["min"]["min"]} to ${res[7]["data"]["min"]["max"]} `  );
-      $( ".red1" ).append(`<span class=\"dot red\"></span> ${res[7]["data"]["below_min"]["min"]} to ${res[7]["data"]["below_min"]["max"]} `  );
+      $( ".red1" ).append(`<span class=\"dot red\"></span> Less Than ${res[7]["data"]["below_min"]["max"]} `  );
+
+
+
+
 } 
       f.testy(this,districts,rain_fall_type,views,year,Comparison,res,controller)      
        },
