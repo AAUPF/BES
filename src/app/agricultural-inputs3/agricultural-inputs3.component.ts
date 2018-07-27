@@ -53,13 +53,8 @@ export class AgriculturalInputs3Component implements OnInit {
     toNumber(d) {
       if (d == "All") {
         this.data == {years: null, views: "",Comparison: ""};
-        // this.data.Comparison  = undefined
-        // this.butDisabled = true;
-  
         this.Comparison_sort = [{key: "None", value: "None"}]
-  
       } else {
-        // this.butDisabled = false;
         this.Comparison_sort = this.Comparison.sort(f.compare);
       }
       }

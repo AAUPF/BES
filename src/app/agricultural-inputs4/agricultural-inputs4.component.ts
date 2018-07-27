@@ -53,15 +53,23 @@ export class AgriculturalInputs4Component implements OnInit {
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
+      if (d == "All") {
+        this.data == {years: null, views: "",Comparison: ""};
+        this.data.Comparison  = undefined
+        this.butDisabled = true;
 
-    } else {
-      this.butDisabled = false;
+      } else {
+        this.butDisabled = false;
+      }
     }
-    
+    toHide(view){
+      if(view=="Map View"){
+        this.rain_fall_type = [{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Total",value:"Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Total",value:"Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
     }
   onSubmit(user) {
     var controller = "agricultural_inputs4s"
