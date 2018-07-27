@@ -62,6 +62,15 @@ export class AgriculturalInputs6Component implements OnInit {
     }
     
     }
+    toHide(view){
+      if(view == "Map View"){
+        this.rain_fall_type = [{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
   onSubmit(user) {
     var controller = "agricultural_inputs7s"
 

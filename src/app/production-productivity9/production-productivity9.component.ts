@@ -59,6 +59,15 @@ export class ProductionProductivity9Component implements OnInit {
     }
     
     }
+    toHide(view){
+      if(view == "Map View"){
+        this.rain_fall_type = [{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"}]
+        //this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"}]
+        //this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
   onSubmit(user) {
     var controller = "production_productivity9s"
 

@@ -51,18 +51,12 @@ export class Irrigation3Component implements OnInit {
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
-      if (d == "All") {
-        this.data == {years: null, views: "",Comparison: ""};
-        // this.data.Comparison  = undefined
-        // this.butDisabled = true;
-  
-        this.Comparison_sort = [{key: "None", value: "None"}]
-  
-      } else {
-        // this.butDisabled = false;
-        //this.Comparison = [{key: "None", value: "None"},{key:"Created Irrigation Potential", value:"Created_Irrigation_Potential"},	{key:"Kharif Target", value:"Kharif_Target"},	{key:"Kharif Irrigation", value:"Kharif_Irrigation"},	{key:"Rabi Target", value:"Rabi_Target"},	{key:"Rabi Irrigation", value:"Rabi_Irrigation"},	{key:"Hot Weather Target", value:"Hot_Weather_Target"},	{key:"Hot Weather Irrigation", value:"Hot_Weather_Irrigation"},	{key:"Total Utilised Irrigation Potential", value:"Total_Utilised_Irrigation_Potential"},	{key:"Utilisation Efficiency", value:"Utilisation_Efficiency"},]
-        this.Comparison_sort = this.Comparison.sort(f.compare);
-      }
+        if (d == "All") {
+          this.data == {years: null, views: "",Comparison: ""};
+          this.Comparison_sort = [{key: "None", value: "None"}]
+        } else {
+          this.Comparison_sort = this.Comparison.sort(f.compare);
+        }
       }
   onSubmit(user) {
     var controller = "irrigation3s"

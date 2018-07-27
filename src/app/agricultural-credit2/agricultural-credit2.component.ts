@@ -61,6 +61,15 @@ export class AgriculturalCredit2Component implements OnInit {
     }
     
     }
+    toHide(view){
+      if(view == "Map View"){
+        this.rain_fall_type = ["Target",	"Achievement"]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type = ["All","Target",	"Achievement"]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
   onSubmit(user) {
     var controller = "agricultural_credit2s"
 

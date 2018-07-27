@@ -52,18 +52,12 @@ export class Irrigation6Component implements OnInit {
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
-      if (d == "All") {
-        this.data == {years: null, views: "",Comparison: ""};
-        // this.data.Comparison  = undefined
-        // this.butDisabled = true;
-  
-        this.Comparison_sort = [{key: "None", value: "None"}]
-  
-      } else {
-        // this.butDisabled = false;
-        //this.Comparison = [{key: "None", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
-        this.Comparison_sort = this.Comparison.sort(f.compare);
-      }
+        if (d == "All") {
+          this.data == {years: null, views: "",Comparison: ""};
+          this.Comparison_sort = [{key: "None", value: "None"}]
+        } else {
+          this.Comparison_sort = this.Comparison.sort(f.compare);
+        }
       }
   onSubmit(user) {
     var controller = "irrigation6s"

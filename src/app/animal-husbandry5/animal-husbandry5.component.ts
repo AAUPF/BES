@@ -63,6 +63,15 @@ export class AnimalHusbandry5Component implements OnInit {
     }
     
     }
+    toHide(view){
+      if(view == "Map View"){
+        this.rain_fall_type = [{key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"},]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type = [{key: "All", value: "All"}, {key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"},]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
   onSubmit(user) {
     var controller = "animal_husbandry5s"
 

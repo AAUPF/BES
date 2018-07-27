@@ -61,6 +61,15 @@ export class AnimalHusbandry4Component implements OnInit {
     }
     
     }
+    toHide(view){
+      if(view == "Map View"){
+        this.rain_fall_type =[{key: "Cow", value: "Cow"},{key: "Buffalo", value: "Buffalo"},{key: "Pig", value: "Pig"},{key: "Sheep", value: "Sheep"},{key: "Goat", value: "Goat"},{key: "Poultry", value: "Poultry"}];
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type =[{key: "All", value: "All"},{key: "Cow", value: "Cow"},{key: "Buffalo", value: "Buffalo"},{key: "Pig", value: "Pig"},{key: "Sheep", value: "Sheep"},{key: "Goat", value: "Goat"},{key: "Poultry", value: "Poultry"}];
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
   onSubmit(user) {
     var controller = "animal_husbandry4s"
 

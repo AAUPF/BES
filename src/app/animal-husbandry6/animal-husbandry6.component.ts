@@ -60,6 +60,15 @@ export class AnimalHusbandry6Component implements OnInit {
     }
     
     }
+    toHide(view){
+      if(view == "Map View"){
+        this.rain_fall_type = [{key:"Crossbred Cow",value:"Crossbred_Cow"},	{key:"Local Cow",value:"Local_Cow"},	{key:"Total Cow",value:"Total_Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Total Cow Buffalo",value:"Total_Cow_Buffalo"},	{key:"Goat",value:"Goat"},	{key:"Total Production",value:"Total_Production"},]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Crossbred Cow",value:"Crossbred_Cow"},	{key:"Local Cow",value:"Local_Cow"},	{key:"Total Cow",value:"Total_Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Total Cow Buffalo",value:"Total_Cow_Buffalo"},	{key:"Goat",value:"Goat"},	{key:"Total Production",value:"Total_Production"},]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
   onSubmit(user) {
     var controller = "animal_husbandry6s"
 

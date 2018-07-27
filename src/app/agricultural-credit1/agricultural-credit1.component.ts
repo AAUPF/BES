@@ -46,8 +46,8 @@ export class AgriculturalCredit1Component implements OnInit {
   //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   views = ViewsNotMap;
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-  rain_fall_type1 = [{key: "All", value: "All"},{key: "Commercial Bank Target", value: "Commercial_Bank_Target"},	{key: "Commercial Bank Achievement", value: "Commercial_Bank_Achievement"},	{key: "RRBs Target", value: "RRBs_Target"},	{key: "RRBs Achievement", value: "RRBs_Achievement"},	{key: "CCBs Target", value: "CCBs_Target"},	{key: "CCBs Achievement", value: "CCBs_Achievement"},	{key: "Total Target", value: "Total_Target"},	{key: "Total Achievement", value: "Total_Achievement"},]
-  rain_fall_type_sort = this.rain_fall_type1.sort(f.compare);
+  rain_fall_type = [{key: "All", value: "All"},{key: "Commercial Bank Target", value: "Commercial_Bank_Target"},	{key: "Commercial Bank Achievement", value: "Commercial_Bank_Achievement"},	{key: "RRBs Target", value: "RRBs_Target"},	{key: "RRBs Achievement", value: "RRBs_Achievement"},	{key: "CCBs Target", value: "CCBs_Target"},	{key: "CCBs Achievement", value: "CCBs_Achievement"},	{key: "Total Target", value: "Total_Target"},	{key: "Total Achievement", value: "Total_Achievement"},]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = [{key: "None", value: "None"},{key: "Commercial Bank Target", value: "Commercial_Bank_Target"},	{key: "Commercial Bank Achievement", value: "Commercial_Bank_Achievement"},	{key: "RRBs Target", value: "RRBs_Target"},	{key: "RRBs Achievement", value: "RRBs_Achievement"},	{key: "CCBs Target", value: "CCBs_Target"},	{key: "CCBs Achievement", value: "CCBs_Achievement"},	{key: "Total Target", value: "Total_Target"},	{key: "Total Achievement", value: "Total_Achievement"},]
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
@@ -56,7 +56,7 @@ export class AgriculturalCredit1Component implements OnInit {
       this.data == {years: null, views: "",Comparison: ""};
       // this.data.Comparison  = undefined
       // this.butDisabled = true;
-      this.Comparison_sort = [{key: "none", value: "None"}]
+      this.Comparison_sort = [{key: "None", value: "None"}]
     } else {
       // this.butDisabled = false;
       //this.Comparison = [{key: "none", value: "None"},{key: "Commercial Bank Target", value: "Commercial_Bank_Target"},	{key: "Commercial Bank Achievement", value: "Commercial_Bank_Achievement"},	{key: "RRBs Target", value: "RRBs_Target"},	{key: "RRBs Achievement", value: "RRBs_Achievement"},	{key: "CCBs Target", value: "CCBs_Target"},	{key: "CCBs Achievement", value: "CCBs_Achievement"},	{key: "Total Target", value: "Total_Target"},	{key: "Total Achievement", value: "Total_Achievement"},]

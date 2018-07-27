@@ -64,6 +64,15 @@ export class ProductionProductivity10Component implements OnInit {
     }
     
     }
+    toHide(view){
+      if(view == "Map View"){
+        this.rain_fall_type = [{key:"Mango Area", value:"Mango_Area"},	{key:"Mango Production", value:"Mango_Production"},	{key:"Guava Area", value:"Guava_Area"},	{key:"Guava Production", value:"Guava_Production"},	{key:"Litchi Area", value:"Litchi_Area"},	{key:"Litchi Production", value:"Litchi_Production"},	{key:"Banana Area", value:"Banana_Area"},	{key:"Banana Production", value:"Banana_Production"},]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type = [{key: "All", value: "All"}, {key:"Mango Area", value:"Mango_Area"},	{key:"Mango Production", value:"Mango_Production"},	{key:"Guava Area", value:"Guava_Area"},	{key:"Guava Production", value:"Guava_Production"},	{key:"Litchi Area", value:"Litchi_Area"},	{key:"Litchi Production", value:"Litchi_Production"},	{key:"Banana Area", value:"Banana_Area"},	{key:"Banana Production", value:"Banana_Production"},]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
   onSubmit(user) {
     var controller = "production_productivity10s"
 

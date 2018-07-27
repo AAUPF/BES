@@ -62,6 +62,15 @@ export class ProductionProductivity11Component implements OnInit {
     }
     
     }
+    toHide(view){
+      if(view == "Map View"){
+        this.rain_fall_type =[{key:"Potato Area" ,value:"Potato_Area"},	{key:"Potato Production" ,value:"Potato_Production"},	{key:"Onion Area" ,value:"Onion_Area"},	{key:"Onion Production" ,value:"Onion_Production"},	{key:"Cauliflower Area" ,value:"Cauliflower_Area"},	{key:"Cauliflower Production" ,value:"Cauliflower_Production"},	{key:"Brinjal Area" ,value:"Brinjal_Area"},	{key:"Brinjal Production" ,value:"Brinjal_Production"},]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type =[{key: "All", value: "All"},{key:"Potato Area" ,value:"Potato_Area"},	{key:"Potato Production" ,value:"Potato_Production"},	{key:"Onion Area" ,value:"Onion_Area"},	{key:"Onion Production" ,value:"Onion_Production"},	{key:"Cauliflower Area" ,value:"Cauliflower_Area"},	{key:"Cauliflower Production" ,value:"Cauliflower_Production"},	{key:"Brinjal Area" ,value:"Brinjal_Area"},	{key:"Brinjal Production" ,value:"Brinjal_Production"},]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
   onSubmit(user) {
     var controller = "production_productivity11s"
 
