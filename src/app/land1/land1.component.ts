@@ -153,6 +153,8 @@ export class Land1Component implements OnInit {
     }   
 
   ngOnInit() {
+
+
   }
 
 }
