@@ -45,9 +45,9 @@ export class AnimalHusbandry3Component implements OnInit {
   //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   views = ViewsNotMap;
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-  rain_fall_type = [{key: "All", value: "All"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},	]
+  rain_fall_type = [{key: "All", value: "All"}, {key:"Animals Treated",value:"Animals_Treated"},	{key:"Immunization",value:"Immunization"},	{key:"Artificial Insemination",value:"Artificial_Insemination"},	]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = [{key: "None", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},]
+  Comparison = [{key: "None", value: "None"}, {key:"Animals Treated",value:"Animals_Treated"},	{key:"Immunization",value:"Immunization"},	{key:"Artificial Insemination",value:"Artificial_Insemination"},]
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
@@ -60,7 +60,7 @@ export class AnimalHusbandry3Component implements OnInit {
   
       } else {
         // this.butDisabled = false;
-        //this.Comparison = [{key: "None", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated_in_Lakh"},	{key:"Immunization in Lakh",value:"Immunization_in_Lakh"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination_in_Lakh"},]
+        //this.Comparison = [{key: "None", value: "None"}, {key:"Animals Treated in Lakh",value:"Animals_Treated"},	{key:"Immunization in Lakh",value:"Immunization"},	{key:"Artificial Insemination in Lakh",value:"Artificial_Insemination"},]
         this.Comparison_sort = this.Comparison.sort(f.compare);
       }
       }
