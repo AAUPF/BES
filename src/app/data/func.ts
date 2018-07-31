@@ -835,8 +835,8 @@ export class Functions {
 
     compare(a, b) {
         if(a.key == b.key) return 0;
-        if (a.key == 'None') return -1;
-        if (b.key == 'None') return 1;
+        if (a.key == 'None' || a.key == 'All') return -1;
+        if (b.key == 'None' || b.key == 'All') return 1;
         if (a.key < b.key)
             return -1;
         if (a.key > b.key)

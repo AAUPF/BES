@@ -8,7 +8,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { Views } from '../data/views';
-import {Vegetables } from '../data/vegetable'
+import {Vegetables, CompareVegetables } from '../data/vegetable'
 import { ViewsNotMap } from '../data/viewsnotmap';
  
 declare var $:any
@@ -43,22 +43,30 @@ export class ProductionProductivity5Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2014,2015,2016];
+  years = ["All",2014,2015,2016];
   //views = ["Graph", "Trend Line","Bubble","Table"];
   views = ViewsNotMap;
   rain_fall_type = ["All","Area","Production"]
-    Comparison = ["None"]
+    Comparison = CompareVegetables
     data: any = {};    
     toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
-    } else {
-      this.butDisabled = false;
+      if (d == "All") {
+        this.data == {years: null, views: "",Comparison: ""};
+        this.data.Comparison  = undefined
+        this.butDisabled = true;
+        this.years = [2014,2015,2016];
+        
+      } else {
+        this.butDisabled = false;
+        this.years = ["All",2014,2015,2016];
+      }
     }
-    
+    toType(selection){
+      if (selection == "All") {
+        this.Comparison = [{key:"None",value:"None"}]
+      } else {
+        this.Comparison = CompareVegetables
+      }
     }
   onSubmit(user) {
     var controller = "production_productivity5s"
