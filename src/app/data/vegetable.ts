@@ -20,6 +20,7 @@ export const Vegetables:any = [
     {key:"Total",value:"Total"},
 ];
 export const CompareVegetables:any = [
+    {key:"None",value:"None"},
     {key:"Bittergourd",value:"Bittergourd"},
     {key:"Bottlegourd",value:"Bottlegourd"},
     {key:"Brinjal",value:"Brinjal"},
