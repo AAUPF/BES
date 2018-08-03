@@ -47,7 +47,7 @@ export class Irrigation2Component implements OnInit {
   views = ViewsNotMap;
   rain_fall_type = [{key:"Created Irrigation Potential",value:"Created_Irrigation_Potential"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None"];
+  Comparison = ["None", "Western Kosi Canal System","Durgawati Reservoir Scheme","Lavaich Rampur Barrage","Uderasthan Barrage Scheme","Solhanda Weir Scheme","Nusratpur weir Scheme","Siwan weir Scheme","Eastern Gandak Canal Phase II","Total"];
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
