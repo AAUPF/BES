@@ -58,6 +58,8 @@ import { DistrictWiseComponent } from './district-wise/district-wise.component';
 //import { AgriculturalInputs8Component } from './agricultural-inputs8/agricultural-inputs8.component';
 import { ProductionProductivity13Component } from './production-productivity13/production-productivity13.component';
 import { RainfallNewComponent } from './rainfall-new/rainfall-new.component';
+import { HumanDevelopmentComponent } from './human-development/human-development.component';
+import { Health1Component } from './human-development-content/health1/health1.component';
 
 
 
@@ -114,6 +116,8 @@ import { RainfallNewComponent } from './rainfall-new/rainfall-new.component';
     //AgriculturalInputs8Component,
     ProductionProductivity13Component,
     RainfallNewComponent,
+    HumanDevelopmentComponent,
+    Health1Component,
   
     ],
   imports: [

@@ -8,7 +8,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { Views } from '../data/views';
-import { Fruits } from '../data/fruits';
+import { Fruits, CompareFruits } from '../data/fruits';
 import { ViewsNotMap } from '../data/viewsnotmap';
 
 
@@ -44,22 +44,31 @@ export class ProductionProductivity4Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2012, 2013,2014,2015,2016];
+  years = ["All",2012, 2013,2014,2015,2016];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   views = ViewsNotMap;
   rain_fall_type = ["All","Area","Production"]
-    Comparison = ["None"]
+    Comparison = CompareFruits;
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
       this.data == {years: null, views: "",Comparison: ""};
       this.data.Comparison  = undefined
       this.butDisabled = true;
+      this.years = [2012, 2013,2014,2015,2016];
 
     } else {
+      this.years = ["All",2012, 2013,2014,2015,2016];
       this.butDisabled = false;
     }
     
+    }
+    toType(selection){
+      if (selection == "All") {
+        this.Comparison = ["None"]
+      } else {
+        this.Comparison = CompareFruits;
+      }
     }
   onSubmit(user) {
     var controller = "production_productivity4s"
