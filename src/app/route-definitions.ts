@@ -4,6 +4,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TestComponent } from './test/test.component';
 import { AgricultureComponent } from './agriculture/agriculture.component';
 import { AgriculturAlliedComponent } from './agricultur-allied/agricultur-allied.component';
+import { HumanDevelopmentComponent } from './human-development/human-development.component';
 import { LandComponent } from './land/land.component';
 import { Land1Component } from './land1/land1.component';
 import { Rainfall2Component } from './rainfall2/rainfall2.component';
@@ -42,7 +43,7 @@ import {AnimalHusbandry3Component} from './animal-husbandry3/animal-husbandry3.c
 import {AnimalHusbandry4Component} from './animal-husbandry4/animal-husbandry4.component';
 import {AnimalHusbandry5Component} from './animal-husbandry5/animal-husbandry5.component';
 import {AnimalHusbandry6Component} from './animal-husbandry6/animal-husbandry6.component';
-
+import { Health1Component } from './human-development-content/health1/health1.component';
 
 
 
@@ -59,6 +60,10 @@ export const appRoutes: Routes = [
      {
         path: 'agricultureallied',
         component: AgriculturAlliedComponent
+     },
+     {
+        path: 'human-development',
+        component: HumanDevelopmentComponent
      },
      {
         path: 'rainfall1',
@@ -216,6 +221,10 @@ export const appRoutes: Routes = [
      {
         path: 'animal-husbandry6',
         component: AnimalHusbandry6Component
+     },
+     {
+        path: 'health1',
+        component: Health1Component
      },
 
 
