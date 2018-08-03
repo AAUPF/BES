@@ -20,7 +20,7 @@
                 <form #f="ngForm" (ngSubmit)="onSubmit(data)">
                     <div class="cen_sel">
                 <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toNumber(data.districts)">
-                    <option [ngValue]="undefined" disabled  selected> Type of Irrigation Potential  </option>
+                    <option [ngValue]="undefined" disabled  selected> Farmers Societies  </option>
                     <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                 </select>
 <!-- 
@@ -33,7 +33,7 @@
                         <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                     </select>
                     <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
-                        <option [ngValue]="undefined" disabled  selected> Milk Production  </option>
+                        <option [ngValue]="undefined" disabled  selected> Status of Farmers  </option>
                         <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
                     </select>
                         <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >

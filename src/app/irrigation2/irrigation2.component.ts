@@ -43,15 +43,11 @@ export class Irrigation2Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-
   years = [2016, 2017];
-  // views = NewViews;
   views = ViewsNotMap;
-
-  rain_fall_type = [{key: "All", value: "All"},{key:"Name of Scheme",value:"Name_of_Scheme"},	{key:"Created Irrigation Potential",value:"Created_Irrigation_Potential"}]
-  
+  rain_fall_type = [{key:"Created Irrigation Potential",value:"Created_Irrigation_Potential"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None"]
+    Comparison = ["None"];
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
