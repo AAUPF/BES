@@ -30,7 +30,7 @@
                       </select>
 
                       <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Fertilizers' name="view">
-                        <option [ngValue]="undefined" disabled  selected> Types of Fertilizers  </option>
+                        <option [ngValue]="undefined" disabled  selected> Season  </option>
                         <option class='option' *ngFor='let option of Fertilizers' [ngValue]="option">{{option}}</option>
                     </select>
                       <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
