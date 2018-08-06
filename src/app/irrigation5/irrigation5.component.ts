@@ -39,7 +39,7 @@ export class Irrigation5Component implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  Districts = ["All", "Surface Irrigation","Ahar / Pynes/ Irrigation Tanks","Lift Irrigation","Surface minor Irrigation Bear/ Slice Gates","Ground Water Irrigation"," State Tubewells"," Private Tubewells","Total"];
+  Districts = ["All","Ahar / Pynes/ Irrigation Tanks","Ground Water Irrigation","Lift Irrigation"," Private Tubewells", "Surface Irrigation","Surface minor Irrigation Bear/ Slice Gates"," State Tubewells","Total"];
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
@@ -50,7 +50,7 @@ export class Irrigation5Component implements OnInit {
 
   rain_fall_type = [{key: "All", value: "All"},{key:"Ultimate Potential",value:"Ultimate_Potential"},	{key:"Created Potential",value:"Created_Potential"},	{key:"Utilised Potential",value:"Utilized_Potential"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None"]
+    Comparison = ["None","Ahar / Pynes/ Irrigation Tanks","Ground Water Irrigation","Lift Irrigation"," Private Tubewells", "Surface Irrigation","Surface minor Irrigation Bear/ Slice Gates"," State Tubewells","Total"];
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
@@ -61,7 +61,15 @@ export class Irrigation5Component implements OnInit {
     } else {
       this.butDisabled = false;
     }
-    
+    }
+    toHide(selected){
+      if (selected=="All") {
+        this.Comparison = ["None"];
+
+      } else {
+        this.Comparison = ["None","Ahar / Pynes/ Irrigation Tanks","Ground Water Irrigation","Lift Irrigation"," Private Tubewells", "Surface Irrigation","Surface minor Irrigation Bear/ Slice Gates"," State Tubewells","Total"];
+
+      }
     }
     onSubmit(user) {
       var controller = "irrigation5s"

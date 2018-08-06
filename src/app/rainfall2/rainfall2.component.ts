@@ -66,7 +66,7 @@ export class Rainfall2Component implements OnInit {
     }
     toHide(view){
       if(view == "Map View"){
-        this.rain_fall_type = [{key:"Winter Rain", value:"Winter_Rain"},{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},]
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Winter Rain", value:"Winter_Rain"},{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }else{
         this.rain_fall_type = [{key: "All", value: "All"},{key:"Winter Rain", value:"Winter_Rain"},	{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},]
