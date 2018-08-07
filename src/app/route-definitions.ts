@@ -57,6 +57,7 @@ import { Health11Component } from './human-development-content/health11/health11
 import { Health12Component } from './human-development-content/health12/health12.component';
 import { Health13Component } from './human-development-content/health13/health13.component';
 import { Health14Component } from './human-development-content/health14/health14.component';
+import { AnnualRainfallComponent } from './annual-rainfall/annual-rainfall.component';
 
 
 export const appRoutes: Routes = [
@@ -290,4 +291,8 @@ export const appRoutes: Routes = [
         path: 'health14',
         component: Health14Component
      },
+     {
+        path: 'annualrainfall',
+        component: AnnualRainfallComponent
+     }
 ];

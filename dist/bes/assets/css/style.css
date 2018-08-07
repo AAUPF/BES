@@ -7010,3 +7010,8 @@ table { width: 100%; border-collapse: collapse; line-height: 18px !important; } 
 
 		width: 100%;
 	}
+
+
+	select#anything1 {
+		width: 14%;
+	}

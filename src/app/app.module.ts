@@ -73,6 +73,7 @@ import { Health11Component } from './human-development-content/health11/health11
 import { Health12Component } from './human-development-content/health12/health12.component';
 import { Health13Component } from './human-development-content/health13/health13.component';
 import { Health14Component } from './human-development-content/health14/health14.component';
+import { AnnualRainfallComponent } from './annual-rainfall/annual-rainfall.component';
 
 
 
@@ -144,6 +145,7 @@ import { Health14Component } from './human-development-content/health14/health14
     Health12Component,
     Health13Component,
     Health14Component,
+    AnnualRainfallComponent,
   
     ],
   imports: [

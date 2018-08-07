@@ -306,6 +306,153 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
 }
 
 
+
+chart(year,district,rain_fall_type,compare,controller,views,months){
+  console.log(months);
+  
+  let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare+ `&views=`+views+ `&month=`+ months;
+  // let url = `${this.apiRoot}`;
+    console.log(url);
+    let str = rain_fall_type.replace( /_/g, " " );
+    
+  this.http.get(url).
+    subscribe(res => {
+      var newdata = res;
+      this.spinner.hide();
+      if (rain_fall_type == "All") {
+
+        if (views == "Table") {
+          var j = $( "#example-table" ).hasClass( "tabulator" )
+          console.log(res["data"]);
+           
+          if (j) {
+            $("#example-table").tabulator("destroy");
+           
+   
+          }
+          $("#example-table").tabulator({
+            layout:"fitColumns"});
+         
+          //set new columns
+          $("#example-table").tabulator("setColumns", res["column"]);
+          
+          //set new data
+          $("#example-table").tabulator("setData", res["data"]);
+
+          $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
+
+          }  else {
+            this.j = res;
+            
+            let chart1 = new CanvasJS.Chart("chartContainer", this.j);
+    
+            chart1.render();
+            // alert("error")
+          }
+
+      }
+      
+      else if (year == "All") {
+          if (views == "Table") {
+
+            console.log("error");
+            
+          var j = $( "#example-table" ).hasClass( "tabulator" )
+          console.log(res["data"]);
+           
+          if (j) {
+            $("#example-table").tabulator("destroy");
+           
+            
+          }
+          $("#example-table").tabulator({
+            layout:"fitColumns"});
+         
+          //set new columns
+          $("#example-table").tabulator("setColumns", res["column"]);
+          
+          //set new data
+          $("#example-table").tabulator("setData", res["data"]);
+          $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
+
+          $("#download-xlsx").click(function(){
+            $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+          });
+      
+          $("#download-csv").click(function(){
+            $("#example-table").tabulator("download", "csv", "data.csv");
+        });
+        
+        //trigger download of data.json file
+        $("#download-json").click(function(){
+            $("#example-table").tabulator("download", "json", "data.json");
+        });
+
+          } else {
+            
+            this.j = res;
+            let chart1 = new CanvasJS.Chart("chartContainer", this.j);
+
+            
+            chart1.render();
+            // alert("error")
+          }
+
+      }
+      else {
+
+
+        if (views == "Table") {
+          var j = $( "#example-table" ).hasClass( "tabulator" )
+          console.log(res["data"]);
+           
+          if (j) {
+            $("#example-table").tabulator("destroy");
+           
+            
+          }
+          $("#example-table").tabulator({
+            layout:"fitColumns"});
+         
+          //set new columns
+          $("#example-table").tabulator("setColumns", res["column"]);
+          
+          //set new data
+          $("#example-table").tabulator("setData", res["data"]);
+
+          $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
+          $("#download-xlsx").click(function(){
+            $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+          });
+      
+          $("#download-csv").click(function(){
+            $("#example-table").tabulator("download", "csv", "data.csv");
+        });
+        
+        //trigger download of data.json file
+        $("#download-json").click(function(){
+            $("#example-table").tabulator("download", "json", "data.json");
+        });
+
+          } else {
+
+
+            this.j = res;
+            console.log(res);
+           let chart = new CanvasJS.Chart("chartContainer", this.j);
+            chart.render();
+
+          }
+
+      }
+      } ,
+      err => {
+        console.log("Error occured.")
+        this.spinner.hide();
+      }
+   ); 
+}
+
   barchart_bihar_vs_district(year,district,rain_fall_type,compare,controller){
     let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare;
     // let url = `${this.apiRoot}`;
