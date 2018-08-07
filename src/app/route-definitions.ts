@@ -44,7 +44,19 @@ import {AnimalHusbandry4Component} from './animal-husbandry4/animal-husbandry4.c
 import {AnimalHusbandry5Component} from './animal-husbandry5/animal-husbandry5.component';
 import {AnimalHusbandry6Component} from './animal-husbandry6/animal-husbandry6.component';
 import { Health1Component } from './human-development-content/health1/health1.component';
-
+import { Health2Component } from './human-development-content/health2/health2.component';
+import { Health3Component } from './human-development-content/health3/health3.component';
+import { Health4Component } from './human-development-content/health4/health4.component';
+import { Health5Component } from './human-development-content/health5/health5.component';
+import { Health6Component } from './human-development-content/health6/health6.component';
+import { Health7Component } from './human-development-content/health7/health7.component';
+import { Health8Component } from './human-development-content/health8/health8.component';
+import { Health9Component } from './human-development-content/health9/health9.component';
+import { Health10Component } from './human-development-content/health10/health10.component';
+import { Health11Component } from './human-development-content/health11/health11.component';
+import { Health12Component } from './human-development-content/health12/health12.component';
+import { Health13Component } from './human-development-content/health13/health13.component';
+import { Health14Component } from './human-development-content/health14/health14.component';
 
 
 export const appRoutes: Routes = [
@@ -226,8 +238,56 @@ export const appRoutes: Routes = [
         path: 'health1',
         component: Health1Component
      },
-
-
-
-     
- ];
+     {
+        path: 'health2',
+        component: Health2Component
+     },
+     {
+        path: 'health3',
+        component: Health3Component
+     },
+     {
+        path: 'health4',
+        component: Health4Component
+     },
+     {
+        path: 'health5',
+        component: Health5Component
+     },
+     {
+        path: 'health6',
+        component: Health6Component
+     },
+     {
+        path: 'health7',
+        component: Health7Component
+     },
+     {
+        path: 'health8',
+        component: Health8Component
+     },
+     {
+        path: 'health9',
+        component: Health9Component
+     },
+     {
+        path: 'health10',
+        component: Health10Component
+     },
+     {
+        path: 'health11',
+        component: Health11Component
+     },
+     {
+        path: 'health12',
+        component: Health12Component
+     },
+     {
+        path: 'health13',
+        component: Health13Component
+     },
+     {
+        path: 'health14',
+        component: Health14Component
+     },
+];

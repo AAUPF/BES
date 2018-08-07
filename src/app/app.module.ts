@@ -60,6 +60,19 @@ import { ProductionProductivity13Component } from './production-productivity13/p
 import { RainfallNewComponent } from './rainfall-new/rainfall-new.component';
 import { HumanDevelopmentComponent } from './human-development/human-development.component';
 import { Health1Component } from './human-development-content/health1/health1.component';
+import { Health2Component } from './human-development-content/health2/health2.component';
+import { Health3Component } from './human-development-content/health3/health3.component';
+import { Health4Component } from './human-development-content/health4/health4.component';
+import { Health5Component } from './human-development-content/health5/health5.component';
+import { Health6Component } from './human-development-content/health6/health6.component';
+import { Health7Component } from './human-development-content/health7/health7.component';
+import { Health8Component } from './human-development-content/health8/health8.component';
+import { Health9Component } from './human-development-content/health9/health9.component';
+import { Health10Component } from './human-development-content/health10/health10.component';
+import { Health11Component } from './human-development-content/health11/health11.component';
+import { Health12Component } from './human-development-content/health12/health12.component';
+import { Health13Component } from './human-development-content/health13/health13.component';
+import { Health14Component } from './human-development-content/health14/health14.component';
 
 
 
@@ -118,6 +131,19 @@ import { Health1Component } from './human-development-content/health1/health1.co
     RainfallNewComponent,
     HumanDevelopmentComponent,
     Health1Component,
+    Health2Component,
+    Health3Component,
+    Health4Component,
+    Health5Component,
+    Health6Component,
+    Health7Component,
+    Health8Component,
+    Health9Component,
+    Health10Component,
+    Health11Component,
+    Health12Component,
+    Health13Component,
+    Health14Component,
   
     ],
   imports: [

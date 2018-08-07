@@ -17,11 +17,11 @@ interface years<> {
 let f = new Functions();
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-health1',
-  templateUrl: './health1.component.html',
-  styleUrls: ['./health1.component.css']
+  selector: 'app-health5',
+  templateUrl: './health5.component.html',
+  styleUrls: ['./health5.component.css']
 })
-export class Health1Component implements OnInit {
+export class Health5Component implements OnInit {
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     // this.AgricultureService.barchart();
     // this.SvgService.barchart1("Muzaffarpur",2016);
@@ -42,13 +42,13 @@ export class Health1Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = ["All",2011,2012,2013,2014,2015,2016];
+  years = ["All",2011,2012,2013,2014,2015,2016,2017];
   views = ViewsNotMap;
   //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   // rain_fall_type = ["All","Winter Rain","Hot Weather Rain","South West Monsoon Rain","North West Monsoon Rain"]
-  rain_fall_type = [{key: "All", value: "All"}, {key: "Total Expense on Social Services India", value: "Total_Expense_on_Social_Services_India"}, {key: "Total Expense on Social Services Bihar", value: "Total_Expense_on_Social_Services_Bihar"},{key: "Total Expense India", value: "Total_Expense_India"},{key: "Total Expense Bihar", value: "Total_Expense_Bihar"},{key: "Percentage share of Social Services in Total Expenditure India", value: "Percentage_share_of_Social_Services_in_Total_Expenditure_India"},{key: "Percentage share of Social Services in Total Expenditure Bihar", value: "Percentage_share_of_Social_Services_in_Total_Expenditure_Bihar"},{key: "Per Capita Expenditure on Social Services India", value: "Per_Capita_Expenditure_on_Social_Services_India"},{key: "Per Capita Expenditure on Social Services Bihar", value: "Per_Capita_Expenditure_on_Social_Services_Bihar"}]
+  rain_fall_type = [{key: "All", value: "All"}, {key: "District Hospital", value: "District_Hospital"}, {key: "Referral Hospital", value: "Referral_Hospital"},{key: "Sub Divisional Hospital", value: "Sub_Divisional_Hospital"},{key: "PHC", value: "PHC"},{key: "Sub Centre", value: "Sub_Centre"},{key: "APHC", value: "APHC"},{key: "Total Health Centre", value: "Total_Health_Centre"},{key: "Health centres per lakh of population", value: "Health_centres_per_lakh_of_population"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = [{key: "None", value: "None"}, {key: "Total Expense on Social Services India", value: "Total_Expense_on_Social_Services_India"}, {key: "Total Expense on Social Services Bihar", value: "Total_Expense_on_Social_Services_Bihar"},{key: "Total Expense India", value: "Total_Expense_India"},{key: "Total Expense Bihar", value: "Total_Expense_Bihar"},{key: "Percentage share of Social Services in Total Expenditure India", value: "Percentage_share_of_Social_Services_in_Total_Expenditure_India"},{key: "Percentage share of Social Services in Total Expenditure Bihar", value: "Percentage_share_of_Social_Services_in_Total_Expenditure_Bihar"},{key: "Per Capita Expenditure on Social Services India", value: "Per_Capita_Expenditure_on_Social_Services_India"},{key: "Per Capita Expenditure on Social Services Bihar", value: "Per_Capita_Expenditure_on_Social_Services_Bihar"}]
+  Comparison = [{key: "None", value: "None"}, {key: "District Hospital", value: "District_Hospital"}, {key: "Referral Hospital", value: "Referral_Hospital"},{key: "Sub Divisional Hospital", value: "Sub_Divisional_Hospital"},{key: "PHC", value: "PHC"},{key: "Sub Centre", value: "Sub_Centre"},{key: "APHC", value: "APHC"},{key: "Total Health Centre", value: "Total_Health_Centre"},{key: "Health centres per lakh of population", value: "Health_centres_per_lakh_of_population"}]
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
@@ -60,7 +60,7 @@ export class Health1Component implements OnInit {
     }
     }
   onSubmit(user) {
-    var controller = "health1s"
+    var controller = "health5s"
 
     if (user.view !== "Map View") {
   
@@ -93,7 +93,7 @@ export class Health1Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "health1s"
+      var controller = "health5s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
@@ -219,3 +219,4 @@ export class Health1Component implements OnInit {
   }
 
 }
+
