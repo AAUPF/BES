@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-agricultur-allied',
   templateUrl: './agricultur-allied.component.html',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgriculturAlliedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location) { }
+
+  cancel() {
+    this.location.back(); // <-- go back to previous location on cancel
+  }
 
   ngOnInit() {
   }
