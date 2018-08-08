@@ -24,9 +24,9 @@
                       <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                   </select>
 
-                  <select id = "anything1" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
+                  <select id = "anything1" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years" (ngModelChange)="toHide(data.years)">
                       <option [ngValue]="undefined" disabled  selected> Year  </option>
-                      <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
+                      <option class='option' *ngFor='let option of years' [ngValue]="option.value">{{option.key}}</option>
                   </select>
                       <select id = "anything1" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view" >
                           <option [ngValue]="undefined" disabled  selected> Views  </option>
@@ -51,7 +51,7 @@
               <div class="unt-txt">Unit - Rainfall in mm</div>
                   <div style="clear: both;"> </div>	
                   <!-- <table id="myId"></table> -->
-                  <div class="hideContainer"></div>                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
+                  <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
                   <!-- <div *ngIf="visbile_table" id="chartContainer1" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;">
                       <button type="submit" id= "click" class="btn btn-primary1" >Export Excel</button>
                   </div> -->

@@ -66,6 +66,54 @@ if (res[7]) {
     // District.classList.add("mystyle");
     // console.log(url);
   }
+
+
+
+  test1(views,year,districts,rain_fall_type,Comparison,controller,months) {
+    // let url = `${this.apiRoot}/`+controller+`/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;
+    let url = `${this.apiRoot}/`+controller+`/test?search=` + districts + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views+ `&month=`+ months;
+    // title;
+    console.log(url);
+    var title = rain_fall_type;
+    this.http.get(url).
+    subscribe(res => {
+      this.j = res;
+
+if (res[7]) {
+  console.log(res[7]["data"]["min"]["min"]);
+
+
+    $( ".dark-green1" ).empty();
+    $( ".mid-green1" ).empty();
+    $( ".light-green1" ).empty();
+    $( ".lighter-yellow1" ).empty();
+    $( ".yellow1" ).empty();
+    $( ".orange1" ).empty();
+    $( ".red1" ).empty();
+
+      $( ".dark-green1" ).append(`<span class=\"dot dark-green\"></span>Above ${res[7]["data"]["above_extreme"]["max"]} `  );
+      $( ".mid-green1" ).append(`<span class=\"dot mid-green\"></span>${res[7]["data"]["extreme"]["min"]} to ${res[7]["data"]["extreme"]["max"]} `  );
+      $( ".light-green1" ).append(`<span class=\"dot light-green\"></span>${res[7]["data"]["above_max"]["min"]} to ${res[7]["data"]["above_max"]["max"]} `  );
+      $( ".lighter-yellow1" ).append(`<span class=\"dot lighter-yellow\"></span>${res[7]["data"]["max"]["min"]} to ${res[7]["data"]["max"]["max"]} `  );
+      $( ".yellow1" ).append(`<span class=\"dot yellow\"></span>${res[7]["data"]["blow_max"]["min"]} to ${res[7]["data"]["blow_max"]["max"]} `  );
+      $( ".orange1" ).append(`<span class=\"dot orange\"></span>${res[7]["data"]["min"]["min"]} to ${res[7]["data"]["min"]["max"]} `  );
+      $( ".red1" ).append(`<span class=\"dot red\"></span> Less Than ${res[7]["data"]["below_min"]["max"]} `  );
+
+
+
+
+} 
+      f.testy(this,districts,rain_fall_type,views,year,Comparison,res,controller)      
+       },
+       err => {
+         console.log("Error occured.")
+         this.spinner.hide();
+       }
+       );
+    // District.classList.add("mystyle");
+    // console.log(url);
+  }
+
   map_bihar_vs_districts(l,rain_fall_type,views,year,controller) {
     let url = `${this.apiRoot}/`+controller+`/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;  
     this.http.get(url).

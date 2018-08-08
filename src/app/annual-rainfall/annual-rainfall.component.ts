@@ -63,19 +63,22 @@ export class AnnualRainfallComponent implements OnInit {
   ]
 
   years = [
-  2005,
-  2006,
-  2007,
-  2008,
-  2009,
-  2010,
-  2011,
-  2012,
-  2013,
-  2014,
-  2015,
-  2016,
-  2017,
+    {key:"Avg. of all Years",value:1947},
+    {key:"All",value:"All"},
+    {key:"2005",value:2005},
+    {key:"2006",value:2006},
+    {key:"2007",value:2007},
+    {key:"2008",value:2008},
+    {key:"2009",value:2009},
+    {key:"2010",value:2010},
+    {key:"2011",value:2011},
+    {key:"2012",value:2012},
+    {key:"2013",value:2013},
+    {key:"2014",value:2014},
+    {key:"2015",value:2015},
+    {key:"2016",value:2016},
+    {key:"2017",value:2017},
+    
   ];
   // views = Views;
    views = NewViews;
@@ -92,7 +95,6 @@ export class AnnualRainfallComponent implements OnInit {
       "Begusarai",
       "Bhagalpur",
       "Bhojpur",
-      "Bihar",
       "Buxar",
       "Darbhanga",
       "EastChamparan",
@@ -129,22 +131,105 @@ export class AnnualRainfallComponent implements OnInit {
     toNumber(d) {
       if (d == "All") {
         this.data == {years: null, views: "",Comparison: "None"};
+        this.years = [
+          {key:"Avg. of all Years",value:1947},
+          {key:"2005",value:2005},
+          {key:"2006",value:2006},
+          {key:"2007",value:2007},
+          {key:"2008",value:2008},
+          {key:"2009",value:2009},
+          {key:"2010",value:2010},
+          {key:"2011",value:2011},
+          {key:"2012",value:2012},
+          {key:"2013",value:2013},
+          {key:"2014",value:2014},
+          {key:"2015",value:2015},
+          {key:"2016",value:2016},
+          {key:"2017",value:2017},
+          
+        ];
         this.data.Comparison  = undefined
         this.butDisabled = true;
 
       } else {
+        console.log("error");
+        
+        this.years = [
+          {key:"Avg. of all Years",value:1947},
+          {key:"All",value:"All"},
+          {key:"2005",value:2005},
+          {key:"2006",value:2006},
+          {key:"2007",value:2007},
+          {key:"2008",value:2008},
+          {key:"2009",value:2009},
+          {key:"2010",value:2010},
+          {key:"2011",value:2011},
+          {key:"2012",value:2012},
+          {key:"2013",value:2013},
+          {key:"2014",value:2014},
+          {key:"2015",value:2015},
+          {key:"2016",value:2016},
+          {key:"2017",value:2017},
+          
+        ];
         this.butDisabled = false;
       }
     }
-    // toHide(view){
-    //   if(view == "Map View"){
-    //     this.rain_fall_type = [{key:"Winter Rain", value:"Winter_Rain"},{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},]
-    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    //   }else{
-    //     this.rain_fall_type = [{key: "All", value: "All"},{key:"Winter Rain", value:"Winter_Rain"},	{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},]
-    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    //   }
-    // }
+    toHide(view){
+      if(view == "All"){
+
+        this.Comparison = [
+          "None"
+        ]
+        
+       
+      }else{
+
+        console.log("error");
+
+        this.Comparison = [
+          "None",
+          "Araria",
+          "Arwal",
+          "Aurangabad",
+          "Banka",
+          "Begusarai",
+          "Bhagalpur",
+          "Bhojpur",
+          "Buxar",
+          "Darbhanga",
+          "EastChamparan",
+          "Gaya",
+          "Gopalganj",
+          "Jamui",
+          "Jehanabad",
+          "Kaimur",
+          "Katihar",
+          "Khagaria",
+          "Kishanganj",
+          "Lakhisarai",
+          "Madhepura",
+          "Madhubani",
+          "Munger",
+          "Muzaffarpur",
+          "Nalanda",
+          "Nawada",
+          "Patna",
+          "Purnia",
+          "Rohtas",
+          "Saharsa",
+          "Samastipur",
+          "Saran",
+          "Sheikhpura",
+          "Sheohar",
+          "Sitamarhi",
+          "Siwan",
+          "Supaul",
+          "Vaishali",
+          "WestChamparan"
+        ]
+      }
+    }
   onSubmit(user) {
     var controller = "annual_rainfalls"
     if (user.view !== "Map View") {
@@ -179,20 +264,16 @@ export class AnnualRainfallComponent implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "rainfall2s"
+      var controller = "annual_rainfalls"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
             that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
             var u = "wchamparan";
-            that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
+            that.SvgService.test1(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.Month); 
       }, 500);
-      // this.SvgService.svg();
-      
+      // this.SvgService.svg(); 
     }
-
-
-
     // if (user.view == "Graph") {
     //   this.visbile_chart= true;
     //   this.visbile= false;
