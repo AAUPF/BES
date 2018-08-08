@@ -58,7 +58,14 @@ import { Health12Component } from './human-development-content/health12/health12
 import { Health13Component } from './human-development-content/health13/health13.component';
 import { Health14Component } from './human-development-content/health14/health14.component';
 import { AnnualRainfallComponent } from './annual-rainfall/annual-rainfall.component';
-
+import { Health15Component } from './human-development-content/health15/health15.component';
+import { Health16Component } from './human-development-content/health16/health16.component';
+import { Health17Component } from './human-development-content/health17/health17.component';
+import { Health18Component } from './human-development-content/health18/health18.component';
+import { Health19Component } from './human-development-content/health19/health19.component';
+import { Health20Component } from './human-development-content/health20/health20.component';
+import { Health21Component } from './human-development-content/health21/health21.component';
+import { Health22Component } from './human-development-content/health22/health22.component';
 
 export const appRoutes: Routes = [
 
@@ -290,6 +297,38 @@ export const appRoutes: Routes = [
      {
         path: 'health14',
         component: Health14Component
+     },
+     {
+        path: 'health15',
+        component: Health15Component
+     },
+     {
+        path: 'health16',
+        component: Health16Component
+     },
+     {
+        path: 'health17',
+        component: Health17Component
+     },
+     {
+        path: 'health18',
+        component: Health18Component
+     },
+     {
+        path: 'health19',
+        component: Health19Component
+     },
+     {
+        path: 'health20',
+        component: Health20Component
+     },
+     {
+        path: 'health21',
+        component: Health21Component
+     },
+     {
+        path: 'health22',
+        component: Health22Component
      },
      {
         path: 'annualrainfall',

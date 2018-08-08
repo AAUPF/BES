@@ -74,6 +74,14 @@ import { Health12Component } from './human-development-content/health12/health12
 import { Health13Component } from './human-development-content/health13/health13.component';
 import { Health14Component } from './human-development-content/health14/health14.component';
 import { AnnualRainfallComponent } from './annual-rainfall/annual-rainfall.component';
+import { Health15Component } from './human-development-content/health15/health15.component';
+import { Health16Component } from './human-development-content/health16/health16.component';
+import { Health17Component } from './human-development-content/health17/health17.component';
+import { Health18Component } from './human-development-content/health18/health18.component';
+import { Health19Component } from './human-development-content/health19/health19.component';
+import { Health20Component } from './human-development-content/health20/health20.component';
+import { Health21Component } from './human-development-content/health21/health21.component';
+import { Health22Component } from './human-development-content/health22/health22.component';
 
 
 
@@ -146,6 +154,14 @@ import { AnnualRainfallComponent } from './annual-rainfall/annual-rainfall.compo
     Health13Component,
     Health14Component,
     AnnualRainfallComponent,
+    Health15Component,
+    Health16Component,
+    Health17Component,
+    Health18Component,
+    Health19Component,
+    Health20Component,
+    Health21Component,
+    Health22Component,
   
     ],
   imports: [

@@ -6987,7 +6987,17 @@ select {
 	.dark-green { background: #006100; }
 	.lighter-yellow { background: #fffa6a; }
 
+	.canvasjs-chart-credit {
+		display: none;
+	}
 
+	.hideContainer { background: #fff;
+		height: 65px;
+		width: 7%;
+		position: absolute;
+		z-index: 1;
+		bottom: 33px;
+		left: 22px; }
 
 
 table { width: 100%; border-collapse: collapse; line-height: 18px !important; } /* Zebra striping */ th { background: #eee; color: white; font-weight: bold; } td, th { padding: 6px !important; list-style: 10px !important; border: 1px solid #ccc; text-align: left; } td strong { color: #000; } 
