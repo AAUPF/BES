@@ -268,7 +268,7 @@ export class AnnualRainfallComponent implements OnInit {
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
-            that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
+            that.SvgService.svg2(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller,user.Month);
             var u = "wchamparan";
             that.SvgService.test1(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.Month); 
       }, 500);

@@ -190,6 +190,54 @@ color_map(x,color) {
 //      }
 // })
 }
+
+
+svg2(z,views,rain_fall_type,year,districts,controller,months) {
+  const that = this;
+  let a = document.getElementById("biharsvg")  as HTMLObjectElement;
+      var svgDoc = a.contentDocument;
+      // var wchamparan = svgDoc.getElementById("wchamparan");
+      let de = svgDoc.getElementsByClassName("fil0");
+      var modal = document.getElementById('myModal');
+      // var wchamparan1 = svgDoc.getElementById("wchamparan").getAttribute("id");
+      var span = document.getElementById("close");
+      span.onclick = function() {
+        modal.style.display = "none";
+       }
+    // de.onclick = function(){
+    //   alert("ok");
+    //   var id = de.getElementById(this);
+    //    console.log(id);
+    //  };
+
+    var i;
+    for (i = 0; i < de.length; i++) {
+      var j = de[i].getAttribute("id");
+      svgDoc.getElementById(j).onclick = function() {
+          modal.style.display = "block";  
+           var e = this.getAttribute("id")
+          //  document.getElementById("demo").innerHTML = e;
+
+            that.barmodal1(e,year,rain_fall_type,views,controller,months);
+        }
+    }
+    
+    window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }  
+  }
+//   let a = document.getElementById("biharsvg")  as HTMLObjectElement;
+//   a.addEventListener("load", () =>{
+//        var svgDoc = a.contentDocument; 
+//        var wchamparan = svgDoc.getElementById("wchamparan");
+//        wchamparan.onclick = ()  =>{
+//         this.bar()
+//         console.log("hello");
+//      }
+// })
+}
+
 svg1() {
   const that = this;
   let a = document.getElementById("biharsvg")  as HTMLObjectElement;
@@ -331,6 +379,73 @@ trend_line(data,year,rain_fall_type,controller) {
       u = abc
     }
     var url = `${this.apiRoot}/`+controller+`/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=column`;
+    console.log(url);
+    
+    this.http.get(url).
+    subscribe(res => {
+      this.j = res;
+      let chart = new CanvasJS.Chart("chartContainer1", this.j);
+      chart.render();
+      
+      }
+   ); 
+  //  let url = `${this.apiRoot1}/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+views;
+  //  console.log(url);
+
+  //  this.http.get(url).
+  //    subscribe(res => {
+  //      this.j = res;
+  //      console.log(this.j);
+  //      let chart = new CanvasJS.Chart("chartContainer1", {
+  //        animationEnabled: true,
+  //        exportEnabled: true,
+  //        title: {
+  //          text: rain_fall_type+" " +year
+  //        },
+  //        data: [{
+  //          type: "column",
+  //          dataPoints: 
+  //          this.j
+  //        }]
+  //      });
+  //      chart.render();
+  //      }
+  //   ); 
+
+    // let chart = new CanvasJS.Chart("chartContainer1", {
+    //   animationEnabled: true,
+    //   exportEnabled: true,
+    //   title: {
+    //     text: abc
+    //   },
+    //   data: [{
+    //     type: "column",
+    //     dataPoints: [
+    //       { y: 71, label: "Apple" },
+    //       { y: 55, label: "Mango" },
+    //       { y: 50, label: "Orange" },
+    //       { y: 65, label: "Banana" },
+    //       { y: 95, label: "Pineapple" },
+    //       { y: 68, label: "Pears" },
+    //       { y: 28, label: "Grapes" },
+    //       { y: 34, label: "Lychee" },
+    //       { y: 14, label: "Jackfruit" }
+    //     ]
+    //   }]
+    // });
+    // chart.render();
+  }
+
+  barmodal1(abc,year,rain_fall_type,views,controller,months){
+
+    if (abc == "echamparan") {
+      var u = "E. Champaran"
+    } else if(abc == "wchamparan") {
+      var u = "W. Champaran"
+    } else {
+      u = abc
+    }
+    var url = `${this.apiRoot}/`+controller+`/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=column&compare=None`;
     console.log(url);
     
     this.http.get(url).
