@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SvgService } from '../../services/svg.service';
 import { AgricultureService } from '../../services/agriculture.service';
-import { Districtswithoutbihar } from '../../data/districts';
+import { Districts } from '../../data/districts';
 import { ModalComponent } from '../../modal/modal.component';
 import { SvgcomponentComponent } from '../../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -38,25 +38,27 @@ export class Health6Component implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  Districts = Districtswithoutbihar;
+  Districts = Districts;
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2015,2016,2017];
+  years = ["All",2015,2016,2017];
   views = NewViews;
   rain_fall_type = [{key:"All",value:"All"},{key:"Average number of Outpatient visits per day",value:"Average_number_of_Outpatient_visits_per_day"},{key:"Inpatient Bed Occupancy Rate",value:"Inpatient_Bed_Occupancy_Rate"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = [{key:"None",value:"None"},{key:"Average number of Outpatient visits per day",value:"Average_number_of_Outpatient_visits_per_day"},{key:"Inpatient Bed Occupancy Rate",value:"Inpatient_Bed_Occupancy_Rate"}]
+    Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
       this.data == {years: null, views: "",Comparison: ""};
       this.data.Comparison  = undefined
       this.butDisabled = true;
-
+      this.years = [2015,2016,2017];
     } else {
+      this.years = ["All",2015,2016,2017];
       this.butDisabled = false;
+      
     }
     
     }
@@ -67,6 +69,13 @@ export class Health6Component implements OnInit {
       }else{
         this.rain_fall_type = [{key:"All",value:"All"},{key:"Average number of Outpatient visits per day",value:"Average_number_of_Outpatient_visits_per_day"},{key:"Inpatient Bed Occupancy Rate",value:"Inpatient_Bed_Occupancy_Rate"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
+    toCompare(year){
+      if(year == "All"){
+        this.Comparison = ["None"]
+      }else{
+        this.Comparison = ["None","Bihar vs District"]
       }
     }
   onSubmit(user) {
