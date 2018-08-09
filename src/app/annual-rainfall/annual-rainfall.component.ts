@@ -153,7 +153,6 @@ export class AnnualRainfallComponent implements OnInit {
 
       } else {
         console.log("error");
-        
         this.years = [
           {key:"Avg. of all Years",value:1947},
           {key:"All",value:"All"},
@@ -169,9 +168,8 @@ export class AnnualRainfallComponent implements OnInit {
           {key:"2014",value:2014},
           {key:"2015",value:2015},
           {key:"2016",value:2016},
-          {key:"2017",value:2017},
-          
-        ];
+          {key:"2017",value:2017}, 
+        ]
         this.butDisabled = false;
       }
     }
@@ -181,12 +179,10 @@ export class AnnualRainfallComponent implements OnInit {
         this.Comparison = [
           "None"
         ]
-        
-       
+
+        this.rain_fall_type = [{key: "All", value: "All"}]
       }else{
-
         console.log("error");
-
         this.Comparison = [
           "None",
           "Araria",
@@ -228,7 +224,163 @@ export class AnnualRainfallComponent implements OnInit {
           "Vaishali",
           "WestChamparan"
         ]
+
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Winter Rain", value:"Winter_Rain"},	{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},{key:"None", value:"None"}]
+
       }
+    }
+
+    mapview(d){
+      if (d == "Map View") {
+        this.rain_fall_type = [{key:"None", value:"None"}]
+        this.month  = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ]
+        this.Comparison = [
+          "None",
+        ]
+
+        this.years = [
+          {key:"Avg. of all Years",value:1947},
+          {key:"2005",value:2005},
+          {key:"2006",value:2006},
+          {key:"2007",value:2007},
+          {key:"2008",value:2008},
+          {key:"2009",value:2009},
+          {key:"2010",value:2010},
+          {key:"2011",value:2011},
+          {key:"2012",value:2012},
+          {key:"2013",value:2013},
+          {key:"2014",value:2014},
+          {key:"2015",value:2015},
+          {key:"2016",value:2016},
+          {key:"2017",value:2017}, 
+        ]
+      } else {
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Winter Rain", value:"Winter_Rain"},	{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},{key:"None", value:"None"}]
+        this.month  = [
+          "All",
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ]
+        this.Comparison = [
+          "None",
+          "Araria",
+          "Arwal",
+          "Aurangabad",
+          "Banka",
+          "Begusarai",
+          "Bhagalpur",
+          "Bhojpur",
+          "Buxar",
+          "Darbhanga",
+          "EastChamparan",
+          "Gaya",
+          "Gopalganj",
+          "Jamui",
+          "Jehanabad",
+          "Kaimur",
+          "Katihar",
+          "Khagaria",
+          "Kishanganj",
+          "Lakhisarai",
+          "Madhepura",
+          "Madhubani",
+          "Munger",
+          "Muzaffarpur",
+          "Nalanda",
+          "Nawada",
+          "Patna",
+          "Purnia",
+          "Rohtas",
+          "Saharsa",
+          "Samastipur",
+          "Saran",
+          "Sheikhpura",
+          "Sheohar",
+          "Sitamarhi",
+          "Siwan",
+          "Supaul",
+          "Vaishali",
+          "WestChamparan"
+        ]
+
+        this.years = [
+          {key:"Avg. of all Years",value:1947},
+          {key:"All",value:"All"},
+          {key:"2005",value:2005},
+          {key:"2006",value:2006},
+          {key:"2007",value:2007},
+          {key:"2008",value:2008},
+          {key:"2009",value:2009},
+          {key:"2010",value:2010},
+          {key:"2011",value:2011},
+          {key:"2012",value:2012},
+          {key:"2013",value:2013},
+          {key:"2014",value:2014},
+          {key:"2015",value:2015},
+          {key:"2016",value:2016},
+          {key:"2017",value:2017}, 
+        ]
+        
+      }
+
+
+    }
+
+    rain_fall_type1(d){
+
+      if (d == "None") {
+         this.data == {month: "All"};
+
+        this.month  = [
+          "All",
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ]
+        
+        
+      } else {
+
+        this.month  = [
+          "None",
+        ]
+        
+      }
+
+
+
     }
   onSubmit(user) {
     var controller = "annual_rainfalls"
