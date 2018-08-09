@@ -47,7 +47,7 @@ export class Health16Component implements OnInit {
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = NewViews;
   //rain_fall_type = ["All","Tractor",	"Combine_Harvestor",	"Zero_Tillage",	"Pumpset",	"Power_Tiller",	"Manually_Operated_Tools",	"Thresher"]
-  rain_fall_type = [{key: "All", value: "All"},{key:"Regular Post sanctioned",value:"Regular_Post_sanctioned"},	{key:"Contractual Post sanctioned",value:"Contractual_Post_sanctioned"},	{key:"Regular Doctor Employed",value:"Regular_Doctor_Employed"},	{key:"Contractual Doctor Employed",value:"Contractual_Doctor_Employed"},	{key:"Number of doctors per lakh population",value:"Number_of_doctors_per_lakh_population"}]
+  rain_fall_type = [{key: "All", value: "All"},{key:"Regular Post sanctioned",value:"Regular_Post_sanctioned"},	{key:"Contractual Post sanctioned",value:"Contractual_Post_sanctioned"},	{key:"Regular Doctor Employed",value:"Regular_Doctor_Employed"},	{key:"Contractual Doctor Employed",value:"Contractual_Doctor_Employed"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
@@ -64,10 +64,10 @@ export class Health16Component implements OnInit {
     }
     toHide(view){
       if(view == "Map View"){
-        this.rain_fall_type = [{key:"Regular Post sanctioned",value:"Regular_Post_sanctioned"},	{key:"Contractual Post sanctioned",value:"Contractual_Post_sanctioned"},	{key:"Regular Doctor Employed",value:"Regular_Doctor_Employed"},	{key:"Contractual Doctor Employed",value:"Contractual_Doctor_Employed"},	{key:"Number of doctors per lakh population",value:"Number_of_doctors_per_lakh_population"}]
+        this.rain_fall_type = [{key:"Regular Post sanctioned",value:"Regular_Post_sanctioned"},	{key:"Contractual Post sanctioned",value:"Contractual_Post_sanctioned"},	{key:"Regular Doctor Employed",value:"Regular_Doctor_Employed"},	{key:"Contractual Doctor Employed",value:"Contractual_Doctor_Employed"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }else{
-        this.rain_fall_type = [{key: "All", value: "All"},{key:"Regular Post sanctioned",value:"Regular_Post_sanctioned"},	{key:"Contractual Post sanctioned",value:"Contractual_Post_sanctioned"},	{key:"Regular Doctor Employed",value:"Regular_Doctor_Employed"},	{key:"Contractual Doctor Employed",value:"Contractual_Doctor_Employed"},	{key:"Number of doctors per lakh population",value:"Number_of_doctors_per_lakh_population"}]
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Regular Post sanctioned",value:"Regular_Post_sanctioned"},	{key:"Contractual Post sanctioned",value:"Contractual_Post_sanctioned"},	{key:"Regular Doctor Employed",value:"Regular_Doctor_Employed"},	{key:"Contractual Doctor Employed",value:"Contractual_Doctor_Employed"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
     }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SvgService } from '../../services/svg.service';
 import { AgricultureService } from '../../services/agriculture.service';
-import { Districts } from '../../data/districts';
+import { Districts, Districtswithoutbihar } from '../../data/districts';
 import { ModalComponent } from '../../modal/modal.component';
 import { SvgcomponentComponent } from '../../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -38,11 +38,11 @@ export class Health6Component implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  Districts = Districts;
+  // Districts = Districts;
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-
+  Districts = Districtswithoutbihar;
   years = ["All",2015,2016,2017];
   views = NewViews;
   rain_fall_type = [{key:"All",value:"All"},{key:"Average number of Outpatient visits per day",value:"Average_number_of_Outpatient_visits_per_day"},{key:"Inpatient Bed Occupancy Rate",value:"Inpatient_Bed_Occupancy_Rate"}]
