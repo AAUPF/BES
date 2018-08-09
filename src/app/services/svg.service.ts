@@ -436,6 +436,10 @@ trend_line(data,year,rain_fall_type,controller) {
     // chart.render();
   }
 
+  capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
+
   barmodal1(abc,year,rain_fall_type,views,controller,months){
 
     if (abc == "echamparan") {
@@ -445,7 +449,12 @@ trend_line(data,year,rain_fall_type,controller) {
     } else {
       u = abc
     }
-    var url = `${this.apiRoot}/`+controller+`/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=column&compare=None`;
+
+     var search =  this.capitalize(u)
+
+     console.log(search);
+     
+    var url = `${this.apiRoot}/`+controller+`/test?search=` + search + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=column&compare=None&month=`+months;
     console.log(url);
     
     this.http.get(url).

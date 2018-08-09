@@ -355,7 +355,7 @@ export class AnnualRainfallComponent implements OnInit {
          this.data == {month: "All"};
 
         this.month  = [
-          "All",
+          
           "January",
           "February",
           "March",
