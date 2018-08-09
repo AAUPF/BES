@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SvgService } from '../../services/svg.service';
 import { AgricultureService } from '../../services/agriculture.service';
-import { Districts } from '../../data/districts';
+import { Districtswithoutbihar } from '../../data/districts';
 import { ModalComponent } from '../../modal/modal.component';
 import { SvgcomponentComponent } from '../../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -38,7 +38,7 @@ export class Health6Component implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  Districts = Districts;
+  Districts = Districtswithoutbihar;
   visbile= false;
   visbile_chart= true;
   visbile_table= false;

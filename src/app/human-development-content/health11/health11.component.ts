@@ -44,7 +44,7 @@ export class Health11Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["All","Acute Diarrhoea","Bacillary Dysentery","Viral Hepatitis","Enteric Fever","Malaria","Fever of Unknown Origin","Acute Respiratory Illnesses","Pneumonia","Dog Bite","Any other State Specific disease","Unusual Syndromes not captured above","Total"]
-  years = [2015,2016,2017];
+  years = [2014,2015,2016];
   views = ViewsNotMap;
   rain_fall_type = [{key:"Number of Patients",value:"Number_of_Patients"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);

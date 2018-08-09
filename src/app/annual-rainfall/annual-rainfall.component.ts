@@ -232,7 +232,11 @@ export class AnnualRainfallComponent implements OnInit {
 
     mapview(d){
       if (d == "Map View") {
-        this.rain_fall_type = [{key:"None", value:"None"}]
+
+        this.butDisabled = false;
+         console.log("error");
+         
+        // this.data.Comparison  = undefined
         this.month  = [
           "January",
           "February",
@@ -250,7 +254,7 @@ export class AnnualRainfallComponent implements OnInit {
         this.Comparison = [
           "None",
         ]
-
+        this.rain_fall_type = [{key:"None", value:"None"}]
         this.years = [
           {key:"Avg. of all Years",value:1947},
           {key:"2005",value:2005},
@@ -350,12 +354,9 @@ export class AnnualRainfallComponent implements OnInit {
     }
 
     rain_fall_type1(d){
-
       if (d == "None") {
-         this.data == {month: "All"};
-
+        this.data == {month: null, views: "",Comparison: "None"};
         this.month  = [
-          
           "January",
           "February",
           "March",
@@ -372,7 +373,7 @@ export class AnnualRainfallComponent implements OnInit {
         
         
       } else {
-
+        this.data == {month: "None"};
         this.month  = [
           "None",
         ]
