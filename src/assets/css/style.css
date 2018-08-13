@@ -7025,3 +7025,11 @@ table { width: 100%; border-collapse: collapse; line-height: 18px !important; } 
 	select#anything1 {
 		width: 14%;
 	}
+
+	.source-txt {
+		text-align: center;
+    font-size: 10px;
+    position: absolute;
+    bottom: 36px;
+    width: 92%;
+		}
