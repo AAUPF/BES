@@ -232,10 +232,9 @@ export class AnnualRainfallComponent implements OnInit {
 
     mapview(d){
       if (d == "Map View") {
-
-        this.butDisabled = false;
-         console.log("error");
-         
+        this.data.rain_fall_type  = undefined  
+        this.data.Month  = undefined   
+ 
         // this.data.Comparison  = undefined
         this.month  = [
           "January",
@@ -355,7 +354,7 @@ export class AnnualRainfallComponent implements OnInit {
 
     rain_fall_type1(d){
       if (d == "None") {
-        this.data == {month: null, views: "",Comparison: "None"};
+        console.log("error");
         this.month  = [
           "January",
           "February",
@@ -370,14 +369,18 @@ export class AnnualRainfallComponent implements OnInit {
           "November",
           "December",
         ]
-        
+        this.data.Month  = undefined   
         
       } else {
-        this.data == {month: "None"};
+
+        console.log(d);
+
+        this.data.Month  = undefined  
+
+         
         this.month  = [
           "None",
         ]
-        
       }
 
 
