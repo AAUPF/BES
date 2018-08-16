@@ -46,7 +46,7 @@ export class AnimalHusbandry4Component implements OnInit {
   //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
   views = NewViews;
   //rain_fall_type = ["All","Cow",	"Buffalo",	"Pig",	"Sheep",	"Goat",	"Poultry"]
-  rain_fall_type =[{key: "All", value: "All"},{key: "Cow", value: "Cow"},{key: "Buffalo", value: "Buffalo"},{key: "Pig", value: "Pig"},{key: "Sheep", value: "Sheep"},{key: "Goat", value: "Goat"},{key: "Poultry", value: "Poultry"}];
+  rain_fall_type =[{key: "All", value: "All"},{key:"Cow",value:"Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Pig",value:"Pig"},	{key:"Sheep",value:"Sheep"},	{key:"Goat",value:"Goat"},	{key:"Poultry",value:"Poultry"},	{key:"Percentage Cow",value:"Percentage_Cow"},	{key:"Percentage Buffalo",value:"Percentage_Buffalo"},	{key:"Percentage Pig",value:"Percentage_Pig"},	{key:"Percentage Sheep",value:"Percentage_Sheep"},	{key:"Percentage Goat",value:"Percentage_Goat"},	{key:"Percentage Poultry",value:"Percentage_Poultry"}];
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
@@ -63,10 +63,10 @@ export class AnimalHusbandry4Component implements OnInit {
     }
     toHide(view){
       if(view == "Map View"){
-        this.rain_fall_type =[{key: "Cow", value: "Cow"},{key: "Buffalo", value: "Buffalo"},{key: "Pig", value: "Pig"},{key: "Sheep", value: "Sheep"},{key: "Goat", value: "Goat"},{key: "Poultry", value: "Poultry"}];
+        this.rain_fall_type =[{key:"Cow",value:"Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Pig",value:"Pig"},	{key:"Sheep",value:"Sheep"},	{key:"Goat",value:"Goat"},	{key:"Poultry",value:"Poultry"},	{key:"Percentage Cow",value:"Percentage_Cow"},	{key:"Percentage Buffalo",value:"Percentage_Buffalo"},	{key:"Percentage Pig",value:"Percentage_Pig"},	{key:"Percentage Sheep",value:"Percentage_Sheep"},	{key:"Percentage Goat",value:"Percentage_Goat"},	{key:"Percentage Poultry",value:"Percentage_Poultry"}];
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }else{
-        this.rain_fall_type =[{key: "All", value: "All"},{key: "Cow", value: "Cow"},{key: "Buffalo", value: "Buffalo"},{key: "Pig", value: "Pig"},{key: "Sheep", value: "Sheep"},{key: "Goat", value: "Goat"},{key: "Poultry", value: "Poultry"}];
+        this.rain_fall_type =[{key: "All", value: "All"},{key:"Cow",value:"Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Pig",value:"Pig"},	{key:"Sheep",value:"Sheep"},	{key:"Goat",value:"Goat"},	{key:"Poultry",value:"Poultry"},	{key:"Percentage Cow",value:"Percentage_Cow"},	{key:"Percentage Buffalo",value:"Percentage_Buffalo"},	{key:"Percentage Pig",value:"Percentage_Pig"},	{key:"Percentage Sheep",value:"Percentage_Sheep"},	{key:"Percentage Goat",value:"Percentage_Goat"},	{key:"Percentage Poultry",value:"Percentage_Poultry"}];
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
     }

@@ -48,7 +48,8 @@ export class Irrigation4Component implements OnInit {
 
   rain_fall_type = [{key: "All", value: "All"},{key:"Management of irrigation System Transferred",value:"Management_of_irrigation_System_Transferred"},	{key:"Societies ready for transfer of system",value:"Societies_ready_for_transfer_of_system"},	{key:"Applied for Registration",value:"Applied_for_Registration"},	{key:"Under the process of motivation",value:"Under_the_process_of_motivation"},	{key:"Total",value:"Total"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None"]
+    Comparison = [{key: "None", value: "None"},{key:"Management of irrigation System Transferred",value:"Management_of_irrigation_System_Transferred"},	{key:"Societies ready for transfer of system",value:"Societies_ready_for_transfer_of_system"},	{key:"Applied for Registration",value:"Applied_for_Registration"},	{key:"Under the process of motivation",value:"Under_the_process_of_motivation"},	{key:"Total",value:"Total"}]
+    Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
@@ -66,7 +67,7 @@ export class Irrigation4Component implements OnInit {
   
       if (user.view !== "Map View") {
   
-        console.log("errror");
+        
         
         this.visbile_chart= true;
         this.visbile= false;

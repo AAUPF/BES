@@ -41,7 +41,7 @@ export class Irrigation1Component implements OnInit {
 
   htmlContent:string;
   // Districts = ["All", "MajorandMediumIrrigation","MinorIrrigation","SurfaceIrrigation","GroundWater","Total"];
-  Districts = [{key: "All", value: "All"},{key:"Major and Medium Irrigation",value:"Major and Medium Irrigation"},	{key:"Minor Irrigation",value:"Minor Irrigation"},	{key:"Surface Irrigation",value:"Surface Irrigation"},{key:"Ground Water",value:"Ground Water"},{key:"Total",value:"Total"}]
+  Districts = [{key: "All", value: "All"},{key:"Major and Medium Irrigation",value:"MajorandMediumIrrigation"},	{key:"Minor Irrigation",value:"MinorIrrigation"},	{key:"Surface Irrigation",value:"SurfaceIrrigation"},{key:"Ground Water",value:"GroundWater"},{key:"Total",value:"Total"}]
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
@@ -109,7 +109,7 @@ export class Irrigation1Component implements OnInit {
         this.visbile_table= false;
         this.title =user.rain_fall_type;
         // this.SvgService.test("echamparan");
-        var controller = "animal_husbandry6s"
+        var controller = "irrigation1s"
         this.spinner.show();
         setTimeout(function() {
           //  that.SvgService.test("echamparan");

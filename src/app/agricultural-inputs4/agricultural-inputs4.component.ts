@@ -64,9 +64,11 @@ export class AgriculturalInputs4Component implements OnInit {
     }
     toHide(view){
       if(view=="Map View"){
+        this.data.rain_fall_type  = undefined
         this.rain_fall_type = [{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Total",value:"Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }else{
+        
         this.rain_fall_type = [{key: "All", value: "All"},{key:"Urea",value:"Urea"},	{key:"DAP",value:"DAP"},	{key:"SSP",value:"SSP"},	{key:"MOP",value:"MOP"},	{key:"Ammonium Sulphate",value:"Ammonium_Sulphate"},	{key:"Complex",value:"Complex"},	{key:"Total",value:"Total"},	{key:"N",value:"N"},	{key:"P",value:"P"},	{key:"K",value:"K"},	{key:"Total NPK",value:"Total_NPK"},	{key:"Grand Total",value:"Grand_Total"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
