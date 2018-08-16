@@ -46,7 +46,7 @@ export class AgriculturalCredit2Component implements OnInit {
   years = [2014, 2015,2016];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = NewViews;
-  rain_fall_type = ["All","Target",	"Achievement"]
+  rain_fall_type = [{key:"All",value:"All"},{key:"Target",value:"Target"},	{key:"Achievement",value:"Achievement"},	{key:"Percentage Target",value:"Percentage_Target"},	{key:"Percentage Achievement",value:"Percentage_Achievement"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
@@ -63,10 +63,10 @@ export class AgriculturalCredit2Component implements OnInit {
     }
     toHide(view){
       if(view == "Map View"){
-        this.rain_fall_type = ["Target",	"Achievement"]
+        this.rain_fall_type = [{key:"Target",value:"Target"},	{key:"Achievement",value:"Achievement"},	{key:"Year",value:"Year"},	{key:"Percentage Target",value:"Percentage_Target"},	{key:"Percentage Achievement",value:"Percentage_Achievement"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }else{
-        this.rain_fall_type = ["All","Target",	"Achievement"]
+        this.rain_fall_type = [{key:"All",value:"All"},{key:"Target",value:"Target"},	{key:"Achievement",value:"Achievement"},	{key:"Percentage Target",value:"Percentage_Target"},	{key:"Percentage Achievement",value:"Percentage_Achievement"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
     }

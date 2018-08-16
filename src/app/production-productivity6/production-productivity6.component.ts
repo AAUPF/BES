@@ -43,7 +43,7 @@ export class ProductionProductivity6Component implements OnInit {
   years = [2015, 2016];
   views = NewViews;
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
-  rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"}]
+  rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
 
   Comparison = ["None","Bihar vs District"]
 
@@ -62,10 +62,10 @@ export class ProductionProductivity6Component implements OnInit {
     }
     toHide(view){
       if(view == "Map View"){
-        this.rain_fall_type = [{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"}]
+        this.rain_fall_type = [{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
         //this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }else{
-        this.rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"}]
+        this.rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
         //this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
     }

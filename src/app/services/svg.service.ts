@@ -44,7 +44,7 @@ if (res[7]) {
     $( ".orange1" ).empty();
     $( ".red1" ).empty();
 
-      $( ".dark-green1" ).append(`<span class=\"dot dark-green\"></span>Above ${res[7]["data"]["above_extreme"]["max"]} `  );
+      $( ".dark-green1" ).append(`<span class=\"dot dark-green\"></span>Above ${res[7]["data"]["above_extreme"]["min"]} `  );
       $( ".mid-green1" ).append(`<span class=\"dot mid-green\"></span>${res[7]["data"]["extreme"]["min"]} to ${res[7]["data"]["extreme"]["max"]} `  );
       $( ".light-green1" ).append(`<span class=\"dot light-green\"></span>${res[7]["data"]["above_max"]["min"]} to ${res[7]["data"]["above_max"]["max"]} `  );
       $( ".lighter-yellow1" ).append(`<span class=\"dot lighter-yellow\"></span>${res[7]["data"]["max"]["min"]} to ${res[7]["data"]["max"]["max"]} `  );
@@ -91,7 +91,7 @@ if (res[7]) {
     $( ".orange1" ).empty();
     $( ".red1" ).empty();
 
-      $( ".dark-green1" ).append(`<span class=\"dot dark-green\"></span>Above ${res[7]["data"]["above_extreme"]["max"]} `  );
+      $( ".dark-green1" ).append(`<span class=\"dot dark-green\"></span>Above ${res[7]["data"]["above_extreme"]["min"]} `  );
       $( ".mid-green1" ).append(`<span class=\"dot mid-green\"></span>${res[7]["data"]["extreme"]["min"]} to ${res[7]["data"]["extreme"]["max"]} `  );
       $( ".light-green1" ).append(`<span class=\"dot light-green\"></span>${res[7]["data"]["above_max"]["min"]} to ${res[7]["data"]["above_max"]["max"]} `  );
       $( ".lighter-yellow1" ).append(`<span class=\"dot lighter-yellow\"></span>${res[7]["data"]["max"]["min"]} to ${res[7]["data"]["max"]["max"]} `  );
