@@ -48,7 +48,8 @@ export class AgriculturalInputs1Component implements OnInit {
   //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
 views = ViewsNotMap;
   Fertilizers = ["Kharif","Rabi"];
-  rain_fall_type = ["Paddy",	"Maize",	"Urad",	"Arhar",	"Moong"]
+  // rain_fall_type = ["Paddy",	"Maize",	"Urad",	"Arhar",	"Moong"]
+  rain_fall_type = [{key:"Paddy",value:"Paddy"},{key:"Maize",value:"Maize"},,{key:"Urad",value:"Urad"},{key:"Arhar",value:"Arhar"},{key:"Moong",value:"Moong"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = [{key: "All", value: "All"},{key:"Requirement",value:"Require-ment"},	{key:"Supply",value:"Supply"},	{key:"SRR",value:"SRR"}]
   Comparison_sort = this.Comparison.sort(f.compare);
@@ -57,14 +58,14 @@ views = ViewsNotMap;
     toNumber(d) {
     if (d == "Kharif") {
       this.data == {rain_fall_type_sort: null};
-      this.rain_fall_type_sort = ["Paddy",	"Maize",	"Urad",	"Arhar",	"Moong"]
+      this.rain_fall_type_sort = [{key:"Paddy",value:"Paddy"},{key:"Maize",value:"Maize"},{key:"Urad",value:"Urad"},{key:"Arhar",value:"Arhar"},{key:"Moong",value:"Moong"}]
      
 
     } else {
       this.data == {rain_fall_type_sort: null};
 
-      this.rain_fall_type_sort = ["Wheat", "Maize","Arhar","Gram","Pea","Masoor","Rapeseed_Mustard"]
-
+      // this.rain_fall_type_sort = ["Wheat", "Maize","Arhar","Gram","Pea","Masoor","Rapeseed_Mustard"]
+      this.rain_fall_type_sort = [{key:"Wheat",value:"Wheat"},{key:"Maize",value:"Maize"},{key:"Arhar",value:"Arhar"},{key:"Gram",value:"Gram"},{key:"Pea",value:"Pea"},{key:"Masoor",value:"Masoor"},{key:"Rapeseed Mustard",value:"Rapeseed_Mustard"}]
     }
     
     }
