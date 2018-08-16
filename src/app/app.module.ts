@@ -82,6 +82,14 @@ import { Health19Component } from './human-development-content/health19/health19
 import { Health20Component } from './human-development-content/health20/health20.component';
 import { Health21Component } from './human-development-content/health21/health21.component';
 import { Health22Component } from './human-development-content/health22/health22.component';
+import { StateFinancesComponent } from './state-finances/state-finances.component';
+import { EconomyOverviewComponent } from './economy-overview/economy-overview.component';
+import { DemographicProfileComponent } from './economy-overview-content/demographic-profile/demographic-profile.component';
+import { RegionalDisparityComponent } from './economy-overview-content/regional-disparity/regional-disparity.component';
+import { InflationRatesComponent } from './economy-overview-content/inflation-rates/inflation-rates.component';
+import { StateDomesticProduct1Component } from './economy-overview-content/state-domestic-product1/state-domestic-product1.component';
+import { StateDomesticProduct2Component } from './economy-overview-content/state-domestic-product2/state-domestic-product2.component';
+import { StateDomesticProduct3Component } from './economy-overview-content/state-domestic-product3/state-domestic-product3.component';
 
 
 
@@ -162,6 +170,14 @@ import { Health22Component } from './human-development-content/health22/health22
     Health20Component,
     Health21Component,
     Health22Component,
+    StateFinancesComponent,
+    EconomyOverviewComponent,
+    DemographicProfileComponent,
+    RegionalDisparityComponent,
+    InflationRatesComponent,
+    StateDomesticProduct1Component,
+    StateDomesticProduct2Component,
+    StateDomesticProduct3Component,
   
     ],
   imports: [
