@@ -44,7 +44,7 @@ export class AnimalHusbandry6Component implements OnInit {
   years = [2015];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = NewViews;
-  rain_fall_type = [{key: "All", value: "All"},{key:"Crossbred Cow",value:"Crossbred_Cow"},	{key:"Local Cow",value:"Local_Cow"},	{key:"Total Cow",value:"Total_Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Total Cow Buffalo",value:"Total_Cow_Buffalo"},	{key:"Goat",value:"Goat"},	{key:"Total Production",value:"Total_Production"},]
+  rain_fall_type = [{key: "All", value: "All"},{key:"Crossbred Cow",value:"Crossbred_Cow"},	{key:"Local Cow",value:"Local_Cow"},	{key:"Total Cow",value:"Total_Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Total Cow Buffalo",value:"Total_Cow_Buffalo"},	{key:"Goat",value:"Goat"},	{key:"Total Production",value:"Total_Production"},{key:"Percentage Crossbred Cow",value:"Percentage_Crossbred_Cow"},	{key:"Percentage Local Cow",value:"Percentage_Local_Cow"},	{key:"Percentage Total Cow",value:"Percentage_Total_Cow"},	{key:"Percentage Buffalo",value:"Percentage_Buffalo"},	{key:"Percentage Total Cow Buffalo",value:"Percentage_Total_Cow_Buffalo"},	{key:"Percentage Goat",value:"Percentage_Goat"},	{key:"Percentage Total Production",value:"Percentage_Total_Production"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
 
     Comparison = ["None","Bihar vs District"]
@@ -62,10 +62,10 @@ export class AnimalHusbandry6Component implements OnInit {
     }
     toHide(view){
       if(view == "Map View"){
-        this.rain_fall_type = [{key:"Crossbred Cow",value:"Crossbred_Cow"},	{key:"Local Cow",value:"Local_Cow"},	{key:"Total Cow",value:"Total_Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Total Cow Buffalo",value:"Total_Cow_Buffalo"},	{key:"Goat",value:"Goat"},	{key:"Total Production",value:"Total_Production"},]
+        this.rain_fall_type = [{key:"Crossbred Cow",value:"Crossbred_Cow"},	{key:"Local Cow",value:"Local_Cow"},	{key:"Total Cow",value:"Total_Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Total Cow Buffalo",value:"Total_Cow_Buffalo"},	{key:"Goat",value:"Goat"},	{key:"Total Production",value:"Total_Production"},{key:"Percentage Crossbred Cow",value:"Percentage_Crossbred_Cow"},	{key:"Percentage Local Cow",value:"Percentage_Local_Cow"},	{key:"Percentage Total Cow",value:"Percentage_Total_Cow"},	{key:"Percentage Buffalo",value:"Percentage_Buffalo"},	{key:"Percentage Total Cow Buffalo",value:"Percentage_Total_Cow_Buffalo"},	{key:"Percentage Goat",value:"Percentage_Goat"},	{key:"Percentage Total Production",value:"Percentage_Total_Production"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }else{
-        this.rain_fall_type = [{key: "All", value: "All"},{key:"Crossbred Cow",value:"Crossbred_Cow"},	{key:"Local Cow",value:"Local_Cow"},	{key:"Total Cow",value:"Total_Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Total Cow Buffalo",value:"Total_Cow_Buffalo"},	{key:"Goat",value:"Goat"},	{key:"Total Production",value:"Total_Production"},]
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Crossbred Cow",value:"Crossbred_Cow"},	{key:"Local Cow",value:"Local_Cow"},	{key:"Total Cow",value:"Total_Cow"},	{key:"Buffalo",value:"Buffalo"},	{key:"Total Cow Buffalo",value:"Total_Cow_Buffalo"},	{key:"Goat",value:"Goat"},	{key:"Total Production",value:"Total_Production"},{key:"Percentage Crossbred Cow",value:"Percentage_Crossbred_Cow"},	{key:"Percentage Local Cow",value:"Percentage_Local_Cow"},	{key:"Percentage Total Cow",value:"Percentage_Total_Cow"},	{key:"Percentage Buffalo",value:"Percentage_Buffalo"},	{key:"Percentage Total Cow Buffalo",value:"Percentage_Total_Cow_Buffalo"},	{key:"Percentage Goat",value:"Percentage_Goat"},	{key:"Percentage Total Production",value:"Percentage_Total_Production"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
     }
