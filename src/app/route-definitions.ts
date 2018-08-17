@@ -69,11 +69,21 @@ import { Health22Component } from './human-development-content/health22/health22
 import { StateFinancesComponent } from './state-finances/state-finances.component';
 import { EconomyOverviewComponent } from './economy-overview/economy-overview.component';
 import { DemographicProfileComponent } from './economy-overview-content/demographic-profile/demographic-profile.component';
+import { DemographicProfile2Component } from './economy-overview-content/demographic-profile2/demographic-profile2.component';
 import { RegionalDisparityComponent } from './economy-overview-content/regional-disparity/regional-disparity.component';
 import { InflationRatesComponent } from './economy-overview-content/inflation-rates/inflation-rates.component';
 import { StateDomesticProduct1Component } from './economy-overview-content/state-domestic-product1/state-domestic-product1.component';
 import { StateDomesticProduct2Component } from './economy-overview-content/state-domestic-product2/state-domestic-product2.component';
 import { StateDomesticProduct3Component } from './economy-overview-content/state-domestic-product3/state-domestic-product3.component';
+import { StateDomesticProduct4Component } from './economy-overview-content/state-domestic-product4/state-domestic-product4.component';
+import { StateDomesticProduct5Component } from './economy-overview-content/state-domestic-product5/state-domestic-product5.component';
+import { StateDomesticProduct6Component } from './economy-overview-content/state-domestic-product6/state-domestic-product6.component';
+import { StateDomesticProduct7Component } from './economy-overview-content/state-domestic-product7/state-domestic-product7.component';
+import { StateDomesticProduct8Component } from './economy-overview-content/state-domestic-product8/state-domestic-product8.component';
+import { StateDomesticProduct9Component } from './economy-overview-content/state-domestic-product9/state-domestic-product9.component';
+import { StateDomesticProduct10Component } from './economy-overview-content/state-domestic-product10/state-domestic-product10.component';
+import { StateDomesticProduct11Component } from './economy-overview-content/state-domestic-product11/state-domestic-product11.component';
+
 export const appRoutes: Routes = [
 
     {
@@ -354,6 +364,10 @@ export const appRoutes: Routes = [
         component: DemographicProfileComponent
      },
      {
+        path: 'Economy-Overview/Demographic-Profile2',
+        component: DemographicProfile2Component
+     },
+     {
         path: 'Regional-Disparity',
         component: RegionalDisparityComponent
      },
@@ -373,4 +387,37 @@ export const appRoutes: Routes = [
         path: 'State-Domestic-Product3',
         component: StateDomesticProduct3Component
      },
+     {
+        path: 'State-Domestic-Product4',
+        component: StateDomesticProduct4Component
+     },
+     {
+        path: 'State-Domestic-Product5',
+        component: StateDomesticProduct5Component
+     },
+     {
+        path: 'State-Domestic-Product6',
+        component: StateDomesticProduct6Component
+     },
+     {
+        path: 'State-Domestic-Product7',
+        component: StateDomesticProduct7Component
+     },
+     {
+        path: 'State-Domestic-Product8',
+        component: StateDomesticProduct8Component
+     },
+     {
+        path: 'State-Domestic-Product9',
+        component: StateDomesticProduct9Component
+     },
+     {
+        path: 'State-Domestic-Product10',
+        component: StateDomesticProduct10Component
+     },
+     {
+        path: 'State-Domestic-Product11',
+        component: StateDomesticProduct11Component
+     },
+     
 ];

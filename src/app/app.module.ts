@@ -90,6 +90,15 @@ import { InflationRatesComponent } from './economy-overview-content/inflation-ra
 import { StateDomesticProduct1Component } from './economy-overview-content/state-domestic-product1/state-domestic-product1.component';
 import { StateDomesticProduct2Component } from './economy-overview-content/state-domestic-product2/state-domestic-product2.component';
 import { StateDomesticProduct3Component } from './economy-overview-content/state-domestic-product3/state-domestic-product3.component';
+import { DemographicProfile2Component } from './economy-overview-content/demographic-profile2/demographic-profile2.component';
+import { StateDomesticProduct9Component } from './economy-overview-content/state-domestic-product9/state-domestic-product9.component';
+import { StateDomesticProduct11Component } from './economy-overview-content/state-domestic-product11/state-domestic-product11.component';
+import { StateDomesticProduct4Component } from './economy-overview-content/state-domestic-product4/state-domestic-product4.component';
+import { StateDomesticProduct5Component } from './economy-overview-content/state-domestic-product5/state-domestic-product5.component';
+import { StateDomesticProduct6Component } from './economy-overview-content/state-domestic-product6/state-domestic-product6.component';
+import { StateDomesticProduct7Component } from './economy-overview-content/state-domestic-product7/state-domestic-product7.component';
+import { StateDomesticProduct8Component } from './economy-overview-content/state-domestic-product8/state-domestic-product8.component';
+import { StateDomesticProduct10Component } from './economy-overview-content/state-domestic-product10/state-domestic-product10.component';
 
 
 
@@ -178,6 +187,15 @@ import { StateDomesticProduct3Component } from './economy-overview-content/state
     StateDomesticProduct1Component,
     StateDomesticProduct2Component,
     StateDomesticProduct3Component,
+    DemographicProfile2Component,
+    StateDomesticProduct9Component,
+    StateDomesticProduct11Component,
+    StateDomesticProduct4Component,
+    StateDomesticProduct5Component,
+    StateDomesticProduct6Component,
+    StateDomesticProduct7Component,
+    StateDomesticProduct8Component,
+    StateDomesticProduct10Component,
   
     ],
   imports: [

@@ -18,14 +18,13 @@ interface years<> {
 let f = new Functions();
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-demographic-profile',
-  templateUrl: './demographic-profile.component.html',
-  styleUrls: ['./demographic-profile.component.css']
+  selector: 'app-state-domestic-product9',
+  templateUrl: './state-domestic-product9.component.html',
+  styleUrls: ['./state-domestic-product9.component.css']
 })
-export class DemographicProfileComponent implements OnInit {
+export class StateDomesticProduct9Component implements OnInit {
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
-    // this.AgricultureService.barchart();
-    // this.SvgService.barchart1("Muzaffarpur",2016);
+    
   }
   cancel() {
     this.location.back(); // <-- go back to previous location on cancel
@@ -39,49 +38,39 @@ export class DemographicProfileComponent implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  // Districts = Districts;
+  Districts = Districts;
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Population (million)","Sex Ratio (females per '000 males)","Child Sex Ratio","Density (persons per sq. km.)","Urbanisation (Percentage)","Decadal Growth (Percentage)","No. of Districts","No. of CD blocks","No. of Towns (statutory/census)","No. of Villages"]
-  years = [2001, 2011];
-  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
-  views = ViewsNotMap;
-  rain_fall_type = [{key:"All",value:"All"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
+  years = [2007,2008,2009,2010,2011];
+  views = ViewsNotMap
+  rain_fall_type = [{key:"Per Capita GDP",value:"Per_Capita_GDP"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison  = ["None","Population (million)","Sex Ratio (females per '000 males)","Child Sex Ratio","Density (persons per sq. km.)","Urbanisation (Percentage)","Decadal Growth (Percentage)","No. of Districts","No. of CD blocks","No. of Towns (statutory/census)","No. of Villages"]
-    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-     //Comparison_sort = this.Comparison.sort(f.compare);
+    Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      // this.data.Comparison  = undefined
-      // this.butDisabled = true;
-      // this.Comparison = [{key:"None",value:"None"}]
-      // this.Comparison_sort = this.Comparison.sort(f.compare);
-      this.Comparison  = ["None"]
-      //this.Comparison_sort = this.Comparison.sort(f.compare);
+      //this.data == {years: null, views: "",Comparison: ""};
+      this.data.Comparison  = undefined
+      this.butDisabled = true;
+
     } else {
-    //   this.Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-    
-    this.Comparison = ["None","Population (million)","Sex Ratio (females per '000 males)","Child Sex Ratio","Density (persons per sq. km.)","Urbanisation (Percentage)","Decadal Growth (Percentage)","No. of Districts","No. of CD blocks","No. of Towns (statutory/census)","No. of Villages"]
-       //this.Comparison_sort = this.Comparison.sort(f.compare);
-    // this.butDisabled = false;
+      this.butDisabled = false;
     }
     
-  }
-    toSet(select){
-      if (select == "All") {
-        this.data == {years: null, views: "",Comparison: ""};
-        this.data.Comparison  = undefined
-        this.butDisabled = true;
-      } else {
-        this.butDisabled = false;
+    }
+    toHide(view){
+      if(view == "Map View"){
+        this.rain_fall_type = [{key:"Per Capita GDP",value:"Per_Capita_GDP"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type = [{key:"Per Capita GDP",value:"Per_Capita_GDP"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
     }
+    
   onSubmit(user) {
-    var controller = "demographic_profile1s"
+    var controller = "state_domestic_product9s"
 
     if (user.view !== "Map View") {
 
@@ -114,7 +103,7 @@ export class DemographicProfileComponent implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "demographic_profile1s"
+      var controller = "state_domestic_product9s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
@@ -230,6 +219,18 @@ export class DemographicProfileComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
