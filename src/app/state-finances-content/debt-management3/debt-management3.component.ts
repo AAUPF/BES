@@ -18,11 +18,11 @@ interface years<> {
 let f = new Functions();
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-state-domestic-product2',
-  templateUrl: './state-domestic-product2.component.html',
-  styleUrls: ['./state-domestic-product2.component.css']
+  selector: 'app-debt-management3',
+  templateUrl: './debt-management3.component.html',
+  styleUrls: ['./debt-management3.component.css']
 })
-export class StateDomesticProduct2Component implements OnInit {
+export class DebtManagement3Component implements OnInit {
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     
   }
@@ -42,12 +42,13 @@ export class StateDomesticProduct2Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","AndhraPradesh","Bihar","Chhattisgarh","Gujarat","Haryana","Jharkhand","Karnataka","Kerala","MadhyaPradesh","Maharashtra","Odisha","Punjab","Rajasthan","TamilNadu","UttarPradesh","India"]
-  years = ["All",2011,2012,2013,2014,2015,2016];
+  Districts = ["All","Discharge of internal debt","Repayment of loans to Centre","Discharge of other liabilities","Total Repayment","Total Interest Payment","Total Debt Service Burden"]
+  years = ["2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   views = ViewsNotMap
-  rain_fall_type = [{key:"Per Capita Income",value:"Per_Capita_Income"}]
+  rain_fall_type = [{key:"Amounts",value:"Amounts"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None","Bihar vs State"]
+    Comparison = ["None","Discharge of internal debt","Repayment of loans to Centre","Discharge of other liabilities","Total Repayment","Total Interest Payment","Total Debt Service Burden"]
+    
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
@@ -57,12 +58,14 @@ export class StateDomesticProduct2Component implements OnInit {
 
     } else {
       this.butDisabled = false;
+      this.Comparison = ["None","Discharge of internal debt","Repayment of loans to Centre","Discharge of other liabilities","Total Repayment","Total Interest Payment","Total Debt Service Burden"]
+
     }
     
     }
     
   onSubmit(user) {
-    var controller = "state_domestic_product2s"
+    var controller = "debt_management3s"
 
     if (user.view !== "Map View") {
 
@@ -95,7 +98,7 @@ export class StateDomesticProduct2Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "state_domestic_product2s"
+      var controller = "debt_management3s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
@@ -211,6 +214,10 @@ export class StateDomesticProduct2Component implements OnInit {
   }
 
 }
+
+
+
+
 
 
 

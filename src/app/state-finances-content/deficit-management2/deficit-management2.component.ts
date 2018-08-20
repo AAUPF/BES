@@ -18,11 +18,11 @@ interface years<> {
 let f = new Functions();
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-state-domestic-product2',
-  templateUrl: './state-domestic-product2.component.html',
-  styleUrls: ['./state-domestic-product2.component.css']
+  selector: 'app-deficit-management2',
+  templateUrl: './deficit-management2.component.html',
+  styleUrls: ['./deficit-management2.component.css']
 })
-export class StateDomesticProduct2Component implements OnInit {
+export class DeficitManagement2Component implements OnInit {
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     
   }
@@ -42,10 +42,10 @@ export class StateDomesticProduct2Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","AndhraPradesh","Bihar","Chhattisgarh","Gujarat","Haryana","Jharkhand","Karnataka","Kerala","MadhyaPradesh","Maharashtra","Odisha","Punjab","Rajasthan","TamilNadu","UttarPradesh","India"]
-  years = ["All",2011,2012,2013,2014,2015,2016];
+  Districts = ["All","Bihar","Jharkhand","West Bengal","Odisha","Uttar Pradesh","Madhya Pradesh ","Rajasthan","Maharashtra","Gujarat","Punjab","Haryana","Karnataka","Andhra Pradesh","Kerala","Tamil Nadu","Himachal Pradesh","Chhatisgarh"]
+  years = ["2015","2016_RE","2017_BE"];
   views = ViewsNotMap
-  rain_fall_type = [{key:"Per Capita Income",value:"Per_Capita_Income"}]
+  rain_fall_type = [{key:"Gross Fiscal Deficit",value:"Gross_Fiscal_Deficit"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs State"]
     data: any = {};    
@@ -62,7 +62,7 @@ export class StateDomesticProduct2Component implements OnInit {
     }
     
   onSubmit(user) {
-    var controller = "state_domestic_product2s"
+    var controller = "deficit_management2s"
 
     if (user.view !== "Map View") {
 
@@ -95,7 +95,7 @@ export class StateDomesticProduct2Component implements OnInit {
       this.visbile_table= false;
       this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "state_domestic_product2s"
+      var controller = "deficit_management2s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
@@ -211,6 +211,8 @@ export class StateDomesticProduct2Component implements OnInit {
   }
 
 }
+
+
 
 
 

@@ -83,6 +83,17 @@ import { StateDomesticProduct8Component } from './economy-overview-content/state
 import { StateDomesticProduct9Component } from './economy-overview-content/state-domestic-product9/state-domestic-product9.component';
 import { StateDomesticProduct10Component } from './economy-overview-content/state-domestic-product10/state-domestic-product10.component';
 import { StateDomesticProduct11Component } from './economy-overview-content/state-domestic-product11/state-domestic-product11.component';
+import { FiscalPerformance1Component } from './state-finances-content/fiscal-performance1/fiscal-performance1.component';
+import { FiscalPerformance2Component } from './state-finances-content/fiscal-performance2/fiscal-performance2.component';
+import { DeficitManagement1Component } from './state-finances-content/deficit-management1/deficit-management1.component';
+import { DeficitManagement2Component } from './state-finances-content/deficit-management2/deficit-management2.component';
+import { DeficitManagement3Component } from './state-finances-content/deficit-management3/deficit-management3.component';
+import { DeficitManagement4Component } from './state-finances-content/deficit-management4/deficit-management4.component';
+import { DebtManagement1Component } from './state-finances-content/debt-management1/debt-management1.component';
+import { DebtManagement2Component } from './state-finances-content/debt-management2/debt-management2.component';
+import { DebtManagement3Component } from './state-finances-content/debt-management3/debt-management3.component';
+import { DebtManagement4Component } from './state-finances-content/debt-management4/debt-management4.component';
+import { TaxGSDPRatioComponent } from './state-finances-content/tax-gsdp-ratio/tax-gsdp-ratio.component';
 
 export const appRoutes: Routes = [
 
@@ -418,6 +429,50 @@ export const appRoutes: Routes = [
      {
         path: 'State-Domestic-Product11',
         component: StateDomesticProduct11Component
+     },
+     {
+        path: 'Fiscal-Performance1',
+        component: FiscalPerformance1Component
+     },
+     {
+        path: 'Fiscal-Performance2',
+        component: FiscalPerformance2Component
+     },
+     {
+        path: 'DeficitManagement1',
+        component: DeficitManagement1Component
+     },
+     {
+        path: 'DeficitManagement2',
+        component: DeficitManagement2Component
+     },
+     {
+        path: 'DeficitManagement3',
+        component: DeficitManagement3Component
+     },
+     {
+        path: 'DeficitManagement4',
+        component: DeficitManagement4Component
+     },
+     {
+        path: 'DebtManagement1',
+        component: DebtManagement1Component
+     },
+     {
+        path: 'DebtManagement2',
+        component: DebtManagement2Component
+     },
+     {
+        path: 'DebtManagement3',
+        component: DebtManagement3Component
+     },
+     {
+        path: 'DebtManagement4',
+        component: DebtManagement4Component
+     },
+     {
+        path: 'TaxGSDPRatio',
+        component: TaxGSDPRatioComponent
      },
      
 ];

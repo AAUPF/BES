@@ -99,6 +99,18 @@ import { StateDomesticProduct6Component } from './economy-overview-content/state
 import { StateDomesticProduct7Component } from './economy-overview-content/state-domestic-product7/state-domestic-product7.component';
 import { StateDomesticProduct8Component } from './economy-overview-content/state-domestic-product8/state-domestic-product8.component';
 import { StateDomesticProduct10Component } from './economy-overview-content/state-domestic-product10/state-domestic-product10.component';
+import { FiscalPerformance1Component } from './state-finances-content/fiscal-performance1/fiscal-performance1.component';
+import { FiscalPerformance2Component } from './state-finances-content/fiscal-performance2/fiscal-performance2.component';
+import { DeficitManagement1Component } from './state-finances-content/deficit-management1/deficit-management1.component';
+import { DeficitManagement2Component } from './state-finances-content/deficit-management2/deficit-management2.component';
+import { DeficitManagement3Component } from './state-finances-content/deficit-management3/deficit-management3.component';
+import { DeficitManagement4Component } from './state-finances-content/deficit-management4/deficit-management4.component';
+import { DebtManagement1Component } from './state-finances-content/debt-management1/debt-management1.component';
+import { DebtManagement2Component } from './state-finances-content/debt-management2/debt-management2.component';
+import { DebtManagement3Component } from './state-finances-content/debt-management3/debt-management3.component';
+import { DebtManagement4Component } from './state-finances-content/debt-management4/debt-management4.component';
+import { TaxGSDPRatioComponent } from './state-finances-content/tax-gsdp-ratio/tax-gsdp-ratio.component';
+
 
 
 
@@ -196,6 +208,17 @@ import { StateDomesticProduct10Component } from './economy-overview-content/stat
     StateDomesticProduct7Component,
     StateDomesticProduct8Component,
     StateDomesticProduct10Component,
+    FiscalPerformance1Component,
+    FiscalPerformance2Component,
+    DeficitManagement1Component,
+    DeficitManagement2Component,
+    DeficitManagement3Component,
+    DeficitManagement4Component,
+    DebtManagement1Component,
+    DebtManagement2Component,
+    DebtManagement3Component,
+    DebtManagement4Component,
+    TaxGSDPRatioComponent,
   
     ],
   imports: [
