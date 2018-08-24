@@ -45,7 +45,7 @@ export class DeficitManagement1Component implements OnInit {
   Districts = ["All","Bihar","Jharkhand","West Bengal","Odisha","Uttar Pradesh","Madhya Pradesh ","Rajasthan","Maharashtra","Gujarat","Punjab","Haryana","Karnataka","Andhra Pradesh","Kerala","Tamil Nadu","Himachal Pradesh","Chhatisgarh"]
   years = ["2015","2016_RE","2017_BE"];
   views = ViewsNotMap
-  rain_fall_type = [{key:"All",value:"All"},{key:"Revenue Deficit  Surplus",value:"Revenue_Deficit _Surplus"},{key:"Conventional Deficit Surplus",value:"Conventional_Deficit_Surplus"}]
+  rain_fall_type = [{key:"All",value:"All"},{key:"Revenue Deficit Surplus",value:"Revenue_Deficit_Surplus"},{key:"Conventional Deficit Surplus",value:"Conventional_Deficit_Surplus"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs State"]
     data: any = {};    

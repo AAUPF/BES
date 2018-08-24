@@ -94,6 +94,25 @@ import { DebtManagement2Component } from './state-finances-content/debt-manageme
 import { DebtManagement3Component } from './state-finances-content/debt-management3/debt-management3.component';
 import { DebtManagement4Component } from './state-finances-content/debt-management4/debt-management4.component';
 import { TaxGSDPRatioComponent } from './state-finances-content/tax-gsdp-ratio/tax-gsdp-ratio.component';
+import { RevenueAccount1Component } from './state-finances-content/revenue-account1/revenue-account1.component';
+import { RevenueAccount2Component } from './state-finances-content/revenue-account2/revenue-account2.component';
+import { RevenueAccount3Component } from './state-finances-content/revenue-account3/revenue-account3.component';
+import { RevenueAccount4Component } from './state-finances-content/revenue-account4/revenue-account4.component';
+import { RevenueAccount5Component } from './state-finances-content/revenue-account5/revenue-account5.component';
+import { ResourceManagement1Component } from './state-finances-content/resource-management1/resource-management1.component';
+import { ResourceManagement2Component } from './state-finances-content/resource-management2/resource-management2.component';
+import { ResourceManagement3Component } from './state-finances-content/resource-management3/resource-management3.component';
+import { ResourceManagement4Component } from './state-finances-content/resource-management4/resource-management4.component';
+import { ResourceManagement5Component } from './state-finances-content/resource-management5/resource-management5.component';
+import { ResourceManagement6Component } from './state-finances-content/resource-management6/resource-management6.component';
+import { ResourceManagement7Component } from './state-finances-content/resource-management7/resource-management7.component';
+import { ResourceManagement8Component } from './state-finances-content/resource-management8/resource-management8.component';
+import { ResourceManagement9Component } from './state-finances-content/resource-management9/resource-management9.component';
+import { ResourceManagement10Component } from './state-finances-content/resource-management10/resource-management10.component';
+import { ResourceManagement11Component } from './state-finances-content/resource-management11/resource-management11.component';
+import { ResourceManagement12Component } from './state-finances-content/resource-management12/resource-management12.component';
+import { ResourceManagement13Component } from './state-finances-content/resource-management13/resource-management13.component';
+import { ResourceManagement14Component } from './state-finances-content/resource-management14/resource-management14.component';
 
 export const appRoutes: Routes = [
 
@@ -473,6 +492,82 @@ export const appRoutes: Routes = [
      {
         path: 'TaxGSDPRatio',
         component: TaxGSDPRatioComponent
+     },
+     {
+        path: 'RevenueAccount1',
+        component: RevenueAccount1Component
+     },
+     {
+        path: 'RevenueAccount2',
+        component: RevenueAccount2Component
+     },
+     {
+        path: 'RevenueAccount3',
+        component: RevenueAccount3Component
+     },
+     {
+        path: 'RevenueAccount4',
+        component: RevenueAccount4Component
+     },
+     {
+        path: 'RevenueAccount5',
+        component: RevenueAccount5Component
+     },
+     {
+        path: 'ResourceManagement1',
+        component: ResourceManagement1Component
+     },
+     {
+        path: 'ResourceManagement2',
+        component: ResourceManagement2Component
+     },
+     {
+        path: 'ResourceManagement3',
+        component: ResourceManagement3Component
+     },
+     {
+        path: 'ResourceManagement4',
+        component: ResourceManagement4Component
+     },
+     {
+        path: 'ResourceManagement5',
+        component: ResourceManagement5Component
+     },
+     {
+        path: 'ResourceManagement6',
+        component: ResourceManagement6Component
+     },
+     {
+        path: 'ResourceManagement7',
+        component: ResourceManagement7Component
+     },
+     {
+        path: 'ResourceManagement8',
+        component: ResourceManagement8Component
+     },
+     {
+        path: 'ResourceManagement9',
+        component: ResourceManagement9Component
+     },
+     {
+        path: 'ResourceManagement10',
+        component: ResourceManagement10Component
+     },
+     {
+        path: 'ResourceManagement11',
+        component: ResourceManagement11Component
+     },
+     {
+        path: 'ResourceManagement12',
+        component: ResourceManagement12Component
+     },
+     {
+        path: 'ResourceManagement13',
+        component: ResourceManagement13Component
+     },
+     {
+        path: 'ResourceManagement14',
+        component: ResourceManagement14Component
      },
      
 ];

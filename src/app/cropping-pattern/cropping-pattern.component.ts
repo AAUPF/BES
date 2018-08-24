@@ -44,9 +44,9 @@ export class CroppingPatternComponent implements OnInit {
   years = ["All",2012,2013,2014,2015,2016];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   views = ViewsNotMap;
-  rain_fall_type = [{key: "All", value: "All"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"},]
+  rain_fall_type = [{key: "All", value: "All"},{key:"Total Food grains",value:"Total_food_grains"},	{key:"Cereals (Food Grain)",value:"Cereals(food_grain)"},	{key:"Pulses (Food Grain)",value:"Pulses(food_grain)"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"},]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = [{key: "None", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
+  Comparison = [{key: "None", value: "None"},{key:"Total Food grains",value:"Total_food_grains"},	{key:"Cereals (Food Grain)",value:"Cereals(food_grain)"},	{key:"Pulses (Food Grain)",value:"Pulses(food_grain)"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
 

@@ -6,8 +6,8 @@ import { ModalComponent } from '../../modal/modal.component';
 import { SvgcomponentComponent } from '../../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../../node_modules/tableexport';
-import { Location } from '@angular/common';
 import { Views } from '../../data/views';
+import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotMap } from '../../data/viewsnotmap';
@@ -18,14 +18,13 @@ interface years<> {
 let f = new Functions();
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-tax-gsdp-ratio',
-  templateUrl: './tax-gsdp-ratio.component.html',
-  styleUrls: ['./tax-gsdp-ratio.component.css']
+  selector: 'app-revenue-account2',
+  templateUrl: './revenue-account2.component.html',
+  styleUrls: ['./revenue-account2.component.css']
 })
-export class TaxGSDPRatioComponent implements OnInit {
+export class RevenueAccount2Component implements OnInit {
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
-    // this.AgricultureService.barchart();
-    // this.SvgService.barchart1("Muzaffarpur",2016);
+    
   }
   cancel() {
     this.location.back(); // <-- go back to previous location on cancel
@@ -43,36 +42,27 @@ export class TaxGSDPRatioComponent implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Bihar","Jharkhand","West Bengal","Odisha","Uttar Pradesh","Madhya Pradesh ","Rajasthan","Maharashtra","Gujarat","Punjab","Haryana","Karnataka","Andhra Pradesh","Kerala","Tamil Nadu","Himachal Pradesh","Chhatisgarh"]
-  // years = [2016, 2017];
-  //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
-  views = ViewsNotMap;
-  //rain_fall_type = ["All","Target_Physical",	"Target_Financial",	"Achievement_Physical",	"Achievement_Financial"]
-  rain_fall_type = [{key: "All", value: "All"},{key:"Revenue Receipts",value:"Revenue_Receipts"},	{key:"States Own Tax",value:"States_Own_Tax"},	{key:"GSDP",value:"GSDP"},	{key:"Ratio of SOT and RR",value:"Ratio_of_SOT_and_RR"},{key:"Ratio of SOT and GSDP",value:"Ratio_of_SOT_and_GSDP"},{key:"Ratio of Total Revenue and GSDP",value:"Ratio_of_Total_Revenue_and_GSDP"}]
+  Districts = ["All","Non Developmental Expenditure","Developmental Expenditure","Total Expenditure","Development Expenditure as percentage of Total Expenditure"]
+  years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+  views = ViewsNotMap
+  rain_fall_type = [{key:"Amount",value:"Amount"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None","Bihar vs State"]
+  Comparison = ["None","Non Developmental Expenditure","Developmental Expenditure","Total Expenditure","Development Expenditure as percentage of Total Expenditure"]
     data: any = {};    
     toNumber(d) {
-        if (d == "All") {
-          this.data == {years: null, views: "",Comparison: ""};
-          this.data.Comparison  = undefined
-          this.butDisabled = true;
+    if (d == "All") {
+      //this.data == {years: null, views: "",Comparison: ""};
+      this.data.Comparison  = undefined
+      this.butDisabled = true;
 
-        } else {
-          this.butDisabled = false;
-        }
+    } else {
+      this.butDisabled = false;
     }
-    // toHide(view){
-    //   if(view=="Map View"){
-    //     this.rain_fall_type = [{key:"Target Physical",value:"Target_Physical"},	{key:"Target Financial",value:"Target_Financial"},	{key:"Achievement Physical",value:"Achievement_Physical"},	{key:"Achievement Financial",value:"Achievement_Financial"}]
-    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    //   }else{
-    //     this.rain_fall_type = [{key: "All", value: "All"},{key:"Target Physical",value:"Target_Physical"},	{key:"Target Financial",value:"Target_Financial"},	{key:"Achievement Physical",value:"Achievement_Physical"},	{key:"Achievement Financial",value:"Achievement_Financial"}]
-    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    //   }
-    // }
+    
+    }
+    
   onSubmit(user) {
-    var controller = "tax_gsdp_ratios"
+    var controller = "revenue_account2s"
 
     if (user.view !== "Map View") {
 
@@ -103,8 +93,9 @@ export class TaxGSDPRatioComponent implements OnInit {
       this.visbile_chart= false;
       this.visbile= true;
       this.visbile_table= false;
+      this.title =user.rain_fall_type;
       // this.SvgService.test("echamparan");
-      var controller = "tax_gsdp_ratios"
+      var controller = "revenue_account2s"
       this.spinner.show();
       setTimeout(function() {
         //  that.SvgService.test("echamparan");
@@ -115,6 +106,7 @@ export class TaxGSDPRatioComponent implements OnInit {
       // this.SvgService.svg();
       
     }
+
 
     // if (user.view == "Graph") {
     //   this.visbile_chart= true;
@@ -155,7 +147,7 @@ export class TaxGSDPRatioComponent implements OnInit {
     //   this.visbile= false;
     //   this.spinner.show();
 
-    //   this.SvgService.newtable(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
+    //   this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
     // }
     // else if(user.view == "Map View") {
     //  const that = this;
@@ -165,7 +157,7 @@ export class TaxGSDPRatioComponent implements OnInit {
     //   this.visbile_table= false;
     //   this.title =user.rain_fall_type;
     //   // this.SvgService.test("echamparan");
-    //   var controller = "agricultural_inputs6s"
+    //   var controller = "agricultural_credit2s"
     //   this.spinner.show();
     //   setTimeout(function() {
     //     //  that.SvgService.test("echamparan");
@@ -193,6 +185,7 @@ export class TaxGSDPRatioComponent implements OnInit {
     //   }
       
     // } 
+
   }     
   // test(a) {
   //   let map = document.getElementById("biharsvg") as HTMLObjectElement;
@@ -218,6 +211,14 @@ export class TaxGSDPRatioComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
 
 
 
