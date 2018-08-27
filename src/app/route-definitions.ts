@@ -414,7 +414,7 @@ export const appRoutes: Routes = [
         component: StateDomesticProduct2Component
      },
      {
-        path: 'State-Domestic-Product3',
+        path: 'Economy-Overview/State-Domestic-Product3',
         component: StateDomesticProduct3Component
      },
      {
