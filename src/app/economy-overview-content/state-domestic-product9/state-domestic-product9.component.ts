@@ -42,7 +42,7 @@ export class StateDomesticProduct9Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  years = [2007,2008,2009,2010,2011];
+  years = ["All",2007,2008,2009,2010,2011];
   views = ViewsNotMap
   rain_fall_type = [{key:"Per Capita GDP",value:"Per_Capita_GDP"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);

@@ -46,7 +46,6 @@ export class RevenueAccount2Component implements OnInit {
   years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   views = ViewsNotMap
   rain_fall_type = [{key:"Amount",value:"Amount"}]
-  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = ["None","Non Developmental Expenditure","Developmental Expenditure","Total Expenditure","Development Expenditure as percentage of Total Expenditure"]
     data: any = {};    
     toNumber(d) {
@@ -54,9 +53,16 @@ export class RevenueAccount2Component implements OnInit {
       //this.data == {years: null, views: "",Comparison: ""};
       this.data.Comparison  = undefined
       this.butDisabled = true;
-
-    } else {
+    }
+    else {
       this.butDisabled = false;
+    }
+    if (d === "Development Expenditure as percentage of Total Expenditure") {
+      this.rain_fall_type = [{key:"Percentage",value:"Amount"}]
+      this.Comparison = ["None"]
+    } else {
+      this.rain_fall_type = [{key:"Amount",value:"Amount"}]
+      this.Comparison = ["None","Non Developmental Expenditure","Developmental Expenditure","Total Expenditure","Development Expenditure as percentage of Total Expenditure"]
     }
     
     }

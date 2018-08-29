@@ -42,12 +42,12 @@ export class ResourceManagement2Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Taxes on Sales, Trade etc.","Taxes on Goods and Passengers","State Excise","Stamp and Registration Fees","Taxes on Vehicles","Land Revenue","Taxes & Duties on Electricity","Other Taxes/ Duties on Comm. and Services","Other taxes on Income & Expenditure","Total"]
+  Districts = ["All","Taxes on Sales, Trade etc.","Taxes on Goods and Passengers","State Excise","Stamp and Registration Fees","Taxes on Vehicles","Land Revenue","Taxes and Duties on Electricity","Other Taxes/ Duties on Comm. and Services","Other taxes on Income and Expenditure"]
   years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   views = ViewsNotMap
   rain_fall_type = [{key:"Amount",value:"Amount"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = ["None","Taxes on Sales, Trade etc.","Taxes on Goods and Passengers","State Excise","Stamp and Registration Fees","Taxes on Vehicles","Land Revenue","Taxes & Duties on Electricity","Other Taxes/ Duties on Comm. and Services","Other taxes on Income & Expenditure","Total"]
+  Comparison = ["None","Taxes on Sales, Trade etc.","Taxes on Goods and Passengers","State Excise","Stamp and Registration Fees","Taxes on Vehicles","Land Revenue","Taxes and Duties on Electricity","Other Taxes/ Duties on Comm. and Services","Other taxes on Income and Expenditure"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {

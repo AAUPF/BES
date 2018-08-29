@@ -42,26 +42,69 @@ export class RevenueAccount1Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
+  Districts = ["All","None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
+  Districts1 = ["All","None","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
   years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   views = ViewsNotMap
   rain_fall_type = [{key:"Amount",value:"Amount"}]
-  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
     data: any = {};    
     toNumber(d) {
-    if (d == "All") {
-      //this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
-    } else {
-      this.butDisabled = false;
+      if (d == "All") {
+        this.data.Comparison  = undefined
+        this.butDisabled = true;
+      } else {
+        this.butDisabled = false;
+      }
+        if(d !== "None"){
+          this.Districts1 = ["None"]
+          if (d == "All") {
+            this.Comparison = ["None"]
+          } else {
+            this.Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
+          }
+        }
+        else{
+          this.Districts1 = ["All","None","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
+          
+            this.Comparison = ["None","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
+          
+          
+        }
     }
-    
+    toCheck(d){
+      if (d == "All") {
+        //this.data == {years: null, views: "",Comparison: ""};
+        this.data.Comparison  = undefined
+        this.butDisabled = true;
+  
+      } else {
+        this.butDisabled = false;
+      }
+      if(d !== "None"){
+        this.Districts = ["None"]
+        if (d == "All") {
+          this.Comparison = ["None"]
+        } else {
+          this.Comparison = ["None","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
+        }
+        
+      }
+      else{
+        this.Districts = ["All","None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
+        if (this.Districts == ["All"]) {
+          alert("ok")
+          this.Comparison = ["None"]
+        } else {
+          this.Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
+        }
+        
+      }
     }
     
   onSubmit(user) {
+    user.rain_fall_type = "Amount"
     var controller = "revenue_account1s"
 
     if (user.view !== "Map View") {
@@ -84,131 +127,32 @@ export class RevenueAccount1Component implements OnInit {
           this.spinner.show();
           
         }
-        this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
+        this.AgricultureService.six_column_data(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view,user.districts1);
         }
     } 
     else if(user.view == "Map View") {
      const that = this;
-      // this.AgricultureService.barchart();
       this.visbile_chart= false;
       this.visbile= true;
       this.visbile_table= false;
       this.title =user.rain_fall_type;
-      // this.SvgService.test("echamparan");
       var controller = "revenue_account1s"
       this.spinner.show();
       setTimeout(function() {
-        //  that.SvgService.test("echamparan");
+       
             that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
             var u = "wchamparan";
             that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
       }, 500);
-      // this.SvgService.svg();
+      
       
     }
-
-
-    // if (user.view == "Graph") {
-    //   this.visbile_chart= true;
-    //   this.visbile= false;
-    //   this.visbile_table= false;
-
-    //   // this.AgricultureService.pie();
-    //   if (user.districts == "All") {
-    //     this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
-    //   } 
-    //  else if(user.Comparison == "Bihar vs District") { 
-    //   this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
-    //   }
-    //   else {
-    //     this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
-    //   }
-    // } 
-    // else if(user.view == "Trend Line") {
-    //   this.visbile_chart= true;
-    //   this.visbile= false;
-    //   this.visbile_table= false;
-
-    //   if (user.districts == "All") {
-    //     this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
-        
-    //   } 
-    //   else if(user.Comparison == "Bihar vs District") { 
-    //     this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
-    //     }
-    //   else {
-    //     this.SvgService.trend_line(user.districts,user.years,user.rain_fall_type,controller);
-    //   }
-      
-    // } 
-    // else if(user.view == "Table") {
-    //   this.visbile_chart= false;
-    //   this.visbile_table= true;
-    //   this.visbile= false;
-    //   this.spinner.show();
-
-    //   this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
-    // }
-    // else if(user.view == "Map View") {
-    //  const that = this;
-    //   // this.AgricultureService.barchart();
-    //   this.visbile_chart= false;
-    //   this.visbile= true;
-    //   this.visbile_table= false;
-    //   this.title =user.rain_fall_type;
-    //   // this.SvgService.test("echamparan");
-    //   var controller = "agricultural_credit2s"
-    //   this.spinner.show();
-    //   setTimeout(function() {
-    //     //  that.SvgService.test("echamparan");
-    //         that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
-    //         var u = "wchamparan";
-    //         that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
-    //   }, 500);
-    //   // this.SvgService.svg();
-      
-    // }
-    // else if(user.view == "Bubble") {
-    //   this.visbile_chart= true;
-    //   this.visbile= false;
-    //   this.visbile_table= false;
-
-    //   // this.AgricultureService.pie();
-    //   if (user.districts == "All") {
-    //     this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
-    //   } 
-    //  else if(user.Comparison == "Bihar vs District") { 
-    //   this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
-    //   }
-    //   else {
-    //     this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
-    //   }
-      
-    // } 
-
-  }     
-  // test(a) {
-  //   let map = document.getElementById("biharsvg") as HTMLObjectElement;
-  //   let svgDoc = map.contentDocument; // should be fine
-  //   let echamparan = svgDoc.getElementById(a);
-  //   echamparan.classList.add("mystyle");
-  //   console.log(echamparan); 
-  // }
-
+}     
   myEvent(event) {
     var n =  new TableExport(document.getElementsByTagName("table"));
   }
 
-  ngOnInit() {
-
-  
-   
-    // var n =  new TableExport(document.getElementsByTagName("table"));
-// this.AgricultureService.testgoogle()
-
-
-  
-  }
+  ngOnInit() {}
 
 }
 

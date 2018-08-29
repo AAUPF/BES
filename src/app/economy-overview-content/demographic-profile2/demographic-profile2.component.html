@@ -24,7 +24,7 @@
                       <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                   </select>
 
-                  <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
+                  <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years" (ngModelChange)="toYear(data.years)">
                       <option [ngValue]="undefined" disabled  selected> Year  </option>
                       <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
                   </select>
@@ -44,7 +44,7 @@
                       <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                   </div>
               </form>
-              <div class="unt-txt">Unit - Percentage</div>
+              <div class="unt-txt">Unit - Population(Lakh)</div>
                   <div style="clear: both;"> </div>	
                   <!-- <table id="myId"></table> -->
                   <div class="hideContainer"></div>                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
@@ -68,7 +68,7 @@
                     <app-rainfall-new ></app-rainfall-new>
 
                   </div>
-                  <div class="source-txt"> Source: Department of Cooperative, GOB</div>
+                  <div class="source-txt"> Source: Census of India</div>
                   <app-modal></app-modal>
                   <!-- <object data="assets/img/bihar.svg" id="biharsvg" type="image/svg+xml"></object> -->
               </div>

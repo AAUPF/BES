@@ -44,11 +44,11 @@ export class DemographicProfileComponent implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["All","Population (million)","Sex Ratio (females per '000 males)","Child Sex Ratio","Density (persons per sq. km.)","Urbanisation (Percentage)","Decadal Growth (Percentage)","No. of Districts","No. of CD blocks","No. of Towns (statutory/census)","No. of Villages"]
-  years = [2001, 2011];
+  years = ["All",2001, 2011];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
   rain_fall_type = [{key:"All",value:"All"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison  = ["None","Population (million)","Sex Ratio (females per '000 males)","Child Sex Ratio","Density (persons per sq. km.)","Urbanisation (Percentage)","Decadal Growth (Percentage)","No. of Districts","No. of CD blocks","No. of Towns (statutory/census)","No. of Villages"]
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
      //Comparison_sort = this.Comparison.sort(f.compare);
@@ -78,6 +78,14 @@ export class DemographicProfileComponent implements OnInit {
         this.butDisabled = true;
       } else {
         this.butDisabled = false;
+      }
+    }
+    toYear(year){
+      
+      if(year == "All"){
+        this.rain_fall_type = [{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
+      }else{
+        this.rain_fall_type = [{key:"All",value:"All"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
       }
     }
   onSubmit(user) {
