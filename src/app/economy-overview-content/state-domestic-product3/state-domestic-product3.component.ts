@@ -79,34 +79,38 @@ export class StateDomesticProduct3Component implements OnInit {
 
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
-          {key:"Agriculture, forestry and fishing",value:"Agriculture, forestry and fishing"},
-        {key:"Crops",value:"Crops"},
-        {key:"Livestock",value:"Livestock"},
-        {key:"Forestry and logging",value:"Forestry and logging"},
-        {key:"Fishing and aquaculture",value:"Fishing and aquaculture"},
-        {key:"Mining and quarrying",value:"Mining and quarrying"},
-        {key:"Primary",value:"Primary"},
-        {key:"Manufacturing",value:"Manufacturing"},
-        {key:"Electricity, gas, water supply & other utility services",value:"Electricity, gas, water supply & other utility services"},
-        {key:"Construction",value:"Construction"},
-        {key:"Secondary",value:"Secondary"},
-        {key:"Trade, repair, hotels and restaurants",value:"Trade, repair, hotels and restaurants"},
-        {key:"Trade & repair services",value:"Trade & repair services"},
-        {key:"Hotels & restaurants",value:"Hotels & restaurants"},
-        {key:"Transport, storage, communication & services related to broadcasting",value:"Transport, storage, communication & services related to broadcasting"},
-        {key:"Railways",value:"Railways"},
-        {key:"Road transport",value:"Road transport"},
-        {key:"Water transport",value:"Water transport"},
-        {key:"Air transport",value:"Air transport"},
-        {key:"Services incidental to transport",value:"Services incidental to transport"},
-        {key:"Storage",value:"Storage"},
-        {key:"Communication & services related to broadcasting",value:"Communication & services related to broadcasting"},
-        {key:"Financial services",value:"Financial services"},
-        {key:"Real estate, ownership of dwelling & professional services",value:"Real estate, ownership of dwelling & professional services"},
-        {key:"Public administration",value:"Public administration"},
-        {key:"Other services",value:"Other services"},
-        {key:"Tertiary",value:"Tertiary"},
-        {key:"Total GSVA at basic prices",value:"Total GSVA at basic prices"},]
+          {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
+          {key:"Crops",value:"Crops"},
+          {key:"Livestock",value:"Livestock"},
+          {key:"Forestry and Logging",value:"Forestry and Logging"},
+          {key:"Fishing and Aquaculture",value:"Fishing and Aquaculture"},
+          {key:"Mining and Quarrying",value:"Mining and Quarrying"},
+          {key:"Primary",value:"Primary"},
+          {key:"Manufacturing",value:"Manufacturing"},
+          {key:"Electricity and Utilitiy Services",value:"Electricity and Utilitiy Services"},
+          {key:"Construction",value:"Construction"},
+          {key:"Secondary",value:"Secondary"},
+          {key:"Trade and Hospitality",value:"Trade and Hospitality"},
+          {key:"Trade and Repair Services",value:"Trade and Repair Services"},
+          {key:"Hotels and Restaurants",value:"Hotels and Restaurants"},
+          {key:"Transport and Communication",value:"Transport and Communication"},
+          {key:"Railways",value:"Railways"},
+          {key:"Road Transport",value:"Road Transport"},
+          {key:"Water Transport",value:"Water Transport"},
+          {key:"Air Transport",value:"Air Transport"},
+          {key:"Services incidental to transport",value:"Services incidental to transport"},
+          {key:"Storage",value:"Storage"},
+          {key:"Communication and Broadcasting",value:"Communication and Broadcasting"},
+          {key:"Financial Services",value:"Financial Services"},
+          {key:"Real Estate Services",value:"Real Estate Services"},
+          {key:"Public Administration",value:"Public Administration"},
+          {key:"Other Services",value:"Other Services"},
+          {key:"Tertiary",value:"Tertiary"},
+          {key:"Total GSVA at basic prices",value:"Total GSVA at basic prices"},
+          {key:"None",value:"None"},
+
+        
+        ]
 
         this.data == {years: null, views: "",Comparison: ""};
         this.data.Comparison  = undefined
@@ -115,35 +119,53 @@ export class StateDomesticProduct3Component implements OnInit {
       else if(select == "Primary") { 
         this.data.rain_fall_type  = undefined
 
-        this.rain_fall_type_sort = [{key:"All",value:"All"},{key:"Agriculture, forestry and fishing",value:"Agriculture, forestry and fishing"},{key:"Crops",value:"Crops"},	{key:"Livestock",value:"Livestock"},{key:"Forestry and logging",value:"Forestry and logging"},{key:"Fishing and aquaculture",value:"Fishing and aquaculture"},{key:"Mining and quarrying",value:"Mining and quarrying"}]
+        this.rain_fall_type_sort = [{key:"All",value:"All"},
+        {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
+        {key:"Crops",value:"Crops"},
+        {key:"Livestock",value:"Livestock"},
+        {key:"Forestry and Logging",value:"Forestry and Logging"},
+        {key:"Fishing and Aquaculture",value:"Fishing and Aquaculture"},
+        {key:"Mining and Quarrying",value:"Mining and Quarrying"},
+        {key:"None",value:"None"},
+      
+      ]
 
       }
 
       else if(select == "Secondary") { 
         this.data.rain_fall_type  = undefined
 
-        this.rain_fall_type_sort = [{key:"All",value:"All"},{key:"Manufacturing",value:"Manufacturing"},{key:"Electricity, gas, water supply & other utility services",value:"Electricity, gas, water supply &amp other utility services"},	{key:"Construction",value:"Construction"}]
+        this.rain_fall_type_sort = [{key:"All",value:"All"},
+        {key:"Manufacturing",value:"Manufacturing"},
+        {key:"Electricity and Utilitiy Services",value:"Electricity and Utilitiy Services"},
+        {key:"Construction",value:"Construction"},
+        {key:"None",value:"None"},
+      
+      ]
 
       }
 
       else if(select == "Tertiary") { 
         this.data.rain_fall_type  = undefined
 
-        this.rain_fall_type_sort = [{key:"All",value:"All"},{key:"Trade, repair, hotels and restaurants",value:"Trade, repair, hotels and restaurants"},
-        {key:"Trade & repair services",value:"Trade & repair services"},
-        {key:"Hotels & restaurants",value:"Hotels & restaurants"},
-        {key:"Transport, storage, communication & services related to broadcasting",value:"Transport, storage, communication & services related to broadcasting"},
+        this.rain_fall_type_sort = [{key:"All",value:"All"},   
+        {key:"Trade and Hospitality",value:"Trade and Hospitality"},
+        {key:"Trade and Repair Services",value:"Trade and Repair Services"},
+        {key:"Hotels and Restaurants",value:"Hotels and Restaurants"},
+        {key:"Transport and Communication",value:"Transport and Communication"},
         {key:"Railways",value:"Railways"},
-        {key:"Road transport",value:"Road transport"},
-        {key:"Water transport",value:"Water transport"},
-        {key:"Air transport",value:"Air transport"},
+        {key:"Road Transport",value:"Road Transport"},
+        {key:"Water Transport",value:"Water Transport"},
+        {key:"Air Transport",value:"Air Transport"},
         {key:"Services incidental to transport",value:"Services incidental to transport"},
         {key:"Storage",value:"Storage"},
-        {key:"Communication & services related to broadcasting",value:"Communication & services related to broadcasting"},
-        {key:"Financial services",value:"Financial services"},
-        {key:"Real estate, ownership of dwelling & professional services",value:"Real estate, ownership of dwelling & professional services"},
-        {key:"Public administration",value:"Public administration"},
-        {key:"Other services",value:"Other services"},]
+        {key:"Communication and Broadcasting",value:"Communication and Broadcasting"},
+        {key:"Financial Services",value:"Financial Services"},
+        {key:"Real Estate Services",value:"Real Estate Services"},
+        {key:"Public Administration",value:"Public Administration"},
+        {key:"Other Services",value:"Other Services"},
+        {key:"None",value:"None"},
+      ]
 
       }
       else {

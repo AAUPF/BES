@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="pageTitle">
-          <h2>Demographic Profile and Administrative Structure of Bihar and India (2001 and 2011)</h2>
+          <h2>Sectoral Composition of GSVA at Constant (2011-12) Prices</h2>
           <div class="btnArea"><a (click)="cancel()" class="btn btn-primary"><i class="fa fa-angle-left" aria-hidden="true"></i> Back </a></div>
         </div>
       </div>
@@ -37,14 +37,16 @@
                           <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                       </select>
                    
-                          <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
+                          <!-- <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
                               <option [ngValue]="undefined" disabled  selected> Comparison  </option>
                               <option class='option' *ngFor='let option of Comparison' [ngValue]="option">{{option}}</option>
-                          </select>
+                          </select> -->
                       <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
                       <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                   </div>
               </form>
+              <div class="unt-txt">Unit - Rainfall in mm</div>
+              <div style="clear: both;"> </div>	
               <div class="unt-txt"></div>
                   <div style="clear: both;"> </div>	
                   <!-- <table id="myId"></table> -->

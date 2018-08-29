@@ -418,23 +418,23 @@ export const appRoutes: Routes = [
         component: StateDomesticProduct3Component
      },
      {
-        path: 'State-Domestic-Product4',
+        path: 'Economy-Overview/State-Domestic-Product4',
         component: StateDomesticProduct4Component
      },
      {
-        path: 'State-Domestic-Product5',
+        path: 'Economy-Overview/State-Domestic-Product5',
         component: StateDomesticProduct5Component
      },
      {
-        path: 'State-Domestic-Product6',
+        path: 'Economy-Overview/State-Domestic-Product6',
         component: StateDomesticProduct6Component
      },
      {
-        path: 'State-Domestic-Product7',
+        path: 'Economy-Overview/State-Domestic-Product7',
         component: StateDomesticProduct7Component
      },
      {
-        path: 'State-Domestic-Product8',
+        path: 'Economy-Overview/State-Domestic-Product8',
         component: StateDomesticProduct8Component
      },
      {

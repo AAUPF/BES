@@ -130,7 +130,7 @@ export class AnnualRainfallComponent implements OnInit {
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
-        this.data == {years: null, views: "",Comparison: "None"};
+        this.data.years  = undefined       
         this.years = [
           {key:"Avg. of all Years",value:1947},
           {key:"2005",value:2005},
@@ -152,8 +152,8 @@ export class AnnualRainfallComponent implements OnInit {
         this.butDisabled = true;
 
       } else {
-        console.log("error");
-        this.years = [
+        this.data.years  = undefined       
+         this.years = [
           {key:"Avg. of all Years",value:1947},
           {key:"All",value:"All"},
           {key:"2005",value:2005},
@@ -175,7 +175,7 @@ export class AnnualRainfallComponent implements OnInit {
     }
     toHide(view){
       if(view == "All"){
-
+        this.data.rain_fall_type  = undefined 
         this.Comparison = [
           "None"
         ]
@@ -225,7 +225,7 @@ export class AnnualRainfallComponent implements OnInit {
           "WestChamparan"
         ]
 
-        this.rain_fall_type = [{key: "All", value: "All"},{key:"Winter Rain", value:"Winter_Rain"},	{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},{key:"None", value:"None"}]
+        // this.rain_fall_type = [{key: "All", value: "All"},{key:"Winter Rain", value:"Winter_Rain"},	{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},{key:"None", value:"None"}]
 
       }
     }
@@ -234,7 +234,8 @@ export class AnnualRainfallComponent implements OnInit {
       if (d == "Map View") {
         this.data.rain_fall_type  = undefined  
         this.data.Month  = undefined   
- 
+        this.data.years  = undefined   
+
         // this.data.Comparison  = undefined
         this.month  = [
           "January",
@@ -272,21 +273,21 @@ export class AnnualRainfallComponent implements OnInit {
         ]
       } else {
         this.rain_fall_type = [{key: "All", value: "All"},{key:"Winter Rain", value:"Winter_Rain"},	{key:"Hot Weather Rain", value:"Hot_Weather_Rain"},	{key:"South West Monsoon", value:"South_West_Monsoon"},	{key:"North West Monsoon", value:"North_West_Monsoon"},{key:"None", value:"None"}]
-        this.month  = [
-          "All",
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December",
-        ]
+        // this.month  = [
+        //   "All",
+        //   "January",
+        //   "February",
+        //   "March",
+        //   "April",
+        //   "May",
+        //   "June",
+        //   "July",
+        //   "August",
+        //   "September",
+        //   "October",
+        //   "November",
+        //   "December",
+        // ]
         this.Comparison = [
           "None",
           "Araria",
@@ -329,23 +330,23 @@ export class AnnualRainfallComponent implements OnInit {
           "WestChamparan"
         ]
 
-        this.years = [
-          {key:"Avg. of all Years",value:1947},
-          {key:"All",value:"All"},
-          {key:"2005",value:2005},
-          {key:"2006",value:2006},
-          {key:"2007",value:2007},
-          {key:"2008",value:2008},
-          {key:"2009",value:2009},
-          {key:"2010",value:2010},
-          {key:"2011",value:2011},
-          {key:"2012",value:2012},
-          {key:"2013",value:2013},
-          {key:"2014",value:2014},
-          {key:"2015",value:2015},
-          {key:"2016",value:2016},
-          {key:"2017",value:2017}, 
-        ]
+        // this.years = [
+        //   {key:"Avg. of all Years",value:1947},
+        //   {key:"All",value:"All"},
+        //   {key:"2005",value:2005},
+        //   {key:"2006",value:2006},
+        //   {key:"2007",value:2007},
+        //   {key:"2008",value:2008},
+        //   {key:"2009",value:2009},
+        //   {key:"2010",value:2010},
+        //   {key:"2011",value:2011},
+        //   {key:"2012",value:2012},
+        //   {key:"2013",value:2013},
+        //   {key:"2014",value:2014},
+        //   {key:"2015",value:2015},
+        //   {key:"2016",value:2016},
+        //   {key:"2017",value:2017}, 
+        // ]
         
       }
 
