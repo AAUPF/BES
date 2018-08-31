@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotTrend } from '../../data/viewsnottrend';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -51,14 +52,17 @@ export class DemographicProfile2Component implements OnInit {
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
+      this.Comparison = ["None"]
+      // this.data.Comparison  = undefined
+      // this.butDisabled = true;
     } else {
-      this.butDisabled = false;
+      this.Comparison = ["None","Bihar vs District"]
+      // this.butDisabled = false;
     }
     }
     toHide(view){
       if(view == "Map View"){
+        this.years = [2001, 2011];
         if(this.data.years == "2001"){
           this.rain_fall_type = [{key:"Population",value:"Population"},	{key:"Sex Ratio Overall",value:"Sex_Ratio_Overall"},{key:"Sex Ratio Child",value:"Sex_Ratio_Child"},{key:"Density",value:"Density"},{key:"Urbanisation",value:"Urbanisation"},{key:"Percentage Population",value:"Percentage_Population"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
@@ -67,6 +71,12 @@ export class DemographicProfile2Component implements OnInit {
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
       }else{
+        if (view == "line") {
+          this.years = ["All"];
+        } else {
+          this.years = ["All",2001, 2011];
+        }
+        // this.years = ["All",2001, 2011];
         if(this.data.years == "2001"){
           this.rain_fall_type = [{key:"All",value:"All"},{key:"Population",value:"Population"},	{key:"Sex Ratio Overall",value:"Sex_Ratio_Overall"},{key:"Sex Ratio Child",value:"Sex_Ratio_Child"},{key:"Density",value:"Density"},{key:"Urbanisation",value:"Urbanisation"},{key:"Percentage Population",value:"Percentage_Population"}]
           this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
@@ -83,13 +93,31 @@ export class DemographicProfile2Component implements OnInit {
         
       }
     }
+toGet(type){
+    if (type == "Decadal_Growth") {
+      this.years = ["All", 2011];
+    }
+    else if(type == "All"){
+      this.years = [2001, 2011];
+      this.views = ViewsNotMap
+    }
+    else {
+      if (this.data.view == "Map View") {
+        this.years = [2001, 2011];
+      } else {
+        this.years = ["All",2001, 2011];
+      }
+    }
+}
     toYear(year){
       if(year == 2001) {
-        this.views = NewViews
+        this.views = ViewsNotTrend
         if(this.data.views == "Map View"){
           this.rain_fall_type = [{key:"Population",value:"Population"},	{key:"Sex Ratio Overall",value:"Sex_Ratio_Overall"},{key:"Sex Ratio Child",value:"Sex_Ratio_Child"},{key:"Density",value:"Density"},{key:"Urbanisation",value:"Urbanisation"},{key:"Percentage Population",value:"Percentage_Population"}]
           this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-        }else{
+        }
+        
+        else{
           this.rain_fall_type = [{key:"All",value:"All"},{key:"Population",value:"Population"},	{key:"Sex Ratio Overall",value:"Sex_Ratio_Overall"},{key:"Sex Ratio Child",value:"Sex_Ratio_Child"},{key:"Density",value:"Density"},{key:"Urbanisation",value:"Urbanisation"},{key:"Percentage Population",value:"Percentage_Population"}]
           this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
         }
@@ -102,7 +130,7 @@ export class DemographicProfile2Component implements OnInit {
           this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
         }
         else{
-          this.views = NewViews
+          this.views = ViewsNotTrend
           this.rain_fall_type = [{key:"All",value:"All"},{key:"Population",value:"Population"},	{key:"Sex Ratio Overall",value:"Sex_Ratio_Overall"},{key:"Sex Ratio Child",value:"Sex_Ratio_Child"},{key:"Density",value:"Density"},{key:"Urbanisation",value:"Urbanisation"},{key:"Decadal Growth",value:"Decadal_Growth"},{key:"Percentage Population",value:"Percentage_Population"}]
           this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
         }

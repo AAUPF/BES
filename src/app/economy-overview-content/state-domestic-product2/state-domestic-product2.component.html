@@ -24,18 +24,18 @@
                       <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                   </select>
 
-                  <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
+                  <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years" (ngModelChange)="toYear(data.years)">
                       <option [ngValue]="undefined" disabled  selected> Year  </option>
                       <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
                   </select>
-                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
+                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view"  (ngModelChange)="toView(data.view)">
                           <option [ngValue]="undefined" disabled  selected> Views  </option>
                           <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                       </select>
-                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
+                      <!-- <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
                           <option [ngValue]="undefined" disabled  selected> Per Capita Net  </option>
-                          <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
-                      </select>
+                          <option class='option' *ngFor='let option of rain_fall_type' [ngValue]="option.value">{{option.key}}</option>
+                      </select> -->
                           <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
                               <option [ngValue]="undefined" disabled  selected> Comparison  </option>
                               <option class='option' *ngFor='let option of Comparison' [ngValue]="option">{{option}}</option>

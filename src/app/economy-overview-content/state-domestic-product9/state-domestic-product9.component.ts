@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotTrend } from '../../data/viewsnottrend';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -48,28 +49,87 @@ export class StateDomesticProduct9Component implements OnInit {
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
-    toNumber(d) {
-    if (d == "All") {
-      //this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
-    } else {
-      this.butDisabled = false;
-    }
+    // toNumber(d) {
+    // if (d == "All") {
+    //   this.Comparison = ["None"]
+    // } else {
+    //   this.Comparison = ["None","Bihar vs District"]
+    // }
     
-    }
-    toHide(view){
-      if(view == "Map View"){
-        this.rain_fall_type = [{key:"Per Capita GDP",value:"Per_Capita_GDP"}]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-      }else{
-        this.rain_fall_type = [{key:"Per Capita GDP",value:"Per_Capita_GDP"}]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    // }
+    // toHide(view){
+    //   if(view == "Map View"){
+    //     this.rain_fall_type = [{key:"Per Capita GDP",value:"Per_Capita_GDP"}]
+    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    //   }else{
+    //     this.rain_fall_type = [{key:"Per Capita GDP",value:"Per_Capita_GDP"}]
+    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    //   }
+    // }
+    // toYear(year){
+    //   if(year == "All"){
+    //     this.views = 
+    //   }else{
+    //     this.views = 
+    //   }
+    // }
+
+
+
+
+  //   toNumber(d) {
+  //     if (d == "All") {
+  //       this.years = [2007,2008,2009,2010,2011];
+  //     } 
+  //     else {
+  //       if (this.data.view == "line") {
+  //         this.years = ["All"];
+  //       }
+  //       else if(this.data.view == "Map View"){
+  //         this.years = [2007,2008,2009,2010,2011];
+  //       } 
+  //       else {
+  //         this.years = ["All",2007,2008,2009,2010,2011];
+  //       }
+  //     }
+  // }
+  toView(view){
+      if (view == "line") {
+        this.years = ["All"];
       }
-    }
+      else if(view == "Map View"){
+        this.years = [2007,2008,2009,2010,2011];
+        // this.rain_fall_type = [{key:"Target",value:"Target"},{key:"Achievement",value:"Achievement"}]
+      }
+      else {
+        this.years = ["All",2007,2008,2009,2010,2011];
+      }
+  }
+  toSet(select){
+      if (select == "All") {
+        this.Comparison  = ["None"]
+      } else {
+        this.Comparison = ["None","Bihar vs District"]
+      }
+  }
+  toYear(year){
+      if(year == "All"){
+        this.views = ViewsNotMap
+        // this.rain_fall_type = [{key:"Target",value:"Target"},{key:"Achievement",value:"Achievement"}]
+      }else{
+        // if (this.data.view == "Map View") {
+        //   this.rain_fall_type = [{key:"Target",value:"Target"},{key:"Achievement",value:"Achievement"}]
+
+        // } else {
+        //   this.views  = ViewsNotTrend
+        // this.rain_fall_type = [{key:"All",value:"All"},{key:"Target",value:"Target"},{key:"Achievement",value:"Achievement"}]
+        // }
+        this.views  = ViewsNotTrend
+      }
+  }
     
   onSubmit(user) {
+    user.rain_fall_type = "Per_Capita_GDP"
     var controller = "state_domestic_product9s"
 
     if (user.view !== "Map View") {
