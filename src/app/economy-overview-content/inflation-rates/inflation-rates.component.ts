@@ -43,7 +43,7 @@ export class InflationRatesComponent implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Andhra Pradesh","Bihar","Chhattisgarh","Gujarat","Haryana","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Odisha","Punjab","Rajasthan","Tamil Nadu","Uttar Pradesh","India"]
+  Districts = ["All","Andhra Pradesh","Bihar","Chhattisgarh","Gujarat","Haryana","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Odisha","Punjab","Rajasthan","Tamil Nadu","Uttar Pradesh","All India"]
   // years = [{key:"All",value:"All"},{key:"Rural Oct 16 Index Final",value:"Rural_Oct_16_Index_Final"},
   // {key:"Rural Oct 17 Index Provisional",value:"Rural_Oct_17_Index_Provisional"},
   // {key:"Rural Inflation Rate in percentage",value:"Rural_Inflation_Rate_in_percentage"},
@@ -64,7 +64,7 @@ export class InflationRatesComponent implements OnInit {
   {key:"Combined Oct 17 Index Provisional",value:"Combined_Oct_17_Index_Provisional"},
   {key:"Combined Inflation Rate in percentage",value:"Combined_Inflation_Rate_in_percentage"},]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None","Andhra Pradesh","Bihar","Chhattisgarh","Gujarat","Haryana","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Odisha","Punjab","Rajasthan","TamilNadu","UttarPradesh","India"]
+    Comparison = ["None","Andhra Pradesh","Bihar","Chhattisgarh","Gujarat","Haryana","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Odisha","Punjab","Rajasthan","TamilNadu","Uttar Pradesh","All India"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
