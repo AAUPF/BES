@@ -47,7 +47,40 @@ export class StateDomesticProduct3Component implements OnInit {
   years = ["All","2011-12", "2012-13","2013-14","2014-15","2015-16","2016-17"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
-  rain_fall_type = [{key:"All",value:"All"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
+  rain_fall_type = [
+    {key:"All",value:"All"},
+    {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
+    {key:"Crops",value:"Crops"},
+    {key:"Livestock",value:"Livestock"},
+    {key:"Forestry and Logging",value:"Forestry and Logging"},
+    {key:"Fishing and Aquaculture",value:"Fishing and Aquaculture"},
+    {key:"Mining and Quarrying",value:"Mining and Quarrying"},
+    {key:"Primary",value:"Primary"},
+    {key:"Manufacturing",value:"Manufacturing"},
+    {key:"Electricity and Utilitiy Services",value:"Electricity and Utilitiy Services"},
+    {key:"Construction",value:"Construction"},
+    {key:"Secondary",value:"Secondary"},
+    {key:"Trade and Hospitality",value:"Trade and Hospitality"},
+    {key:"Trade and Repair Services",value:"Trade and Repair Services"},
+    {key:"Hotels and Restaurants",value:"Hotels and Restaurants"},
+    {key:"Transport and Communication",value:"Transport and Communication"},
+    {key:"Railways",value:"Railways"},
+    {key:"Road Transport",value:"Road Transport"},
+    {key:"Water Transport",value:"Water Transport"},
+    {key:"Air Transport",value:"Air Transport"},
+    {key:"Services incidental to transport",value:"Services incidental to transport"},
+    {key:"Storage",value:"Storage"},
+    {key:"Communication and Broadcasting",value:"Communication and Broadcasting"},
+    {key:"Financial Services",value:"Financial Services"},
+    {key:"Real Estate Services",value:"Real Estate Services"},
+    {key:"Public Administration",value:"Public Administration"},
+    {key:"Other Services",value:"Other Services"},
+    {key:"Tertiary",value:"Tertiary"},
+    {key:"Total GSVA at basic prices",value:"Total GSVA at basic prices"},
+    {key:"None",value:"None"},
+  
+  
+  ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison  = ["None","Population (million)","Sex Ratio (females per '000 males)","Child Sex Ratio","Density (persons per sq. km.)","Urbanisation (Percentage)","Decadal Growth (Percentage)","No. of Districts","No. of CD blocks","No. of Towns (statutory/census)","No. of Villages"]
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]

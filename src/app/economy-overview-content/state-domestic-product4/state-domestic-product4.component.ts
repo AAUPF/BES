@@ -44,141 +44,86 @@ export class StateDomesticProduct4Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["Primary","Secondary","Tertiary","All"]
-  years = ["All","2011-12", "2012-13","2013-14","2014-15","2015-16","2016-17","2011-16"];
+  Districts = [
+    {key:"Gross State Domestic Product (GSDP)",value:"GSDP"},
+    {key:"Net State Domestic Product (NSDP)",value:"NSDP"},
+    {key:"Per Capital GSDP (Rs.)",value:"Per_Capita_GSDP"},
+    {key:"All",value:"All"},
+
+
+  ]
+  years = [
+
+    {key:"2004–05",value:"2004–05"},
+    {key:"2005–06",value:"2005–06"},
+    {key:"2006–07",value:"2006–07"},
+    {key:"2007–08",value:"2007–08"},
+    {key:"2008–09",value:"2008–09"},
+    {key:"2009–10 ",value:"2009–10 "},
+    {key:"2010–11",value:"2010–11"},
+    {key:"2011-12",value:"2011-12"},
+    {key:"2012-13",value:"2012-13"},
+    {key:"2013-14 (P)",value:"2013-14 (P)"},
+    {key:"2014-15 (Q)",value:"2014-15 (Q)"},
+    {key:"CAGR (2004-15)",value:"CAGR (2004-15)"},
+
+  ];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
-  rain_fall_type = [{key:"All",value:"All"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
+  rain_fall_type = [
+    {key:"Current Prices",value:"At current prices"},
+    {key:"Constant Prices (2004-05)",value:"At constant (2004-05) prices"},
+  ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison  = ["None","Population (million)","Sex Ratio (females per '000 males)","Child Sex Ratio","Density (persons per sq. km.)","Urbanisation (Percentage)","Decadal Growth (Percentage)","No. of Districts","No. of CD blocks","No. of Towns (statutory/census)","No. of Villages"]
+  Comparison  = [
+    {key:"2004-05 at Factor Cost",value:"Base Year 2004-05 at Factor Cost"},
+    {key:"2011-12 at Market Price",value:"Base Year 2011-12 at Market Price"},
+
+  ]
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
      //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
-    toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      // this.data.Comparison  = undefined
-      // this.butDisabled = true;
-      // this.Comparison = [{key:"None",value:"None"}]
-      // this.Comparison_sort = this.Comparison.sort(f.compare);
-      this.Comparison  = ["None"]
-      //this.Comparison_sort = this.Comparison.sort(f.compare);
-    } else {
-    //   this.Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-    
-    this.Comparison = ["None"]
-       //this.Comparison_sort = this.Comparison.sort(f.compare);
-    // this.butDisabled = false;
-    }
-    
-  }
-    toSet(select){
+    data1(d){
 
-      
-      if (select == "All") {
-        this.data.rain_fall_type  = undefined
 
-        this.rain_fall_type_sort = [
+      if (d == "Base Year 2004-05 at Factor Cost") {
+         this.data.years = "2004–05"
+        this.years = [
+
+          {key:"2004–05",value:"2004–05"},
+          {key:"2005–06",value:"2005–06"},
+          {key:"2006–07",value:"2006–07"},
+          {key:"2007–08",value:"2007–08"},
+          {key:"2008–09",value:"2008–09"},
+          {key:"2009–10 ",value:"2009–10 "},
+          {key:"2010–11",value:"2010–11"},
+          {key:"2011-12",value:"2011-12"},
+          {key:"2012-13",value:"2012-13"},
+          {key:"2013-14 (P)",value:"2013-14 (P)"},
+          {key:"2014-15 (Q)",value:"2014-15 (Q)"},
+          {key:"CAGR (2004-15)",value:"CAGR (2004-15)"},
           {key:"All",value:"All"},
-          {key:"Agriculture, forestry and fishing",value:"Agriculture, forestry and fishing"},
-          {key:"Crops",value:"Crops"},
-          {key:"Livestock",value:"Livestock"},
-          {key:"Forestry and logging",value:"Forestry and logging"},
-          {key:"Fishing and aquaculture",value:"Fishing and aquaculture"},
-          {key:"Mining and quarrying",value:"Mining and quarrying"},
-          {key:"Primary",value:"Primary"},
-          {key:"Manufacturing",value:"Manufacturing"},
-          {key:"Electricity, gas, water supply And other utility services",value:"Electricity, gas, water supply And other utility services"},
-          {key:"Construction",value:"Construction"},
-          {key:"Secondary",value:"Secondary"},
-          {key:"Trade, repair, hotels and restaurants",value:"Trade, repair, hotels and restaurants"},
-          {key:"Trade And repair services",value:"Trade And repair services"},
-          {key:"Hotels And restaurants",value:"Hotels And restaurants"},
-          {key:"Transport, storage, communication And services related to broadcasting",value:"Transport, storage, communication And services related to broadcasting"},
-          {key:"Railways",value:"Railways"},
-          {key:"Road transport",value:"Road transport"},
-          {key:"Water transport",value:"Water transport"},
-          {key:"Air transport",value:"Air transport"},
-          {key:"Services incidental to transport",value:"Services incidental to transport"},
-          {key:"Storage",value:"Storage"},
-          {key:"Communication And services related to broadcasting",value:"Communication And services related to broadcasting"},
-          {key:"Financial services",value:"Financial services"},
-          {key:"Real estate, ownership of dwelling And professional services",value:"Real estate, ownership of dwelling And professional services"},
-          {key:"Public administration",value:"Public administration"},
-          {key:"Other services",value:"Other services"},
-          {key:"Tertiary",value:"Tertiary"},
-          {key:"Total GSVA at basic prices",value:"Total GSVA at basic prices"},
-          {key:"Taxes on Products",value:"Taxes on Products"},
-          {key:"Subsidies on products",value:"Subsidies on products"},
-          {key:"Gross State Domestic Product",value:"Gross State Domestic Product"},
-          {key:"Population (crore)",value:"Population (crore)"},
-          {key:"Per Capita GSDP (Rs.)",value:"Per Capita GSDP (Rs.)"},
-          {key:"None",value:"None"},
-
+        ];
         
+      } else {
+        this.data.years = "2011-12"
+
+        this.years = [
+          {key:"2011-12",value:"2011-12"},
+          {key:"2012-13",value:"2012-13"},
+          {key:"2013-14",value:"2013-14"},
+          {key:"2014-15",value:"2014-15"},
+          {key:"2015-16 (P)",value:"2015-16 (P)"},
+          {key:"2016-17 (Q)",value:"2016-17 (Q)"},
+          {key:"CAGR (2011-17)",value:"CAGR (2011-17)"},
+          {key:"All",value:"All"},
         ]
-
-        this.data == {years: null, views: "",Comparison: ""};
-        this.data.Comparison  = undefined
-        this.butDisabled = true;
+        
       }
-      else if(select == "Primary") { 
-        this.data.rain_fall_type  = undefined
 
-        this.rain_fall_type_sort = [{key:"All",value:"All"},
-        {key:"Agriculture, forestry and fishing",value:"Agriculture, forestry and fishing"},
-        {key:"Crops",value:"Crops"},
-        {key:"Livestock",value:"Livestock"},
-        {key:"Forestry and logging",value:"Forestry and logging"},
-        {key:"Fishing and aquaculture",value:"Fishing and aquaculture"},
-        {key:"Mining and quarrying",value:"Mining and quarrying"},
-        {key:"Primary",value:"Primary"},
-        {key:"None",value:"None"},
+
+
       
-      ]
-
-      }
-
-      else if(select == "Secondary") { 
-        this.data.rain_fall_type  = undefined
-
-        this.rain_fall_type_sort = [{key:"All",value:"All"},
-        {key:"Manufacturing",value:"Manufacturing"},
-        {key:"Electricity, gas, water supply And other utility services",value:"Electricity, gas, water supply And other utility services"},
-        {key:"Construction",value:"Construction"},
-        {key:"Secondary",value:"Secondary"},
-        {key:"None",value:"None"},
-      ]
-
-      }
-
-      else if(select == "Tertiary") { 
-        this.data.rain_fall_type  = undefined
-
-        this.rain_fall_type_sort = [{key:"All",value:"All"},   
-        {key:"Trade, repair, hotels and restaurants",value:"Trade, repair, hotels and restaurants"},
-        {key:"Trade And repair services",value:"Trade And repair services"},
-        {key:"Hotels And restaurants",value:"Hotels And restaurants"},
-        {key:"Transport, storage, communication And services related to broadcasting",value:"Transport, storage, communication And services related to broadcasting"},
-        {key:"Railways",value:"Railways"},
-        {key:"Road transport",value:"Road transport"},
-        {key:"Water transport",value:"Water transport"},
-        {key:"Air transport",value:"Air transport"},
-        {key:"Services incidental to transport",value:"Services incidental to transport"},
-        {key:"Storage",value:"Storage"},
-        {key:"Communication And services related to broadcasting",value:"Communication And services related to broadcasting"},
-        {key:"Financial services",value:"Financial services"},
-        {key:"Real estate, ownership of dwelling And professional services",value:"Real estate, ownership of dwelling And professional services"},
-        {key:"Public administration",value:"Public administration"},
-        {key:"Other services",value:"Other services"},
-        {key:"Tertiary",value:"Tertiary"},
-        {key:"None",value:"None"},
-      ]
-
-      }
-      else {
-        this.butDisabled = false;
-      }
     }
   onSubmit(user) {
     var controller = "state_domestic_product4s"

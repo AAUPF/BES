@@ -402,15 +402,15 @@ export const appRoutes: Routes = [
         component: RegionalDisparityComponent
      },
      {
-        path: 'Inflation-Rates',
+        path: 'Economy-Overview/Inflation-Rates',
         component: InflationRatesComponent
      },
      {
-        path: 'State-Domestic-Product1',
+        path: 'Economy-Overview/State-Domestic-Product1',
         component: StateDomesticProduct1Component
      },
      {
-        path: 'State-Domestic-Product2',
+        path: 'Economy-Overview/State-Domestic-Product2',
         component: StateDomesticProduct2Component
      },
      {
@@ -438,15 +438,15 @@ export const appRoutes: Routes = [
         component: StateDomesticProduct8Component
      },
      {
-        path: 'State-Domestic-Product9',
+        path: 'Economy-Overview/State-Domestic-Product9',
         component: StateDomesticProduct9Component
      },
      {
-        path: 'State-Domestic-Product10',
+        path: 'Economy-Overview/State-Domestic-Product10',
         component: StateDomesticProduct10Component
      },
      {
-        path: 'State-Domestic-Product11',
+        path: 'Economy-Overview/State-Domestic-Product11',
         component: StateDomesticProduct11Component
      },
      {

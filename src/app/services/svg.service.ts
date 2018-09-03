@@ -114,6 +114,55 @@ if (res[7]) {
     // console.log(url);
   }
 
+
+
+
+
+  test_eov(views,year,districts,rain_fall_type,Comparison,controller,fuel) {
+    // let url = `${this.apiRoot}/`+controller+`/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;
+    let url = `${this.apiRoot}/`+controller+`/test?search=` + districts + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views+ `&fuel=`+fuel;
+    // title;
+    console.log(url);
+    var title = rain_fall_type;
+    this.http.get(url).
+    subscribe(res => {
+      this.j = res;
+
+if (res[7]) {
+  console.log(res[7]["data"]["min"]["min"]);
+
+
+    $( ".dark-green1" ).empty();
+    $( ".mid-green1" ).empty();
+    $( ".light-green1" ).empty();
+    $( ".lighter-yellow1" ).empty();
+    $( ".yellow1" ).empty();
+    $( ".orange1" ).empty();
+    $( ".red1" ).empty();
+
+      $( ".dark-green1" ).append(`<span class=\"dot dark-green\"></span>Above ${res[7]["data"]["above_extreme"]["min"]} `  );
+      $( ".mid-green1" ).append(`<span class=\"dot mid-green\"></span>${res[7]["data"]["extreme"]["min"]} to ${res[7]["data"]["extreme"]["max"]} `  );
+      $( ".light-green1" ).append(`<span class=\"dot light-green\"></span>${res[7]["data"]["above_max"]["min"]} to ${res[7]["data"]["above_max"]["max"]} `  );
+      $( ".lighter-yellow1" ).append(`<span class=\"dot lighter-yellow\"></span>${res[7]["data"]["max"]["min"]} to ${res[7]["data"]["max"]["max"]} `  );
+      $( ".yellow1" ).append(`<span class=\"dot yellow\"></span>${res[7]["data"]["blow_max"]["min"]} to ${res[7]["data"]["blow_max"]["max"]} `  );
+      $( ".orange1" ).append(`<span class=\"dot orange\"></span>${res[7]["data"]["min"]["min"]} to ${res[7]["data"]["min"]["max"]} `  );
+      $( ".red1" ).append(`<span class=\"dot red\"></span> Less Than ${res[7]["data"]["below_min"]["max"]} `  );
+
+
+
+
+} 
+      f.testy(this,districts,rain_fall_type,views,year,Comparison,res,controller)      
+       },
+       err => {
+         console.log("Error occured.")
+         this.spinner.hide();
+       }
+       );
+    // District.classList.add("mystyle");
+    // console.log(url);
+  }
+
   map_bihar_vs_districts(l,rain_fall_type,views,year,controller) {
     let url = `${this.apiRoot}/`+controller+`/test?views=` + views +'&rain_fall_type='+rain_fall_type+'&year='+year;  
     this.http.get(url).
@@ -172,6 +221,55 @@ color_map(x,color) {
           //  document.getElementById("demo").innerHTML = e;
 
             that.barmodal(e,year,rain_fall_type,views,controller);
+        }
+    }
+    
+    window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }  
+  }
+//   let a = document.getElementById("biharsvg")  as HTMLObjectElement;
+//   a.addEventListener("load", () =>{
+//        var svgDoc = a.contentDocument; 
+//        var wchamparan = svgDoc.getElementById("wchamparan");
+//        wchamparan.onclick = ()  =>{
+//         this.bar()
+//         console.log("hello");
+//      }
+// })
+}
+
+
+
+
+svg_eov(z,views,rain_fall_type,year,districts,controller,fuel) {
+  const that = this;
+  let a = document.getElementById("biharsvg")  as HTMLObjectElement;
+      var svgDoc = a.contentDocument;
+      // var wchamparan = svgDoc.getElementById("wchamparan");
+      let de = svgDoc.getElementsByClassName("fil0");
+      var modal = document.getElementById('myModal');
+      // var wchamparan1 = svgDoc.getElementById("wchamparan").getAttribute("id");
+      var span = document.getElementById("close");
+      span.onclick = function() {
+        modal.style.display = "none";
+       }
+    // de.onclick = function(){
+    //   alert("ok");
+    //   var id = de.getElementById(this);
+    //    console.log(id);
+    //  };
+
+    var i;
+    for (i = 0; i < de.length; i++) {
+      var j = de[i].getAttribute("id");
+      svgDoc.getElementById(j).onclick = function() {
+          modal.style.display = "block";  
+           var e = this.getAttribute("id")
+          //  document.getElementById("demo").innerHTML = e;
+
+            that.barmodel(e,year,rain_fall_type,views,controller,fuel);
         }
     }
     
@@ -465,51 +563,7 @@ trend_line(data,year,rain_fall_type,controller) {
       
       }
    ); 
-  //  let url = `${this.apiRoot1}/test?search=` + u + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+views;
-  //  console.log(url);
 
-  //  this.http.get(url).
-  //    subscribe(res => {
-  //      this.j = res;
-  //      console.log(this.j);
-  //      let chart = new CanvasJS.Chart("chartContainer1", {
-  //        animationEnabled: true,
-  //        exportEnabled: true,
-  //        title: {
-  //          text: rain_fall_type+" " +year
-  //        },
-  //        data: [{
-  //          type: "column",
-  //          dataPoints: 
-  //          this.j
-  //        }]
-  //      });
-  //      chart.render();
-  //      }
-  //   ); 
-
-    // let chart = new CanvasJS.Chart("chartContainer1", {
-    //   animationEnabled: true,
-    //   exportEnabled: true,
-    //   title: {
-    //     text: abc
-    //   },
-    //   data: [{
-    //     type: "column",
-    //     dataPoints: [
-    //       { y: 71, label: "Apple" },
-    //       { y: 55, label: "Mango" },
-    //       { y: 50, label: "Orange" },
-    //       { y: 65, label: "Banana" },
-    //       { y: 95, label: "Pineapple" },
-    //       { y: 68, label: "Pears" },
-    //       { y: 28, label: "Grapes" },
-    //       { y: 34, label: "Lychee" },
-    //       { y: 14, label: "Jackfruit" }
-    //     ]
-    //   }]
-    // });
-    // chart.render();
   }
   j:any;
   barchart(data){
@@ -578,6 +632,37 @@ trend_line(data,year,rain_fall_type,controller) {
      ); 
   }
 
+
+
+
+
+  barmodel(abc,year,rain_fall_type,views,controller,fuel){
+
+    if (abc == "echamparan") {
+      var u = "E. Champaran"
+    } else if(abc == "wchamparan") {
+      var u = "W. Champaran"
+    } else {
+      u = abc
+    }
+
+     var search =  this.capitalize(u)
+
+     console.log(search);
+     
+    var url = `${this.apiRoot}/`+controller+`/test?search=` + search + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=column&compare=None&fuel=`+fuel;
+    console.log(url);
+    
+    this.http.get(url).
+    subscribe(res => {
+      this.j = res;
+      let chart = new CanvasJS.Chart("chartContainer1", this.j);
+      chart.render();
+      
+      }
+   ); 
+
+  }
 
   bubble(data,year,rain_fall_type,controller,views){
     let url = `${this.apiRoot}/`+controller+`/test?search=` + data + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&views=`+views;
