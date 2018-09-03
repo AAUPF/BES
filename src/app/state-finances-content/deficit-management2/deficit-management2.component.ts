@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -43,27 +44,42 @@ export class DeficitManagement2Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["All","Bihar","Jharkhand","West Bengal","Odisha","Uttar Pradesh","Madhya Pradesh ","Rajasthan","Maharashtra","Gujarat","Punjab","Haryana","Karnataka","Andhra Pradesh","Kerala","Tamil Nadu","Himachal Pradesh","Chhatisgarh"]
-  years = ["2015","2016_RE","2017_BE"];
+  years = ["All","2015","2016_RE","2017_BE"];
   views = ViewsNotMap
   rain_fall_type = [{key:"Gross Fiscal Deficit",value:"Gross_Fiscal_Deficit"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs State"]
     data: any = {};    
-    toNumber(d) {
-    if (d == "All") {
-      //this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
-    } else {
-      this.butDisabled = false;
-    }
     
+    toView(view){
+      if (view == "line") {
+        this.years = ["All"];
+      } else {
+        this.years = ["All","2015","2016_RE","2017_BE"];
+      }
+        }
+    toSet(select){
+      if (select == "All") {
+        this.Comparison  = ["None"]
+        
+      } else {
+        this.Comparison  = ["None","Bihar vs State"]
+
+      }
+    }
+    toYear(year){
+      if(year == "All"){
+        this.views = ViewsNotMap
+        
+      }else{
+        this.views  = ViewsNotDistrict
+        
+      }
     }
     
   onSubmit(user) {
     var controller = "deficit_management2s"
-
+    user.rain_fall_type = "Gross_Fiscal_Deficit"
     if (user.view !== "Map View") {
 
       console.log("errror");

@@ -65,7 +65,12 @@ export class DemographicProfileComponent implements OnInit {
 if (view == "line") {
   this.years = ["All"];
 } else {
-  this.years = ["All",2001, 2011];
+  if (this.data.rain_fall_type == "All") {
+    this.years = [2001, 2011];
+  } else {
+    this.years = ["All",2001, 2011];
+  }
+  
 }
   }
     toSet(select){
