@@ -129,6 +129,7 @@ import { ResourceManagement11Component } from './state-finances-content/resource
 import { ResourceManagement12Component } from './state-finances-content/resource-management12/resource-management12.component';
 import { ResourceManagement13Component } from './state-finances-content/resource-management13/resource-management13.component';
 import { ResourceManagement14Component } from './state-finances-content/resource-management14/resource-management14.component';
+import { FinancialPosition1Component } from './state-finances-content/financial-position1/financial-position1.component';
 
 
 
@@ -257,6 +258,7 @@ import { ResourceManagement14Component } from './state-finances-content/resource
     ResourceManagement12Component,
     ResourceManagement13Component,
     ResourceManagement14Component,
+    FinancialPosition1Component,
   
     ],
   imports: [

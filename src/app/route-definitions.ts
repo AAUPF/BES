@@ -114,6 +114,8 @@ import { ResourceManagement12Component } from './state-finances-content/resource
 import { ResourceManagement13Component } from './state-finances-content/resource-management13/resource-management13.component';
 import { ResourceManagement14Component } from './state-finances-content/resource-management14/resource-management14.component';
 
+import { FinancialPosition1Component } from './state-finances-content/financial-position1/financial-position1.component';
+
 export const appRoutes: Routes = [
 
     {
@@ -568,6 +570,11 @@ export const appRoutes: Routes = [
      {
         path: 'ResourceManagement14',
         component: ResourceManagement14Component
+     },
+
+     {
+        path: 'FinancialPosition1',
+        component: FinancialPosition1Component
      },
      
 ];

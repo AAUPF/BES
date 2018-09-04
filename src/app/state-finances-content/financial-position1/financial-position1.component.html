@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="pageTitle">
-          <h2>Sectoral Composition of GSVA at Constant (2011-12) Prices</h2>
+          <h2>Receipts and Expenditure</h2>
           <div class="btnArea"><a (click)="cancel()" class="btn btn-primary"><i class="fa fa-angle-left" aria-hidden="true"></i> Back </a></div>
         </div>
       </div>
@@ -19,35 +19,32 @@
             <div class="contactSelect">
               <form #f="ngForm" (ngSubmit)="onSubmit(data)">
 <div class="cen_sel">
-    <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
-        <option [ngValue]="undefined" disabled  selected> Year  </option>
-        <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
-    </select>
                   <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toSet(data.districts)">
-                      <option [ngValue]="undefined" disabled  selected> Sector  </option>
+                      <option [ngValue]="undefined" disabled  selected> State  </option>
                       <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                   </select>
 
-                  <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
-                      <option [ngValue]="undefined" disabled  selected> Sub Sector  </option>
-                      <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
+                  <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years"  (ngModelChange)="toYear(data.years)">
+                      <option [ngValue]="undefined" disabled  selected> Year  </option>
+                      <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
                   </select>
-                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
+                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view" (ngModelChange)="toView(data.view)">
                           <option [ngValue]="undefined" disabled  selected> Views  </option>
                           <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                       </select>
-                   
-                          <!-- <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
+                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
+                          <option [ngValue]="undefined" disabled  selected> Fiscal Indicator  </option>
+                          <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
+                      </select>
+                          <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
                               <option [ngValue]="undefined" disabled  selected> Comparison  </option>
                               <option class='option' *ngFor='let option of Comparison' [ngValue]="option">{{option}}</option>
-                          </select> -->
+                          </select>
                       <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
                       <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                   </div>
               </form>
-              <div class="unt-txt">Unit - (No Unit)</div>
-              <div style="clear: both;"> </div>	
-              <div class="unt-txt"></div>
+              <div class="unt-txt">Unit - Rs. crore</div>
                   <div style="clear: both;"> </div>	
                   <!-- <table id="myId"></table> -->
                   <div class="hideContainer"></div>                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
@@ -71,9 +68,8 @@
                     <app-rainfall-new ></app-rainfall-new>
 
                   </div>
-                  <div class="source-txt">
-                        Note : Data of 2015-16 is Provisional Estimates and 2016-17 Quick Estimates;
-                      Source : Directorate of Economics and Statistics, GOB</div>                  <app-modal></app-modal>
+                  <div class="source-txt"> Source : State Government Budgets </div>
+                  <app-modal></app-modal>
                   <!-- <object data="assets/img/bihar.svg" id="biharsvg" type="image/svg+xml"></object> -->
               </div>
            </div>
