@@ -100,28 +100,116 @@ export class StateDomesticProduct6Component implements OnInit {
   
   ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison  = ["None","Population (million)","Sex Ratio (females per '000 males)","Child Sex Ratio","Density (persons per sq. km.)","Urbanisation (Percentage)","Decadal Growth (Percentage)","No. of Districts","No. of CD blocks","No. of Towns (statutory/census)","No. of Villages"]
+  Comparison  = [{key:"None",value:"None"}]
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
      //Comparison_sort = this.Comparison.sort(f.compare);
-    data: any = {};    
-    toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      // this.data.Comparison  = undefined
-      // this.butDisabled = true;
-      // this.Comparison = [{key:"None",value:"None"}]
-      // this.Comparison_sort = this.Comparison.sort(f.compare);
-      this.Comparison  = ["None"]
-      //this.Comparison_sort = this.Comparison.sort(f.compare);
-    } else {
-    //   this.Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
+    data: any = {};  
     
-    this.Comparison = ["None"]
-       //this.Comparison_sort = this.Comparison.sort(f.compare);
-    // this.butDisabled = false;
+    
+    
+    compare(d) {
+
+
+      if (d == "Agriculture, Forestry and Fishing") {
+        this.data.Comparison = "All"
+        this.Comparison = 
+        [
+          {key:"All",value:"All"},
+          {key:"Crops",value:"Crops"},
+          {key:"Livestock",value:"Livestock"},
+          {key:"Forestry and Logging",value:"Forestry and Logging"},
+          {key:"Fishing and Aquaculture",value:"Fishing and Aquaculture"},
+          {key:"None",value:"None"},
+  
+        ]
+        
+      } 
+      
+      else if (d == "Mining and Quarrying") {
+  
+        if (this.data.districts == "All") {
+           this.data.Comparison = "None"
+           this.Comparison = 
+           [
+             {key:"None",value:"None"},
+     
+           ]
+           
+         } else {
+  
+  
+          this.data.Comparison = "None"
+          this.Comparison = 
+    
+          [
+            {key:"None",value:"None"},
+    
+          ]
+          }
+  
+      }
+  
+      else if (d == "Mining and Quarrying") {
+  
+        this.data.Comparison = "None"
+        this.Comparison = 
+  
+        [
+          {key:"None",value:"None"},
+  
+        ]
+      }
+  
+      else if (d == "Trade and Hospitality") {
+  
+  
+        
+  
+        this.data.Comparison = "All"
+        this.Comparison = 
+  
+        [
+          {key:"All",value:"All"},
+          {key:"Trade and Repair Services",value:"Trade and Repair Services"},
+          {key:"Hotels and Restaurants",value:"Hotels and Restaurants"},
+          {key:"None",value:"None"},
+  
+        ]
+      }
+  
+  
+      else if (d == "Transport and Communication") {
+  
+        this.data.Comparison = "All"
+        this.Comparison = 
+  
+        [
+          {key:"All",value:"All"},
+          {key:"Railways",value:"Railways"},
+          {key:"Road Transport",value:"Road Transport"},
+          {key:"Water Transport",value:"Water Transport"},
+          {key:"Air Transport",value:"Air Transport"},
+          {key:"Services incidental to transport",value:"Services incidental to transport"},
+          {key:"Storage",value:"Storage"},
+          {key:"Communication and Broadcasting",value:"Communication and Broadcasting"},
+          {key:"None",value:"None"},
+  
+        ]
+      }
+      
+      else {
+      this.data.Comparison = "None"
+      this.Comparison = 
+  
+        [
+          {key:"None",value:"None"},
+  
+        ]
+      
+      }
+      
     }
-    
-  }
+ 
     toSet(select){
 
       
@@ -131,32 +219,16 @@ export class StateDomesticProduct6Component implements OnInit {
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
           {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
-          {key:"Crops",value:"Crops"},
-          {key:"Livestock",value:"Livestock"},
-          {key:"Forestry and Logging",value:"Forestry and Logging"},
-          {key:"Fishing and Aquaculture",value:"Fishing and Aquaculture"},
           {key:"Mining and Quarrying",value:"Mining and Quarrying"},
-          {key:"Primary",value:"Primary"},
           {key:"Manufacturing",value:"Manufacturing"},
           {key:"Electricity and Utilitiy Services",value:"Electricity and Utilitiy Services"},
           {key:"Construction",value:"Construction"},
-          {key:"Secondary",value:"Secondary"},
           {key:"Trade and Hospitality",value:"Trade and Hospitality"},
-          {key:"Trade and Repair Services",value:"Trade and Repair Services"},
-          {key:"Hotels and Restaurants",value:"Hotels and Restaurants"},
           {key:"Transport and Communication",value:"Transport and Communication"},
-          {key:"Railways",value:"Railways"},
-          {key:"Road Transport",value:"Road Transport"},
-          {key:"Water Transport",value:"Water Transport"},
-          {key:"Air Transport",value:"Air Transport"},
-          {key:"Services incidental to transport",value:"Services incidental to transport"},
-          {key:"Storage",value:"Storage"},
-          {key:"Communication and Broadcasting",value:"Communication and Broadcasting"},
           {key:"Financial Services",value:"Financial Services"},
           {key:"Real Estate Services",value:"Real Estate Services"},
           {key:"Public Administration",value:"Public Administration"},
           {key:"Other Services",value:"Other Services"},
-          {key:"Tertiary",value:"Tertiary"},
           {key:"Total GSVA at basic prices",value:"Total GSVA at basic prices"},
           {key:"Taxes on Products",value:"Taxes on Products"},
           {key:"Subsidies on Products",value:"Subsidies on Products"},
@@ -168,19 +240,14 @@ export class StateDomesticProduct6Component implements OnInit {
         
         ]
 
-        this.data == {years: null, views: "",Comparison: ""};
-        this.data.Comparison  = undefined
-        this.butDisabled = true;
+       
       }
       else if(select == "Primary") { 
         this.data.rain_fall_type  = undefined
 
-        this.rain_fall_type_sort = [{key:"All",value:"All"},
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},
         {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
-        {key:"Crops",value:"Crops"},
-        {key:"Livestock",value:"Livestock"},
-        {key:"Forestry and Logging",value:"Forestry and Logging"},
-        {key:"Fishing and Aquaculture",value:"Fishing and Aquaculture"},
         {key:"Mining and Quarrying",value:"Mining and Quarrying"},
         {key:"None",value:"None"},
       
@@ -191,11 +258,13 @@ export class StateDomesticProduct6Component implements OnInit {
       else if(select == "Secondary") { 
         this.data.rain_fall_type  = undefined
 
-        this.rain_fall_type_sort = [{key:"All",value:"All"},
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},
         {key:"Manufacturing",value:"Manufacturing"},
         {key:"Electricity and Utilitiy Services",value:"Electricity and Utilitiy Services"},
         {key:"Construction",value:"Construction"},
         {key:"None",value:"None"},
+      
       ]
 
       }
@@ -203,22 +272,14 @@ export class StateDomesticProduct6Component implements OnInit {
       else if(select == "Tertiary") { 
         this.data.rain_fall_type  = undefined
 
-        this.rain_fall_type_sort = [{key:"All",value:"All"},   
-        {key:"Trade and Hospitality",value:"Trade and Hospitality"},
-        {key:"Trade and Repair Services",value:"Trade and Repair Services"},
-        {key:"Hotels and Restaurants",value:"Hotels and Restaurants"},
-        {key:"Transport and Communication",value:"Transport and Communication"},
-        {key:"Railways",value:"Railways"},
-        {key:"Road Transport",value:"Road Transport"},
-        {key:"Water Transport",value:"Water Transport"},
-        {key:"Air Transport",value:"Air Transport"},
-        {key:"Services incidental to transport",value:"Services incidental to transport"},
-        {key:"Storage",value:"Storage"},
-        {key:"Communication and Broadcasting",value:"Communication and Broadcasting"},
-        {key:"Financial Services",value:"Financial Services"},
-        {key:"Real Estate Services",value:"Real Estate Services"},
-        {key:"Public Administration",value:"Public Administration"},
-        {key:"Other Services",value:"Other Services"},
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},   
+          {key:"Trade and Hospitality",value:"Trade and Hospitality"},
+          {key:"Transport and Communication",value:"Transport and Communication"},
+          {key:"Financial Services",value:"Financial Services"},
+          {key:"Real Estate Services",value:"Real Estate Services"},
+          {key:"Public Administration",value:"Public Administration"},
+          {key:"Other Services",value:"Other Services"},
         {key:"None",value:"None"},
       ]
 
@@ -227,6 +288,11 @@ export class StateDomesticProduct6Component implements OnInit {
         this.butDisabled = false;
       }
     }
+
+
+   
+
+ 
   onSubmit(user) {
     var controller = "state_domestic_product6s"
 

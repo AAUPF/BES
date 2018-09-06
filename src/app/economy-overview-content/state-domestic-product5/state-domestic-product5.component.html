@@ -18,33 +18,38 @@
             <div class="categoryBox">
               <div class="contactSelect">
                 <form #f="ngForm" (ngSubmit)="onSubmit(data)">
-  <div class="cen_sel">
-      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
-          <option [ngValue]="undefined" disabled  selected> Year  </option>
-          <option class='option' *ngFor='let option of years' [ngValue]="option.value">{{option.key}}</option>
-      </select>
-                    <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toSet(data.districts)">
-                        <option [ngValue]="undefined" disabled  selected> Sector  </option>
-                        <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
-                    </select>
-  
-                    <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
-                        <option [ngValue]="undefined" disabled  selected> Sub Sector  </option>
-                        <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
-                    </select>
-                        <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
-                            <option [ngValue]="undefined" disabled  selected> Views  </option>
-                            <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
+                    <div class="cen_sel">
+                        <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
+                            <option [ngValue]="undefined" disabled  selected> Year  </option>
+                            <option class='option' *ngFor='let option of years' [ngValue]="option.value">{{option.key}}</option>
                         </select>
-                     
-                            <!-- <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
-                                <option [ngValue]="undefined" disabled  selected> Comparison  </option>
-                                <option class='option' *ngFor='let option of Comparison' [ngValue]="option">{{option}}</option>
-                            </select> -->
-                        <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
-                        <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
-                    </div>
-                </form>
+                                      <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toSet(data.districts)">
+                                          <option [ngValue]="undefined" disabled  selected> Sector  </option>
+                                          <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
+                                      </select>
+                    
+                                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="compare(data.rain_fall_type)">
+                                        <option [ngValue]="undefined" disabled  selected> Sub Sector  </option>
+                                        <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
+                                    </select>
+                    
+                                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
+                                        <option [ngValue]="undefined" disabled  selected> Sub Sector 1  </option>
+                                        <option class='option' *ngFor='let option of Comparison' [ngValue]="option.value">{{option.key}}</option>
+                                    </select>
+                    
+                                 
+                             
+                                          <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
+                                              <option [ngValue]="undefined" disabled  selected> Views  </option>
+                                              <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
+                                          </select>
+                                       
+                      
+                                          <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
+                                          <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
+                                      </div>
+                                  </form>
                 <div class="unt-txt">Unit - Rs .crore</div>
               <div style="clear: both;"> </div>	
                 <div class="unt-txt"></div>
