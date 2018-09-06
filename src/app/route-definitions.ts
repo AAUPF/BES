@@ -113,7 +113,11 @@ import { ResourceManagement11Component } from './state-finances-content/resource
 import { ResourceManagement12Component } from './state-finances-content/resource-management12/resource-management12.component';
 import { ResourceManagement13Component } from './state-finances-content/resource-management13/resource-management13.component';
 import { ResourceManagement14Component } from './state-finances-content/resource-management14/resource-management14.component';
-
+import { TaxDepartment1Component } from './state-finances-content/tax-department1/tax-department1.component';
+import { TaxDepartment2Component } from './state-finances-content/tax-department2/tax-department2.component';
+import { TaxDepartment3Component } from './state-finances-content/tax-department3/tax-department3.component';
+import { TaxDepartment4Component } from './state-finances-content/tax-department4/tax-department4.component';
+import { TaxDepartment5Component } from './state-finances-content/tax-department5/tax-department5.component';
 import { FinancialPosition1Component } from './state-finances-content/financial-position1/financial-position1.component';
 
 export const appRoutes: Routes = [
@@ -571,6 +575,27 @@ export const appRoutes: Routes = [
         path: 'ResourceManagement14',
         component: ResourceManagement14Component
      },
+
+     {
+        path: 'TaxDepartment1',
+        component: TaxDepartment1Component
+     },
+     {
+        path: 'TaxDepartment2',
+        component: TaxDepartment2Component
+     },
+     {
+        path: 'TaxDepartment3',
+        component: TaxDepartment3Component
+     },
+     {
+        path: 'TaxDepartment4',
+        component: TaxDepartment4Component
+     },
+     {
+        path: 'TaxDepartment5',
+        component: TaxDepartment5Component
+     }, 
 
      {
         path: 'FinancialPosition1',

@@ -76,7 +76,7 @@ export class DebtManagement3Component implements OnInit {
         this.Comparison  = ["None"]
         
       } else {
-        this.Comparison  = ["None","Revenue Deficit","Capital Outlay","Net Lending","GFD","GSDP","GFD: GSDP ratio (percentage)"]
+        this.Comparison  = ["None","Discharge of internal debt","Repayment of loans to Centre","Discharge of other liabilities","Total Repayment","Total Interest Payment","Total Debt Service Burden"]
 
       }
     }

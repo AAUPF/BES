@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -51,14 +52,10 @@ export class RevenueAccount1Component implements OnInit {
   Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
     data: any = {};    
     toNumber(d) {
-      if (d == "All") {
-        this.data.Comparison  = undefined
-        this.butDisabled = true;
-      } else {
-        this.butDisabled = false;
-      }
+      
         if(d !== "None"){
-          this.Districts1 = ["None"]
+              this.data.districts1 = "None"
+              this.Districts1 = ["None"]
           if (d == "All") {
             this.Comparison = ["None"]
           } else {
@@ -66,39 +63,51 @@ export class RevenueAccount1Component implements OnInit {
           }
         }
         else{
+          this.Districts = ["None"]
+          this.data.districts1 = "All"
           this.Districts1 = ["All","None","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
-          
+          if (this.data.districts1 !== "All" && this.data.districts1 !== "None") {
             this.Comparison = ["None","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
-          
-          
+          } else {
+            this.Comparison = ["None"]
+          }
         }
     }
     toCheck(d){
-      if (d == "All") {
-        //this.data == {years: null, views: "",Comparison: ""};
-        this.data.Comparison  = undefined
-        this.butDisabled = true;
-  
-      } else {
-        this.butDisabled = false;
-      }
       if(d !== "None"){
-        this.Districts = ["None"]
+        this.data.districts = "None"
+          this.Districts = ["None"]
         if (d == "All") {
           this.Comparison = ["None"]
         } else {
           this.Comparison = ["None","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
         }
-        
       }
       else{
+        this.Districts1 = ["None"]
+        this.data.districts = "All"
         this.Districts = ["All","None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
-        if (this.Districts == ["All"]) {
-          alert("ok")
-          this.Comparison = ["None"]
-        } else {
+
+        if (this.data.districts !== "All" && this.data.districts !== "None") {
           this.Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
+        } else {
+          this.Comparison = ["None"]
         }
+      }
+    }
+    toView(view){
+      if (view == "line") {
+        this.years = ["All"];
+      } else {
+        this.years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+      }
+    }
+    toYear(year){
+      if(year == "All"){
+        this.views = ViewsNotMap
+        
+      }else{
+        this.views  = ViewsNotDistrict
         
       }
     }

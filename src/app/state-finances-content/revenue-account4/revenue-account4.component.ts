@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -50,20 +51,34 @@ export class RevenueAccount4Component implements OnInit {
   Comparison = ["None","Total Tax  Revenue","Own Tax Revenue","Own Non tax Revenue","Own Tax plus Non tax Revenue","Capital Outlay","Capital Outlay as percentage of Total Expenditure"]
     data: any = {};    
     toNumber(d) {
-    if (d == "All") {
-      //this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
-    } else {
-      this.butDisabled = false;
-    }
-    
-    }
+      if (d == "All") {
+        this.data.Comparison = "None"
+        this.Comparison = ["None"]
+      } else {
+        this.Comparison = ["None","Total Tax  Revenue","Own Tax Revenue","Own Non tax Revenue","Own Tax plus Non tax Revenue","Capital Outlay","Capital Outlay as percentage of Total Expenditure"]
+      }
+      
+      }
+      toView(view){
+        if (view == "line") {
+          this.years = ["All"];
+        } else {
+          this.years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+        }
+      }
+      toYear(year){
+        if(year == "All"){
+          this.views = ViewsNotMap
+          
+        }else{
+          this.views  = ViewsNotDistrict
+          
+        }
+      }
     
   onSubmit(user) {
     var controller = "revenue_account4s"
-
+    user.rain_fall_type = "Amount"
     if (user.view !== "Map View") {
 
       console.log("errror");
