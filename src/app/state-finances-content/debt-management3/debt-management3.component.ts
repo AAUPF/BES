@@ -51,19 +51,7 @@ export class DebtManagement3Component implements OnInit {
     Comparison = ["None","Discharge of internal debt","Repayment of loans to Centre","Discharge of other liabilities","Total Repayment","Total Interest Payment","Total Debt Service Burden"]
     
     data: any = {};    
-    // toNumber(d) {
-    // if (d == "All") {
-    //   //this.data == {years: null, views: "",Comparison: ""};
-    //   this.data.Comparison  = undefined
-    //   this.butDisabled = true;
-
-    // } else {
-    //   this.butDisabled = false;
-    //   this.Comparison = ["None","Discharge of internal debt","Repayment of loans to Centre","Discharge of other liabilities","Total Repayment","Total Interest Payment","Total Debt Service Burden"]
-
-    // }
-    // }
-
+    
     toView(view){
       if (view == "line") {
         this.years = ["All"];
@@ -73,6 +61,7 @@ export class DebtManagement3Component implements OnInit {
         }
     toSet(select){
       if (select == "All") {
+        this.data.Comparison  = "None"
         this.Comparison  = ["None"]
         
       } else {

@@ -57,6 +57,7 @@ export class RevenueAccount1Component implements OnInit {
               this.data.districts1 = "None"
               this.Districts1 = ["None"]
           if (d == "All") {
+            this.data.Comparison = "None"
             this.Comparison = ["None"]
           } else {
             this.Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
@@ -78,6 +79,7 @@ export class RevenueAccount1Component implements OnInit {
         this.data.districts = "None"
           this.Districts = ["None"]
         if (d == "All") {
+          this.data.Comparison = "None"
           this.Comparison = ["None"]
         } else {
           this.Comparison = ["None","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]

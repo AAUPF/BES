@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SvgService } from '../../services/svg.service';
 import { AgricultureService } from '../../services/agriculture.service';
-import { Districts } from '../../data/districts';
+import { Districts, Districtswithoutbihar } from '../../data/districts';
 import { ModalComponent } from '../../modal/modal.component';
 import { SvgcomponentComponent } from '../../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -38,7 +38,7 @@ export class TaxDepartment5Component implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  Districts = Districts;
+  Districts = Districtswithoutbihar
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
@@ -47,14 +47,15 @@ export class TaxDepartment5Component implements OnInit {
   views = NewViews;
   rain_fall_type = [{key: "All", value: "All"},{key:"Number of Document",value:"Number_of_Document"},	{key:"Total Receipt",value:"Total_Receipt"},	{key:"Target",value:"Target"},	{key:"Percentage receipt against target",value:"Percentage_receipt_against_target"},{key:"Receipt per Document",value:"Receipt_per_Document"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None"]
+    Comparison = ["None","District vs Total"]
     data: any = {};    
     toNumber(d) {
         if (d == "All") {
           this.data.Comparison = "None"
+          this.Comparison = ["None"]
 
         } else {
-          this.Comparison = ["None"]
+          this.Comparison = ["None","District vs Total"]
         }
     }
     toHide(view){

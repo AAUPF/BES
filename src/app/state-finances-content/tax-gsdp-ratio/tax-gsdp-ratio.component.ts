@@ -53,8 +53,9 @@ export class TaxGSDPRatioComponent implements OnInit {
     Comparison = ["None","Bihar vs State"]
     data: any = {};    
     toNumber(d) {
-        if (d == "All") {
-          this.Comparison = ["None"]
+      if (d == "All" || d == "Bihar") {
+        this.data.Comparison = "None"
+        this.Comparison  = ["None"]
         } else {
           this.Comparison = ["None","Bihar vs State"]
         }

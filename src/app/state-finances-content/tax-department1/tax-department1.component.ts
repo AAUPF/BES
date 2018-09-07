@@ -54,7 +54,8 @@ export class TaxDepartment1Component implements OnInit {
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
+      // this.data == {years: null, views: "",Comparison: ""};
+      this.data.Comparison = "None"
       this.Comparison_sort = [{key: "None", value: "None"}]
     } else {
       this.Comparison_sort = this.Comparison.sort(f.compare);

@@ -53,6 +53,7 @@ export class TaxDepartment3Component implements OnInit {
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
+      this.data.Comparison = "None"
       this.Comparison = ["None"]
       
     } else {

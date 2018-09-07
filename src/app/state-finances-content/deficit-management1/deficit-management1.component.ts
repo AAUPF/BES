@@ -76,7 +76,8 @@ export class DeficitManagement1Component implements OnInit {
   }
     }
       toSet(select){
-        if (select == "All") {
+        if (select == "All" || select == "Bihar") {
+          this.data.Comparison = "None"
           this.Comparison  = ["None"]
           
         } else {

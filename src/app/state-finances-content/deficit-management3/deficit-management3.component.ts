@@ -50,18 +50,7 @@ export class DeficitManagement3Component implements OnInit {
     Comparison = ["None","Revenue Deficit","Capital Outlay","Net Lending","GFD","GSDP","GFD: GSDP ratio (percentage)"]
     
     data: any = {};    
-    // toNumber(d) {
-    // if (d == "All") {
-    //   this.data.Comparison  = undefined
-    //   this.butDisabled = true;
-
-    // } else {
-    //   this.butDisabled = false;
-    //   this.Comparison = ["None","Revenue Deficit","Capital Outlay","Net Lending","GFD","GSDP","GFD: GSDP ratio (percentage)"]
-
-    // }
     
-    // }
 
     toView(view){
       if (view == "line") {
@@ -72,6 +61,7 @@ export class DeficitManagement3Component implements OnInit {
         }
     toSet(select){
       if (select == "All") {
+        this.data.Comparison  = "None"
         this.Comparison  = ["None"]
         
       } else {
