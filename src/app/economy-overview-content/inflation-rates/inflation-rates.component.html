@@ -24,10 +24,10 @@
                         <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                     </select>
   
-                    <!-- <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
+                    <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
                         <option [ngValue]="undefined" disabled  selected> Compare Indicator  </option>
                         <option class='option' *ngFor='let option of years' [ngValue]="option.value">{{option.key}}</option>
-                    </select> -->
+                    </select>
                         <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
                             <option [ngValue]="undefined" disabled  selected> Views  </option>
                             <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>

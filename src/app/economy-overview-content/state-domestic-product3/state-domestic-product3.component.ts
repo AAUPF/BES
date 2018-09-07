@@ -11,6 +11,8 @@ import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
+import { ViewsNotTrend } from '../../data/viewsnottrend';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -267,6 +269,22 @@ export class StateDomesticProduct3Component implements OnInit {
       else {
         this.butDisabled = false;
       }
+    }
+
+    toyear(d){
+      if (d == "All") {
+        this.data.view = undefined
+
+       
+        this.views = ViewsNotMap
+        
+      } else {
+        this.data.view = undefined
+
+        this.views = ViewsNotDistrict
+        
+      }
+
     }
   onSubmit(user) {
     var controller = "annual_state_domestic_product3s"

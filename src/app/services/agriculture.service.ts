@@ -160,11 +160,17 @@ subscribe(res => {
 
 }
 
-
+ compareDataPointYAscend(dataPoint1, dataPoint2) {
+  return dataPoint1.y - dataPoint2.y;
+}
 barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,controller,views){
+
+
   let url = `${this.apiRoot1}/`+controller+`/test?search=` + district + `&year=`+year+ `&rain_fall_type=`+rain_fall_type+ `&compare=`+compare+ `&views=`+views;
   // let url = `${this.apiRoot}`;
     console.log(url);
+
+    
     let str = rain_fall_type.replace( /_/g, " " );
     
   this.http.get(url).
@@ -194,10 +200,11 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
 
           }  else {
+
+         
             this.j = res;
             
             let chart1 = new CanvasJS.Chart("chartContainer", this.j);
-    
             chart1.render();
             // alert("error")
           }
@@ -244,8 +251,6 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
             
             this.j = res;
             let chart1 = new CanvasJS.Chart("chartContainer", this.j);
-
-            
             chart1.render();
             // alert("error")
           }
@@ -287,7 +292,6 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
         });
 
           } else {
-
 
             this.j = res;
             console.log(res);

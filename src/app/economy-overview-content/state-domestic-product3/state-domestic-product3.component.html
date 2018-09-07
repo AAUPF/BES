@@ -19,7 +19,7 @@
             <div class="contactSelect">
               <form #f="ngForm" (ngSubmit)="onSubmit(data)">
 <div class="cen_sel">
-    <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
+    <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years" (ngModelChange)="toyear(data.years)">
         <option [ngValue]="undefined" disabled  selected> Year  </option>
         <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
     </select>
