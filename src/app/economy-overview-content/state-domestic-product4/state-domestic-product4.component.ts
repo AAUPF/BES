@@ -54,13 +54,13 @@ export class StateDomesticProduct4Component implements OnInit {
   ]
   years = [
 
-    {key:"2004–05",value:"2004–05"},
-    {key:"2005–06",value:"2005–06"},
-    {key:"2006–07",value:"2006–07"},
-    {key:"2007–08",value:"2007–08"},
-    {key:"2008–09",value:"2008–09"},
-    {key:"2009–10 ",value:"2009–10 "},
-    {key:"2010–11",value:"2010–11"},
+    {key:"2004-05",value:"2004-05"},
+    {key:"2005-06",value:"2005-06"},
+    {key:"2006-07",value:"2006-07"},
+    {key:"2007-08",value:"2007-08"},
+    {key:"2008-09",value:"2008-09"},
+    {key:"2009-10",value:"2009-10"},
+    {key:"2010-11",value:"2010-11"},
     {key:"2011-12",value:"2011-12"},
     {key:"2012-13",value:"2012-13"},
     {key:"2013-14 (P)",value:"2013-14 (P)"},
@@ -87,16 +87,15 @@ export class StateDomesticProduct4Component implements OnInit {
 
 
       if (d == "Base Year 2004-05 at Factor Cost") {
-         this.data.years = "2004–05"
+         this.data.years = "All"
         this.years = [
-
-          {key:"2004–05",value:"2004–05"},
-          {key:"2005–06",value:"2005–06"},
-          {key:"2006–07",value:"2006–07"},
-          {key:"2007–08",value:"2007–08"},
-          {key:"2008–09",value:"2008–09"},
-          {key:"2009–10 ",value:"2009–10 "},
-          {key:"2010–11",value:"2010–11"},
+          {key:"2004-05",value:"2004-05"},
+          {key:"2005-06",value:"2005-06"},
+          {key:"2006-07",value:"2006-07"},
+          {key:"2007-08",value:"2007-08"},
+          {key:"2008-09",value:"2008-09"},
+          {key:"2009-10",value:"2009-10"},
+          {key:"2010-11",value:"2010-11"},
           {key:"2011-12",value:"2011-12"},
           {key:"2012-13",value:"2012-13"},
           {key:"2013-14 (P)",value:"2013-14 (P)"},
@@ -106,7 +105,7 @@ export class StateDomesticProduct4Component implements OnInit {
         ];
         
       } else {
-        this.data.years = "2011-12"
+        this.data.years = "All"
 
         this.years = [
           {key:"2011-12",value:"2011-12"},
