@@ -45,6 +45,7 @@ export class InflationRatesComponent implements OnInit {
   visbile_table= false;
   Districts = ["All","Andhra Pradesh","Bihar","Chhattisgarh","Gujarat","Haryana","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Odisha","Punjab","Rajasthan","Tamil Nadu","Uttar Pradesh","All India"]
   years = [
+    {key:"All",value:"All"},
   {key:"Rural",value:"Rural"},
 {key:"Urban",value:"Urban"},
 {key:"Combined",value:"Combined"},
@@ -62,13 +63,53 @@ export class InflationRatesComponent implements OnInit {
     toNumber(d) {
     if (d == "All") {
       this.data.Comparison  = "None"
+      this.data.years = "Rural"
+      this.years = [
+      {key:"Rural",value:"Rural"},
+    {key:"Urban",value:"Urban"},
+    {key:"Combined",value:"Combined"},
+    
+    ]
       this.butDisabled = true;
     } else {
+      this.years = [
+        {key:"All",value:"All"},
+      {key:"Rural",value:"Rural"},
+    {key:"Urban",value:"Urban"},
+    {key:"Combined",value:"Combined"},
+    
+    ]
       this.butDisabled = false;
     }
     
     }
-    
+
+    compare(d){
+
+
+      if (d == "None") {
+        this.data.rain_fall_type = "All"
+
+        this.rain_fall_type_sort = [{key:"All",value:"All"},
+        {key:"Oct 16 Index Final",value:"Oct_16_Index_Final"},
+        {key:"Oct 17 Index Provisional",value:"Oct_17_Index_Provisional"},
+        {key:"Inflation Rate in percentage",value:"Inflation_Rate_in_percentage"},
+        
+      ]
+    }
+      
+      else {
+     this.data.rain_fall_type = "Oct_16_Index_Final"
+
+        this.rain_fall_type_sort = [
+        {key:"Oct 16 Index Final",value:"Oct_16_Index_Final"},
+        {key:"Oct 17 Index Provisional",value:"Oct_17_Index_Provisional"},
+        {key:"Inflation Rate in percentage",value:"Inflation_Rate_in_percentage"},
+        
+      ]
+    }
+    }
+  
   onSubmit(user) {
 
 
