@@ -135,6 +135,7 @@ import { TaxDepartment2Component } from './state-finances-content/tax-department
 import { TaxDepartment3Component } from './state-finances-content/tax-department3/tax-department3.component';
 import { TaxDepartment4Component } from './state-finances-content/tax-department4/tax-department4.component';
 import { TaxDepartment5Component } from './state-finances-content/tax-department5/tax-department5.component';
+import { ExpenditureManagementComponent } from './state-finances-content/expenditure-management/expenditure-management.component';
 
 
 
@@ -268,6 +269,7 @@ import { TaxDepartment5Component } from './state-finances-content/tax-department
     TaxDepartment3Component,
     TaxDepartment4Component,
     TaxDepartment5Component,
+    ExpenditureManagementComponent,
   
     ],
   imports: [

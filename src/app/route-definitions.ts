@@ -120,6 +120,8 @@ import { TaxDepartment4Component } from './state-finances-content/tax-department
 import { TaxDepartment5Component } from './state-finances-content/tax-department5/tax-department5.component';
 import { FinancialPosition1Component } from './state-finances-content/financial-position1/financial-position1.component';
 
+import { ExpenditureManagementComponent } from './state-finances-content/expenditure-management/expenditure-management.component';
+
 export const appRoutes: Routes = [
 
     {
@@ -600,6 +602,11 @@ export const appRoutes: Routes = [
      {
         path: 'FinancialPosition1',
         component: FinancialPosition1Component
+     },
+
+     {
+        path: 'ExpenditureManagement',
+        component: ExpenditureManagementComponent
      },
      
 ];
