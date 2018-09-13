@@ -149,9 +149,11 @@ import { BiharStartUpPolicyComponent } from './enterprises-content/bihar-start-u
 import { Tourism1Component } from './enterprises-content/tourism1/tourism1.component';
 import { Tourism2Component } from './enterprises-content/tourism2/tourism2.component';
 import { MiningAndQuarryingComponent } from './enterprises-content/mining-and-quarrying/mining-and-quarrying.component';
-
 import { ExpenditureManagementComponent } from './state-finances-content/expenditure-management/expenditure-management.component';
-
+import { TaxDepartment6Component } from './state-finances-content/tax-department6/tax-department6.component';
+import { StatePublicSector1Component } from './state-finances-content/state-public-sector1/state-public-sector1.component';
+import { StatePublicSector2Component } from './state-finances-content/state-public-sector2/state-public-sector2.component';
+import { StatePublicSector3Component } from './state-finances-content/state-public-sector3/state-public-sector3.component';
 export const appRoutes: Routes = [
 
     {
@@ -633,14 +635,12 @@ export const appRoutes: Routes = [
         path: 'FinancialPosition1',
         component: FinancialPosition1Component
      },
-<<<<<<< HEAD
 
      {
         path: 'ExpenditureManagement',
         component: ExpenditureManagementComponent
      },
      
-=======
      {
         path: 'Enterprises-Sector',
         component: EnterprisesComponent
@@ -761,5 +761,20 @@ export const appRoutes: Routes = [
         path: 'Enterprises-Sector/Mining-And-Quarrying',
         component: MiningAndQuarryingComponent
      },
->>>>>>> 95a297c3bf4e0d01f82d414006f311a37dd9714c
+     {
+        path: 'StatePublicSector1',
+        component: StatePublicSector1Component
+     },
+     {
+        path: 'StatePublicSector2',
+        component: StatePublicSector2Component
+     },
+     {
+        path: 'StatePublicSector3',
+        component: StatePublicSector3Component
+     },
+     {
+        path: 'TaxDepartment6',
+        component: TaxDepartment6Component
+     },
 ];

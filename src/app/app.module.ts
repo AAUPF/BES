@@ -135,9 +135,7 @@ import { TaxDepartment2Component } from './state-finances-content/tax-department
 import { TaxDepartment3Component } from './state-finances-content/tax-department3/tax-department3.component';
 import { TaxDepartment4Component } from './state-finances-content/tax-department4/tax-department4.component';
 import { TaxDepartment5Component } from './state-finances-content/tax-department5/tax-department5.component';
-<<<<<<< HEAD
 import { ExpenditureManagementComponent } from './state-finances-content/expenditure-management/expenditure-management.component';
-=======
 import { EnterprisesComponent } from './enterprises/enterprises.component';
 import { AnnualSurvey1Component } from './enterprises-content/annual-survey1/annual-survey1.component';
 import { AnnualSurvey2Component } from './enterprises-content/annual-survey2/annual-survey2.component';
@@ -168,8 +166,10 @@ import { BiharStartUpPolicyComponent } from './enterprises-content/bihar-start-u
 import { Tourism1Component } from './enterprises-content/tourism1/tourism1.component';
 import { Tourism2Component } from './enterprises-content/tourism2/tourism2.component';
 import { MiningAndQuarryingComponent } from './enterprises-content/mining-and-quarrying/mining-and-quarrying.component';
->>>>>>> 95a297c3bf4e0d01f82d414006f311a37dd9714c
-
+import { TaxDepartment6Component } from './state-finances-content/tax-department6/tax-department6.component';
+import { StatePublicSector1Component } from './state-finances-content/state-public-sector1/state-public-sector1.component';
+import { StatePublicSector2Component } from './state-finances-content/state-public-sector2/state-public-sector2.component';
+import { StatePublicSector3Component } from './state-finances-content/state-public-sector3/state-public-sector3.component';
 
 
 @NgModule({
@@ -302,9 +302,7 @@ import { MiningAndQuarryingComponent } from './enterprises-content/mining-and-qu
     TaxDepartment3Component,
     TaxDepartment4Component,
     TaxDepartment5Component,
-<<<<<<< HEAD
     ExpenditureManagementComponent,
-=======
     EnterprisesComponent,
     AnnualSurvey1Component,
     AnnualSurvey2Component,
@@ -335,8 +333,11 @@ import { MiningAndQuarryingComponent } from './enterprises-content/mining-and-qu
     Tourism1Component,
     Tourism2Component,
     MiningAndQuarryingComponent,
+    StatePublicSector1Component,
+    StatePublicSector2Component,
+    StatePublicSector3Component,
+    TaxDepartment6Component,
     
->>>>>>> 95a297c3bf4e0d01f82d414006f311a37dd9714c
   
     ],
   imports: [
