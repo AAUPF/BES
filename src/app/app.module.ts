@@ -146,7 +146,40 @@ import { appRoutes1 } from './nilay-routes';
 import { SectoralExpenditureComponent } from './state-finances-content/sectoral-expenditure/sectoral-expenditure.component';
 import { SectoralExpenditure1Component } from './state-finances-content/sectoral-expenditure1/sectoral-expenditure1.component';
 import { SectoralExpenditure2Component } from './state-finances-content/sectoral-expenditure2/sectoral-expenditure2.component';
-
+import { EnterprisesComponent } from './enterprises/enterprises.component';
+import { AnnualSurvey1Component } from './enterprises-content/annual-survey1/annual-survey1.component';
+import { AnnualSurvey2Component } from './enterprises-content/annual-survey2/annual-survey2.component';
+import { AnnualSurvey3Component } from './enterprises-content/annual-survey3/annual-survey3.component';
+import { AnnualSurvey4Component } from './enterprises-content/annual-survey4/annual-survey4.component';
+import { AnnualSurvey5Component } from './enterprises-content/annual-survey5/annual-survey5.component';
+import { AnnualSurvey6Component } from './enterprises-content/annual-survey6/annual-survey6.component';
+import { AnnualSurvey7Component } from './enterprises-content/annual-survey7/annual-survey7.component';
+import { SupportInstitutions1Component } from './enterprises-content/support-institutions1/support-institutions1.component';
+import { SupportInstitutions2Component } from './enterprises-content/support-institutions2/support-institutions2.component';
+import { SupportInstitutions3Component } from './enterprises-content/support-institutions3/support-institutions3.component';
+import { SupportInstitutions4Component } from './enterprises-content/support-institutions4/support-institutions4.component';
+import { AgroBasedIndustries1Component } from './enterprises-content/agro-based-industries1/agro-based-industries1.component';
+import { AgroBasedIndustries2Component } from './enterprises-content/agro-based-industries2/agro-based-industries2.component';
+import { AgroBasedIndustries3Component } from './enterprises-content/agro-based-industries3/agro-based-industries3.component';
+import { AgroBasedIndustries4Component } from './enterprises-content/agro-based-industries4/agro-based-industries4.component';
+import { AgroBasedIndustries5Component } from './enterprises-content/agro-based-industries5/agro-based-industries5.component';
+import { NonAgroBasedIndustries1Component } from './enterprises-content/non-agro-based-industries1/non-agro-based-industries1.component';
+import { NonAgroBasedIndustries2Component } from './enterprises-content/non-agro-based-industries2/non-agro-based-industries2.component';
+import { NonAgroBasedIndustries3Component } from './enterprises-content/non-agro-based-industries3/non-agro-based-industries3.component';
+import { NonAgroBasedIndustries4Component } from './enterprises-content/non-agro-based-industries4/non-agro-based-industries4.component';
+import { NonAgroBasedIndustries5Component } from './enterprises-content/non-agro-based-industries5/non-agro-based-industries5.component';
+import { SixthEconomicCensus1Component } from './enterprises-content/sixth-economic-census1/sixth-economic-census1.component';
+import { SixthEconomicCensus2Component } from './enterprises-content/sixth-economic-census2/sixth-economic-census2.component';
+import { BiharIndustrialInvestment1Component } from './enterprises-content/bihar-industrial-investment1/bihar-industrial-investment1.component';
+import { BiharIndustrialInvestment2Component } from './enterprises-content/bihar-industrial-investment2/bihar-industrial-investment2.component';
+import { BiharStartUpPolicyComponent } from './enterprises-content/bihar-start-up-policy/bihar-start-up-policy.component';
+import { Tourism1Component } from './enterprises-content/tourism1/tourism1.component';
+import { Tourism2Component } from './enterprises-content/tourism2/tourism2.component';
+import { MiningAndQuarryingComponent } from './enterprises-content/mining-and-quarrying/mining-and-quarrying.component';
+import { TaxDepartment6Component } from './state-finances-content/tax-department6/tax-department6.component';
+import { StatePublicSector1Component } from './state-finances-content/state-public-sector1/state-public-sector1.component';
+import { StatePublicSector2Component } from './state-finances-content/state-public-sector2/state-public-sector2.component';
+import { StatePublicSector3Component } from './state-finances-content/state-public-sector3/state-public-sector3.component';
 
 
 @NgModule({
@@ -289,6 +322,40 @@ import { SectoralExpenditure2Component } from './state-finances-content/sectoral
     SectoralExpenditureComponent,
     SectoralExpenditure1Component,
     SectoralExpenditure2Component,
+    EnterprisesComponent,
+    AnnualSurvey1Component,
+    AnnualSurvey2Component,
+    AnnualSurvey3Component,
+    AnnualSurvey4Component,
+    AnnualSurvey5Component,
+    AnnualSurvey6Component,
+    AnnualSurvey7Component,
+    SupportInstitutions1Component,
+    SupportInstitutions2Component,
+    SupportInstitutions3Component,
+    SupportInstitutions4Component,
+    AgroBasedIndustries1Component,
+    AgroBasedIndustries2Component,
+    AgroBasedIndustries3Component,
+    AgroBasedIndustries4Component,
+    AgroBasedIndustries5Component,
+    NonAgroBasedIndustries1Component,
+    NonAgroBasedIndustries2Component,
+    NonAgroBasedIndustries3Component,
+    NonAgroBasedIndustries4Component,
+    NonAgroBasedIndustries5Component,
+    SixthEconomicCensus1Component,
+    SixthEconomicCensus2Component,
+    BiharIndustrialInvestment1Component,
+    BiharIndustrialInvestment2Component,
+    BiharStartUpPolicyComponent,
+    Tourism1Component,
+    Tourism2Component,
+    MiningAndQuarryingComponent,
+    StatePublicSector1Component,
+    StatePublicSector2Component,
+    StatePublicSector3Component,
+    TaxDepartment6Component,
   
     ],
   imports: [
