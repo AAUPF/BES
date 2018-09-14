@@ -19,11 +19,12 @@ interface years<> {
 let f = new Functions();
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-expenditure-management',
-  templateUrl: './expenditure-management.component.html',
-  styleUrls: ['./expenditure-management.component.css']
+  selector: 'app-expenditure-management3',
+  templateUrl: './expenditure-management3.component.html',
+  styleUrls: ['./expenditure-management3.component.css']
 })
-export class ExpenditureManagementComponent implements OnInit {
+export class ExpenditureManagement3Component implements OnInit {
+
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     
   }
@@ -49,11 +50,10 @@ export class ExpenditureManagementComponent implements OnInit {
     {key:"General Services",value:"General Services"},
     {key:"Social Services",value:"Social Services"},
     {key:"Economic Services",value:"Economic Services"},
-    {key:"Grants in Aid ",value:"Grants in Aid "},
     {key:"Capital Outlay",value:"Capital Outlay"},
-    {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-    {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-    {key:"Total  ",value:"Total  "},
+    {key:"Discharge of Public Debt",value:"Discharge of Public Debt"},
+    {key:"Loans and Advances ",value:"Loans and Advances "},
+    {key:"Total ",value:"Total "},
     {key:"None",value:"None"},
   ]
 
@@ -63,11 +63,10 @@ export class ExpenditureManagementComponent implements OnInit {
     {key:"General Services",value:"General Services"},
     {key:"Social Services",value:"Social Services"},
     {key:"Economic Services",value:"Economic Services"},
-    {key:"Grants in Aid ",value:"Grants in Aid "},
     {key:"Capital Outlay",value:"Capital Outlay"},
-    {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-    {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-    {key:"Total  ",value:"Total  "},
+    {key:"Discharge of Public Debt",value:"Discharge of Public Debt"},
+    {key:"Loans and Advances ",value:"Loans and Advances "},
+    {key:"Total ",value:"Total "},
   
   
   ]
@@ -87,11 +86,10 @@ export class ExpenditureManagementComponent implements OnInit {
           {key:"General Services",value:"General Services"},
           {key:"Social Services",value:"Social Services"},
           {key:"Economic Services",value:"Economic Services"},
-          {key:"Grants in Aid ",value:"Grants in Aid "},
           {key:"Capital Outlay",value:"Capital Outlay"},
-          {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-          {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-          {key:"Total  ",value:"Total  "},
+          {key:"Discharge of Public Debt",value:"Discharge of Public Debt"},
+          {key:"Loans and Advances ",value:"Loans and Advances "},
+          {key:"Total ",value:"Total "},
           {key:"None",value:"None"},
         ]
         
@@ -169,7 +167,7 @@ export class ExpenditureManagementComponent implements OnInit {
       }
     
   onSubmit(user) {
-    var controller = "expenditure_managements"
+    var controller = "expenditure_management3s"
 
     if (user.view !== "Map View") {
 
@@ -217,4 +215,5 @@ export class ExpenditureManagementComponent implements OnInit {
   }
 
   ngOnInit() {}
+
 }

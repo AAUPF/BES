@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="pageTitle">
-            <h2>Share of Commercial Taxes in Total Revenue  </h2>
+            <h2> Details of Revenue Expenditure  </h2>
             <div class="btnArea"><a (click)="cancel()" class="btn btn-primary"><i class="fa fa-angle-left" aria-hidden="true"></i> Back </a></div>
           </div>
         </div>
@@ -25,7 +25,7 @@
                     </select> -->
   
                     <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
-                      <option [ngValue]="undefined" disabled  selected> Amount  </option>
+                      <option [ngValue]="undefined" disabled  selected> Expenditure Heads  </option>
                       <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
                   </select>
   
@@ -46,7 +46,7 @@
                         <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                     </div>
                 </form>
-                <div class="unt-txt">Unit - (Rs crore, Percentage)</div>
+                <div class="unt-txt">Unit - (Rs. crore)</div>
                     <div style="clear: both;"> </div>	
                     <!-- <table id="myId"></table> -->
                     <div class="hideContainer"></div>                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="source-txt"> Source : State Governments’ Budgets</div>
                     <app-modal></app-modal>
-                    <!-- <object data="assets/img/bihar.svg" id="biharsvg" type="image/svg+xml"></object> -->
+                    
                 </div>
              </div>
          </div>

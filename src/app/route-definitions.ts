@@ -119,42 +119,30 @@ import { TaxDepartment3Component } from './state-finances-content/tax-department
 import { TaxDepartment4Component } from './state-finances-content/tax-department4/tax-department4.component';
 import { TaxDepartment5Component } from './state-finances-content/tax-department5/tax-department5.component';
 import { FinancialPosition1Component } from './state-finances-content/financial-position1/financial-position1.component';
-import { EnterprisesComponent } from './enterprises/enterprises.component';
-import { AnnualSurvey1Component } from './enterprises-content/annual-survey1/annual-survey1.component';
-import { AnnualSurvey2Component } from './enterprises-content/annual-survey2/annual-survey2.component';
-import { AnnualSurvey3Component } from './enterprises-content/annual-survey3/annual-survey3.component';
-import { AnnualSurvey4Component } from './enterprises-content/annual-survey4/annual-survey4.component';
-import { AnnualSurvey5Component } from './enterprises-content/annual-survey5/annual-survey5.component';
-import { AnnualSurvey6Component } from './enterprises-content/annual-survey6/annual-survey6.component';
-import { AnnualSurvey7Component } from './enterprises-content/annual-survey7/annual-survey7.component';
-import { SupportInstitutions1Component } from './enterprises-content/support-institutions1/support-institutions1.component';
-import { SupportInstitutions2Component } from './enterprises-content/support-institutions2/support-institutions2.component';
-import { SupportInstitutions3Component } from './enterprises-content/support-institutions3/support-institutions3.component';
-import { SupportInstitutions4Component } from './enterprises-content/support-institutions4/support-institutions4.component';
-import { AgroBasedIndustries1Component } from './enterprises-content/agro-based-industries1/agro-based-industries1.component';
-import { AgroBasedIndustries2Component } from './enterprises-content/agro-based-industries2/agro-based-industries2.component';
-import { AgroBasedIndustries3Component } from './enterprises-content/agro-based-industries3/agro-based-industries3.component';
-import { AgroBasedIndustries4Component } from './enterprises-content/agro-based-industries4/agro-based-industries4.component';
-import { AgroBasedIndustries5Component } from './enterprises-content/agro-based-industries5/agro-based-industries5.component';
-import { NonAgroBasedIndustries1Component } from './enterprises-content/non-agro-based-industries1/non-agro-based-industries1.component';
-import { NonAgroBasedIndustries2Component } from './enterprises-content/non-agro-based-industries2/non-agro-based-industries2.component';
-import { NonAgroBasedIndustries3Component } from './enterprises-content/non-agro-based-industries3/non-agro-based-industries3.component';
-import { NonAgroBasedIndustries4Component } from './enterprises-content/non-agro-based-industries4/non-agro-based-industries4.component';
-import { NonAgroBasedIndustries5Component } from './enterprises-content/non-agro-based-industries5/non-agro-based-industries5.component';
-import { SixthEconomicCensus1Component } from './enterprises-content/sixth-economic-census1/sixth-economic-census1.component';
-import { SixthEconomicCensus2Component } from './enterprises-content/sixth-economic-census2/sixth-economic-census2.component';
-import { BiharIndustrialInvestment1Component } from './enterprises-content/bihar-industrial-investment1/bihar-industrial-investment1.component';
-import { BiharIndustrialInvestment2Component } from './enterprises-content/bihar-industrial-investment2/bihar-industrial-investment2.component';
-import { BiharStartUpPolicyComponent } from './enterprises-content/bihar-start-up-policy/bihar-start-up-policy.component';
-import { Tourism1Component } from './enterprises-content/tourism1/tourism1.component';
-import { Tourism2Component } from './enterprises-content/tourism2/tourism2.component';
-import { MiningAndQuarryingComponent } from './enterprises-content/mining-and-quarrying/mining-and-quarrying.component';
 import { ExpenditureManagementComponent } from './state-finances-content/expenditure-management/expenditure-management.component';
-import { TaxDepartment6Component } from './state-finances-content/tax-department6/tax-department6.component';
-import { StatePublicSector1Component } from './state-finances-content/state-public-sector1/state-public-sector1.component';
-import { StatePublicSector2Component } from './state-finances-content/state-public-sector2/state-public-sector2.component';
-import { StatePublicSector3Component } from './state-finances-content/state-public-sector3/state-public-sector3.component';
+import { ExpenditureManagement1Component } from './state-finances-content/expenditure-management1/expenditure-management1.component';
+import { ExpenditureManagement2Component } from './state-finances-content/expenditure-management2/expenditure-management2.component';
+
+import { ExpenditureManagement3Component } from './state-finances-content/expenditure-management3/expenditure-management3.component';
+
+import { RevenueExpenditureComponent } from './state-finances-content/revenue-expenditure/revenue-expenditure.component';
+
+import { ExpenditureOnSalaryAndPensionComponent } from './state-finances-content/expenditure-on-salary-and-pension/expenditure-on-salary-and-pension.component';
+
+
+
+
 export const appRoutes: Routes = [
+    {
+        path: 'ExpenditureOnSalaryAndPension',
+        component: ExpenditureOnSalaryAndPensionComponent
+     },
+
+
+    {
+        path: 'RevenueExpenditure',
+        component: RevenueExpenditureComponent
+     },
 
     {
        path: '',
@@ -635,146 +623,25 @@ export const appRoutes: Routes = [
         path: 'FinancialPosition1',
         component: FinancialPosition1Component
      },
-
      {
         path: 'ExpenditureManagement',
         component: ExpenditureManagementComponent
      },
+     {
+        path: 'ExpenditureManagement1',
+        component: ExpenditureManagement1Component
+     },
+
+     {
+        path: 'ExpenditureManagement2',
+        component: ExpenditureManagement2Component
+     },
      
+
      {
-        path: 'Enterprises-Sector',
-        component: EnterprisesComponent
+        path: 'ExpenditureManagement3',
+        component: ExpenditureManagement3Component
      },
-     {
-        path: 'Enterprises-Sector/AnnualSurvey1',
-        component: AnnualSurvey1Component
-     },
-     {
-        path: 'Enterprises-Sector/AnnualSurvey2',
-        component: AnnualSurvey2Component
-     },
-     {
-        path: 'Enterprises-Sector/AnnualSurvey3',
-        component: AnnualSurvey3Component
-     },
-     {
-        path: 'Enterprises-Sector/AnnualSurvey4',
-        component: AnnualSurvey4Component
-     },
-     {
-        path: 'Enterprises-Sector/AnnualSurvey5',
-        component: AnnualSurvey5Component
-     },
-     {
-        path: 'Enterprises-Sector/AnnualSurvey6',
-        component: AnnualSurvey6Component
-     },
-     {
-        path: 'Enterprises-Sector/AnnualSurvey7',
-        component: AnnualSurvey7Component
-     },
-     {
-        path: 'Enterprises-Sector/SupportInstitutions1',
-        component: SupportInstitutions1Component
-     },
-     {
-        path: 'Enterprises-Sector/SupportInstitutions2',
-        component: SupportInstitutions2Component
-     },
-     {
-        path: 'Enterprises-Sector/SupportInstitutions3',
-        component: SupportInstitutions3Component
-     },
-     {
-        path: 'Enterprises-Sector/SupportInstitutions4',
-        component: SupportInstitutions4Component
-     },
-     {
-        path: 'Enterprises-Sector/AgroBasedIndustries1',
-        component: AgroBasedIndustries1Component
-     },
-     {
-        path: 'Enterprises-Sector/AgroBasedIndustries2',
-        component: AgroBasedIndustries2Component
-     },
-     {
-        path: 'Enterprises-Sector/AgroBasedIndustries3',
-        component: AgroBasedIndustries3Component
-     },
-     {
-        path: 'Enterprises-Sector/AgroBasedIndustries4',
-        component: AgroBasedIndustries4Component
-     },
-     {
-        path: 'Enterprises-Sector/AgroBasedIndustries5',
-        component: AgroBasedIndustries5Component
-     },
-     {
-        path: 'Enterprises-Sector/NonAgroBasedIndustries1',
-        component: NonAgroBasedIndustries1Component
-     },
-     {
-        path: 'Enterprises-Sector/NonAgroBasedIndustries2',
-        component: NonAgroBasedIndustries2Component
-     },
-     {
-        path: 'Enterprises-Sector/NonAgroBasedIndustries3',
-        component: NonAgroBasedIndustries3Component
-     },
-     {
-        path: 'Enterprises-Sector/NonAgroBasedIndustries4',
-        component: NonAgroBasedIndustries4Component
-     },
-     {
-        path: 'Enterprises-Sector/NonAgroBasedIndustries5',
-        component: NonAgroBasedIndustries5Component
-     },
-     {
-        path: 'Enterprises-Sector/SixthEconomicCensus1',
-        component: SixthEconomicCensus1Component
-     },
-     {
-        path: 'Enterprises-Sector/SixthEconomicCensus2',
-        component: SixthEconomicCensus2Component
-     },
-     {
-        path: 'Enterprises-Sector/BiharIndustrialInvestment1',
-        component: BiharIndustrialInvestment1Component
-     },
-     {
-        path: 'Enterprises-Sector/BiharIndustrialInvestment2',
-        component: BiharIndustrialInvestment2Component
-     },
-     {
-        path: 'Enterprises-Sector/Bihar-Start-Up-Policy',
-        component: BiharStartUpPolicyComponent
-     },
-     {
-        path: 'Enterprises-Sector/Tourism1',
-        component: Tourism1Component
-     },
-     {
-        path: 'Enterprises-Sector/Tourism2',
-        component: Tourism2Component
-     },
-     {
-        path: 'Enterprises-Sector/Mining-And-Quarrying',
-        component: MiningAndQuarryingComponent
-     },
-     {
-        path: 'StatePublicSector1',
-        component: StatePublicSector1Component
-     },
-     {
-        path: 'StatePublicSector2',
-        component: StatePublicSector2Component
-     },
-     {
-        path: 'StatePublicSector3',
-        component: StatePublicSector3Component
-     },
-     {
-        path: 'TaxDepartment6',
-        component: TaxDepartment6Component
-     },
+     
+     
 ];

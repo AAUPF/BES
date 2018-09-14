@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="pageTitle">
-            <h2>Share of Commercial Taxes in Total Revenue  </h2>
+            <h2>Quality Parameters of Expenditure  </h2>
             <div class="btnArea"><a (click)="cancel()" class="btn btn-primary"><i class="fa fa-angle-left" aria-hidden="true"></i> Back </a></div>
           </div>
         </div>
@@ -19,10 +19,10 @@
               <div class="contactSelect">
                 <form #f="ngForm" (ngSubmit)="onSubmit(data)">
   <div class="cen_sel">
-                    <!-- <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toSet(data.districts)">
+                    <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toSet(data.districts)">
                         <option [ngValue]="undefined" disabled  selected> Sector  </option>
                         <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
-                    </select> -->
+                    </select>
   
                     <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
                       <option [ngValue]="undefined" disabled  selected> Amount  </option>
@@ -38,10 +38,10 @@
                             <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                         </select>
                      
-                            <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
+                            <!-- <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
                                 <option [ngValue]="undefined" disabled  selected> Comparison  </option>
-                                <option class='option' *ngFor='let option of Comparison' [ngValue]="option.value">{{option.key}}</option>
-                            </select>
+                                <option class='option' *ngFor='let option of Comparison' [ngValue]="option">{{option}}</option>
+                            </select> -->
                         <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
                         <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                     </div>

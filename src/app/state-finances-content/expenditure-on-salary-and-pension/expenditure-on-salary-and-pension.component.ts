@@ -19,11 +19,12 @@ interface years<> {
 let f = new Functions();
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-expenditure-management',
-  templateUrl: './expenditure-management.component.html',
-  styleUrls: ['./expenditure-management.component.css']
+  selector: 'app-expenditure-on-salary-and-pension',
+  templateUrl: './expenditure-on-salary-and-pension.component.html',
+  styleUrls: ['./expenditure-on-salary-and-pension.component.css']
 })
-export class ExpenditureManagementComponent implements OnInit {
+export class ExpenditureOnSalaryAndPensionComponent implements OnInit {
+
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     
   }
@@ -39,35 +40,27 @@ export class ExpenditureManagementComponent implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["Public Debt","Other Liabilities"]
+  Districts = ["Expenditure on Salaries","Expenditure on Pensions","Total expenditure on Salary and Pension","All"]
   years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
 
 
   Comparison = [
-    {key:"General Services",value:"General Services"},
-    {key:"Social Services",value:"Social Services"},
-    {key:"Economic Services",value:"Economic Services"},
-    {key:"Grants in Aid ",value:"Grants in Aid "},
-    {key:"Capital Outlay",value:"Capital Outlay"},
-    {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-    {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-    {key:"Total  ",value:"Total  "},
-    {key:"None",value:"None"},
+    {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
+    {key:"Mining and Quarrying",value:"Mining and Quarrying"},
   ]
 
 
   rain_fall_type = [
     {key:"All",value:"All"},
-    {key:"General Services",value:"General Services"},
-    {key:"Social Services",value:"Social Services"},
-    {key:"Economic Services",value:"Economic Services"},
-    {key:"Grants in Aid ",value:"Grants in Aid "},
-    {key:"Capital Outlay",value:"Capital Outlay"},
-    {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-    {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-    {key:"Total  ",value:"Total  "},
+    {key:"Non-Plan Head",value:"Non-Plan Head"},
+    {key:"Plan Head",value:"Plan Head"},
+    {key:"Salary as percentage of GSDP",value:"Salary as percentage of GSDP"},
+    {key:"Salary as percentage of RR",value:"Salary as percentage of RR"},
+    {key:"Salary as percentage of RE",value:"Salary as percentage of RE"},
+    {key:"None",value:"None"},
+   
   
   
   ]
@@ -76,26 +69,6 @@ export class ExpenditureManagementComponent implements OnInit {
      //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
-
-      if (d == "All") {
-        this.data.Comparison = "None"
-        this.Comparison = [{key:"None",value:"None"}]
-        
-      } else {
-        this.data.Comparison = "None"
-        this.Comparison = [
-          {key:"General Services",value:"General Services"},
-          {key:"Social Services",value:"Social Services"},
-          {key:"Economic Services",value:"Economic Services"},
-          {key:"Grants in Aid ",value:"Grants in Aid "},
-          {key:"Capital Outlay",value:"Capital Outlay"},
-          {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-          {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-          {key:"Total  ",value:"Total  "},
-          {key:"None",value:"None"},
-        ]
-        
-      }
     
     }
     toView(view){
@@ -111,68 +84,79 @@ export class ExpenditureManagementComponent implements OnInit {
   // }
     }
       toSet(select){
-        if (select == "Public Debt") {         
+        if (select == "Expenditure on Salaries") {    
+          this.data.rain_fall_type = "All"    
       this.rain_fall_type_sort = [
         {key:"All",value:"All"},
-        {key:"Internal  Debt",value:"Internal  Debt"},
-        {key:"Central Loans",value:"Central Loans"},
-        {key:"Total",value:"Total"},
-      
+        {key:"Non-Plan Head",value:"Non-Plan Head"},
+        {key:"Plan Head",value:"Plan Head"},
+        {key:"Salary as percentage of GSDP",value:"Salary as percentage of GSDP"},
+        {key:"Salary as percentage of RR",value:"Salary as percentage of RR"},
+        {key:"Salary as percentage of RE",value:"Salary as percentage of RE"},
+        {key:"None",value:"None"},
   ]
-           
-        }  else if (select == "Other Liabilities") {
-
-
+        }  else if (select == "Expenditure on Pensions") {
+          this.data.rain_fall_type = "All" 
           this.rain_fall_type_sort = [
             {key:"All",value:"All"},
-            {key:"Small Savings, PF etc.",value:"Small Savings, PF etc."},
-            {key:"Reserve Funds",value:"Reserve Funds"},
-            {key:"Deposits and Advances",value:"Deposits and Advances"},
-            {key:"Total",value:"Total"},
-            {key:"Total (Public Debt plus Other Liabilities)",value:"Total (Public Debt plus Other Liabilities)"},
-            {key:"Outstanding Liability as Percentage of GSDP",value:"Outstanding Liability as Percentage of GSDP"},
-           
-
+            {key:"Rate of Growth",value:"Rate of Growth"},
+            {key:"Pension as percentage of GSDP",value:"Pension as percentage of GSDP"},
+            {key:"Pension as percentage of RR",value:"Pension as percentage of RR"},
+            {key:"Pension as percentage of RE",value:"Pension as percentage of RE"},
+            {key:"Salary as percentage of RE",value:"Salary as percentage of RE"},
+            {key:"None",value:"None"},
           ]
         }
 
-  
+        else if (select == "Total expenditure on Salary and Pension") {
+          this.data.rain_fall_type = "None" 
+          this.rain_fall_type_sort = [
+            {key:"All",value:"All"},
+            {key:"Total as percentage of GSDP",value:"Total as percentage of GSDP"},
+            {key:"Total as percentage of RR",value:"Total as percentage of RR"},
+            {key:"Total as percentage of RE",value:"Total as percentage of RE"},
+            {key:"None",value:"None"},
+          ]
+        }
         
         else {
+          this.data.rain_fall_type = "All" 
           this.rain_fall_type_sort = [ 
             {key:"All",value:"All"},
-            {key:"Internal  Debt",value:"Internal  Debt"},
-            {key:"Central Loans",value:"Central Loans"},
-            {key:"Total",value:"Total"},
-            {key:"Small Savings, PF etc.",value:"Small Savings, PF etc."},
-            {key:"Reserve Funds",value:"Reserve Funds"},
-            {key:"Deposits and Advances",value:"Deposits and Advances"},
-            {key:"Total",value:"Total"},
-            {key:"Total (Public Debt plus Other Liabilities)",value:"Total (Public Debt plus Other Liabilities)"},
-            {key:"Outstanding Liability as Percentage of GSDP",value:"Outstanding Liability as Percentage of GSDP"},
-           
-          
+            {key:"Non-Plan Head",value:"Non-Plan Head"},
+            {key:"Plan Head",value:"Plan Head"},
+            {key:"Salary as percentage of GSDP",value:"Salary as percentage of GSDP"},
+            {key:"Salary as percentage of RR",value:"Salary as percentage of RR"},
+            {key:"Salary as percentage of RE",value:"Salary as percentage of RE"},
+            {key:"Rate of Growth",value:"Rate of Growth"},
+            {key:"Pension as percentage of GSDP",value:"Pension as percentage of GSDP"},
+            {key:"Pension as percentage of RR",value:"Pension as percentage of RR"},
+            {key:"Pension as percentage of RE",value:"Pension as percentage of RE"},
+            {key:"Salary as percentage of RE",value:"Salary as percentage of RE"},
+            {key:"Total as percentage of GSDP",value:"Total as percentage of GSDP"},
+            {key:"Total as percentage of RR",value:"Total as percentage of RR"},
+            {key:"Total as percentage of RE",value:"Total as percentage of RE"},
           ]
         }
       }
-
-
-     
       toYear(year){
         if(year == "All"){
+          this.data.views = "column"
           this.views = ViewsNotMap
          
         }else{
+          this.data.views = "column"
           this.views  = ViewsNotDistrict
          
         }
       }
     
   onSubmit(user) {
-    var controller = "expenditure_managements"
+    var controller = "expenditure_on_salary_and_pensions"
 
     if (user.view !== "Map View") {
 
+      console.log("errror");
       
       this.visbile_chart= true;
       this.visbile= false;

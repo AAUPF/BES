@@ -47,8 +47,16 @@ export class DebtManagement4Component implements OnInit {
 
 
   Comparison = [
-    {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
-    {key:"Mining and Quarrying",value:"Mining and Quarrying"},
+    {key:"Gross Central Loans Received",value:"Gross Central Loans Received"},
+    {key:"Internal Debt Recd",value:"Internal Debt Recd"},
+    {key:"Total Public Debt Received",value:"Total Public Debt Received"},
+    {key:"Recoveries of Loans and Advances",value:"Recoveries of Loans and Advances"},
+    {key:"Interest payments",value:"Interest payments"},
+    {key:"Interest Received",value:"Interest Received"},
+    {key:"Repayment of Debt ",value:"Repayment of Debt "},
+    {key:"Net Public Debt Received",value:"Net Public Debt Received"},
+    {key:"Net Debt Received as percentage             of total borrowing",value:"Net Debt Received as percentage             of total borrowing"},
+    {key:"None", value:"None"}
   ]
 
 
@@ -72,6 +80,27 @@ export class DebtManagement4Component implements OnInit {
      //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
+
+      if (d == "All") {
+        this.data.Comparison = "None"
+        this.Comparison = [{key:"None",value:"None"}]
+        
+      } else {
+        this.data.Comparison = "None"
+        this.Comparison = [
+          {key:"Gross Central Loans Received",value:"Gross Central Loans Received"},
+          {key:"Internal Debt Recd",value:"Internal Debt Recd"},
+          {key:"Total Public Debt Received",value:"Total Public Debt Received"},
+          {key:"Recoveries of Loans and Advances",value:"Recoveries of Loans and Advances"},
+          {key:"Interest payments",value:"Interest payments"},
+          {key:"Interest Received",value:"Interest Received"},
+          {key:"Repayment of Debt ",value:"Repayment of Debt "},
+          {key:"Net Public Debt Received",value:"Net Public Debt Received"},
+          {key:"Net Debt Received as percentage             of total borrowing",value:"Net Debt Received as percentage             of total borrowing"},
+          {key:"None", value:"None"}
+        ]
+        
+      }
     
     }
     toView(view){

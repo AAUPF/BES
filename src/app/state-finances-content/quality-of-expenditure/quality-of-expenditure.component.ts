@@ -19,11 +19,12 @@ interface years<> {
 let f = new Functions();
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-expenditure-management',
-  templateUrl: './expenditure-management.component.html',
-  styleUrls: ['./expenditure-management.component.css']
+  selector: 'app-quality-of-expenditure',
+  templateUrl: './quality-of-expenditure.component.html',
+  styleUrls: ['./quality-of-expenditure.component.css']
 })
-export class ExpenditureManagementComponent implements OnInit {
+export class QualityOfExpenditureComponent implements OnInit {
+
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     
   }
@@ -39,35 +40,34 @@ export class ExpenditureManagementComponent implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["Public Debt","Other Liabilities"]
+  Districts = [
+    "All",
+    "Capital Outlay (Rs. crore)",
+    "Revenue Expenditure (Rs. crore)",
+    "Expenditure on Social/ Economic Services (Rs. crore)",
+    "Capital Outlay/ Total Expenditure (Percentage)",
+    "Revenue Expenditure / Total Expenditure (Percentage)",
+    "Revenue Expenditure /GSDP (Percentage)",
+    "Capital Outlay /GSDP (Percentage)",
+  ]
   years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
 
 
   Comparison = [
-    {key:"General Services",value:"General Services"},
-    {key:"Social Services",value:"Social Services"},
-    {key:"Economic Services",value:"Economic Services"},
-    {key:"Grants in Aid ",value:"Grants in Aid "},
-    {key:"Capital Outlay",value:"Capital Outlay"},
-    {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-    {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-    {key:"Total  ",value:"Total  "},
-    {key:"None",value:"None"},
+    {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
+    {key:"Mining and Quarrying",value:"Mining and Quarrying"},
   ]
 
 
   rain_fall_type = [
     {key:"All",value:"All"},
-    {key:"General Services",value:"General Services"},
-    {key:"Social Services",value:"Social Services"},
-    {key:"Economic Services",value:"Economic Services"},
-    {key:"Grants in Aid ",value:"Grants in Aid "},
-    {key:"Capital Outlay",value:"Capital Outlay"},
-    {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-    {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-    {key:"Total  ",value:"Total  "},
+    {key:"Net Borrowing",value:"Net Borrowing"},
+    {key:"Net Public Account",value:"Net Public Account"},
+    {key:"Net Decrease in Cash Balance (Opening - Closing Balance)",value:"Net Decrease in Cash Balance (Opening - Closing Balance)"},
+    {key:"GFD",value:"GFD"},
+   
   
   
   ]
@@ -76,26 +76,6 @@ export class ExpenditureManagementComponent implements OnInit {
      //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
-
-      if (d == "All") {
-        this.data.Comparison = "None"
-        this.Comparison = [{key:"None",value:"None"}]
-        
-      } else {
-        this.data.Comparison = "None"
-        this.Comparison = [
-          {key:"General Services",value:"General Services"},
-          {key:"Social Services",value:"Social Services"},
-          {key:"Economic Services",value:"Economic Services"},
-          {key:"Grants in Aid ",value:"Grants in Aid "},
-          {key:"Capital Outlay",value:"Capital Outlay"},
-          {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-          {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-          {key:"Total  ",value:"Total  "},
-          {key:"None",value:"None"},
-        ]
-        
-      }
     
     }
     toView(view){
@@ -111,68 +91,61 @@ export class ExpenditureManagementComponent implements OnInit {
   // }
     }
       toSet(select){
-        if (select == "Public Debt") {         
+        if (select == "Expenditure on Social/ Economic Services (Rs. crore)") {    
+          this.data.rain_fall_type = "All"    
       this.rain_fall_type_sort = [
         {key:"All",value:"All"},
-        {key:"Internal  Debt",value:"Internal  Debt"},
-        {key:"Central Loans",value:"Central Loans"},
-        {key:"Total",value:"Total"},
-      
+        {key:"(i) Salary Component (Rs. crore)",value:"(i) Salary Component (Rs. crore)"},
+        {key:"Salary component (Percentage)",value:"Salary component (Percentage)"},
+        {key:"(ii)  Non salary component (Rs. crore)",value:"(ii)  Non salary component (Rs. crore)"},
+        {key:"Non-salary component (Percentage)",value:"Non-salary component (Percentage)"},
+        {key:"None",value:"None"},
   ]
-           
-        }  else if (select == "Other Liabilities") {
-
-
+        }  else if (select == "II.  Receipts from Centre") {
+          this.data.rain_fall_type = "All" 
           this.rain_fall_type_sort = [
             {key:"All",value:"All"},
-            {key:"Small Savings, PF etc.",value:"Small Savings, PF etc."},
-            {key:"Reserve Funds",value:"Reserve Funds"},
-            {key:"Deposits and Advances",value:"Deposits and Advances"},
-            {key:"Total",value:"Total"},
-            {key:"Total (Public Debt plus Other Liabilities)",value:"Total (Public Debt plus Other Liabilities)"},
-            {key:"Outstanding Liability as Percentage of GSDP",value:"Outstanding Liability as Percentage of GSDP"},
-           
-
+            {key:"(a)  Share of Divisible Taxes",value:"(a)  Share of Divisible Taxes"},
+            {key:"(b) Grants-in-aid",value:"(b) Grants-in-aid"},
+            {key:"None",value:"None"},
           ]
         }
 
-  
+        else if (select == "III. Total Revenue Receipts") {
+          this.data.rain_fall_type = "None" 
+          this.rain_fall_type_sort = [
+            {key:"State’s Own Revenue as Percentage of Total Receipts",value:"State’s Own Revenue as Percentage of Total Receipts"},
+            {key:"None",value:"None"},
+          ]
+        }
         
         else {
+          this.data.rain_fall_type = "None" 
           this.rain_fall_type_sort = [ 
-            {key:"All",value:"All"},
-            {key:"Internal  Debt",value:"Internal  Debt"},
-            {key:"Central Loans",value:"Central Loans"},
-            {key:"Total",value:"Total"},
-            {key:"Small Savings, PF etc.",value:"Small Savings, PF etc."},
-            {key:"Reserve Funds",value:"Reserve Funds"},
-            {key:"Deposits and Advances",value:"Deposits and Advances"},
-            {key:"Total",value:"Total"},
-            {key:"Total (Public Debt plus Other Liabilities)",value:"Total (Public Debt plus Other Liabilities)"},
-            {key:"Outstanding Liability as Percentage of GSDP",value:"Outstanding Liability as Percentage of GSDP"},
-           
+            {key:"None",value:"None"},
+            
           
           ]
         }
       }
-
-
-     
       toYear(year){
         if(year == "All"){
+          this.data.views = "column"
           this.views = ViewsNotMap
          
         }else{
+          this.data.views = "column"
           this.views  = ViewsNotDistrict
          
         }
       }
     
   onSubmit(user) {
-    var controller = "expenditure_managements"
+    var controller = "qualityofexpenditures"
 
     if (user.view !== "Map View") {
 
+      console.log("errror");
       
       this.visbile_chart= true;
       this.visbile= false;
@@ -217,4 +190,6 @@ export class ExpenditureManagementComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+
 }

@@ -38,10 +38,10 @@
                             <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                         </select>
                      
-                            <!-- <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
+                            <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
                                 <option [ngValue]="undefined" disabled  selected> Comparison  </option>
-                                <option class='option' *ngFor='let option of Comparison' [ngValue]="option">{{option}}</option>
-                            </select> -->
+                                <option class='option' *ngFor='let option of Comparison' [ngValue]="option.value">{{option.key}}</option>
+                            </select>
                         <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
                         <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                     </div>

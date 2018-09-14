@@ -47,8 +47,12 @@ export class TaxDepartment2Component implements OnInit {
 
 
   Comparison = [
-    {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
-    {key:"Mining and Quarrying",value:"Mining and Quarrying"},
+    {key:"Total Revenue of State (Rs. crore)",value:"Total Revenue of State (Rs. crore)"},
+    {key:"State’s Own Tax Revenues (Rs. crore)",value:"State’s Own Tax Revenues (Rs. crore)"},
+    {key:"Revenue from Commercial Taxes (Rs. crore)",value:"Revenue from Commercial Taxes (Rs. crore)"},
+    {key:"Share of Commercial Taxes in Total Revenue (Percentage)",value:"Share of Commercial Taxes in Total Revenue (Percentage)"},
+    {key:"Share of Commercial Taxes in State’s Own Taxes (Percentage)",value:"Share of Commercial Taxes in State’s Own Taxes (Percentage)"},
+    {key:"None",value:"None"}
   ]
 
 
@@ -67,6 +71,23 @@ export class TaxDepartment2Component implements OnInit {
      //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
+
+      if (d == "All") {
+        this.data.Comparison = "None"
+        this.Comparison = [{key:"None",value:"None"}]
+        
+      } else {
+        this.data.Comparison = "None"
+        this.Comparison = [
+          {key:"Total Revenue of State (Rs. crore)",value:"Total Revenue of State (Rs. crore)"},
+          {key:"State’s Own Tax Revenues (Rs. crore)",value:"State’s Own Tax Revenues (Rs. crore)"},
+          {key:"Revenue from Commercial Taxes (Rs. crore)",value:"Revenue from Commercial Taxes (Rs. crore)"},
+          {key:"Share of Commercial Taxes in Total Revenue (Percentage)",value:"Share of Commercial Taxes in Total Revenue (Percentage)"},
+          {key:"Share of Commercial Taxes in State’s Own Taxes (Percentage)",value:"Share of Commercial Taxes in State’s Own Taxes (Percentage)"},
+          {key:"None",value:"None"}
+        ]
+        
+      }
     
     }
     toView(view){

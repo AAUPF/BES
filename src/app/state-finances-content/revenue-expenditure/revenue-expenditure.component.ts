@@ -19,11 +19,12 @@ interface years<> {
 let f = new Functions();
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-expenditure-management',
-  templateUrl: './expenditure-management.component.html',
-  styleUrls: ['./expenditure-management.component.css']
+  selector: 'app-revenue-expenditure',
+  templateUrl: './revenue-expenditure.component.html',
+  styleUrls: ['./revenue-expenditure.component.css']
 })
-export class ExpenditureManagementComponent implements OnInit {
+export class RevenueExpenditureComponent implements OnInit {
+
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
     
   }
@@ -46,28 +47,50 @@ export class ExpenditureManagementComponent implements OnInit {
 
 
   Comparison = [
-    {key:"General Services",value:"General Services"},
-    {key:"Social Services",value:"Social Services"},
-    {key:"Economic Services",value:"Economic Services"},
-    {key:"Grants in Aid ",value:"Grants in Aid "},
-    {key:"Capital Outlay",value:"Capital Outlay"},
-    {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-    {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-    {key:"Total  ",value:"Total  "},
+    {key:"Revenue Expenditure (RE)",value:"Revenue Expenditure (RE)"},
+    {key:"Capital Expenditure (CE)",value:"Capital Expenditure (CE)"},
+    {key:"Total Expenditure (TE)",value:"Total Expenditure (TE)"},
+    {key:"Non Plan Expenditure",value:"Non Plan Expenditure"},
+    {key:"Revenue A/c (NPRE)",value:"Revenue A/c (NPRE)"},
+    {key:"Capital A/c",value:"Capital A/c"},
+    {key:"Plan Expenditure",value:"Plan Expenditure"},
+    {key:"Revenue A/c (PRE)",value:"Revenue A/c (PRE)"},
+    {key:"Capital A/c",value:"Capital A/c"},
+    {key:"Rate of growth of NPRE (Percentage)",value:"Rate of growth of NPRE (Percentage)"},
+    {key:"Rate of growth of PRE (Percentage)",value:"Rate of growth of PRE (Percentage)"},
+    {key:"RE/TE(Percentage)",value:"RE/TE(Percentage)"},
+    {key:"NPRE/TE (Percentage)",value:"NPRE/TE (Percentage)"},
+    {key:"TE/GSDP(Percentage)",value:"TE/GSDP(Percentage)"},
+    {key:"RE/GSDP(Percentage)",value:"RE/GSDP(Percentage)"},
+    {key:"Revenue Receipt (RR)/TE (Percentage)",value:"Revenue Receipt (RR)/TE (Percentage)"},
+    {key:"NPRE/RR(Percentage)",value:"NPRE/RR(Percentage)"},
+    {key:"Buoyancy of RE w.r.t. GSDP",value:"Buoyancy of RE w.r.t. GSDP"},
+    {key:"Buoyancy of RE w.r.t. RR",value:"Buoyancy of RE w.r.t. RR"},
     {key:"None",value:"None"},
   ]
 
 
   rain_fall_type = [
     {key:"All",value:"All"},
-    {key:"General Services",value:"General Services"},
-    {key:"Social Services",value:"Social Services"},
-    {key:"Economic Services",value:"Economic Services"},
-    {key:"Grants in Aid ",value:"Grants in Aid "},
-    {key:"Capital Outlay",value:"Capital Outlay"},
-    {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-    {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-    {key:"Total  ",value:"Total  "},
+    {key:"Revenue Expenditure (RE)",value:"Revenue Expenditure (RE)"},
+    {key:"Capital Expenditure (CE)",value:"Capital Expenditure (CE)"},
+    {key:"Total Expenditure (TE)",value:"Total Expenditure (TE)"},
+    {key:"Non Plan Expenditure",value:"Non Plan Expenditure"},
+    {key:"Revenue A/c (NPRE)",value:"Revenue A/c (NPRE)"},
+    {key:"Capital A/c",value:"Capital A/c"},
+    {key:"Plan Expenditure",value:"Plan Expenditure"},
+    {key:"Revenue A/c (PRE)",value:"Revenue A/c (PRE)"},
+    {key:"Capital A/c",value:"Capital A/c"},
+    {key:"Rate of growth of NPRE (Percentage)",value:"Rate of growth of NPRE (Percentage)"},
+    {key:"Rate of growth of PRE (Percentage)",value:"Rate of growth of PRE (Percentage)"},
+    {key:"RE/TE(Percentage)",value:"RE/TE(Percentage)"},
+    {key:"NPRE/TE (Percentage)",value:"NPRE/TE (Percentage)"},
+    {key:"TE/GSDP(Percentage)",value:"TE/GSDP(Percentage)"},
+    {key:"RE/GSDP(Percentage)",value:"RE/GSDP(Percentage)"},
+    {key:"Revenue Receipt (RR)/TE (Percentage)",value:"Revenue Receipt (RR)/TE (Percentage)"},
+    {key:"NPRE/RR(Percentage)",value:"NPRE/RR(Percentage)"},
+    {key:"Buoyancy of RE w.r.t. GSDP",value:"Buoyancy of RE w.r.t. GSDP"},
+    {key:"Buoyancy of RE w.r.t. RR",value:"Buoyancy of RE w.r.t. RR"},
   
   
   ]
@@ -84,14 +107,25 @@ export class ExpenditureManagementComponent implements OnInit {
       } else {
         this.data.Comparison = "None"
         this.Comparison = [
-          {key:"General Services",value:"General Services"},
-          {key:"Social Services",value:"Social Services"},
-          {key:"Economic Services",value:"Economic Services"},
-          {key:"Grants in Aid ",value:"Grants in Aid "},
-          {key:"Capital Outlay",value:"Capital Outlay"},
-          {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-          {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-          {key:"Total  ",value:"Total  "},
+          {key:"Revenue Expenditure (RE)",value:"Revenue Expenditure (RE)"},
+          {key:"Capital Expenditure (CE)",value:"Capital Expenditure (CE)"},
+          {key:"Total Expenditure (TE)",value:"Total Expenditure (TE)"},
+          {key:"Non Plan Expenditure",value:"Non Plan Expenditure"},
+          {key:"Revenue A/c (NPRE)",value:"Revenue A/c (NPRE)"},
+          {key:"Capital A/c",value:"Capital A/c"},
+          {key:"Plan Expenditure",value:"Plan Expenditure"},
+          {key:"Revenue A/c (PRE)",value:"Revenue A/c (PRE)"},
+          {key:"Capital A/c",value:"Capital A/c"},
+          {key:"Rate of growth of NPRE (Percentage)",value:"Rate of growth of NPRE (Percentage)"},
+          {key:"Rate of growth of PRE (Percentage)",value:"Rate of growth of PRE (Percentage)"},
+          {key:"RE/TE(Percentage)",value:"RE/TE(Percentage)"},
+          {key:"NPRE/TE (Percentage)",value:"NPRE/TE (Percentage)"},
+          {key:"TE/GSDP(Percentage)",value:"TE/GSDP(Percentage)"},
+          {key:"RE/GSDP(Percentage)",value:"RE/GSDP(Percentage)"},
+          {key:"Revenue Receipt (RR)/TE (Percentage)",value:"Revenue Receipt (RR)/TE (Percentage)"},
+          {key:"NPRE/RR(Percentage)",value:"NPRE/RR(Percentage)"},
+          {key:"Buoyancy of RE w.r.t. GSDP",value:"Buoyancy of RE w.r.t. GSDP"},
+          {key:"Buoyancy of RE w.r.t. RR",value:"Buoyancy of RE w.r.t. RR"},
           {key:"None",value:"None"},
         ]
         
@@ -169,7 +203,7 @@ export class ExpenditureManagementComponent implements OnInit {
       }
     
   onSubmit(user) {
-    var controller = "expenditure_managements"
+    var controller = "revenue_expenditures"
 
     if (user.view !== "Map View") {
 
@@ -217,4 +251,5 @@ export class ExpenditureManagementComponent implements OnInit {
   }
 
   ngOnInit() {}
+
 }
