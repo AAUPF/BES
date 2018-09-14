@@ -26,75 +26,306 @@ declare var CanvasJS:any;
 export class FinancialPosition1Component implements OnInit {
 
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
-    
+    // this.AgricultureService.barchart();
+    // this.SvgService.barchart1("Muzaffarpur",2016);
   }
   cancel() {
     this.location.back(); // <-- go back to previous location on cancel
   }
+
+  
+  // title:string;
   title = ""
   butDisabled: boolean = false;
 
   public loading = false;
 
   htmlContent:string;
+  // Districts = Districts;
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Bihar","Jharkhand","West Bengal","Odisha","Uttar Pradesh","Madhya Pradesh ","Rajasthan","Maharashtra","Gujarat","Punjab","Haryana","Karnataka","Andhra Pradesh","Kerala","Tamil Nadu","Himachal Pradesh","Chhatisgarh"]
-  years = ["All","2015","2016_RE","2017_RE"];
-  views = ViewsNotMap
-  rain_fall_type = [{key:"All",value:"All"},{key:"Revenue Deficit GFD Percentage",value:"Revenue_Deficit_GFD_Percentage"},{key:"Capital Outlay GFD Percentage",value:"Capital_Outlay_GFD_Percentage"},{key:"Non Dev Exp Agg Disbursements Percentage",value:"Non_Dev_Exp_Agg_Disbursements_Percentage"},{key:"Non Dev Exp Revenue Receipts Percentage",value:"Non_Dev_Exp_Revenue_Receipts_Percentage"},{key:"Interest Payments Revenue Exp Percentage",value:"Interest_Payments_Revenue_Exp_Percentage"},{key:"State Own Revenue Revenue Exp Percentage",value:"State_Own_Revenue_Revenue_Exp_Percentage"},{key:"Gross Transfers Aggregate Disbursements Percentage",value:"Gross_Transfers_Aggregate_Disbursements_Percentage"},{key:"Debt Servicing Gross Transfers Percentage",value:"Debt_Servicing_Gross_Transfers_Percentage"}]
+
+  Price_Reference = [
+     "As number of GSDP",
+     "As percentage of GSDP",
+]
+  Districts = [
+      "Total Receipts Revenue Account",
+      "Total Exp. Revenue Account",
+      "Revenue Deficit",
+      "Capital Receipts",
+      "Capital Expenditure, of which",
+      "Total Expenditure",
+      "Gross Fiscal Deficit",
+      "Primary Deficit",
+      "Total Borrowings",
+      "Repayment of Public Debt",
+      "Debt Outstanding",
+      "GSDP",  
+    ]
+
+  years = [
+    {key:"All",value:"All"},
+    {key:"2012-13",value:"2012-13"},
+    {key:"2013-14",value:"2013-14"},
+    {key:"2014-15",value:"2014-15"},
+    {key:"2015-16",value:"2015-16"},
+    {key:"2016-17",value:"2016-17"},
+    {key:"2017-18_BE",value:"2017-18_BE"},
+];
+  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
+  views = ViewsNotMap;
+  rain_fall_type = [
+    
+    {key:"All",value:"All"},
+  
+    {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
+    {key:"Crops",value:"Crops"},
+    {key:"Livestock",value:"Livestock"},
+    {key:"Forestry and Logging",value:"Forestry and Logging"},
+    {key:"Fishing and Aquaculture",value:"Fishing and Aquaculture"},
+    {key:"Mining and Quarrying",value:"Mining and Quarrying"},
+    {key:"Total Primary Sector",value:"Total Primary Sector"},
+    {key:"Manufacturing",value:"Manufacturing"},
+    {key:"Electricity, gas, water supply and other utility services",value:"Electricity, gas, water supply and other utility services"},
+    {key:"Construction",value:"Construction"},
+    {key:"Total Secondary Sector",value:"Total Secondary Sector"},
+    {key:"Trade, repair, hotels and restaurants",value:"Trade, repair, hotels and restaurants"},
+    {key:"Trade and repair services",value:"Trade and repair services"},
+    {key:"Hotels and restaurants",value:"Hotels and restaurants"},
+    {key:"Transport, storage, communication and services related to broadcasting",value:"Transport, storage, communication and services related to broadcasting"},
+    {key:"Railways",value:"Railways"},
+    {key:"Road transport",value:"Road transport"},
+    {key:"Water transport",value:"Water transport"},
+    {key:"Air transport",value:"Air transport"},
+    {key:"Services incidental to transport",value:"Services incidental to transport"},
+    {key:"Storage",value:"Storage"},
+    {key:"Communication and services related to broadcasting",value:"Communication and services related to broadcasting"},
+    {key:"Financial services",value:"Financial services"},
+    {key:"Real estate, ownership of dwelling and professional services",value:"Real estate, ownership of dwelling and professional services"},
+    {key:"Public administration",value:"Public administration"},
+    {key:"Other services",value:"Other services"},
+    {key:"Total Tertiary Sector",value:"Total Tertiary Sector"},
+    {key:"Total Gross State Value Added at basic prices",value:"Total Gross State Value Added at basic prices"},
+    {key:"Taxes on Products",value:"Taxes on Products"},
+    {key:"Subsidies on products",value:"Subsidies on products"},
+    {key:"Gross State Domestic Product",value:"Gross State Domestic Product"},
+
+
+]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None","Bihar vs State"]
+  Comparison  = [
+    {key:"None",value:"None"},
+  ]
+    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
+     //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
-    toNumber(d) {
-      if (d == "All") {
-        this.years = ["2015","2016_RE","2017_RE"];
+
+    compare(d) {
+
+
+      if (d == "General Services, of which") {
+        this.data.Comparison = "All"
+        this.Comparison = 
+        [
+          {key:"Interest Payments",value:"Interest Payments"},
+          {key:"None",value:"None"},
+  
+        ]
+        
       } 
+
+      
       else {
-        if (this.data.view == "line") {
-          this.years = ["All"];
-        } else {
-          this.years = ["All","2015","2016_RE","2017_RE"];
-        }
+      this.data.Comparison = "None"
+      this.Comparison = 
+  
+        [
+          {key:"None",value:"None"},
+  
+        ]
       
       }
+      
     }
-    toView(view){
-  if (view == "line") {
-    this.years = ["All"];
-  } else {
-    if (this.data.rain_fall_type == "All") {
-      this.years = ["2015","2016_RE","2017_RE"];
-    } else {
-      this.years = ["All","2015","2016_RE","2017_RE"];
+ 
+    toSet(select){
+
+      
+      if (select == "All") {
+        this.data.rain_fall_type  = undefined
+
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},
+          {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
+          {key:"Mining and Quarrying",value:"Mining and Quarrying"},
+          {key:"Manufacturing",value:"Manufacturing"},
+          {key:"Electricity and Utilitiy Services",value:"Electricity and Utilitiy Services"},
+          {key:"Construction",value:"Construction"},
+          {key:"Trade and Hospitality",value:"Trade and Hospitality"},
+          {key:"Transport and Communication",value:"Transport and Communication"},
+          {key:"Financial Services",value:"Financial Services"},
+          {key:"Real Estate Services",value:"Real Estate Services"},
+          {key:"Public Administration",value:"Public Administration"},
+          {key:"Other Services",value:"Other Services"},
+          {key:"Total Gross State Value Added at basic prices",value:"Total Gross State Value Added at basic prices"},
+          {key:"Taxes on Products",value:"Taxes on Products"},
+          {key:"Subsidies on products",value:"Subsidies on products"},
+          {key:"Gross State Domestic Product",value:"Gross State Domestic Product"},
+          {key:"None",value:"None"},
+
+        
+        ]
+
+       
+      }
+      else if(select == "Total Receipts Revenue Account") { 
+        this.data.rain_fall_type  = undefined
+
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},
+          {key:"Tax Revenue",value:"Tax Revenue"},
+          {key:"Non Tax Revenue",value:"Non Tax Revenue"},
+          {key:"Grants in Aid and Contributions",value:"Grants in Aid and Contributions"},
+          {key:"None",value:"None"},
+      
+      ]
+
+      }
+
+      else if(select == "Total Exp. Revenue Account") { 
+        this.data.rain_fall_type  = undefined
+
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},
+          {key:"General Services, of which",value:"General Services, of which"},
+          {key:"Social Services",value:"Social Services"},
+          {key:"Economic Services",value:"Economic Services"},
+          {key:"Grants-in-aid",value:"Grants-in-aid"},
+          {key:"None",value:"None"},
+      
+      ]
+
+      }
+
+      else if(select == "Revenue Deficit") { 
+        this.data.rain_fall_type  = undefined
+
+        this.rain_fall_type_sort = [
+        {key:"None",value:"None"},
+      ]
+
+      }
+
+      else if(select == "Capital Receipts") { 
+        this.data.rain_fall_type  = undefined
+
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},
+          {key:"Public Debt etc.",value:"Public Debt etc."},
+        {key:"Recovery of Loan and Advances",value:"Recovery of Loan and Advances"},
+        {key:"None",value:"None"},
+      ]
+
+      }
+
+
+      else if(select == "Capital Expenditure, of which") { 
+        this.data.rain_fall_type  = undefined
+
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},
+          {key:"Capital Outlay",value:"Capital Outlay"},
+          {key:"Loans and Advances",value:"Loans and Advances"},
+          {key:"Public Debt.",value:"Public Debt."},
+         {key:"None",value:"None"},
+      ]
+
+      }
+
+      else if(select == "Total Expenditure") { 
+        this.data.rain_fall_type  = undefined
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},
+          {key:"Plan Expenditure",value:"Plan Expenditure"},
+          {key:"Non Plan Expenditure",value:"Non Plan Expenditure"},
+         {key:"None",value:"None"},
+      ]
+      }
+
+      else if(select == "Gross Fiscal Deficit") { 
+        this.data.rain_fall_type  = undefined
+        this.rain_fall_type_sort = [
+         {key:"None",value:"None"},
+      ]
+
+      }
+
+      else if(select == "Primary Deficit") { 
+        this.data.rain_fall_type  = undefined
+        this.rain_fall_type_sort = [
+         {key:"None",value:"None"},
+      ]
+
+      }
+
+      else if(select == "Total Borrowings") { 
+        this.data.rain_fall_type  = undefined
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},
+          {key:"Internal Debt Receipt",value:"Internal Debt Receipt"},
+          {key:"Loans from Central Government",value:"Loans from Central Government"},
+         {key:"None",value:"None"},
+      ]
+      }
+
+
+      else if(select == "Repayment of Public Debt") { 
+        this.data.rain_fall_type  = undefined
+        this.rain_fall_type_sort = [
+         {key:"None",value:"None"},
+      ]
+
+      }
+
+      else if(select == "Debt Outstanding") { 
+        this.data.rain_fall_type  = undefined
+        this.rain_fall_type_sort = [
+         {key:"None",value:"None"},
+      ]
+
+      }
+
+      else if(select == "GSDP") { 
+        this.data.rain_fall_type  = undefined
+        this.rain_fall_type_sort = [
+         {key:"None",value:"None"},
+      ]
+
+      }
+      else {
+        this.butDisabled = false;
+      }
     }
-    
-  }
-    }
-      toSet(select){
-        if (select == "All") {
-          this.Comparison  = ["None"]
+  
+      toyear(d){
+        if (d == "All") {
+          this.data.view = undefined
+  
+         
+          this.views = ViewsNotMap
           
         } else {
-          this.Comparison  = ["None","Bihar vs State"]
+          this.data.view = undefined
   
+          this.views = ViewsNotDistrict
+          
         }
+  
       }
-      toYear(year){
-        if(year == "All"){
-          this.views = ViewsNotMap
-          this.rain_fall_type = [{key:"Revenue Deficit GFD Percentage",value:"Revenue_Deficit_GFD_Percentage"},{key:"Capital Outlay GFD Percentage",value:"Capital_Outlay_GFD_Percentage"},{key:"Non Dev Exp Agg Disbursements Percentage",value:"Non_Dev_Exp_Agg_Disbursements_Percentage"},{key:"Non Dev Exp Revenue Receipts Percentage",value:"Non_Dev_Exp_Revenue_Receipts_Percentage"},{key:"Interest Payments Revenue Exp Percentage",value:"Interest_Payments_Revenue_Exp_Percentage"},{key:"State Own Revenue Revenue Exp Percentage",value:"State_Own_Revenue_Revenue_Exp_Percentage"},{key:"Gross Transfers Aggregate Disbursements Percentage",value:"Gross_Transfers_Aggregate_Disbursements_Percentage"},{key:"Debt Servicing Gross Transfers Percentage",value:"Debt_Servicing_Gross_Transfers_Percentage"}]
-          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-        }else{
-          this.views  = ViewsNotDistrict
-          this.rain_fall_type = [{key:"All",value:"All"},{key:"Revenue Deficit GFD Percentage",value:"Revenue_Deficit_GFD_Percentage"},{key:"Capital Outlay GFD Percentage",value:"Capital_Outlay_GFD_Percentage"},{key:"Non Dev Exp Agg Disbursements Percentage",value:"Non_Dev_Exp_Agg_Disbursements_Percentage"},{key:"Non Dev Exp Revenue Receipts Percentage",value:"Non_Dev_Exp_Revenue_Receipts_Percentage"},{key:"Interest Payments Revenue Exp Percentage",value:"Interest_Payments_Revenue_Exp_Percentage"},{key:"State Own Revenue Revenue Exp Percentage",value:"State_Own_Revenue_Revenue_Exp_Percentage"},{key:"Gross Transfers Aggregate Disbursements Percentage",value:"Gross_Transfers_Aggregate_Disbursements_Percentage"},{key:"Debt Servicing Gross Transfers Percentage",value:"Debt_Servicing_Gross_Transfers_Percentage"}]
-          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-        }
-      }
-    
   onSubmit(user) {
-    var controller = "fiscal_performance1s"
+    var controller = "financial_position1s"
 
     if (user.view !== "Map View") {
 
@@ -103,6 +334,7 @@ export class FinancialPosition1Component implements OnInit {
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
+      // this.AgricultureService.pie();
       if(user.view) { 
 
         if (user.view == "Table") {
@@ -115,33 +347,130 @@ export class FinancialPosition1Component implements OnInit {
           this.spinner.show();
           
         }
-        this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
+
+        this.AgricultureService.barchart_bihar_vs_district_rainfall_price(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view,user.Price_Reference);
         }
     } 
     else if(user.view == "Map View") {
      const that = this;
+      // this.AgricultureService.barchart();
       this.visbile_chart= false;
       this.visbile= true;
       this.visbile_table= false;
       this.title =user.rain_fall_type;
-      var controller = "fiscal_performance1s"
+      // this.SvgService.test("echamparan");
+      var controller = "annual_state_domestic_product1s"
       this.spinner.show();
       setTimeout(function() {
-        
+        //  that.SvgService.test("echamparan");
             that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
             var u = "wchamparan";
             that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
       }, 500);
-      
+      // this.SvgService.svg();
       
     }
- }     
-  
+
+
+    // if (user.view == "Graph") {
+    //   this.visbile_chart= true;
+    //   this.visbile= false;
+    //   this.visbile_table= false;
+
+    //   // this.AgricultureService.pie();
+    //   if (user.districts == "All") {
+    //     this.AgricultureService.bar_chart_all(user.districts,user.years,user.rain_fall_type,controller);
+    //   } 
+    //  else if(user.Comparison == "Bihar vs District") { 
+    //   this.AgricultureService.barchart_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+    //   }
+    //   else {
+    //     this.SvgService.barchart1(user.districts,user.years,user.rain_fall_type,controller);
+    //   }
+    // } 
+    // else if(user.view == "Trend Line") {
+    //   this.visbile_chart= true;
+    //   this.visbile= false;
+    //   this.visbile_table= false;
+
+    //   if (user.districts == "All") {
+    //     this.AgricultureService.trend_line_all(user.districts,user.years,user.rain_fall_type,user.view,controller);
+        
+    //   } 
+    //   else if(user.Comparison == "Bihar vs District") { 
+    //     this.AgricultureService.trend_line_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+    //     }
+    //   else {
+    //     this.SvgService.trend_line(user.districts,user.years,user.rain_fall_type,controller);
+    //   }
+      
+    // } 
+    // else if(user.view == "Table") {
+    //   this.visbile_chart= false;
+    //   this.visbile_table= true;
+    //   this.visbile= false;
+    //   this.spinner.show();
+
+    //   this.SvgService.table(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+    // }
+    // else if(user.view == "Map View") {
+    //  const that = this;
+    //   // this.AgricultureService.barchart();
+    //   this.visbile_chart= false;
+    //   this.visbile= true;
+    //   this.visbile_table= false;
+    //   this.title =user.rain_fall_type;
+    //   // this.SvgService.test("echamparan");
+    //   var controller = "agricultural_credit2s"
+    //   this.spinner.show();
+    //   setTimeout(function() {
+    //     //  that.SvgService.test("echamparan");
+    //         that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
+    //         var u = "wchamparan";
+    //         that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
+    //   }, 500);
+    //   // this.SvgService.svg();
+      
+    // }
+    // else if(user.view == "Bubble") {
+    //   this.visbile_chart= true;
+    //   this.visbile= false;
+    //   this.visbile_table= false;
+
+    //   // this.AgricultureService.pie();
+    //   if (user.districts == "All") {
+    //     this.AgricultureService.Bubble_all(user.districts,user.years,user.rain_fall_type,controller,user.view);
+    //   } 
+    //  else if(user.Comparison == "Bihar vs District") { 
+    //   this.AgricultureService.bubble_bihar_vs_district(user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
+    //   }
+    //   else {
+    //     this.SvgService.bubble(user.districts,user.years,user.rain_fall_type,controller,user.view);
+    //   }
+      
+    // } 
+
+  }     
+  // test(a) {
+  //   let map = document.getElementById("biharsvg") as HTMLObjectElement;
+  //   let svgDoc = map.contentDocument; // should be fine
+  //   let echamparan = svgDoc.getElementById(a);
+  //   echamparan.classList.add("mystyle");
+  //   console.log(echamparan); 
+  // }
 
   myEvent(event) {
     var n =  new TableExport(document.getElementsByTagName("table"));
   }
 
-  ngOnInit() {}
+  ngOnInit() {
 
+  
+   
+    // var n =  new TableExport(document.getElementsByTagName("table"));
+// this.AgricultureService.testgoogle()
+
+
+  
+  }
 }
