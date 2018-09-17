@@ -43,19 +43,19 @@ export class ResourceManagement4Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Taxes on Sales, Trade etc.","Taxes on Goods and Passengers","State Excise","Stamp and Registration Fees","Taxes on Vehicles","Land Revenue","Taxes & Duties on Electricity","Other Taxes and Duties  "]
+  Districts = ["All","Taxes on Sales, Trade etc.","Taxes on Goods and Passengers","State Excise","Stamp and Registration Fees","Taxes on Vehicles","Land Revenue","Taxes and Duties on Electricity","Other Taxes and Duties  "]
   years = ["All","2013-14","2014-15","2015-16","2016-17","2017-18_BE","CAGR_2012_to_18"];
   views = ViewsNotMap
   rain_fall_type = [{key:"Percentage Growth Over Previous Year",value:"Percentage_Growth_Over_Previous_Year"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = ["None","Taxes on Sales, Trade etc.","Taxes on Goods and Passengers","State Excise","Stamp and Registration Fees","Taxes on Vehicles","Land Revenue","Taxes & Duties on Electricity","Other Taxes and Duties  "]
+  Comparison = ["None","Taxes on Sales, Trade etc.","Taxes on Goods and Passengers","State Excise","Stamp and Registration Fees","Taxes on Vehicles","Land Revenue","Taxes and Duties on Electricity","Other Taxes and Duties  "]
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
         this.data.Comparison = "None"
         this.Comparison = ["None"]
       } else {
-        this.Comparison = ["None","Taxes on Sales, Trade etc.","Taxes on Goods and Passengers","State Excise","Stamp and Registration Fees","Taxes on Vehicles","Land Revenue","Taxes & Duties on Electricity","Other Taxes and Duties  "]
+        this.Comparison = ["None","Taxes on Sales, Trade etc.","Taxes on Goods and Passengers","State Excise","Stamp and Registration Fees","Taxes on Vehicles","Land Revenue","Taxes and Duties on Electricity","Other Taxes and Duties  "]
       }
       
       }

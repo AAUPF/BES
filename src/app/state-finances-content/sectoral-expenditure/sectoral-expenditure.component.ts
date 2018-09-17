@@ -67,9 +67,10 @@ export class SectoralExpenditureComponent implements OnInit {
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = [
             "All",
-           "(a)  Salary component (Percentage)",
-           "(b)  Non-salary component (Percentage)",
-           "None"
+            "Tax revenues",
+            "Non-Tax Revenues",
+            "Grants and Contributions",
+             "None"
   ]
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
      //Comparison_sort = this.Comparison.sort(f.compare);

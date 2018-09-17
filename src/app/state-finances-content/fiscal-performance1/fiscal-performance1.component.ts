@@ -48,13 +48,13 @@ export class FiscalPerformance1Component implements OnInit {
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
-        this.years = ["2015","2016_RE","2017_RE"];
+        this.years = ["2015","2016_RE","2017_BE"];
       } 
       else {
         if (this.data.view == "line") {
           this.years = ["All"];
         } else {
-          this.years = ["All","2015","2016_RE","2017_RE"];
+          this.years = ["All","2015","2016_RE","2017_BE"];
         }
       
       }
@@ -64,9 +64,9 @@ export class FiscalPerformance1Component implements OnInit {
     this.years = ["All"];
   } else {
     if (this.data.rain_fall_type == "All") {
-      this.years = ["2015","2016_RE","2017_RE"];
+      this.years = ["2015","2016_RE","2017_BE"];
     } else {
-      this.years = ["All","2015","2016_RE","2017_RE"];
+      this.years = ["All","2015","2016_RE","2017_BE"];
     }
     
   }

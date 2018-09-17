@@ -43,19 +43,19 @@ export class ResourceManagement12Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Taxes on Sales, Trade ","Stamp and Registration Fees","Taxes on Goods and Passengers","State Excise","Taxes on Vehicles","Land Revenue","Taxes & Duties on Electricity","Total Tax Revenue","Non Ferrous Minerals","Interest Receipts","Total Non Tax Revenue"]
+  Districts = ["All","Taxes on Sales, Trade ","Stamp and Registration Fees","Taxes on Goods and Passengers","State Excise","Taxes on Vehicles","Land Revenue","Taxes and Duties on Electricity","Total Tax Revenue","Non Ferrous Minerals","Interest Receipts","Total Non Tax Revenue"]
   years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   views = ViewsNotMap
   rain_fall_type = [{key:"Buoyancy Ratio",value:"Buoyancy_Ratio"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = ["None","Taxes on Sales, Trade ","Stamp and Registration Fees","Taxes on Goods and Passengers","State Excise","Taxes on Vehicles","Land Revenue","Taxes & Duties on Electricity","Total Tax Revenue","Non Ferrous Minerals","Interest Receipts","Total Non Tax Revenue"]
+  Comparison = ["None","Taxes on Sales, Trade ","Stamp and Registration Fees","Taxes on Goods and Passengers","State Excise","Taxes on Vehicles","Land Revenue","Taxes and Duties on Electricity","Total Tax Revenue","Non Ferrous Minerals","Interest Receipts","Total Non Tax Revenue"]
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
         this.data.Comparison = "None"
         this.Comparison = ["None"]
       } else {
-        this.Comparison = ["None","Taxes on Sales, Trade ","Stamp and Registration Fees","Taxes on Goods and Passengers","State Excise","Taxes on Vehicles","Land Revenue","Taxes & Duties on Electricity","Total Tax Revenue","Non Ferrous Minerals","Interest Receipts","Total Non Tax Revenue"]
+        this.Comparison = ["None","Taxes on Sales, Trade ","Stamp and Registration Fees","Taxes on Goods and Passengers","State Excise","Taxes on Vehicles","Land Revenue","Taxes and Duties on Electricity","Total Tax Revenue","Non Ferrous Minerals","Interest Receipts","Total Non Tax Revenue"]
       }
       
       }

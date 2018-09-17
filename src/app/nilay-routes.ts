@@ -5,9 +5,28 @@ import { QualityOfExpenditureComponent } from './state-finances-content/quality-
 import { SectoralExpenditureComponent } from './state-finances-content/sectoral-expenditure/sectoral-expenditure.component';
 import { SectoralExpenditure1Component } from './state-finances-content/sectoral-expenditure1/sectoral-expenditure1.component';
 import { SectoralExpenditure2Component } from './state-finances-content/sectoral-expenditure2/sectoral-expenditure2.component';
+import { ComparisonOfBudgetComponent } from './state-finances-content/comparison-of-budget/comparison-of-budget.component';
+import { ComparisonOfBudget1Component } from './state-finances-content/comparison-of-budget1/comparison-of-budget1.component';
+import { TaxDepartment7Component } from './state-finances-content/tax-department7/tax-department7.component';
 
 
 export const appRoutes1: Routes = [
+
+    {
+        path: 'TaxDepartment7',
+        component: TaxDepartment7Component
+
+    },
+    {
+        path: 'ComparisonOfBudget1',
+        component: ComparisonOfBudget1Component
+
+    },
+    {
+        path: 'ComparisonOfBudget',
+        component: ComparisonOfBudgetComponent
+
+    },
     {
         path: 'SectoralExpenditure2',
         component: SectoralExpenditure2Component

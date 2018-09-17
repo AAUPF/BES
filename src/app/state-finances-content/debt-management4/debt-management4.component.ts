@@ -55,7 +55,7 @@ export class DebtManagement4Component implements OnInit {
     {key:"Interest Received",value:"Interest Received"},
     {key:"Repayment of Debt ",value:"Repayment of Debt "},
     {key:"Net Public Debt Received",value:"Net Public Debt Received"},
-    {key:"Net Debt Received as percentage             of total borrowing",value:"Net Debt Received as percentage             of total borrowing"},
+    {key:"Net Debt Received as percentage of total borrowing",value:"Net Debt Received as percentage of total borrowing"},
     {key:"None", value:"None"}
   ]
 
@@ -70,7 +70,7 @@ export class DebtManagement4Component implements OnInit {
     {key:"Interest Received",value:"Interest Received"},
     {key:"Repayment of Debt ",value:"Repayment of Debt "},
     {key:"Net Public Debt Received",value:"Net Public Debt Received"},
-    {key:"Net Debt Received as percentage             of total borrowing",value:"Net Debt Received as percentage             of total borrowing"},
+    {key:"Net Debt Received as percentage of total borrowing",value:"Net Debt Received as percentage of total borrowing"},
    
   
   
@@ -96,7 +96,7 @@ export class DebtManagement4Component implements OnInit {
           {key:"Interest Received",value:"Interest Received"},
           {key:"Repayment of Debt ",value:"Repayment of Debt "},
           {key:"Net Public Debt Received",value:"Net Public Debt Received"},
-          {key:"Net Debt Received as percentage             of total borrowing",value:"Net Debt Received as percentage             of total borrowing"},
+          {key:"Net Debt Received as percentage of total borrowing",value:"Net Debt Received as percentage of total borrowing"},
           {key:"None", value:"None"}
         ]
         
