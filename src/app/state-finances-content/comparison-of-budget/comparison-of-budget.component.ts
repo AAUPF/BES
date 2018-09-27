@@ -87,7 +87,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
         this.data.Comparison = "All"
         this.Comparison = 
         [
-         
+         "All",
           "Tax revenues",
           "Non-Tax Revenues",
           "Grants and Contributions",
@@ -102,7 +102,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
            this.data.Comparison = "None"
            this.Comparison = 
            [
-            
+            "All",
             "General Services",
             "Social Services",
             "Economic Services",
@@ -118,7 +118,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
           this.Comparison = 
     
           [
-           
+            "All",
             "General Services",
             "Social Services",
             "Economic Services",
@@ -135,6 +135,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
         this.Comparison = 
   
         [
+          "All",
           "Income",
           "Expenditure",
           "None"
@@ -147,6 +148,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
         this.Comparison = 
   
         [
+          "All",
           "Small Savings, PF  etc.",
           "Reserve Funds",
           "Deposits and Advances",
@@ -164,6 +166,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
         this.Comparison = 
   
         [
+          "All",
           "Small Savings, PF  etc.",
           "Reserve Funds",
           "Deposits and Advances",
@@ -182,6 +185,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
         this.Comparison = 
   
         [
+          "All",
           "Receipts",
           "Public Debt",
           "Recovery of Loans and Advances",
@@ -199,6 +203,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
         this.Comparison = 
   
         [
+          "All",
           "Capital Outlay",
           "Public Debt",
           "Loans & advances",
@@ -228,7 +233,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
         this.data.rain_fall_type  = undefined
 
         this.rain_fall_type_sort = [
-         
+          "All",
           "Total Expenditure (Rs. crore)",
           "Revenue Expenditure (Rs. crore)",
           "Capital Outlay (Rs. crore)",
@@ -241,7 +246,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
         this.data.rain_fall_type  = "Total Revenue Receipts"
 
         this.rain_fall_type_sort =[
-         
+          "All",
           "Total Revenue Receipts",
           "Total Revenue Expenditure",
           "Deficit Revenue A/c ",
@@ -256,7 +261,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
         this.data.rain_fall_type  = "Total Receipts Public Account"
 
         this.rain_fall_type_sort = [
-         
+          "All",
           "Total Receipts Public Account",
           "Total Disbursements Public Account",
           "None"
@@ -292,7 +297,7 @@ export class ComparisonOfBudgetComponent implements OnInit {
         this.data.rain_fall_type_sort  =  "None"
 
         this.rain_fall_type_sort = [
-         
+          "All",
           "Total Capital Receipts",
           "Total Capital Expenditure ",
           "Deficit Capital Account",

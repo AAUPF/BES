@@ -58,7 +58,7 @@ export class SectoralExpenditureComponent implements OnInit {
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
   rain_fall_type = [
-   
+    "All",
     "Total Expenditure (Rs. crore)",
     "Revenue Expenditure (Rs. crore)",
     "Capital Outlay (Rs. crore)",
@@ -176,7 +176,7 @@ export class SectoralExpenditureComponent implements OnInit {
         this.data.rain_fall_type  = undefined
 
         this.rain_fall_type_sort = [
-         
+          "All",
           "Total Expenditure (Rs. crore)",
           "Revenue Expenditure (Rs. crore)",
           "Capital Outlay (Rs. crore)",
@@ -189,7 +189,7 @@ export class SectoralExpenditureComponent implements OnInit {
         this.data.rain_fall_type  = undefined
 
         this.rain_fall_type_sort =[
-         
+          "All",
           "Total Expenditure (Rs. crore)",
           "Revenue Expenditure (Rs. crore)",
           "Capital Outlay (Rs. crore)",
@@ -216,7 +216,7 @@ export class SectoralExpenditureComponent implements OnInit {
 
         this.rain_fall_type_sort = [
           
-         
+          "All",
           "Total Expenditure (Rs. crore)",
           "Revenue Expenditure (Rs. crore)",
           "Capital Outlay (Rs. crore)",
@@ -231,7 +231,7 @@ export class SectoralExpenditureComponent implements OnInit {
 
         this.rain_fall_type_sort = [
           
-         
+          "All",
           "Total Expenditure (Rs. crore)",
           "Revenue Expenditure (Rs. crore)",
           "Capital Outlay (Rs. crore)",

@@ -44,12 +44,12 @@ export class TaxDepartment3Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Petro Products","Electrical Goods","Cement","Unregistered Dealer Works Contractor","FMCG","Four Wheelers & Chassis of Automobile","Crude Oil","Works Contract and TDS","Two and Three Wheelers","Drugs and Medicines"," Others"]
+  Districts = ["All","Petro Products","Electrical Goods","Cement","Unregistered Dealer Works Contractor","FMCG","Four Wheelers and Chassis of Automobile","Crude Oil","Works Contract and TDS","Two and Three Wheelers","Drugs and Medicines"," Others"]
   years = ["All","2012-13", "2013-14","2014-15","2015-16","2016-17"];
   views = ViewsNotMap
   rain_fall_type = [{key:"All",value:"All"},{key:"Collection",value:"Collection"},{key:"Rate of Growth",value:"Rate_of_Growth"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None","Petro Products","Electrical Goods","Cement","Unregistered Dealer Works Contractor","FMCG","Four Wheelers & Chassis of Automobile","Crude Oil","Works Contract and TDS","Two and Three Wheelers","Drugs and Medicines"," Others"]
+    Comparison = ["None","Petro Products","Electrical Goods","Cement","Unregistered Dealer Works Contractor","FMCG","Four Wheelers and Chassis of Automobile","Crude Oil","Works Contract and TDS","Two and Three Wheelers","Drugs and Medicines"," Others"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
@@ -57,7 +57,7 @@ export class TaxDepartment3Component implements OnInit {
       this.Comparison = ["None"]
       
     } else {
-      this.Comparison = ["None","Petro Products","Electrical Goods","Cement","Unregistered Dealer Works Contractor","FMCG","Four Wheelers & Chassis of Automobile","Crude Oil","Works Contract and TDS","Two and Three Wheelers","Drugs and Medicines"," Others"]
+      this.Comparison = ["None","Petro Products","Electrical Goods","Cement","Unregistered Dealer Works Contractor","FMCG","Four Wheelers and Chassis of Automobile","Crude Oil","Works Contract and TDS","Two and Three Wheelers","Drugs and Medicines"," Others"]
       
     }
     }

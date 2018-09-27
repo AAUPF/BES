@@ -183,6 +183,8 @@ import { StatePublicSector3Component } from './state-finances-content/state-publ
 import { ComparisonOfBudgetComponent } from './state-finances-content/comparison-of-budget/comparison-of-budget.component';
 import { ComparisonOfBudget1Component } from './state-finances-content/comparison-of-budget1/comparison-of-budget1.component';
 import { TaxDepartment7Component } from './state-finances-content/tax-department7/tax-department7.component';
+import { GoogleComponent } from './google/google.component';
+import { MiningComponent } from './enterprises-content/mining/mining.component';
 
 
 @NgModule({
@@ -362,6 +364,8 @@ import { TaxDepartment7Component } from './state-finances-content/tax-department
     ComparisonOfBudgetComponent,
     ComparisonOfBudget1Component,
     TaxDepartment7Component,
+    GoogleComponent,
+    MiningComponent,
   
     ],
   imports: [

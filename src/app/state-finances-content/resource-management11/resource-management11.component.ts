@@ -48,7 +48,7 @@ export class ResourceManagement11Component implements OnInit {
   views = ViewsNotMap
   rain_fall_type = [{key:"Percentage",value:"Percentage"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = ["None","Own Tax Revenue as percentage of GSDP","Own Non-Tax Revenue as percentage of GSDP","Total Revenue as percentage of GSDP","Buoyancy  of Total Revenue w.r.t. GSDP (Ratio)","Buoyancy of State’s Own Taxes w.r.t. GSDP(Ratio)"]
+  Comparison = ["None","Own Tax Revenue as percentage of GSDP","Own Non-Tax Revenue as percentage of GSDP","Total Revenue as percentage of GSDP","Buoyancy of Total Revenue w.r.t. GSDP (Ratio)","Buoyancy of State’s Own Taxes w.r.t. GSDP(Ratio)"]
     data: any = {};    
     toNumber(d) {
       if (d == "All") {

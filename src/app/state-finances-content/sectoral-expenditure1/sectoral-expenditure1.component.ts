@@ -60,7 +60,7 @@ export class SectoralExpenditure1Component implements OnInit {
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
   rain_fall_type = [
-     "All",
+    "All",
     "Total Expenditure (Rs. crore)",
     "Revenue Expenditure (Rs. crore)",
     "Capital Outlay (Rs. crore)",

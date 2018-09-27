@@ -8,9 +8,21 @@ import { SectoralExpenditure2Component } from './state-finances-content/sectoral
 import { ComparisonOfBudgetComponent } from './state-finances-content/comparison-of-budget/comparison-of-budget.component';
 import { ComparisonOfBudget1Component } from './state-finances-content/comparison-of-budget1/comparison-of-budget1.component';
 import { TaxDepartment7Component } from './state-finances-content/tax-department7/tax-department7.component';
+import { GoogleComponent } from './google/google.component';
+import { MiningComponent } from './enterprises-content/mining/mining.component';
 
 
 export const appRoutes1: Routes = [
+    {
+        path: 'Enterprises-Sector/mining',
+        component: MiningComponent
+
+    },
+    {
+        path: 'google',
+        component: GoogleComponent
+
+    },
 
     {
         path: 'TaxDepartment7',
