@@ -9,6 +9,7 @@ import { TableExport } from '../../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -56,6 +57,21 @@ export class NonAgroBasedIndustries3Component implements OnInit {
       } else {
         this.Comparison_sort = this.Comparison.sort(f.compare);
       }
+      }
+      toYear(year){
+        if(year == "All"){
+          
+    this.views = ViewsNotMap
+        }else{
+          this.views  =  ViewsNotDistrict
+        }
+      }
+      toView(view){
+    if (view == "line") {
+      this.years = ["All"];
+    } else {
+      this.years = ["All","2013-14","2014-15","2015-16","2016-17","2017-18"];
+    }
       }
 
 
