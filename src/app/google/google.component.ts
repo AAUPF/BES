@@ -20,6 +20,7 @@ interface years<> {
 let f = new Functions();
 
 declare var CanvasJS:any;
+declare var Highcharts:any;
 @Component({
   selector: 'app-google',
   templateUrl: './google.component.html',
@@ -131,146 +132,19 @@ export class GoogleComponent implements OnInit {
 
 
       let url = `http://localhost:8000/?q=ccbs_target`;
-      // let url = `${this.apiRoot}`;
-        console.log(url);
-    
-        
+        console.log(url);        
         let str = rain_fall_type.replace( /_/g, " " );
-        
         this.http.get(url).
         subscribe(res => {
           var newdata = res;
           this.spinner.hide();
-          if (rain_fall_type == "All") {
-    
-            if (views == "Table") {
-              var j = $( "#example-table" ).hasClass( "tabulator" )
-              console.log(res["data"]);
-               
-              if (j) {
-                $("#example-table").tabulator("destroy");
-               
-       
-              }
-              $("#example-table").tabulator({
-                layout:"fitColumns"});
-             
-              //set new columns
-              $("#example-table").tabulator("setColumns", res["column"]);
-              
-              //set new data
-              $("#example-table").tabulator("setData", res["data"]);
-    
-              $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
-    
-              }  else {
-    
-             
-                // this.j = res;
-                
-                let chart1 = new CanvasJS.Chart("chartContainer", res);
-                chart1.render();
-                // alert("error")
-              }
-    
-          }
-          
-          else if (year == "All") {
-              if (views == "Table") {
-    
-                console.log("error");
-                
-              var j = $( "#example-table" ).hasClass( "tabulator" )
-              console.log(res["data"]);
-               
-              if (j) {
-                $("#example-table").tabulator("destroy");
-               
-                
-              }
-              $("#example-table").tabulator({
-                layout:"fitColumns"});
-             
-              //set new columns
-              $("#example-table").tabulator("setColumns", res["column"]);
-              
-              //set new data
-              $("#example-table").tabulator("setData", res["data"]);
-              $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
-    
-              $("#download-xlsx").click(function(){
-                $("#example-table").tabulator("download", "xlsx", "data.xlsx");
-              });
-          
-              $("#download-csv").click(function(){
-                $("#example-table").tabulator("download", "csv", "data.csv");
-            });
-            
-            //trigger download of data.json file
-            $("#download-json").click(function(){
-                $("#example-table").tabulator("download", "json", "data.json");
-            });
-    
-              } else {
-                
-                // this.j = res;
-                let chart1 = new CanvasJS.Chart("chartContainer", res);
-                chart1.render();
-                // alert("error")
-              }
-    
-          }
-          else {
-    
-    
-            if (views == "Table") {
-              var j = $( "#example-table" ).hasClass( "tabulator" )
-              console.log(res["data"]);
-               
-              if (j) {
-                $("#example-table").tabulator("destroy");
-               
-                
-              }
-              $("#example-table").tabulator({
-                layout:"fitColumns"});
-             
-              //set new columns
-              $("#example-table").tabulator("setColumns", res["column"]);
-              
-              //set new data
-              $("#example-table").tabulator("setData", res["data"]);
-    
-              $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
-              $("#download-xlsx").click(function(){
-                $("#example-table").tabulator("download", "xlsx", "data.xlsx");
-              });
-          
-              $("#download-csv").click(function(){
-                $("#example-table").tabulator("download", "csv", "data.csv");
-            });
-            
-            //trigger download of data.json file
-            $("#download-json").click(function(){
-                $("#example-table").tabulator("download", "json", "data.json");
-            });
-    
-              } else {
-    
-                // this.j = res;
-                console.log(res);
-               let chart = new CanvasJS.Chart("chartContainer", res);
-                chart.render();
-    
-              }
-    
-          }
-          } ,
+          console.log(res);
+          Highcharts.chart('container', res);
           err => {
             console.log("Error occured.")
             this.spinner.hide();
           }
-       ); 
+        }); 
     }
 
   myEvent(event) {
