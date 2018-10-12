@@ -1,3 +1,84 @@
-<p>
-  sixth-economic-census1 works!
-</p>
+<section class="clearfix pageTitleSection">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="pageTitle">
+            <h2>Census of Economic Enterprises in Bihar (2005 and 2013)</h2>
+            <div class="btnArea"><a  (click)="cancel()"  class="btn btn-primary"><i class="fa fa-angle-left" aria-hidden="true"></i> Back </a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="clearfix bg-light pr">
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+  
+            <div class="categoryBox">
+              <div class="contactSelect">
+                  <form #f="ngForm" (ngSubmit)="onSubmit(data)">
+                      <div class="cen_sel">
+                                        <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" >
+                                            <option [ngValue]="undefined" disabled  selected> Indicator  </option>
+                                            <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
+                                        </select>
+                      
+                                        <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
+                                          <option [ngValue]="undefined" disabled  selected> SubSector  </option>
+                                          <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
+                                      </select>
+                      
+                                        <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years"  (ngModelChange)="toYear(data.years)">
+                                            <option [ngValue]="undefined" disabled  selected> Year  </option>
+                                            <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
+                                        </select>
+                                            <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view" >
+                                                <option [ngValue]="undefined" disabled  selected> Views  </option>
+                                                <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
+                                            </select>
+                                         
+                                                <!-- <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
+                                                    <option [ngValue]="undefined" disabled  selected> Comparison  </option>
+                                                    <option class='option' *ngFor='let option of Comparison' [ngValue]="option">{{option}}</option>
+                                                </select> -->
+                                            <!-- <button  type="button" [disabled]="!f.valid" class="btn btn-primary">Submit</button> -->
+                                            <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
+                                        </div>
+                                    </form>
+                <div class="unt-txt">Unit -   (Number in '000')</div>
+                    <div style="clear: both;"> </div>	
+                    <!-- <table id="myId"></table> -->
+                    <div class="hideContainer"></div>                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
+                    <div *ngIf="visbile_table" >
+                          
+                          <div id="example-table" style="margin-bottom: 100px; margin-top: 30px;" ></div>
+                   </div>
+                    <!-- <h2>{{title}}</h2>
+                    <object *ngIf="visbile" data="assets/img/biharmap.svg" id="biharsvg" type="image/svg+xml"></object>
+                    <div style="position: relative;"> 
+                    <div class="fil-box">
+                        <div><span class="dot yellow"></span>14.0% and Over</div>
+                        <div><span class="dot orange"></span>12.0% to 13.9%</div>
+                        <div><span class="dot red"></span>10.0% to 11.9%</div>
+                        <div><span class="dot light-green"></span>8.0% to 9.9%</div>
+                        <div><span class="dot mid-green"></span>6.0% to 5.9%</div>
+                        <div><span class="dot dark-green"></span>3.9% or lower</div>
+                        </div>
+                    </div> -->
+                    <ngx-spinner></ngx-spinner>
+                    <div *ngIf="visbile">
+                      <app-rainfall-new ></app-rainfall-new>
+  
+                    </div>
+                    <div class="source-txt"> Source : Directorate of Economics and Statistics, GOB</div>
+                    <app-modal></app-modal>
+                    <!-- <object data="assets/img/bihar.svg" id="biharsvg" type="image/svg+xml"></object> -->
+                </div>
+             </div>
+         </div>
+     </div>
+  </div>
+  
+  </section>
+  

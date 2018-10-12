@@ -185,6 +185,7 @@ import { ComparisonOfBudget1Component } from './state-finances-content/compariso
 import { TaxDepartment7Component } from './state-finances-content/tax-department7/tax-department7.component';
 import { GoogleComponent } from './google/google.component';
 import { MiningComponent } from './enterprises-content/mining/mining.component';
+import { AgroBasedIndustries6Component } from './Enterprises-Sector/agro-based-industries6/agro-based-industries6.component';
 
 
 @NgModule({
@@ -366,6 +367,7 @@ import { MiningComponent } from './enterprises-content/mining/mining.component';
     TaxDepartment7Component,
     GoogleComponent,
     MiningComponent,
+    AgroBasedIndustries6Component,
   
     ],
   imports: [

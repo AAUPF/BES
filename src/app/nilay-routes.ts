@@ -10,9 +10,16 @@ import { ComparisonOfBudget1Component } from './state-finances-content/compariso
 import { TaxDepartment7Component } from './state-finances-content/tax-department7/tax-department7.component';
 import { GoogleComponent } from './google/google.component';
 import { MiningComponent } from './enterprises-content/mining/mining.component';
+import { AgroBasedIndustries6Component } from './Enterprises-Sector/agro-based-industries6/agro-based-industries6.component';
+
 
 
 export const appRoutes1: Routes = [
+    {
+        path: 'Enterprises-Sector/AgroBasedIndustries6',
+        component: AgroBasedIndustries6Component
+
+    },
     {
         path: 'Enterprises-Sector/mining',
         component: MiningComponent
