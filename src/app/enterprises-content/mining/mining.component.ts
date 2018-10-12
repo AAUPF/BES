@@ -41,12 +41,13 @@ export class MiningComponent implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["Public Debt","Other Liabilities"]
-  years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+  years = ["All","2014-15","2015-16","2016-17"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
 
 
   Comparison = [
+    {key:"None",value:"None"},
     {key:"1.  Major Minerals",value:"1.  Major Minerals"},
     {key:"2.  Minor Minerals",value:"2.  Minor Minerals"},
     {key:"(i)    bricks",value:"(i)    bricks"},
@@ -59,7 +60,7 @@ export class MiningComponent implements OnInit {
     {key:"(viii) Others",value:"(viii) Others"},
     {key:"3.  Arrears",value:"3.  Arrears"},
     {key:"Total",value:"Total"},
-    {key:"None",value:"None"},
+    
   ]
 
 
@@ -77,10 +78,8 @@ export class MiningComponent implements OnInit {
     {key:"(viii) Others",value:"(viii) Others"},
     {key:"3.  Arrears",value:"3.  Arrears"},
     {key:"Total",value:"Total"},
-  
-  
   ]
-  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
      //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
@@ -93,6 +92,7 @@ export class MiningComponent implements OnInit {
       } else {
         this.data.Comparison = "None"
         this.Comparison = [
+          {key:"None",value:"None"},
           {key:"1.  Major Minerals",value:"1.  Major Minerals"},
           {key:"2.  Minor Minerals",value:"2.  Minor Minerals"},
           {key:"(i)    bricks",value:"(i)    bricks"},
@@ -105,7 +105,7 @@ export class MiningComponent implements OnInit {
           {key:"(viii) Others",value:"(viii) Others"},
           {key:"3.  Arrears",value:"3.  Arrears"},
           {key:"Total",value:"Total"},
-          {key:"None",value:"None"},
+          
         ]
         
       }
@@ -125,7 +125,7 @@ export class MiningComponent implements OnInit {
     }
       toSet(select){
         if (select == "Public Debt") {         
-      this.rain_fall_type_sort = [
+      this.rain_fall_type = [
         {key:"All",value:"All"},
         {key:"1.  Major Minerals",value:"1.  Major Minerals"},
         {key:"2.  Minor Minerals",value:"2.  Minor Minerals"},
@@ -145,7 +145,7 @@ export class MiningComponent implements OnInit {
         }  else if (select == "Other Liabilities") {
 
 
-          this.rain_fall_type_sort = [
+          this.rain_fall_type = [
             {key:"All",value:"All"},
             {key:"1.  Major Minerals",value:"1.  Major Minerals"},
             {key:"2.  Minor Minerals",value:"2.  Minor Minerals"},
@@ -167,7 +167,7 @@ export class MiningComponent implements OnInit {
   
         
         else {
-          this.rain_fall_type_sort = [ 
+          this.rain_fall_type = [ 
             {key:"All",value:"All"},
             {key:"1.  Major Minerals",value:"1.  Major Minerals"},
             {key:"2.  Minor Minerals",value:"2.  Minor Minerals"},
@@ -181,9 +181,7 @@ export class MiningComponent implements OnInit {
             {key:"(viii) Others",value:"(viii) Others"},
             {key:"3.  Arrears",value:"3.  Arrears"},
             {key:"Total",value:"Total"},
-           
-          
-          ]
+           ]
         }
       }
 
