@@ -11,6 +11,7 @@ import { Views } from '../../data/views';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -86,6 +87,24 @@ export class SixthEconomicCensus1Component implements OnInit {
       //   this.rain_fall_type = [{key: "All", value: "All"},{key:"Number of Establishments Rural",value:"Number_of_Establishments_Rural"},	{key:"Number of Establishments Urban",value:"Number_of_Establishments_Urban"},	{key:"Total Number of Establishments",value:"Total_Number_of_Establishments"},	{key:"Percentage Share Establishments",value:"Percentage_Share_Establishments"},{key:"Percentage Share Population",value:"Percentage_Share_Population"}]
       //   this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       // }
+    }
+
+      toView(view){
+          if (view == "line") {
+            this.years = ["All"];
+          } else {
+            this.years = ["All", 'Number_2005', 'Number_2013','Percentage_Increase'];
+          }
+      }
+
+    toYear(year){
+      if(year == "All"){
+        this.views = ViewsNotMap
+       
+      }else{
+        this.views  = ViewsNotDistrict
+       
+      }
     }
   onSubmit(user) {
     var controller = "sixth_economic_census1s"
