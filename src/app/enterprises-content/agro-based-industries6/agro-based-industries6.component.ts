@@ -41,24 +41,57 @@ export class AgroBasedIndustries6Component implements OnInit {
   visbile_table= false;
   Districts = [
     "All",
-    "Cooperative Societies",
-  "Collection of Milk",
-  "Marketing of Products",
-  "Services",]
-  years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17"];
+    "Food Products/Beverages/ Tobacco Products",
+"Textiles/Wearing Apparel",
+"Leather & Leather Products",
+"Wood & Wood Products / Furniture",
+"Paper & Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
+"Sub Total",
+"Food Products/Beverages/ Tobacco Products",
+"Textiles/Wearing Apparel",
+"Leather & Leather Products",
+"Wood & Wood Products / Furniture",
+"Paper & Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
+"Sub Total",
+"Coke and Refined Petroleum Products",
+"Chemicals and Chemical products",
+"Basic Pharmaceutical Products",
+"Rubber and Plastic Products",
+"Non-Metallic Mineral Products",
+"Metals/ Fabricated Metal Products Except Machinery and Equipment",
+"Electrical Equipment/ Machinery and Equipment NEC/Repair and Installation of machinery equipment",
+"Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
+"Others ( including 32 other manufacturing)",
+"Sub-Total",
+"Grand Total",
+"Coke and Refined Petroleum Products",
+"Chemicals and Chemical products",
+"Basic Pharmaceutical Products",
+"Rubber and Plastic Products",
+"Non-Metallic Mineral Products",
+"Metals/ Fabricated Metal Products Except Machinery and Equipment",
+"Electrical Equipment/ Machinery and Equipment NEC/Repair and Installation of machinery equipment",
+"Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
+"Others ( including 32 other manufacturing)",
+"Sub-Total",
+"Grand Total",]
+  years = ["All", 
+  "India",
+  "Bihar",
+  "Bihar_Percentage_Share",];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
 
 
   Comparison = [
-    {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
-    {key:"Mining and Quarrying",value:"Mining and Quarrying"},
+    {key:"Value of Output",value:"Value of Output"},
+    {key:"Net Value Added",value:"Net Value Added"},
   ]
 
 
   rain_fall_type = [
-    {key:"All",value:"All"},
-
+    {key:"Agro Based",value:"Agro Based"},
+    {key:"Non- Agro Based",value:"Non- Agro Based"},
    
   
   
