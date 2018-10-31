@@ -10,6 +10,7 @@ import { Location } from '@angular/common';
 import { Views } from '../../data/views';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
+import { ViewsNotTrend } from '../../data/viewsnottrend';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -44,7 +45,7 @@ export class SixthEconomicCensus2Component implements OnInit {
   visbile_table= false;
 
   years = [2016, 2017];
-  views = NewViews;
+  views = ViewsNotTrend
   rain_fall_type = [{key: "All", value: "All"},{key:"Number of Establishments Rural",value:"Number_of_Establishments_Rural"},	{key:"Number of Establishments Urban",value:"Number_of_Establishments_Urban"},	{key:"Total Number of Establishments",value:"Total_Number_of_Establishments"},	{key:"Percentage Share Establishments",value:"Percentage_Share_Establishments"},{key:"Percentage Share Population",value:"Percentage_Share_Population"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs District"]

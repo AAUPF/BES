@@ -37,36 +37,13 @@ export class ResourceManagement14Component implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  // Districts = Districts;
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Bihar Rural Development Society","FA&CAO, East Central railway, Patna","District Planning Officer","IIT, Patna","AIIMS, Patna","Bihar State Tourism Development Corporation","Bihar State Tourism Development Corporation","Bihar State Tourism Development Corporation","NIT Patna","NIT Patna","CRC Patna","Bihar State Milk Co-operative Federation","NIPER Hajipur","Registrar General, HC, Patna","Central University of South Bihar","Heritage City Fund, GMC, Gaya","Bihar State AIDS Control Society","Nava Nalanda Mahavihara Agency","Dr Rajendra Prasad Agricultural University, Pusa","Upendra Maharathi Shilp Anusandhan Sansthan","Security and Intelligence Services (India) Ltd."]
-  //  years = [2016, 2017];
-  // views =[{key: "Table", value: "Table"}];
+  Districts = ["All","Bihar Rural Development Society","FA&CAO, East Central railway, Patna","District Planning Officer","IIT, Patna","AIIMS, Patna","Bihar State Tourism Development Corporation","NIT Patna","CRC Patna","Bihar State Milk Co-operative Federation","NIPER Hajipur","Registrar General, HC, Patna","Central University of South Bihar","Heritage City Fund, GMC, Gaya","Bihar State AIDS Control Society","Nava Nalanda Mahavihara Agency","Dr Rajendra Prasad Agricultural University, Pusa","Upendra Maharathi Shilp Anusandhan Sansthan","Security and Intelligence Services (India) Ltd."]
   rain_fall_type = [{key:"GoI Scheme",value:"GoI_Scheme"}]
-  // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    // Comparison = ["None","Bihar vs District"]
-    data: any = {};    
-    // toNumber(d) {
-    //     if (d == "All") {
-    //       this.data == {years: null, views: "",Comparison: ""};
-    //       this.data.Comparison  = undefined
-    //       this.butDisabled = true;
-
-    //     } else {
-    //       this.butDisabled = false;
-    //     }
-    // }
-    // toHide(view){
-    //   if(view=="Map View"){
-    //     this.rain_fall_type = [{key:"Target Physical",value:"Target_Physical"},	{key:"Target Financial",value:"Target_Financial"},	{key:"Achievement Physical",value:"Achievement_Physical"},	{key:"Achievement Financial",value:"Achievement_Financial"}]
-    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    //   }else{
-    //     this.rain_fall_type = [{key: "All", value: "All"},{key:"Target Physical",value:"Target_Physical"},	{key:"Target Financial",value:"Target_Financial"},	{key:"Achievement Physical",value:"Achievement_Physical"},	{key:"Achievement Financial",value:"Achievement_Financial"}]
-    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    //   }
-    // }
+  data: any = {};    
+    
   onSubmit(user) {
     user.view = "Table"
     var controller = "resource_management14s"

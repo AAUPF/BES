@@ -186,6 +186,33 @@ import { TaxDepartment7Component } from './state-finances-content/tax-department
 import { GoogleComponent } from './google/google.component';
 import { MiningComponent } from './enterprises-content/mining/mining.component';
 import { AgroBasedIndustries6Component } from './enterprises-content/agro-based-industries6/agro-based-industries6.component';
+import { InfrastructureComponent } from './infrastructure/infrastructure.component';
+import { Roads1Component } from './infrastructure-content/roads1/roads1.component';
+import { Roads2Component } from './infrastructure-content/roads2/roads2.component';
+import { Roads3Component } from './infrastructure-content/roads3/roads3.component';
+import { Roads4Component } from './infrastructure-content/roads4/roads4.component';
+import { Roads5Component } from './infrastructure-content/roads5/roads5.component';
+import { Roads6Component } from './infrastructure-content/roads6/roads6.component';
+import { Roads7Component } from './infrastructure-content/roads7/roads7.component';
+import { Roads8Component } from './infrastructure-content/roads8/roads8.component';
+import { Roads9Component } from './infrastructure-content/roads9/roads9.component';
+import { Roads10Component } from './infrastructure-content/roads10/roads10.component';
+import { BridgeSector1Component } from './infrastructure-content/bridge-sector1/bridge-sector1.component';
+import { BridgeSector2Component } from './infrastructure-content/bridge-sector2/bridge-sector2.component';
+import { RoadTransport1Component } from './infrastructure-content/road-transport1/road-transport1.component';
+import { RoadTransport2Component } from './infrastructure-content/road-transport2/road-transport2.component';
+import { RoadTransport3Component } from './infrastructure-content/road-transport3/road-transport3.component';
+import { RoadTransport4Component } from './infrastructure-content/road-transport4/road-transport4.component';
+import { RailwaysComponent } from './infrastructure-content/railways/railways.component';
+import { AirwaysComponent } from './infrastructure-content/airways/airways.component';
+import { Irrigation7Component } from './infrastructure-content/irrigation7/irrigation7.component';
+import { ICT1Component } from './infrastructure-content/ict1/ict1.component';
+import { ICT2Component } from './infrastructure-content/ict2/ict2.component';
+import { ICT3Component } from './infrastructure-content/ict3/ict3.component';
+import { ICT4Component } from './infrastructure-content/ict4/ict4.component';
+import { ICT5Component } from './infrastructure-content/ict5/ict5.component';
+
+
 
 
 @NgModule({
@@ -368,6 +395,33 @@ import { AgroBasedIndustries6Component } from './enterprises-content/agro-based-
     GoogleComponent,
     MiningComponent,
     AgroBasedIndustries6Component,
+    InfrastructureComponent,
+    Roads1Component,
+    Roads2Component,
+    Roads3Component,
+    Roads4Component,
+    Roads5Component,
+    Roads6Component,
+    Roads7Component,
+    Roads8Component,
+    Roads9Component,
+    Roads10Component,
+    BridgeSector1Component,
+    BridgeSector2Component,
+    RoadTransport1Component,
+    RoadTransport2Component,
+    RoadTransport3Component,
+    RoadTransport4Component,
+    RailwaysComponent,
+    AirwaysComponent,
+    Irrigation7Component,
+    ICT1Component,
+    ICT2Component,
+    ICT3Component,
+    ICT4Component,
+    ICT5Component,
+    
+    
   
     ],
   imports: [

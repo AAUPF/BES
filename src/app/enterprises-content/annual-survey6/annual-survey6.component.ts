@@ -55,19 +55,19 @@ export class AnnualSurvey6Component implements OnInit {
   visbile_table= false;
   years = [2016, 2017];
   // views = ["Graph", "Trend Line","Map View","Table"];
-  views = NewViews
+  views = ViewsNotDistrict
   //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
-  rain_fall_type = [{key: "All", value: "All"},{key:"Number_of_Factories_in_Operation",value:"Number_of_Factories_in_Operation"},
-  {key:"Gross_Value_of_Output_GVO_Rs_crore",value:"Gross_Value_of_Output_GVO_Rs_crore"},
-  {key:"Gross_Value_Added_GVA_Rs_crore",value:"Gross_Value_Added_GVA_Rs_crore"},
-  {key:"GVA_Percentage_Share_in_India",value:"GVA_Percentage_Share_in_India"},
-  {key:"GVA_as_Percentage_of_GVO",value:"GVA_as_Percentage_of_GVO"},
-  {key:"Number_of_Persons_Engaged",value:"Number_of_Persons_Engaged"},
-  {key:"Percentage_Share_in_India",value:"Percentage_Share_in_India"},
-  {key:"Employment_per_Factory",value:"Employment_per_Factory"},
-  {key:"Wages_Salaries_and_Bonus_per_Person_annually_Rs",value:"Wages_Salaries_and_Bonus_per_Person_annually_Rs"},]
+  rain_fall_type = [{key: "All", value: "All"},{key:"Number of Factories in Operation",value:"Number_of_Factories_in_Operation"},
+  {key:"Gross Value of Output GVO Rs crore",value:"Gross_Value_of_Output_GVO_Rs_crore"},
+  {key:"Gross Value Added GVA Rs crore",value:"Gross_Value_Added_GVA_Rs_crore"},
+  {key:"GVA Percentage Share in India",value:"GVA_Percentage_Share_in_India"},
+  {key:"GVA as Percentage of GVO",value:"GVA_as_Percentage_of_GVO"},
+  {key:"Number of Persons Engaged",value:"Number_of_Persons_Engaged"},
+  {key:"Percentage Share in India",value:"Percentage_Share_in_India"},
+  {key:"Employment per Factory",value:"Employment_per_Factory"},
+  {key:"Wages Salaries and Bonus per Person annually Rs",value:"Wages_Salaries_and_Bonus_per_Person_annually_Rs"},]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None","Bihar vs District"]
+    Comparison = ["None","Bihar vs State"]
     data: any = {}; 
 
     cancel() {
@@ -75,38 +75,13 @@ export class AnnualSurvey6Component implements OnInit {
     }
     toNumber(d) {
         if (d == "All") {
-          this.data == {years: null, views: "",Comparison: ""};
-          this.data.Comparison  = undefined
-          this.butDisabled = true;
+          
+          this.data.Comparison  = "None"
+          this.Comparison = ["None"];
     
         } else {
-          this.butDisabled = false;
+          this.Comparison = ["None","Bihar vs State"]
         }
-    }
-    toHide(view){
-      if(view == "Map View"){
-        this.rain_fall_type = [{key:"Number_of_Factories_in_Operation",value:"Number_of_Factories_in_Operation"},
-        {key:"Gross_Value_of_Output_GVO_Rs_crore",value:"Gross_Value_of_Output_GVO_Rs_crore"},
-        {key:"Gross_Value_Added_GVA_Rs_crore",value:"Gross_Value_Added_GVA_Rs_crore"},
-        {key:"GVA_Percentage_Share_in_India",value:"GVA_Percentage_Share_in_India"},
-        {key:"GVA_as_Percentage_of_GVO",value:"GVA_as_Percentage_of_GVO"},
-        {key:"Number_of_Persons_Engaged",value:"Number_of_Persons_Engaged"},
-        {key:"Percentage_Share_in_India",value:"Percentage_Share_in_India"},
-        {key:"Employment_per_Factory",value:"Employment_per_Factory"},
-        {key:"Wages_Salaries_and_Bonus_per_Person_annually_Rs",value:"Wages_Salaries_and_Bonus_per_Person_annually_Rs"},]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-      }else{
-        this.rain_fall_type = [{key: "All", value: "All"},{key:"Number_of_Factories_in_Operation",value:"Number_of_Factories_in_Operation"},
-        {key:"Gross_Value_of_Output_GVO_Rs_crore",value:"Gross_Value_of_Output_GVO_Rs_crore"},
-        {key:"Gross_Value_Added_GVA_Rs_crore",value:"Gross_Value_Added_GVA_Rs_crore"},
-        {key:"GVA_Percentage_Share_in_India",value:"GVA_Percentage_Share_in_India"},
-        {key:"GVA_as_Percentage_of_GVO",value:"GVA_as_Percentage_of_GVO"},
-        {key:"Number_of_Persons_Engaged",value:"Number_of_Persons_Engaged"},
-        {key:"Percentage_Share_in_India",value:"Percentage_Share_in_India"},
-        {key:"Employment_per_Factory",value:"Employment_per_Factory"},
-        {key:"Wages_Salaries_and_Bonus_per_Person_annually_Rs",value:"Wages_Salaries_and_Bonus_per_Person_annually_Rs"},]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-      }
     }
 
 
@@ -119,7 +94,7 @@ export class AnnualSurvey6Component implements OnInit {
 
       if (user.view !== "Map View") {
 
-        console.log("errror");
+        
         
         this.visbile_chart= true;
         this.visbile= false;

@@ -162,7 +162,31 @@ import { TaxDepartment6Component } from './state-finances-content/tax-department
 import { StatePublicSector1Component } from './state-finances-content/state-public-sector1/state-public-sector1.component';
 import { StatePublicSector2Component } from './state-finances-content/state-public-sector2/state-public-sector2.component';
 import { StatePublicSector3Component } from './state-finances-content/state-public-sector3/state-public-sector3.component';
-
+import { InfrastructureComponent } from './infrastructure/infrastructure.component';
+import { Roads1Component } from './infrastructure-content/roads1/roads1.component';
+import { Roads2Component } from './infrastructure-content/roads2/roads2.component';
+import { Roads3Component } from './infrastructure-content/roads3/roads3.component';
+import { Roads4Component } from './infrastructure-content/roads4/roads4.component';
+import { Roads5Component } from './infrastructure-content/roads5/roads5.component';
+import { Roads6Component } from './infrastructure-content/roads6/roads6.component';
+import { Roads7Component } from './infrastructure-content/roads7/roads7.component';
+import { Roads8Component } from './infrastructure-content/roads8/roads8.component';
+import { Roads9Component } from './infrastructure-content/roads9/roads9.component';
+import { Roads10Component } from './infrastructure-content/roads10/roads10.component';
+import { BridgeSector1Component } from './infrastructure-content/bridge-sector1/bridge-sector1.component';
+import { BridgeSector2Component } from './infrastructure-content/bridge-sector2/bridge-sector2.component';
+import { RoadTransport1Component } from './infrastructure-content/road-transport1/road-transport1.component';
+import { RoadTransport2Component } from './infrastructure-content/road-transport2/road-transport2.component';
+import { RoadTransport3Component } from './infrastructure-content/road-transport3/road-transport3.component';
+import { RoadTransport4Component } from './infrastructure-content/road-transport4/road-transport4.component';
+import { RailwaysComponent } from './infrastructure-content/railways/railways.component';
+import { AirwaysComponent } from './infrastructure-content/airways/airways.component';
+import { Irrigation7Component } from './infrastructure-content/irrigation7/irrigation7.component';
+import { ICT1Component } from './infrastructure-content/ict1/ict1.component';
+import { ICT2Component } from './infrastructure-content/ict2/ict2.component';
+import { ICT3Component } from './infrastructure-content/ict3/ict3.component';
+import { ICT4Component } from './infrastructure-content/ict4/ict4.component';
+import { ICT5Component } from './infrastructure-content/ict5/ict5.component';
 
 
 
@@ -812,6 +836,105 @@ export const appRoutes: Routes = [
         path: 'TaxDepartment6',
         component: TaxDepartment6Component
      },
-     
+     {
+        path: 'Infrastructure',
+        component: InfrastructureComponent
+     },
+     {
+        path: 'Roads1',
+        component: Roads1Component
+     },
+     {
+        path: 'Roads2',
+        component: Roads2Component
+     },
+     {
+        path: 'Roads3',
+        component: Roads3Component
+     },
+     {
+        path: 'Roads4',
+        component: Roads4Component
+     },
+     {
+        path: 'Roads5',
+        component: Roads5Component
+     },
+     {
+        path: 'Roads6',
+        component: Roads6Component
+     },
+     {
+        path: 'Roads7',
+        component: Roads7Component
+     },
+     {
+        path: 'Roads8',
+        component: Roads8Component
+     },
+     {
+        path: 'Roads9',
+        component: Roads9Component
+     },
+     {
+        path: 'Roads10',
+        component: Roads10Component
+     },
+     {
+        path: 'BridgeSector1',
+        component: BridgeSector1Component
+     },
+     {
+        path: 'BridgeSector2',
+        component: BridgeSector2Component
+     },
+     {
+        path: 'RoadTransport1',
+        component: RoadTransport1Component
+     },
+     {
+        path: 'RoadTransport2',
+        component: RoadTransport2Component
+     },
+     {
+        path: 'RoadTransport3',
+        component: RoadTransport3Component
+     },
+     {
+        path: 'RoadTransport4',
+        component: RoadTransport4Component
+     },
+     {
+        path: 'Railways',
+        component: RailwaysComponent
+     },
+     {
+        path: 'Airways',
+        component: AirwaysComponent
+     },
+     {
+        path: 'Irrigation7',
+        component: Irrigation7Component
+     },
+     {
+        path: 'ICT1',
+        component: ICT1Component
+     },
+     {
+        path: 'ICT2',
+        component: ICT2Component
+     },
+     {
+        path: 'ICT3',
+        component: ICT3Component
+     },
+     {
+        path: 'ICT4',
+        component: ICT4Component
+     },
+     {
+        path: 'ICT5',
+        component: ICT5Component
+     },
      
 ];

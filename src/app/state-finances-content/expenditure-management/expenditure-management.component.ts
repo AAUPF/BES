@@ -46,6 +46,7 @@ export class ExpenditureManagementComponent implements OnInit {
 
 
   Comparison = [
+    {key:"None",value:"None"},
     {key:"General Services",value:"General Services"},
     {key:"Social Services",value:"Social Services"},
     {key:"Economic Services",value:"Economic Services"},
@@ -54,7 +55,7 @@ export class ExpenditureManagementComponent implements OnInit {
     {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
     {key:"Loans and Advances by State",value:"Loans and Advances by State"},
     {key:"Total  ",value:"Total  "},
-    {key:"None",value:"None"},
+    
   ]
 
 
@@ -82,8 +83,8 @@ export class ExpenditureManagementComponent implements OnInit {
         this.Comparison = [{key:"None",value:"None"}]
         
       } else {
-        this.data.Comparison = "None"
         this.Comparison = [
+          {key:"None",value:"None"},
           {key:"General Services",value:"General Services"},
           {key:"Social Services",value:"Social Services"},
           {key:"Economic Services",value:"Economic Services"},
@@ -92,24 +93,22 @@ export class ExpenditureManagementComponent implements OnInit {
           {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
           {key:"Loans and Advances by State",value:"Loans and Advances by State"},
           {key:"Total  ",value:"Total  "},
-          {key:"None",value:"None"},
+          
         ]
         
       }
     
     }
+
+
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
-    
-  // }
-    }
+      if (view == "line") {
+        this.years = ["All"];
+      } else {
+        this.years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+      }
+        }
+
       toSet(select){
         if (select == "Public Debt") {         
       this.rain_fall_type_sort = [

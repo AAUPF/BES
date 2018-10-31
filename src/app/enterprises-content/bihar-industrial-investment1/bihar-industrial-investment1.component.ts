@@ -80,12 +80,26 @@ export class BiharIndustrialInvestment1Component implements OnInit {
     }
     toNumber(d) {
         if (d == "All") {
-          this.data == {years: null, views: "",Comparison: ""};
+          
           this.data.Comparison  = "None"
-          this.butDisabled = true;
+          this.Comparison = ["None"]
     
         } else {
-          this.butDisabled = false;
+          this.Comparison = ["None",
+          "Food Processing",
+          "Manufacturing",
+          "Power Plant",
+          "Small Equipment Manufacturing",
+          "Plastic & Rubber",
+          "Textile",
+          "Information Technology",
+          "Tourism",
+          "Technical Institutes (Engineering and Management)",
+          "Healthcare",
+          "Private Industrial Park",
+          "Others",
+          "Total",
+        ]
         }
     }
     toHide(view){
