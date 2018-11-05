@@ -211,7 +211,8 @@ import { ICT2Component } from './infrastructure-content/ict2/ict2.component';
 import { ICT3Component } from './infrastructure-content/ict3/ict3.component';
 import { ICT4Component } from './infrastructure-content/ict4/ict4.component';
 import { ICT5Component } from './infrastructure-content/ict5/ict5.component';
-
+'./enterprises-content/agro-based-industries6/agro-based-industries6.component';
+import { Tourism3Component } from './enterprises-content/tourism3/tourism3.component';
 
 
 
@@ -384,6 +385,7 @@ import { ICT5Component } from './infrastructure-content/ict5/ict5.component';
     BiharStartUpPolicyComponent,
     Tourism1Component,
     Tourism2Component,
+    Tourism3Component,
     MiningAndQuarryingComponent,
     StatePublicSector1Component,
     StatePublicSector2Component,

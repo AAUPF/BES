@@ -11,10 +11,16 @@ import { TaxDepartment7Component } from './state-finances-content/tax-department
 import { GoogleComponent } from './google/google.component';
 import { MiningComponent } from './enterprises-content/mining/mining.component';
 import { AgroBasedIndustries6Component } from './enterprises-content/agro-based-industries6/agro-based-industries6.component';
+import { Tourism3Component } from './enterprises-content/tourism3/tourism3.component';
 
 
 
 export const appRoutes1: Routes = [
+    {
+        path: 'Enterprises-Sector/Tourism3',
+        component: Tourism3Component
+
+    },
     {
         path: 'Enterprises-Sector/AgroBasedIndustries6',
         component: AgroBasedIndustries6Component

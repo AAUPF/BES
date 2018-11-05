@@ -42,146 +42,124 @@ export class AgroBasedIndustries6Component implements OnInit {
   Districts = [
     "All",
     "Food Products/Beverages/ Tobacco Products",
-"Textiles/Wearing Apparel",
-"Leather & Leather Products",
-"Wood & Wood Products / Furniture",
-"Paper & Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
-"Sub Total",
-"Food Products/Beverages/ Tobacco Products",
-"Textiles/Wearing Apparel",
-"Leather & Leather Products",
-"Wood & Wood Products / Furniture",
-"Paper & Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
-"Sub Total",
-"Coke and Refined Petroleum Products",
-"Chemicals and Chemical products",
-"Basic Pharmaceutical Products",
-"Rubber and Plastic Products",
-"Non-Metallic Mineral Products",
-"Metals/ Fabricated Metal Products Except Machinery and Equipment",
-"Electrical Equipment/ Machinery and Equipment NEC/Repair and Installation of machinery equipment",
-"Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
-"Others ( including 32 other manufacturing)",
-"Sub-Total",
-"Grand Total",
-"Coke and Refined Petroleum Products",
-"Chemicals and Chemical products",
-"Basic Pharmaceutical Products",
-"Rubber and Plastic Products",
-"Non-Metallic Mineral Products",
-"Metals/ Fabricated Metal Products Except Machinery and Equipment",
-"Electrical Equipment/ Machinery and Equipment NEC/Repair and Installation of machinery equipment",
-"Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
-"Others ( including 32 other manufacturing)",
-"Sub-Total",
-"Grand Total",]
-  years = ["All", 
-  "India",
-  "Bihar",
-  "Bihar_Percentage_Share",];
+    "Textiles/Wearing Apparel",
+    "Leather and Leather Products",
+    "Wood and Wood Products / Furniture",
+    "Paper and Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
+    "Sub Total",
+    "Food Products/Beverages/ Tobacco Products",
+    "Textiles/Wearing Apparel",
+    "Leather and Leather Products",
+    "Wood and Wood Products / Furniture",
+    "Paper and Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
+    "Sub Total",
+    "Coke and Refined Petroleum Products",
+    "Chemicals and Chemical products",
+    "Basic Pharmaceutical Products",
+    "Rubber and Plastic Products",
+    "Non-Metallic Mineral Products",
+    "Metals/ Fabricated Metal Products Except Machinery and Equipment",
+    "Electrical Equipment/ Machinery and Equipment NEC/Repair and Installation of machinery equipment",
+    "Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
+    "Others ( including 32 other manufacturing)",
+    "Sub-Total",
+    "Grand Total",
+    "Coke and Refined Petroleum Products",
+    "Chemicals and Chemical products",
+    "Basic Pharmaceutical Products",
+    "Rubber and Plastic Products",
+    "Non-Metallic Mineral Products",
+    "Metals/ Fabricated Metal Products Except Machinery and Equipment",
+    "Electrical Equipment/ Machinery and Equipment NEC/Repair and Installation of machinery equipment",
+    "Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
+    "Others ( including 32 other manufacturing)",
+    "Sub-Total",
+    "Grand Total"
+,]
+  years = [
+  "Agro Based",
+  "Non- Agro Based",
+  ];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
-  views = ViewsNotMap;
+  views = ViewsNotDistrict;
 
 
   Comparison = [
-    {key:"Value of Output",value:"Value of Output"},
-    {key:"Net Value Added",value:"Net Value Added"},
+    "Value of Output",
+    "Net Value Added"
   ]
 
 
   rain_fall_type = [
-    {key:"Agro Based",value:"Agro Based"},
-    {key:"Non- Agro Based",value:"Non- Agro Based"},
-   
-  
-  
+    {key:"India",value:"India"},
+    {key:"Bihar",value:"Bihar"},
+    {key:"Bihar Percentage Share",value:"Bihar_Percentage_Share"},
+
+
   ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-     //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
-    
-  // }
+
     }
       toSet(select){
-        if (select == "Cooperative Societies") {         
-      this.rain_fall_type_sort = [
-        {key:"Organised",value:"Organised"},
-        {key:"Operational",value:"Operational"},
-        {key:"Registered",value:"Registered"},
-        {key:"No. of Members (lakh)",value:"No. of Members (lakh)"},
-      
-  ]
-           
-        }  else if (select == "Collection of Milk") {
 
-
-          this.rain_fall_type_sort = [
-            {key:"Collection of Milk (lakh kg/day)",value:"Collection of Milk (lakh kg/day)"},
-          ]
-        }
-
-        else if (select == "Marketing of Products") {
-
-
-          this.rain_fall_type_sort = [
-            {key:"No. of Retail Outlets",value:"No. of Retail Outlets"},
-            {key:"Milk (lakh litres/day)",value:"Milk (lakh litres/day)"},
-            {key:"Ghee (tonnes)",value:"Ghee (tonnes)"},
-            {key:"Lassi (tonnes)",value:"Lassi (tonnes)"},
-            {key:"Peda (tonnes)",value:"Peda (tonnes)"},
-            {key:"Paneer (tonnes)",value:"Paneer (tonnes)"},
-            {key:"Dahi (tonnes)",value:"Dahi (tonnes)"},
-            {key:"Gulab Jamun (tonnes)",value:"Gulab Jamun (tonnes)"},
-            {key:"Ice-Cream (tonnes)",value:"Ice-Cream (tonnes)"},
-          ]
-        }
-
-        else if (select == "Services") {
-
-
-          this.rain_fall_type_sort = [
-            {key:"No. of Artificial Insemination Centres",value:"No. of Artificial Insemination Centres"},
-          {key:"Artificial Insemination (lakh)",value:"Artificial Insemination (lakh)"},
-          {key:"Vaccination (lakh)",value:"Vaccination (lakh)"},
-          {key:"De-worming (lakh)",value:"De-worming (lakh)"},
-          {key:"Seed Distribution (tonnes)",value:"Seed Distribution (tonnes)"},
-          {key:"Cattle Feed Distribution (tonnes)",value:"Cattle Feed Distribution (tonnes)"},
-          ]
-        }
-        else {
-          this.rain_fall_type_sort = [ 
-            {key:"All",value:"All"},
-           
-  
-          
-          ]
-        }
       }
       toYear(year){
-        if(year == "All"){
-          this.views = ViewsNotMap
+        if(year == "Agro Based"){
+          this.data.districts = "All"
+          this.Districts = [    
+          "All",
+          "Food Products/Beverages/ Tobacco Products",
+          "Textiles/Wearing Apparel",
+          "Leather and Leather Products",
+          "Wood and Wood Products / Furniture",
+          "Paper and Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
+          "Sub Total",
+          "Food Products/Beverages/ Tobacco Products",
+          "Textiles/Wearing Apparel",
+          "Leather and Leather Products",
+          "Wood and Wood Products / Furniture",
+          "Paper and Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
+          "Sub Total",]
          
         }else{
-          this.views  = ViewsNotDistrict
+          this.data.districts = "All"
+          this.Districts = [ 
+            "All",
+            "Coke and Refined Petroleum Products",
+            "Chemicals and Chemical products",
+            "Basic Pharmaceutical Products",
+            "Rubber and Plastic Products",
+            "Non-Metallic Mineral Products",
+            "Metals/ Fabricated Metal Products Except Machinery and Equipment",
+            "Electrical Equipment/ Machinery and Equipment NEC/Repair and Installation of machinery equipment",
+            "Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
+            "Others ( including 32 other manufacturing)",
+            "Sub-Total",
+            "Grand Total",
+            "Coke and Refined Petroleum Products",
+            "Chemicals and Chemical products",
+            "Basic Pharmaceutical Products",
+            "Rubber and Plastic Products",
+            "Non-Metallic Mineral Products",
+            "Metals/ Fabricated Metal Products Except Machinery and Equipment",
+            "Electrical Equipment/ Machinery and Equipment NEC/Repair and Installation of machinery equipment",
+            "Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
+            "Others ( including 32 other manufacturing)",
+            "Sub-Total",
+            "Grand Total"
+
+          ]
          
         }
       }
     
   onSubmit(user) {
-    var controller = "agro_based_industries5s"
+    var controller = "agro_based_industries6s"
 
     if (user.view !== "Map View") {
 
