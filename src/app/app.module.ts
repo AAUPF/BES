@@ -213,6 +213,25 @@ import { ICT4Component } from './infrastructure-content/ict4/ict4.component';
 import { ICT5Component } from './infrastructure-content/ict5/ict5.component';
 './enterprises-content/agro-based-industries6/agro-based-industries6.component';
 import { Tourism3Component } from './enterprises-content/tourism3/tourism3.component';
+import { EnergyComponent } from './energy/energy.component';
+import { AvailablilityOfPower1Component } from './energy-content/availablility-of-power1/availablility-of-power1.component';
+import { AvailablilityOfPower2Component } from './energy-content/availablility-of-power2/availablility-of-power2.component';
+import { InstitutionalStructureOfPowerSectorComponent } from './energy-content/institutional-structure-of-power-sector/institutional-structure-of-power-sector.component';
+import { OperationalAndFinancialStatus1Component } from './energy-content/operational-and-financial-status1/operational-and-financial-status1.component';
+import { OperationalAndFinancialStatus2Component } from './energy-content/operational-and-financial-status2/operational-and-financial-status2.component';
+import { Transmission1Component } from './energy-content/transmission1/transmission1.component';
+import { Transmission2Component } from './energy-content/transmission2/transmission2.component';
+import { BiharRenewableEnergyComponent } from './energy-content/bihar-renewable-energy/bihar-renewable-energy.component';
+import { ProjectionOfPowerRequirement1Component } from './energy-content/projection-of-power-requirement1/projection-of-power-requirement1.component';
+import { ProjectionOfPowerRequirement2Component } from './energy-content/projection-of-power-requirement2/projection-of-power-requirement2.component';
+import { ProjectionOfPowerRequirement3Component } from './energy-content/projection-of-power-requirement3/projection-of-power-requirement3.component';
+import { ProjectionOfPowerRequirement4Component } from './energy-content/projection-of-power-requirement4/projection-of-power-requirement4.component';
+import { ProjectionOfPowerRequirement5Component } from './energy-content/projection-of-power-requirement5/projection-of-power-requirement5.component';
+import { DistributionComponent } from './energy-content/distribution/distribution.component';
+import { ProgrammesForElectrification1Component } from './energy-content/programmes-for-electrification1/programmes-for-electrification1.component';
+import { ProgrammesForElectrification2Component } from './energy-content/programmes-for-electrification2/programmes-for-electrification2.component';
+import { Generation1Component } from './energy-content/generation1/generation1.component';
+import { Generation2Component } from './energy-content/generation2/generation2.component';
 
 
 
@@ -422,6 +441,25 @@ import { Tourism3Component } from './enterprises-content/tourism3/tourism3.compo
     ICT3Component,
     ICT4Component,
     ICT5Component,
+    EnergyComponent,
+    AvailablilityOfPower1Component,
+    AvailablilityOfPower2Component,
+    InstitutionalStructureOfPowerSectorComponent,
+    OperationalAndFinancialStatus1Component,
+    OperationalAndFinancialStatus2Component,
+    Transmission1Component,
+    Transmission2Component,
+    BiharRenewableEnergyComponent,
+    ProjectionOfPowerRequirement1Component,
+    ProjectionOfPowerRequirement2Component,
+    ProjectionOfPowerRequirement3Component,
+    ProjectionOfPowerRequirement4Component,
+    ProjectionOfPowerRequirement5Component,
+    DistributionComponent,
+    ProgrammesForElectrification1Component,
+    ProgrammesForElectrification2Component,
+    Generation1Component,
+    Generation2Component,
     
     
   
