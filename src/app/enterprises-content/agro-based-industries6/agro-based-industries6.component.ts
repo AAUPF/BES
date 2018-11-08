@@ -25,7 +25,6 @@ declare var CanvasJS:any;
 })
 export class AgroBasedIndustries6Component implements OnInit {
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
-    
   }
   cancel() {
     this.location.back(); // <-- go back to previous location on cancel

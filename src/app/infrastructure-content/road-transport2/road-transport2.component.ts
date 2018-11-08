@@ -40,35 +40,43 @@ export class RoadTransport2Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["Public Debt","Other Liabilities"]
-  years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+  years = ["All","2011-12", "2012-13","2013-14","2014-15","2015-16","2016-17","CAGR_2011-17"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
 
 
   Comparison = [
     {key:"None",value:"None"},
-    {key:"General Services",value:"General Services"},
-    {key:"Social Services",value:"Social Services"},
-    {key:"Economic Services",value:"Economic Services"},
-    {key:"Grants in Aid ",value:"Grants in Aid "},
-    {key:"Capital Outlay",value:"Capital Outlay"},
-    {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-    {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-    {key:"Total  ",value:"Total  "},
+    {key:"Truck",value:"Truck"},
+    {key:"Bus",value:"Bus"},
+    {key:"Car",value:"Car"},
+    {key:"Taxi",value:"Taxi"},
+    {key:"Jeep",value:"Jeep"},
+    {key:"Auto",value:"Auto"},
+    {key:"Two-Wheeler",value:"Two-Wheeler"},
+    {key:"Tractor",value:"Tractor"},
+    {key:"Trailer",value:"Trailer"},
+    {key:"Others",value:"Others"},
+    {key:"Total",value:"Total"},
+    {key:"Revenue Collection (Rs. crore)",value:"Revenue Collection (Rs. crore)"},
     
   ]
 
 
   rain_fall_type = [
     {key:"All",value:"All"},
-    {key:"General Services",value:"General Services"},
-    {key:"Social Services",value:"Social Services"},
-    {key:"Economic Services",value:"Economic Services"},
-    {key:"Grants in Aid ",value:"Grants in Aid "},
-    {key:"Capital Outlay",value:"Capital Outlay"},
-    {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-    {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-    {key:"Total  ",value:"Total  "},
+    {key:"Truck",value:"Truck"},
+    {key:"Bus",value:"Bus"},
+    {key:"Car",value:"Car"},
+    {key:"Taxi",value:"Taxi"},
+    {key:"Jeep",value:"Jeep"},
+    {key:"Auto",value:"Auto"},
+    {key:"Two-Wheeler",value:"Two-Wheeler"},
+    {key:"Tractor",value:"Tractor"},
+    {key:"Trailer",value:"Trailer"},
+    {key:"Others",value:"Others"},
+    {key:"Total",value:"Total"},
+    {key:"Revenue Collection (Rs. crore)",value:"Revenue Collection (Rs. crore)"},
   
   
   ]
@@ -85,14 +93,18 @@ export class RoadTransport2Component implements OnInit {
       } else {
         this.Comparison = [
           {key:"None",value:"None"},
-          {key:"General Services",value:"General Services"},
-          {key:"Social Services",value:"Social Services"},
-          {key:"Economic Services",value:"Economic Services"},
-          {key:"Grants in Aid ",value:"Grants in Aid "},
-          {key:"Capital Outlay",value:"Capital Outlay"},
-          {key:"Discharge of Public Debt ",value:"Discharge of Public Debt "},
-          {key:"Loans and Advances by State",value:"Loans and Advances by State"},
-          {key:"Total  ",value:"Total  "},
+          {key:"Truck",value:"Truck"},
+          {key:"Bus",value:"Bus"},
+          {key:"Car",value:"Car"},
+          {key:"Taxi",value:"Taxi"},
+          {key:"Jeep",value:"Jeep"},
+          {key:"Auto",value:"Auto"},
+          {key:"Two-Wheeler",value:"Two-Wheeler"},
+          {key:"Tractor",value:"Tractor"},
+          {key:"Trailer",value:"Trailer"},
+          {key:"Others",value:"Others"},
+          {key:"Total",value:"Total"},
+          {key:"Revenue Collection (Rs. crore)",value:"Revenue Collection (Rs. crore)"},
           
         ]
         
@@ -105,7 +117,7 @@ export class RoadTransport2Component implements OnInit {
       if (view == "line") {
         this.years = ["All"];
       } else {
-        this.years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+        this.years = ["All","2011-12", "2012-13","2013-14","2014-15","2015-16","2016-17","CAGR_2011-17"];
       }
         }
 
@@ -168,7 +180,7 @@ export class RoadTransport2Component implements OnInit {
       }
     
   onSubmit(user) {
-    var controller = "expenditure_managements"
+    var controller = "road_transport2s"
 
     if (user.view !== "Map View") {
 
