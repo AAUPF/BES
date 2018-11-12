@@ -60,10 +60,11 @@ export class ICT2Component implements OnInit {
     "West Bengal",
     "All-India",
 ]
-  years = ["All","2001","2005", "2010","2015","2016","2017"];
+  years = ["2001","2005", "2010","2015","2016","2017"];
   views = ViewsNotMap;
-  rain_fall_type = [{key:"All",value:"All"},{key:"Rural",value:"Rural"},{key:"Urban",value:"Urban"},{key:"All",value:"All"}]
-  Comparison  = ["None",      "Andhra Pradesh",
+  rain_fall_type = [{key:"All",value:"All"},{key:"Rural",value:"Rural"},{key:"Urban",value:"Urban"}]
+  Comparison  = ["None",     
+  "Andhra Pradesh",
   "Bihar",
   "Gujarat",
   "Haryana",
@@ -85,25 +86,25 @@ export class ICT2Component implements OnInit {
       this.years = ["2001","2005", "2010","2015","2016","2017"];
     } 
     else {
-      if (this.data.view == "line") {
-        this.years = ["All"];
-      } else {
-        this.years = ["All","2001","2005", "2010","2015","2016","2017"];
-      }
+      // if (this.data.view == "line") {
+      //   this.years = ["All"];
+      // } else {
+      //   this.years = ["All","2001","2005", "2010","2015","2016","2017"];
+      // }
     
     }
   }
   toView(view){
-if (view == "line") {
-  this.years = ["All"];
-} else {
-  if (this.data.rain_fall_type == "All") {
-    this.years = ["2001","2005", "2010","2015","2016","2017"];
-  } else {
-    this.years =  ["All","2001","2005", "2010","2015","2016","2017"];;
-  }
+// if (view == "line") {
+//   this.years = ["All"];
+// } else {
+//   if (this.data.rain_fall_type == "All") {
+//     this.years = ["All","2001","2005", "2010","2015","2016","2017"];
+//   } else {
+//     this.years =  ["All","2001","2005", "2010","2015","2016","2017"];;
+//   }
   
-}
+// }
   }
     toSet(select){
       if (select == "All") {
@@ -133,9 +134,16 @@ if (view == "line") {
     }
     toYear(year){
       if(year == "2016"){
-        this.views = ViewsNotMap
+        this.views = ViewsNotDistrict
         this.rain_fall_type = [{key:"Rural",value:"Rural"},{key:"Urban",value:"Urban"},{key:"All",value:"All"}]
-      }else{
+      }
+      else if(year == "2017") { 
+
+        this.views = ViewsNotDistrict
+        this.rain_fall_type = [{key:"Rural",value:"Rural"},{key:"Urban",value:"Urban"},{key:"All",value:"All"}]
+
+      }
+      else{
         this.views  = ViewsNotDistrict
         this.rain_fall_type = [{key:"All",value:"All"}]
       }
