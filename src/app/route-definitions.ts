@@ -224,7 +224,7 @@ import { RuralDevelopmentProgrammes9Component } from './rural-development-conten
 import { RuralDevelopmentProgrammes10Component } from './rural-development-content/rural-development-programmes10/rural-development-programmes10.component';
 import { DistributionOfHomesteadLand1Component } from './rural-development-content/distribution-of-homestead-land1/distribution-of-homestead-land1.component';
 import { DistributionOfHomesteadLand2Component } from './rural-development-content/distribution-of-homestead-land2/distribution-of-homestead-land2.component';
-
+import { RuralDevelopmentProgrammes11Component } from './rural-development-content/rural-development-programmes11/rural-development-programmes11.component';
 
 
 
@@ -1113,6 +1113,10 @@ export const appRoutes: Routes = [
      {
         path: 'RuralDevelopmentProgrammes10',
         component: RuralDevelopmentProgrammes10Component
+     },
+     {
+        path: 'RuralDevelopmentProgrammes11',
+        component: RuralDevelopmentProgrammes11Component
      },
      {
         path: 'DistributionOfHomesteadLand1',

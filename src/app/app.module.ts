@@ -250,6 +250,7 @@ import { RuralDevelopmentProgrammes7Component } from './rural-development-conten
 import { RuralDevelopmentProgrammes8Component } from './rural-development-content/rural-development-programmes8/rural-development-programmes8.component';
 import { RuralDevelopmentProgrammes9Component } from './rural-development-content/rural-development-programmes9/rural-development-programmes9.component';
 import { RuralDevelopmentProgrammes10Component } from './rural-development-content/rural-development-programmes10/rural-development-programmes10.component';
+import { RuralDevelopmentProgrammes11Component } from './rural-development-content/rural-development-programmes11/rural-development-programmes11.component';
 
 
 
@@ -496,6 +497,7 @@ import { RuralDevelopmentProgrammes10Component } from './rural-development-conte
     RuralDevelopmentProgrammes8Component,
     RuralDevelopmentProgrammes9Component,
     RuralDevelopmentProgrammes10Component,
+    RuralDevelopmentProgrammes11Component,
     
     
   
