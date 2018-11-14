@@ -232,6 +232,24 @@ import { ProgrammesForElectrification1Component } from './energy-content/program
 import { ProgrammesForElectrification2Component } from './energy-content/programmes-for-electrification2/programmes-for-electrification2.component';
 import { Generation1Component } from './energy-content/generation1/generation1.component';
 import { Generation2Component } from './energy-content/generation2/generation2.component';
+import { RuralDevelopmentComponent } from './rural-development/rural-development.component';
+import { Poverty1Component } from './rural-development-content/poverty1/poverty1.component';
+import { PanchayatiRaj1Component } from './rural-development-content/panchayati-raj1/panchayati-raj1.component';
+import { PanchayatiRaj2Component } from './rural-development-content/panchayati-raj2/panchayati-raj2.component';
+import { DisasterManagement1Component } from './rural-development-content/disaster-management1/disaster-management1.component';
+import { RuralDevelopmentProgrammes1Component } from './rural-development-content/rural-development-programmes1/rural-development-programmes1.component';
+import { RuralDevelopmentProgrammes2Component } from './rural-development-content/rural-development-programmes2/rural-development-programmes2.component';
+import { RuralDevelopmentProgrammes3Component } from './rural-development-content/rural-development-programmes3/rural-development-programmes3.component';
+import { RuralDevelopmentProgrammes4Component } from './rural-development-content/rural-development-programmes4/rural-development-programmes4.component';
+import { RuralDevelopmentProgrammes5Component } from './rural-development-content/rural-development-programmes5/rural-development-programmes5.component';
+import { RuralDevelopmentProgrammes6Component } from './rural-development-content/rural-development-programmes6/rural-development-programmes6.component';
+import { DistributionOfHomesteadLand1Component } from './rural-development-content/distribution-of-homestead-land1/distribution-of-homestead-land1.component';
+import { DistributionOfHomesteadLand2Component } from './rural-development-content/distribution-of-homestead-land2/distribution-of-homestead-land2.component';
+import { Poverty2Component } from './rural-development-content/poverty2/poverty2.component';
+import { RuralDevelopmentProgrammes7Component } from './rural-development-content/rural-development-programmes7/rural-development-programmes7.component';
+import { RuralDevelopmentProgrammes8Component } from './rural-development-content/rural-development-programmes8/rural-development-programmes8.component';
+import { RuralDevelopmentProgrammes9Component } from './rural-development-content/rural-development-programmes9/rural-development-programmes9.component';
+import { RuralDevelopmentProgrammes10Component } from './rural-development-content/rural-development-programmes10/rural-development-programmes10.component';
 
 
 
@@ -460,6 +478,24 @@ import { Generation2Component } from './energy-content/generation2/generation2.c
     ProgrammesForElectrification2Component,
     Generation1Component,
     Generation2Component,
+    RuralDevelopmentComponent,
+    Poverty1Component,
+    PanchayatiRaj1Component,
+    PanchayatiRaj2Component,
+    DisasterManagement1Component,
+    RuralDevelopmentProgrammes1Component,
+    RuralDevelopmentProgrammes2Component,
+    RuralDevelopmentProgrammes3Component,
+    RuralDevelopmentProgrammes4Component,
+    RuralDevelopmentProgrammes5Component,
+    RuralDevelopmentProgrammes6Component,
+    DistributionOfHomesteadLand1Component,
+    DistributionOfHomesteadLand2Component,
+    Poverty2Component,
+    RuralDevelopmentProgrammes7Component,
+    RuralDevelopmentProgrammes8Component,
+    RuralDevelopmentProgrammes9Component,
+    RuralDevelopmentProgrammes10Component,
     
     
   
