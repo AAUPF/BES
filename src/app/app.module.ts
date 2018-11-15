@@ -251,6 +251,7 @@ import { RuralDevelopmentProgrammes8Component } from './rural-development-conten
 import { RuralDevelopmentProgrammes9Component } from './rural-development-content/rural-development-programmes9/rural-development-programmes9.component';
 import { RuralDevelopmentProgrammes10Component } from './rural-development-content/rural-development-programmes10/rural-development-programmes10.component';
 import { RuralDevelopmentProgrammes11Component } from './rural-development-content/rural-development-programmes11/rural-development-programmes11.component';
+import { DistrictWiseIndiaMapComponent } from './district-wise-india-map/district-wise-india-map.component';
 
 
 
@@ -498,6 +499,7 @@ import { RuralDevelopmentProgrammes11Component } from './rural-development-conte
     RuralDevelopmentProgrammes9Component,
     RuralDevelopmentProgrammes10Component,
     RuralDevelopmentProgrammes11Component,
+    DistrictWiseIndiaMapComponent,
     
     
   

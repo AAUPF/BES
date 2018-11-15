@@ -225,6 +225,7 @@ import { RuralDevelopmentProgrammes10Component } from './rural-development-conte
 import { DistributionOfHomesteadLand1Component } from './rural-development-content/distribution-of-homestead-land1/distribution-of-homestead-land1.component';
 import { DistributionOfHomesteadLand2Component } from './rural-development-content/distribution-of-homestead-land2/distribution-of-homestead-land2.component';
 import { RuralDevelopmentProgrammes11Component } from './rural-development-content/rural-development-programmes11/rural-development-programmes11.component';
+import { DistrictWiseIndiaMapComponent } from './district-wise-india-map/district-wise-india-map.component';
 
 
 
@@ -1125,6 +1126,10 @@ export const appRoutes: Routes = [
      {
         path: 'DistributionOfHomesteadLand2',
         component: DistributionOfHomesteadLand2Component
+     },
+     {
+        path: 'DistrictWiseIndiaMap',
+        component: DistrictWiseIndiaMapComponent
      },
 
      

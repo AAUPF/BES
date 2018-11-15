@@ -411,9 +411,7 @@ export class Functions {
         let map = document.getElementById("biharsvg") as HTMLObjectElement;
         let svgDoc = map.contentDocument; // should be fine
         // let District = svgDoc.getElementById(a);
-
         console.log("mapall");
-
         var dis_below_min = ""
         var dis_below_min_color = ""
         var dis_min = ""
@@ -428,7 +426,6 @@ export class Functions {
         var dis_ex_color = ""
         var dis_abov_ext = ""
         var dis_abov_ext_color = ""
-
         var string: any
         for (var k in l) {
             if (l.hasOwnProperty(k)) {
