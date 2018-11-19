@@ -252,6 +252,32 @@ import { RuralDevelopmentProgrammes9Component } from './rural-development-conten
 import { RuralDevelopmentProgrammes10Component } from './rural-development-content/rural-development-programmes10/rural-development-programmes10.component';
 import { RuralDevelopmentProgrammes11Component } from './rural-development-content/rural-development-programmes11/rural-development-programmes11.component';
 import { DistrictWiseIndiaMapComponent } from './district-wise-india-map/district-wise-india-map.component';
+import { UrbanDevelopmentComponent } from './urban-development/urban-development.component';
+import { LevelOfUrbanisation1Component } from './urban-development-content/level-of-urbanisation1/level-of-urbanisation1.component';
+import { LevelOfUrbanisation2Component } from './urban-development-content/level-of-urbanisation2/level-of-urbanisation2.component';
+import { LevelOfUrbanisation3Component } from './urban-development-content/level-of-urbanisation3/level-of-urbanisation3.component';
+import { LevelOfUrbanisation4Component } from './urban-development-content/level-of-urbanisation4/level-of-urbanisation4.component';
+import { LevelOfUrbanisation5Component } from './urban-development-content/level-of-urbanisation5/level-of-urbanisation5.component';
+import { LevelOfUrbanisation6Component } from './urban-development-content/level-of-urbanisation6/level-of-urbanisation6.component';
+import { UDPStatePlan1Component } from './urban-development-content/udp-state-plan1/udp-state-plan1.component';
+import { UDPStatePlan2Component } from './urban-development-content/udp-state-plan2/udp-state-plan2.component';
+import { UDPStatePlan3Component } from './urban-development-content/udp-state-plan3/udp-state-plan3.component';
+import { UDPStatePlan4Component } from './urban-development-content/udp-state-plan4/udp-state-plan4.component';
+import { UDPStatePlan5Component } from './urban-development-content/udp-state-plan5/udp-state-plan5.component';
+import { ExpenditureOnUrbanDevelopmentComponent } from './urban-development-content/expenditure-on-urban-development/expenditure-on-urban-development.component';
+import { MunicipalFinancesComponent } from './urban-development-content/municipal-finances/municipal-finances.component';
+import { UDPJointlyFunded1Component } from './urban-development-content/udp-jointly-funded1/udp-jointly-funded1.component';
+import { UDPJointlyFunded2Component } from './urban-development-content/udp-jointly-funded2/udp-jointly-funded2.component';
+import { UDPJointlyFunded3Component } from './urban-development-content/udp-jointly-funded3/udp-jointly-funded3.component';
+import { UDPJointlyFunded4Component } from './urban-development-content/udp-jointly-funded4/udp-jointly-funded4.component';
+import { UDPJointlyFunded5Component } from './urban-development-content/udp-jointly-funded5/udp-jointly-funded5.component';
+import { UDPJointlyFunded6Component } from './urban-development-content/udp-jointly-funded6/udp-jointly-funded6.component';
+import { UDPJointlyFunded7Component } from './urban-development-content/udp-jointly-funded7/udp-jointly-funded7.component';
+import { UDPJointlyFunded8Component } from './urban-development-content/udp-jointly-funded8/udp-jointly-funded8.component';
+import { UDPJointlyFunded9Component } from './urban-development-content/udp-jointly-funded9/udp-jointly-funded9.component';
+import { UDPJointlyFunded10Component } from './urban-development-content/udp-jointly-funded10/udp-jointly-funded10.component';
+import { UDPJointlyFunded11Component } from './urban-development-content/udp-jointly-funded11/udp-jointly-funded11.component';
+import { UDPJointlyFunded12Component } from './urban-development-content/udp-jointly-funded12/udp-jointly-funded12.component';
 
 
 
@@ -500,6 +526,32 @@ import { DistrictWiseIndiaMapComponent } from './district-wise-india-map/distric
     RuralDevelopmentProgrammes10Component,
     RuralDevelopmentProgrammes11Component,
     DistrictWiseIndiaMapComponent,
+    UrbanDevelopmentComponent,
+    LevelOfUrbanisation1Component,
+    LevelOfUrbanisation2Component,
+    LevelOfUrbanisation3Component,
+    LevelOfUrbanisation4Component,
+    LevelOfUrbanisation5Component,
+    LevelOfUrbanisation6Component,
+    UDPStatePlan1Component,
+    UDPStatePlan2Component,
+    UDPStatePlan3Component,
+    UDPStatePlan4Component,
+    UDPStatePlan5Component,
+    ExpenditureOnUrbanDevelopmentComponent,
+    MunicipalFinancesComponent,
+    UDPJointlyFunded1Component,
+    UDPJointlyFunded2Component,
+    UDPJointlyFunded3Component,
+    UDPJointlyFunded4Component,
+    UDPJointlyFunded5Component,
+    UDPJointlyFunded6Component,
+    UDPJointlyFunded7Component,
+    UDPJointlyFunded8Component,
+    UDPJointlyFunded9Component,
+    UDPJointlyFunded10Component,
+    UDPJointlyFunded11Component,
+    UDPJointlyFunded12Component,
     
     
   

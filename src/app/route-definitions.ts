@@ -226,7 +226,32 @@ import { DistributionOfHomesteadLand1Component } from './rural-development-conte
 import { DistributionOfHomesteadLand2Component } from './rural-development-content/distribution-of-homestead-land2/distribution-of-homestead-land2.component';
 import { RuralDevelopmentProgrammes11Component } from './rural-development-content/rural-development-programmes11/rural-development-programmes11.component';
 import { DistrictWiseIndiaMapComponent } from './district-wise-india-map/district-wise-india-map.component';
-
+import { UrbanDevelopmentComponent } from './urban-development/urban-development.component';
+import { LevelOfUrbanisation1Component } from './urban-development-content/level-of-urbanisation1/level-of-urbanisation1.component';
+import { LevelOfUrbanisation2Component } from './urban-development-content/level-of-urbanisation2/level-of-urbanisation2.component';
+import { LevelOfUrbanisation3Component } from './urban-development-content/level-of-urbanisation3/level-of-urbanisation3.component';
+import { LevelOfUrbanisation4Component } from './urban-development-content/level-of-urbanisation4/level-of-urbanisation4.component';
+import { LevelOfUrbanisation5Component } from './urban-development-content/level-of-urbanisation5/level-of-urbanisation5.component';
+import { LevelOfUrbanisation6Component } from './urban-development-content/level-of-urbanisation6/level-of-urbanisation6.component';
+import { UDPStatePlan1Component } from './urban-development-content/udp-state-plan1/udp-state-plan1.component';
+import { UDPStatePlan2Component } from './urban-development-content/udp-state-plan2/udp-state-plan2.component';
+import { UDPStatePlan3Component } from './urban-development-content/udp-state-plan3/udp-state-plan3.component';
+import { UDPStatePlan4Component } from './urban-development-content/udp-state-plan4/udp-state-plan4.component';
+import { UDPStatePlan5Component } from './urban-development-content/udp-state-plan5/udp-state-plan5.component';
+import { ExpenditureOnUrbanDevelopmentComponent } from './urban-development-content/expenditure-on-urban-development/expenditure-on-urban-development.component';
+import { MunicipalFinancesComponent } from './urban-development-content/municipal-finances/municipal-finances.component';
+import { UDPJointlyFunded1Component } from './urban-development-content/udp-jointly-funded1/udp-jointly-funded1.component';
+import { UDPJointlyFunded2Component } from './urban-development-content/udp-jointly-funded2/udp-jointly-funded2.component';
+import { UDPJointlyFunded3Component } from './urban-development-content/udp-jointly-funded3/udp-jointly-funded3.component';
+import { UDPJointlyFunded4Component } from './urban-development-content/udp-jointly-funded4/udp-jointly-funded4.component';
+import { UDPJointlyFunded5Component } from './urban-development-content/udp-jointly-funded5/udp-jointly-funded5.component';
+import { UDPJointlyFunded6Component } from './urban-development-content/udp-jointly-funded6/udp-jointly-funded6.component';
+import { UDPJointlyFunded7Component } from './urban-development-content/udp-jointly-funded7/udp-jointly-funded7.component';
+import { UDPJointlyFunded8Component } from './urban-development-content/udp-jointly-funded8/udp-jointly-funded8.component';
+import { UDPJointlyFunded9Component } from './urban-development-content/udp-jointly-funded9/udp-jointly-funded9.component';
+import { UDPJointlyFunded10Component } from './urban-development-content/udp-jointly-funded10/udp-jointly-funded10.component';
+import { UDPJointlyFunded11Component } from './urban-development-content/udp-jointly-funded11/udp-jointly-funded11.component';
+import { UDPJointlyFunded12Component } from './urban-development-content/udp-jointly-funded12/udp-jointly-funded12.component';
 
 
 export const appRoutes: Routes = [
@@ -1130,6 +1155,110 @@ export const appRoutes: Routes = [
      {
         path: 'DistrictWiseIndiaMap',
         component: DistrictWiseIndiaMapComponent
+     },
+     {
+        path: 'Urban-Development',
+        component: UrbanDevelopmentComponent
+     },
+     {
+        path: 'LevelOfUrbanisation1',
+        component: LevelOfUrbanisation1Component
+     },
+     {
+        path: 'LevelOfUrbanisation2',
+        component: LevelOfUrbanisation2Component
+     },
+     {
+        path: 'LevelOfUrbanisation3',
+        component: LevelOfUrbanisation3Component
+     },
+     {
+        path: 'LevelOfUrbanisation4',
+        component: LevelOfUrbanisation4Component
+     },
+     {
+        path: 'LevelOfUrbanisation5',
+        component: LevelOfUrbanisation5Component
+     },
+     {
+        path: 'LevelOfUrbanisation6',
+        component: LevelOfUrbanisation6Component
+     },
+     {
+        path: 'UDPStatePlan1',
+        component: UDPStatePlan1Component
+     },
+     {
+        path: 'UDPStatePlan2',
+        component: UDPStatePlan2Component
+     },
+     {
+        path: 'UDPStatePlan3',
+        component: UDPStatePlan3Component
+     },
+     {
+        path: 'UDPStatePlan4',
+        component: UDPStatePlan4Component
+     },
+     {
+        path: 'UDPStatePlan5',
+        component: UDPStatePlan5Component
+     },
+     {
+        path: 'UDPJointlyFunded1',
+        component: UDPJointlyFunded1Component
+     },
+     {
+        path: 'UDPJointlyFunded2',
+        component: UDPJointlyFunded2Component
+     },
+     {
+        path: 'UDPJointlyFunded3',
+        component: UDPJointlyFunded3Component
+     },
+     {
+        path: 'UDPJointlyFunded4',
+        component: UDPJointlyFunded4Component
+     },
+     {
+        path: 'UDPJointlyFunded5',
+        component: UDPJointlyFunded5Component
+     },
+     {
+        path: 'UDPJointlyFunded6',
+        component: UDPJointlyFunded6Component
+     },
+     {
+        path: 'UDPJointlyFunded7',
+        component: UDPJointlyFunded7Component
+     },
+     {
+        path: 'UDPJointlyFunded8',
+        component: UDPJointlyFunded8Component
+     },
+     {
+        path: 'UDPJointlyFunded9',
+        component: UDPJointlyFunded9Component
+     },
+     {
+        path: 'UDPJointlyFunded10',
+        component: UDPJointlyFunded10Component
+     },
+     {
+        path: 'UDPJointlyFunded11',
+        component: UDPJointlyFunded11Component
+     },
+     {
+        path: 'UDPJointlyFunded12',
+        component: UDPJointlyFunded12Component
+     },
+     {
+        path: 'Expenditure-On-Urban-Development',
+        component: ExpenditureOnUrbanDevelopmentComponent
+     },
+     {
+        path: 'Municipal-Finances',
+        component: MunicipalFinancesComponent
      },
 
      
