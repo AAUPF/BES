@@ -46,11 +46,11 @@ export class RuralDevelopmentProgrammes6Component implements OnInit {
   views = ViewsNotMap;
   rain_fall_type = [{key: "All", value: "All"}, {key:"Allotment",value:"Allotment"},
   {key:"Lifting",value:"Lifting"},
-  {key:"Lifting Percentage",value:"Lifting Percentage"},	]
+  {key:"Lifting Percentage",value:"Lifting_Percentage"},	]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = [{key: "None", value: "None"}, {key:"Allotment",value:"Allotment"},
   {key:"Lifting",value:"Lifting"},
-  {key:"Lifting Percentage",value:"Lifting Percentage"},	]
+  {key:"Lifting Percentage",value:"Lifting_Percentage"},	]
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
