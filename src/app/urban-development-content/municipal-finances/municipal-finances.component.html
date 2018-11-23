@@ -26,7 +26,7 @@
   
                     <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
                       <option [ngValue]="undefined" disabled  selected> Categories  </option>
-                      <option class='option'  *ngFor='let option of rain_fall_type'[disabled]="option.value == 'Expenditure on Industries'" [ngValue]="option.value">{{option.key}}</option>
+                      <option class='option'  *ngFor='let option of rain_fall_type' [ngValue]="option.value">{{option.key}}</option>
                      
                   </select>
   

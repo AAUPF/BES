@@ -74,7 +74,7 @@ export class MunicipalFinancesComponent implements OnInit {
 {key:"(iii) Non Taxes",value:"(iii) Non Taxes"},
 {key:"(b) Assigned Income ",value:"(b) Assigned Income "},
 {key:"(c) Revenue  Grants ",value:"(c) Revenue  Grants "},
-{key:"(d) Other Income/Receipts",value:"(d) Other Income/Receipts"},,
+{key:"(d) Other Income/Receipts",value:"(d) Other Income/Receipts"},
   ]
   // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
@@ -98,7 +98,7 @@ export class MunicipalFinancesComponent implements OnInit {
           {key:"Mukhya Mantri Saat Nishchay Yojana",value:"Mukhya Mantri Saat Nishchay Yojana"},
           {key:"Construction of Panchayat Sarkar Bhawan",value:"Construction of Panchayat Sarkar Bhawan"},
           {key:"Contingency Grant",value:"Contingency Grant"},
-          {key:"Payment and Allowance to GP members/ functionaries",value:"Payment and Allowance to GP members/ functionaries"},,
+          {key:"Payment and Allowance to GP members/ functionaries",value:"Payment and Allowance to GP members/ functionaries"},
           
           // {key:"Total Expenditure on Road and Bridges",value:"Total Expenditure on Road and Bridges"},
           // {key:"Revenue Expenditure on Road and Bridges",value:"Revenue Expenditure on Road and Bridges"},
