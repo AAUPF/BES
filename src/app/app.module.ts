@@ -278,6 +278,39 @@ import { UDPJointlyFunded9Component } from './urban-development-content/udp-join
 import { UDPJointlyFunded10Component } from './urban-development-content/udp-jointly-funded10/udp-jointly-funded10.component';
 import { UDPJointlyFunded11Component } from './urban-development-content/udp-jointly-funded11/udp-jointly-funded11.component';
 import { UDPJointlyFunded12Component } from './urban-development-content/udp-jointly-funded12/udp-jointly-funded12.component';
+import { BankingAndAlliedComponent } from './banking-and-allied/banking-and-allied.component';
+import { BankingInfrastructure1Component } from './banking-and-allied-content/banking-infrastructure1/banking-infrastructure1.component';
+import { BankingInfrastructure2Component } from './banking-and-allied-content/banking-infrastructure2/banking-infrastructure2.component';
+import { BankingInfrastructure3Component } from './banking-and-allied-content/banking-infrastructure3/banking-infrastructure3.component';
+import { BankingInfrastructure4Component } from './banking-and-allied-content/banking-infrastructure4/banking-infrastructure4.component';
+import { BankingInfrastructure5Component } from './banking-and-allied-content/banking-infrastructure5/banking-infrastructure5.component';
+import { BankingInfrastructure6Component } from './banking-and-allied-content/banking-infrastructure6/banking-infrastructure6.component';
+import { SectoralShare1Component } from './banking-and-allied-content/sectoral-share1/sectoral-share1.component';
+import { SectoralShare2Component } from './banking-and-allied-content/sectoral-share2/sectoral-share2.component';
+import { SectoralShare3Component } from './banking-and-allied-content/sectoral-share3/sectoral-share3.component';
+import { SectoralShare4Component } from './banking-and-allied-content/sectoral-share4/sectoral-share4.component';
+import { SectoralShare5Component } from './banking-and-allied-content/sectoral-share5/sectoral-share5.component';
+import { SectoralShare6Component } from './banking-and-allied-content/sectoral-share6/sectoral-share6.component';
+import { SectoralShare7Component } from './banking-and-allied-content/sectoral-share7/sectoral-share7.component';
+import { SectoralShare8Component } from './banking-and-allied-content/sectoral-share8/sectoral-share8.component';
+import { SectoralShare9Component } from './banking-and-allied-content/sectoral-share9/sectoral-share9.component';
+import { SectoralShare10Component } from './banking-and-allied-content/sectoral-share10/sectoral-share10.component';
+import { SectoralShare11Component } from './banking-and-allied-content/sectoral-share11/sectoral-share11.component';
+import { SectoralShare12Component } from './banking-and-allied-content/sectoral-share12/sectoral-share12.component';
+import { RuralInfrastructureDevelopmentFundComponent } from './banking-and-allied-content/rural-infrastructure-development-fund/rural-infrastructure-development-fund.component';
+import { MicroFinance1Component } from './banking-and-allied-content/micro-finance1/micro-finance1.component';
+import { MicroFinance2Component } from './banking-and-allied-content/micro-finance2/micro-finance2.component';
+import { FinancialInstitutions1Component } from './banking-and-allied-content/financial-institutions1/financial-institutions1.component';
+import { FinancialInstitutions2Component } from './banking-and-allied-content/financial-institutions2/financial-institutions2.component';
+import { DepositesAndCredits1Component } from './banking-and-allied-content/deposites-and-credits1/deposites-and-credits1.component';
+import { DepositesAndCredits2Component } from './banking-and-allied-content/deposites-and-credits2/deposites-and-credits2.component';
+import { DepositesAndCredits3Component } from './banking-and-allied-content/deposites-and-credits3/deposites-and-credits3.component';
+import { DepositesAndCredits4Component } from './banking-and-allied-content/deposites-and-credits4/deposites-and-credits4.component';
+import { DepositesAndCredits5Component } from './banking-and-allied-content/deposites-and-credits5/deposites-and-credits5.component';
+import { DepositesAndCredits6Component } from './banking-and-allied-content/deposites-and-credits6/deposites-and-credits6.component';
+import { DepositesAndCredits7Component } from './banking-and-allied-content/deposites-and-credits7/deposites-and-credits7.component';
+import { DepositesAndCredits8Component } from './banking-and-allied-content/deposites-and-credits8/deposites-and-credits8.component';
+
 
 
 
@@ -552,6 +585,38 @@ import { UDPJointlyFunded12Component } from './urban-development-content/udp-joi
     UDPJointlyFunded10Component,
     UDPJointlyFunded11Component,
     UDPJointlyFunded12Component,
+    BankingAndAlliedComponent,
+    BankingInfrastructure1Component,
+    BankingInfrastructure2Component,
+    BankingInfrastructure3Component,
+    BankingInfrastructure4Component,
+    BankingInfrastructure5Component,
+    BankingInfrastructure6Component,
+    SectoralShare1Component,
+    SectoralShare2Component,
+    SectoralShare3Component,
+    SectoralShare4Component,
+    SectoralShare5Component,
+    SectoralShare6Component,
+    SectoralShare7Component,
+    SectoralShare8Component,
+    SectoralShare9Component,
+    RuralInfrastructureDevelopmentFundComponent,
+    MicroFinance1Component,
+    MicroFinance2Component,
+    FinancialInstitutions1Component,
+    FinancialInstitutions2Component,
+    DepositesAndCredits1Component,
+    DepositesAndCredits2Component,
+    DepositesAndCredits3Component,
+    DepositesAndCredits4Component,
+    DepositesAndCredits5Component,
+    DepositesAndCredits6Component,
+    DepositesAndCredits7Component,
+    DepositesAndCredits8Component,
+    SectoralShare10Component,
+    SectoralShare11Component,
+    SectoralShare12Component,
     
     
   
