@@ -57,7 +57,7 @@ export class UDPStatePlan4Component implements OnInit {
 ]
   //  years = [2016, 2017];
   // views =[{key: "Table", value: "Table"}];
-  rain_fall_type = [{key:"No_of_households",value:"No_of_households"}]
+  rain_fall_type = [{key:"No of households",value:"No_of_households"}]
   // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     // Comparison = ["None","Bihar vs District"]
     data: any = {};    
