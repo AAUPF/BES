@@ -40,8 +40,10 @@ export class UDPJointlyFunded5Component implements OnInit {
   public loading = false;
 
   years = [
-  "Survey of Street Vendors",
-  "Others",
+  "deposites_and_credits3s",
+  "RRB",
+  "Cooperative Bank",
+  "All Banks"
       ];
 
   htmlContent:string;
@@ -99,7 +101,7 @@ export class UDPJointlyFunded5Component implements OnInit {
     }
     
   onSubmit(user) {
-    var controller = "udp_jointly_funded5s"
+    var controller = "deposites_and_credits3s"
 
     if (user.view !== "Map View") {
 
@@ -129,7 +131,7 @@ export class UDPJointlyFunded5Component implements OnInit {
       this.visbile= true;
       this.visbile_table= false;
       
-      var controller = "support_institutions3s"
+      var controller = "deposites_and_credits3s"
       this.spinner.show();
       setTimeout(function() {
         
