@@ -45,40 +45,46 @@ export class BankingInfrastructure3Component implements OnInit {
   Districts = [
       "All",
       "Andhra Pradesh",
-    "Bihar",
-    "Gujarat",
-    "Haryana",
-    "Karnataka",
-    "Kerala",
-    "Madhya Pradesh",
-    "Maharashtra",
-    "Odisha",
-    "Punjab",
-    "Rajasthan",
-    "Tamil Nadu",
-    "Uttar Pradesh",
-    "West Bengal",
-    "All-India",
+"Bihar ",
+"Gujarat ",
+"Haryana",
+"Himachal Pradesh",
+"Jharkhand",
+"Karnataka",
+"Kerala",
+"Madhya Pradesh",
+"Maharashtra ",
+"Odisha",
+"Punjab ",
+"Rajasthan",
+"Tamil Nadu",
+"Uttar Pradesh",
+"Uttarakhand",
+"West Bengal ",
+"India",
 ]
   years = ["All","2014","2015","2016"];
   views = ViewsNotMap;
   rain_fall_type = [{key:"All",value:"All"},{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"}]
   Comparison  = ["None",     
   "Andhra Pradesh",
-  "Bihar",
-  "Gujarat",
-  "Haryana",
-  "Karnataka",
-  "Kerala",
-  "Madhya Pradesh",
-  "Maharashtra",
-  "Odisha",
-  "Punjab",
-  "Rajasthan",
-  "Tamil Nadu",
-  "Uttar Pradesh",
-  "West Bengal",
-  "All-India",]
+"Bihar ",
+"Gujarat ",
+"Haryana",
+"Himachal Pradesh",
+"Jharkhand",
+"Karnataka",
+"Kerala",
+"Madhya Pradesh",
+"Maharashtra ",
+"Odisha",
+"Punjab ",
+"Rajasthan",
+"Tamil Nadu",
+"Uttar Pradesh",
+"Uttarakhand",
+"West Bengal ",
+"India"]
     
     data: any = {};    
     toNumber(d) {
@@ -86,25 +92,25 @@ export class BankingInfrastructure3Component implements OnInit {
       this.years = ["2014","2015","2016"];
     } 
     else {
-      // if (this.data.view == "line") {
-      //   this.years = ["All"];
-      // } else {
-      //   this.years = ["All","2001","2005", "2010","2015","2016","2017"];
-      // }
+      if (this.data.view == "line") {
+        this.years = ["All"];
+      } else {
+        this.years = ["All","2014","2015","2016"];
+      }
     
     }
   }
   toView(view){
-// if (view == "line") {
-//   this.years = ["All"];
-// } else {
-//   if (this.data.rain_fall_type == "All") {
-//     this.years = ["All","2001","2005", "2010","2015","2016","2017"];
-//   } else {
-//     this.years =  ["All","2001","2005", "2010","2015","2016","2017"];;
-//   }
+if (view == "line") {
+  this.years = ["All"];
+} else {
+  if (this.data.rain_fall_type == "All") {
+    this.years = ["All","2014","2015","2016"];
+  } else {
+    this.years =  ["All","2014","2015","2016"];
+  }
   
-// }
+}
   }
     toSet(select){
       if (select == "All") {
@@ -114,40 +120,52 @@ export class BankingInfrastructure3Component implements OnInit {
       } else {
         this.Comparison  = ["None",
         "Andhra Pradesh",
-        "Bihar",
-        "Gujarat",
-        "Haryana",
-        "Karnataka",
-        "Kerala",
-        "Madhya Pradesh",
-        "Maharashtra",
-        "Odisha",
-        "Punjab",
-        "Rajasthan",
-        "Tamil Nadu",
-        "Uttar Pradesh",
-        "West Bengal",
-        "All-India",]
+"Bihar ",
+"Gujarat ",
+"Haryana",
+"Himachal Pradesh",
+"Jharkhand",
+"Karnataka",
+"Kerala",
+"Madhya Pradesh",
+"Maharashtra ",
+"Odisha",
+"Punjab ",
+"Rajasthan",
+"Tamil Nadu",
+"Uttar Pradesh",
+"Uttarakhand",
+"West Bengal ",
+"India"]
 
         
       }
     }
     toYear(year){
-      if(year == "2016"){
-        this.views = ViewsNotDistrict
-        this.rain_fall_type = [{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"},{key:"All",value:"All"}]
-      }
-      else if(year == "2017") { 
-
-        this.views = ViewsNotDistrict
-        this.rain_fall_type = [{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"},{key:"All",value:"All"}]
-
-      }
-      else{
+      if(year == "All"){
+        this.views = ViewsNotMap
+        this.rain_fall_type = [{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"}]
+      }else{
         this.views  = ViewsNotDistrict
-        this.rain_fall_type = [{key:"All",value:"All"},{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"}]
+        this.rain_fall_type = [{key:"All",value:"All"},{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"}]
       }
     }
+    // toYear(year){
+    //   if(year == "2016"){
+    //     this.views = ViewsNotDistrict
+    //     this.rain_fall_type = [{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"},{key:"All",value:"All"}]
+    //   }
+    //   else if(year == "2017") { 
+
+    //     this.views = ViewsNotDistrict
+    //     this.rain_fall_type = [{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"},{key:"All",value:"All"}]
+
+    //   }
+    //   else{
+    //     this.views  = ViewsNotDistrict
+    //     this.rain_fall_type = [{key:"All",value:"All"},{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"}]
+    //   }
+    // }
 
   onSubmit(user) {
     var controller = "banking_infrastructure3s"
