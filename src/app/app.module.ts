@@ -310,6 +310,27 @@ import { DepositesAndCredits5Component } from './banking-and-allied-content/depo
 import { DepositesAndCredits6Component } from './banking-and-allied-content/deposites-and-credits6/deposites-and-credits6.component';
 import { DepositesAndCredits7Component } from './banking-and-allied-content/deposites-and-credits7/deposites-and-credits7.component';
 import { DepositesAndCredits8Component } from './banking-and-allied-content/deposites-and-credits8/deposites-and-credits8.component';
+import { DrinkingWaterSupplyAndSanitationComponent } from './human-development-content/drinking-water-supply-and-sanitation/drinking-water-supply-and-sanitation.component';
+import { DrinkingWaterSupplyAndSanitation1Component } from './human-development-content/drinking-water-supply-and-sanitation1/drinking-water-supply-and-sanitation1.component';
+import { DrinkingWaterSupplyAndSanitation2Component } from './human-development-content/drinking-water-supply-and-sanitation2/drinking-water-supply-and-sanitation2.component';
+import { DrinkingWaterSupplyAndSanitation3Component } from './human-development-content/drinking-water-supply-and-sanitation3/drinking-water-supply-and-sanitation3.component';
+import { DrinkingWaterSupplyAndSanitation4Component } from './human-development-content/drinking-water-supply-and-sanitation4/drinking-water-supply-and-sanitation4.component';
+import { SocialWelfareComponent } from './human-development-content/social-welfare/social-welfare.component';
+import { SocialWelfare1Component } from './human-development-content/social-welfare1/social-welfare1.component';
+import { SocialWelfare2Component } from './human-development-content/social-welfare2/social-welfare2.component';
+import { SocialWelfare3Component } from './human-development-content/social-welfare3/social-welfare3.component';
+import { DistrictWiseSectionComponent } from './human-development-content/district-wise-section/district-wise-section.component';
+import { DistrictWiseSection1Component } from './human-development-content/district-wise-section1/district-wise-section1.component';
+import { DistrictWiseSection2Component } from './human-development-content/district-wise-section2/district-wise-section2.component';
+import { DistrictWiseSection3Component } from './human-development-content/district-wise-section3/district-wise-section3.component';
+import { DistrictWiseSection4Component } from './human-development-content/district-wise-section4/district-wise-section4.component';
+import { DistrictWiseSection5Component } from './human-development-content/district-wise-section5/district-wise-section5.component';
+import { DistrictWiseSection6Component } from './human-development-content/district-wise-section6/district-wise-section6.component';
+import { DistrictWiseSection7Component } from './human-development-content/district-wise-section7/district-wise-section7.component';
+import { DistrictWiseSection8Component } from './human-development-content/district-wise-section8/district-wise-section8.component';
+import { DistrictWiseSection9Component } from './human-development-content/district-wise-section9/district-wise-section9.component';
+import { DistrictWiseSection10Component } from './human-development-content/district-wise-section10/district-wise-section10.component';
+import { DistrictWiseSection11Component } from './human-development-content/district-wise-section11/district-wise-section11.component';
 
 
 
@@ -617,6 +638,27 @@ import { DepositesAndCredits8Component } from './banking-and-allied-content/depo
     SectoralShare10Component,
     SectoralShare11Component,
     SectoralShare12Component,
+    DrinkingWaterSupplyAndSanitationComponent,
+    DrinkingWaterSupplyAndSanitation1Component,
+    DrinkingWaterSupplyAndSanitation2Component,
+    DrinkingWaterSupplyAndSanitation3Component,
+    DrinkingWaterSupplyAndSanitation4Component,
+    SocialWelfareComponent,
+    SocialWelfare1Component,
+    SocialWelfare2Component,
+    SocialWelfare3Component,
+    DistrictWiseSectionComponent,
+    DistrictWiseSection1Component,
+    DistrictWiseSection2Component,
+    DistrictWiseSection3Component,
+    DistrictWiseSection4Component,
+    DistrictWiseSection5Component,
+    DistrictWiseSection6Component,
+    DistrictWiseSection7Component,
+    DistrictWiseSection8Component,
+    DistrictWiseSection9Component,
+    DistrictWiseSection10Component,
+    DistrictWiseSection11Component,
     
     
   
