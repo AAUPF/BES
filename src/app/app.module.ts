@@ -331,6 +331,22 @@ import { DistrictWiseSection8Component } from './human-development-content/distr
 import { DistrictWiseSection9Component } from './human-development-content/district-wise-section9/district-wise-section9.component';
 import { DistrictWiseSection10Component } from './human-development-content/district-wise-section10/district-wise-section10.component';
 import { DistrictWiseSection11Component } from './human-development-content/district-wise-section11/district-wise-section11.component';
+import { EducationArtCulture1Component } from './human-development-content/education-art-culture1/education-art-culture1.component';
+import { EducationArtCulture2Component } from './human-development-content/education-art-culture2/education-art-culture2.component';
+import { EducationArtCulture3Component } from './human-development-content/education-art-culture3/education-art-culture3.component';
+import { EducationArtCulture4Component } from './human-development-content/education-art-culture4/education-art-culture4.component';
+import { EducationArtCulture5Component } from './human-development-content/education-art-culture5/education-art-culture5.component';
+import { EducationArtCulture6Component } from './human-development-content/education-art-culture6/education-art-culture6.component';
+import { EducationArtCulture7Component } from './human-development-content/education-art-culture7/education-art-culture7.component';
+import { EducationArtCulture8Component } from './human-development-content/education-art-culture8/education-art-culture8.component';
+import { EducationArtCulture9Component } from './human-development-content/education-art-culture9/education-art-culture9.component';
+import { LabourResourceAndWelfare1Component } from './human-development-content/labour-resource-and-welfare1/labour-resource-and-welfare1.component';
+import { LabourResourceAndWelfare2Component } from './human-development-content/labour-resource-and-welfare2/labour-resource-and-welfare2.component';
+import { WomenEmpowerment1Component } from './human-development-content/women-empowerment1/women-empowerment1.component';
+import { WomenEmpowerment2Component } from './human-development-content/women-empowerment2/women-empowerment2.component';
+import { WomenEmpowerment3Component } from './human-development-content/women-empowerment3/women-empowerment3.component';
+import { WomenEmpowerment4Component } from './human-development-content/women-empowerment4/women-empowerment4.component';
+import { SocialSecurityForOldAndDisabledComponent } from './human-development-content/social-security-for-old-and-disabled/social-security-for-old-and-disabled.component';
 
 
 
@@ -659,6 +675,22 @@ import { DistrictWiseSection11Component } from './human-development-content/dist
     DistrictWiseSection9Component,
     DistrictWiseSection10Component,
     DistrictWiseSection11Component,
+    EducationArtCulture1Component,
+    EducationArtCulture2Component,
+    EducationArtCulture3Component,
+    EducationArtCulture4Component,
+    EducationArtCulture5Component,
+    EducationArtCulture6Component,
+    EducationArtCulture7Component,
+    EducationArtCulture8Component,
+    EducationArtCulture9Component,
+    LabourResourceAndWelfare1Component,
+    LabourResourceAndWelfare2Component,
+    WomenEmpowerment1Component,
+    WomenEmpowerment2Component,
+    WomenEmpowerment3Component,
+    WomenEmpowerment4Component,
+    SocialSecurityForOldAndDisabledComponent,
     
     
   

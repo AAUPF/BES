@@ -284,6 +284,22 @@ import { DepositesAndCredits5Component } from './banking-and-allied-content/depo
 import { DepositesAndCredits6Component } from './banking-and-allied-content/deposites-and-credits6/deposites-and-credits6.component';
 import { DepositesAndCredits7Component } from './banking-and-allied-content/deposites-and-credits7/deposites-and-credits7.component';
 import { DepositesAndCredits8Component } from './banking-and-allied-content/deposites-and-credits8/deposites-and-credits8.component';
+import { EducationArtCulture1Component } from './human-development-content/education-art-culture1/education-art-culture1.component';
+import { EducationArtCulture2Component } from './human-development-content/education-art-culture2/education-art-culture2.component';
+import { EducationArtCulture3Component } from './human-development-content/education-art-culture3/education-art-culture3.component';
+import { EducationArtCulture4Component } from './human-development-content/education-art-culture4/education-art-culture4.component';
+import { EducationArtCulture5Component } from './human-development-content/education-art-culture5/education-art-culture5.component';
+import { EducationArtCulture6Component } from './human-development-content/education-art-culture6/education-art-culture6.component';
+import { EducationArtCulture7Component } from './human-development-content/education-art-culture7/education-art-culture7.component';
+import { EducationArtCulture8Component } from './human-development-content/education-art-culture8/education-art-culture8.component';
+import { EducationArtCulture9Component } from './human-development-content/education-art-culture9/education-art-culture9.component';
+import { LabourResourceAndWelfare1Component } from './human-development-content/labour-resource-and-welfare1/labour-resource-and-welfare1.component';
+import { LabourResourceAndWelfare2Component } from './human-development-content/labour-resource-and-welfare2/labour-resource-and-welfare2.component';
+import { WomenEmpowerment1Component } from './human-development-content/women-empowerment1/women-empowerment1.component';
+import { WomenEmpowerment2Component } from './human-development-content/women-empowerment2/women-empowerment2.component';
+import { WomenEmpowerment3Component } from './human-development-content/women-empowerment3/women-empowerment3.component';
+import { WomenEmpowerment4Component } from './human-development-content/women-empowerment4/women-empowerment4.component';
+import { SocialSecurityForOldAndDisabledComponent } from './human-development-content/social-security-for-old-and-disabled/social-security-for-old-and-disabled.component';
 
 export const appRoutes: Routes = [
     {
@@ -1419,6 +1435,71 @@ export const appRoutes: Routes = [
         path: 'Deposites-And-Credits8',
         component: DepositesAndCredits8Component
      },
+     {
+        path: 'Education-Art-Culture1',
+        component: EducationArtCulture1Component
+     },
+     {
+        path: 'Education-Art-Culture2',
+        component: EducationArtCulture2Component
+     },
+     {
+        path: 'Education-Art-Culture3',
+        component: EducationArtCulture3Component
+     },
+     {
+        path: 'Education-Art-Culture4',
+        component: EducationArtCulture4Component
+     },
+     {
+        path: 'Education-Art-Culture5',
+        component: EducationArtCulture5Component
+     },
+     {
+        path: 'Education-Art-Culture6',
+        component: EducationArtCulture6Component
+     },
+     {
+        path: 'Education-Art-Culture7',
+        component: EducationArtCulture7Component
+     },
+     {
+        path: 'Education-Art-Culture8',
+        component: EducationArtCulture8Component
+     },
+     {
+        path: 'Education-Art-Culture9',
+        component: EducationArtCulture9Component
+     },
+     {
+        path: 'Labour-Resource-And-Welfare1',
+        component: LabourResourceAndWelfare1Component
+     },
+     {
+        path: 'Labour-Resource-And-Welfare2',
+        component: LabourResourceAndWelfare2Component
+     },
+     {
+        path: 'Women-Empowerment1',
+        component: WomenEmpowerment1Component
+     },
+     {
+        path: 'Women-Empowerment2',
+        component: WomenEmpowerment2Component
+     },
+     {
+        path: 'Women-Empowerment3',
+        component: WomenEmpowerment3Component
+     },
+     {
+        path: 'Women-Empowerment4',
+        component: WomenEmpowerment4Component
+     },
+     {
+        path: 'Social-Security-For-Old-And-Disabled',
+        component: SocialSecurityForOldAndDisabledComponent
+     },
+
 
      
 ];
