@@ -53,11 +53,11 @@ export class ExpenditureOnUrbanDevelopmentComponent implements OnInit {
         ];
   views = ViewsNotMap;
   rain_fall_type = [{key: "All", value: "All"}, {key:"Housing",value:"Housing"},
-  {key:"Urban_Development",value:"Urban_Development"},
+  {key:"Urban Development",value:"Urban_Development"},
   {key:"Total",value:"Total"},	]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = [{key: "None", value: "None"}, {key:"Housing",value:"Housing"},
-  {key:"Urban_Development",value:"Urban_Development"},
+  {key:"Urban Development",value:"Urban_Development"},
   {key:"Total",value:"Total"},	]
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    

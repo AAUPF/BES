@@ -4,7 +4,8 @@ export const ViewsNotDistrict:any = [
     {key: "Stacked Column", value: "stackedColumn"},
     {key: "Stacked Bar 100%", value: "stackedBar100"},
     {key: "Stacked Bar", value: "stackedBar"},
-    {key: "Bubble", value: "scatter"},
+    // {key: "Bubble", value: "bubble"},
+    // {key:"Stacked Area",value:"stackedArea"},
     {key: "Table", value: "Table"},
     
 ];

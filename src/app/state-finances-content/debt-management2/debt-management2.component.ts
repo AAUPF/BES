@@ -47,12 +47,7 @@ export class DebtManagement2Component implements OnInit {
     "2016-17",
     "31_03_2016",
     "31_03_2017",
-    "2017_from_2016",
-    "2015-16",
-    "2016-17",
-    "31_03_2016",
-    "31_03_2017",
-    "2017_from_2016",
+    "2017_from_2016"
 ];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;

@@ -6,13 +6,11 @@ import { ModalComponent } from '../../modal/modal.component';
 import { SvgcomponentComponent } from '../../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { TableExport } from '../../../../node_modules/tableexport';
-import { Views } from '../../data/views';
 import { Location } from '@angular/common';
+import { Views } from '../../data/views';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
-import { ViewsNotMap } from '../../data/viewsnotmap';
 import { ViewsNotTrend } from '../../data/viewsnottrend';
-import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -25,89 +23,56 @@ declare var CanvasJS:any;
   styleUrls: ['./district-wise-section5.component.css']
 })
 export class DistrictWiseSection5Component implements OnInit {
-
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
+    // this.AgricultureService.barchart();
+    // this.SvgService.barchart1("Muzaffarpur",2016);
   }
   cancel() {
     this.location.back(); // <-- go back to previous location on cancel
   }
 
   
+  // title:string;
   title = ""
   butDisabled: boolean = false;
 
   public loading = false;
 
   htmlContent:string;
+  Districts = Districtswithoutbihar
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = Districtswithoutbihar
-  years = ["All", "2014-15","2015-16"];
-  views = ViewsNotMap;
-  rain_fall_type = [{key:"All",value:"All"},{key:"Primary1",value:"Primary1"},
-  {key:"Upper Primary",value:"Upper_Primary"},
-  {key:"Total",value:"Total"},]
-  Comparison  = Comparedistrictswithoutbihar
-    
+
+  years = [2016, 2017];
+  views = ViewsNotTrend
+  rain_fall_type = [{key: "All", value: "All"},{key:"Primary Schools",value:"Primary_Schools"},	{key:"Upper Primary Schools",value:"Upper_Primary_Schools"},	{key:"Total",value:"Total"}]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    Comparison = Comparedistrictswithoutbihar
     data: any = {};    
     toNumber(d) {
-    if (d == "All") {
-      this.years = [ "2014-15","2015-16"];
-    } 
-    else {
-      if (this.data.view == "line") {
-        this.years = ["All"];
-      } else {
-        this.years = ["All", "2014-15","2015-16"];
-      }
-    
-    }
-  }
-  toView(view){
-if (view == "line") {
-  this.years = ["All"];
-} else {
-  if (this.data.rain_fall_type == "All") {
-    this.years = [ "2014-15","2015-16"];
-  } else {
-    this.years = ["All", "2014-15","2015-16"];
-  }
-  
-}
-  }
-    toSet(select){
-      if (select == "All") {
-        this.data.Comparison  = "None"
-        this.Comparison  = ["None"]
-        
+        if (d == "All") {
+          this.data.Comparison = "None"
+          this.Comparison = ["None"]
 
-      } else {
-        this.data.Comparison  = "None"
-        this.Comparison  = Comparedistrictswithoutbihar
+        } else {
+          this.Comparison = Comparedistrictswithoutbihar
         }
     }
-    toYear(year){
-      if(year == "All"){
-        this.views = ViewsNotMap
-        this.rain_fall_type = [{key:"Primary1",value:"Primary1"},
-        {key:"Upper Primary",value:"Upper_Primary"},
-        {key:"Total",value:"Total"},]
+    toHide(view){
+      if(view=="Map View"){
+        this.rain_fall_type = [{key:"Primary Schools",value:"Primary_Schools"},	{key:"Upper Primary Schools",value:"Upper_Primary_Schools"},	{key:"Total",value:"Total"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }else{
-        this.views  = ViewsNotDistrict
-        this.rain_fall_type = [{key:"All",value:"All"},{key:"Primary1",value:"Primary1"},
-        {key:"Upper Primary",value:"Upper_Primary"},
-        {key:"Total",value:"Total"},]
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Primary Schools",value:"Primary_Schools"},	{key:"Upper Primary Schools",value:"Upper_Primary_Schools"},	{key:"Total",value:"Total"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
     }
-
   onSubmit(user) {
-    var controller = "district_wise_section4s"
+    var controller = "district_wise_section5s"
 
     if (user.view !== "Map View") {
 
-      console.log("errror");
-      
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
@@ -131,11 +96,10 @@ if (view == "line") {
       this.visbile_chart= false;
       this.visbile= true;
       this.visbile_table= false;
-      this.title =user.rain_fall_type;
-      var controller = "district_wise_section4s"
+      var controller = "district_wise_section5s"
       this.spinner.show();
       setTimeout(function() {
-       
+        
             that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
             var u = "wchamparan";
             that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
@@ -143,9 +107,8 @@ if (view == "line") {
       
       
     }
- }     
+  }     
   
-
   myEvent(event) {
     var n =  new TableExport(document.getElementsByTagName("table"));
   }
@@ -153,3 +116,15 @@ if (view == "line") {
   ngOnInit() {}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

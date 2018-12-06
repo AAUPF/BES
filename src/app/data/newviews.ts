@@ -5,7 +5,8 @@ export const NewViews:any = [
     {key: "Stacked Bar 100%", value: "stackedBar100"},
     {key: "Stacked Bar", value: "stackedBar"},
     {key: "Trend Line", value: "line"},
-    {key: "Bubble", value: "scatter"},
+    // {key: "Bubble", value: "bubble"},
+    // {key:"Stacked Area",value:"stackedArea"},
     {key: "Table", value: "Table"},
     {key:"Map View", value: "Map View"}
 ];

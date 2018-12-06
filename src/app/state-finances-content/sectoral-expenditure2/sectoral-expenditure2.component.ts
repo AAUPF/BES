@@ -40,7 +40,7 @@ export class SectoralExpenditure2Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["Total Expenditure (Rs. crore)","Per Capita Expenditure (Rs.)","All"]
+  Districts = ["Total Expenditure (Rs. crore)","Per Capita Expenditure (Rs.)"]
   years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
