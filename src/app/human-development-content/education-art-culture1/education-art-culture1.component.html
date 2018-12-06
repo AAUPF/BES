@@ -28,15 +28,15 @@
                           <option [ngValue]="undefined" disabled  selected> Indicator1  </option>
                           <option class='option' *ngFor='let option of Comparison_sort' [ngValue]="option.value">{{option.key}}</option>
                       </select>
-                        <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years" (ngModelChange)="toYear(data.years)">
+                        <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
                             <option [ngValue]="undefined" disabled  selected> Year  </option>
                             <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
                         </select>
-                            <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view"  (ngModelChange)="toView(data.view)">
+                            <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
                                 <option [ngValue]="undefined" disabled  selected> Views  </option>
                                 <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                             </select>
-                            <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber1(data.rain_fall_type)">
+                            <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
                                 <option [ngValue]="undefined" disabled  selected> Status </option>
                                 <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
                             </select>
