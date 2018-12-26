@@ -26,14 +26,14 @@
                           </select>
       
                           <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years" (ngModelChange)="toYear(data.years)">
-                              <option [ngValue]="undefined" disabled  selected> Year  </option>
+                              <option [ngValue]="undefined" disabled  selected> Roads/Drain  </option>
                               <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
                           </select>
                               <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view"  (ngModelChange)="toView(data.view)">
                                   <option [ngValue]="undefined" disabled  selected> Views  </option>
                                   <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                               </select>
-                              <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
+                              <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type"  (ngModelChange)="toSet(data.rain_fall_type)">
                                   <option [ngValue]="undefined" disabled  selected> Sector  </option>
                                   <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
                               </select>
@@ -45,7 +45,7 @@
                               <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                           </div>
                       </form>
-                <div class="unt-txt">Unit - (Not define)  </div>
+                <div class="unt-txt">Unit - In Percentage  </div>
                     <div style="clear: both;"> </div>	
                     <!-- <table id="myId"></table> -->
                     <div class="hideContainer"></div>                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>

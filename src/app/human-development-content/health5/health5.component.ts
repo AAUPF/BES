@@ -10,6 +10,7 @@ import { Views } from '../../data/views';
 import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -51,14 +52,34 @@ export class Health5Component implements OnInit {
   Comparison = [{key: "None", value: "None"}, {key: "District Hospital", value: "District_Hospital"}, {key: "Referral Hospital", value: "Referral_Hospital"},{key: "Sub Divisional Hospital", value: "Sub_Divisional_Hospital"},{key: "PHC", value: "PHC"},{key: "Sub Centre", value: "Sub_Centre"},{key: "APHC", value: "APHC"},{key: "Total Health Centre", value: "Total_Health_Centre"},{key: "Health centres per lakh of population", value: "Health_centres_per_lakh_of_population"}]
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
+    
+
+
+    toYear(year){
+      if(year == "All"){
+        
+  this.views = ViewsNotMap
+      }else{
+        this.views  =  ViewsNotDistrict
+      }
+    }
+    toView(view){
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    this.years = ["All",2011,2012,2013,2014,2015,2016,2017];
+  }
+    }
+    
     toNumber(d) {
     if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
+      this.data.Comparison = "None";
       this.Comparison_sort = [{key: "None", value: "None"}]
     } else {
       this.Comparison_sort = this.Comparison.sort(f.compare);
     }
     }
+
   onSubmit(user) {
     var controller = "health5s"
 

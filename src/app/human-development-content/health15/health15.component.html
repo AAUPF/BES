@@ -32,7 +32,7 @@
                           <option [ngValue]="undefined" disabled  selected> Views  </option>
                           <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                       </select>
-                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type">
+                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toMap(data.rain_fall_type)">
                           <option [ngValue]="undefined" disabled  selected> Health Institutions in Bihar  </option>
                           <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
                       </select>

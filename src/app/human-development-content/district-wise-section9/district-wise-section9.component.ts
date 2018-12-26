@@ -11,6 +11,7 @@ import { Views } from '../../data/views';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotTrend } from '../../data/viewsnottrend';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -59,40 +60,57 @@ export class DistrictWiseSection9Component implements OnInit {
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = Comparedistrictswithoutbihar
     data: any = {};    
-    toNumber(d) {
-        if (d == "All") {
-          this.data.Comparison = "None"
-          this.Comparison = ["None"]
 
+    toNumber(d) {
+      if (d == "All") {
+        this.data.Comparison = "None"
+        this.Comparison = ["None"]
+
+      } else {
+        if (this.data.view == "Map View") {
+          this.data.Comparison = "None"
+        this.Comparison = ["None"]
         } else {
           this.Comparison = Comparedistrictswithoutbihar
         }
-    }
-    toHide(view){
-      if(view=="Map View"){
-        this.rain_fall_type = [{key:"Affiliated College",value:"Affiliated_College"},
-{key:"Constituent College",value:"Constituent_College"},
-{key:"Total",value:"Total"},
-{key:"Science Arts Commerce College",value:"Science_Arts_Commerce_College"},
-{key:"Engineering",value:"Engineering"},
-{key:"Medical",value:"Medical"},
-{key:"B Ed",value:"B_Ed"},
-{key:"Others",value:"Others"},
-{key:"All Colleges",value:"All_Colleges"},]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-      }else{
-        this.rain_fall_type = [{key: "All", value: "All"},{key:"Affiliated College",value:"Affiliated_College"},
-{key:"Constituent College",value:"Constituent_College"},
-{key:"Total",value:"Total"},
-{key:"Science Arts Commerce College",value:"Science_Arts_Commerce_College"},
-{key:"Engineering",value:"Engineering"},
-{key:"Medical",value:"Medical"},
-{key:"B Ed",value:"B_Ed"},
-{key:"Others",value:"Others"},
-{key:"All Colleges",value:"All_Colleges"},]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        
       }
+  }
+  toHide(view){
+    if(view=="Map View"){
+      this.data.Comparison = "None"
+      this.Comparison = ["None"]
+      this.rain_fall_type = [{key:"Affiliated College",value:"Affiliated_College"},
+      {key:"Constituent College",value:"Constituent_College"},
+      {key:"Total",value:"Total"},
+      {key:"Science Arts Commerce College",value:"Science_Arts_Commerce_College"},
+      {key:"Engineering",value:"Engineering"},
+      {key:"Medical",value:"Medical"},
+      {key:"B Ed",value:"B_Ed"},
+      {key:"Others",value:"Others"},
+      {key:"All Colleges",value:"All_Colleges"}]
+      this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    }else{
+      this.rain_fall_type = [{key: "All", value: "All"},{key:"Affiliated College",value:"Affiliated_College"},
+      {key:"Constituent College",value:"Constituent_College"},
+      {key:"Total",value:"Total"},
+      {key:"Science Arts Commerce College",value:"Science_Arts_Commerce_College"},
+      {key:"Engineering",value:"Engineering"},
+      {key:"Medical",value:"Medical"},
+      {key:"B Ed",value:"B_Ed"},
+      {key:"Others",value:"Others"},
+      {key:"All Colleges",value:"All_Colleges"}]
+      this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      this.Comparison = Comparedistrictswithoutbihar
     }
+  }
+  toMap(data){
+    if (data=="All") {
+      this.views = ViewsNotDistrict
+    } else {
+      this.views = ViewsNotTrend
+    }
+  }
   onSubmit(user) {
     var controller = "district_wise_section9s"
 

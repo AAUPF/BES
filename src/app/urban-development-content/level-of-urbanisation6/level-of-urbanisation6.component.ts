@@ -121,6 +121,22 @@ export class LevelOfUrbanisation6Component implements OnInit {
     // ];
     // }
       }
+      toSet(data){
+        if(data == "All"){
+          this.data.Comparison = "None"
+          this.Comparison = [{key: "None", value: "None"}]
+          this.Comparison_sort = this.Comparison.sort(f.compare);
+        }
+        else{
+          this.Comparison = [{key: "None", value: "None"}, {key:"Municipal Corporations",value:"Municipal_Corporations"},
+          {key:"Municipal Councils",value:"Municipal_Councils"},
+          {key:"Nagar Panchayats",value:"Nagar_Panchayats"},
+          {key:"Total",value:"Total"}]
+          this.Comparison_sort = this.Comparison.sort(f.compare);
+        }
+
+
+      }
 
 
       onSubmit(user) {

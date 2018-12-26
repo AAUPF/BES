@@ -11,6 +11,7 @@ import { Views } from '../../data/views';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotTrend } from '../../data/viewsnottrend';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -24,8 +25,6 @@ declare var CanvasJS:any;
 })
 export class DistrictWiseSection5Component implements OnInit {
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
-    // this.AgricultureService.barchart();
-    // this.SvgService.barchart1("Muzaffarpur",2016);
   }
   cancel() {
     this.location.back(); // <-- go back to previous location on cancel
@@ -51,23 +50,39 @@ export class DistrictWiseSection5Component implements OnInit {
     Comparison = Comparedistrictswithoutbihar
     data: any = {};    
     toNumber(d) {
-        if (d == "All") {
-          this.data.Comparison = "None"
-          this.Comparison = ["None"]
+      if (d == "All") {
+        this.data.Comparison = "None"
+        this.Comparison = ["None"]
 
+      } else {
+        if (this.data.view == "Map View") {
+          this.data.Comparison = "None"
+        this.Comparison = ["None"]
         } else {
           this.Comparison = Comparedistrictswithoutbihar
         }
-    }
-    toHide(view){
-      if(view=="Map View"){
-        this.rain_fall_type = [{key:"Primary Schools",value:"Primary_Schools"},	{key:"Upper Primary Schools",value:"Upper_Primary_Schools"},	{key:"Total",value:"Total"}]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-      }else{
-        this.rain_fall_type = [{key: "All", value: "All"},{key:"Primary Schools",value:"Primary_Schools"},	{key:"Upper Primary Schools",value:"Upper_Primary_Schools"},	{key:"Total",value:"Total"}]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        
       }
+  }
+  toHide(view){
+    if(view=="Map View"){
+      this.data.Comparison = "None"
+      this.Comparison = ["None"]
+      this.rain_fall_type = [{key:"Primary Schools",value:"Primary_Schools"},	{key:"Upper Primary Schools",value:"Upper_Primary_Schools"},	{key:"Total",value:"Total"}]
+      this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    }else{
+      this.rain_fall_type = [{key: "All", value: "All"},{key:"Primary Schools",value:"Primary_Schools"},	{key:"Upper Primary Schools",value:"Upper_Primary_Schools"},	{key:"Total",value:"Total"}]
+      this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      this.Comparison = Comparedistrictswithoutbihar
     }
+  }
+  toMap(data){
+    if (data=="All") {
+      this.views = ViewsNotDistrict
+    } else {
+      this.views = ViewsNotTrend
+    }
+  }
   onSubmit(user) {
     var controller = "district_wise_section5s"
 

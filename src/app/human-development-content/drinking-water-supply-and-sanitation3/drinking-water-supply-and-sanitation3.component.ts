@@ -49,7 +49,7 @@ export class DrinkingWaterSupplyAndSanitation3Component implements OnInit {
 "2014-15",
 "2015-16 ",
 "2016-17",]
-  views = ViewsNotDistrict
+  views = ViewsNotMap
   rain_fall_type = [{key: "All", value: "All"},{key:"Outlay",value:"Outlay"},
   {key:"Expenditure",value:"Expenditure"},
   {key:"Outlay as Percent of Expenditure",value:"Outlay_as_Percent_of_Expenditure"},]

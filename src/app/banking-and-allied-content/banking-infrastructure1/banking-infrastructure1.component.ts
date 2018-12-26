@@ -43,7 +43,7 @@ export class BankingInfrastructure1Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["All","2012","2013","2014","2015","2016","2017"]
-  views = ViewsNotDistrict
+  views = ViewsNotMap
   rain_fall_type = [{key: "All", value: "All"},{key:"Growth Rate",value:"Growth_Rate"},	{key:"Percentage distribution of Rural branches",value:"Percentage_distribution_of_Rural_branches"},{key:"Percentage distribution of Semiurban Branches",value:"Percentage_distribution_of_Semiurban_Branches"},{key:"Percentage distribution of Urban branches",value:"Percentage_distribution_of_Urban_branches"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","2012","2013","2014","2015","2016","2017"]
@@ -52,10 +52,13 @@ export class BankingInfrastructure1Component implements OnInit {
       if (d == "All") {
         this.data.Comparison = "None"
         this.Comparison  = ["None"]
+        // this.views = ViewsNotMap
         } else {
           this.Comparison = ["None","2012","2013","2014","2015","2016","2017"]
+          // this.views  = ViewsNotDistrict
         }
     }
+    
     
   onSubmit(user) {
     var controller = "banking_infrastructure1s"

@@ -62,7 +62,9 @@ export class WomenEmpowerment3Component implements OnInit {
       if (d == "All") {
         this.data.Comparison = "None"
         this.Comparison  = ["None"]
+        this.views = ViewsNotMap
         } else {
+          this.views = ViewsNotDistrict
           this.Comparison = ["None","2011-12",
           "2012-13",
           "2013-14",
@@ -71,6 +73,29 @@ export class WomenEmpowerment3Component implements OnInit {
           "2016-17 (BE)",]
         }
     }
+
+    toView(view){
+      if (view == "line") {
+        this.Districts = ["All"];
+      } else {
+        if (this.data.rain_fall_type == "All") {
+          this.Districts = ["2011-12",
+          "2012-13",
+          "2013-14",
+          "2014-15",
+          "2015-16",
+          "2016-17 (BE)"];
+        } else {
+          this.Districts = ["All","2011-12",
+          "2012-13",
+          "2013-14",
+          "2014-15",
+          "2015-16",
+          "2016-17 (BE)"];
+        }
+        
+      }
+        }
     
   onSubmit(user) {
     var controller = "women_empowerment3s"

@@ -4,6 +4,7 @@ export const ViewsNotTrend:any = [
     {key: "Stacked Column", value: "stackedColumn"},
     {key: "Stacked Bar 100%", value: "stackedBar100"},
     {key: "Stacked Bar", value: "stackedBar"},
+    // {key:"waterfall",value:"waterfall"},
     // {key: "Bubble", value: "bubble"},
     // {key:"Stacked Area",value:"stackedArea"},
     {key: "Table", value: "Table"},

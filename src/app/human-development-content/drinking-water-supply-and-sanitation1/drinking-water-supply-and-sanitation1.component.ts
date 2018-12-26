@@ -49,7 +49,7 @@ export class DrinkingWaterSupplyAndSanitation1Component implements OnInit {
 "2014-15",
 "2015-16 ",
 "2016-17",]
-  views = ViewsNotDistrict
+  views = ViewsNotMap
   rain_fall_type = [{key: "All", value: "All"},{key:"Handpumps Installed",value:"Handpumps_Installed"},
   {key:"Slipped back Habitations or Water quality problems covered",value:"Slipped_back_Habitations_or_Water_quality_problems_covered"},
   {key:"IHHL constructed under APL",value:"IHHL_constructed_under_APL"},

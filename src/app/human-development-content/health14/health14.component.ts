@@ -10,6 +10,7 @@ import { Views } from '../../data/views';
 import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -51,18 +52,36 @@ export class Health14Component implements OnInit {
     data: any = {};
     toNumber(d) {
     if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.Comparison_sort = [{key: "None", value: "None"}]
+      this.data.Comparison = "None"
+      this.Comparison = [{key: "None", value: "None"}]
+      this.Comparison_sort = this.Comparison.sort(f.compare);
     } else {
+      this.Comparison = [{key: "None", value: "None"}, {key: "Budget for ICDS Bihar", value: "Budget_for_ICDS_Bihar"}, {key: "Funds Released by GOI", value: "Funds_Released_by_GOI"},{key: "Expenditure", value: "Expenditure"},{key: "Fund Released as Percentage of Budget", value: "Fund_Released_as_Percentage_of_Budget"},{key: "Expenditure as Percentage of Fund Released", value: "Expenditure_as_Percentage_of_Fund_Released"}]
       this.Comparison_sort = this.Comparison.sort(f.compare);
     }
     }
+    toView(view){
+      if (view == "line") {
+        this.years = ["All"];
+      } else {
+        this.years = ["All",2012,2013,2014,2015,2016];
+      }
+        }
+    toYear(year){
+          if(year == "All"){
+            // this.data.Comparison = "None"
+            this.views = ViewsNotMap
+          }else{
+            this.views  =  ViewsNotDistrict
+            // this.Comparison = [{key: "None", value: "None"}]
+          }
+        }
   onSubmit(user) {
     var controller = "health14s"
 
     if (user.view !== "Map View") {
   
-      console.log("errror");
+      
       
       this.visbile_chart= true;
       this.visbile= false;
