@@ -54,7 +54,7 @@ export class SocialWelfare3Component implements OnInit {
   rain_fall_type = [{key: "All", value: "All"}, {key:"Number of Beneficiaries",value:"Number_of_Beneficiaries"},
   {key:"Fund Allocation",value:"Fund_Allocation"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = [{key: "None", value: "None"},{key: "All", value: "All"}, {key:"Number of Beneficiaries",value:"Number_of_Beneficiaries"},
+  Comparison = [{key: "None", value: "None"}, {key:"Number of Beneficiaries",value:"Number_of_Beneficiaries"},
   {key:"Fund Allocation",value:"Fund_Allocation"}]
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
