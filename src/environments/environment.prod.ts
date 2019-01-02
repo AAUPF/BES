@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://bihar.aaupf.org/'
+  apiUrl: 'https://bihar.aaupf.org/'
 };
