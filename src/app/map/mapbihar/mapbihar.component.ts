@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SvgService } from '../../services/svg.service';
 import { AgricultureService } from '../../services/agriculture.service';
-import { Districts } from '../../data/districts';
+import { Districts, Districtswithoutbihar, Comparedistrictswithoutbihar } from '../../data/districts';
 import { ModalComponent } from '../../modal/modal.component';
 import { SvgcomponentComponent } from '../../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -10,8 +10,7 @@ import { Location } from '@angular/common';
 import { Views } from '../../data/views';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
-import { ViewsNotMap } from '../../data/viewsnotmap';
-import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
+import { ViewsNotTrend } from '../../data/viewsnottrend';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -19,72 +18,65 @@ interface years<> {
 let f = new Functions();
 declare var CanvasJS:any;
 @Component({
-  selector: 'app-education-art-culture5',
-  templateUrl: './education-art-culture5.component.html',
-  styleUrls: ['./education-art-culture5.component.css']
+  selector: 'app-mapbihar',
+  templateUrl: './mapbihar.component.html',
+  styleUrls: ['./mapbihar.component.css']
 })
-export class EducationArtCulture5Component implements OnInit {
+export class MapbiharComponent implements OnInit {
 
   constructor(private AgricultureService: AgricultureService,private SvgService: SvgService,private spinner: NgxSpinnerService,private location: Location) { 
-    
+    // this.AgricultureService.barchart();
+    // this.SvgService.barchart1("Muzaffarpur",2016);
   }
   cancel() {
     this.location.back(); // <-- go back to previous location on cancel
   }
 
   
-  
+  // title:string;
   title = ""
   butDisabled: boolean = false;
 
   public loading = false;
 
   htmlContent:string;
+  Districts = Districtswithoutbihar
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All",
-"2013-14",
-"2014-15",
-"2015-16 ",
-"2016-17",]
-  views = ViewsNotDistrict
-  rain_fall_type = [{key: "All", value: "All"},{key:"Primary",value:"Primary1"},
-  {key:"Secondary",value:"Secondary"},
-  {key:"Higher",value:"Higher"},
-  {key:"Total",value:"Total"},
-  {key:"Total Budget",value:"Total_Budget"},
-  {key:"Social Services",value:"Social_Services"},]
+
+  years = [2016, 2017];
+  views = ViewsNotTrend
+  rain_fall_type = [{key: "All", value: "All"},{key:"Indicator",value:"Indicator"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None",
-"2013-14",
-"2014-15",
-"2015-16 ",
-"2016-17",]
+    Comparison = Comparedistrictswithoutbihar
     data: any = {};    
     toNumber(d) {
-      if (d == "All") {
-        this.data.Comparison = "None"
-        this.Comparison  = ["None"]
+        if (d == "All") {
+          this.data.Comparison = "None"
+          this.Comparison = ["None"]
+
         } else {
-          this.Comparison = ["None",
-        
-          "2013-14",
-          "2014-15",
-          "2015-16 ",
-          "2016-17",]
+          this.Comparison = Comparedistrictswithoutbihar
         }
     }
-    
+    toHide(view){
+      if(view=="Map View"){
+        this.rain_fall_type = [{key:"Indicator",value:"Indicator"},	]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }else{
+        this.rain_fall_type = [{key: "All", value: "All"},{key:"Indicator",value:"Indicator"},	]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
   onSubmit(user) {
-    var controller = "education_art_culture5s"
+    var controller = "mapbihars"
 
     if (user.view !== "Map View") {
 
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
-      
       if(user.view) { 
 
         if (user.view == "Table") {
@@ -102,12 +94,10 @@ export class EducationArtCulture5Component implements OnInit {
     } 
     else if(user.view == "Map View") {
      const that = this;
-     
       this.visbile_chart= false;
       this.visbile= true;
       this.visbile_table= false;
-      
-      var controller = "education_art_culture5s"
+      var controller = "mapbihars"
       this.spinner.show();
       setTimeout(function() {
         
@@ -125,5 +115,6 @@ export class EducationArtCulture5Component implements OnInit {
   }
 
   ngOnInit() {}
+
 
 }

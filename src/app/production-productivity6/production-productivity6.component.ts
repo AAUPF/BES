@@ -9,11 +9,15 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Views } from '../data/views';
 import { Location } from '@angular/common';
 import { NewViews } from '../data/newviews';
+import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotTrend } from '../data/viewsnottrend';
+import{Functions} from '../data/func';
 
 declare var $:any
 interface years<> {
   id: number;  any
 }
+let f = new Functions();
 declare var CanvasJS:any;
 @Component({
   selector: 'app-production-productivity6',
@@ -35,39 +39,146 @@ export class ProductionProductivity6Component implements OnInit {
 
   public loading = false;
 
+  // htmlContent:string;
+  // Districts = Districts;
+  // visbile= false;
+  // visbile_chart= true;
+  // visbile_table= false;
+  // years = [2015, 2016];
+  // views = NewViews;
+  // //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
+  // rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
+
+  // Comparison = ["None","Bihar vs District"]
+
+ 
+  //   data: any = {};    
+  //   toNumber(d) {
+  //   if (d == "All") {
+  //     this.data == {years: null, views: "",Comparison: ""};
+  //     this.data.Comparison  = "None"
+  //     this.butDisabled = true;
+
+  //   } else {
+  //     this.butDisabled = false;
+  //   }
+    
+  //   }
+  //   toHide(view){
+  //     if(view == "Map View"){
+  //       this.rain_fall_type = [{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
+  //       //this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  //     }else{
+  //       this.rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
+  //       //this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  //     }
+  //   }
+
+
   htmlContent:string;
   Districts = Districts;
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  years = [2015, 2016];
+
+  years = ["All",2015,2016];
   views = NewViews;
-  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
-
-  Comparison = ["None","Bihar vs District"]
-
- 
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    Comparison = ["None","Bihar vs District"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
+      this.Comparison = ["None"]
+       this.data.Comparison  = "None"
+      // this.butDisabled = true;
     } else {
-      this.butDisabled = false;
+      this.Comparison = ["None","Bihar vs District"]
+      this.data.Comparison  = "None"
+      // this.butDisabled = false;
     }
-    
     }
     toHide(view){
       if(view == "Map View"){
+        this.data.years == 2015;
+        this.years = [2015,2016];
+        if(this.data.years == "2001"){
+          this.rain_fall_type = [{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        }else{
         this.rain_fall_type = [{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
-        //this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-      }else{
-        this.rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
-        //this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
       }
+      }else{
+        if (view == "line") {
+          this.data.years == "All"
+          this.years = ["All"];
+        } else {
+          this.data.years == "All"
+          this.years = ["All",2015,2016];
+        }
+        // this.years = ["All",2015,2016];
+        if(this.data.years == "2001"){
+          this.rain_fall_type = [{key:"All",value:"All"},{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
+          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        }else{
+          if(this.data.years == "All"){
+            this.rain_fall_type = [{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
+          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+          }else{
+            this.rain_fall_type = [{key:"All",value:"All"},{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
+            this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+          }
+          
+        }
+        
+      }
+    }
+toGet(type){
+    if (type == "Decadal_Growth") {
+      this.years = ["All",2015,2016];
+    }
+    else if(type == "All"){
+      this.years = [2015,2016];
+      this.views = ViewsNotMap
+    }
+    else {
+      if (this.data.view == "Map View") {
+        this.years = [2015,2016];
+      } else {
+        this.years = ["All",2015,2016];
+      }
+    }
+}
+    toYear(year){
+      if(year == 2001) {
+        this.views = ViewsNotTrend
+        if(this.data.views == "Map View"){
+          this.rain_fall_type = [{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
+          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        }
+        
+        else{
+          this.data.rain_fall_type_sort = "All"
+          this.rain_fall_type = [{key:"All",value:"All"},{key:"Population",value:"Population"},	{key:"Sex Ratio Overall",value:"Sex_Ratio_Overall"},{key:"Sex Ratio Child",value:"Sex_Ratio_Child"},{key:"Density",value:"Density"},{key:"Urbanisation",value:"Urbanisation"},{key:"Percentage Population",value:"Percentage_Population"}]
+          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        }
+        
+      }
+      else{
+        if(year == "All"){
+          this.views = ViewsNotMap
+          this.data.rain_fall_type_sort = "Area"
+          this.rain_fall_type = [{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
+          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        }
+        else{
+          this.views = ViewsNotTrend
+          this.data.rain_fall_type_sort = "Area"
+          this.rain_fall_type = [{key:"All",value:"All"},{key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
+          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        }
+    }
     }
   onSubmit(user) {
     var controller = "newrices"

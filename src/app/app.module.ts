@@ -347,6 +347,7 @@ import { WomenEmpowerment2Component } from './human-development-content/women-em
 import { WomenEmpowerment3Component } from './human-development-content/women-empowerment3/women-empowerment3.component';
 import { WomenEmpowerment4Component } from './human-development-content/women-empowerment4/women-empowerment4.component';
 import { SocialSecurityForOldAndDisabledComponent } from './human-development-content/social-security-for-old-and-disabled/social-security-for-old-and-disabled.component';
+import { MapbiharComponent } from './map/mapbihar/mapbihar.component';
 
 
 
@@ -691,6 +692,7 @@ import { SocialSecurityForOldAndDisabledComponent } from './human-development-co
     WomenEmpowerment3Component,
     WomenEmpowerment4Component,
     SocialSecurityForOldAndDisabledComponent,
+    MapbiharComponent,
     
     
   

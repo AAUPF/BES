@@ -38,9 +38,18 @@ import { DistrictWiseSection9Component } from './human-development-content/distr
 import { DistrictWiseSection10Component } from './human-development-content/district-wise-section10/district-wise-section10.component';
 import { DistrictWiseSection11Component } from './human-development-content/district-wise-section11/district-wise-section11.component';
 
+
+import { MapbiharComponent } from './map/mapbihar/mapbihar.component';
+
+
 export const appRoutes1: Routes = [
 
 
+    {
+        path: 'BiharMap',
+        component: MapbiharComponent
+
+    },
     {
         path: 'DistrictWiseSection',
         component: DistrictWiseSectionComponent
