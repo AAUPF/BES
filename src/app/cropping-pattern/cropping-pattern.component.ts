@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
 import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotDistrict } from '../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -50,19 +51,47 @@ export class CroppingPatternComponent implements OnInit {
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
 
+    // toNumber(d) {
+    //   if (d == "All") {
+    //     this.data == {years: null, views: "",Comparison: ""};
+    //     // this.data.Comparison  = undefined
+    //     // this.butDisabled = true;
+  
+    //     this.Comparison_sort = [{key: "None", value: "None"}]
+  
+    //   } else {
+    //     // this.butDisabled = false;
+    //     //this.Comparison = [{key: "None", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
+    //     this.Comparison_sort = this.Comparison.sort(f.compare);
+    //   }
+    //   }
+
+
     toNumber(d) {
       if (d == "All") {
-        this.data == {years: null, views: "",Comparison: ""};
-        // this.data.Comparison  = undefined
-        // this.butDisabled = true;
-  
+        this.data.Comparison = "None"
+        
         this.Comparison_sort = [{key: "None", value: "None"}]
   
       } else {
-        // this.butDisabled = false;
-        //this.Comparison = [{key: "None", value: "None"},{key:"Food grains",value:"Food_grains"},	{key:"Cereals",value:"Cereals"},	{key:"Pulses",value:"Pulses"},	{key:"Oil seeds",value:"Oil_seeds"},	{key:"Fibre Crops",value:"Fibre_Crops"},	{key:"Sugarcane",value:"Sugarcane"},	{key:"Total Area",value:"Total_Area"}]
         this.Comparison_sort = this.Comparison.sort(f.compare);
       }
+      }
+
+      toYear(year){
+        if(year == "All"){
+          
+    this.views = ViewsNotMap
+        }else{
+          this.views  =  ViewsNotDistrict
+        }
+      }
+      toView(view){
+    if (view == "line") {
+      this.years = ["All"];
+    } else {
+      this.years = ["All",2012,2013,2014,2015,2016];
+    }
       }
 
   onSubmit(user) {

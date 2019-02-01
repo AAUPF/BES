@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
 import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotDistrict } from '../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -53,15 +54,33 @@ export class AgriculturalCredit1Component implements OnInit {
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
+      this.data.Comparison = "None";
       // this.data.Comparison  = undefined
       // this.butDisabled = true;
-      this.Comparison_sort = [{key: "None", value: "None"}]
+      // this.Comparison_sort = [{key: "None", value: "None"}]
     } else {
       // this.butDisabled = false;
       //this.Comparison = [{key: "none", value: "None"},{key: "Commercial Bank Target", value: "Commercial_Bank_Target"},	{key: "Commercial Bank Achievement", value: "Commercial_Bank_Achievement"},	{key: "RRBs Target", value: "RRBs_Target"},	{key: "RRBs Achievement", value: "RRBs_Achievement"},	{key: "CCBs Target", value: "CCBs_Target"},	{key: "CCBs Achievement", value: "CCBs_Achievement"},	{key: "Total Target", value: "Total_Target"},	{key: "Total Achievement", value: "Total_Achievement"},]
       this.Comparison_sort = this.Comparison.sort(f.compare);
     }
+    }
+
+
+
+    toYear(year){
+      if(year == "All"){
+        
+  this.views = ViewsNotMap
+      }else{
+        this.views  =  ViewsNotDistrict
+      }
+    }
+    toView(view){
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    this.years = ["All",2012,2013,2014,2015,2016];
+  }
     }
   onSubmit(user) {
     var controller = "agricultural_credit1s"

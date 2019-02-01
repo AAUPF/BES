@@ -10,6 +10,7 @@ import { AgricultureService } from '../services/agriculture.service';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
 import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotDistrict } from '../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -43,14 +44,31 @@ export class Land1Component implements OnInit {
       this.location.back(); // <-- go back to previous location on cancel
     }
  
-
       toNumber(d) {
-          if (d == "All") {
-            this.data == {years: null, views: "",Comparison: ""};
-            this.Comparison_sort = [{key: "None", value: "None"}]
-          } else {
-            this.Comparison_sort = this.Comparison.sort(f.compare);
+        if (d == "All") {
+          this.data.Comparison = "None"
+          
+          this.Comparison_sort = [{key: "None", value: "None"}]
+    
+        } else {
+          this.Comparison_sort = this.Comparison.sort(f.compare);
+        }
+        }
+  
+        toYear(year){
+          if(year == "All"){
+            
+      this.views = ViewsNotMap
+          }else{
+            this.views  =  ViewsNotDistrict
           }
+        }
+        toView(view){
+      if (view == "line") {
+        this.years = ["All"];
+      } else {
+        this.years = ["All",2010, 2011,2012,2013,2014];
+      }
         }
     
     onSubmit(user) {

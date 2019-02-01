@@ -57,12 +57,12 @@ views = ViewsNotMap;
     data: any = {};    
     toNumber(d) {
     if (d == "Kharif") {
-      this.data == {rain_fall_type_sort: null};
+      this.data.rain_fall_type = "Paddy";
       this.rain_fall_type_sort = [{key:"Paddy",value:"Paddy"},{key:"Maize",value:"Maize"},{key:"Urad",value:"Urad"},{key:"Arhar",value:"Arhar"},{key:"Moong",value:"Moong"}]
      
 
     } else {
-      this.data == {rain_fall_type_sort: null};
+      this.data.rain_fall_type = "Wheat";
 
       // this.rain_fall_type_sort = ["Wheat", "Maize","Arhar","Gram","Pea","Masoor","Rapeseed_Mustard"]
       this.rain_fall_type_sort = [{key:"Wheat",value:"Wheat"},{key:"Maize",value:"Maize"},{key:"Arhar",value:"Arhar"},{key:"Gram",value:"Gram"},{key:"Pea",value:"Pea"},{key:"Masoor",value:"Masoor"},{key:"Rapeseed Mustard",value:"Rapeseed_Mustard"}]
@@ -72,15 +72,14 @@ views = ViewsNotMap;
 
     all(d) {
       if (d == "All") {
-        this.data == {rain_fall_type_sort: null};
-        this.Comparison_sort =  [{key: "All", value: "All"},{key:"Requirement",value:"Require-ment"},	{key:"Supply",value:"Supply"},	{key:"SRR",value:"SRR"}]
+        this.data.Comparison_sort = "Requirement";
+        this.Comparison_sort =  [{key:"Requirement",value:"Require-ment"},	{key:"Supply",value:"Supply"},	{key:"SRR",value:"SRR"}]
 
        
   
       } else {
-        this.data == {rain_fall_type_sort: null};
-  
-        this.Comparison_sort = [{key: "All", value: "All"},{key:"Requirement",value:"Require-ment"},	{key:"Supply",value:"Supply"},	{key:"SRR",value:"SRR"}]
+        this.data.Comparison_sort == "Requirement";  
+        this.Comparison_sort = [{key:"Requirement",value:"Require-ment"},	{key:"Supply",value:"Supply"},	{key:"SRR",value:"SRR"}]
   
       }
       

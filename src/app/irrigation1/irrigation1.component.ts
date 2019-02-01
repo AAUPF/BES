@@ -10,6 +10,8 @@ import { Location } from '@angular/common';
 import { NewViews } from '../data/newviews';
 import{Functions} from '../data/func';
 import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotTrend } from '../data/viewsnottrend';
+import { ViewsNotDistrict } from '../data/viewsnotdistrict';
 
 declare var $:any
 interface years<> {
@@ -40,41 +42,35 @@ export class Irrigation1Component implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  // Districts = ["All", "MajorandMediumIrrigation","MinorIrrigation","SurfaceIrrigation","GroundWater","Total"];
-  Districts = [{key: "All", value: "All"},{key:"Major and Medium Irrigation",value:"MajorandMediumIrrigation"},	{key:"Minor Irrigation",value:"MinorIrrigation"},	{key:"Surface Irrigation",value:"SurfaceIrrigation"},{key:"Ground Water",value:"GroundWater"},{key:"Total",value:"Total"}]
+  // Districts = ["All", "Major and Medium Irrigation","Minor Irrigation","Surface Irrigation","Ground Water","Total"];
+  Districts = [{key: "All", value: "All"},{key:"Major and Medium Irrigation",value:"Major and Medium Irrigation"},	{key:"Minor Irrigation",value:"Minor Irrigation"},	{key:"Surface Irrigation",value:"Surface Irrigation"},{key:"Ground Water",value:"Ground Water"},{key:"Total",value:"Total"}]
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
 
   years = [2016, 2017];
   // views = NewViews;
-  views = ViewsNotMap;
+  views = ViewsNotDistrict
 
   rain_fall_type = [{key: "All", value: "All"},{key:"Ultimate Potential",value:"Ultimate_Potential"},	{key:"Created Potential",value:"Created_Potential"},	{key:"Utilised Potential",value:"Utilised_Potential"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = [{key: "None", value: "None"},{key:"Major and Medium Irrigation",value:"MajorandMediumIrrigation"},	{key:"Minor Irrigation",value:"MinorIrrigation"},	{key:"Surface Irrigation",value:"SurfaceIrrigation"},{key:"Ground Water",value:"GroundWater"},{key:"Total",value:"Total"}]
+  Comparison = [{key: "None", value: "None"},{key:"Major and Medium Irrigation",value:"Major and Medium Irrigation"},	{key:"Minor Irrigation",value:"Minor Irrigation"},	{key:"Surface Irrigation",value:"Surface Irrigation"},{key:"Ground Water",value:"Ground Water"},{key:"Total",value:"Total"}]
 
     // Comparison = ["None"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
+      this.data.Comparison  = "None"
+      this.Comparison = [{key: "None", value: "None"}];
+      
 
     } else {
-      this.butDisabled = false;
+      this.data.Comparison  = "None"
+      this.Comparison = [{key: "None", value: "None"},{key:"Major and Medium Irrigation",value:"Major and Medium Irrigation"},	{key:"Minor Irrigation",value:"Minor Irrigation"},	{key:"Surface Irrigation",value:"Surface Irrigation"},{key:"Ground Water",value:"Ground Water"},{key:"Total",value:"Total"}]
     }
     
     }
-    toHide(selected){
-      if(selected == "All"){
-        this.Comparison = [{key: "None", value: "None"}]
-      }else{
-        this.Comparison = [{key: "None", value: "None"},{key:"Major and Medium Irrigation",value:"MajorandMediumIrrigation"},	{key:"Minor Irrigation",value:"MinorIrrigation"},	{key:"Surface Irrigation",value:"SurfaceIrrigation"},{key:"Ground Water",value:"GroundWater"},{key:"Total",value:"Total"}]
-
-      }
-    }
+    
     onSubmit(user) {
       var controller = "irrigation1s"
   

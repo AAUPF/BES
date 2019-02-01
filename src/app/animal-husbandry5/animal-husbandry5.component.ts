@@ -10,6 +10,8 @@ import { Views } from '../data/views';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
 import { NewViews } from '../data/newviews';
+import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotTrend } from '../data/viewsnottrend';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -42,36 +44,95 @@ export class AnimalHusbandry5Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2014, 2015];
+  years = ['All','2014','2015','2016'];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = NewViews;
   rain_fall_type = [{key: "All", value: "All"}, {key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"},]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
 
   
-  Comparison = ["None","Bihar vs District"]
+  Comparison = ["None","Bihar"]
 
     data: any = {};    
     toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
-    } else {
-      this.butDisabled = false;
-    }
-    
-    }
-    toHide(view){
-      if(view == "Map View"){
-        this.rain_fall_type = [{key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"},]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-      }else{
-        this.rain_fall_type = [{key: "All", value: "All"}, {key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"},]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      if (d == "All") {
+        this.Comparison = ["None"]
+         this.data.Comparison  = "None"
+        // this.butDisabled = true;
+      } else {
+        this.Comparison = ["None","Bihar"]
+        this.data.Comparison  = "None"
+        // this.butDisabled = false;
       }
+      }
+      toHide(view){
+        if(view == "Map View"){
+          this.data.years == '2015';
+          this.years = ['2014','2015','2016'];
+          if(this.data.years == "2001"){
+            this.rain_fall_type = [{key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"}]
+          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+          }else{
+          this.rain_fall_type = [{key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"}]
+          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        }
+        }else{
+          if (view == "line") {
+            this.data.years == "All"
+            this.years = ["All"];
+          } else {
+            this.data.years == "All"
+            this.years = ['All','2014','2015','2016'];
+          }
+          // this.years = ["All",2015,2016];
+          if(this.data.years == "2001"){
+            this.rain_fall_type = [{key:"All",value:"All"},{key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"}]
+            this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+          }else{
+            if(this.data.years == "All"){
+              this.rain_fall_type = [{key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"}]
+            this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+            }else{
+              this.rain_fall_type = [{key:"All",value:"All"},{key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"}]
+              this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+            }
+            
+          }
+          
+        }
+      }
+  toGet(type){
+      if (type == "Decadal_Growth") {
+        this.years = ['All','2014','2015','2016'];
+      }
+      else if(type == "All"){
+        this.years = ['2014','2015','2016'];
+        this.views = ViewsNotMap
+      }
+      else {
+        if (this.data.view == "Map View") {
+          this.years = ['2014','2015','2016'];
+        } else {
+          this.years = ['All','2014','2015','2016'];
+        }
+      }
+  }
+  
+  
+  toYear(year){
+    if(year == "All"){
+      this.views = ViewsNotMap
+      this.data.rain_fall_type_sort = "Fish Production"
+      this.rain_fall_type = [{key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"}]
+      this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     }
+    else{
+      this.views = ViewsNotTrend
+      this.data.rain_fall_type_sort = "Fish Production"
+      this.rain_fall_type = [{key:"All",value:"All"},{key:"Fish Production",value:"Fish_Production"},	{key:"Fish Seeds",value:"Fish_Seeds"}]
+      this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    }
+  }
   onSubmit(user) {
     var controller = "animal_husbandry5s"
 

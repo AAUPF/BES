@@ -10,6 +10,7 @@ import { Location } from '@angular/common';
 import { Views } from '../data/views';
 import{Functions} from '../data/func';
 import { NewViews } from '../data/newviews';
+import { ViewsNotTrend } from '../data/viewsnottrend';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -45,7 +46,7 @@ export class AgriculturalInputs5Component implements OnInit {
 
   years = [2016, 2017];
   //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
-  views = NewViews;
+  views = ViewsNotTrend;
   //rain_fall_type = ["All","Target_Physical",	"Target_Financial",	"Achievement_Physical",	"Achievement_Financial"]
   rain_fall_type = [{key: "All", value: "All"},{key:"Target Physical",value:"Target_Physical"},	{key:"Target Financial",value:"Target_Financial"},	{key:"Achievement Physical",value:"Achievement_Physical"},	{key:"Achievement Financial",value:"Achievement_Financial"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);

@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
 import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotDistrict } from '../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -49,19 +50,46 @@ export class AnimalHusbandry1Component implements OnInit {
   Comparison = [{key: "None", value: "None"},{key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
   Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
+    // toNumber(d) {
+    //   if (d == "All") {
+    //     this.data == {years: null, views: "",Comparison: ""};
+    //     // this.data.Comparison  = undefined
+    //     // this.butDisabled = true;
+  
+    //     this.Comparison_sort = [{key: "None", value: "None"}]
+  
+    //   } else {
+    //     // this.butDisabled = false;
+    //     //this.Comparison = [{key: "None", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
+    //     this.Comparison_sort = this.Comparison.sort(f.compare);
+    //   }
+    //   }
+
     toNumber(d) {
       if (d == "All") {
-        this.data == {years: null, views: "",Comparison: ""};
-        // this.data.Comparison  = undefined
-        // this.butDisabled = true;
-  
+        this.data.Comparison = "None"
+        
         this.Comparison_sort = [{key: "None", value: "None"}]
   
       } else {
-        // this.butDisabled = false;
-        //this.Comparison = [{key: "None", value: "None"}, {key:"Cattle",value:"Cattle"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Buffalo",value:"Buffalo"},	{key:"Males over 3 years",value:"Males_over_3_years"},	{key:"Females over 3 years",value:"Females_over_3_years"},	{key:"Young stock",value:"Young_stock"},	{key:"Sheep",value:"Sheep"},	{key:"Goats",value:"Goats"},	{key:"Pigs",value:"Pigs"},	{key:"Horses Ponies",value:"Horses_Ponies"},	{key:"Others",value:"Others"},	{key:"Total Livestock",value:"Total_Livestock"},	{key:"Total Poultry",value:"Total_Poultry"}]
         this.Comparison_sort = this.Comparison.sort(f.compare);
       }
+      }
+
+      toYear(year){
+        if(year == "All"){
+          
+    this.views = ViewsNotMap
+        }else{
+          this.views  =  ViewsNotDistrict
+        }
+      }
+      toView(view){
+    if (view == "line") {
+      this.years = ["All"];
+    } else {
+      this.years = ["All",2003,2007,2012];
+    }
       }
   onSubmit(user) {
     var controller = "animal_husbandry1s"

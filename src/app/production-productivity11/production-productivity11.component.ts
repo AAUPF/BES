@@ -10,6 +10,8 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
 import { NewViews } from '../data/newviews';
+import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotTrend } from '../data/viewsnottrend';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -43,7 +45,7 @@ export class ProductionProductivity11Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2015, 2016];
+  years = ['All','2015', '2016'];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = NewViews;
   rain_fall_type =[{key: "All", value: "All"},{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"},]
@@ -51,26 +53,109 @@ export class ProductionProductivity11Component implements OnInit {
   fruits = ["Mango","Guava","Litchi","Banana"]
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
-    toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
+    // toNumber(d) {
+    // if (d == "All") {
+    //   this.data == {years: null, views: "",Comparison: ""};
+    //   this.data.Comparison  = undefined
+    //   this.butDisabled = true;
 
-    } else {
-      this.butDisabled = false;
-    }
+    // } else {
+    //   this.butDisabled = false;
+    // }
     
-    }
-    toHide(view){
-      if(view == "Map View"){
-        this.rain_fall_type =[{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"},]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-      }else{
-        this.rain_fall_type =[{key: "All", value: "All"},{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"},]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    // }
+    // toHide(view){
+    //   if(view == "Map View"){
+    //     this.rain_fall_type =[{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"},]
+    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    //   }else{
+    //     this.rain_fall_type =[{key: "All", value: "All"},{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"},]
+    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    //   }
+    // }
+
+
+
+
+    toNumber(d) {
+      if (d == "All") {
+        this.Comparison = ["None"]
+         this.data.Comparison  = "None"
+        // this.butDisabled = true;
+      } else {
+        this.Comparison = ["None","Bihar"]
+        this.data.Comparison  = "None"
+        // this.butDisabled = false;
       }
+      }
+      toHide(view){
+        if(view == "Map View"){
+          this.data.years == '2015';
+          this.years = ['2015','2016'];
+          if(this.data.years == "2001"){
+            this.rain_fall_type = [{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"}]
+          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+          }else{
+          this.rain_fall_type = [{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"}]
+          this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+        }
+        }else{
+          if (view == "line") {
+            this.data.years == "All"
+            this.years = ["All"];
+          } else {
+            this.data.years == "All"
+            this.years = ['All','2015', '2016'];
+          }
+          // this.years = ["All",2015,2016];
+          if(this.data.years == "2001"){
+            this.rain_fall_type = [{key:"All",value:"All"},{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"}]
+            this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+          }else{
+            if(this.data.years == "All"){
+              this.rain_fall_type = [{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"}]
+            this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+            }else{
+              this.rain_fall_type = [{key:"All",value:"All"},{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"}]
+              this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+            }
+            
+          }
+          
+        }
+      }
+  toGet(type){
+      if (type == "Decadal_Growth") {
+        this.years = ['All','2015', '2016'];
+      }
+      else if(type == "All"){
+        this.years = ['2015', '2016'];
+        this.views = ViewsNotMap
+      }
+      else {
+        if (this.data.view == "Map View") {
+          this.years = ['2015', '2016'];
+        } else {
+          this.years = ['All','2015', '2016'];
+        }
+      }
+  }
+  
+  
+  toYear(year){
+    if(year == "All"){
+      this.views = ViewsNotMap
+      this.data.rain_fall_type_sort = "Mango Area"
+      this.rain_fall_type = [{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"}]
+      this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     }
+    else{
+      this.views = ViewsNotTrend
+      this.data.rain_fall_type_sort = "Mango Area"
+      this.rain_fall_type = [{key:"All",value:"All"},{key:"Potato Area",value:"Potato_Area"},	{key:"Potato Production",value:"Potato_Production"},	{key:"Onion Area",value:"Onion_Area"},	{key:"Onion Production",value:"Onion_Production"},	{key:"Cauliflower Area",value:"Cauliflower_Area"},	{key:"Cauliflower Production",value:"Cauliflower_Production"},	{key:"Brinjal Area",value:"Brinjal_Area"},	{key:"Brinjal Production",value:"Brinjal_Production"},	{key:"Percentage Potato Area",value:"Percentage_Potato_Area"},	{key:"Percentage Potato Production",value:"Percentage_Potato_Production"},	{key:"Percentage Onion Area",value:"Percentage_Onion_Area"},	{key:"Percentage Onion Production",value:"Percentage_Onion_Production"},	{key:"Percentage Cauliflower Area",value:"Percentage_Cauliflower_Area"},	{key:"Percentage Cauliflower Production",value:"Percentage_Cauliflower_Production"},	{key:"Percentage Brinjal Area",value:"Percentage_Brinjal_Area"},	{key:"Percentage Brinjal Production",value:"Percentage_Brinjal_Production"}]
+      this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    }
+  }
   onSubmit(user) {
     var controller = "production_productivity11s"
 

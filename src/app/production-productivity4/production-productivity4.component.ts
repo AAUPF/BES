@@ -10,6 +10,7 @@ import { Location } from '@angular/common';
 import { Views } from '../data/views';
 import { Fruits, CompareFruits } from '../data/fruits';
 import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotDistrict } from '../data/viewsnotdistrict';
 
 
 declare var $:any
@@ -39,35 +40,64 @@ export class ProductionProductivity4Component implements OnInit {
   public loading = false;
 
   htmlContent:string;
-  Fruits = Fruits;
+  Districts = Fruits;
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
 
-  years = ["All",2012, 2013,2014,2015,2016];
+  years = ["All","2012", "2013","2014","2015","2016"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"}];
   views = ViewsNotMap;
-  rain_fall_type = ["All","Area","Production"]
+  rain_fall_type= [{key:"All",value:"All"},{key:"Area",value:"Area"},{key:"Production",value:"Production"}]
     Comparison = CompareFruits;
     data: any = {};    
-    toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-      this.years = [2012, 2013,2014,2015,2016];
 
+    toNumber(d) {
+      if (d == "All") {
+        this.years = [ "2012", "2013","2014","2015","2016"];
+      } 
+      else {
+        if (this.data.view == "line") {
+          this.years = ["All"];
+        } else {
+          this.years = ["All","2012", "2013","2014","2015","2016"];
+        }
+      
+      }
+    }
+    toView(view){
+    if (view == "line") {
+    this.years = ["All"];
     } else {
-      this.years = ["All",2012, 2013,2014,2015,2016];
-      this.butDisabled = false;
+    if (this.data.rain_fall_type == "All") {
+      this.years = [ "2012", "2013","2014","2015","2016"];
+    } else {
+      this.years = ["All", "2012", "2013","2014","2015","2016"];
     }
     
     }
-    toType(selection){
-      if (selection == "All") {
-        this.Comparison = ["None"]
+    }
+
+    toSet(select){
+      if (select == "All") {
+        this.data.Comparison  = "None"
+        this.Comparison  = [   
+        "None",
+    ]
+        
       } else {
-        this.Comparison = CompareFruits;
+        this.Comparison  = CompareFruits;
+
+        
+      }
+    }
+    toYear(year){
+      if(year == "All"){
+        this.views = ViewsNotMap
+        this.rain_fall_type = [{key:"Area",value:"Area"},{key:"Production",value:"Production"}]
+      }else{
+        this.views  = ViewsNotDistrict
+        this.rain_fall_type = [{key:"All",value:"All"},{key:"Area",value:"Area"},{key:"Production",value:"Production"}]
       }
     }
   onSubmit(user) {

@@ -10,6 +10,8 @@ import { Location } from '@angular/common';
 import { Views } from '../data/views';
 import{Functions} from '../data/func';
 import { NewViews } from '../data/newviews';
+import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotTrend } from '../data/viewsnottrend';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -43,7 +45,7 @@ export class AgriculturalInputs6Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
 
-  years = [2015, 2016];
+  years = ['All','2015', '2016'];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = NewViews;
   //rain_fall_type = ["All","Tractor",	"Combine_Harvestor",	"Zero_Tillage",	"Pumpset",	"Power_Tiller",	"Manually_Operated_Tools",	"Thresher"]
@@ -51,26 +53,82 @@ export class AgriculturalInputs6Component implements OnInit {
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs District"]
     data: any = {};    
-    toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
+    // toNumber(d) {
+    // if (d == "All") {
+    //   this.data == {years: null, views: "",Comparison: ""};
+    //   this.data.Comparison  = undefined
+    //   this.butDisabled = true;
 
-    } else {
-      this.butDisabled = false;
-    }
+    // } else {
+    //   this.butDisabled = false;
+    // }
     
-    }
-    toHide(view){
-      if(view == "Map View"){
-        this.rain_fall_type = [{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-      }else{
-        this.rain_fall_type = [{key: "All", value: "All"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
-        this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    // }
+    // toHide(view){
+    //   if(view == "Map View"){
+    //     this.rain_fall_type = [{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
+    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    //   }else{
+    //     this.rain_fall_type = [{key: "All", value: "All"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
+    //     this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    //   }
+    // }
+
+    toNumber(d) {
+      if (d == "All") {
+        this.years = ['2015','2016'];
+      } 
+      else {
+        if (this.data.view == "line") {
+          this.years = ["All"];
+        }
+        else if(this.data.view == "Map View"){
+          this.years = ['2015','2016'];
+        } 
+        else {
+          this.years = ["All",'2015','2016'];
+        }
       }
-    }
+  }
+  toView(view){
+      if (view == "line") {
+        this.years = ["All"];
+      }
+      else if(view == "Map View"){
+        this.years = ['2015','2016'];
+        this.rain_fall_type = [{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
+      }
+      else {
+        if(this.data.rain_fall_type == "All")
+        {
+          this.years = ['2015','2016'];
+        }else{
+          this.years = ["All",'2015','2016'];
+        }
+      }
+  }
+  toSet(select){
+      if (select == "All") {
+        this.Comparison  = ["None"]
+      } else {
+        this.Comparison = ["None","Bihar vs District"]
+      }
+  }
+  toYear(year){
+      if(year == "All"){
+        this.views = ViewsNotMap
+        this.rain_fall_type = [{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
+      }else{
+        if (this.data.view == "Map View") {
+          this.rain_fall_type = [{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
+
+        } else {
+          this.views  = ViewsNotTrend
+        this.rain_fall_type = [{key:"All",value:"All"},{key:"Tractor",value:"Tractor"},	{key:"Combine Harvestor",value:"Combine_Harvestor"},	{key:"Zero Tillage",value:"Zero_Tillage"},	{key:"Pumpset",value:"Pumpset"},	{key:"Power Tiller",value:"Power_Tiller"},	{key:"Manually Operated Tools",value:"Manually_Operated_Tools"},	{key:"Thresher",value:"Thresher"}]
+        }
+      }
+  }
+
   onSubmit(user) {
     var controller = "agricultural_inputs7s"
 

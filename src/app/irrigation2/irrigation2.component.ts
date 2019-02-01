@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { ViewsNotMap } from '../data/viewsnotmap';
 import{Functions} from '../data/func';
+import { ViewsNotDistrict } from '../data/viewsnotdistrict';
 
 declare var $:any
 interface years<> {
@@ -44,7 +45,7 @@ export class Irrigation2Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   years = [2016, 2017];
-  views = ViewsNotMap;
+  views = ViewsNotDistrict;
   rain_fall_type = [{key:"Created Irrigation Potential",value:"Created_Irrigation_Potential"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = ["None", "Western Kosi Canal System","Durgawati Reservoir Scheme","Lavaich Rampur Barrage","Uderasthan Barrage Scheme","Solhanda Weir Scheme","Nusratpur weir Scheme","Siwan weir Scheme","Eastern Gandak Canal Phase II","Total"];
@@ -52,11 +53,11 @@ export class Irrigation2Component implements OnInit {
     toNumber(d) {
     if (d == "All") {
       this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
+      this.data.Comparison  = "None"
+      this.Comparison = ["None"];
     } else {
       this.butDisabled = false;
+      this.Comparison = ["None", "Western Kosi Canal System","Durgawati Reservoir Scheme","Lavaich Rampur Barrage","Uderasthan Barrage Scheme","Solhanda Weir Scheme","Nusratpur weir Scheme","Siwan weir Scheme","Eastern Gandak Canal Phase II","Total"];
     }
     
     }

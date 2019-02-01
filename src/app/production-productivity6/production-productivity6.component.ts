@@ -85,7 +85,7 @@ export class ProductionProductivity6Component implements OnInit {
   views = NewViews;
   rain_fall_type = [{key: "All", value: "All"}, {key: "Area", value: "Area"}, {key: "Production", value: "Production"},{key: "Productivity", value: "Productivity"},{key: "Percentage Area", value: "Percentage_Area"},{key: "Percentage Production", value: "Percentage_Production"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None","Bihar vs District"]
+    Comparison = ["None","Bihar"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
@@ -93,7 +93,7 @@ export class ProductionProductivity6Component implements OnInit {
        this.data.Comparison  = "None"
       // this.butDisabled = true;
     } else {
-      this.Comparison = ["None","Bihar vs District"]
+      this.Comparison = ["None","Bihar"]
       this.data.Comparison  = "None"
       // this.butDisabled = false;
     }

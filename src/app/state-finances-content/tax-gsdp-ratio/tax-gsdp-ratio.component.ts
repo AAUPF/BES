@@ -11,6 +11,8 @@ import { Views } from '../../data/views';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotTrend } from '../../data/viewsnottrend';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -46,7 +48,7 @@ export class TaxGSDPRatioComponent implements OnInit {
   Districts = ["All","Bihar","Jharkhand","West Bengal","Odisha","Uttar Pradesh","Madhya Pradesh ","Rajasthan","Maharashtra","Gujarat","Punjab","Haryana","Karnataka","Andhra Pradesh","Kerala","Tamil Nadu","Himachal Pradesh","Chhatisgarh"]
   // years = [2016, 2017];
   //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
-  views = ViewsNotMap;
+  views = ViewsNotDistrict;
   //rain_fall_type = ["All","Target_Physical",	"Target_Financial",	"Achievement_Physical",	"Achievement_Financial"]
   rain_fall_type = [{key: "All", value: "All"},{key:"Revenue Receipts",value:"Revenue_Receipts"},	{key:"States Own Tax",value:"States_Own_Tax"},	{key:"GSDP",value:"GSDP"},	{key:"Ratio of SOT and RR",value:"Ratio_of_SOT_and_RR"},{key:"Ratio of SOT and GSDP",value:"Ratio_of_SOT_and_GSDP"},{key:"Ratio of Total Revenue and GSDP",value:"Ratio_of_Total_Revenue_and_GSDP"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);

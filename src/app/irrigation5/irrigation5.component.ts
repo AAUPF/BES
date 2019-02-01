@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import { ViewsNotMap } from '../data/viewsnotmap';
 import{Functions} from '../data/func';
+import { ViewsNotDistrict } from '../data/viewsnotdistrict';
 
 declare var $:any
 interface years<> {
@@ -46,31 +47,44 @@ export class Irrigation5Component implements OnInit {
 
   years = [2016, 2017];
   // views = NewViews;
-  views = ViewsNotMap;
+  views = ViewsNotDistrict;
 
   rain_fall_type = [{key: "All", value: "All"},{key:"Ultimate Potential",value:"Ultimate_Potential"},	{key:"Created Potential",value:"Created_Potential"},	{key:"Utilised Potential",value:"Utilized_Potential"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Ahar / Pynes/ Irrigation Tanks","Ground Water Irrigation","Lift Irrigation"," Private Tubewells", "Surface Irrigation","Surface minor Irrigation Bear/ Slice Gates"," State Tubewells","Total"];
     data: any = {};    
+    // toNumber(d) {
+    // if (d == "All") {
+    //   this.data == {years: null, views: "",Comparison: ""};
+    //   this.data.Comparison  = undefined
+    //   this.butDisabled = true;
+
+    // } else {
+    //   this.butDisabled = false;
+    // }
+    // }
+
     toNumber(d) {
-    if (d == "All") {
-      this.data == {years: null, views: "",Comparison: ""};
-      this.data.Comparison  = undefined
-      this.butDisabled = true;
-
-    } else {
-      this.butDisabled = false;
-    }
-    }
-    toHide(selected){
-      if (selected=="All") {
+      if (d == "All") {
+        this.data.Comparison  = "None"
         this.Comparison = ["None"];
-
+        
+  
       } else {
-        this.Comparison = ["None","Ahar / Pynes/ Irrigation Tanks","Ground Water Irrigation","Lift Irrigation"," Private Tubewells", "Surface Irrigation","Surface minor Irrigation Bear/ Slice Gates"," State Tubewells","Total"];
-
+        this.data.Comparison  = "None"
+        this.Comparison = ["None","Ahar / Pynes/ Irrigation Tanks","Ground Water Irrigation","Lift Irrigation"," Private Tubewells", "Surface Irrigation","Surface minor Irrigation Bear/ Slice Gates"," State Tubewells","Total"]
       }
-    }
+      
+      }
+    // toHide(selected){
+    //   if (selected=="All") {
+    //     this.Comparison = ["None"];
+
+    //   } else {
+    //     this.Comparison = ["None","Ahar / Pynes/ Irrigation Tanks","Ground Water Irrigation","Lift Irrigation"," Private Tubewells", "Surface Irrigation","Surface minor Irrigation Bear/ Slice Gates"," State Tubewells","Total"];
+
+    //   }
+    // }
     onSubmit(user) {
       var controller = "irrigation5s"
   

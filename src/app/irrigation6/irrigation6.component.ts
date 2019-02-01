@@ -9,6 +9,7 @@ import { TableExport } from '../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import{Functions} from '../data/func';
 import { ViewsNotMap } from '../data/viewsnotmap';
+import { ViewsNotDistrict } from '../data/viewsnotdistrict';
 
 declare var $:any
 interface years<> {
@@ -49,15 +50,30 @@ export class Irrigation6Component implements OnInit {
   rain_fall_type = [{key: "All", value: "All"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = [{key: "None", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
-  Comparison_sort = this.Comparison.sort(f.compare);
+  // Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
         if (d == "All") {
-          this.data == {years: null, views: "",Comparison: ""};
-          this.Comparison_sort = [{key: "None", value: "None"}]
+          this.data.Comparison = "None";
+           this.Comparison = [{key: "None", value: "None"}]
         } else {
-          this.Comparison_sort = this.Comparison.sort(f.compare);
+           this.Comparison = [{key: "None", value: "None"},{key:"Surface Canal", value:"Surface_Canal"},	{key:"Tanks including Ahars Pynes", value:"Tanks_including_Ahars_Pynes"},	{key:"Tubewells Private and State", value:"Tubewells_Private_and_State"},	{key:"Other Sources Lift Irrigation and Barge Lift Irrigation", value:"Other_Sources_Lift_Irrigation_and_Barge_Lift_Irrigation"},	{key:"Total", value:"Total"},]
         }
+      }
+      toYear(year){
+        if(year == "All"){
+          
+    this.views = ViewsNotMap
+        }else{
+          this.views  =  ViewsNotDistrict
+        }
+      }
+      toView(view){
+    if (view == "line") {
+      this.years = ["All"];
+    } else {
+      this.years = ["All",2012,2013,2014,2015,2016];
+    }
       }
   onSubmit(user) {
     var controller = "irrigation6s"

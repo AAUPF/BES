@@ -67,7 +67,7 @@ export class DebtManagement2Component implements OnInit {
     {key:"Loans for State Plan Schemes",value:"Loans for State Plan Schemes"},
     {key:"Loans for Centrally Sponsored Plan Schemes",value:"Loans for Centrally Sponsored Plan Schemes"},
     {key:"Other Loans",value:"Other Loans"},
-    {key:"Total (A+B)",value:"Total (A+B)"},
+    {key:"Total A plus B",value:"Total A plus B"},
     {key:"None", value:"None"}
   ]
 
@@ -87,7 +87,7 @@ export class DebtManagement2Component implements OnInit {
     {key:"Loans for State Plan Schemes",value:"Loans for State Plan Schemes"},
     {key:"Loans for Centrally Sponsored Plan Schemes",value:"Loans for Centrally Sponsored Plan Schemes"},
     {key:"Other Loans",value:"Other Loans"},
-    {key:"Total (A+B)",value:"Total (A+B)"},
+    {key:"Total A plus B",value:"Total A plus B"},
    
   
   
@@ -118,7 +118,7 @@ export class DebtManagement2Component implements OnInit {
           {key:"Loans for State Plan Schemes",value:"Loans for State Plan Schemes"},
           {key:"Loans for Centrally Sponsored Plan Schemes",value:"Loans for Centrally Sponsored Plan Schemes"},
           {key:"Other Loans",value:"Other Loans"},
-          {key:"Total (A+B)",value:"Total (A+B)"},
+          {key:"Total A plus B",value:"Total A plus B"},
           {key:"None", value:"None"}
         ]
         
