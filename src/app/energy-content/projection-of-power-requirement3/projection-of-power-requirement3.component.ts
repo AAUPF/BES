@@ -82,16 +82,17 @@ export class ProjectionOfPowerRequirement3Component implements OnInit {
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    this.years = [
+      "All",
+    "Mar-17",
+    "2017-18",
+    "2018-19",
+  ];
     
-  // }
+  }
     }
       toSet(select){
         if (select == "State Sector") {         

@@ -49,8 +49,7 @@ export class Roads2Component implements OnInit {
   "2015-16",
   "2016-17",
   "2017-18",
-  "CAGR _2014-18",];
-  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
+  "CAGR_2014-18"];
   views = ViewsNotMap;
 
 
@@ -106,58 +105,35 @@ export class Roads2Component implements OnInit {
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    this.years = ["All","2007-08",
+    "2011-12",
+    "2012-13",
+    "2013-14",
+    "2014-15",
+    "2015-16",
+    "2016-17",
+    "2017-18",
+    "CAGR_2014-18"];
     
-  // }
+  }
     }
       toSet(select){
         if (select == "Public Investment in Road and Bridges") {         
-      this.rain_fall_type = [
-        {key:"All",value:"All"},
-        
-        {key:"Total Expenditure on Road and Bridges",value:"Total Expenditure on Road and Bridges"},
-        {key:"Revenue Expenditure on Road and Bridges",value:"Revenue Expenditure on Road and Bridges"},
-        {key:"Capital Expenditure on Road and Bridges",value:"Capital Expenditure on Road and Bridges"},
-        {key:"Expenditure on Economic Services",value:"Expenditure on Economic Services"},
-        {key:"Development Expenditure",value:"Development Expenditure"},
-        {key:"Total Budget",value:"Total Budget"},
-        {key:"GSDP",value:"GSDP"},
-      
-  ]
+            this.rain_fall_type = [
+              {key:"All",value:"All"},
+              {key:"Total Expenditure on Road and Bridges",value:"Total Expenditure on Road and Bridges"},
+              {key:"Revenue Expenditure on Road and Bridges",value:"Revenue Expenditure on Road and Bridges"},
+              {key:"Capital Expenditure on Road and Bridges",value:"Capital Expenditure on Road and Bridges"},
+              {key:"Expenditure on Economic Services",value:"Expenditure on Economic Services"},
+              {key:"Development Expenditure",value:"Development Expenditure"},
+              {key:"Total Budget",value:"Total Budget"},
+              {key:"GSDP",value:"GSDP"},
+            ]
            
-        }  else if (select == "Other Liabilities") {
-
-
-          this.rain_fall_type = [
-            {key:"All",value:"All"},
-            {key:"Patna",value:"Patna"},
-            {key:"Gaya",value:"Gaya"},
-            {key:"Bodh Gaya",value:"Bodh Gaya"},
-            {key:"Rajgir",value:"Rajgir"},
-            {key:"Nalanda",value:"Nalanda"},
-            {key:"Raxual",value:"Raxual"},
-            {key:"Munger",value:"Munger"},
-            {key:"Vaishali",value:"Vaishali"},
-            {key:"Muzaffarpur",value:"Muzaffarpur"},
-            {key:"Bhagalpur",value:"Bhagalpur"},
-            {key:"Sonepur Fair",value:"Sonepur Fair"},
-            {key:"Pitrapaksha Mela, Gaya",value:"Pitrapaksha Mela, Gaya"},
-            {key:"Shrawani Mela Sultanganj (Bhagalpur)",value:"Shrawani Mela Sultanganj (Bhagalpur)"},
-            {key:"Other",value:"Other"},
-            {key:"Total",value:"Total"},
-
-          ]
-        }
-
-  
-        
+        }  
         else {
           this.rain_fall_type = [ 
             {key:"All",value:"All"},
@@ -183,7 +159,7 @@ export class Roads2Component implements OnInit {
     
   onSubmit(user) {
     var controller = "roads2s"
-
+    user.Comparison = "None"
     if (user.view !== "Map View") {
 
       

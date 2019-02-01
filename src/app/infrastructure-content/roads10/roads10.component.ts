@@ -55,23 +55,32 @@ export class Roads10Component implements OnInit {
     else {
       if (this.data.view == "line") {
         this.years = ["All"];
-      } else {
+      }
+      else if(this.data.view == "Map View"){
+        this.years = ["2010", "2017 upto Sept"];
+      }
+       else {
         this.years = ["All","2010", "2017 upto Sept"];
       }
     
     }
   }
   toView(view){
-if (view == "line") {
-  this.years = ["All"];
-} else {
-  if (this.data.rain_fall_type == "All") {
-    this.years = ["2010", "2017 upto Sept"];
-  } else {
-    this.years = ["All","2010", "2017 upto Sept"];
-  }
-  
-}
+      if (view == "line") {
+        this.years = ["All"];
+      }
+      else if(view == "Map View"){
+        this.years = ["2010", "2017 upto Sept"];
+        this.rain_fall_type = [{key:"NH",value:"NH"},	{key:"SH",value:"SH"},	{key:"MDR",value:"MDR"},	{key:"Rural Road",value:"Rural_Road"}]
+
+      }
+      else {
+        if (this.data.rain_fall_type == "All") {
+          this.years = ["2010", "2017 upto Sept"];
+        } else {
+          this.years = ["All","2010", "2017 upto Sept"];
+        }
+      }
   }
     toSet(select){
       if (select == "All") {
@@ -87,8 +96,12 @@ if (view == "line") {
       if(year == "All"){
         this.views = ViewsNotMap
         this.rain_fall_type = [{key:"NH",value:"NH"},	{key:"SH",value:"SH"},	{key:"MDR",value:"MDR"},	{key:"Rural Road",value:"Rural_Road"}]
-      }else{
-        this.views  = ViewsNotDistrict
+      }
+      else if(this.data.view == "Map View"){
+        this.rain_fall_type = [{key:"NH",value:"NH"},	{key:"SH",value:"SH"},	{key:"MDR",value:"MDR"},	{key:"Rural Road",value:"Rural_Road"}]
+      }
+      else{
+        this.views  = ViewsNotTrend
         this.rain_fall_type = [{key:"All",value:"All"},{key:"NH",value:"NH"},	{key:"SH",value:"SH"},	{key:"MDR",value:"MDR"},	{key:"Rural Road",value:"Rural_Road"}]
       }
     }
@@ -98,8 +111,6 @@ if (view == "line") {
 
     if (user.view !== "Map View") {
 
-      console.log("errror");
-      
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
@@ -132,12 +143,8 @@ if (view == "line") {
             var u = "wchamparan";
             that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
       }, 500);
-      
-      
     }
  }     
-  
-
   myEvent(event) {
     var n =  new TableExport(document.getElementsByTagName("table"));
   }

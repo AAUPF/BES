@@ -105,7 +105,7 @@ if (view == "line") {
   this.years = ["All"];
 } else {
   if (this.data.rain_fall_type == "All") {
-    this.years = ["All","2014","2015","2016"];
+    this.years = ["2014","2015","2016"];
   } else {
     this.years =  ["All","2014","2015","2016"];
   }
@@ -150,30 +150,12 @@ if (view == "line") {
         this.rain_fall_type = [{key:"All",value:"All"},{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"}]
       }
     }
-    // toYear(year){
-    //   if(year == "2016"){
-    //     this.views = ViewsNotDistrict
-    //     this.rain_fall_type = [{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"},{key:"All",value:"All"}]
-    //   }
-    //   else if(year == "2017") { 
-
-    //     this.views = ViewsNotDistrict
-    //     this.rain_fall_type = [{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"},{key:"All",value:"All"}]
-
-    //   }
-    //   else{
-    //     this.views  = ViewsNotDistrict
-    //     this.rain_fall_type = [{key:"All",value:"All"},{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"}]
-    //   }
-    // }
 
   onSubmit(user) {
     var controller = "banking_infrastructure3s"
 
     if (user.view !== "Map View") {
 
-      console.log("errror");
-      
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;

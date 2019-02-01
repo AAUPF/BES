@@ -56,7 +56,7 @@ export class RoadTransport1Component implements OnInit {
   views = ViewsNotDistrict
   rain_fall_type = [
   {key: "All", value: "All"},
-  {key:"Two_Wheeler",value:"Two_Wheeler"},
+  {key:"Two Wheeler",value:"Two_Wheeler"},
   {key:"Cars",value:"Cars"},
   {key:"Jeeps",value:"Jeeps"},
   {key:"Miscellaneous",value:"Miscellaneous"},
@@ -96,7 +96,7 @@ export class RoadTransport1Component implements OnInit {
         this.data.rain_fall_type  = "All"
         this.rain_fall_type_sort = [
           {key: "All", value: "All"},
-          {key:"Buses ",value:"Buses "},
+          {key:"Buses",value:"Buses"},
           {key:"Taxis",value:"Taxis"},
           {key:"Light Motor Vehicles Passengers",value:"Light_Motor_Vehicles_Passengers"},
           {key:"Goods Carrier Vehicles",value:"Goods_Carrier_Vehicles"},

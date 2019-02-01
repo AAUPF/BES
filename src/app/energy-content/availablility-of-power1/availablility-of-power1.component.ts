@@ -61,6 +61,7 @@ export class AvailablilityOfPower1Component implements OnInit {
     {key:"Energy Availability (MU) ",value:"Energy Availability (MU) "},
     {key:"Energy Deficit/ Surplus (MU) (Minus/Plus)",value:"Energy Deficit/ Surplus (MU) (Minus/Plus)"},
     {key:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) ",value:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) "},
+    {key:"Consumption (kwh)",value:"Consumption (kwh)"}
     
   ]
 
@@ -75,6 +76,7 @@ export class AvailablilityOfPower1Component implements OnInit {
     {key:"Energy Availability (MU) ",value:"Energy Availability (MU) "},
     {key:"Energy Deficit/ Surplus (MU) (Minus/Plus)",value:"Energy Deficit/ Surplus (MU) (Minus/Plus)"},
     {key:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) ",value:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) "},
+    {key:"Consumption (kwh)",value:"Consumption (kwh)"}
   
   
   ]
@@ -99,6 +101,7 @@ export class AvailablilityOfPower1Component implements OnInit {
           {key:"Energy Availability (MU) ",value:"Energy Availability (MU) "},
           {key:"Energy Deficit/ Surplus (MU) (Minus/Plus)",value:"Energy Deficit/ Surplus (MU) (Minus/Plus)"},
           {key:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) ",value:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) "},
+          {key:"Consumption (kwh)",value:"Consumption (kwh)"}
           
         ]
         
@@ -132,6 +135,7 @@ export class AvailablilityOfPower1Component implements OnInit {
         {key:"Energy Availability (MU) ",value:"Energy Availability (MU) "},
         {key:"Energy Deficit/ Surplus (MU) (Minus/Plus)",value:"Energy Deficit/ Surplus (MU) (Minus/Plus)"},
         {key:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) ",value:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) "},
+        {key:"Consumption (kwh)",value:"Consumption (kwh)"}
       
   ]
            
@@ -149,7 +153,7 @@ export class AvailablilityOfPower1Component implements OnInit {
             {key:"Energy Availability (MU) ",value:"Energy Availability (MU) "},
             {key:"Energy Deficit/ Surplus (MU) (Minus/Plus)",value:"Energy Deficit/ Surplus (MU) (Minus/Plus)"},
             {key:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) ",value:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) "},
-           
+            {key:"Consumption (kwh)",value:"Consumption (kwh)"}
 
           ]
         }
@@ -167,7 +171,7 @@ export class AvailablilityOfPower1Component implements OnInit {
             {key:"Energy Availability (MU) ",value:"Energy Availability (MU) "},
             {key:"Energy Deficit/ Surplus (MU) (Minus/Plus)",value:"Energy Deficit/ Surplus (MU) (Minus/Plus)"},
             {key:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) ",value:"Energy Deficit/ Surplus (Percentage) (Minus/Plus) "},
-           
+            {key:"Consumption (kwh)",value:"Consumption (kwh)"}
           
           ]
         }

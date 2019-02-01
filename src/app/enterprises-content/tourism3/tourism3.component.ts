@@ -40,7 +40,7 @@ export class Tourism3Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["Domestic","Foreign"]
-  years = ["All","2012","2013","2014","2015","2016"];
+  years = ["All","2012","2013","2014","2015","2016","2017"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
 
@@ -120,92 +120,14 @@ export class Tourism3Component implements OnInit {
       }
     
     }
-    toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
-    
-  // }
+  toView(view){
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    this.years = ["All","2012","2013","2014","2015","2016","2017"];
+  }
     }
-      toSet(select){
-        if (select == "Public Debt") {         
-      this.rain_fall_type = [
-        {key:"All",value:"All"},
-        
-        {key:"Patna",value:"Patna"},
-        {key:"Gaya",value:"Gaya"},
-        {key:"Bodh Gaya",value:"Bodh Gaya"},
-        {key:"Rajgir",value:"Rajgir"},
-        {key:"Nalanda",value:"Nalanda"},
-        {key:"Raxual",value:"Raxual"},
-        {key:"Munger",value:"Munger"},
-        {key:"Vaishali",value:"Vaishali"},
-        {key:"Muzaffarpur",value:"Muzaffarpur"},
-        {key:"Bhagalpur",value:"Bhagalpur"},
-        {key:"Sonepur Fair",value:"Sonepur Fair"},
-        {key:"Pitrapaksha Mela, Gaya",value:"Pitrapaksha Mela, Gaya"},
-        {key:"Shrawani Mela Sultanganj (Bhagalpur)",value:"Shrawani Mela Sultanganj (Bhagalpur)"},
-        {key:"Other",value:"Other"},
-        {key:"Total",value:"Total"},
-      
-  ]
-           
-        }  else if (select == "Other Liabilities") {
-
-
-          this.rain_fall_type = [
-            {key:"All",value:"All"},
-            {key:"Patna",value:"Patna"},
-            {key:"Gaya",value:"Gaya"},
-            {key:"Bodh Gaya",value:"Bodh Gaya"},
-            {key:"Rajgir",value:"Rajgir"},
-            {key:"Nalanda",value:"Nalanda"},
-            {key:"Raxual",value:"Raxual"},
-            {key:"Munger",value:"Munger"},
-            {key:"Vaishali",value:"Vaishali"},
-            {key:"Muzaffarpur",value:"Muzaffarpur"},
-            {key:"Bhagalpur",value:"Bhagalpur"},
-            {key:"Sonepur Fair",value:"Sonepur Fair"},
-            {key:"Pitrapaksha Mela, Gaya",value:"Pitrapaksha Mela, Gaya"},
-            {key:"Shrawani Mela Sultanganj (Bhagalpur)",value:"Shrawani Mela Sultanganj (Bhagalpur)"},
-            {key:"Other",value:"Other"},
-            {key:"Total",value:"Total"},
-
-          ]
-        }
-
-  
-        
-        else {
-          this.rain_fall_type = [ 
-            {key:"All",value:"All"},
-            {key:"Patna",value:"Patna"},
-            {key:"Gaya",value:"Gaya"},
-            {key:"Bodh Gaya",value:"Bodh Gaya"},
-            {key:"Rajgir",value:"Rajgir"},
-            {key:"Nalanda",value:"Nalanda"},
-            {key:"Raxual",value:"Raxual"},
-            {key:"Munger",value:"Munger"},
-            {key:"Vaishali",value:"Vaishali"},
-            {key:"Muzaffarpur",value:"Muzaffarpur"},
-            {key:"Bhagalpur",value:"Bhagalpur"},
-            {key:"Sonepur Fair",value:"Sonepur Fair"},
-            {key:"Pitrapaksha Mela, Gaya",value:"Pitrapaksha Mela, Gaya"},
-            {key:"Shrawani Mela Sultanganj (Bhagalpur)",value:"Shrawani Mela Sultanganj (Bhagalpur)"},
-            {key:"Other",value:"Other"},
-            {key:"Total",value:"Total"},
-           ]
-        }
-      }
-
-
-     
-      toYear(year){
+  toYear(year){
         if(year == "All"){
           this.views = ViewsNotMap
          

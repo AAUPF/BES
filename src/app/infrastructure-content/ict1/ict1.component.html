@@ -1,3 +1,166 @@
-<p>
-  ict1 works!
-</p>
+<section class="clearfix pageTitleSection">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="pageTitle">
+          <h2>Online Services under e-District Rollout Plan of Service Plus Framework</h2>
+          <div class="btnArea">
+            <a (click)="cancel()" class="btn btn-primary">
+              <i class="fa fa-angle-left" aria-hidden="true"></i> Back </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="clearfix bg-light pr">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-xs-12">
+
+        <div class="categoryBox">
+          <div class="contactSelect">
+
+            <table class="table">
+              <colgroup>
+                <col>
+                <col>
+                <col>
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td><b>Sl. No.</b></td>
+                  <td><b>Name of Services</b></td>
+                  <td><b>Sl. No.</b></td>
+                  <td><b>Name of Services</b></td>
+                </tr>
+                <tr>
+                  <td>(i)</td>
+                  <td>Agriculture and Allied.</td>
+                  <td>(ii)</td>
+                  <td>Arms Licens.
+                  </td>
+                </tr>
+                <tr>
+                  <td>(iii)</td>
+                  <td>Birth and Death Certificate.</td>
+                  <td>(iv)</td>
+                  <td>BPL Certificate.
+                  </td>
+                </tr>
+                <tr>
+                  <td>(v)</td>
+                  <td>Caste Certificate.
+                  </td>
+                  <td>(vi)</td>
+                  <td>Character Certificate.
+                  </td>
+                </tr>
+                <tr>
+                  <td>(vii)</td>
+                  <td>Commercial Tax.
+                  </td>
+                  <td>(viii)</td>
+                  <td>Court and Judiciary.</td>
+                </tr>
+                <tr>
+                  <td>(ix)</td>
+                  <td>Dependent Certificate.
+                  </td>
+                  <td>(x)</td>
+                  <td>Disability Certificate.
+                  </td>
+                </tr>
+                <tr>
+                  <td>(xi)</td>
+                  <td>Domicile Certificate.
+                  </td>
+                  <td>(xii)</td>
+                  <td>Driving License.
+                  </td>
+                </tr>
+                <tr>
+                  <td>(xiii)</td>
+                  <td>Employment Certificate.
+                  </td>
+                  <td>(xiv)</td>
+                  <td>Grievance.</td>
+                </tr>
+                <tr>
+                  <td>(xv)</td>
+                  <td>Income Certificate.
+                  </td>
+                  <td>(xvi)</td>
+                  <td>RTI</td>
+                </tr>
+                <tr>
+                  <td>(xvii)</td>
+                  <td>Land Record and Registration.
+                  </td>
+                  <td>(xviii)</td>
+                  <td>Marriage Certificate
+                  </td>
+                </tr>
+                <tr>
+                  <td>(xix)</td>
+                  <td>No Objection Certificate.</td>
+                  <td>(xx)</td>
+                  <td>Widow Certificate.
+                  </td>
+                </tr>
+                <tr>
+                  <td>(xxi)</td>
+                  <td>Permit and Passes.</td>
+                  <td>(xxii)</td>
+                  <td>Ration Card.
+                  </td>
+                </tr>
+                <tr>
+                  <td>(xxiii)</td>
+                  <td>Sr. Citizen Old Age Pension</td>
+                  <td>(xxiv)</td>
+                  <td>Scholarship</td>
+                </tr>
+                <tr>
+                  <td>(xxv)</td>
+                  <td>Widow Pension
+                  </td>
+                  <td>(xxvi)</td>
+                  <td>Voter List
+                  </td>
+                </tr>
+                <tr>
+                  <td>(xxvii)</td>
+                  <td>Utility Bill
+                  </td>
+                  <td>(xxviii)</td>
+                  <td>Vehicle Registration
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="clear: both;"> </div>
+            <div class="hideContainer"></div>
+            <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
+            <div *ngIf="visbile_table">
+              <div id="example-table" style="margin-bottom: 100px;">
+
+              </div>
+            </div>
+
+            <ngx-spinner></ngx-spinner>
+            <div *ngIf="visbile">
+              <app-rainfall-new></app-rainfall-new>
+
+            </div>
+            <div class="source-txt">Source : Department of IT, GOB</div>
+
+            <app-modal></app-modal>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

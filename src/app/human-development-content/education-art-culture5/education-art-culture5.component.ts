@@ -49,7 +49,7 @@ export class EducationArtCulture5Component implements OnInit {
 "2015-16 ",
 "2016-17",]
   views = ViewsNotDistrict
-  rain_fall_type = [{key: "All", value: "All"},{key:"Primary",value:"Primary1"},
+  rain_fall_type = [{key: "All", value: "All"},{key:"Primary",value:"Primary"},
   {key:"Secondary",value:"Secondary"},
   {key:"Higher",value:"Higher"},
   {key:"Total",value:"Total"},

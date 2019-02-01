@@ -81,6 +81,32 @@ export class ICT5Component implements OnInit {
           this.Comparison = ["None","Bihar vs State"]
         }
     }
+    toSet(data) {
+      
+if (data == "Number of Accounts") {
+  this.rain_fall_type = [
+    {key: "All", value: "All"},
+    {key:"Deposits",value:"Deposits"},
+    {key:"Investment",value:"Investment"},
+    {key:"MIS",value:"MIS"},
+    {key:"Sukanya Samridhi Account",value:"Sukanya_Samridhi_Account"},
+    {key:"MG NREGA",value:"MG_NREGA"},
+    {key:"Total",value:"Total"},
+  ]
+  this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+} else {
+  this.rain_fall_type = [
+    {key: "All", value: "All"},
+    {key:"Deposits",value:"Deposits"},
+    {key:"Investment",value:"Investment"},
+    {key:"MIS",value:"MIS"},
+    {key:"Sukanya Samridhi Account",value:"Sukanya_Samridhi_Account"},
+    {key:"Total",value:"Total"},
+  ]
+  this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  
+}
+    }
 
 
 

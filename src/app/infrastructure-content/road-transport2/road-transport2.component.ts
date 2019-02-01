@@ -41,7 +41,6 @@ export class RoadTransport2Component implements OnInit {
   visbile_table= false;
   Districts = ["Public Debt","Other Liabilities"]
   years = ["All","2011-12", "2012-13","2013-14","2014-15","2015-16","2016-17","CAGR_2011-17"];
-  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
 
 
@@ -59,8 +58,8 @@ export class RoadTransport2Component implements OnInit {
     {key:"Others",value:"Others"},
     {key:"Total",value:"Total"},
     {key:"Revenue Collection (Rs. crore)",value:"Revenue Collection (Rs. crore)"},
-    
   ]
+  Comparison_sort = this.Comparison.sort(f.compare);
 
 
   rain_fall_type = [
@@ -77,18 +76,15 @@ export class RoadTransport2Component implements OnInit {
     {key:"Others",value:"Others"},
     {key:"Total",value:"Total"},
     {key:"Revenue Collection (Rs. crore)",value:"Revenue Collection (Rs. crore)"},
-  
-  
   ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-     //Comparison_sort = this.Comparison.sort(f.compare);
+    
     data: any = {};    
     toNumber(d) {
 
       if (d == "All") {
         this.data.Comparison = "None"
-        this.Comparison = [{key:"None",value:"None"}]
+        this.Comparison_sort = [{key:"None",value:"None"}]
         
       } else {
         this.Comparison = [
@@ -105,71 +101,19 @@ export class RoadTransport2Component implements OnInit {
           {key:"Others",value:"Others"},
           {key:"Total",value:"Total"},
           {key:"Revenue Collection (Rs. crore)",value:"Revenue Collection (Rs. crore)"},
-          
         ]
-        
+        this.Comparison_sort = this.Comparison.sort(f.compare);
       }
     
     }
-
-
     toView(view){
       if (view == "line") {
         this.years = ["All"];
       } else {
         this.years = ["All","2011-12", "2012-13","2013-14","2014-15","2015-16","2016-17","CAGR_2011-17"];
       }
-        }
-
-      toSet(select){
-        if (select == "Public Debt") {         
-      this.rain_fall_type_sort = [
-        {key:"All",value:"All"},
-        {key:"Internal  Debt",value:"Internal  Debt"},
-        {key:"Central Loans",value:"Central Loans"},
-        {key:"Total",value:"Total"},
-      
-  ]
-           
-        }  else if (select == "Other Liabilities") {
-
-
-          this.rain_fall_type_sort = [
-            {key:"All",value:"All"},
-            {key:"Small Savings, PF etc.",value:"Small Savings, PF etc."},
-            {key:"Reserve Funds",value:"Reserve Funds"},
-            {key:"Deposits and Advances",value:"Deposits and Advances"},
-            {key:"Total",value:"Total"},
-            {key:"Total (Public Debt plus Other Liabilities)",value:"Total (Public Debt plus Other Liabilities)"},
-            {key:"Outstanding Liability as Percentage of GSDP",value:"Outstanding Liability as Percentage of GSDP"},
-           
-
-          ]
-        }
-
-  
-        
-        else {
-          this.rain_fall_type_sort = [ 
-            {key:"All",value:"All"},
-            {key:"Internal  Debt",value:"Internal  Debt"},
-            {key:"Central Loans",value:"Central Loans"},
-            {key:"Total",value:"Total"},
-            {key:"Small Savings, PF etc.",value:"Small Savings, PF etc."},
-            {key:"Reserve Funds",value:"Reserve Funds"},
-            {key:"Deposits and Advances",value:"Deposits and Advances"},
-            {key:"Total",value:"Total"},
-            {key:"Total (Public Debt plus Other Liabilities)",value:"Total (Public Debt plus Other Liabilities)"},
-            {key:"Outstanding Liability as Percentage of GSDP",value:"Outstanding Liability as Percentage of GSDP"},
-           
-          
-          ]
-        }
-      }
-
-
-     
-      toYear(year){
+    }
+    toYear(year){
         if(year == "All"){
           this.views = ViewsNotMap
          
@@ -177,7 +121,7 @@ export class RoadTransport2Component implements OnInit {
           this.views  = ViewsNotDistrict
          
         }
-      }
+    }
     
   onSubmit(user) {
     var controller = "road_transport2s"
