@@ -42,7 +42,7 @@ export class ProgrammesForElectrification1Component implements OnInit {
   visbile_table= false;
   years = [2016, 2017];
   // views = ["Graph", "Trend Line","Map View","Table"];
-  views = ViewsNotMap
+  views = ViewsNotDistrict
   //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
   rain_fall_type = [
   {key:"All",value:"All"},{key:"Outlay",value:"Outlay"},{key:"Expenditure incurred",value:"Expenditure_incurred"}
