@@ -46,7 +46,6 @@ export class ProgrammesForElectrification2Component implements OnInit {
   {key: "All", value: "All"},
   {key:"Tenth Plan",value:"Tenth_Plan"},
   {key:"Eleventh Plan",value:"Eleventh_Plan"},
-  {key:"Total",value:"Total"},
   {key:"Eleventh Plan Phase II",value:"Eleventh_Plan_Phase_II"},
   {key:"Twelfth Plan",value:"Twelfth_Plan"},
   {key:"Under DDG",value:"Under_DDG"},

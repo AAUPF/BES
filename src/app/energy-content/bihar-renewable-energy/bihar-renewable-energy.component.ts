@@ -47,7 +47,7 @@ export class BiharRenewableEnergyComponent implements OnInit {
 "2013-14",
 "2014-15",
 "2015-16",
-"Solar Photovoltaic Scheme",]
+"2016-17 and 2017-18 (upto October 2017) Achievements of BREDA",]
   //  years = [2016, 2017];
   // views =[{key: "Table", value: "Table"}];
   rain_fall_type = [{key: "All", value: "All"},{key:"Physical Achievement",value:"Physical_Achievement"},

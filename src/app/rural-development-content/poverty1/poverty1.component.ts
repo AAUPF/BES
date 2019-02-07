@@ -42,14 +42,22 @@ export class Poverty1Component implements OnInit {
   visbile_table= false;
   Districts = ["Bihar","India"]
   years = [
-    "All",
-    "1993-94",
-    "1999-00",
-    "2004-05",
-    "2011-12",
-    "Reduction_in_Poverty_between_2004_05_and_2011_12",
-    "Poverty_Line_2004_05",
-    "Poverty_Line_2011_12",
+    // "All",
+    // "1993-94",
+    // "1999-00",
+    // "2004-05",
+    // "2011-12",
+    // "Reduction_in_Poverty_between_2004_05_and_2011_12",
+    // "Poverty_Line_2004_05",
+    // "Poverty_Line_2011_12",
+    {key:"All",value:"All"},
+    {key:"1993-94",value:"1993-94"},
+    {key:"1999-00",value:"1999-00"},
+    {key:"2004-05",value:"2004-05"},
+    {key:"2011-12",value:"2011-12"},
+    {key:"Reduction in Poverty between 2004-05 and 2011-12",value:"Reduction_in_Poverty_between_2004_05_and_2011_12"},
+    {key:"Poverty Line 2004-05",value:"Poverty_Line_2004_05"},
+    {key:"Poverty Line 2011-12",value:"Poverty_Line_2011_12"},
 ];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
@@ -81,14 +89,9 @@ export class Poverty1Component implements OnInit {
         this.data.Comparison = "None"
         this.Comparison = [
           {key:"None",value:"None"},
-          {key:"Rural",value:"Rural"},
-          {key:"Urban",value:"Urban"},
-          {key:"Total",value:"Total"},
-      
       ]
         
       } else {
-        this.data.Comparison = "None"
         this.Comparison = [
           {key:"None",value:"None"},
           {key:"Rural",value:"Rural"},
