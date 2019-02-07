@@ -48,15 +48,16 @@ export class DemographicProfile2Component implements OnInit {
   views = NewViews;
   rain_fall_type = [{key:"All",value:"All"},{key:"Population",value:"Population"},{key:"Sex Ratio Overall",value:"Sex_Ratio_Overall"},{key:"Sex Ratio Child",value:"Sex_Ratio_Child"},{key:"Density",value:"Density"},{key:"Urbanisation",value:"Urbanisation"},{key:"Decadal Growth",value:"Decadal_Growth"},{key:"Percentage Population",value:"Percentage_Population"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None","Bihar vs District"]
+    Comparison = ["None","Bihar"]
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
+      this.data.Comparison  = "None"
       this.Comparison = ["None"]
       // this.data.Comparison  = undefined
       // this.butDisabled = true;
     } else {
-      this.Comparison = ["None","Bihar vs District"]
+      this.Comparison = ["None","Bihar"]
       // this.butDisabled = false;
     }
     }
@@ -140,9 +141,6 @@ toGet(type){
     var controller = "demographic_profile2s"
 
     if (user.view !== "Map View") {
-
-      console.log("errror");
-      
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;

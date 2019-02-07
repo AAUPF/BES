@@ -40,7 +40,28 @@ export class ResourceManagement9Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Own Tax Revenue","Non Tax Revenue"]
+  Districts = [
+  {key:"All",value:"All"},
+  {key:"Taxes on Sales, Trade",value:"Taxes on Sales, Trade"},
+  {key:"Taxes on Goods and Passengers",value:"Taxes on Goods and Passengers"},
+  {key:"State Excise",value:"State Excise"},
+  {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
+  {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
+  {key:"Land Revenue",value:"Land Revenue"},
+  {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
+  {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
+  {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
+  {key:"Interest Receipts",value:"Interest Receipts"},
+  {key:"Miscellaneous General Services",value:"Miscellaneous General Services"},
+  {key:"Other Administrative Services",value:"Other Administrative Services"},
+  {key:"Police",value:"Police"},
+  {key:"Major Irrigation",value:"Major Irrigation"},
+  {key:"Education, Sports, Arts and Culture",value:"Education, Sports, Arts and Culture"},
+  {key:"Roads and Bridges",value:"Roads and Bridges"},
+  {key:"Medical and Public Health",value:"Medical and Public Health"},
+  {key:"Other Rural Development Programmes",value:"Other Rural Development Programmes"},
+  {key:"Social Security and Welfare",value:"Social Security and Welfare"},
+  {key:"Others",value:"Others"},]
   // years = ["All", "Budget_Estimate","Actual_Receipts","Variation_Excess_or_Shortfall_in_Amount","Variation_Excess_or_Shortfall_in_Percentage"];
   views = ViewsNotDistrict;
   years = [
@@ -55,6 +76,15 @@ export class ResourceManagement9Component implements OnInit {
 
   rain_fall_type = [
     {key:"All",value:"All"},
+    {key:"Budget Estimate",value:"Budget_Estimate"},
+    {key:"Actual Receipts",value:"Actual_Receipts"},
+    {key:"Variation Excess/Shortfall in Amount",value:"Variation_Excess_or_Shortfall_in_Amount"},
+    {key:"Variation Excess/Shortfall in Percentage",value:"Variation_Excess_or_Shortfall_in_Percentage"}
+    // {key:"None",value:"None"},
+  ]
+  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+    Comparison = [
+    {key:"None",value:"None"},
     {key:"Taxes on Sales, Trade",value:"Taxes on Sales, Trade"},
     {key:"Taxes on Goods and Passengers",value:"Taxes on Goods and Passengers"},
     {key:"State Excise",value:"State Excise"},
@@ -63,101 +93,139 @@ export class ResourceManagement9Component implements OnInit {
     {key:"Land Revenue",value:"Land Revenue"},
     {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
     {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
-    {key:"Total",value:"Total"},
-    // {key:"None",value:"None"},
-  ]
-  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-     //Comparison_sort = this.Comparison.sort(f.compare);
+    {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
+    {key:"Interest Receipts",value:"Interest Receipts"},
+    {key:"Miscellaneous General Services",value:"Miscellaneous General Services"},
+    {key:"Other Administrative Services",value:"Other Administrative Services"},
+    {key:"Police",value:"Police"},
+    {key:"Major Irrigation",value:"Major Irrigation"},
+    {key:"Education, Sports, Arts and Culture",value:"Education, Sports, Arts and Culture"},
+    {key:"Roads and Bridges",value:"Roads and Bridges"},
+    {key:"Medical and Public Health",value:"Medical and Public Health"},
+    {key:"Other Rural Development Programmes",value:"Other Rural Development Programmes"},
+    {key:"Social Security and Welfare",value:"Social Security and Welfare"},
+    {key:"Others",value:"Others"},]
+     Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
-    // toNumber(d) {
-    
-    // }
-  //   toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
-    
-  // }
-  //   }
-      toSet(select){
-        if (select == "Own Tax Revenue") {
-          this.data.rain_fall_type = "All"  
-      this.rain_fall_type_sort = [
-        {key:"All",value:"All"},
-        {key:"Taxes on Sales, Trade",value:"Taxes on Sales, Trade"},
-        {key:"Taxes on Goods and Passengers",value:"Taxes on Goods and Passengers"},
-        {key:"State Excise",value:"State Excise"},
-        {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
-        {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
-        {key:"Land Revenue",value:"Land Revenue"},
-        {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
-        {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
-        // {key:"Total",value:"Total"},
-  ]
-        }  else if (select == "Non Tax Revenue") {
-          this.data.rain_fall_type = "All"
-          this.rain_fall_type_sort = [
-            {key:"All",value:"All"},
-            {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
-            {key:"Interest Receipts",value:"Interest Receipts"},
-            {key:"Miscellaneous General Services",value:"Miscellaneous General Services"},
-            {key:"Other Administrative Services",value:"Other Administrative Services"},
-            {key:"Police",value:"Police"},
-            {key:"Major Irrigation",value:"Major Irrigation"},
-            {key:"Education, Sports, Arts and Culture",value:"Education, Sports, Arts and Culture"},
-            {key:"Roads and Bridges",value:"Roads and Bridges"},
-            {key:"Medical and Public Health",value:"Medical and Public Health"},
-            {key:"Other Rural Development Programmes",value:"Other Rural Development Programmes"},
-            {key:"Social Security and Welfare",value:"Social Security and Welfare"},
-            {key:"Others",value:"Others"},
-            // {key:"Total",value:"Total"},
-          ]
+
+
+    toNumber(d) {
+      if (d == "All" || d == "Bihar") {
+        this.data.Comparison = "None"
+        this.Comparison  = [{key:"None",value:"None"}]
+        } else {
+          this.Comparison = [    
+          {key:"None",value:"None"},
+          {key:"Taxes on Sales, Trade",value:"Taxes on Sales, Trade"},
+          {key:"Taxes on Goods and Passengers",value:"Taxes on Goods and Passengers"},
+          {key:"State Excise",value:"State Excise"},
+          {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
+          {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
+          {key:"Land Revenue",value:"Land Revenue"},
+          {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
+          {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
+          {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
+          {key:"Interest Receipts",value:"Interest Receipts"},
+          {key:"Miscellaneous General Services",value:"Miscellaneous General Services"},
+          {key:"Other Administrative Services",value:"Other Administrative Services"},
+          {key:"Police",value:"Police"},
+          {key:"Major Irrigation",value:"Major Irrigation"},
+          {key:"Education, Sports, Arts and Culture",value:"Education, Sports, Arts and Culture"},
+          {key:"Roads and Bridges",value:"Roads and Bridges"},
+          {key:"Medical and Public Health",value:"Medical and Public Health"},
+          {key:"Other Rural Development Programmes",value:"Other Rural Development Programmes"},
+          {key:"Social Security and Welfare",value:"Social Security and Welfare"},
+          {key:"Others",value:"Others"},]
         }
+    }
+  //   // toNumber(d) {
+    
+  //   // }
+  // //   toView(view){
+  // // if (view == "line") {
+  // //   this.years = ["All"];
+  // // } else {
+  // //   if (this.data.rain_fall_type == "All") {
+  // //     this.years = ["2015","2016_RE","2017_RE"];
+  // //   } else {
+  // //     this.years = ["All","2015","2016_RE","2017_RE"];
+  // //   }
+    
+  // // }
+  // //   }
+  //     toSet(select){
+  //       if (select == "Own Tax Revenue") {
+  //         this.data.rain_fall_type = "All"  
+  //     this.rain_fall_type_sort = [
+  //       {key:"All",value:"All"},
+  //       {key:"Taxes on Sales, Trade",value:"Taxes on Sales, Trade"},
+  //       {key:"Taxes on Goods and Passengers",value:"Taxes on Goods and Passengers"},
+  //       {key:"State Excise",value:"State Excise"},
+  //       {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
+  //       {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
+  //       {key:"Land Revenue",value:"Land Revenue"},
+  //       {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
+  //       {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
+  //       // {key:"Total",value:"Total"},
+  // ]
+  //       }  else if (select == "Non Tax Revenue") {
+  //         this.data.rain_fall_type = "All"
+  //         this.rain_fall_type_sort = [
+  //           {key:"All",value:"All"},
+  //           {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
+  //           {key:"Interest Receipts",value:"Interest Receipts"},
+  //           {key:"Miscellaneous General Services",value:"Miscellaneous General Services"},
+  //           {key:"Other Administrative Services",value:"Other Administrative Services"},
+  //           {key:"Police",value:"Police"},
+  //           {key:"Major Irrigation",value:"Major Irrigation"},
+  //           {key:"Education, Sports, Arts and Culture",value:"Education, Sports, Arts and Culture"},
+  //           {key:"Roads and Bridges",value:"Roads and Bridges"},
+  //           {key:"Medical and Public Health",value:"Medical and Public Health"},
+  //           {key:"Other Rural Development Programmes",value:"Other Rural Development Programmes"},
+  //           {key:"Social Security and Welfare",value:"Social Security and Welfare"},
+  //           {key:"Others",value:"Others"},
+  //           // {key:"Total",value:"Total"},
+  //         ]
+  //       }
         
-        else {
-          this.data.rain_fall_type = "All" 
-          this.rain_fall_type_sort = [ 
-            {key:"All",value:"All"},
-            {key:"Taxes on Sales, Trade",value:"Taxes on Sales, Trade"},
-            {key:"Taxes on Goods and Passengers",value:"Taxes on Goods and Passengers"},
-            {key:"State Excise",value:"State Excise"},
-            {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
-            {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
-            {key:"Land Revenue",value:"Land Revenue"},
-            {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
-            {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
-            {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
-            {key:"Interest Receipts",value:"Interest Receipts"},
-            {key:"Miscellaneous General Services",value:"Miscellaneous General Services"},
-            {key:"Other Administrative Services",value:"Other Administrative Services"},
-            {key:"Police",value:"Police"},
-            {key:"Major Irrigation",value:"Major Irrigation"},
-            {key:"Education, Sports, Arts and Culture",value:"Education, Sports, Arts and Culture"},
-            {key:"Roads and Bridges",value:"Roads and Bridges"},
-            {key:"Medical and Public Health",value:"Medical and Public Health"},
-            {key:"Other Rural Development Programmes",value:"Other Rural Development Programmes"},
-            {key:"Social Security and Welfare",value:"Social Security and Welfare"},
-            {key:"Others",value:"Others"},
-          ]
-        }
-      }
-      // toYear(year){
-      //   if(year == "All"){
-      //     this.data.views = "column"
-      //     this.views = ViewsNotMap
+  //       else {
+  //         this.data.rain_fall_type = "All" 
+  //         this.rain_fall_type_sort = [ 
+  //           {key:"All",value:"All"},
+  //           {key:"Taxes on Sales, Trade",value:"Taxes on Sales, Trade"},
+  //           {key:"Taxes on Goods and Passengers",value:"Taxes on Goods and Passengers"},
+  //           {key:"State Excise",value:"State Excise"},
+  //           {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
+  //           {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
+  //           {key:"Land Revenue",value:"Land Revenue"},
+  //           {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
+  //           {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
+  //           {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
+  //           {key:"Interest Receipts",value:"Interest Receipts"},
+  //           {key:"Miscellaneous General Services",value:"Miscellaneous General Services"},
+  //           {key:"Other Administrative Services",value:"Other Administrative Services"},
+  //           {key:"Police",value:"Police"},
+  //           {key:"Major Irrigation",value:"Major Irrigation"},
+  //           {key:"Education, Sports, Arts and Culture",value:"Education, Sports, Arts and Culture"},
+  //           {key:"Roads and Bridges",value:"Roads and Bridges"},
+  //           {key:"Medical and Public Health",value:"Medical and Public Health"},
+  //           {key:"Other Rural Development Programmes",value:"Other Rural Development Programmes"},
+  //           {key:"Social Security and Welfare",value:"Social Security and Welfare"},
+  //           {key:"Others",value:"Others"},
+  //         ]
+  //       }
+  //     }
+  //     // toYear(year){
+  //     //   if(year == "All"){
+  //     //     this.data.views = "column"
+  //     //     this.views = ViewsNotMap
          
-      //   }else{
-      //     this.data.views = "column"
-      //     this.views  = ViewsNotDistrict
+  //     //   }else{
+  //     //     this.data.views = "column"
+  //     //     this.views  = ViewsNotDistrict
          
-      //   }
-      // }
+  //     //   }
+  //     // }
     
   onSubmit(user) {
     var controller = "resource_management9s"

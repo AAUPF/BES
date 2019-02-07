@@ -41,115 +41,244 @@ export class TaxDepartment4Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["Stamp Duty","Registration Fees","All"]
-  years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+  years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
 
 
   Comparison = [
-    {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
-    {key:"Mining and Quarrying",value:"Mining and Quarrying"},
+    {key:"None",value:"None"},
+    {key:"From Printed Non-judicial stamps",value:"From Printed Non-judicial stamps"},
+    {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
+    {key:"Non-Judicial adhesive stamps",value:"Non-Judicial adhesive stamps"},
+    {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
+    {key:"Revenue Stamps",value:"Revenue Stamps"},
+    {key:"Judicial Stamps",value:"Judicial Stamps"},
+    {key:"Sub-Total",value:"Sub-Total"},
+    {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
+    {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
+    {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
+    {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
+    {key:"Fee from certified copies",value:"Fee from certified copies"},
+    {key:"Sub-Total",value:"Sub-Total"},
+    {key:"Total",value:"Total"},
   ]
 
 
   rain_fall_type = [
     {key:"All",value:"All"},
-    {key:"Non-Developmental  Revenue Expenditure",value:"Non-Developmental  Revenue Expenditure"},
-    {key:"Developmental Revenue Expenditure",value:"Developmental Revenue Expenditure"},
-    {key:"General Services (Public Works)",value:"General Services (Public Works)"},
-    {key:"Social Services",value:"Social Services"},
-    {key:"Economic Services",value:"Economic Services"},
-    {key:"Loans and Advances ",value:"Loans and Advances "},
-    {key:"None",value:"None"},
+    {key:"From Printed Non-judicial stamps",value:"From Printed Non-judicial stamps"},
+    {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
+    {key:"Non-Judicial adhesive stamps",value:"Non-Judicial adhesive stamps"},
+    {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
+    {key:"Revenue Stamps",value:"Revenue Stamps"},
+    {key:"Judicial Stamps",value:"Judicial Stamps"},
+    {key:"Sub-Total",value:"Sub-Total"},
+    {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
+    {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
+    {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
+    {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
+    {key:"Fee from certified copies",value:"Fee from certified copies"},
+    {key:"Sub-Total",value:"Sub-Total"},
+    {key:"Total",value:"Total"},
    
-  
-  
   ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
      //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
-    toNumber(d) {
+  //   toNumber(d) {
     
-    }
-    toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
   //   }
+  //   toView(view){
+  // // if (view == "line") {
+  // //   this.years = ["All"];
+  // // } else {
+  // //   if (this.data.rain_fall_type == "All") {
+  // //     this.years = ["2015","2016_RE","2017_RE"];
+  // //   } else {
+  // //     this.years = ["All","2015","2016_RE","2017_RE"];
+  // //   }
     
-  // }
-    }
-      toSet(select){
-        if (select == "Stamp Duty") {    
-          this.data.rain_fall_type = "All"    
-      this.rain_fall_type_sort = [
-        {key:"All",value:"All"},
+  // // }
+  //   }
+  //     toSet(select){
+  //       if (select == "Stamp Duty") {    
+  //         this.data.rain_fall_type = "All"    
+  //     this.rain_fall_type_sort = [
+  //       {key:"All",value:"All"},
+  //       {key:"From Printed Non-judicial stamps",value:"From Printed Non-judicial stamps"},
+  //       {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
+  //       {key:"Non-Judicial adhesive stamps",value:"Non-Judicial adhesive stamps"},
+  //       {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
+  //       {key:"Revenue Stamps",value:"Revenue Stamps"},
+  //       {key:"Judicial Stamps",value:"Judicial Stamps"},
+  //       {key:"None",value:"None"},
+  // ]
+  //       }  else if (select == "Registration Fees") {
+  //         this.data.rain_fall_type = "All" 
+  //         this.rain_fall_type_sort = [
+  //           {key:"All",value:"All"},
+  //           {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
+  //           {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
+  //           {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
+  //           {key:"Fee from searches of records & Non-Encumbrances",value:"Fee from searches of records & Non-Encumbrances"},
+  //           {key:"Fee from certified copies",value:"Fee from certified copies"},
+  //           {key:"None",value:"None"},
+  //         ]
+  //       }
+
+  //       else if (select == "III. Total Revenue Receipts") {
+  //         this.data.rain_fall_type = "None" 
+  //         this.rain_fall_type_sort = [
+  //           {key:"State’s Own Revenue as Percentage of Total Receipts",value:"State’s Own Revenue as Percentage of Total Receipts"},
+  //           {key:"None",value:"None"},
+  //         ]
+  //       }
+        
+  //       else {
+  //         this.data.rain_fall_type = "All" 
+  //         this.rain_fall_type_sort = [ 
+  //           {key:"All",value:"All"},
+  //           {key:"From Printed Non-judicial stamps",value:"From Printed Non-judicial stamps"},
+  //           {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
+  //           {key:"Non-Judicial adhesive stamps",value:"Non-Judicial adhesive stamps"},
+  //           {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
+  //           {key:"Revenue Stamps",value:"Revenue Stamps"},
+  //           {key:"Judicial Stamps",value:"Judicial Stamps"},
+  //           {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
+  //           {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
+  //           {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
+  //           {key:"Fee from searches of records & Non-Encumbrances",value:"Fee from searches of records & Non-Encumbrances"},
+  //           {key:"Fee from certified copies",value:"Fee from certified copies"},
+            
+          
+  //         ]
+  //       }
+  //     }
+  //     toYear(year){
+  //       if(year == "All"){
+  //         this.data.views = "column"
+  //         this.views = ViewsNotMap
+         
+  //       }else{
+  //         this.data.views = "column"
+  //         this.views  = ViewsNotDistrict
+         
+  //       }
+  //     }
+    
+
+
+
+  toNumber(d) {
+
+    if (d == "All") {
+      this.data.Comparison = "None"
+      this.Comparison = [{key:"None",value:"None"}]
+      
+    } else {
+      this.Comparison = [
+        {key:"None",value:"None"},
         {key:"From Printed Non-judicial stamps",value:"From Printed Non-judicial stamps"},
         {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
         {key:"Non-Judicial adhesive stamps",value:"Non-Judicial adhesive stamps"},
         {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
         {key:"Revenue Stamps",value:"Revenue Stamps"},
         {key:"Judicial Stamps",value:"Judicial Stamps"},
-        {key:"None",value:"None"},
-  ]
-        }  else if (select == "Registration Fees") {
-          this.data.rain_fall_type = "All" 
-          this.rain_fall_type_sort = [
-            {key:"All",value:"All"},
-            {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
-            {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
-            {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
-            {key:"Fee from searches of records & Non-Encumbrances",value:"Fee from searches of records & Non-Encumbrances"},
-            {key:"Fee from certified copies",value:"Fee from certified copies"},
-            {key:"None",value:"None"},
-          ]
-        }
-
-        else if (select == "III. Total Revenue Receipts") {
-          this.data.rain_fall_type = "None" 
-          this.rain_fall_type_sort = [
-            {key:"State’s Own Revenue as Percentage of Total Receipts",value:"State’s Own Revenue as Percentage of Total Receipts"},
-            {key:"None",value:"None"},
-          ]
-        }
+        {key:"Sub-Total",value:"Sub-Total"},
+        {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
+        {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
+        {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
+        {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
+        {key:"Fee from certified copies",value:"Fee from certified copies"},
+        {key:"Sub-Total",value:"Sub-Total"},
+        {key:"Total",value:"Total"},
+       
         
-        else {
-          this.data.rain_fall_type = "All" 
-          this.rain_fall_type_sort = [ 
-            {key:"All",value:"All"},
-            {key:"From Printed Non-judicial stamps",value:"From Printed Non-judicial stamps"},
-            {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
-            {key:"Non-Judicial adhesive stamps",value:"Non-Judicial adhesive stamps"},
-            {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
-            {key:"Revenue Stamps",value:"Revenue Stamps"},
-            {key:"Judicial Stamps",value:"Judicial Stamps"},
-            {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
-            {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
-            {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
-            {key:"Fee from searches of records & Non-Encumbrances",value:"Fee from searches of records & Non-Encumbrances"},
-            {key:"Fee from certified copies",value:"Fee from certified copies"},
-            
-          
-          ]
-        }
-      }
-      toYear(year){
-        if(year == "All"){
-          this.data.views = "column"
-          this.views = ViewsNotMap
-         
-        }else{
-          this.data.views = "column"
-          this.views  = ViewsNotDistrict
-         
-        }
-      }
+      ]
+      
+    }
+  
+  }
+  toView(view){
+// if (view == "line") {
+//   this.years = ["All"];
+// } else {
+//   if (this.data.rain_fall_type == "All") {
+//     this.years = ["2015","2016_RE","2017_RE"];
+//   } else {
+//     this.years = ["All","2015","2016_RE","2017_RE"];
+//   }
+  
+// }
+  }
+    toSet(select){
+      if (select == "Public Debt") {         
+    this.rain_fall_type_sort = [
+      {key:"All",value:"All"},
+      {key:"Internal  Debt",value:"Internal  Debt"},
+      {key:"Central Loans",value:"Central Loans"},
+      {key:"Total",value:"Total"},
     
+]
+         
+      }  else if (select == "Other Liabilities") {
+
+
+        this.rain_fall_type_sort = [
+          {key:"All",value:"All"},
+          {key:"From Printed Non-judicial stamps",value:"From Printed Non-judicial stamps"},
+          {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
+          {key:"Non-Judicial adhesive stamps",value:"Non-Judicial adhesive stamps"},
+          {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
+          {key:"Revenue Stamps",value:"Revenue Stamps"},
+          {key:"Judicial Stamps",value:"Judicial Stamps"},
+          {key:"Sub-Total",value:"Sub-Total"},
+          {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
+          {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
+          {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
+          {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
+          {key:"Fee from certified copies",value:"Fee from certified copies"},
+          {key:"Sub-Total",value:"Sub-Total"},
+          {key:"Total",value:"Total"},
+
+        ]
+      }
+
+
+      
+      else {
+        this.rain_fall_type_sort = [ 
+          {key:"All",value:"All"},
+          {key:"From Printed Non-judicial stamps",value:"From Printed Non-judicial stamps"},
+          {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
+          {key:"Non-Judicial adhesive stamps",value:"Non-Judicial adhesive stamps"},
+          {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
+          {key:"Revenue Stamps",value:"Revenue Stamps"},
+          {key:"Judicial Stamps",value:"Judicial Stamps"},
+          {key:"Sub-Total",value:"Sub-Total"},
+          {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
+          {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
+          {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
+          {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
+          {key:"Fee from certified copies",value:"Fee from certified copies"},
+          {key:"Sub-Total",value:"Sub-Total"},
+          {key:"Total",value:"Total"},
+         
+        
+        ]
+      }
+    }
+    toYear(year){
+      if(year == "All"){
+        this.views = ViewsNotMap
+       
+      }else{
+        this.views  = ViewsNotDistrict
+       
+      }
+    }
   onSubmit(user) {
     var controller = "tax_department4s"
 

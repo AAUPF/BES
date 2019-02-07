@@ -105,7 +105,7 @@ export class SectoralExpenditure2Component implements OnInit {
 
           this.rain_fall_type_sort = [
             {key:"All",value:"All"},
-            {key:"Education, Sports & Culture",value:"Education, Sports & Culture"},
+            {key:"Education, Sports and Culture",value:"Education, Sports and Culture"},
             {key:"Medical and Public Health",value:"Medical and Public Health"},
             {key:"Water Supply and Sanitation",value:"Water Supply and Sanitation"},
             {key:"Social Services",value:"Social Services"},

@@ -44,7 +44,7 @@ export class RevenueAccount4Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["All","Total Tax  Revenue","Own Tax Revenue","Own Non tax Revenue","Own Tax plus Non tax Revenue","Capital Outlay","Capital Outlay as percentage of Total Expenditure"]
-  years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18","2017-18_BE"];
+  years = ["All","2012-13","2013-14","2014-15","2015-16","2017-18","2017-18_BE"];
   views = ViewsNotMap
   rain_fall_type = [{key:"Amount",value:"Amount"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
@@ -63,7 +63,7 @@ export class RevenueAccount4Component implements OnInit {
         if (view == "line") {
           this.years = ["All"];
         } else {
-          this.years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+          this.years = ["All","2012-13","2013-14","2014-15","2015-16","2017-18_BE"];
         }
       }
       toYear(year){

@@ -43,19 +43,19 @@ export class ResourceManagement11Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","Own Tax Revenue as percentage of GSDP","Own Non-Tax Revenue as percentage of GSDP","Total Revenue as percentage of GSDP","Buoyancy of Total Revenue w.r.t. GSDP (Ratio)","Buoyancy of State’s Own Taxes w.r.t. GSDP(Ratio)"]
+  Districts = ["All","Own Tax Revenue as percentage of GSDP","Own Non-Tax Revenue as percentage of GSDP","Total Revenue as percentage of GSDP","Buoyancy of Total Revenue w.r.t. GSDP(Ratio)","Buoyancy of State’s Own Taxes w.r.t. GSDP(Ratio)"]
   years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   views = ViewsNotMap
   rain_fall_type = [{key:"Percentage",value:"Percentage"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = ["None","Own Tax Revenue as percentage of GSDP","Own Non-Tax Revenue as percentage of GSDP","Total Revenue as percentage of GSDP","Buoyancy of Total Revenue w.r.t. GSDP (Ratio)","Buoyancy of State’s Own Taxes w.r.t. GSDP(Ratio)"]
+  Comparison = ["None","Own Tax Revenue as percentage of GSDP","Own Non-Tax Revenue as percentage of GSDP","Total Revenue as percentage of GSDP","Buoyancy of Total Revenue w.r.t. GSDP(Ratio)","Buoyancy of State’s Own Taxes w.r.t. GSDP(Ratio)"]
     data: any = {};    
     toNumber(d) {
       if (d == "All") {
         this.data.Comparison = "None"
         this.Comparison = ["None"]
       } else {
-        this.Comparison = ["None","Own Tax Revenue as percentage of GSDP","Own Non-Tax Revenue as percentage of GSDP","Total Revenue as percentage of GSDP","Buoyancy of Total Revenue w.r.t. GSDP (Ratio)","Buoyancy of State’s Own Taxes w.r.t. GSDP(Ratio)"]
+        this.Comparison = ["None","Own Tax Revenue as percentage of GSDP","Own Non-Tax Revenue as percentage of GSDP","Total Revenue as percentage of GSDP","Buoyancy of Total Revenue w.r.t. GSDP(Ratio)","Buoyancy of State’s Own Taxes w.r.t. GSDP(Ratio)"]
       }
       
       }
