@@ -11,6 +11,7 @@ import { Views } from '../../data/views';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotTrend } from '../../data/viewsnottrend';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -73,6 +74,14 @@ export class RuralDevelopmentProgrammes10Component implements OnInit {
         {key:"Lifting",value:"Lifting"},
         {key:"Lifting Percentage",value:"Lifting_Percentage"},]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
+    toSet(data){
+      if (data == "All") {
+      this.views= ViewsNotDistrict
+        
+      } else {
+        this.views = ViewsNotTrend
       }
     }
   onSubmit(user) {

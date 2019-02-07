@@ -51,11 +51,16 @@ export class RuralDevelopmentProgrammes8Component implements OnInit {
     toNumber(d) {
     if (d == "All") {
       this.years = ["2014-15", "2015-16","2016-17"];
+      // this.views = ViewsNotDistrict
     } 
     else {
       if (this.data.view == "line") {
         this.years = ["All"];
-      } else {
+      }
+      else if(this.data.view == "Map View"){
+        this.years = ["2014-15", "2015-16","2016-17"];
+      }
+       else {
         this.years = ["All","2014-15", "2015-16","2016-17"];
       }
     
@@ -64,7 +69,12 @@ export class RuralDevelopmentProgrammes8Component implements OnInit {
   toView(view){
 if (view == "line") {
   this.years = ["All"];
-} else {
+}
+else if(view == "Map View"){
+  this.years = ["2014-15", "2015-16","2016-17"];
+  this.rain_fall_type = [{key:"Fund available",value:"Fund_available"},	{key:"Fund utilised",value:"Fund_utilised"},	{key:"Percentage of utilisation",value:"Percentage_of_utilisation"}]
+}
+ else {
   if (this.data.rain_fall_type == "All") {
     this.years = ["2014-15", "2015-16","2016-17"];
   } else {
@@ -88,8 +98,13 @@ if (view == "line") {
         this.views = ViewsNotMap
         this.rain_fall_type = [{key:"Fund available",value:"Fund_available"},	{key:"Fund utilised",value:"Fund_utilised"},	{key:"Percentage of utilisation",value:"Percentage_of_utilisation"}]
       }else{
-        this.views  = ViewsNotDistrict
-        this.rain_fall_type = [{key:"All",value:"All"},{key:"Fund available",value:"Fund_available"},	{key:"Fund utilised",value:"Fund_utilised"},	{key:"Percentage of utilisation",value:"Percentage_of_utilisation"}]
+        this.views  = ViewsNotTrend
+        if (this.data.view == "Map View") {
+          this.rain_fall_type = [{key:"Fund available",value:"Fund_available"},	{key:"Fund utilised",value:"Fund_utilised"},	{key:"Percentage of utilisation",value:"Percentage_of_utilisation"}]
+        } else {
+          this.rain_fall_type = [{key:"All",value:"All"},{key:"Fund available",value:"Fund_available"},	{key:"Fund utilised",value:"Fund_utilised"},	{key:"Percentage of utilisation",value:"Percentage_of_utilisation"}]
+        }
+        
       }
     }
 

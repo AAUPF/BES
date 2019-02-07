@@ -101,31 +101,26 @@ export class PanchayatiRaj2Component implements OnInit {
           {key:"Construction of Panchayat Sarkar Bhawan",value:"Construction of Panchayat Sarkar Bhawan"},
           {key:"Contingency Grant",value:"Contingency Grant"},
           {key:"Payment and Allowance to GP members/ functionaries",value:"Payment and Allowance to GP members/ functionaries"},,
-          
-          // {key:"Total Expenditure on Road and Bridges",value:"Total Expenditure on Road and Bridges"},
-          // {key:"Revenue Expenditure on Road and Bridges",value:"Revenue Expenditure on Road and Bridges"},
-          // {key:"Capital Expenditure on Road and Bridges",value:"Capital Expenditure on Road and Bridges"},
-          // {key:"Expenditure on Economic Services",value:"Expenditure on Economic Services"},
-          // {key:"Development Expenditure",value:"Development Expenditure"},
-          // {key:"Total Budget",value:"Total Budget"},
-          // {key:"GSDP",value:"GSDP"},
-          
         ]
         
       }
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
-    
-  // }
+  if (view == "line") {
+    this.years = [{key:"All",value:"All"}]
+  } else {
+    // if (this.data.rain_fall_type == "All") {
+    //   this.years = ["2015","2016_RE","2017_RE"];
+    // } else {
+    //   this.years = ["All","2015","2016_RE","2017_RE"];
+    // }
+    this.years = [{key:"All",value:"All"},
+    {key:"2013 14 Actual",value:"2013_14_Actual"},
+    {key:"2014 15 Actual",value:"2014_15_Actual"},
+    {key:"2015 16 Actual",value:"2015_16_Actual"},
+    {key:"2016 17 BE",value:"2016_17_BE"}]
+  }
     }
       toSet(select){
         if (select == "Gram Panchayat") {         
