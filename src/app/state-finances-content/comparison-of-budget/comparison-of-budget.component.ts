@@ -59,277 +59,273 @@ export class ComparisonOfBudgetComponent implements OnInit {
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
   rain_fall_type = [
-   
-    "Total Revenue Receipts",
-    "Total Revenue Expenditure",
-    "Deficit Revenue A/c ",
-    "Consolidated Fund Receipts",
-    "Net Consolidated Fund (Receipt-Expenditure)",
-    "Contingency Fund ",
+    {key:"All",value:"All"},
+    {key:"Revenue Account Receipts",value:"Revenue Account Receipts"},
+    {key:"Tax revenues",value:"Tax revenues"},
+    {key:"Non-Tax Revenues",value:"Non-Tax Revenues"},
+    {key:"Grants and Contributions (Revenue Account Receipts)",value:"Grants and Contributions (Revenue Account Receipts)"},
+    {key:"Total Revenue Receipts (Expenditure)",value:"Total Revenue Receipts (Expenditure)"},
+    {key:"General Services",value:"General Services"},
+    {key:"Social Services",value:"Social Services"},
+    {key:"Economic Services",value:"Economic Services"},
+    {key:"Grants and Contributions (Total Revenue Receipts Expenditure)",value:"Grants and Contributions (Total Revenue Receipts Expenditure)"},
+    {key:"Total Revenue Expenditure",value:"Total Revenue Expenditure"},
+    {key:"Deficit Revenue A/c ",value:"Deficit Revenue A/c "},
+    {key:"Consolidated Fund Receipts",value:"Consolidated Fund Receipts"},
+    {key:"Net Consolidated Fund (Receipt-Expenditure)",value:"Net Consolidated Fund (Receipt-Expenditure)"},
+    {key:"Contingency Fund",value:"Contingency Fund"},
+    {key:"Income",value:"Income"},
+    {key:"Public Account (Receipts)",value:"Public Account (Receipts)"},
+    {key:"Small Savings, PF  etc. Receipts ",value:"Small Savings, PF  etc. Receipts "},
+    {key:"Reserve Funds Receipts ",value:"Reserve Funds Receipts "},
+    {key:"Deposits and Advances Receipts ",value:"Deposits and Advances Receipts "},
+    {key:"Suspense and Misc. Receipts ",value:"Suspense and Misc. Receipts "},
+    {key:"Remittances Receipts ",value:"Remittances Receipts "},
+    {key:"Total Receipts Public Account",value:"Total Receipts Public Account"},
+    {key:"Net Results Public Account (Receipt-Expenditure)",value:"Net Results Public Account (Receipt-Expenditure)"},
+    {key:"Net Result (All Accounts) (Receipt-Expenditure)",value:"Net Result (All Accounts) (Receipt-Expenditure)"},
+    {key:"Capital Account Receipts",value:"Capital Account Receipts"},
+    {key:"Public Debt (Capital Account Receipts)",value:"Public Debt (Capital Account Receipts)"},
+    {key:"Recovery of Loans and Advances",value:"Recovery of Loans and Advances"},
+    {key:"Total Capital Receipts (Expenditure)",value:"Total Capital Receipts (Expenditure)"},
+    {key:"Capital Outlay",value:"Capital Outlay"},
+    {key:"Public Debt (Total Capital Receipts)",value:"Public Debt (Total Capital Receipts)"},
+    {key:"Loans & advances",value:"Loans & advances"},
+    {key:"Total Capital Expenditure ",value:"Total Capital Expenditure "},
+    {key:"Deficit Capital Account",value:"Deficit Capital Account"},
+    {key:"Consolidated Fund Expenditure",value:"Consolidated Fund Expenditure"},
+    {key:"Public Account (Expenditure)",value:"Public Account (Expenditure)"},
+    {key:"Small Savings, PF  etc. Disbursements ",value:"Small Savings, PF  etc. Disbursements "},
+    {key:"Reserve Funds Disbursements ",value:"Reserve Funds Disbursements "},
+    {key:"Deposits and Advances Disbursements ",value:"Deposits and Advances Disbursements "},
+    {key:"Suspense and Misc. Disbursements ",value:"Suspense and Misc. Disbursements "},
+    {key:"Remittances Disbursements ",value:"Remittances Disbursements "},
+    {key:"Total Disbursements Public Account",value:"Total Disbursements Public Account"},
   ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
   Comparison = [
-   
-    "Tax revenues",
-    "Non-Tax Revenues",
-    "Grants and Contributions",
-    "None"
+    {key:"Revenue Account Receipts",value:"Revenue Account Receipts"},
+    {key:"Tax revenues",value:"Tax revenues"},
+    {key:"Non-Tax Revenues",value:"Non-Tax Revenues"},
+    {key:"Grants and Contributions (Revenue Account Receipts)",value:"Grants and Contributions (Revenue Account Receipts)"},
+    {key:"Total Revenue Receipts (Expenditure)",value:"Total Revenue Receipts (Expenditure)"},
+    {key:"General Services",value:"General Services"},
+    {key:"Social Services",value:"Social Services"},
+    {key:"Economic Services",value:"Economic Services"},
+    {key:"Grants and Contributions (Total Revenue Receipts Expenditure)",value:"Grants and Contributions (Total Revenue Receipts Expenditure)"},
+    {key:"Total Revenue Expenditure",value:"Total Revenue Expenditure"},
+    {key:"Deficit Revenue A/c ",value:"Deficit Revenue A/c "},
+    {key:"Consolidated Fund Receipts",value:"Consolidated Fund Receipts"},
+    {key:"Net Consolidated Fund (Receipt-Expenditure)",value:"Net Consolidated Fund (Receipt-Expenditure)"},
+    {key:"Contingency Fund",value:"Contingency Fund"},
+    {key:"Income",value:"Income"},
+    {key:"Public Account (Receipts)",value:"Public Account (Receipts)"},
+    {key:"Small Savings, PF  etc. Receipts ",value:"Small Savings, PF  etc. Receipts "},
+    {key:"Reserve Funds Receipts ",value:"Reserve Funds Receipts "},
+    {key:"Deposits and Advances Receipts ",value:"Deposits and Advances Receipts "},
+    {key:"Suspense and Misc. Receipts ",value:"Suspense and Misc. Receipts "},
+    {key:"Remittances Receipts ",value:"Remittances Receipts "},
+    {key:"Total Receipts Public Account",value:"Total Receipts Public Account"},
+    {key:"Net Results Public Account (Receipt-Expenditure)",value:"Net Results Public Account (Receipt-Expenditure)"},
+    {key:"Net Result (All Accounts) (Receipt-Expenditure)",value:"Net Result (All Accounts) (Receipt-Expenditure)"},
+    {key:"Capital Account Receipts",value:"Capital Account Receipts"},
+    {key:"Public Debt (Capital Account Receipts)",value:"Public Debt (Capital Account Receipts)"},
+    {key:"Recovery of Loans and Advances",value:"Recovery of Loans and Advances"},
+    {key:"Total Capital Receipts (Expenditure)",value:"Total Capital Receipts (Expenditure)"},
+    {key:"Capital Outlay",value:"Capital Outlay"},
+    {key:"Public Debt (Total Capital Receipts)",value:"Public Debt (Total Capital Receipts)"},
+    {key:"Loans & advances",value:"Loans & advances"},
+    {key:"Total Capital Expenditure ",value:"Total Capital Expenditure "},
+    {key:"Deficit Capital Account",value:"Deficit Capital Account"},
+    {key:"Consolidated Fund Expenditure",value:"Consolidated Fund Expenditure"},
+    {key:"Public Account (Expenditure)",value:"Public Account (Expenditure)"},
+    {key:"Small Savings, PF  etc. Disbursements ",value:"Small Savings, PF  etc. Disbursements "},
+    {key:"Reserve Funds Disbursements ",value:"Reserve Funds Disbursements "},
+    {key:"Deposits and Advances Disbursements ",value:"Deposits and Advances Disbursements "},
+    {key:"Suspense and Misc. Disbursements ",value:"Suspense and Misc. Disbursements "},
+    {key:"Remittances Disbursements ",value:"Remittances Disbursements "},
+    {key:"Total Disbursements Public Account",value:"Total Disbursements Public Account"},
   ]
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
      //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
+    toNumber(d) {
 
-
-    compare(d) {
-
-
-      if (d == "Total Revenue Receipts") {
-        this.data.Comparison = "All"
-        this.Comparison = 
-        [
-         "All",
-          "Tax revenues",
-          "Non-Tax Revenues",
-          "Grants and Contributions",
-          "None"
-        ]
-        
-      } 
-      
-      else if (d == "Total Revenue Expenditure") {
-  
-        if (this.data.districts == "All") {
-           this.data.Comparison = "None"
-           this.Comparison = 
-           [
-            "All",
-            "General Services",
-            "Social Services",
-            "Economic Services",
-            "Grants and Contributions",
-            "None",
-     
-           ]
-           
-         } else {
-  
-  
-          this.data.Comparison = "None"
-          this.Comparison = 
-    
-          [
-            "All",
-            "General Services",
-            "Social Services",
-            "Economic Services",
-            "Grants and Contributions",
-            "None",
-          ]
-          }
-  
-      }
-  
-      else if (d == "Contingency Fund ") {
-  
-        this.data.Comparison = "None"
-        this.Comparison = 
-  
-        [
-          "All",
-          "Income",
-          "Expenditure",
-          "None"
-  
-        ]
-      }
-  
-      else if (d == "Total Receipts Public Account") {
-        this.data.Comparison = "None"
-        this.Comparison = 
-  
-        [
-          "All",
-          "Small Savings, PF  etc.",
-          "Reserve Funds",
-          "Deposits and Advances",
-          "Suspense and Misc.",
-          "Remittances",
-         "None"
-  
-        ]
-      }
-  
-  
-      else if (d == "Total Disbursements Public Account") {
-  
-        this.data.Comparison = "None"
-        this.Comparison = 
-  
-        [
-          "All",
-          "Small Savings, PF  etc.",
-          "Reserve Funds",
-          "Deposits and Advances",
-          "Suspense and Misc.",
-          "Remittances",
-          "None"
-  
-        ]
-      }
-
-
-
-      else if (d == "Total Capital Receipts") {
-  
-        this.data.Comparison = "None"
-        this.Comparison = 
-  
-        [
-          "All",
-          "Receipts",
-          "Public Debt",
-          "Recovery of Loans and Advances",
-          "Suspense and Misc.",
-          "Remittances",
-          "None"
-  
-        ]
-      }
-
-
-      else if (d == "Total Capital Expenditure ") {
-  
-        this.data.Comparison = "All"
-        this.Comparison = 
-  
-        [
-          "All",
-          "Capital Outlay",
-          "Public Debt",
-          "Loans & advances",
-          "None"
-  
-        ]
-      }
-      
-      else {
-      this.data.Comparison = "None"
-      this.Comparison = 
-  
-        [
-         
-       "None"
-  
-        ]
-      
-      }
-      
-    }
- 
-    toSet(select){
-
-      
-      if (select == "All") {
-        this.data.rain_fall_type  = undefined
-
-        this.rain_fall_type_sort = [
-          "All",
-          "Total Expenditure (Rs. crore)",
-          "Revenue Expenditure (Rs. crore)",
-          "Capital Outlay (Rs. crore)",
-          "Capital Outlay (Percentage)",
-        ]
-
-       
-      }
-      else if(select == "Revenue Account") { 
-        this.data.rain_fall_type  = "Total Revenue Receipts"
-
-        this.rain_fall_type_sort =[
-          "All",
-          "Total Revenue Receipts",
-          "Total Revenue Expenditure",
-          "Deficit Revenue A/c ",
-          "Consolidated Fund Receipts",
-          "Net Consolidated Fund (Receipt-Expenditure)",
-          "Contingency Fund ",
-          "None"
-      ]
-      }
-
-      else if(select == "Public Account") { 
-        this.data.rain_fall_type  = "Total Receipts Public Account"
-
-        this.rain_fall_type_sort = [
-          "All",
-          "Total Receipts Public Account",
-          "Total Disbursements Public Account",
-          "None"
-        ]
-
-      }
-
-      else if(select == "Net Results Public Account (Receipt-Expenditure)") { 
-        this.data.rain_fall_type_sort  =  "None"
-
-        this.rain_fall_type_sort = [
-          
-         
-        "None"
-        
-        ]
-
-      }
-
-      else if(select == "Net Result (All Accounts) (Receipt-Expenditure)") { 
-        this.data.rain_fall_type_sort  =  "None"
-
-        this.rain_fall_type_sort = [
-          
-         
-          "None"
-        
-        ]
-
-      }
-
-      else if(select == "Capital Account") { 
-        this.data.rain_fall_type_sort  =  "None"
-
-        this.rain_fall_type_sort = [
-          "All",
-          "Total Capital Receipts",
-          "Total Capital Expenditure ",
-          "Deficit Capital Account",
-          "Consolidated Fund Expenditure",
-          "None"
-        
-        ]
-
-      }
-      else {
-        this.butDisabled = false;
-      }
-    }
-
-
-    toyear(d){
       if (d == "All") {
-        this.data.view = undefined
-
-       
-        this.views = ViewsNotMap
+        this.data.Comparison = "None"
+        this.Comparison = [{key:"None",value:"None"}]
         
       } else {
-        this.data.view = undefined
-
-        this.views = ViewsNotDistrict
+        this.data.Comparison = "None"
+        this.Comparison = [
+          {key:"Revenue Account Receipts",value:"Revenue Account Receipts"},
+          {key:"Tax revenues",value:"Tax revenues"},
+          {key:"Non-Tax Revenues",value:"Non-Tax Revenues"},
+          {key:"Grants and Contributions (Revenue Account Receipts)",value:"Grants and Contributions (Revenue Account Receipts)"},
+          {key:"Total Revenue Receipts (Expenditure)",value:"Total Revenue Receipts (Expenditure)"},
+          {key:"General Services",value:"General Services"},
+          {key:"Social Services",value:"Social Services"},
+          {key:"Economic Services",value:"Economic Services"},
+          {key:"Grants and Contributions (Total Revenue Receipts Expenditure)",value:"Grants and Contributions (Total Revenue Receipts Expenditure)"},
+          {key:"Total Revenue Expenditure",value:"Total Revenue Expenditure"},
+          {key:"Deficit Revenue A/c ",value:"Deficit Revenue A/c "},
+          {key:"Consolidated Fund Receipts",value:"Consolidated Fund Receipts"},
+          {key:"Net Consolidated Fund (Receipt-Expenditure)",value:"Net Consolidated Fund (Receipt-Expenditure)"},
+          {key:"Contingency Fund",value:"Contingency Fund"},
+          {key:"Income",value:"Income"},
+          {key:"Public Account (Receipts)",value:"Public Account (Receipts)"},
+          {key:"Small Savings, PF  etc. Receipts ",value:"Small Savings, PF  etc. Receipts "},
+          {key:"Reserve Funds Receipts ",value:"Reserve Funds Receipts "},
+          {key:"Deposits and Advances Receipts ",value:"Deposits and Advances Receipts "},
+          {key:"Suspense and Misc. Receipts ",value:"Suspense and Misc. Receipts "},
+          {key:"Remittances Receipts ",value:"Remittances Receipts "},
+          {key:"Total Receipts Public Account",value:"Total Receipts Public Account"},
+          {key:"Net Results Public Account (Receipt-Expenditure)",value:"Net Results Public Account (Receipt-Expenditure)"},
+          {key:"Net Result (All Accounts) (Receipt-Expenditure)",value:"Net Result (All Accounts) (Receipt-Expenditure)"},
+          {key:"Capital Account Receipts",value:"Capital Account Receipts"},
+          {key:"Public Debt (Capital Account Receipts)",value:"Public Debt (Capital Account Receipts)"},
+          {key:"Recovery of Loans and Advances",value:"Recovery of Loans and Advances"},
+          {key:"Total Capital Receipts (Expenditure)",value:"Total Capital Receipts (Expenditure)"},
+          {key:"Capital Outlay",value:"Capital Outlay"},
+          {key:"Public Debt (Total Capital Receipts)",value:"Public Debt (Total Capital Receipts)"},
+          {key:"Loans & advances",value:"Loans & advances"},
+          {key:"Total Capital Expenditure ",value:"Total Capital Expenditure "},
+          {key:"Deficit Capital Account",value:"Deficit Capital Account"},
+          {key:"Consolidated Fund Expenditure",value:"Consolidated Fund Expenditure"},
+          {key:"Public Account (Expenditure)",value:"Public Account (Expenditure)"},
+          {key:"Small Savings, PF  etc. Disbursements ",value:"Small Savings, PF  etc. Disbursements "},
+          {key:"Reserve Funds Disbursements ",value:"Reserve Funds Disbursements "},
+          {key:"Deposits and Advances Disbursements ",value:"Deposits and Advances Disbursements "},
+          {key:"Suspense and Misc. Disbursements ",value:"Suspense and Misc. Disbursements "},
+          {key:"Remittances Disbursements ",value:"Remittances Disbursements "},
+          {key:"Total Disbursements Public Account",value:"Total Disbursements Public Account"},
+          {key:"None",value:"None"},
+        ]
         
       }
-
+    
     }
+    toView(view){
+  // if (view == "line") {
+  //   this.years = ["All"];
+  // } else {
+  //   if (this.data.rain_fall_type == "All") {
+  //     this.years = ["2015","2016_RE","2017_RE"];
+  //   } else {
+  //     this.years = ["All","2015","2016_RE","2017_RE"];
+  //   }
+    
+  // }
+    }
+      toSet(select){
+        if (select == "Public Debt") {         
+      this.rain_fall_type_sort = [
+        {key:"All",value:"All"},
+        {key:"Revenue Account Receipts",value:"Revenue Account Receipts"},
+        {key:"Tax revenues",value:"Tax revenues"},
+        {key:"Non-Tax Revenues",value:"Non-Tax Revenues"},
+        {key:"Grants and Contributions (Revenue Account Receipts)",value:"Grants and Contributions (Revenue Account Receipts)"},
+        {key:"Total Revenue Receipts (Expenditure)",value:"Total Revenue Receipts (Expenditure)"},
+        {key:"General Services",value:"General Services"},
+        {key:"Social Services",value:"Social Services"},
+        {key:"Economic Services",value:"Economic Services"},
+        {key:"Grants and Contributions (Total Revenue Receipts Expenditure)",value:"Grants and Contributions (Total Revenue Receipts Expenditure)"},
+        {key:"Total Revenue Expenditure",value:"Total Revenue Expenditure"},
+        {key:"Deficit Revenue A/c ",value:"Deficit Revenue A/c "},
+        {key:"Consolidated Fund Receipts",value:"Consolidated Fund Receipts"},
+        {key:"Net Consolidated Fund (Receipt-Expenditure)",value:"Net Consolidated Fund (Receipt-Expenditure)"},
+        {key:"Contingency Fund",value:"Contingency Fund"},
+        {key:"Income",value:"Income"},
+        {key:"Public Account (Receipts)",value:"Public Account (Receipts)"},
+        {key:"Small Savings, PF  etc. Receipts ",value:"Small Savings, PF  etc. Receipts "},
+        {key:"Reserve Funds Receipts ",value:"Reserve Funds Receipts "},
+        {key:"Deposits and Advances Receipts ",value:"Deposits and Advances Receipts "},
+        {key:"Suspense and Misc. Receipts ",value:"Suspense and Misc. Receipts "},
+        {key:"Remittances Receipts ",value:"Remittances Receipts "},
+        {key:"Total Receipts Public Account",value:"Total Receipts Public Account"},
+        {key:"Net Results Public Account (Receipt-Expenditure)",value:"Net Results Public Account (Receipt-Expenditure)"},
+        {key:"Net Result (All Accounts) (Receipt-Expenditure)",value:"Net Result (All Accounts) (Receipt-Expenditure)"},
+        {key:"Capital Account Receipts",value:"Capital Account Receipts"},
+        {key:"Public Debt (Capital Account Receipts)",value:"Public Debt (Capital Account Receipts)"},
+        {key:"Recovery of Loans and Advances",value:"Recovery of Loans and Advances"},
+        {key:"Total Capital Receipts (Expenditure)",value:"Total Capital Receipts (Expenditure)"},
+        {key:"Capital Outlay",value:"Capital Outlay"},
+        {key:"Public Debt (Total Capital Receipts)",value:"Public Debt (Total Capital Receipts)"},
+        {key:"Loans & advances",value:"Loans & advances"},
+        {key:"Total Capital Expenditure ",value:"Total Capital Expenditure "},
+        {key:"Deficit Capital Account",value:"Deficit Capital Account"},
+        {key:"Consolidated Fund Expenditure",value:"Consolidated Fund Expenditure"},
+        {key:"Public Account (Expenditure)",value:"Public Account (Expenditure)"},
+        {key:"Small Savings, PF  etc. Disbursements ",value:"Small Savings, PF  etc. Disbursements "},
+        {key:"Reserve Funds Disbursements ",value:"Reserve Funds Disbursements "},
+        {key:"Deposits and Advances Disbursements ",value:"Deposits and Advances Disbursements "},
+        {key:"Suspense and Misc. Disbursements ",value:"Suspense and Misc. Disbursements "},
+        {key:"Remittances Disbursements ",value:"Remittances Disbursements "},
+        {key:"Total Disbursements Public Account",value:"Total Disbursements Public Account"},
+
+          ]
+        }
+      
+        else {
+          
+          this.rain_fall_type_sort = [ 
+            {key:"All",value:"All"},
+            {key:"Revenue Account Receipts",value:"Revenue Account Receipts"},
+            {key:"Tax revenues",value:"Tax revenues"},
+            {key:"Non-Tax Revenues",value:"Non-Tax Revenues"},
+            {key:"Grants and Contributions (Revenue Account Receipts)",value:"Grants and Contributions (Revenue Account Receipts)"},
+            {key:"Total Revenue Receipts (Expenditure)",value:"Total Revenue Receipts (Expenditure)"},
+            {key:"General Services",value:"General Services"},
+            {key:"Social Services",value:"Social Services"},
+            {key:"Economic Services",value:"Economic Services"},
+            {key:"Grants and Contributions (Total Revenue Receipts Expenditure)",value:"Grants and Contributions (Total Revenue Receipts Expenditure)"},
+            {key:"Total Revenue Expenditure",value:"Total Revenue Expenditure"},
+            {key:"Deficit Revenue A/c ",value:"Deficit Revenue A/c "},
+            {key:"Consolidated Fund Receipts",value:"Consolidated Fund Receipts"},
+            {key:"Net Consolidated Fund (Receipt-Expenditure)",value:"Net Consolidated Fund (Receipt-Expenditure)"},
+            {key:"Contingency Fund",value:"Contingency Fund"},
+            {key:"Income",value:"Income"},
+            {key:"Public Account (Receipts)",value:"Public Account (Receipts)"},
+            {key:"Small Savings, PF  etc. Receipts ",value:"Small Savings, PF  etc. Receipts "},
+            {key:"Reserve Funds Receipts ",value:"Reserve Funds Receipts "},
+            {key:"Deposits and Advances Receipts ",value:"Deposits and Advances Receipts "},
+            {key:"Suspense and Misc. Receipts ",value:"Suspense and Misc. Receipts "},
+            {key:"Remittances Receipts ",value:"Remittances Receipts "},
+            {key:"Total Receipts Public Account",value:"Total Receipts Public Account"},
+            {key:"Net Results Public Account (Receipt-Expenditure)",value:"Net Results Public Account (Receipt-Expenditure)"},
+            {key:"Net Result (All Accounts) (Receipt-Expenditure)",value:"Net Result (All Accounts) (Receipt-Expenditure)"},
+            {key:"Capital Account Receipts",value:"Capital Account Receipts"},
+            {key:"Public Debt (Capital Account Receipts)",value:"Public Debt (Capital Account Receipts)"},
+            {key:"Recovery of Loans and Advances",value:"Recovery of Loans and Advances"},
+            {key:"Total Capital Receipts (Expenditure)",value:"Total Capital Receipts (Expenditure)"},
+            {key:"Capital Outlay",value:"Capital Outlay"},
+            {key:"Public Debt (Total Capital Receipts)",value:"Public Debt (Total Capital Receipts)"},
+            {key:"Loans & advances",value:"Loans & advances"},
+            {key:"Total Capital Expenditure ",value:"Total Capital Expenditure "},
+            {key:"Deficit Capital Account",value:"Deficit Capital Account"},
+            {key:"Consolidated Fund Expenditure",value:"Consolidated Fund Expenditure"},
+            {key:"Public Account (Expenditure)",value:"Public Account (Expenditure)"},
+            {key:"Small Savings, PF  etc. Disbursements ",value:"Small Savings, PF  etc. Disbursements "},
+            {key:"Reserve Funds Disbursements ",value:"Reserve Funds Disbursements "},
+            {key:"Deposits and Advances Disbursements ",value:"Deposits and Advances Disbursements "},
+            {key:"Suspense and Misc. Disbursements ",value:"Suspense and Misc. Disbursements "},
+            {key:"Remittances Disbursements ",value:"Remittances Disbursements "},
+            {key:"Total Disbursements Public Account",value:"Total Disbursements Public Account"},
+          ]
+        }
+      }
 
 
+     
+      toYear(year){
+        if(year == "All"){
+          this.views = ViewsNotMap
+         
+        }else{
+          this.views  = ViewsNotDistrict
+         
+        }
+      }
 
   onSubmit(user) {
     var controller = "comparison_of_budgets"
