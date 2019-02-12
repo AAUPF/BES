@@ -42,7 +42,7 @@ export class NonAgroBasedIndustries4Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["All","Plantation (ha)","DFLs Rearing (lakh)","Total Cocoon Production","Raw Silk (Tonnes)"]
-  years = ["All","2013-14","2014-15"];
+  years = ["All","2013-14","2014-15","2015-16","2016-17","2017-18"];
   views = ViewsNotMap;
   rain_fall_type = [{key:"All",value:"All"},{key:"Mulberry",value:"Mulberry"},	{key:"Tasar",value:"Tasar"},	{key:"Castor",value:"Castor"}]
   Comparison  = ["None","Plantation (ha)","DFLs Rearing (lakh)","Total Cocoon Production","Raw Silk (Tonnes)"]
@@ -50,13 +50,13 @@ export class NonAgroBasedIndustries4Component implements OnInit {
     data: any = {};    
     toNumber(d) {
     if (d == "All") {
-      this.years = ["2013-14","2014-15"];
+      this.years = ["2013-14","2014-15","2015-16","2016-17","2017-18"];
     } 
     else {
       if (this.data.view == "line") {
         this.years = ["All"];
       } else {
-        this.years = ["All","2013-14","2014-15"];
+        this.years = ["All","2013-14","2014-15","2015-16","2016-17","2017-18"];
       }
     
     }
@@ -66,9 +66,9 @@ if (view == "line") {
   this.years = ["All"];
 } else {
   if (this.data.rain_fall_type == "All") {
-    this.years = ["2013-14","2014-15"];
+    this.years = ["2013-14","2014-15","2015-16","2016-17","2017-18"];
   } else {
-    this.years = ["All","2013-14","2014-15"];
+    this.years = ["All","2013-14","2014-15","2015-16","2016-17","2017-18"];
   }
   
 }
