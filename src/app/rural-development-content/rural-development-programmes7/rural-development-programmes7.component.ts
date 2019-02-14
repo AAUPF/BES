@@ -206,16 +206,12 @@ export class RuralDevelopmentProgrammes7Component implements OnInit {
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    this.years = ["All","2014-15","2015-16","2016-17"];
     
-  // }
+  }
     }
       toSet(select){
         if (select == "Public Investment in Road and Bridges") {         

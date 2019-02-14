@@ -57,15 +57,7 @@ export class AnnualSurvey6Component implements OnInit {
   // views = ["Graph", "Trend Line","Map View","Table"];
   views = ViewsNotDistrict
   //views =[{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Map View", value: "Map View"},{key: "Table", value: "Table"}];
-  rain_fall_type = [{key: "All", value: "All"},{key:"Number of Factories in Operation",value:"Number_of_Factories_in_Operation"},
-  {key:"Gross Value of Output GVO Rs crore",value:"Gross_Value_of_Output_GVO_Rs_crore"},
-  {key:"Gross Value Added GVA Rs crore",value:"Gross_Value_Added_GVA_Rs_crore"},
-  {key:"GVA Percentage Share in India",value:"GVA_Percentage_Share_in_India"},
-  {key:"GVA as Percentage of GVO",value:"GVA_as_Percentage_of_GVO"},
-  {key:"Number of Persons Engaged",value:"Number_of_Persons_Engaged"},
-  {key:"Percentage Share in India",value:"Percentage_Share_in_India"},
-  {key:"Employment per Factory",value:"Employment_per_Factory"},
-  {key:"Wages Salaries and Bonus per Person annually Rs",value:"Wages_Salaries_and_Bonus_per_Person_annually_Rs"},]
+  rain_fall_type = [{key: "All", value: "All"},{key:"Number of Factories in Operation",value:"Number_of_Factories_in_Operation"},	{key:"GVO",value:"GVO"},	{key:"GVA",value:"GVA"},	{key:"GVA Percentage Share in total",value:"GVA_Percentage_Share_in_total"},	{key:"GVA as Percentage of GVO",value:"GVA_as_Percentage_of_GVO"},	{key:"Number of Persons Engaged",value:"Number_of_Persons_Engaged"},	{key:"Persons engaged as Percentage Share in total",value:"Persons_engaged_as_Percentage_Share_in_total"},	{key:"Persons engaged as Employment per Factory",value:"Persons_engaged_as_Employment_per_Factory"},	{key:"Wages Salaries and Bonus per Person annually in Rs",value:"Wages_Salaries_and_Bonus_per_Person_annually_in_Rs"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["None","Bihar vs State"]
     data: any = {}; 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SvgService } from '../../services/svg.service';
 import { AgricultureService } from '../../services/agriculture.service';
-import { Districts } from '../../data/districts';
+import { Districts, Comparedistrictswithoutbihar } from '../../data/districts';
 import { ModalComponent } from '../../modal/modal.component';
 import { SvgcomponentComponent } from '../../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -47,7 +47,7 @@ export class AvailablilityOfPower2Component implements OnInit {
   views = ViewsNotMap
   rain_fall_type = [{key:"Consumption",value:"Consumption"}]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None","Bihar vs District"]
+    Comparison = Comparedistrictswithoutbihar
     data: any = {};    
     // toNumber(d) {
     // if (d == "All") {
@@ -110,7 +110,7 @@ export class AvailablilityOfPower2Component implements OnInit {
         this.data.Comparison = "None"
         this.Comparison  = ["None"]
       } else {
-        this.Comparison = ["None","Bihar vs District"]
+        this.Comparison = Comparedistrictswithoutbihar
       }
   }
   toYear(year){

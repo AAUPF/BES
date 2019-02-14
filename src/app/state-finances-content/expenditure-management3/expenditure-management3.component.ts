@@ -41,7 +41,7 @@ export class ExpenditureManagement3Component implements OnInit {
   visbile_chart= true;
   visbile_table= false;
   Districts = ["Public Debt","Other Liabilities"]
-  years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+  years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE","CAGR_2012-17"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
 

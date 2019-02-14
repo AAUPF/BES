@@ -46,11 +46,12 @@ export class ProgrammesForElectrification2Component implements OnInit {
   {key: "All", value: "All"},
   {key:"Tenth Plan",value:"Tenth_Plan"},
   {key:"Eleventh Plan",value:"Eleventh_Plan"},
+  {key:"Total A",value:"Total_A"},
   {key:"Eleventh Plan Phase II",value:"Eleventh_Plan_Phase_II"},
   {key:"Twelfth Plan",value:"Twelfth_Plan"},
   {key:"Under DDG",value:"Under_DDG"},
   {key:"DDG converted into UEV",value:"DDG_converted_into_UEV"},
-  {key:"Total",value:"Total"},
+  {key:"Total B",value:"Total_B"},
 ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     Comparison = ["Target","Achievement"]

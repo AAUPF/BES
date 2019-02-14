@@ -46,23 +46,6 @@ export class AgroBasedIndustries6Component implements OnInit {
     "Wood and Wood Products / Furniture",
     "Paper and Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
     "Sub Total",
-    "Food Products/Beverages/ Tobacco Products",
-    "Textiles/Wearing Apparel",
-    "Leather and Leather Products",
-    "Wood and Wood Products / Furniture",
-    "Paper and Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
-    "Sub Total",
-    "Coke and Refined Petroleum Products",
-    "Chemicals and Chemical products",
-    "Basic Pharmaceutical Products",
-    "Rubber and Plastic Products",
-    "Non-Metallic Mineral Products",
-    "Metals/ Fabricated Metal Products Except Machinery and Equipment",
-    "Electrical Equipment/ Machinery and Equipment NEC/Repair and Installation of machinery equipment",
-    "Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
-    "Others ( including 32 other manufacturing)",
-    "Sub-Total",
-    "Grand Total",
     "Coke and Refined Petroleum Products",
     "Chemicals and Chemical products",
     "Basic Pharmaceutical Products",
@@ -74,7 +57,7 @@ export class AgroBasedIndustries6Component implements OnInit {
     "Others ( including 32 other manufacturing)",
     "Sub-Total",
     "Grand Total"
-,]
+  ]
   years = [
   "Agro Based",
   "Non- Agro Based",
@@ -118,12 +101,7 @@ export class AgroBasedIndustries6Component implements OnInit {
           "Wood and Wood Products / Furniture",
           "Paper and Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
           "Sub Total",
-          "Food Products/Beverages/ Tobacco Products",
-          "Textiles/Wearing Apparel",
-          "Leather and Leather Products",
-          "Wood and Wood Products / Furniture",
-          "Paper and Paper Products/ printing and Reproduction of Recorded Media/Publishing Activities",
-          "Sub Total",]
+          ]
          
         }else{
           this.data.districts = "All"
@@ -139,19 +117,7 @@ export class AgroBasedIndustries6Component implements OnInit {
             "Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
             "Others ( including 32 other manufacturing)",
             "Sub-Total",
-            "Grand Total",
-            "Coke and Refined Petroleum Products",
-            "Chemicals and Chemical products",
-            "Basic Pharmaceutical Products",
-            "Rubber and Plastic Products",
-            "Non-Metallic Mineral Products",
-            "Metals/ Fabricated Metal Products Except Machinery and Equipment",
-            "Electrical Equipment/ Machinery and Equipment NEC/Repair and Installation of machinery equipment",
-            "Motor vehicle, Trailer, Semi-Trailer/ Other Transport Equipment",
-            "Others ( including 32 other manufacturing)",
-            "Sub-Total",
             "Grand Total"
-
           ]
          
         }
@@ -162,8 +128,6 @@ export class AgroBasedIndustries6Component implements OnInit {
 
     if (user.view !== "Map View") {
 
-      console.log("errror");
-      
       this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;

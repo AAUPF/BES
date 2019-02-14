@@ -45,7 +45,7 @@
                         <button type="submit" [disabled]="!f.valid" class="btn btn-primary1">Submit</button>
                     </div>
                 </form>
-                <div class="unt-txt"></div>
+                <div class="unt-txt">Note :In Table A 4.1 & A 4.2 (Appendix) the total may not match All India total as the total here relates to those NIC codes which are present in Bihar.</div>
                     <div style="clear: both;"> </div>	
                     <!-- <table id="myId"></table> -->
                     <div class="hideContainer"></div>                   <div *ngIf="visbile_chart" id="chartContainer" class="ftr" style="min-height: 300px; width: 100%; margin-top: 30px;"></div>
@@ -69,11 +69,7 @@
                       <app-rainfall-new ></app-rainfall-new>
   
                     </div>
-                    <div class="source-txt"> Note :In Table A 4.1 & A 4.2 (Appendix) the total may not match All India total as the total here relates to those NIC codes which are present in Bihar.
-                      <br>
-                        Figures in parenthesis represent Bihar’s share to India.
-                        Source : Annual Survey of Industries
-                    </div>
+                    <div class="source-txt">Source : Annual Survey of Industries</div>
                     <app-modal></app-modal>
                     <!-- <object data="assets/img/bihar.svg" id="biharsvg" type="image/svg+xml"></object> -->
                 </div>

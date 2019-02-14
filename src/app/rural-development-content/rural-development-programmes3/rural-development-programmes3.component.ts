@@ -61,6 +61,8 @@ export class RuralDevelopmentProgrammes3Component implements OnInit {
     {key:"Land development",value:"Land development"},
     {key:"Flood control and protection",value:"Flood control and protection"},
     {key:"Rural connectivity",value:"Rural connectivity"},
+    {key:"Any other activity ",value:"Any other activity "},
+    {key:"Total Works Completed",value:"Total Works Completed"}
     
   ]
 
@@ -75,6 +77,8 @@ export class RuralDevelopmentProgrammes3Component implements OnInit {
     {key:"Land development",value:"Land development"},
     {key:"Flood control and protection",value:"Flood control and protection"},
     {key:"Rural connectivity",value:"Rural connectivity"},
+    {key:"Any other activity ",value:"Any other activity "},
+    {key:"Total Works Completed",value:"Total Works Completed"}
   ]
   // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
@@ -98,6 +102,8 @@ export class RuralDevelopmentProgrammes3Component implements OnInit {
 {key:"Land development",value:"Land development"},
 {key:"Flood control and protection",value:"Flood control and protection"},
 {key:"Rural connectivity",value:"Rural connectivity"},
+{key:"Any other activity ",value:"Any other activity "},
+    {key:"Total Works Completed",value:"Total Works Completed"}
           
           // {key:"Total Expenditure on Road and Bridges",value:"Total Expenditure on Road and Bridges"},
           // {key:"Revenue Expenditure on Road and Bridges",value:"Revenue Expenditure on Road and Bridges"},
@@ -123,54 +129,54 @@ export class RuralDevelopmentProgrammes3Component implements OnInit {
     
   }
     }
-      toSet(select){
-        if (select == "Public Investment in Road and Bridges") {         
-      this.rain_fall_type = [
-        {key:"All",value:"All"},
+  //     toSet(select){
+  //       if (select == "Public Investment in Road and Bridges") {         
+  //     this.rain_fall_type = [
+  //       {key:"All",value:"All"},
         
-        {key:"Water conservation",value:"Water conservation"},
-        {key:"Drought proofing",value:"Drought proofing"},
-        {key:"Micro-irrigation works",value:"Micro-irrigation works"},
-        {key:"Works on Individual Land",value:"Works on Individual Land"},
-        {key:"Renovation of traditional water bodies",value:"Renovation of traditional water bodies"},
-        {key:"Land development",value:"Land development"},
-        {key:"Flood control and protection",value:"Flood control and protection"},
-        {key:"Rural connectivity",value:"Rural connectivity"},
+  //       {key:"Water conservation",value:"Water conservation"},
+  //       {key:"Drought proofing",value:"Drought proofing"},
+  //       {key:"Micro-irrigation works",value:"Micro-irrigation works"},
+  //       {key:"Works on Individual Land",value:"Works on Individual Land"},
+  //       {key:"Renovation of traditional water bodies",value:"Renovation of traditional water bodies"},
+  //       {key:"Land development",value:"Land development"},
+  //       {key:"Flood control and protection",value:"Flood control and protection"},
+  //       {key:"Rural connectivity",value:"Rural connectivity"},
       
-  ]
+  // ]
            
-        }  else if (select == "Other Liabilities") {
+  //       }  else if (select == "Other Liabilities") {
 
 
-          this.rain_fall_type = [
-            {key:"All",value:"All"},
-            {key:"Water conservation",value:"Water conservation"},
-            {key:"Drought proofing",value:"Drought proofing"},
-            {key:"Micro-irrigation works",value:"Micro-irrigation works"},
-            {key:"Works on Individual Land",value:"Works on Individual Land"},
-            {key:"Renovation of traditional water bodies",value:"Renovation of traditional water bodies"},
-            {key:"Land development",value:"Land development"},
-            {key:"Flood control and protection",value:"Flood control and protection"},
-            {key:"Rural connectivity",value:"Rural connectivity"},
-          ]
-        }
+  //         this.rain_fall_type = [
+  //           {key:"All",value:"All"},
+  //           {key:"Water conservation",value:"Water conservation"},
+  //           {key:"Drought proofing",value:"Drought proofing"},
+  //           {key:"Micro-irrigation works",value:"Micro-irrigation works"},
+  //           {key:"Works on Individual Land",value:"Works on Individual Land"},
+  //           {key:"Renovation of traditional water bodies",value:"Renovation of traditional water bodies"},
+  //           {key:"Land development",value:"Land development"},
+  //           {key:"Flood control and protection",value:"Flood control and protection"},
+  //           {key:"Rural connectivity",value:"Rural connectivity"},
+  //         ]
+  //       }
 
   
         
-        else {
-          this.rain_fall_type = [ 
-            {key:"All",value:"All"},
-            {key:"Water conservation",value:"Water conservation"},
-            {key:"Drought proofing",value:"Drought proofing"},
-            {key:"Micro-irrigation works",value:"Micro-irrigation works"},
-            {key:"Works on Individual Land",value:"Works on Individual Land"},
-            {key:"Renovation of traditional water bodies",value:"Renovation of traditional water bodies"},
-            {key:"Land development",value:"Land development"},
-            {key:"Flood control and protection",value:"Flood control and protection"},
-            {key:"Rural connectivity",value:"Rural connectivity"},
-           ]
-        }
-      }
+  //       else {
+  //         this.rain_fall_type = [ 
+  //           {key:"All",value:"All"},
+  //           {key:"Water conservation",value:"Water conservation"},
+  //           {key:"Drought proofing",value:"Drought proofing"},
+  //           {key:"Micro-irrigation works",value:"Micro-irrigation works"},
+  //           {key:"Works on Individual Land",value:"Works on Individual Land"},
+  //           {key:"Renovation of traditional water bodies",value:"Renovation of traditional water bodies"},
+  //           {key:"Land development",value:"Land development"},
+  //           {key:"Flood control and protection",value:"Flood control and protection"},
+  //           {key:"Rural connectivity",value:"Rural connectivity"},
+  //          ]
+  //       }
+  //     }
 
 
      
@@ -214,7 +220,7 @@ export class RuralDevelopmentProgrammes3Component implements OnInit {
       this.visbile= true;
       this.visbile_table= false;
       this.title =user.rain_fall_type;
-      var controller = "roads2s"
+      var controller = "rural_development_programmes3s"
       this.spinner.show();
       setTimeout(function() {
         
