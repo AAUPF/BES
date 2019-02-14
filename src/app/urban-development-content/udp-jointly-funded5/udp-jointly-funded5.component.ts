@@ -40,10 +40,8 @@ export class UDPJointlyFunded5Component implements OnInit {
   public loading = false;
 
   years = [
-  "deposites_and_credits3s",
-  "RRB",
-  "Cooperative Bank",
-  "All Banks"
+    "Survey of Street Vendors",
+    "Others"
       ];
 
   htmlContent:string;
@@ -101,7 +99,7 @@ export class UDPJointlyFunded5Component implements OnInit {
     }
     
   onSubmit(user) {
-    var controller = "deposites_and_credits3s"
+    var controller = "udp_jointly_funded5s"
 
     if (user.view !== "Map View") {
 
