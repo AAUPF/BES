@@ -29,13 +29,11 @@
           <option [ngValue]="undefined" disabled  selected> Sub Item  </option>
           <option class='option' *ngFor='let option of rain_fall_type_sort' [ngValue]="option.value">{{option.key}}</option>
       </select>
-    
         <select id = "anything1" class="selectpicker" class='select-option' required [(ngModel)]='data.Comparison' name="Comparison" [disabled]="butDisabled" >
           <option [ngValue]="undefined" disabled  selected> Sub Item List  </option>
           <option class='option' *ngFor='let option of Comparison' [ngValue]="option.value">{{option.key}}</option>
       </select>
-
-      <select id = "anything1" class="selectpicker" class='select-option' required [(ngModel)]='data.Price_Reference' name="Price_Reference" [disabled]="butDisabled" >
+      <select id = "anything1" class="selectpicker" class='select-option' required [(ngModel)]='data.Price_Reference' name="Price_Reference" [disabled]="butDisabled" (ngModelChange)="changedata(data.Price_Reference)">
             <option [ngValue]="undefined" disabled  selected> Data Representation  </option>
             <option class='option' *ngFor='let option of Price_Reference' [ngValue]="option">{{option}}</option>
         </select>
@@ -43,9 +41,6 @@
                                 <option [ngValue]="undefined" disabled  selected> Views  </option>
                                 <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                             </select>
-                         
-                      
-
                                 <select id = "anything1" class="selectpicker" class='select-option' required [(ngModel)]='data.years' name="years">
                                         <option [ngValue]="undefined" disabled  selected> Year  </option>
                                         <option class='option' *ngFor='let option of years' [ngValue]="option.value">{{option.key}}</option>
@@ -88,6 +83,5 @@
              </div>
          </div>
       </div>
-      
       </section>
       

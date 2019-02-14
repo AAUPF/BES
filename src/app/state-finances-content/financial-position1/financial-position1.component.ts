@@ -77,9 +77,7 @@ export class FinancialPosition1Component implements OnInit {
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
   rain_fall_type = [
-    
     {key:"All",value:"All"},
-  
     {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
     {key:"Crops",value:"Crops"},
     {key:"Livestock",value:"Livestock"},
@@ -149,13 +147,51 @@ export class FinancialPosition1Component implements OnInit {
       }
       
     }
+
+
+    changedata(d) {
+
+
+      if (d == "As number of GSDP") {
+        this.data.Districts = "Total Receipts Revenue Account"
+        this.Districts = [
+          "Total Receipts Revenue Account",
+          "Total Exp. Revenue Account",
+          "Revenue Deficit",
+          "Capital Receipts",
+          "Capital Expenditure, of which",
+          "Total Expenditure",
+          "Gross Fiscal Deficit",
+          "Primary Deficit",
+          "Total Borrowings",
+          "Repayment of Public Debt",
+          "Debt Outstanding",
+          "GSDP",  
+        ]
+      } 
+      else {
+      this.data.Districts = "Total Receipts Revenue Account"
+      this.Districts = [
+        "Total Receipts Revenue Account",
+        "Total Exp. Revenue Account",
+        "Revenue Deficit",
+        "Capital Receipts",
+        "Capital Expenditure, of which",
+        "Total Expenditure",
+        "Gross Fiscal Deficit",
+        "Primary Deficit",
+        "Total Borrowings",
+        "Repayment of Public Debt",
+        "Debt Outstanding", 
+      ]
+      
+      }
+      
+    }
  
     toSet(select){
-
-      
       if (select == "All") {
         this.data.rain_fall_type  = undefined
-
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
           {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
@@ -174,29 +210,20 @@ export class FinancialPosition1Component implements OnInit {
           {key:"Subsidies on products",value:"Subsidies on products"},
           {key:"Gross State Domestic Product",value:"Gross State Domestic Product"},
           {key:"None",value:"None"},
-
-        
         ]
-
-       
       }
       else if(select == "Total Receipts Revenue Account") { 
         this.data.rain_fall_type  = undefined
-
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
           {key:"Tax Revenue",value:"Tax Revenue"},
           {key:"Non Tax Revenue",value:"Non Tax Revenue"},
           {key:"Grants in Aid and Contributions",value:"Grants in Aid and Contributions"},
           {key:"None",value:"None"},
-      
       ]
-
       }
-
       else if(select == "Total Exp. Revenue Account") { 
         this.data.rain_fall_type  = undefined
-
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
           {key:"General Services, of which",value:"General Services, of which"},
@@ -204,11 +231,8 @@ export class FinancialPosition1Component implements OnInit {
           {key:"Economic Services",value:"Economic Services"},
           {key:"Grants-in-aid",value:"Grants-in-aid"},
           {key:"None",value:"None"},
-      
       ]
-
       }
-
       else if(select == "Revenue Deficit") { 
         this.data.rain_fall_type  = undefined
 
