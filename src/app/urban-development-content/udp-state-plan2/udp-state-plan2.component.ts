@@ -11,6 +11,7 @@ import { Views } from '../../data/views';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotTrend } from '../../data/viewsnottrend';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -66,6 +67,13 @@ export class UDPStatePlan2Component implements OnInit {
       }else{
         this.rain_fall_type = [{key: "All", value: "All"},{key:"Total Number of Urban Ward",value:"Total_Number_of_Urban_Ward"},	{key:"Total Number of Urban Households",value:"Total_Number_of_Urban_Households"},	{key:"Number of Households Having Piped Water Supply",value:"Number_of_Households_Having_Piped_Water_Supply"},	{key:"Number of Households Having Access to Tap Water 2016-17",value:"Number_of_Households_Having_Access_to_Tap_Water_2016_17"},{key:"Number of Households Having Access to Tap Water 2017-18",value:"Number_of_Households_Having_Access_to_Tap_Water_2017_18"},{key:"Number of Households Having Access to Tap Water 2016-18",value:"Number_of_Households_Having_Access_to_Tap_Water_2016_18"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
+    toSet(data){
+      if (data=="All") {
+        this.views = ViewsNotDistrict
+      } else {
+        this.views = ViewsNotTrend
       }
     }
   onSubmit(user) {

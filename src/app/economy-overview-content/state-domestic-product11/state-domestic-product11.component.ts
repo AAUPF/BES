@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SvgService } from '../../services/svg.service';
 import { AgricultureService } from '../../services/agriculture.service';
-import { Districts } from '../../data/districts';
+import { Districts, Districtswithoutbihar, Comparedistrictswithoutbihar } from '../../data/districts';
 import { ModalComponent } from '../../modal/modal.component';
 import { SvgcomponentComponent } from '../../svgcomponent/svgcomponent.component';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -48,7 +48,7 @@ export class StateDomesticProduct11Component implements OnInit {
   views = ViewsNotMap
   rain_fall_type = [{key:"All",value:"All"},{key:"Target",value:"Target"},{key:"Achievement",value:"Achievement"}]
   // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    Comparison = ["None","Bihar vs District"]
+    Comparison = Comparedistrictswithoutbihar
     data: any = {};    
 
   toNumber(d) {
@@ -86,9 +86,10 @@ export class StateDomesticProduct11Component implements OnInit {
   }
   toSet(select){
       if (select == "All") {
+        this.data.Comparison = "None"
         this.Comparison  = ["None"]
       } else {
-        this.Comparison = ["None","Bihar vs District"]
+        this.Comparison = Comparedistrictswithoutbihar
       }
   }
   toYear(year){
@@ -110,8 +111,6 @@ export class StateDomesticProduct11Component implements OnInit {
     var controller = "state_domestic_product11s"
 
     if (user.view !== "Map View") {
-
-      console.log("errror");
       
       this.visbile_chart= true;
       this.visbile= false;
