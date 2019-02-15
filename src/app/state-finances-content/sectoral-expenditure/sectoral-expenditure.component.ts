@@ -202,7 +202,7 @@ export class SectoralExpenditureComponent implements OnInit {
         this.data.rain_fall_type  = undefined
 
         this.rain_fall_type_sort = [
-         
+          "All",
           "Total Expenditure (Rs. crore)",
           "Revenue Expenditure (Rs. crore)",
           "Capital Outlay (Rs. crore)",
