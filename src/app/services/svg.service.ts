@@ -52,9 +52,6 @@ if (res[7]) {
       $( ".orange1" ).append(`<span class=\"dot orange\"></span>${res[7]["data"]["min"]["min"]} to ${res[7]["data"]["min"]["max"]} `  );
       $( ".red1" ).append(`<span class=\"dot red\"></span> Less Than ${res[7]["data"]["below_min"]["max"]} `  );
 
-
-
-
 } 
       f.testy(this,districts,rain_fall_type,views,year,Comparison,res,controller)      
        },

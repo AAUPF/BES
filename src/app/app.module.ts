@@ -693,9 +693,6 @@ import { MapbiharComponent } from './map/mapbihar/mapbihar.component';
     WomenEmpowerment4Component,
     SocialSecurityForOldAndDisabledComponent,
     MapbiharComponent,
-    
-    
-  
     ],
   imports: [
     BrowserModule,
