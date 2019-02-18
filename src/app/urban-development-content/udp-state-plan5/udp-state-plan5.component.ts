@@ -11,6 +11,7 @@ import { Views } from '../../data/views';
 import{Functions} from '../../data/func';
 import { NewViews } from '../../data/newviews';
 import { ViewsNotTrend } from '../../data/viewsnottrend';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -66,6 +67,13 @@ export class UDPStatePlan5Component implements OnInit {
       }else{
         this.rain_fall_type = [{key: "All", value: "All"},{key:"Total Number of Urban Households",value:"Total_Number_of_Urban_Households"},	{key:"Total Number of Urban Wards",value:"Total_Number_of_Urban_Wards"},	{key:"Number of Households to be covered",value:"Number_of_Households_to_be_covered"},	{key:"Number of Household covered",value:"Number_of_Household_covered"}]
         this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+      }
+    }
+    toSet(data){
+      if (data=="All") {
+        this.views = ViewsNotDistrict
+      } else {
+        this.views = ViewsNotTrend
       }
     }
   onSubmit(user) {
