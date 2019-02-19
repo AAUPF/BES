@@ -7022,6 +7022,8 @@ table { width: 100%; border-collapse: collapse; line-height: 18px !important; } 
 		padding: 0 !important;
 		margin-bottom: 15px;
 		font-size: 12px;
+		cursor: pointer;
+		color: #0f94f6;
 	}
 
 
