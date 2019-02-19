@@ -7,7 +7,6 @@ import { rendererTypeName } from '@angular/compiler';
 declare var google:any;
 declare var $:any
 declare var $:any
-
 declare var CanvasJS:any;
 @Injectable({
   providedIn: 'root'
@@ -198,6 +197,10 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           $("#example-table").tabulator("setData", res["data"]);
 
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
+          $("#download-xlsx").unbind('click').click(function(){
+
+            $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+          });
 
           }  else {
 
@@ -234,7 +237,8 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           $("#example-table").tabulator("setData", res["data"]);
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
 
-          $("#download-xlsx").click(function(){
+          $("#download-xlsx").unbind('click').click(function(){
+
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });
       
@@ -278,7 +282,8 @@ barchart_bihar_vs_district_rainfall(year,district,rain_fall_type,compare,control
           $("#example-table").tabulator("setData", res["data"]);
 
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
-          $("#download-xlsx").click(function(){
+          $("#download-xlsx").unbind('click').click(function(){
+
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });
       
@@ -322,7 +327,7 @@ barchart_bihar_vs_district_rainfall_price(year,district,rain_fall_type,compare,c
   // let url = `${this.apiRoot}`;
     console.log(url);
 
-    
+
     let str = rain_fall_type.replace( /_/g, " " );
     
   this.http.get(url).
@@ -334,11 +339,9 @@ barchart_bihar_vs_district_rainfall_price(year,district,rain_fall_type,compare,c
         if (views == "Table") {
           var j = $( "#example-table" ).hasClass( "tabulator" )
           console.log(res["data"]);
-           
           if (j) {
             $("#example-table").tabulator("destroy");
-           
-   
+              
           }
           $("#example-table").tabulator({
             layout:"fitColumns"});
@@ -350,6 +353,25 @@ barchart_bihar_vs_district_rainfall_price(year,district,rain_fall_type,compare,c
           $("#example-table").tabulator("setData", res["data"]);
 
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
+         
+        
+          // $("#example-table").tabulator("clearData");
+
+          $("#download-xlsx").unbind('click').click(function(){
+
+            $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+          });
+          
+
+      
+          $("#download-csv").click(function(){
+            $("#example-table").tabulator("download", "csv", "data.csv");
+        });
+        
+        //trigger download of data.json file
+        $("#download-json").click(function(){
+            $("#example-table").tabulator("download", "json", "data.json");
+        });
 
           }  else {
 
@@ -365,15 +387,14 @@ barchart_bihar_vs_district_rainfall_price(year,district,rain_fall_type,compare,c
       
       else if (year == "All") {
           if (views == "Table") {
-
-            console.log("error");
             
           var j = $( "#example-table" ).hasClass( "tabulator" )
           console.log(res["data"]);
            
           if (j) {
-            $("#example-table").tabulator("destroy");
-           
+            // $("#example-table").tabulator("destroy");
+            $("#example-table").tabulator("setColumns", res["column"]);
+            $("#example-table").tabulator("setData", res["data"]);
             
           }
           $("#example-table").tabulator({
@@ -386,7 +407,7 @@ barchart_bihar_vs_district_rainfall_price(year,district,rain_fall_type,compare,c
           $("#example-table").tabulator("setData", res["data"]);
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
 
-          $("#download-xlsx").click(function(){
+          $("#download-xlsx").unbind('click').click(function(){
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });
       
@@ -416,21 +437,22 @@ barchart_bihar_vs_district_rainfall_price(year,district,rain_fall_type,compare,c
           console.log(res["data"]);
            
           if (j) {
-            $("#example-table").tabulator("destroy");
-           
+            // $("#example-table").tabulator("destroy");
+            $("#example-table").tabulator("setColumns", res["column"]);
+            $("#example-table").tabulator("setData", res["data"]);
             
           }
           $("#example-table").tabulator({
             layout:"fitColumns"});
          
           //set new columns
-          $("#example-table").tabulator("setColumns", res["column"]);
+          // $("#example-table").tabulator("setColumns", res["column"]);
           
-          //set new data
-          $("#example-table").tabulator("setData", res["data"]);
+          // //set new data
+          // $("#example-table").tabulator("setData", res["data"]);
 
-          $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
-          $("#download-xlsx").click(function(){
+          // $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
+          $("#download-xlsx").unbind('click').click(function(){
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });
       
@@ -459,6 +481,8 @@ barchart_bihar_vs_district_rainfall_price(year,district,rain_fall_type,compare,c
         this.spinner.hide();
       }
    ); 
+
+   
 }
 
 
@@ -494,6 +518,10 @@ six_column_data(year,district,rain_fall_type,compare,controller,views,district1)
           $("#example-table").tabulator("setData", res["data"]);
 
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
+          $("#download-xlsx").unbind('click').click(function(){
+
+            $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+          });
 
           }  else {
             this.j = res;
@@ -529,7 +557,8 @@ six_column_data(year,district,rain_fall_type,compare,controller,views,district1)
           $("#example-table").tabulator("setData", res["data"]);
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
 
-          $("#download-xlsx").click(function(){
+          $("#download-xlsx").unbind('click').click(function(){
+
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });
       
@@ -575,7 +604,8 @@ six_column_data(year,district,rain_fall_type,compare,controller,views,district1)
           $("#example-table").tabulator("setData", res["data"]);
 
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
-          $("#download-xlsx").click(function(){
+          $("#download-xlsx").unbind('click').click(function(){
+
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });
       
@@ -641,6 +671,10 @@ six_column_with_fule(year,district,rain_fall_type,compare,controller,views,fuel)
           $("#example-table").tabulator("setData", res["data"]);
 
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
+          $("#download-xlsx").unbind('click').click(function(){
+
+            $("#example-table").tabulator("download", "xlsx", "data.xlsx");
+          });
 
           }  else {
             this.j = res;
@@ -676,7 +710,8 @@ six_column_with_fule(year,district,rain_fall_type,compare,controller,views,fuel)
           $("#example-table").tabulator("setData", res["data"]);
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
 
-          $("#download-xlsx").click(function(){
+          $("#download-xlsx").unbind('click').click(function(){
+
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });
       
@@ -722,10 +757,10 @@ six_column_with_fule(year,district,rain_fall_type,compare,controller,views,fuel)
           $("#example-table").tabulator("setData", res["data"]);
 
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
-          $("#download-xlsx").click(function(){
+          $("#download-xlsx").unbind('click').click(function(){
+
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });
-      
           $("#download-csv").click(function(){
             $("#example-table").tabulator("download", "csv", "data.csv");
         });
@@ -824,7 +859,8 @@ chart(year,district,rain_fall_type,compare,controller,views,months){
           $("#example-table").tabulator("setData", res["data"]);
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
 
-          $("#download-xlsx").click(function(){
+          $("#download-xlsx").unbind('click').click(function(){
+
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });
       
@@ -870,7 +906,8 @@ chart(year,district,rain_fall_type,compare,controller,views,months){
           $("#example-table").tabulator("setData", res["data"]);
 
           $(".tabulator-header-filter input").attr("placeholder","Filter Column...");
-          $("#download-xlsx").click(function(){
+          $("#download-xlsx").unbind('click').click(function(){
+
             $("#example-table").tabulator("download", "xlsx", "data.xlsx");
           });
       
