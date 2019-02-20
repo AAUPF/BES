@@ -380,6 +380,8 @@ barchart_bihar_vs_district_rainfall_price(year,district,rain_fall_type,compare,c
             
             let chart1 = new CanvasJS.Chart("chartContainer", this.j);
             chart1.render();
+
+            
             // alert("error")
           }
 
