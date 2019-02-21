@@ -40,18 +40,13 @@ export class ExpenditureOnSalaryAndPensionComponent implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["Expenditure on Salaries","Expenditure on Pensions","Total expenditure on Salary and Pension","All"]
+  Districts = ["All","Expenditure on Salaries","Expenditure on Pensions","Total expenditure on Salary and Pension"]
   years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
-  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
-
-
   Comparison = [
     {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
     {key:"Mining and Quarrying",value:"Mining and Quarrying"},
   ]
-
-
   rain_fall_type = [
     {key:"All",value:"All"},
     {key:"Non-Plan Head",value:"Non-Plan Head"},
@@ -59,29 +54,24 @@ export class ExpenditureOnSalaryAndPensionComponent implements OnInit {
     {key:"Salary as percentage of GSDP",value:"Salary as percentage of GSDP"},
     {key:"Salary as percentage of RR",value:"Salary as percentage of RR"},
     {key:"Salary as percentage of RE",value:"Salary as percentage of RE"},
-    {key:"None",value:"None"},
-   
-  
-  
+    {key:"None",value:"None"}
   ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-     //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    if (this.data.rain_fall_type == "All") {
+      this.years = ["2015","2016_RE","2017_RE"];
+    } else {
+      this.years = ["All","2015","2016_RE","2017_RE"];
+    }
     
-  // }
+  }
     }
       toSet(select){
         if (select == "Expenditure on Salaries") {    
@@ -109,7 +99,7 @@ export class ExpenditureOnSalaryAndPensionComponent implements OnInit {
         }
 
         else if (select == "Total expenditure on Salary and Pension") {
-          this.data.rain_fall_type = "None" 
+          this.data.rain_fall_type = "All" 
           this.rain_fall_type_sort = [
             {key:"All",value:"All"},
             {key:"Total as percentage of GSDP",value:"Total as percentage of GSDP"},

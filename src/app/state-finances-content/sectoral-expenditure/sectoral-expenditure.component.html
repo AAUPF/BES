@@ -23,7 +23,7 @@
                             <option [ngValue]="undefined" disabled  selected> Year  </option>
                             <option class='option' *ngFor='let option of years' [ngValue]="option">{{option}}</option>
                         </select>
-                                      <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toSet(data.districts)">
+                                      <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts">
                                           <option [ngValue]="undefined" disabled  selected> Expenditure Head  </option>
                                           <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                                       </select>
@@ -40,7 +40,7 @@
                     
                                  
                              
-                                          <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
+                                          <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view" (ngModelChange)="toView(data.view)">
                                               <option [ngValue]="undefined" disabled  selected> Views  </option>
                                               <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                                           </select>

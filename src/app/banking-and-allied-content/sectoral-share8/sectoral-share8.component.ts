@@ -40,13 +40,13 @@ export class SectoralShare8Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["Profit/Loss","NPAs as percentage to Loans Outstanding","Recovery percentage to demand"]
+  Districts = ["Branches as on March 30 2016","Profit/Loss","NPAs as percentage of Loans outstanding","Recovery percentage to demand"]
   years = [
-    "All",
-    "Branches_as_on_March_30_2016",
-    "2014-15",
-    "2015-16",
+    {key:"All",value:"All"},
+    {key:"2014-15",value:"2014-15"},
+    {key:"2015-16",value:"2015-16"}
   ];
+
   views = ViewsNotMap;
 
 
@@ -126,21 +126,35 @@ export class SectoralShare8Component implements OnInit {
       }
     
     }
-    toView(view){
-  if (view == "line") {
-    this.years = ["All"];
-  } else {
-    this.years = ["All","Branches_as_on_March_30_2016",
-    "2014-15",
-    "2015-16"];
-    
-  }
+    toSet(set){
+      if (set == "Branches as on March 30 2016") {
+        this.data.years = "Branches_as_on_March_30_2016"
+        this.years = [{key:"Branches as on March 30 2016",value:"Branches_as_on_March_30_2016"},];
+        this.views  = ViewsNotDistrict
+      } else {
+        this.data.years = "All"
+        this.years = [{key:"All",value:"All"},
+        {key:"2014-15",value:"2014-15"},
+        {key:"2015-16",value:"2015-16"}];
+        this.views = ViewsNotMap;
+      }
+
     }
-
-
-
-     
-      toYear(year){
+    toView(view){
+        if (view == "line") {
+          this.years = [{key:"All",value:"All"}];
+          // this.Districts = ["Profit/Loss","NPAs as percentage of Loans outstanding","Recovery percentage to demand"]
+        } else {
+          if (this.data.years=="Branches_as_on_March_30_2016" || this.data.search == "Branches as on March 30 2016") {
+            this.years = [{key:"Branches as on March 30 2016",value:"Branches_as_on_March_30_2016"},];
+          } else {
+            this.years = [{key:"All",value:"All"},
+            {key:"2014-15",value:"2014-15"},
+            {key:"2015-16",value:"2015-16"}];
+          }
+        }
+    }
+    toYear(year){
         if(year == "All"){
           this.views = ViewsNotMap
          
@@ -148,7 +162,7 @@ export class SectoralShare8Component implements OnInit {
           this.views  = ViewsNotDistrict
          
         }
-      }
+    }
     
   onSubmit(user) {
     var controller = "sectoral_share8s"

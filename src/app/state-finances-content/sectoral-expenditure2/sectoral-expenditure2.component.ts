@@ -40,9 +40,8 @@ export class SectoralExpenditure2Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["Total Expenditure (Rs. crore)","Per Capita Expenditure (Rs.)"]
+  Districts = ["Total Expenditure (Rs. crore)","Per Capita Expenditure (Rs.)","Estimated Population (crore)"]
   years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
-  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
 
 
@@ -61,80 +60,29 @@ export class SectoralExpenditure2Component implements OnInit {
     {key:"Economic Services",value:"Economic Services"},
     {key:"Capital Outlay ",value:"Capital Outlay "},
     {key:"General Services",value:"General Services"},
-    {key:"None",value:"None"},
-  
-  
   ]
-  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-     //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    this.years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
     
-  // }
+  }
     }
       toSet(select){
-        if (select == "Total Expenditure (Rs. crore)") {         
-      this.rain_fall_type_sort = [
-    {key:"All",value:"All"},
-    {key:"Education, Sports and Culture",value:"Education, Sports and Culture"},
-    {key:"Medical and Public Health",value:"Medical and Public Health"},
-    {key:"Water Supply and Sanitation",value:"Water Supply and Sanitation"},
-    {key:"Social Services",value:"Social Services"},
-    {key:"Economic Services",value:"Economic Services"},
-    {key:"Capital Outlay ",value:"Capital Outlay "},
-    {key:"General Services",value:"General Services"},
-    
-  
-  
-  ]
-           
-        }  else if (select == "Per Capita Expenditure (Rs.)") {
-
-
-          this.rain_fall_type_sort = [
-            {key:"All",value:"All"},
-            {key:"Education, Sports and Culture",value:"Education, Sports and Culture"},
-            {key:"Medical and Public Health",value:"Medical and Public Health"},
-            {key:"Water Supply and Sanitation",value:"Water Supply and Sanitation"},
-            {key:"Social Services",value:"Social Services"},
-            {key:"Economic Services",value:"Economic Services"},
-            {key:"Capital Outlay ",value:"Capital Outlay "},
-            {key:"General Services",value:"General Services"},
-           
-
-          ]
-        }
-
-        else if (select == "C. Vulnerability") {
-
-
-          this.rain_fall_type_sort = [
-            {key:"All",value:"All"},
-            {key:"Revenue Deficit (Rs. crore)",value:"Revenue Deficit (Rs. crore)"},
-            {key:"Fiscal Deficit (Rs. crore)",value:"Fiscal Deficit (Rs. crore)"},
-            {key:"Primary Deficit (Rs. crore)",value:"Primary Deficit (Rs. crore)"},
-            {key:"Primary Deficit / Fiscal Deficit (Percentage)",value:"Primary Deficit / Fiscal Deficit (Percentage)"},
-            {key:"Revenue Deficit / Fiscal Deficit (Percentage)",value:"Revenue Deficit / Fiscal Deficit (Percentage)"},
-           
-
-          ]
-        }
-        
-        
+        if (select == "Estimated Population (crore)") {
+          this.data.rain_fall_type = "Estimated Population (crore)"
+            this.rain_fall_type = [
+                {key:"Estimated Population (crore)",value:"Estimated Population (crore)"}
+            ]
+        }  
         else {
-          this.rain_fall_type_sort = [ 
+          this.data.rain_fall_type = "All"
+          this.rain_fall_type = [
 
             {key:"All",value:"All"},
             {key:"Education, Sports and Culture",value:"Education, Sports and Culture"},
@@ -151,12 +99,10 @@ export class SectoralExpenditure2Component implements OnInit {
       toYear(year){
         if(year == "All"){
           this.views = ViewsNotMap
-          // this.rain_fall_type = [{key:"Revenue Deficit GFD Percentage",value:"Revenue_Deficit_GFD_Percentage"},{key:"Capital Outlay GFD Percentage",value:"Capital_Outlay_GFD_Percentage"},{key:"Non Dev Exp Agg Disbursements Percentage",value:"Non_Dev_Exp_Agg_Disbursements_Percentage"},{key:"Non Dev Exp Revenue Receipts Percentage",value:"Non_Dev_Exp_Revenue_Receipts_Percentage"},{key:"Interest Payments Revenue Exp Percentage",value:"Interest_Payments_Revenue_Exp_Percentage"},{key:"State Own Revenue Revenue Exp Percentage",value:"State_Own_Revenue_Revenue_Exp_Percentage"},{key:"Gross Transfers Aggregate Disbursements Percentage",value:"Gross_Transfers_Aggregate_Disbursements_Percentage"},{key:"Debt Servicing Gross Transfers Percentage",value:"Debt_Servicing_Gross_Transfers_Percentage"}]
-          // this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+          
         }else{
           this.views  = ViewsNotDistrict
-          // this.rain_fall_type = [{key:"All",value:"All"},{key:"Revenue Deficit GFD Percentage",value:"Revenue_Deficit_GFD_Percentage"},{key:"Capital Outlay GFD Percentage",value:"Capital_Outlay_GFD_Percentage"},{key:"Non Dev Exp Agg Disbursements Percentage",value:"Non_Dev_Exp_Agg_Disbursements_Percentage"},{key:"Non Dev Exp Revenue Receipts Percentage",value:"Non_Dev_Exp_Revenue_Receipts_Percentage"},{key:"Interest Payments Revenue Exp Percentage",value:"Interest_Payments_Revenue_Exp_Percentage"},{key:"State Own Revenue Revenue Exp Percentage",value:"State_Own_Revenue_Revenue_Exp_Percentage"},{key:"Gross Transfers Aggregate Disbursements Percentage",value:"Gross_Transfers_Aggregate_Disbursements_Percentage"},{key:"Debt Servicing Gross Transfers Percentage",value:"Debt_Servicing_Gross_Transfers_Percentage"}]
-          // this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+          
         }
       }
     
@@ -165,7 +111,7 @@ export class SectoralExpenditure2Component implements OnInit {
 
     if (user.view !== "Map View") {
 
-      console.log("errror");
+      
       
       this.visbile_chart= true;
       this.visbile= false;
