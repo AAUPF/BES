@@ -145,17 +145,17 @@ export class DepositesAndCredits4Component implements OnInit {
     toYear(year){
       if(year == "2016"){
         this.views = ViewsNotDistrict
-        this.rain_fall_type = [{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"},{key:"All",value:"All"}]
+        this.rain_fall_type = [{key:"As per Sanction",value:"As_per_Sanction"},{key:"As per Utilization",value:"As_per_Utilization"},{key:"All",value:"All"}]
       }
       else if(year == "2017") { 
 
         this.views = ViewsNotDistrict
-        this.rain_fall_type = [{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"},{key:"All",value:"All"}]
+        this.rain_fall_type = [{key:"As per Sanction",value:"As_per_Sanction"},{key:"As per Utilization",value:"As_per_Utilization"},{key:"All",value:"All"}]
 
       }
       else{
         this.views  = ViewsNotDistrict
-        this.rain_fall_type = [{key:"All",value:"All"},{key:"State Cooperative Banks",value:"State_Cooperative_Banks"},{key:"District Central Cooperative Banks",value:"District_Central_Cooperative_Banks"},{key:"Total",value:"Total"}]
+        this.rain_fall_type = [{key:"All",value:"All"},{key:"As per Sanction",value:"As_per_Sanction"},{key:"As per Utilization",value:"As_per_Utilization"}]
       }
     }
 
