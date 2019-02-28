@@ -83,19 +83,81 @@ export class UDPJointlyFunded5Component implements OnInit {
         this.data.Comparison = "None"
         this.Comparison  = ["None"]
         } else {
-          this.Comparison = ["None",
-          "No. of Cities to be covered for Street vendor Survey",
-          "No. of Cities in which vendor survey started",
-          "No. of Cities completed vendor survey",
-          "No. of Street vendors identified in surveyed cities (Bio-metric survey)",
-          "No. of Street vendors issued ID cards",
-          "No. of basic Saving Accounts opened for Street vendors",
-          "No. of financial literacy camps organized for Street vendors",
-          "No. of training programmes organized for Street vendors ",
-          "Number of Street Vendors trained under Capacity Building",
-          "No. of Credit Cards issued to Street Vendors",
-          "No of Street Vendors link to insurance scheme",]
+            if (this.data.Districts == 'Survey of Street Vendors') {
+              this.data.Comparison = "None"
+              this.Comparison = [
+                "None",
+                "No. of Cities to be covered for Street vendor Survey",
+                "No. of Cities in which vendor survey started",
+                "No. of Cities completed vendor survey",
+                "No. of Street vendors identified in surveyed cities (Bio-metric survey)",
+                "No. of Street vendors issued ID cards",
+               
+            ]
+              
+            } else {
+              this.data.Comparison = "None"
+              this.Comparison = ["None",
+              "No. of basic Saving Accounts opened for Street vendors",
+              "No. of financial literacy camps organized for Street vendors",
+              "No. of training programmes organized for Street vendors ",
+              "Number of Street Vendors trained under Capacity Building",
+              "No. of Credit Cards issued to Street Vendors",
+              "No of Street Vendors link to insurance scheme", 
+            ]
+              
+            }
         }
+    }
+
+
+    toChangeRtype(d){
+    if (d == "Survey of Street Vendors") {
+      this.data.Districts = "All"
+       this.Districts = [
+        "All",
+        "No. of Cities to be covered for Street vendor Survey",
+        "No. of Cities in which vendor survey started",
+        "No. of Cities completed vendor survey",
+        "No. of Street vendors identified in surveyed cities (Bio-metric survey)",
+        "No. of Street vendors issued ID cards",
+       
+    ]
+    this.Comparison = ["None",
+    "No. of Cities to be covered for Street vendor Survey",
+    "No. of Cities in which vendor survey started",
+    "No. of Cities completed vendor survey",
+    "No. of Street vendors identified in surveyed cities (Bio-metric survey)",
+]
+  
+    } else {
+      this.data.Districts = "All"
+      this.Districts = [
+        "All",
+        "No. of basic Saving Accounts opened for Street vendors",
+        "No. of financial literacy camps organized for Street vendors",
+        "No. of training programmes organized for Street vendors ",
+        "Number of Street Vendors trained under Capacity Building",
+        "No. of Credit Cards issued to Street Vendors",
+        "No of Street Vendors link to insurance scheme",
+        
+    ]
+
+    this.Comparison = ["None",
+    "No. of basic Saving Accounts opened for Street vendors",
+    "No. of financial literacy camps organized for Street vendors",
+    "No. of training programmes organized for Street vendors ",
+    "Number of Street Vendors trained under Capacity Building",
+    "No. of Credit Cards issued to Street Vendors",
+    "No of Street Vendors link to insurance scheme", 
+  ]
+  
+
+    
+      
+    }
+
+
     }
     
   onSubmit(user) {
