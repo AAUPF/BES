@@ -50,7 +50,7 @@ export class StateDomesticProduct1Component implements OnInit {
      "Current Prices",
      "Constant Prices",
 ]
-  Districts = ["Total Primary Sector","Total Secondary Sector","Total Tertiary Sector","All"]
+  Districts = ["All","Total Primary Sector","Total Secondary Sector","Total Tertiary Sector"]
   years = [
     {key:"All",value:"All"},
     {key:"2015-16",value:"2015-16"},
@@ -212,7 +212,7 @@ export class StateDomesticProduct1Component implements OnInit {
 
       
       if (select == "All") {
-        this.data.rain_fall_type  = undefined
+        this.data.rain_fall_type  = "All"
 
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
@@ -239,7 +239,7 @@ export class StateDomesticProduct1Component implements OnInit {
        
       }
       else if(select == "Total Primary Sector") { 
-        this.data.rain_fall_type  = undefined
+        this.data.rain_fall_type  = "All"
 
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
@@ -252,7 +252,7 @@ export class StateDomesticProduct1Component implements OnInit {
       }
 
       else if(select == "Total Secondary Sector") { 
-        this.data.rain_fall_type  = undefined
+        this.data.rain_fall_type  = "All"
 
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
@@ -266,7 +266,7 @@ export class StateDomesticProduct1Component implements OnInit {
       }
 
       else if(select == "Total Tertiary Sector") { 
-        this.data.rain_fall_type  = undefined
+        this.data.rain_fall_type  = "All"
 
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},   

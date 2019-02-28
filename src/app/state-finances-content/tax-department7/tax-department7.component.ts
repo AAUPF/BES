@@ -91,7 +91,7 @@ export class TaxDepartment7Component implements OnInit {
   compare(d) {
 
     if (d ==  "Central Division") {
-      this.data.districts =  "Patna Special "
+      this.data.districts =  "All"
 
       this.Districts = [
         "All",
@@ -100,7 +100,7 @@ export class TaxDepartment7Component implements OnInit {
     } 
     
     else if (d ==  "Patna Division") {
-      this.data.districts = "Patna Central"
+      this.data.districts = "All"
 
       this.Districts = [
         "All",
@@ -121,7 +121,7 @@ export class TaxDepartment7Component implements OnInit {
     }
 
     else if (d ==  "Gaya Division") {
-      this.data.districts =  "Sasaram "
+      this.data.districts =  "All"
 
       this.Districts = [
         "All",
@@ -135,7 +135,7 @@ export class TaxDepartment7Component implements OnInit {
     }
 
     else if (d ==  "Saran Division") {
-      this.data.districts = "Saran "
+      this.data.districts = "All"
 
       this.Districts = [
         "All",
@@ -147,7 +147,7 @@ export class TaxDepartment7Component implements OnInit {
     }
 
     else if (d ==  "Tirhut Division") {
-      this.data.districts = "Muzaffarpur West"
+      this.data.districts = "All"
 
       this.Districts = [
         "All",
@@ -162,7 +162,7 @@ export class TaxDepartment7Component implements OnInit {
     }
 
     else if (d ==  "Darbhanga Division") {
-      this.data.districts =  "Darbhanga "
+      this.data.districts =  "All"
 
       this.Districts = [
         "All",
@@ -176,7 +176,7 @@ export class TaxDepartment7Component implements OnInit {
     }
 
     else if (d ==  "Purnea Division") {
-      this.data.districts = "Saharsa "
+      this.data.districts = "All"
 
       this.Districts = [
         "All",
@@ -192,7 +192,7 @@ export class TaxDepartment7Component implements OnInit {
     }
 
     else if (d ==  "Bhagalpur Division") {
-      this.data.districts = "Bhagalpur "
+      this.data.districts = "All"
       this.Districts = [
         "All",
         "Bhagalpur ",

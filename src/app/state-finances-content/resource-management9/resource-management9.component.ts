@@ -48,7 +48,7 @@ export class ResourceManagement9Component implements OnInit {
   {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
   {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
   {key:"Land Revenue",value:"Land Revenue"},
-  {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
+  {key:"Taxes and Duties on Electricity",value:"Taxes and Duties on Electricity"},
   {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
   {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
   {key:"Interest Receipts",value:"Interest Receipts"},
@@ -91,7 +91,7 @@ export class ResourceManagement9Component implements OnInit {
     {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
     {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
     {key:"Land Revenue",value:"Land Revenue"},
-    {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
+    {key:"Taxes and Duties on Electricity",value:"Taxes and Duties on Electricity"},
     {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
     {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
     {key:"Interest Receipts",value:"Interest Receipts"},
@@ -105,7 +105,6 @@ export class ResourceManagement9Component implements OnInit {
     {key:"Other Rural Development Programmes",value:"Other Rural Development Programmes"},
     {key:"Social Security and Welfare",value:"Social Security and Welfare"},
     {key:"Others",value:"Others"},]
-     Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
 
 
@@ -122,7 +121,7 @@ export class ResourceManagement9Component implements OnInit {
           {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
           {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
           {key:"Land Revenue",value:"Land Revenue"},
-          {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
+          {key:"Taxes and Duties on Electricity",value:"Taxes and Duties on Electricity"},
           {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
           {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
           {key:"Interest Receipts",value:"Interest Receipts"},
@@ -164,7 +163,7 @@ export class ResourceManagement9Component implements OnInit {
   //       {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
   //       {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
   //       {key:"Land Revenue",value:"Land Revenue"},
-  //       {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
+  //       {key:"Taxes and Duties on Electricity",value:"Taxes and Duties on Electricity"},
   //       {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
   //       // {key:"Total",value:"Total"},
   // ]
@@ -198,7 +197,7 @@ export class ResourceManagement9Component implements OnInit {
   //           {key:"Stamp and Registration Fees",value:"Stamp and Registration Fees"},
   //           {key:"Taxes on Vehicles",value:"Taxes on Vehicles"},
   //           {key:"Land Revenue",value:"Land Revenue"},
-  //           {key:"Taxes & Duties on Electricity",value:"Taxes & Duties on Electricity"},
+  //           {key:"Taxes and Duties on Electricity",value:"Taxes and Duties on Electricity"},
   //           {key:"Other Taxes and Duties on Commodities and Services",value:"Other Taxes and Duties on Commodities and Services"},
   //           {key:"Non-Ferrous Mining and Metallurgical Industries",value:"Non-Ferrous Mining and Metallurgical Industries"},
   //           {key:"Interest Receipts",value:"Interest Receipts"},

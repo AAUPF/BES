@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="pageTitle">
-            <h2>Credit-Deposit (CD) and Investment Plus Credit-Deposit (ICD) Ratios of RRBs</h2>
+            <h2>State-wise Deposits and Credit of Scheduled Commercial Banks in India (March 31)</h2>
             <div class="btnArea"><a (click)="cancel()" class="btn btn-primary"><i class="fa fa-angle-left" aria-hidden="true"></i> Back </a></div>
           </div>
         </div>
@@ -20,12 +20,12 @@
                 <form #f="ngForm" (ngSubmit)="onSubmit(data)">
   <div class="cen_sel">
                     <select id = "anything" class="selectpicker"  class='select-option' required [(ngModel)]='data.districts' name="districts" (ngModelChange)="toSet(data.districts)">
-                        <option [ngValue]="undefined" disabled  selected> Sector  </option>
+                        <option [ngValue]="undefined" disabled  selected> Categories  </option>
                         <option *ngFor='let option of Districts' [ngValue]="option">{{option}}</option>
                     </select>
   
                     <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.rain_fall_type' name="rain_fall_type" (ngModelChange)="toNumber(data.rain_fall_type)">
-                      <option [ngValue]="undefined" disabled  selected> Categories  </option>
+                      <option [ngValue]="undefined" disabled  selected> State  </option>
                       <option class='option'  *ngFor='let option of rain_fall_type'[disabled]="option.value == 'Expenditure on Industries'" [ngValue]="option.value">{{option.key}}</option>
                      
                   </select>

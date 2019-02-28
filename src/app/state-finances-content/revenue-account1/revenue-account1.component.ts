@@ -43,13 +43,13 @@ export class RevenueAccount1Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All","None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
+  Districts = ["All","None","Revenue Receipt","Revenue Expenditure","Revenue Deficit","State's own tax plus non tax revenue"]
   Districts1 = ["All","None","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
   years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   views = ViewsNotMap
   rain_fall_type = [{key:"Amount",value:"Amount"}]
   // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-  Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
+  Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Deficit","State's own tax plus non tax revenue","State’s own revenue as percentage of total revenue","State’s share of Central tax as percentage of total revenue","Central Grants as percentage of its total revenue","State’s own revenue as percentage of revenue expenditure"]
     data: any = {};    
     toNumber(d) {
       
@@ -60,7 +60,7 @@ export class RevenueAccount1Component implements OnInit {
             this.data.Comparison = "None"
             this.Comparison = ["None"]
           } else {
-            this.Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
+            this.Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Deficit","State's own tax plus non tax revenue"]
           }
         }
         else{
@@ -88,10 +88,10 @@ export class RevenueAccount1Component implements OnInit {
       else{
         this.Districts1 = ["None"]
         this.data.districts = "All"
-        this.Districts = ["All","None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
+        this.Districts = ["All","None","Revenue Receipt","Revenue Expenditure","Revenue Deficit","State's own tax plus non tax revenue"]
 
         if (this.data.districts !== "All" && this.data.districts !== "None") {
-          this.Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Surplus","State's own tax plus non tax revenue"]
+          this.Comparison = ["None","Revenue Receipt","Revenue Expenditure","Revenue Deficit","State's own tax plus non tax revenue"]
         } else {
           this.Comparison = ["None"]
         }

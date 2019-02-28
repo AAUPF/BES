@@ -185,6 +185,8 @@ export class FinancialPosition1Component implements OnInit {
     changedata(d) {
       if (d == "As number of GSDP") {
         this.data.rain_fall_type = "All"
+        this.data.Comparison = "None"
+        this.Comparison = [{key:"None",value:"None"}]
         this.rain_fall_type = [
           {key:"All",value:"All"},
           {key:"Total Receipts Revenue Account",value:"Total Receipts Revenue Account"},
@@ -220,6 +222,8 @@ export class FinancialPosition1Component implements OnInit {
       } 
       else {
       this.data.rain_fall_type = "All"
+      this.data.Comparison = "None"
+      this.Comparison = [{key:"None",value:"None"}]
       this.rain_fall_type = [
         {key:"All",value:"All"},
         {key:"Total Receipts Revenue Account",value:"Total Receipts Revenue Account"},

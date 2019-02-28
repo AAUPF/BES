@@ -65,11 +65,7 @@ export class ExpenditureOnSalaryAndPensionComponent implements OnInit {
   if (view == "line") {
     this.years = ["All"];
   } else {
-    if (this.data.rain_fall_type == "All") {
-      this.years = ["2015","2016_RE","2017_RE"];
-    } else {
-      this.years = ["All","2015","2016_RE","2017_RE"];
-    }
+    this.years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
     
   }
     }

@@ -83,8 +83,9 @@ export class DebtManagement1Component implements OnInit {
     }
       toSet(select){
         if (select == "Public Debt") {
+          this.data.rain_fall_type = "All"
       this.rain_fall_type_sort = [
-        // {key:"All",value:"All"},
+         {key:"All",value:"All"},
         {key:"Internal  Debt",value:"Internal  Debt"},
         {key:"Central Loans",value:"Central Loans"},
         {key:"Total",value:"Total"},
@@ -93,9 +94,9 @@ export class DebtManagement1Component implements OnInit {
            
         }  else if (select == "Other Liabilities") {
 
-
+          this.data.rain_fall_type = "All"
           this.rain_fall_type_sort = [
-            // {key:"All",value:"All"},
+             {key:"All",value:"All"},
             {key:"Small Savings, PF etc.",value:"Small Savings, PF etc."},
             {key:"Reserve Funds",value:"Reserve Funds"},
             {key:"Deposits and Advances",value:"Deposits and Advances"},

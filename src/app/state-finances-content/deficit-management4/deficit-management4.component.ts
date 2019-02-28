@@ -42,74 +42,47 @@ export class DeficitManagement4Component implements OnInit {
   visbile_table= false;
   Districts = ["Amount","Percentage Composition"]
   years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
-  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
-
-
   Comparison = [
     {key:"Agriculture, Forestry and Fishing",value:"Agriculture, Forestry and Fishing"},
     {key:"Mining and Quarrying",value:"Mining and Quarrying"},
   ]
-
-
   rain_fall_type = [
     {key:"All",value:"All"},
     {key:"Net Borrowing",value:"Net Borrowing"},
     {key:"Net Public Account",value:"Net Public Account"},
     {key:"Net Decrease in Cash Balance (Opening - Closing Balance)",value:"Net Decrease in Cash Balance (Opening - Closing Balance)"},
     {key:"GFD",value:"GFD"},
-   
-  
-  
   ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-     //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
-    
-  // }
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    this.years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+  }
     }
       toSet(select){
-        if (select == "Amount") {         
+        if (select == "Amount") {
       this.rain_fall_type_sort = [
         {key:"All",value:"All"},
         {key:"Net Borrowing",value:"Net Borrowing"},
         {key:"Net Public Account",value:"Net Public Account"},
         {key:"Net Decrease in Cash Balance (Opening - Closing Balance)",value:"Net Decrease in Cash Balance (Opening - Closing Balance)"},
         {key:"GFD",value:"GFD"},
-       
-    
-  
-  
-  ]
-           
-        }  else if (select == "Percentage Composition") {
-
-
-          this.rain_fall_type_sort = [
+       ]
+       }  else if (select == "Percentage Composition") {
+         this.rain_fall_type_sort = [
             {key:"All",value:"All"},
             {key:"Net Borrowing",value:"Net Borrowing"},
             {key:"Net Public Account",value:"Net Public Account"},
-            {key:"Net Decrease in Cash Balance (Opening - Closing Balance)",value:"Net Decrease in Cash Balance (Opening - Closing Balance)"},
-           
-
+            {key:"Net Decrease in Cash Balance",value:"Net Decrease in Cash Balance"}
           ]
         }
-
-  
-        
         else {
           this.rain_fall_type_sort = [ 
 
@@ -140,13 +113,10 @@ export class DeficitManagement4Component implements OnInit {
 
     if (user.view !== "Map View") {
 
-      console.log("errror");
-      
-      this.visbile_chart= true;
+     this.visbile_chart= true;
       this.visbile= false;
       this.visbile_table= false;
-      if(user.view) { 
-
+      if(user.view) {
         if (user.view == "Table") {
           this.visbile_chart= false;
           this.visbile_table= true;
@@ -155,7 +125,6 @@ export class DeficitManagement4Component implements OnInit {
           this.visbile_chart= true;
           this.visbile_table= false;
           this.spinner.show();
-          
         }
         this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
         }
@@ -169,13 +138,10 @@ export class DeficitManagement4Component implements OnInit {
       var controller = "fiscal_performance1s"
       this.spinner.show();
       setTimeout(function() {
-        
-            that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
+        that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
             var u = "wchamparan";
             that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
       }, 500);
-      
-      
     }
  }     
   

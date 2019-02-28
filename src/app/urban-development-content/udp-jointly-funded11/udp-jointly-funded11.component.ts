@@ -59,7 +59,7 @@ export class UDPJointlyFunded11Component implements OnInit {
   views = ViewsNotDistrict
   rain_fall_type = [
     {key: "All", value: "All"},
-    {key:"No of Projects",value:"No of Projects"},
+    {key:"No of Projects",value:"No_of_Projects"},
     {key:"Amount",value:"Amount"},
     
 

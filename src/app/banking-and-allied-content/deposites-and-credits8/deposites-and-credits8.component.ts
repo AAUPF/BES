@@ -48,30 +48,24 @@ export class DepositesAndCredits8Component implements OnInit {
     "2016-17",
     "2017_18_Sep_17",
   ];
-  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
-
-
   Comparison = [
     {key:"None",value:"None"},
     {key:"Madhya Bihar KGB",value:"Madhya Bihar KGB"},
     {key:"Bihar KGB",value:"Bihar KGB"},
     {key:"Uttar Bihar KGB",value:"Uttar Bihar KGB"},
-    {key:"All RRBs",value:"All RRBs"},
-    
+    {key:"All RRBs",value:"All RRBs"}
   ]
 
 
   rain_fall_type = [
     {key:"All",value:"All"},
     {key:"Madhya Bihar KGB",value:"Madhya Bihar KGB"},
-{key:"Bihar KGB",value:"Bihar KGB"},
-{key:"Uttar Bihar KGB",value:"Uttar Bihar KGB"},
-{key:"All RRBs",value:"All RRBs"},
+    {key:"Bihar KGB",value:"Bihar KGB"},
+    {key:"Uttar Bihar KGB",value:"Uttar Bihar KGB"},
+    {key:"All RRBs",value:"All RRBs"}
   ]
-  // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-     //Comparison_sort = this.Comparison.sort(f.compare);
+  
     data: any = {};    
     toNumber(d) {
 
@@ -87,88 +81,29 @@ export class DepositesAndCredits8Component implements OnInit {
           {key:"Bihar KGB",value:"Bihar KGB"},
           {key:"Uttar Bihar KGB",value:"Uttar Bihar KGB"},
           {key:"All RRBs",value:"All RRBs"},
-          
-          // {key:"Total Expenditure on Road and Bridges",value:"Total Expenditure on Road and Bridges"},
-          // {key:"Revenue Expenditure on Road and Bridges",value:"Revenue Expenditure on Road and Bridges"},
-          // {key:"Capital Expenditure on Road and Bridges",value:"Capital Expenditure on Road and Bridges"},
-          // {key:"Expenditure on Economic Services",value:"Expenditure on Economic Services"},
-          // {key:"Development Expenditure",value:"Development Expenditure"},
-          // {key:"Total Budget",value:"Total Budget"},
-          // {key:"GSDP",value:"GSDP"},
-          
         ]
         
       }
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
-    
-  // }
-    }
-      toSet(select){
-        if (select == "Public Investment in Road and Bridges") {         
-      this.rain_fall_type = [
-        {key:"All",value:"All"},
-        
-        {key:"Water conservation",value:"Water conservation"},
-        {key:"Drought proofing",value:"Drought proofing"},
-        {key:"Micro-irrigation works",value:"Micro-irrigation works"},
-        {key:"Works on Individual Land",value:"Works on Individual Land"},
-        {key:"Renovation of traditional water bodies",value:"Renovation of traditional water bodies"},
-        {key:"Land development",value:"Land development"},
-        {key:"Flood control and protection",value:"Flood control and protection"},
-        {key:"Rural connectivity",value:"Rural connectivity"},
-      
-  ]
-           
-        }  else if (select == "Other Liabilities") {
-
-
-          this.rain_fall_type = [
-            {key:"All",value:"All"},
-            {key:"Water conservation",value:"Water conservation"},
-            {key:"Drought proofing",value:"Drought proofing"},
-            {key:"Micro-irrigation works",value:"Micro-irrigation works"},
-            {key:"Works on Individual Land",value:"Works on Individual Land"},
-            {key:"Renovation of traditional water bodies",value:"Renovation of traditional water bodies"},
-            {key:"Land development",value:"Land development"},
-            {key:"Flood control and protection",value:"Flood control and protection"},
-            {key:"Rural connectivity",value:"Rural connectivity"},
-          ]
-        }
-
-  
-        
-        else {
-          this.rain_fall_type = [ 
-            {key:"All",value:"All"},
-            {key:"Madhya Bihar KGB",value:"Madhya Bihar KGB"},
-            {key:"Bihar KGB",value:"Bihar KGB"},
-            {key:"Uttar Bihar KGB",value:"Uttar Bihar KGB"},
-            {key:"All RRBs",value:"All RRBs"},
-           ]
-        }
+      if (view == "line") {
+        this.years = ["All"];
+      } else {
+        this.years = ["All",
+        "2014-15",
+        "2015-16",
+        "2016-17",
+        "2017_18_Sep_17"];
       }
-
-
-     
-      toYear(year){
+    }
+    toYear(year){
         if(year == "All"){
           this.views = ViewsNotMap
-         
         }else{
           this.views  = ViewsNotDistrict
-         
         }
-      }
+    }
     
   onSubmit(user) {
     var controller = "deposites_and_credits8s"

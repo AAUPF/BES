@@ -40,7 +40,7 @@ export class EducationArtCulture8Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["All",'Government',"Private","Total"]
+  Districts = ["All",'Government',"Private"]
   years = ["All",'2010','2012','2014','2016'];
   views = ViewsNotMap;
   rain_fall_type = [{key:"All",value:"All"},{key:"Reading Std II Level Textn in Bihar",value:"Reading_Std_II_Level_Textn_in_Bihar"},

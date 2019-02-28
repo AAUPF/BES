@@ -40,7 +40,7 @@ export class ResourceManagement1Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["I.    State’s Own Revenue","II.  Receipts from Centre","III. Total Revenue Receipts","All"]
+  Districts = ["I.    State’s Own Revenue","II.  Receipts from Centre","III. Total Revenue Receipts"]
   years = ["All", "2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
   views = ViewsNotMap;
@@ -63,23 +63,16 @@ export class ResourceManagement1Component implements OnInit {
   
   ]
   rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-     //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
     toNumber(d) {
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
-    
-  // }
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    this.years = ["All","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18_BE"];
+  }
     }
       toSet(select){
         if (select == "I.    State’s Own Revenue") {    
@@ -101,7 +94,7 @@ export class ResourceManagement1Component implements OnInit {
         }
 
         else if (select == "III. Total Revenue Receipts") {
-          this.data.rain_fall_type = "None" 
+          this.data.rain_fall_type = "State’s Own Revenue as Percentage of Total Receipts" 
           this.rain_fall_type_sort = [
             {key:"State’s Own Revenue as Percentage of Total Receipts",value:"State’s Own Revenue as Percentage of Total Receipts"},
             {key:"None",value:"None"},

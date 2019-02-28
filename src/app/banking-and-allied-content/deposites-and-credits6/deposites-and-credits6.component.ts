@@ -48,7 +48,7 @@ export class DepositesAndCredits6Component implements OnInit {
 {key:"2014-15",value:"2014-15"},
 {key:"2015-16",value:"2015-16"},
 {key:"2016-17",value:"2016-17"},
-{key:"2017 18 upto Sep 2017",value:"2017_18_upto_Sep_2017"},
+{key:"2017-18",value:"2017-18"},
     
   ];
   //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
@@ -130,16 +130,19 @@ export class DepositesAndCredits6Component implements OnInit {
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
+  if (view == "line") {
+    this.years = [{key:"All",value:"All"}];
+  } else {
+    this.years = [{key:"All",value:"All"},
+    {key:"Number of Branches",value:"Number_of_Branches"},
+    {key:"2013-14",value:"2013-14"},
+    {key:"2014-15",value:"2014-15"},
+    {key:"2015-16",value:"2015-16"},
+    {key:"2016-17",value:"2016-17"},
+    {key:"2017-18",value:"2017-18"}
+];
     
-  // }
+  }
     }
       toSet(select){
         if (select == "Lead Banks") {         

@@ -76,6 +76,7 @@ if (view == "line") {
     toSet(select){
       if (select == "All") {
         // this.data == {years: null, views: "",Comparison: ""};
+        this.data.Comparison  = "None"
         this.Comparison  = ["None"]
         // this.butDisabled = true;
       } else {

@@ -9,6 +9,7 @@ import { TableExport } from '../../../../node_modules/tableexport';
 import { Location } from '@angular/common';
 import{Functions} from '../../data/func';
 import { ViewsNotMap } from '../../data/viewsnotmap';
+import { ViewsNotDistrict } from '../../data/viewsnotdistrict';
 declare var $:any
 interface years<> {
   id: number;  any
@@ -56,6 +57,23 @@ export class StatePublicSector1Component implements OnInit {
       } else {
         this.Comparison_sort = this.Comparison.sort(f.compare);
       }
+      }
+      toView(view){
+        if (view == "line") {
+          this.years = ["All"];
+        } else {
+          this.years = ["All","2012","2013","2014","2015","2016"];
+          
+        }
+      }
+      toYear(year){
+        if(year == "All"){
+          this.views = ViewsNotMap
+         
+        }else{
+          this.views  = ViewsNotDistrict
+         
+        }
       }
 
 

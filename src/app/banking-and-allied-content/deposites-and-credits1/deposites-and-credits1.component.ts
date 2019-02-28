@@ -41,7 +41,7 @@ export class DepositesAndCredits1Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["Deposits","Credits","CD Ratio","Share of Credits"]
+  Districts = ["Deposits","Credits","CDRatio","Share of Credits","Share of Deposits"]
   years = [
     "All",
     "2014-15",
@@ -132,16 +132,14 @@ export class DepositesAndCredits1Component implements OnInit {
     
     }
     toView(view){
-  // if (view == "line") {
-  //   this.years = ["All"];
-  // } else {
-  //   if (this.data.rain_fall_type == "All") {
-  //     this.years = ["2015","2016_RE","2017_RE"];
-  //   } else {
-  //     this.years = ["All","2015","2016_RE","2017_RE"];
-  //   }
+  if (view == "line") {
+    this.years = ["All"];
+  } else {
+    this.years = ["All",
+    "2014-15",
+    "2015-16",];
     
-  // }
+  }
     }
       toSet(select){
         if (select == "Public Investment in Road and Bridges") {         

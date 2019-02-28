@@ -42,14 +42,21 @@ export class DebtManagement2Component implements OnInit {
   visbile_table= false;
   Districts = ["Public Debt","Other Liabilities"]
   years = [
-    "All", 
-    "2015-16",
-    "2016-17",
-    "31_03_2016",
-    "31_03_2017",
-    "2017_from_2016"
+    // "All", 
+    // "2015-16",
+    // "2016-17",
+    // "31_03_2016",
+    // "31_03_2017",
+    // "2017_from_2016",
+    {key:"All",value:"All"},
+    {key:"2015-16",value:"2015-16"},
+    {key:"2016-17",value:"2016-17"},
+    {key:"31-03-2016",value:"31_03_2016"},
+    {key:"31-03-2017",value:"31_03_2017"},
+    {key:"Percentage increase over 2017 from 2016",value:"Percentage_increase_over_2017_from_2016"},
+    {key:"Percentage composition of outstanding balance as on 31-03-17",value:"Percentage_composition_of_outstanding_balance_as_on_31_03_17"}
 ];
-  //views = [{key: "Graph", value: "column"},{key: "Trend Line", value: "line"},{key: "Bubble", value: "scatter"},{key: "Table", value: "Table"},{key:"Map View", value: "Map View"}];
+
   views = ViewsNotMap;
 
 
@@ -70,8 +77,6 @@ export class DebtManagement2Component implements OnInit {
     {key:"Total A plus B",value:"Total A plus B"},
     {key:"None", value:"None"}
   ]
-
-
   rain_fall_type = [
     {key:"All",value:"All"},
     {key:"A. Internal Debt ",value:"A. Internal Debt "},
@@ -88,13 +93,7 @@ export class DebtManagement2Component implements OnInit {
     {key:"Loans for Centrally Sponsored Plan Schemes",value:"Loans for Centrally Sponsored Plan Schemes"},
     {key:"Other Loans",value:"Other Loans"},
     {key:"Total A plus B",value:"Total A plus B"},
-   
-  
-  
-  ]
-  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-    // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
-     //Comparison_sort = this.Comparison.sort(f.compare);
+   ]
     data: any = {};    
     toNumber(d) {
 
@@ -105,6 +104,7 @@ export class DebtManagement2Component implements OnInit {
       } else {
         this.data.Comparison = "None"
         this.Comparison = [
+          {key:"None", value:"None"},
           {key:"A. Internal Debt ",value:"A. Internal Debt "},
           {key:"Market Loans",value:"Market Loans"},
           {key:"WMA from the RBI",value:"WMA from the RBI"},
@@ -118,8 +118,7 @@ export class DebtManagement2Component implements OnInit {
           {key:"Loans for State Plan Schemes",value:"Loans for State Plan Schemes"},
           {key:"Loans for Centrally Sponsored Plan Schemes",value:"Loans for Centrally Sponsored Plan Schemes"},
           {key:"Other Loans",value:"Other Loans"},
-          {key:"Total A plus B",value:"Total A plus B"},
-          {key:"None", value:"None"}
+          {key:"Total A plus B",value:"Total A plus B"}
         ]
         
       }
@@ -138,19 +137,16 @@ export class DebtManagement2Component implements OnInit {
   // }
     }
       toSet(select){
-        if (select == "Public Debt") {         
-      this.rain_fall_type_sort = [
+      if (select == "Public Debt") {         
+      this.rain_fall_type = [
         {key:"All",value:"All"},
         {key:"Internal  Debt",value:"Internal  Debt"},
         {key:"Central Loans",value:"Central Loans"},
         {key:"Total",value:"Total"},
-      
-  ]
+      ]
            
         }  else if (select == "Other Liabilities") {
-
-
-          this.rain_fall_type_sort = [
+          this.rain_fall_type = [
             {key:"All",value:"All"},
             {key:"A. Internal Debt ",value:"A. Internal Debt "},
             {key:"Market Loans",value:"Market Loans"},
@@ -165,15 +161,11 @@ export class DebtManagement2Component implements OnInit {
             {key:"Loans for State Plan Schemes",value:"Loans for State Plan Schemes"},
             {key:"Loans for Centrally Sponsored Plan Schemes",value:"Loans for Centrally Sponsored Plan Schemes"},
             {key:"Other Loans",value:"Other Loans"},
-            {key:"Total (A+B)",value:"Total (A+B)"},
-
+            {key:"Total (A+B)",value:"Total (A+B)"}
           ]
         }
-
-  
-        
         else {
-          this.rain_fall_type_sort = [ 
+          this.rain_fall_type = [
             {key:"All",value:"All"},
             {key:"A. Internal Debt ",value:"A. Internal Debt "},
             {key:"Market Loans",value:"Market Loans"},
@@ -188,9 +180,7 @@ export class DebtManagement2Component implements OnInit {
             {key:"Loans for State Plan Schemes",value:"Loans for State Plan Schemes"},
             {key:"Loans for Centrally Sponsored Plan Schemes",value:"Loans for Centrally Sponsored Plan Schemes"},
             {key:"Other Loans",value:"Other Loans"},
-            {key:"Total (A+B)",value:"Total (A+B)"},
-           
-          
+            {key:"Total (A+B)",value:"Total (A+B)"}
           ]
         }
       }

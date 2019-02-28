@@ -85,7 +85,7 @@ export class Health13Component implements OnInit {
       toYear(year){
         if(year == "All"){
           this.views = ViewsNotMap
-          this.rain_fall_type = [{key:"Number of Sanctioned Posts",value:"No_of_Sanctioned_Posts"},{key:"Working",value:"Working"},{key:"Percentage of Vacant Post",value:"Percentage_of_Vacant_Post"}]
+          this.rain_fall_type = [{key:"Working",value:"Working"},{key:"Percentage of Vacant Post",value:"Percentage_of_Vacant_Post"}]
           
         }else{
           this.views  = ViewsNotDistrict

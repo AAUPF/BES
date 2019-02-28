@@ -45,7 +45,7 @@ export class StateDomesticProduct5Component implements OnInit {
   visbile= false;
   visbile_chart= true;
   visbile_table= false;
-  Districts = ["Primary","Secondary","Tertiary","All"]
+  Districts = ["All","Primary","Secondary","Tertiary"]
   years = [
     {key:"All",value:"All"},
     {key:"2011-12",value:"2011-12"},
@@ -199,7 +199,7 @@ export class StateDomesticProduct5Component implements OnInit {
 
       
       if (select == "All") {
-        this.data.rain_fall_type  = undefined
+        this.data.rain_fall_type  = "All"
 
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
@@ -228,7 +228,7 @@ export class StateDomesticProduct5Component implements OnInit {
        
       }
       else if(select == "Primary") { 
-        this.data.rain_fall_type  = undefined
+        this.data.rain_fall_type  = "All"
 
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
@@ -241,7 +241,7 @@ export class StateDomesticProduct5Component implements OnInit {
       }
 
       else if(select == "Secondary") { 
-        this.data.rain_fall_type  = undefined
+        this.data.rain_fall_type  = "All"
 
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},
@@ -255,7 +255,7 @@ export class StateDomesticProduct5Component implements OnInit {
       }
 
       else if(select == "Tertiary") { 
-        this.data.rain_fall_type  = undefined
+        this.data.rain_fall_type  = "All"
 
         this.rain_fall_type_sort = [
           {key:"All",value:"All"},   
@@ -277,19 +277,46 @@ export class StateDomesticProduct5Component implements OnInit {
 
     toyear(d){
       if (d == "All") {
-        this.data.view = undefined
+        
 
        
         this.views = ViewsNotMap
         
       } else {
-        this.data.view = undefined
+        
 
         this.views = ViewsNotDistrict
         
       }
 
     }
+    toView(view){
+      if (view == "line") {
+        this.years = [{key:"All",value:"All"}];
+      }
+      else if(view == "Map View"){
+        this.years = [
+          {key:"2011-12",value:"2011-12"},
+          {key:"2012-13",value:"2012-13"},
+          {key:"2013-14",value:"2013-14"},
+          {key:"2014-15",value:"2014-15"},
+          {key:"2015-16",value:"2015-16"},
+          {key:"2016-17",value:"2016-17"},
+          {key:"CAGR(2011-16)",value:"2011-16"}
+  ];
+      }
+      else {
+        this.years = [{key:"All",value:"All"},
+        {key:"2011-12",value:"2011-12"},
+        {key:"2012-13",value:"2012-13"},
+        {key:"2013-14",value:"2013-14"},
+        {key:"2014-15",value:"2014-15"},
+        {key:"2015-16",value:"2015-16"},
+        {key:"2016-17",value:"2016-17"},
+        {key:"CAGR(2011-16)",value:"2011-16"}
+  ];
+      }
+  }
 
 
 
@@ -298,7 +325,6 @@ export class StateDomesticProduct5Component implements OnInit {
 
     if (user.view !== "Map View") {
 
-      console.log("errror");
       
       this.visbile_chart= true;
       this.visbile= false;

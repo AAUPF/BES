@@ -46,9 +46,9 @@ export class StateDomesticProduct2Component implements OnInit {
   data: any = {}; 
   toNumber(d) {
       if (d == "All") {
+        this.data.Comparison = "None"
         this.Comparison = ["None"]
-        // this.data.Comparison  = undefined
-        // this.butDisabled = true;
+        
       } else {
         this.Comparison = ["None","Bihar vs State"]
         // this.butDisabled = false;

@@ -107,6 +107,7 @@ export class StateDomesticProduct9Component implements OnInit {
   }
   toSet(select){
       if (select == "All") {
+        this.data.Comparison  = "None"
         this.Comparison  = ["None"]
       } else {
         this.Comparison = ["None","Bihar vs District"]

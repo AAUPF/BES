@@ -63,7 +63,7 @@ export class DepositesAndCredits4Component implements OnInit {
       "West Bengal",
       "India",
 ]
-  years = ["2014","2015","2016"];
+  years = ["All","2014","2015","2016"];
   views = ViewsNotMap;
 
 
@@ -97,24 +97,19 @@ export class DepositesAndCredits4Component implements OnInit {
       this.years = ["2014","2015","2016"];
     } 
     else {
-      // if (this.data.view == "line") {
-      //   this.years = ["All"];
-      // } else {
-      //   this.years = ["All","2001","2005", "2010","2015","2016","2017"];
-      // }
-    
+      if (this.data.view == "line") {
+        this.years = ["All"];
+      } else {
+        this.years = ["All","2014","2015","2016"];
+      }
     }
   }
   toView(view){
-    // if (view == "line") {
-    //   this.years = ["All"];
-    // } else {
-    //   if (this.data.rain_fall_type == "All") {
-    //     this.years = ["All","2001","2005", "2010","2015","2016","2017"];
-    //   } else {
-    //     this.years =  ["All","2001","2005", "2010","2015","2016","2017"];;
-    //   }
-    // }
+    if (view == "line") {
+      this.years = ["All"];
+    } else {
+      this.years =  ["All","2014","2015","2016"];
+    }
   }
     toSet(select){
       if (select == "All") {
@@ -143,24 +138,21 @@ export class DepositesAndCredits4Component implements OnInit {
       }
     }
     toYear(year){
-      if(year == "2016"){
-        this.views = ViewsNotDistrict
-        this.rain_fall_type = [{key:"As per Sanction",value:"As_per_Sanction"},{key:"As per Utilization",value:"As_per_Utilization"},{key:"All",value:"All"}]
+      if(year == "All"){
+        this.views = ViewsNotMap
+        this.rain_fall_type = [{key:"As per Sanction",value:"As_per_Sanction"},{key:"As per Utilization",value:"As_per_Utilization"}]
       }
-      else if(year == "2017") { 
+      else{ 
 
         this.views = ViewsNotDistrict
-        this.rain_fall_type = [{key:"As per Sanction",value:"As_per_Sanction"},{key:"As per Utilization",value:"As_per_Utilization"},{key:"All",value:"All"}]
-
-      }
-      else{
-        this.views  = ViewsNotDistrict
         this.rain_fall_type = [{key:"All",value:"All"},{key:"As per Sanction",value:"As_per_Sanction"},{key:"As per Utilization",value:"As_per_Utilization"}]
+
       }
     }
 
   onSubmit(user) {
     var controller = "deposites_and_credits4s"
+    user.rain_fall_type = "CD_Ratio"
 
     if (user.view !== "Map View") {
 

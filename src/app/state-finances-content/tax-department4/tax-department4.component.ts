@@ -54,13 +54,13 @@ export class TaxDepartment4Component implements OnInit {
     {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
     {key:"Revenue Stamps",value:"Revenue Stamps"},
     {key:"Judicial Stamps",value:"Judicial Stamps"},
-    {key:"Sub-Total",value:"Sub-Total"},
+    {key:"Sub-Total Stamps",value:"Sub-Total Stamps"},
     {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
     {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
     {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
     {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
     {key:"Fee from certified copies",value:"Fee from certified copies"},
-    {key:"Sub-Total",value:"Sub-Total"},
+    {key:"Sub-Total Fee",value:"Sub-Total Fee"},
     {key:"Total",value:"Total"},
   ]
 
@@ -73,17 +73,17 @@ export class TaxDepartment4Component implements OnInit {
     {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
     {key:"Revenue Stamps",value:"Revenue Stamps"},
     {key:"Judicial Stamps",value:"Judicial Stamps"},
-    {key:"Sub-Total",value:"Sub-Total"},
+    {key:"Sub-Total Stamps",value:"Sub-Total Stamps"},
     {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
     {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
     {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
     {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
     {key:"Fee from certified copies",value:"Fee from certified copies"},
-    {key:"Sub-Total",value:"Sub-Total"},
+    {key:"Sub-Total Fee",value:"Sub-Total Fee"},
     {key:"Total",value:"Total"},
    
   ]
-  rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
+  // rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
     // Comparison = [{key:"None",value:"None"},{key:"Bihar",value:"Bihar"},	{key:"India",value:"India"}]
      //Comparison_sort = this.Comparison.sort(f.compare);
     data: any = {};    
@@ -186,13 +186,13 @@ export class TaxDepartment4Component implements OnInit {
         {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
         {key:"Revenue Stamps",value:"Revenue Stamps"},
         {key:"Judicial Stamps",value:"Judicial Stamps"},
-        {key:"Sub-Total",value:"Sub-Total"},
+        {key:"Sub-Total Stamps",value:"Sub-Total Stamps"},
         {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
         {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
         {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
         {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
         {key:"Fee from certified copies",value:"Fee from certified copies"},
-        {key:"Sub-Total",value:"Sub-Total"},
+        {key:"Sub-Total Fee",value:"Sub-Total Fee"},
         {key:"Total",value:"Total"},
        
         
@@ -215,7 +215,7 @@ export class TaxDepartment4Component implements OnInit {
   }
     toSet(select){
       if (select == "Public Debt") {         
-    this.rain_fall_type_sort = [
+    this.rain_fall_type = [
       {key:"All",value:"All"},
       {key:"Internal  Debt",value:"Internal  Debt"},
       {key:"Central Loans",value:"Central Loans"},
@@ -226,22 +226,22 @@ export class TaxDepartment4Component implements OnInit {
       }  else if (select == "Other Liabilities") {
 
 
-        this.rain_fall_type_sort = [
+        this.rain_fall_type = [
           {key:"All",value:"All"},
           {key:"From Printed Non-judicial stamps",value:"From Printed Non-judicial stamps"},
-          {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
-          {key:"Non-Judicial adhesive stamps",value:"Non-Judicial adhesive stamps"},
-          {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
-          {key:"Revenue Stamps",value:"Revenue Stamps"},
-          {key:"Judicial Stamps",value:"Judicial Stamps"},
-          {key:"Sub-Total",value:"Sub-Total"},
-          {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
-          {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
-          {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
-          {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
-          {key:"Fee from certified copies",value:"Fee from certified copies"},
-          {key:"Sub-Total",value:"Sub-Total"},
-          {key:"Total",value:"Total"},
+        {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
+        {key:"Non-Judicial adhesive stamps",value:"Non-Judicial adhesive stamps"},
+        {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
+        {key:"Revenue Stamps",value:"Revenue Stamps"},
+        {key:"Judicial Stamps",value:"Judicial Stamps"},
+        {key:"Sub-Total Stamps",value:"Sub-Total Stamps"},
+        {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
+        {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
+        {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
+        {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
+        {key:"Fee from certified copies",value:"Fee from certified copies"},
+        {key:"Sub-Total Fee",value:"Sub-Total Fee"},
+        {key:"Total",value:"Total"},
 
         ]
       }
@@ -249,7 +249,7 @@ export class TaxDepartment4Component implements OnInit {
 
       
       else {
-        this.rain_fall_type_sort = [ 
+        this.rain_fall_type = [ 
           {key:"All",value:"All"},
           {key:"From Printed Non-judicial stamps",value:"From Printed Non-judicial stamps"},
           {key:"From Non-judicial stamp duty deposited through Bank challan",value:"From Non-judicial stamp duty deposited through Bank challan"},
@@ -257,13 +257,13 @@ export class TaxDepartment4Component implements OnInit {
           {key:"Non Judicial special adhesive stamp –  through  Franking machines",value:"Non Judicial special adhesive stamp –  through  Franking machines"},
           {key:"Revenue Stamps",value:"Revenue Stamps"},
           {key:"Judicial Stamps",value:"Judicial Stamps"},
-          {key:"Sub-Total",value:"Sub-Total"},
+          {key:"Sub-Total Stamps",value:"Sub-Total Stamps"},
           {key:"Fees on registration of instruments",value:"Fees on registration of instruments"},
           {key:"Landlord’s Registration fee",value:"Landlord’s Registration fee"},
           {key:"Landlord’s Process fee",value:"Landlord’s Process fee"},
           {key:"Fee from searches of records and Non-Encumbrances",value:"Fee from searches of records and Non-Encumbrances"},
           {key:"Fee from certified copies",value:"Fee from certified copies"},
-          {key:"Sub-Total",value:"Sub-Total"},
+          {key:"Sub-Total Fee",value:"Sub-Total Fee"},
           {key:"Total",value:"Total"},
          
         

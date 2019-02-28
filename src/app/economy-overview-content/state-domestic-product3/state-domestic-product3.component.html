@@ -40,7 +40,7 @@
 
              
          
-                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view">
+                      <select id = "anything" class="selectpicker" class='select-option' required [(ngModel)]='data.view' name="view" (ngModelChange)="toView(data.view)">
                           <option [ngValue]="undefined" disabled  selected> Views  </option>
                           <option class='option' *ngFor='let option of views' [ngValue]="option.value">{{option.key}}</option>
                       </select>
