@@ -152,7 +152,7 @@ export class DepositesAndCredits4Component implements OnInit {
 
   onSubmit(user) {
     var controller = "deposites_and_credits4s"
-    user.rain_fall_type = "CD_Ratio"
+    
 
     if (user.view !== "Map View") {
 

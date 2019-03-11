@@ -131,6 +131,7 @@ export class BankingInfrastructure2Component implements OnInit {
     }   
 
   ngOnInit() {
+    
   }
 
 }
