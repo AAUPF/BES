@@ -63,25 +63,23 @@ export class InflationRatesComponent implements OnInit {
     toNumber(d) {
     if (d == "All") {
       this.data.Comparison  = "None"
+      this.Comparison = ["None"]
       this.data.years = "Rural"
       this.years = [
       {key:"Rural",value:"Rural"},
-    {key:"Urban",value:"Urban"},
-    {key:"Combined",value:"Combined"},
-    
+      {key:"Urban",value:"Urban"},
+      {key:"Combined",value:"Combined"}
     ]
-      this.butDisabled = true;
     } else {
+      this.Comparison = ["None","Andhra Pradesh","Bihar","Chhattisgarh","Gujarat","Haryana","Jharkhand","Karnataka","Kerala","Madhya Pradesh","Maharashtra","Odisha","Punjab","Rajasthan","TamilNadu","Uttar Pradesh","All India"]
       this.years = [
         {key:"All",value:"All"},
-      {key:"Rural",value:"Rural"},
-    {key:"Urban",value:"Urban"},
-    {key:"Combined",value:"Combined"},
-    
+        {key:"Rural",value:"Rural"},
+        {key:"Urban",value:"Urban"},
+        {key:"Combined",value:"Combined"}
     ]
       this.butDisabled = false;
     }
-    
     }
 
     compare(d){

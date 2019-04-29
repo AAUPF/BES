@@ -50,7 +50,7 @@ export class BiharStartUpPolicyComponent implements OnInit {
     "Magadh Mahila College",
     "Software Technology Parks of India (STPI), Patna",
     "Sanjay Gandhi Institute of Dairy Technology (SGIDT)",
-    "Central Institute of Plastic Engineering & Technology, Hajipur ",
+    "Central Institute of Plastic Engineering and Technology, Hajipur",
     "Total",
   ];
   visbile= false;
@@ -83,10 +83,10 @@ export class BiharStartUpPolicyComponent implements OnInit {
     "Magadh Mahila College",
     "Software Technology Parks of India (STPI), Patna",
     "Sanjay Gandhi Institute of Dairy Technology (SGIDT)",
-    "Central Institute of Plastic Engineering & Technology, Hajipur ",
+    "Central Institute of Plastic Engineering and Technology, Hajipur",
     "Total",
   ]
-    data: any = {}; 
+    data: any = {};
 
     cancel() {
       this.location.back(); // <-- go back to previous location on cancel
@@ -96,7 +96,7 @@ export class BiharStartUpPolicyComponent implements OnInit {
           this.data == {years: null, views: "",Comparison: ""};
           this.data.Comparison  = "None"
           this.butDisabled = true;
-    
+
         } else {
           this.butDisabled = false;
         }
@@ -105,28 +105,28 @@ export class BiharStartUpPolicyComponent implements OnInit {
       if(view == "Map View"){
 
       }else{
-       
+
       }
     }
 
 
- 
+
     onSubmit(user) {
       var controller = "bihar_start_up_policies"
 
       console.log(user.view);
-      
+
 
       if (user.view !== "Map View") {
 
         console.log("errror");
-        
+
         this.visbile_chart= true;
         this.visbile= false;
         this.visbile_table= false;
         // this.AgricultureService.pie();
-        if(user.view) { 
-  
+        if(user.view) {
+
           if (user.view == "Table") {
             this.visbile_chart= false;
             this.visbile_table= true;
@@ -135,11 +135,11 @@ export class BiharStartUpPolicyComponent implements OnInit {
             this.visbile_chart= true;
             this.visbile_table= false;
             this.spinner.show();
-            
+
           }
           this.AgricultureService.barchart_bihar_vs_district_rainfall(user.years,user.districts,user.rain_fall_type,user.Comparison,controller,user.view);
           }
-      } 
+      }
       else if(user.view == "Map View") {
        const that = this;
         // this.AgricultureService.barchart();
@@ -153,13 +153,13 @@ export class BiharStartUpPolicyComponent implements OnInit {
           //  that.SvgService.test("echamparan");
               that.SvgService.svg(u,user.Comparison,user.rain_fall_type,user.years,user.districts,controller);
               var u = "wchamparan";
-              that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller); 
+              that.SvgService.test(user.view,user.years,user.districts,user.rain_fall_type,user.Comparison,controller);
         }, 500);
         // this.SvgService.svg();
-        
+
       }
 
-    }   
+    }
 
   ngOnInit() {
   }
