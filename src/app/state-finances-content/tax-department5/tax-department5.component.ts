@@ -55,13 +55,9 @@ export class TaxDepartment5Component implements OnInit {
         this.data.Comparison = "None"
         this.Comparison = ["None"]
 
-      } else {
-        if (this.data.view == "Map View") {
-          this.data.Comparison = "None"
-        this.Comparison = ["None"]
-        } else {
-          this.Comparison = Comparedistrictswithoutbihar
-        }
+      } 
+      else {
+        this.Comparison = Comparedistrictswithoutbihar
         
       }
   }
@@ -74,7 +70,13 @@ export class TaxDepartment5Component implements OnInit {
     }else{
       this.rain_fall_type = [{key: "All", value: "All"},{key:"Number of Document",value:"Number_of_Document"},	{key:"Total Receipt",value:"Total_Receipt"},	{key:"Target",value:"Target"},	{key:"Percentage receipt against target",value:"Percentage_receipt_against_target"},{key:"Receipt per Document",value:"Receipt_per_Document"}]
       this.rain_fall_type_sort = this.rain_fall_type.sort(f.compare);
-      this.Comparison = Comparedistrictswithoutbihar
+      if(this.data.districts == "All"){
+        this.data.Comparison = "None"
+        this.Comparison = ["None"]
+
+      }else{
+        this.Comparison = Comparedistrictswithoutbihar
+      }
     }
   }
   toMap(data){

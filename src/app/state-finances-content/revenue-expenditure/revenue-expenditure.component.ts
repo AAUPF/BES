@@ -47,15 +47,16 @@ export class RevenueExpenditureComponent implements OnInit {
 
 
   Comparison = [
+    {key:"None",value:"None"},
     {key:"Revenue Expenditure (RE)",value:"Revenue Expenditure (RE)"},
     {key:"Capital Expenditure (CE)",value:"Capital Expenditure (CE)"},
     {key:"Total Expenditure (TE)",value:"Total Expenditure (TE)"},
     {key:"Non Plan Expenditure",value:"Non Plan Expenditure"},
     {key:"Revenue A/c (NPRE)",value:"Revenue A/c (NPRE)"},
-    {key:"Capital A/c",value:"Capital A/c"},
+    {key:"Capital A/c (NPRE)",value:"Capital A/c (NPRE)"},
     {key:"Plan Expenditure",value:"Plan Expenditure"},
     {key:"Revenue A/c (PRE)",value:"Revenue A/c (PRE)"},
-    {key:"Capital A/c",value:"Capital A/c"},
+    {key:"Capital A/c (PRE)",value:"Capital A/c (PRE)"},
     {key:"Rate of growth of NPRE (Percentage)",value:"Rate of growth of NPRE (Percentage)"},
     {key:"Rate of growth of PRE (Percentage)",value:"Rate of growth of PRE (Percentage)"},
     {key:"RE/TE(Percentage)",value:"RE/TE(Percentage)"},
@@ -66,7 +67,7 @@ export class RevenueExpenditureComponent implements OnInit {
     {key:"NPRE/RR(Percentage)",value:"NPRE/RR(Percentage)"},
     {key:"Buoyancy of RE w.r.t. GSDP",value:"Buoyancy of RE w.r.t. GSDP"},
     {key:"Buoyancy of RE w.r.t. RR",value:"Buoyancy of RE w.r.t. RR"},
-    {key:"None",value:"None"},
+    
   ]
 
 
@@ -77,10 +78,10 @@ export class RevenueExpenditureComponent implements OnInit {
     {key:"Total Expenditure (TE)",value:"Total Expenditure (TE)"},
     {key:"Non Plan Expenditure",value:"Non Plan Expenditure"},
     {key:"Revenue A/c (NPRE)",value:"Revenue A/c (NPRE)"},
-    {key:"Capital A/c",value:"Capital A/c"},
+    {key:"Capital A/c (NPRE)",value:"Capital A/c (NPRE)"},
     {key:"Plan Expenditure",value:"Plan Expenditure"},
     {key:"Revenue A/c (PRE)",value:"Revenue A/c (PRE)"},
-    {key:"Capital A/c",value:"Capital A/c"},
+    {key:"Capital A/c (PRE)",value:"Capital A/c (PRE)"},
     {key:"Rate of growth of NPRE (Percentage)",value:"Rate of growth of NPRE (Percentage)"},
     {key:"Rate of growth of PRE (Percentage)",value:"Rate of growth of PRE (Percentage)"},
     {key:"RE/TE(Percentage)",value:"RE/TE(Percentage)"},
@@ -112,10 +113,10 @@ export class RevenueExpenditureComponent implements OnInit {
           {key:"Total Expenditure (TE)",value:"Total Expenditure (TE)"},
           {key:"Non Plan Expenditure",value:"Non Plan Expenditure"},
           {key:"Revenue A/c (NPRE)",value:"Revenue A/c (NPRE)"},
-          {key:"Capital A/c",value:"Capital A/c"},
+          {key:"Capital A/c (NPRE)",value:"Capital A/c (NPRE)"},
           {key:"Plan Expenditure",value:"Plan Expenditure"},
           {key:"Revenue A/c (PRE)",value:"Revenue A/c (PRE)"},
-          {key:"Capital A/c",value:"Capital A/c"},
+          {key:"Capital A/c (PRE)",value:"Capital A/c (PRE)"},
           {key:"Rate of growth of NPRE (Percentage)",value:"Rate of growth of NPRE (Percentage)"},
           {key:"Rate of growth of PRE (Percentage)",value:"Rate of growth of PRE (Percentage)"},
           {key:"RE/TE(Percentage)",value:"RE/TE(Percentage)"},
